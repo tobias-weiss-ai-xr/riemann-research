@@ -1,12 +1,75 @@
+# Python
 __pycache__/
-*.pyc
-.venv/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Data
+*.csv
+*.json
+*.npy
+*.pkl
+*.sqlite
+
+# Logs
+*.log
+.log/
+
+# OS
 .DS_Store
+Thumbs.db
 
-# Pipeline outputs (generated — never commit)
-papers.json
-statistics.json
-docs/topics/
+# Notes / scratch
+*.tmp
+*.temp
+_SCRATCH/
 
-# Generated citation export
-paper/
+# Dgraph
+*.dgraph
+*.rdf
+*.nt
+*.nq
+
+# Knowledge Graph output
+kg/output/
+kg/state/
