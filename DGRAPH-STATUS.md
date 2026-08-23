@@ -1,9 +1,10 @@
 # ✅ **Dgraph Knowledge Base: FULLY OPERATIONAL & ENRICHED**
 
 > **Last Updated**: 2026-08-23  
-> **Repository**: https://github.com/tobias-weiss-ai-xr/riemann-research (✅ **PUSHED, 24 commits**)  
+> **Repository**: https://github.com/tobias-weiss-ai-xr/riemann-research (✅ **PUSHED, 30+ commits**)  
 > **Dgraph**: Running at `localhost:8081` (✅ **HEALTHY**)  
-> **Knowledge Base**: ✅ **86 CLEAN ENTITIES, 0 DUPLICATES**
+> **Knowledge Base**: ✅ **325 CLEAN ENTITIES, 0 DUPLICATES, 0 Node types**  
+> **Agile Plan**: `AGILE-PLAN.md` + `prethought/research/agile_plan.yaml` (8 Epics, 10 Sprints)
 
 ---
 
@@ -30,21 +31,37 @@
 
 ## 📊 **KNOWLEDGE BASE STATISTICS**
 
-### Entity Distribution (86 total)
-| Type | Count | % | Source |
-|------|-------|---|--------|
-| **Research** | 25 | 29.1% | prethought/research/rh_research.yaml |
-| **Concept** | 22 | 25.6% | prethought/concepts/*.yaml |
-| **Finding** | 10 | 11.6% | prethought/findings/*.yaml |
-| **Paper** | 8 | 9.3% | prethought/papers/*.yaml + prethought/papers/riemann_papers.yaml |
-| **Equivalence** | 8 | 9.3% | prethought/related-work/RH-Equivalences.yaml |
-| **Problem** | 4 | 4.7% | prethought/open-problems/bridges.yaml |
-| **Theorem** | 5 | 5.8% | prethought/open-problems/bridges.yaml + related-work |
-| **Conjecture** | 2 | 2.3% | prethought/related-work/RH-Equivalences.yaml |
-| **Documentation** | 12 | 14.0% | prethought/docs/docs.yaml + prethought/project/project.yaml |
-| **Experiment** | 6 | 7.0% | prethought/experiments/experiments.yaml |
-| **Dataset** | 4 | 4.7% | prethought/concepts/spectral-gaps.yaml + findings |
-| **Bridge** | 4 | 4.7% | prethought/open-problems/bridges.yaml |
+### Entity Distribution (325 total)
+| Type | Count | Source |
+|------|-------|--------|
+| **Theorem** | 54 | cypher-entities + research |
+| **Paper** | 38 | cypher-entities + riemann_papers.yaml |
+| **Researcher** | 37 | cypher-entities + researchers.yaml |
+| **Roadmap** | 27 | agile_plan.yaml (Epics/Sprints/Backlog/DoD) |
+| **Research** | 21 | rh_research.yaml + latest_research.yaml |
+| **Documentation** | 14 | docs.yaml + project.yaml |
+| **Graph** | 13 | cypher-entities/graphs |
+| **Concept** | 12 | concepts/*.yaml + bridge_b_technical.yaml |
+| **Finding** | 10 | findings/*.yaml |
+| **Approach** | 10 | related-work + cypher |
+| **Function** | 10 | cypher-entities/functions |
+| **Philosophy** | 8 | methodology.yaml |
+| **Experiment** | 7 | experiments.yaml + bridge_b
+| **Problem** | 7 | bridges.yaml + bridge_b_technical |
+| **Group** | 7 | cypher-entities/groups |
+| **Warning** | 6 | methodology.yaml + agile_plan.yaml (Risiken) |
+| **Operator** | 6 | cypher-entities/operators |
+| **Dataset** | 5 | concepts + findings |
+| **Bridge** | 4 | bridges.yaml |
+| **Verification** | 4 | latest_research.yaml |
+| **Proof** | 4 | latest_research.yaml |
+| **AIAproach** | 4 | cypher-entities |
+| **Strategy** | 3 | methodology.yaml |
+| **Conjecture** | 2 | related-work |
+| **Audit** | 2 | methodology.yaml |
+| **Analysis** | 1 | latest_research.yaml |
+| **Roadmap (Plan)** | 1 | agile_plan.yaml |
+| **Derivation** | 1 | latest_research.yaml |
 
 ---
 

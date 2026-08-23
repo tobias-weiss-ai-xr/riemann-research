@@ -14,6 +14,7 @@ This is the **entry point** for the Riemann Hypothesis research corpus, knowledg
 | [README.md](README.md) | Full project overview | Everyone |
 | [RIEMANN-RESEARCH-SUMMARY.md](RIEMANN-RESEARCH-SUMMARY.md) | What was built & why | Meta-view |
 | [docs/PROJECT_PLAN.md](docs/PROJECT_PLAN.md) | Detailed architecture & milestones | Contributors |
+| [AGILE-PLAN.md](AGILE-PLAN.md) | Agile Epics/Sprints for Bridge B (RH) | Research team |
 
 ---
 
