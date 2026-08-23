@@ -139,6 +139,12 @@ def main():
     
     entities = deduped_entities
     
+    # Note: Research and paper entities from riemann repo are already
+    # included in prethought/research/rh_research.yaml and
+    # prethought/papers/riemann_papers.yaml, so no need to load again.
+    
+    print(f"Total entities: {len(entities)}", file=sys.stderr)
+    
     # Convert to Dgraph JSON
     mutations = convert_to_dgraph_json(entities)
     
