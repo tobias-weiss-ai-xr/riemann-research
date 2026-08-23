@@ -1,0 +1,20 @@
+# CG-SL2Fp (Concept)
+{ set { "CG-SL2Fp" id CG-SL2Fp
+      "Cayley Graph of SL(2,F_p)" name CG-SL2Fp
+      "concept" entity_type CG-SL2Fp
+      "spectral-theory" category CG-SL2Fp
+      "cayley-graphs" subcategory CG-SL2Fp
+      "The Cayley graph Cay(SL(2,F_p), S) where S = {S,R} are the fundamental\nroot generators: S = [[0,-1],[1,0]], R = [[0,1],[-1,0]] in PSL(2,F_p) representation.\n" definition CG-SL2Fp
+      "vertex-transitive" tags CG-SL2Fp
+      "4-regular" tags CG-SL2Fp
+      "expander" tags CG-SL2Fp
+      "ramanujan" tags CG-SL2Fp
+      "vertex-transitive" tags CG-SL2Fp
+      "4-regular" tags CG-SL2Fp
+      "expander" tags CG-SL2Fp
+      "ramanujan" tags CG-SL2Fp
+      "CG-SL2Fp" dgraph.type "Concept" } }
+
+
+# CG-PSL2Fp (Concept)
+{ set { "CG-PSL2Fp" id CG-PSL2Fp

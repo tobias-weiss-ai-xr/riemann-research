@@ -1,20 +1,7 @@
-# Dgraph GraphQL Schema for Riemann Hypothesis Knowledge Graph
-#
-# Node types are the main entities in the graph.
-# Each type is prefixed with a namespace and uses @index annotations for querying.
-#
-# Query patterns:
-#   - Find all Finding nodes with status=confirmed:
-#     { q(func: has(status)) { uid, name @filter(eq(status, "confirmed")) } }
-#   - Find all Concept nodes related to "spectral":
-#     { q(func: anyoftext(name, "spectral")) { uid, name } }
-#   - Find all papers in category "spectral-theory":
-#     { q(func: eq(category, "spectral-theory")) { uid, title } }
-
 type Concept {
   id: String @index(exact) .
   name: String @index(term) .
-  type: String @index(exact) .
+  entity_type: String @index(exact) .
   category: String @index(exact) .
   subcategory: String @index(exact) .
   definition: String .
@@ -31,7 +18,7 @@ type Concept {
 type Finding {
   id: String @index(exact) .
   name: String @index(term) .
-  type: String @index(exact) .
+  entity_type: String @index(exact) .
   category: String @index(exact) .
   subcategory: String @index(exact) .
   statement: String .
@@ -107,7 +94,7 @@ type Problem {
 
 type Reference {
   id: String @index(exact) .
-  type: String @index(exact) .  # corpus | concept | finding | paper | theorem | lean | cypher | experiment-log | script
+  entity_type: String @index(exact) .  # corpus | concept | finding | paper | theorem | lean | cypher | experiment-log | script
   paper_id: String .
   file: String .
   section: String .
@@ -162,15 +149,10 @@ type Script {
   dependencies: [String] .
   used_in: [Experiment] .
 }
-
-# =============================================================================
-# INTERFACE TYPES FOR UNION QUERIES
-# =============================================================================
-
 interface KnowledgeEntity {
   id: String!
   name: String!
-  type: String!
+  entity_type: String!
   category: String
   subcategory: String
   tags: [String!]

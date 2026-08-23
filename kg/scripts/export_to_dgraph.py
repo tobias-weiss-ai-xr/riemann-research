@@ -46,7 +46,7 @@ PREDICATE_MAP = {
     "Concept": {
         "id": "id",
         "name": "name",
-        "type": "type",
+        "type": "entity_type",
         "category": "category",
         "subcategory": "subcategory",
         "definition": "definition",
@@ -60,7 +60,7 @@ PREDICATE_MAP = {
     "Finding": {
         "id": "id",
         "name": "name",
-        "type": "type",
+        "type": "entity_type",
         "category": "category", 
         "subcategory": "subcategory",
         "statement": "statement",

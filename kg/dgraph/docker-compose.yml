@@ -1,39 +1,40 @@
-version: '3.8'
-
 services:
   zero:
-    image: dgraph/dgraph:v230.0
-    container_name: dgraph-zero
+    image: dgraph/dgraph:v25.4.0
+    container_name: riemann-dgraph-zero
     ports:
       - "5080:5080"
     volumes:
-      - dgraph_data:/dgraph
+      - riemann_dgraph_data:/dgraph
     command: dgraph zero --my=zero:5080
     restart: unless-stopped
 
   alpha:
-    image: dgraph/dgraph:v230.0
-    container_name: dgraph-alpha
+    image: dgraph/dgraph:v25.4.0
+    container_name: riemann-dgraph-alpha
     ports:
-      - "8080:8080"
-      - "9080:9080"
+      - "8081:8080"
+      - "9081:9080"
     volumes:
-      - dgraph_data:/dgraph
-    command: dgraph alpha --my=alpha:7080 --zero=zero:5080
+      - riemann_dgraph_data:/dgraph
+    command: dgraph alpha --my=alpha:7080 --zero=zero:5080 --security "whitelist=0.0.0.0/0"
     depends_on:
       - zero
     restart: unless-stopped
 
   ratel:
-    image: dgraph/ratel:v230.0
-    container_name: dgraph-ratel
+    image: dgraph/ratel:latest
+    container_name: riemann-dgraph-ratel
     ports:
       - "8000:8000"
-    command: dgraph-ratel
+    volumes:
+      - riemann_dgraph_data:/dgraph
+    command: dgraph-ratel -port 8000 -dgraph alpha:9080 -zero zero:5080
     depends_on:
       - zero
+      - alpha
     restart: unless-stopped
 
 volumes:
-  dgraph_data:
+  riemann_dgraph_data:
     driver: local
