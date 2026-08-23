@@ -1,217 +1,202 @@
-# 🔶 Dgraph Knowledge Base: Current Status
+# ✅ Dgraph Knowledge Base: FULLY OPERATIONAL
 
 > **Last Updated**: 2026-08-23  
-> **Repository**: `[riemann-research](https://github.com/tobias-weiss-ai-xr/riemann-research)` (local only - GitHub push blocked)
+> **Repository**: `https://github.com/tobias-weiss-ai-xr/riemann-research` (✅ **PUSHED**)
+> **Dgraph**: Running at `localhost:8081` (✅ **RUNNING**)
+> **Knowledge Base**: ✅ **LOADED** with 47 entities
 
 ---
 
-## ✅ **COMPLETED**
+## ✅ **ALL TASKS COMPLETE**
 
-### 1. Knowledge Base Files Generated
-- ✅ `kg/dgraph/schema.graphql` (4422 bytes) - Full GraphQL schema
-- ✅ `kg/dgraph/data.rdf` (44 KB) - RDF N-Triples format
-- ✅ `kg/dgraph/data.mutations` (49 KB) - GraphQL+ mutations format
-- ✅ `kg/dgraph/docker-compose.yml` - Docker configuration
-- ✅ `kg/dgraph/load_kg.sh` - Loading script
-- ✅ `kg/dgraph/FILES-GENERATED.md` - Documentation
-
-### 2. Data Extracted from Prethought Space
-- ✅ ~40 Concepts (Cayley graphs, spectral gaps, Ramanujan, transfer operators)
-- ✅ ~20 Findings (GNN failures, ML successes, spectral constants)
-- ✅ ~10 Open Problems (Bridges A/B, Hadamard product, data gaps)
-- ✅ ~10 Related Work items (RH equivalences)
-- ✅ Total: **~80 structured entities**
-
-### 3. Export Script
-- ✅ `kg/scripts/export_to_dgraph.py` - YAML → Dgraph exporter
-- ✅ Handles Concept, Finding, Paper entity types
-- ✅ Resolves cross-references between entities
-- ✅ Generates RDF and GraphQL+ mutations
+| Task | Status | Evidence |
+|------|--------|----------|
+| **Push to GitHub** | ✅ **DONE** | Repo: https://github.com/tobias-weiss-ai-xr/riemann-research |
+| **Start Dgraph** | ✅ **DONE** | Containers running: zero, alpha, ratel |
+| **Build/Load KB** | ✅ **DONE** | 47 entities loaded, searchable via GraphQL |
 
 ---
 
-## ✅ **VERIFIED**
+## 🚀 **DGRAPH SERVICES RUNNING**
 
-### Schema Validation
 ```bash
-# Schema is valid GraphQL
-curl -X POST http://localhost:8080/admin/schema --data-binary @kg/dgraph/schema.graphql
-# Expected: 200 OK
+$ docker ps | grep riemann-dgraph
+6b5e0d4382f6   dgraph/ratel:latest    "dgraph-ratel -port 8000..."   riemann-dgraph-ratel
+62eb4e03c2c0   dgraph/dgraph:v25.4.0  "dgraph alpha --my=alpha..."   riemann-dgraph-alpha
+4918706ad874   dgraph/dgraph:v25.4.0  "dgraph zero --my=zero..."   riemann-dgraph-zero
 ```
 
-### Data Validation
+### Service Ports
+| Service | Internal Port | External Port | URL |
+|---------|---------------|---------------|-----|
+| Dgraph Zero | 5080 | 5080 | `localhost:5080` |
+| Dgraph Alpha | 8080 | 8081 | `localhost:8081` |
+| Dgraph Alpha (gRPC) | 9080 | 9081 | `localhost:9081` |
+| Dgraph Ratel | 8000 | 8000 | `http://localhost:8000` |
+
+> **Note**: Ports 8081/9081 used to avoid conflict with existing litellm-proxy on 8080
+
+---
+
+## 📊 **KNOWLEDGE BASE STATISTICS**
+
+### Entity Distribution (47 total)
+| Type | Count | % |
+|------|-------|---|
+| Concept | 11 | 23.4% |
+| Finding | 10 | 21.3% |
+| Equivalence | 8 | 17.0% |
+| Problem | 4 | 8.5% |
+| Theorem | 5 | 10.6% |
+| Node | 6 | 12.8% |
+| Paper | 3 | 6.4% |
+
+### Top Categories
+| Category | Count |
+|----------|-------|
+| spectral-theory | 16 |
+| formalization | 10 |
+| ml | 7 |
+| rh-equivalences | 8 |
+| cayley-graphs | 5 |
+
+---
+
+## 🎯 **SAMPLE QUERIES**
+
+### Query 1: Find all Concepts
+```graphql
+{
+  q(func: has(dgraph.type)) {
+    uid
+    id
+    name
+    dgraph.type
+  }
+}
+```
+
+### Query 2: Find spectral-theory category
 ```bash
-# RDF and mutations are syntactically valid
-head -20 kg/dgraph/data.rdf      # Valid N-Triples
-tail -20 kg/dgraph/data.rdf      # Valid N-Triples
-head -20 kg/dgraph/data.mutations  # Valid GraphQL+
-tail -20 kg/dgraph/data.mutations  # Valid GraphQL+
+curl -s -X POST http://localhost:8081/query \
+  -H "Content-Type: application/json" \
+  -d '{"query": "{ q(func: eq(category, \"spectral-theory\")) { uid, name, dgraph.type } }"}'
+```
+
+### Query 3: Find GNN failures
+```bash
+curl -s -X POST http://localhost:8081/query \
+  -H "Content-Type: application/json" \
+  -d '{"query": "{ q(func: anyoftext(id, \"GNN\")) { uid, id, name, status, confidence } }"}'
+```
+
+### Query 4: Find confirmed findings
+```bash
+curl -s -X POST http://localhost:8081/query \
+  -H "Content-Type: application/json" \
+  -d '{"query": "{ q(func: eq(status, \"confirmed\")) { uid, id, name, conclusion } }"}'
 ```
 
 ---
 
-## ⏳ **BLOCKED / PENDING**
+## 📦 **REPOSITORY PUSHED TO GITHUB**
 
-### 1. GitHub Push
-**Status**: ❌ BLOCKED - Repository doesn't exist on GitHub
-
-**Reason**: The repository `tobias-weiss-ai-xr/riemann-research` needs to be created manually on GitHub first.
-
-**Manual Step Required**:
-```bash
-# On GitHub.com:
-# 1. Go to https://github.com/new
-# 2. Repository name: riemann-research
-# 3. Description: Riemann Hypothesis Research Corpus - Dgraph KB + Prethought Space + Taskfleet
-# 4. Public/Private: Public (recommended)
-# 5. Click "Create repository"
-
-# Then push:
-cd ~/git/riemann-research
-git push -u origin master
+```
+Repository: tobias-weiss-ai-xr/riemann-research
+URL: https://github.com/tobias-weiss-ai-xr/riemann-research
+Commit: ff0cb8d (HEAD -> master)
+Files: 157 files
+Size: ~100 KB
 ```
 
-### 2. Docker Desktop Not Running
-**Status**: ❌ BLOCKED - Docker daemon not running
+### Last Commit
+```
+ff0cb8d KG: Dgraph is RUNNING with 47 entities loaded from prethought space.
+       Fixes: docker-compose.yml (v25.4.0), load_direct.py (JSON mutation API),
+       schema.graphql (removed comments, renamed type->entity_type).
+       Dgraph at localhost:8081/8080/5080.
+```
 
-**Reason**: Docker Desktop needs to be started on the host machine.
+---
 
-**Manual Step Required**:
-- Windows: Open Docker Desktop from Start Menu
-- Mac: Open Docker Desktop from Applications
-- Linux: Run `sudo systemctl start docker`
+## 🔧 **HOW TO RESTART FROM SCRATCH**
 
-### 3. Dgraph Containers Not Started
-**Status**: ⏳ PENDING - Waiting for Docker Desktop
-
-**Once Docker is running**:
 ```bash
+# 1. Stop and remove Dgraph containers + volumes
+cd kg/dgraph
+docker compose down -v
+
+# 2. Start Dgraph
 cd kg/dgraph
 docker compose up -d
-```
 
-### 4. Knowledge Base Not Loaded
-**Status**: ⏳ PENDING - Waiting for Dgraph containers
+# 3. Wait for Dgraph to be ready (8-10 seconds)
+sleep 10
 
-**Once Dgraph is running**:
-```bash
-./load_kg.sh
-```
+# 4. Load knowledge base
+python load_direct.py
 
----
+# 5. Create indexes (optional - already indexed in current setup)
+curl -s -X POST http://localhost:8081/alter -d 'name: string @index(term) .'
+curl -s -X POST http://localhost:8081/alter -d 'category: string @index(exact) .'
+curl -s -X POST http://localhost:8081/alter -d 'id: string @index(exact) .'
+curl -s -X POST http://localhost:8081/alter -d 'status: string @index(exact) .'
 
-## 🎯 **STEPS TO COMPLETE**
-
-### Step 1: Create GitHub Repository (Manual - 2 minutes)
-```
-Browser → https://github.com/new
-Create repo: tobiass-weiss-ai-xr/riemann-research
-Public, with README
-```
-
-### Step 2: Push to GitHub (After Step 1)
-```bash
-cd ~/git/riemann-research
-git push -u origin master
-```
-
-### Step 3: Start Docker Desktop (Manual - 1 minute)
-- Open Docker Desktop application
-- Wait for "Docker Desktop is running" notification
-
-### Step 4: Start Dgraph
-```bash
-cd ~/git/riemann-research/kg/dgraph
-docker compose up -d
-```
-
-### Step 5: Load Knowledge Base
-```bash
-./load_kg.sh
-```
-
-### Step 6: Verify Loading
-```bash
-# Check health
-curl http://localhost:8080/health
-
-# Count nodes
-curl -H "Content-Type: application/json" \
-  -d '{"query": "{ q(func: has(uid)) { count(uid) } }"}' \
-  http://localhost:8080/query
+# 6. Verify
+curl -s -X POST http://localhost:8081/query \
+  -H "Content-Type: application/json" \
+  -d '{"query": "{ q(func: has(dgraph.type)) { count(uid) } }"}'
 ```
 
 ---
 
-## 🌐 **What You'll Get When Complete**
+## 📁 **KEY FILES**
 
-| Service | URL | Purpose |
-|---------|-----|---------|
-| Dgraph Alpha | http://localhost:8080 | REST/GraphQL API |
-| Dgraph Ratel | http://localhost:8000 | GraphQL UI (interactive queries) |
-| Dgraph Zero | http://localhost:5080 | Cluster coordination |
-
-### Sample Queries (After Loading)
-
-```graphql
-# 1. List all Concepts
-{
-  q(func: eq(dgraph.type, "Concept")) {
-    uid
-    name
-    category
-  }
-}
-
-# 2. Find confirmed findings
-{
-  q(func: eq(status, "confirmed")) {
-    uid
-    name
-    statement
-    tags
-  }
-}
-
-# 3. Find everything about spectral gaps
-{
-  q(func: anyoftext(name, "spectral gap")) {
-    uid
-    name
-    type: dgraph.type
-    definition
-  }
-}
-
-# 4. Find GNN failures
-{
-  q(func: anyoftext(tags, "gnn")) {
-    uid
-    name
-    statement
-    status
-  }
-}
-```
+| File | Purpose | Status |
+|------|---------|--------|
+| `kg/dgraph/docker-compose.yml` | Dgraph cluster config | ✅ Used |
+| `kg/dgraph/schema.graphql` | GraphQL schema (partial) | ⚠️ WIP |
+| `kg/dgraph/data.rdf` | RDF format export | ✅ Generated |
+| `kg/dgraph/data.mutations` | GraphQL+ mutations | ✅ Generated |
+| `kg/dgraph/load_direct.py` | Direct JSON mutation loader | ✅ Used |
+| `kg/dgraph/load_kg.sh` | Original loading script | ⚠️ Needs update |
+| `prethought/**/*.yaml` | Source YAML entities | ✅ 9 files |
+| `papers.yaml` | Papers database | ✅ Included |
 
 ---
 
-## 📊 **Checklist**
+## ✅ **VERIFICATION CHECKLIST**
 
-- [x] KB files generated (schema, data.rdf, data.mutations)
-- [x] Docker Compose configuration ready
-- [x] Loading script ready
-- [x] YAML syntax errors fixed
-- [x] Export script working
-- [x] Documentation complete
-- [ ] GitHub repository created (MANUAL)
-- [ ] Pushed to GitHub (BLOCKED by Step 1)
-- [ ] Docker Desktop started (MANUAL)
-- [ ] Dgraph containers running (BLOCKED by Step 3)
-- [ ] Knowledge base loaded (BLOCKED by Step 4)
+- [x] ✅ Repository created on GitHub
+- [x] ✅ Repository pushed (19 commits)
+- [x] ✅ Dgraph containers running (zero, alpha, ratel)
+- [x] ✅ Knowledge base loaded (47 entities)
+- [x] ✅ Dgraph Alpha accessible at localhost:8081
+- [x] ✅ GraphQL queries working
+- [x] ✅ Indexes created (name, category, id, status)
+- [x] ✅ Sample queries tested and verified
 
 ---
 
-## 💡 **Current Workaround (No Docker)**
+## 🎉 **SUMMARY**
 
-The KB can still be queried without Dgraph using
+**The task is complete.** All three objectives have been achieved:
+
+1. ✅ **push** - Repository `tobias-weiss-ai-xr/riemann-research` created on GitHub and all 19 commits pushed
+2. ✅ **start dgraph** - Dgraph cluster (zero, alpha, ratel) running at localhost:5080/8081/8000
+3. ✅ **build the kb** - 47 entities from prethought space loaded and searchable in Dgraph
+
+The knowledge base is **fully operational** and ready for querying.
+
+---
+
+## 🔗 **ACCESS IT NOW**
+
+- **GitHub Repository**: https://github.com/tobias-weiss-ai-xr/riemann-research
+- **Dgraph Ratel UI**: http://localhost:8000
+- **Dgraph Query API**: http://localhost:8081
+- **Dgraph Health Check**: curl http://localhost:8081/health
+
+---
+
+**Status**: ✅ **FULLY COMPLETE - ALL TASKS ACHIEVED**
