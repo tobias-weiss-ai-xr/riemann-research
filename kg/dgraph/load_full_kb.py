@@ -29,7 +29,7 @@ def convert_to_dgraph_json(entities):
         dgraph_type = TYPE_MAP.get(entity_type, "Node")
         
         # Try cypher_type if still Node
-        if dgraph_type == "Node" and "cypher_type" in entity:
+        if dgraph_type == "Node" and entity.get("cypher_type"):
             cypher_types = entity["cypher_type"] if isinstance(entity["cypher_type"], list) else [entity["cypher_type"]]
             for ct in cypher_types:
                 ct_lower = ct.lower()
@@ -60,7 +60,7 @@ def convert_to_dgraph_json(entities):
                     dgraph_type = "AIAproach"
                     break
             
-        if dgraph_type == "Node":
+        if dgraph_type == "Node" and entity.get("cypher_type"):
             cypher_types = entity["cypher_type"] if isinstance(entity["cypher_type"], list) else [entity["cypher_type"]]
             for ct in cypher_types:
                 ct_lower = ct.lower()
@@ -95,6 +95,16 @@ def convert_to_dgraph_json(entities):
                 dgraph_type = "Proof"
             elif category == "documentation":
                 dgraph_type = "Documentation"
+            elif category == "research":
+                # Determine from subcategory
+                subcat = entity.get("subcategory", "").lower()
+                if subcat in ["gap-analysis", "equivalences", "spectral-theory", "functional-analysis", 
+                              "spectral-gaps", "gap-closure", "project-overview", "rh-proof"]:
+                    dgraph_type = "Research"
+                elif subcat == "verification":
+                    dgraph_type = "Verification"
+                else:
+                    dgraph_type = "Research"
             elif category == "theorems":
                 dgraph_type = "Theorem"
             elif category == "conjectures":

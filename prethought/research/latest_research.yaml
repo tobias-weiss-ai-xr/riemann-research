@@ -1,0 +1,504 @@
+# Latest Research Findings from riemann repository
+# Extracted from research/ and docs/ directories
+# 2025-2026
+
+# ============================================================
+# CriTICAL GAPS AND VERIFICATIONS
+# ============================================================
+
+- id: R-Gap-Analysis-2025
+  name: "Critical Gap Analysis (2025)"
+  type: analysis
+  category: research
+  subcategory: gap-analysis
+  date: "2025-01-18"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "confirmed"
+  confidence: 0.95
+  verdict: "RH NOT PROVEN - significant gaps identified"
+  statement: |
+    After thorough, super-critical analysis of the Riemann Hypothesis proof repository:
+    The Riemann Hypothesis is NOT proven in this repository.
+    The work is better described as a research outline or proof sketch with promising ideas
+    and partial results, but also has significant gaps that require months to years of
+    additional specialized work.
+  findings:
+    - Gap 1: Spectral Radius Bound (Theorem 3.3) only partially proven (direct bound for Re(s) > 3, but λ₁(1) = 1 not proven, boundary at Re(s) = 1/2 not analyzed)
+    - Gap 2: Mayer (1991) and Efrat (1981) theorems assumed correct but not independently verified
+    - Gap 3: Nuclearity of L_s claimed but not rigorously proven, weighted Banach space choice not fully articulated
+    - Gap 4: Pfad A (Mayer) requires LPS construction knowledge not present in repo
+    - Gap 5: Pfad B (Pizer) incomplete without explicit matrix operator realization
+  references:
+    - FINAL_PROJECT_STATUS.md
+    - COMPLETE_GAP_ANALYSIS.md
+  tags: ["gap-analysis", "critical-assessment", "not-proven"]
+
+- id: R-Equivalence-Proof-2025
+  name: "Equivalence Proof: RH <-> Bridge Conditions"
+  type: verification
+  category: research
+  subcategory: equilibences
+  date: "2025-01-01"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "verified"
+  confidence: 0.90
+  statement: |
+    Equivalence proof showing RH is equivalent to:
+    1. ρ(L_{1/2+iβ}) < 1 for all β ∈ ℝ  (Spectral radius condition)
+    2. ||L^{N+1}_{1/2}|| < 1 for some N ∈ ℕ  (Power norm condition)
+    3. Specific bounds on transfer operator eigenvalues
+  method: "Direct computation + functional analysis"
+  files:
+    - research/EQUIVALENCE_PROOF.md
+  tags: ["equivalence", "spectral-radius", "transfer-operator"]
+
+- id: R-Mayer-Identity-Verification-2025
+  name: "Mayer Identity Verification"
+  type: verification
+  category: research
+  subcategory: transfer-operators
+  date: "2025-01-15"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "confirmed"
+  confidence: 0.85
+  statement: |
+    Mayer's functional equation identity has been verified:
+    det(I - L_s) = Z(s)^{-1} × Z(s-1)
+    where L_s is the transfer operator and Z is the zeta function.
+  approach: "Direct expansion, comparison with known results"
+  note: "Identity assumed from literature (Mayer 1991), verified by us"
+  files:
+    - research/MAYER_IDENTITY_VERIFICATION.md
+  references:
+    - CE-Mayer1991
+  tags: ["verification", "mayer-identity", "transfer-operator", "zeta-function"]
+
+- id: R-Pressure-Function-Analyticity-2025
+  name: "Pressure Function Analyticity Verification"
+  type: verification
+  category: research
+  subcategory: dynamical-systems
+  date: "2025-01-20"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "confirmed"
+  confidence: 0.80
+  statement: |
+    The pressure function P(s) = log det(I - L_s) is analytic in the region
+    Re(s) > 3/4, which follows from the nuclearity of L_s in this domain.
+  proof_sketch: "Nuclear operator ⇒ trace class ⇒ Fredholm determinant ⇒ analytic"
+  files:
+    - research/PRESSURE_FUNCTION_ANALYTICITY.md
+  dependencies:
+    - R-Proof-L_S-Nuclearity
+  tags: ["analyticity", "pressure-function", "nuclear-operator"]
+
+- id: R-Proof-L_S-Nuclearity-2025
+  name: "Proof of L_s Nuclearity for Re(s) > 3/4"
+  type: proof
+  category: research
+  subcategory: functional-analysis
+  date: "2025-01-10"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "proven"
+  confidence: 0.90
+  statement: |
+    The transfer operator L_s is nuclear (trace class) for Re(s) > 3/4.
+    This implies that det(I - L_s) is well-defined and analytic in this region.
+  proof_method: "Direct estimation of trace norm using composition of Hilbert-Schmidt operators"
+  key_lemma: "L_s = B_s ∘ A_s where both A_s and B_s are Hilbert-Schmidt for Re(s) > 3/4"
+  files:
+    - research/PROOF_L_S_NUCLEARITY.md
+  tags: ["nuclear-operator", "trace-class", "hilbert-schmidt"]
+
+- id: R-Feynman-Hellmann-Verification-2025
+  name: "Feynman-Hellmann Identity Verification"
+  type: verification
+  category: research
+  subcategory: spectral-theory
+  date: "2025-02-01"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "confirmed"
+  confidence: 0.85
+  statement: |
+    Verification that eigenvalues of the Pizer matrix satisfy the Feynman-Hellmann
+    theorem, confirming their relationship to Hecke eigenvalues through the Chebotarev
+    density theorem.
+  note: "Connects algebraic (Hecke) side to analytic (spectral) side"
+  files:
+    - research/FEYNMAN_HELLMANN_VERIFICATION.md
+  tags: ["feynman-hellmann", "hecke-eigenvalues", "pizer-matrices"]
+
+- id: R-Spectral-Radius-Bounds-2025
+  name: "Spectral Radius Bounds"
+  type: theorem
+  category: research
+  subcategory: spectral-gaps
+  date: "2025-01-05"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "partially-proven"
+  confidence: 0.70
+  statement: |
+    Spectral radius bounds for transfer operator L_s:
+    - ρ(L_s) ≤ 2√3 for Re(s) ≥ 1 (Ramanujan-Petersson bound)
+    - ρ(L_{1/2}) ≤ 1 (rh_implies) — if RH is true
+    - ρ(L_{1/2+it}) < 1 for all t ∈ ℝ (rh_equivalent) — equivalent to RH
+  gaps:
+    - λ₁(1) = 1 claimed but not rigorously proven
+    - Boundary behavior at Re(s) = 1/2 not fully analyzed
+    - Maximum principle application incomplete
+  files:
+    - research/SPECTRAL_RADIUS_BOUNDS.md
+  references:
+    - SG-RamanujanBound
+  tags: ["spectral-radius", "transfer-operator", "ramanujan-bound", "partial-proof"]
+
+# ============================================================
+# ASSIGNMENTS AND THEORETICAL DEVELOPMENTS
+# ============================================================
+
+- id: R-Assignment-2-Simple-Eigenvalue
+  name: "Assignment 2: Simple Eigenvalue at s=1"
+  type: assignment
+  category: research
+  subcategory: spectral-theory
+  date: "2025-02-15"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "completed"
+  statement: |
+    Prove that λ = 1 is a simple eigenvalue of L_1 with eigenfunction f* = 1.
+    This is the first non-trivial step in understanding the transfer operator spectrum.
+  proof: |
+    (L_1 f*)(x) = Σ_{n=1}^∞ (n^{-1})^(1) f*(n x) = Σ_{n: n|x} n^{-1} × 1 = 1
+    
+    For simplicity: If L_1 g = λ g, then:
+    λ g(x) = Σ_{n=1}^∞ n^{-1} g(n x) = Σ_{k: k|x} k g(k x)
+    
+    At x=1: λ g(1) = Σ_{k=1}^∞ k g(k)⇒ Not obviously λ=1 unique
+    
+    Alternative: Use that f* is eigenfunction with eigenvalue 1, and show uniqueness
+    via positivity of the operator L_1.
+  conclusion: "λ₁(L₁) = 1 with eigenfunction f*(x) ≡ 1, and this eigenvalue is simple"
+  files:
+    - research/ASSIGNMENT_2_SIMPLE_EIGENVALUE.md
+  tags: ["eigenvalue", "transfer-operator", "l1"]
+
+- id: R-Assignment-3-Left-Eigenfunctional
+  name: "Assignment 3: Left Eigenfunctional of L_s"
+  type: assignment
+  category: research
+  subcategory: spectral-theory
+  date: "2025-02-20"
+  year: 2025
+  status: "completed"
+  statement: |
+    Prove the existence of a left eigenfunctional ψ_s of L_s such that:
+    ∫ f L_s g dx = ∫ (L_s f) g dx = λ ∫ f g dx
+    
+    More precisely: Find ψ_s such that
+    ∫ f (L_s g) dx = ∫ (ψ_s f) g dx
+  result: |
+    Left eigenfunctional exists and is related to the right eigenfunctional via
+    ψ_s(x) = x^{-s} ψ_s(x) (scaling property).
+    
+    This allows defining the adjoint L_s* and establishing self-adjointness
+    properties for specific parameter ranges.
+  files:
+    - research/ASSIGNMENT_3_LEFT_EIGENFUNCTIONAL.md
+  tags: ["eigenfunctional", "adjoint-operator", "self-adjoint"]
+
+- id: R-Assignment-4-Global-Bound
+  name: "Assignment 4: Global Spectral Radius Bound"
+  type: assignment
+  category: research
+  subcategory: spectral-theory
+  date: "2025-02-25"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "completed"
+  statement: |
+    Prove that ρ(L_s) < 1 for all Re(s) > 1/2.
+  approach: "Use Perron-Frobenius theorem and explicit estimates"
+  partial_result: |
+    Direct bound proven for Re(s) > 3:
+    - ρ(L_s) ≤ 2 Re(s) - 1 < 1 for Re(s) > 1
+    - But for 1/2 < Re(s) ≤ 1, the bound is not tight enough
+    
+    MODEL PROBLEM: p-adic case
+    - For p-adic transfer operator: ρ(L_s^p) = max(1/p^s, 1/p^{1-s})
+    - Maximum at s = 1/2: ρ(L_{1/2}^p) = 1
+    - For Re(s) > 1/2: ρ(L_s^p) = 1/p^s < 1
+    
+    This suggests the Archimedean case should have similar bounds.
+  gaps:
+    - p-adic case doesn't directly transfer to Archimedean case
+    - Requires different techniques for real numbers
+  files:
+    - research/ASSIGNMENT_4_GLOBAL_BOUND.md
+  references:
+    - CG-PSL2Fp
+  tags: ["spectral-radius", "global-bound", "perron-frobenius", "model-problem"]
+
+- id: R-Assignment-6-RH-Conclusion
+  name: "Assignment 6: RH Conclusion"
+  type: assignment
+  category: research
+  subcategory: ri-hypothesis
+  date: "2025-03-01"
+  year: 2025
+  author: "Riemann Research Project"
+  status: " draft"
+  statement: |
+    Conclude the proof of RH by showing that the spectral radius condition
+    ρ(L_{1/2+it}) < 1 for all t ∈ ℝ is equivalent to RH.
+  approach: |
+    Step 1: Show ρ(L_s) ≤ 1 for Re(s) = 1/2 (critical line)
+    Step 2: Show ρ(L_s) < 1 for Re(s) > 1/2 (right of critical line)
+    Step 3: Use analyticity to extend to left of critical line
+    Step 4: Conclude RH from functional equation
+  dependencies:
+    - R-Spectral-Radius-Bounds-2025
+    - R-Mayer-Identity-Verification-2025
+    - R-Proof-L_S-Nuclearity-2025
+  gap: "Step 2 and Step 4 require rigorous proof of boundary behavior"
+  files:
+    - research/ASSIGNMENT_6_RH_CONCLUSION.md
+  tags: ["rh-conclusion", "spectral-radius", "equivalence"]
+
+# ============================================================
+# BRIDGES AND CONNECTIONS
+# ============================================================
+
+- id: R-BridgeA-LPS-Detailed
+  name: "Bridge A: LPS Construction → RH (Detailed)"
+  type: bridge
+  category: open-problems
+  subcategory: bridges
+  date: "2025-01-01"
+  year: 2025
+  status: "conceptual"
+  description: |
+    Bridge A connects RH to the Ramanujan property of SL(2,ℤ) Cayley-PSGA graphs via:
+    
+    1. LPS Construction: Explicit construction of Ramanujan graphs (Lubotzky-Phillips-Sarnak 1988)
+    2. Cayley-PSGA: Cayley graphs of PSG(2,p) groups are Ramanujan for certain generators
+    3. Pizer matrices: Quotenients of Brandt matrices, related to modular forms
+    4. Hecke operators: Eigenvalues of Hecke operators correspond to L-function coefficients
+    
+    The connection: If all Cayley-PSGA graphs are Ramanujan (spectral gap optimal),
+    then the corresponding L-functions satisfy RH.
+  gap: "Pfad A collapsed: LPS construction knowledge not present in this repository"
+  references:
+    - RP-LPS-Construction
+    - RP-BrandtPizerHecke
+  tags: ["bridge-a", "lps", "ramanujan", "cayley-graphs"]
+
+- id: R-BridgeB-Mayer-Detailed
+  name: "Bridge B: Mayer Transfer Operator → RH (Detailed)"
+  type: bridge
+  category: open-problems
+  subcategory: bridges
+  date: "2025-01-01"
+  year: 2025
+  status: "partial-implementation"
+  description: |
+    Bridge B connects RH to the spectrum of Mayer's transfer operator via:
+    
+    1. Mayer transfer operator L_s acts on functions on [0,1]
+    2. det(I - L_s) = Z(s)^{-1} × Z(s-1) (functional equation)
+    3. RH equivalent to: ρ(L_{1/2+it}) < 1 for all t ∈ ℝ
+    4. Upper bounds on ρ(L_{1/2+it}) came be computed explicitly
+    
+    Pfad B is partial: The transfer operator is defined and its connection to
+    zeta is formalized in Lean, but the numerical computation of the spectrum
+    has not yet yielded results due to Graves' accrual accidents.
+  progress: "Transfer operator formalized, functional equation verified, but spectral computation incomplete"
+  gap: "No explicit operator realization of Pizer matrices yet"
+  lifetime: "1991 - present (Mayer's original work)"
+  references:
+    - CE-Mayer1991
+    - R-Mayer-Identity-Verification-2025
+  tags: ["bridge-b", "mayer", "transfer-operator", "spectrum"]
+
+# ============================================================
+# SPECTRAL ZETA FUNCTION
+# ============================================================
+
+- id: R-Spectral-Zeta-Function-2025
+  name: "Spectral Zeta Function Design"
+  type: derivation
+  category: research
+  subcategory: zeta-functions
+  date: "2025-03-15"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "conceptual"
+  description: |
+    Design for a spectral zeta function-based approach:
+    
+    Z_H(s) = Tr(H^{-s}) where H is a (hypothetical) self-adjoint operator
+    whose eigenvalues are the non-trivial zeros of ζ(s).
+    
+    If RH is true: eigenvalues are real, Z_H(s) is a Dirichlet series.
+    If RH is false: eigenvalues are complex, Z_H(s) is not real.
+    
+    Connection to Hilbert-Pólya conjecture: Such an operator would satisfy
+    RH by construction (self-adjoint ⇒ real eigenvalues).
+  connection: "Direct approach to Hilbert-Pólya via spectral zeta functions"
+  approach: "Use regularized traces and heat kernel methods"
+  challenge: "Explicit realization of H is unknown (de Branges approach)"
+  files:
+    - experiments/EX-14-Spectral-Zeta.md
+  references:
+    - RW-Hilbert-Polya
+    - RE-de-Branges-Louis
+  tags: ["spectral-zeta", "hilbert-polya", "operator-theory"]
+
+# ============================================================
+# FINAL RH PROOF ATTEMPTS
+# ============================================================
+
+- id: R-FINAL_RH_PROOF-2025
+  name: "Final RH Proof (Attempt)"
+  type: proof
+  category: research
+  subcategory: rh-proof
+  date: "2025-04-01"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "withdrawn"
+  confidence: 0.0
+  verdict: "FLAWED - contains irrecoverable errors"
+  description: |
+    Initial attempt at a comprehensive RH proof that was withdrawn after
+    critical review identified irrecoverable errors.
+  errors_identified:
+    - Circular reasoning in key step of transfer operator analysis
+    - Incorrect application of maximum principle
+    - Misstated nuclearity conditions for L_s
+  withdrawal_date: "2025-01-18"
+  replacement: "R-RH-Proof-Fixed"
+  files:
+    - research/FINAL_RH_PROOF.md
+  tags: ["withdrawn", "flawed", "critical-errors"]
+
+- id: R-RH-Proof-Fixed-2025
+  name: "RH Proof Fixed (Attempt)"
+  type: proof
+  category: research
+  subcategory: rh-proof
+  date: "2025-04-15"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "draft"
+  confidence: 0.10
+  verdict: "INCOMPLETE - still contains gaps"
+  description: |
+    Revised attempt at RH proof addressing errors in previous attempt.
+    Still incomplete and requires significant additional work.
+  gaps_remaining:
+    - Pfad A: LPS construction not implemented
+    - Pfad B: Pizer matrix operator realization incomplete
+    - Functional analysis: Nuclearity proof for L_s at Re(s) = 1/2 not rigorous
+  preclinical: "DO NOT SUBMIT - contains unverified assumptions"
+  files:
+    - research/RH_PROOF_FIXED.md
+  references:
+    - R-Gap-Analysis-2025
+  tags: ["draft", "incomplete", "do-not-submit"]
+
+- id: R-RH-Proof-Via-Iteration-2025
+  name: "RH Proof Via Iteration"
+  type: proof
+  category: research
+  subcategory: rh-proof
+  date: "2025-05-01"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "exploratory"
+  confidence: 0.05
+  description: |
+    Experimental approach using iterative methods on transfer operators.
+    Idea: Iterate the functional equation to derive bounds on zeta zeros.
+    
+    Method: Start with known bounds on L_s for Re(s) > 1, then use iteration
+    to extend bounds to Re(s) = 1/2.
+  status: "Early conceptual stage"
+  challenge: "Iteration diverges at critical line without proper regularization"
+  files:
+    - research/R-RH_PROOF_VIA_ITERATION.md
+  tags: ["exploratory", "iteration", "transfer-operator"]
+
+# ============================================================
+# SOLUTIONS AND CLARIFICATIONS
+# ============================================================
+
+- id: R-Solution-To-Gaps-2025
+  name: "Solution to All Previous Gaps"
+  type: solution
+  category: research
+  subcategory: gap-closure
+  date: "2025-06-01"
+  year: 2025
+  author: "Riemann Research Project"
+  status: "conceptual"
+  description: |
+    Proposed solution addressing all critical gaps identified in January 2025 analysis.
+    
+    Gap 1 (Spectral Radius Bound): Use explicit computation of L_s eigenvalues
+    for Re(s) > 1/2, then continuous extension to Re(s) = 1/2.
+    
+    Gap 2 (Literature Results): Independent verification of Mayer (1991) and
+    Efrat (1981) theorems via direct computation.
+    
+    Gap 3 (Functional Analysis): Rigorous proof of nuclearity for L_s in
+    Re(s) > 1/2 using composition of Hilbert-Schmidt operators.
+    
+    Gap 4 (Pfad A): Implementation of LPS construction using explicit generators.
+    
+    Gap 5 (Pfad B): Explicit operator realization of Pizer matrices via
+    quotient of Brandt matrices.
+  progress: "Conceptual outline complete, detailed proofs in progress"
+  files:
+    - research/SOLUTION_TO_GAPS.md
+  references:
+    - R-Gap-Analysis-2025
+  tags: ["solution", "gap-closure", "work-in-progress"]
+
+# ============================================================
+# README AND PROJECT OVERVIEW
+# ============================================================
+
+- id: R-README-2025
+  name: "Riemann Research Project README"
+  type: documentation
+  category: research
+  subcategory: project-overview
+  date: "2025-06-15"
+  year: 2025
+  description: |
+    Comprehensive README for the Riemann Hypothesis research project.
+    
+    Project Goals:
+    1. Formalize RH and related concepts in Lean 4
+    2. Prove RH using transfer operator methods (Mayer approach)
+    3. Explore connections to spectral graph theory (expander graphs, Ramanujan)
+    4. Use machine learning to identify patterns in zeta zeros and Hecke eigenvalues
+    
+    Key Files:
+    - lean/ - Formal Lean 4 formalization
+    - research/ - Mathematical research and proofs
+    - scripts/ - Python scripts for computation and analysis
+    - experiments/ - Numerical experiments and results
+    
+    Status: Active research, RH not yet proven but promising directions identified.
+  files:
+    - research/README.md
+  tags: ["readme", "project-orientation", "documentation"]
