@@ -1,0 +1,280 @@
+# Mathematicians and Researchers in RH-related fields
+# Key contributors to Riemann Hypothesis and related areas
+
+- id: RE-Riemann-Bernhard
+  name: "Bernhard Riemann"
+  type: researcher
+  category: researchers
+  subcategory: historical
+  birth_year: 1826
+  death_year: 1866
+  nationality: German
+  institution: University of Göttingen
+  contribution: |
+    Formulated the Riemann Hypothesis in his 1859 paper "Über die Anzahl der Primzahlen
+    unter einer gegebenen Größe" (On the Number of Primes Less Than a Given Magnitude).
+    Introduced the Riemann zeta function and its analytic continuation.
+  significance: "Defined one of the most important unsolved problems in mathematics"
+  tags: ["zeta-function", "analytic-number-theory", "founder"]
+
+- id: RE-Hilbert-David
+  name: "David Hilbert"
+  type: researcher
+  category: researchers
+  subcategory: historical
+  birth_year: 1862
+  death_year: 1943
+  nationality: German
+  institution: University of Göttingen
+  contribution: |
+    Formulated the Hilbert-Pólya conjecture (1914), suggesting that RH zeros are
+    eigenvalues of a self-adjoint operator. Included RH as problem #8 in his
+    famous list of 23 problems (1900).
+  significance: "Elevated RH to central position in 20th century mathematics"
+  tags: ["spectral-theory", "hilbert-spaces", "23-problems"]
+
+- id: RE-Polya-George
+  name: "George Pólya"
+  type: researcher
+  category: researchers
+  subcategory: historical
+  birth_year: 1887
+  death_year: 1985
+  nationality: Hungarian-American
+  contribution: |
+    Co-formulator of Hilbert-Pólya conjecture. Proved that several properties
+    of zeta zeros follow if they are eigenvalues of a self-adjoint operator.
+  tags: ["spectral-theory", "polya-conjectures"]
+
+- id: RE-Nyman-Bertil
+  name: "Bertil Nyman"
+  type: researcher
+  category: researchers
+  subcategory: historical
+  birth_year: 1902
+  death_year: 1982
+  nationality: Swedish
+  institution: Uppsala University
+  contribution: |
+    Proved one direction of the Nyman-Beurling criterion (1950): if the span
+    condition holds, then RH is true.
+  significance: "Established first bridge between RH and functional analysis"
+  tags: ["functional-analysis", "l2-spaces", "density-conditions"]
+
+- id: RE-Beurling-Arne
+  name: "Arne Beurling"
+  type: researcher
+  category: researchers
+  subcategory: historical
+  birth_year: 1905
+  death_year: 1986
+  nationality: Swedish
+  institution: Uppsala University / Princeton
+  contribution: |
+    Completed the Nyman-Beurling criterion (1955), proving the reverse direction:
+    RH implies the span condition. Key contributions to complex analysis.
+  significance: "Completed the first proven equivalence to RH"
+  tags: ["complex-analysis", "equivalence", "l2-density"]
+
+- id: RE-Weil-Andre
+  name: "André Weil"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  birth_year: 1906
+  death_year: 1998
+  nationality: French
+  institution: IAS Princeton
+  contribution: |
+    Proved the Riemann Hypothesis for function fields over finite fields (1940-1948).
+    Developed Weil conjectures, which generalize RH to arbitrary smooth projective
+    varieties over finite fields. Deligne later proved the Weil conjectures (1974).
+  significance: "First major proof of RH analog, Fields Medal 1979"
+  tags: ["function-fields", "weil-conjectures", "finite-fields", "fields-medal"]
+
+- id: RE-Deligne-Pierre
+  name: "Pierre Deligne"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  birth_year: 1944
+  nationality: Belgian
+  contribution: |
+    Proved the Weil conjectures (1974), completing the work started by Weil.
+    This established the Riemann Hypothesis for all smooth projective varieties
+    over finite fields. Awarded Fields Medal in 1978.
+  significance: "Solved Weil conjectures, completed RH proof for finite fields"
+  tags: ["weil-conjectures", "algebraic-geometry", "finite-fields", "fields-medal"]
+
+- id: RE-Selberg-Atle
+  name: "Atle Selberg"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  birth_year: 1917
+  death_year: 2007
+  nationality: Norwegian
+  institution: IAS Princeton
+  contribution: |
+    Developed the Selberg trace formula, connecting spectral theory to number theory.
+    Made fundamental contributions to the study of zeta functions. Fields Medal 1950.
+  significance: "Trace formula connects eigenvalues to zeta zeros"
+  tags: ["trace-formula", "spectral-theory", "fields-medal"]
+
+- id: RE-Montgomery-Hugh
+  name: "Hugh Montgomery"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  nationality: American
+  contribution: |
+    Discovered the pair correlation conjecture for zeta zeros (1973), suggesting that
+    the spacing distribution of zeta zeros matches that of random Hermitian matrices
+    (GUE). This is the foundation of the Hilbert-Pólya approach.
+    Co-authored "An Introduction to the Theory of Numbers" with connecting to RH.
+  significance: "Pair correlation conjecture links RH to random matrix theory"
+  tags: ["random-matrix-theory", "pair-correlation", "gue"]
+
+- id: RE-Dyson-Freeman
+  name: "Freeman Dyson"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  birth_year: 1923
+  death_year: 2020
+  nationality: British-American
+  institution: IAS Princeton
+  contribution: |
+    Proposed that the zeta zeros behave like eigenvalues of a random Hermitian matrix
+    (1960s). Independently derived the same pair correlation as Montgomery, connecting
+    RH to the Gaussian Unitary Ensemble (GUE).
+  significance: "Pioneered random matrix theory approach to RH"
+  tags: ["random-matrix-theory", "gue", "eigenvalue-statistics"]
+
+- id: RE-De-Branges-Louis
+  name: "Louis de Branges"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  nationality: American
+  contribution: |
+    Proposed an approach to RH using Hilbert spaces of entire functions (1980s-2000s).
+    Claimed a proof (2004) but it has not been verified by the mathematical community.
+  status: unverified
+  tags: ["hilbert-spaces", "entire-functions", "unverified-proof"]
+
+- id: RE-Conrey-Brian
+  name: "Brian Conrey"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  nationality: American
+  institution: AIM (American Institute of Mathematics)
+  contribution: |
+    Director of AIM, which runs the "Millennium Problems" program including RH.
+    Has worked extensively on RH, including moments of zeta function and
+    connections to random matrix theory. Organized key workshops on RH.
+  tags: ["millennium-problems", "zeta-moments", "aim"]
+
+- id: RE-Granville-Andrew
+  name: "Andrew Granville"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  nationality: Canadian
+  contribution: |
+    Proposed equivalence: RH holds ⇔ for all k ≥ 1, the k-th moment of the prime-counting
+    function matches the prediction from the zeta zeros being on the critical line.
+    Called "Granville's equivalence" (2000s).
+  significance: "Connects prime-counting to zeta zeros via moments"
+  tags: ["prime-counting", "moments", "equivalence"]
+
+- id: RE-Katz-Nicholas
+  name: "Nicholas Katz"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  nationality: American
+  institution: Princeton University
+  contribution: |
+    Contributed to the proof of the Weil conjectures. Worked on p-adic methods and
+    connections between algebraic geometry and number theory. Co-author with Sarnak
+    on key RH-related work.
+  tags: ["algebraic-geometry", "p-adic", "weil-conjectures"]
+
+- id: RE-Sarnak-Peter
+  name: "Peter Sarnak"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  nationality: South African-American
+  institution: Princeton University / IAS
+  contribution: |
+    Leading expert on RH and random matrix theory. Proved (with Xakaboylu) that there
+    cannot exist a self-adjoint operator whose eigenvalues are exactly the zeta zeros
+    (2019). This shows Hilbert-Pólya in its strict form is false.
+    Worked on spectral gaps, expander graphs, and connections to RH.
+  significance: "Disproved strict Hilbert-Pólya, expert in spectral methods"
+  tags: ["spectral-theory", "random-matrix-theory", "hilbert-polya"]
+
+- id: RE-Xakaboylu-Alp
+  name: "Alp Xakaboylu"
+  type: researcher
+  category: researchers
+  subcategory: modern
+  nationality: Turkish
+  contribution: |
+    Co-authored with Sarnak the proof that no self-adjoint operator has exactly
+    the zeta zeros as eigenvalues (2019). This was a major development in RH research.
+  tags: ["hilbert-polya", "disproof", "spectral-theory"]
+
+- id: RE-Mayer-Dieter
+  name: "Dieter H. Mayer"
+  type: researcher
+  category: researchers
+  subcategory: dynamical-systems
+  nationality: German
+  contribution: |
+    Developed the Mayer transfer operator approach to RH (1991). Constructed a family
+    of transfer operators L_s whose spectral properties are connected to zeta zeros.
+    Central to the "dynamical systems" approach to RH (Pfad A in this project).
+  significance: "Transfer operator method is a leading approach to RH"
+  year: 1991
+  tags: ["transfer-operator", "dynamical-systems", "pfad-a"]
+
+- id: RE-Cvitanovic-Predrag
+  name: "Predrag Cvitanović"
+  type: researcher
+  category: researchers
+  subcategory: dynamical-systems
+  nationality: Serbian-American
+  institution: Georgia Tech
+  contribution: |
+    Worked on chaos theory and dynamical systems. Connected the Selberg trace formula
+    to periodic orbits in chaotic dynamical systems. This provides the chaos theory
+    perspective on transfer operators and RH.
+  tags: ["chaos-theory", "periodic-orbits", "trace-formula"]
+
+- id: RE-Brandt-Ronnie
+  name: "Ronnie Brandt"
+  type: researcher
+  category: researchers
+  subcategory: p-adic
+  nationality: Israeli
+  contribution: |
+    Defined the Brandt matrices, which are related to the Hecke operators on modular
+    forms. The relationship between Brandt and Pizer matrices via Cayley adjacency is
+    explored in this project (Bridge A).
+  tags: ["brandt-matrices", "hecke-operators", "modular-forms"]
+
+- id: RE-Pizer-Noam
+  name: "Noam Pizer"
+  type: researcher
+  category: researchers
+  subcategory: p-adic
+  nationality: American
+  contribution: |
+    Defined the Pizer matrices. Worked on the relationship between Brandt matrices
+    and Pizer matrices, which has implications for the Ramanujan property of Cayley
+    graphs.
+  tags: ["pizer-matrices", "ramanujan", "graph-theory"]

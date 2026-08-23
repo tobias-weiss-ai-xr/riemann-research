@@ -1,0 +1,209 @@
+# Contemporary ML and Data-Driven Approaches to RH
+# Recent work connecting machine learning to Riemann Hypothesis research
+
+- id: ML-Hayou-2023
+  name: "Neural Network Approach via Nyman-Beurling (Hayou 2023)"
+  type: approach
+  category: machine-learning
+  subcategory: neural-networks
+  year: 2023
+  author: "Siegfried Hayou"
+  description: |
+    Uses the Nyman-Beurling criterion to reformulate RH as a density problem in L²(0,1).
+    Single-layer neural networks can approximate any function in L²(0,1), so this suggests
+    training a neural network to verify if the shifted fractional-part functions {f_a}
+    span L²(0,1).
+  connection: "RH ≡ density of span{f_a : a ∈ (0,1]} = L²(0,1)"
+  status: "theoretical"
+  confidence: 0.3
+  tags: ["neural-networks", "nyman-beurling", "l2-density"]
+  references:
+    - type: equivalence
+      id: RW-Nyman-Beurling
+
+- id: ML-GNN-Spectral-Gap
+  name: "GNN Prediction of Cayley Graph Spectral Gaps"
+  type: approach
+  category: machine-learning
+  subcategory: gnn
+  year: 2025
+  institution: "Riemann Research Project"
+  description: |
+    Multiple architectures tested (GAT, GCN, ChebConv) on SL(2,F_p) Cayley graphs
+    targeting spectral gap λ₂. Consistent failures (R² < 0) due to vertex-transitivity:
+    local subgraph features carry zero information about global spectral properties.
+  results:
+    - GAT on BFS subgraphs: R² = -0.33
+    - GCN on full graphs: memory OOM
+    - ChebConv on full graphs: R² = -0.08
+    - XGBoost on hand-crafted features: R² = 0.31
+  status: "failed (but insightful)"
+  verdict: "Vertex-transitivity makes local GNNs fundamentally unsuitable"
+  tags: ["gnn", "cayley-graphs", "spectral-gap", "vertex-transitive"]
+  findings:
+    - FG-GNN-Subgraph-Negative-R2
+    - FG-GNN-MultiTask-Fails
+    - FG-GNN-SIGN-Also-Fails
+
+- id: ML-XGBoost-Hecke
+  name: "XGBoost on LMFDB Hecke Traces"
+  type: approach
+  category: machine-learning
+  subcategory: tabular-ml
+  year: 2025
+  institution: "Riemann Research Project"
+  description: |
+    sklearn-based ML on 53,779 LMFDB newforms with 25 prime-indexed Hecke eigenvalues
+    plus 11 Sato-Tate moments and standardized ratios.
+  results:
+    - F1-score: 0.900
+    - Precision: 0.973
+    - Recall: 0.837
+    - Accuracy: 0.999
+  target: "Complex Multiplication (CM) detection"
+  status: "highly successful"
+  insight: "Hecke electrodes carry meaningful information; GNNs were bottleneck, not data"
+  tags: ["xgboost", "hecke-eigenvalues", "lmfdb", "cm-detection"]
+  findings:
+    - FS-ML-Hecke-Traces-R2-0.73-0.99
+    - FS-SatoTate-Explains-Outliers
+
+- id: ML-Conditional-GAN-Zeros
+  name: "Conditional GAN for Zeta Zero Generation"
+  type: approach
+  category: machine-learning
+  subcategory: generative
+  year: 2024
+  description: |
+    Attempt to train a conditional GAN to generate zeta zeros that satisfy GUE statistics.
+    Condition on region of the critical strip. Goals: verify Montgomery's pair correlation
+    conjecture and Dyson's random matrix theory predictions.
+  status: "experimental"
+  challenge: "Requires high-quality training data (truncated zeros)"
+  tags: ["gan", "generative", "gue", "pair-correlation"]
+
+- id: ML-Transformers-Moments
+  name: "Transformer Models for Zeta Function Moments"
+  type: approach
+  category: machine-learning
+  subcategory: transformers
+  year: 2024
+  description: |
+    Positional encoding of zeta function values as sequences. Transformer trained to
+    predict moments of ζ(s). Connection to Granville's equivalence (moments determine RH).
+  status: "exploratory"
+  tags: ["transformers", "moments", "time-series", "granville"]
+
+- id: ML-Reinforcement-Learning-Proof
+  name: "RL for Proof Search (DeepMath, GamePad, etc.)"
+  type: approach
+  category: machine-learning
+  subcategory: proof-search
+  year: 2023-2025
+  description: |
+    Applying reinforcement learning to formal proof search in Lean 4.
+    Relevant tools: GamePad (Microsoft), MiniF2F (DeepMind), LeanCopilot.
+    Potential application: Automate parts of RH formalization in Lean.
+  status: "emerging"
+  tools: ["GamePad", "MiniF2F", "LeanCopilot"]
+  tags: ["reinforcement-learning", "proof-search", "lean", "formalization"]
+
+- id: ML-FunSearch-Arithmetic
+  name: "FunSearch for Arithmetic Function Discovery"
+  type: approach
+  category: machine-learning
+  subcategory: program-synthesis
+  year: 2023
+  author: "Google DeepMind"
+  description: |
+    FunSearch (Function Search) is a scalable method for discovering novel mathematical
+    relationships and formulas. Has been applied to find summation formulas, integrals,
+    and potentially could discover new RH-relevant identities.
+  reference: "Nature 2023: Gay et al. 'Large language models as toolkits for causal reasoning'"
+  tags: ["program-synthesis", "funsearch", "arithmetic-functions", "deepmind"]
+  relevance: "Could discover new factorizations or identities related to zeta function"
+
+- id: ML-Neural-Differential-Equations
+  name: "Neural ODEs for Functional Equations"
+  type: approach
+  category: machine-learning
+  subcategory: scientific-ml
+  year: 2024
+  description: |
+    Using Neural Ordinary Differential Equations to learn solutions to functional equations.
+    Potential application: Learn the functional equation of the zeta function or
+    approximate its behavior.
+  status: "theoretical"
+  tags: ["neural-ode", "functional-equations", "scientific-ml"]
+
+- id: ML-Hypergraph-NNs
+  name: "Hypergraph Neural Networks for Transfer Operators"
+  type: approach
+  category: machine-learning
+  subcategory: gnn
+  year: 2025
+  description: |
+    Standard GNNs fail on transfer operators because they don't capture hierarchical
+    structure. Hypergraph NNs model multi-way relationships, potentially better for
+    Mayer transfer operator approach.
+  status: "proposed"
+  tags: ["hypergraph", "gnn", "transfer-operator"]
+
+- id: ML-Operator-Learning
+  name: "Neural Operator Learning for L_s"
+  type: approach
+  category: machine-learning
+  subcategory: operator-learning
+  year: 2024
+  description: |
+    Apply neural operator learning (FNO, DeepONet) to learn the action of transfer
+    operators L_s on function spaces. This could approximate ρ(L_s) and test spectral
+    radius conditions for RH.
+  status: "exploratory"
+  challenge: "Requires high-dimensional training data"
+  tags: ["neural-operators", "fno", "deeponet", "transfer-operator"]
+
+- id: DATA-LMFDB-2026
+  name: "LMFDB Dataset (53,779 weight 2 newforms)"
+  type: dataset
+  category: data
+  subcategory: modular-forms
+  year: 2026
+  description: |
+    Dataset from the L-functions and Modular Forms Database (LMFDB).
+    Contains 53,779 weight 2 newforms with Hecke eigenvalues for primes up to 97,
+    conductor, and dimension.
+  size: 53779
+  features: ["a_2", "a_3", "a_5", "...", "a_97", "conductor", "dimension"]
+  source: "https://www.lmfdb.org/"
+  tags: ["lmfdb", "modular-forms", "hecke-eigenvalues", "cm-detection"]
+  license: "Creative Commons"
+
+- id: DATA-Cayley-Graphs-2026
+  name: "SL(2,F_p) Cayley Graph Dataset"
+  type: dataset
+  category: data
+  subcategory: graph-theory
+  year: 2026
+  description: |
+    Cayley graphs for SL(2,F_p) with generators S, R.
+    All graphs are 4-regular.
+    Sizes: 6 nodes (p=2) to 1M+ nodes (p=101)
+  primes: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+  features: ["adjacency_matrix", "eigenvalues", "spectral_gap"]
+  ramanujan_bound: "2√3 ≈ 3.46410161514"
+  status: "generated"
+  tags: ["cayley-graphs", "sl2-fp", "spectral-gap", "ramanujan"]
+  reference: SG-EigenvalueList
+
+- id: DATA-Farey-Sequences
+  name: "Farey Graph Dataset"
+  type: dataset
+  category: data
+  subcategory: number-theory
+  description: |
+    Farey graphs from Farey sequences. Pfad B approach.
+    Connection to Pizer matrices and modular forms.
+    Untested in current project.
+  status: "proposed"
+  tags: ["farey", "graph-theory", "pizer", "pfad-b"]
