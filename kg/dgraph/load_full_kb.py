@@ -27,7 +27,60 @@ def convert_to_dgraph_json(entities):
         # Determine entity type and set dgraph.type
         entity_type = entity.get("type", "unknown").lower()
         dgraph_type = TYPE_MAP.get(entity_type, "Node")
-        if not dgraph_type or dgraph_type == "Node":
+        
+        # Try cypher_type if still Node
+        if dgraph_type == "Node" and "cypher_type" in entity:
+            cypher_types = entity["cypher_type"] if isinstance(entity["cypher_type"], list) else [entity["cypher_type"]]
+            for ct in cypher_types:
+                ct_lower = ct.lower()
+                if ct_lower in TYPE_MAP:
+                    dgraph_type = TYPE_MAP[ct_lower]
+                    break
+                # Map Neo4j-style labels to our types
+                if ct_lower == "graph":
+                    dgraph_type = "Graph"
+                    break
+                elif ct_lower == "function" or ct_lower == "mathfunction":
+                    dgraph_type = "Function"
+                    break
+                elif ct_lower == "operator":
+                    dgraph_type = "Operator"
+                    break
+                elif ct_lower == "group":
+                    dgraph_type = "Group"
+                    break
+                elif ct_lower in ["theorem", "conjecture", "openproblem"]:
+                    # Use entity's category if available
+                    dgraph_type = "Theorem"
+                    break
+                elif ct_lower in ["researcher", "person"]:
+                    dgraph_type = "Researcher"
+                    break
+                elif ct_lower == "aiapproach":
+                    dgraph_type = "AIAproach"
+                    break
+            
+        if dgraph_type == "Node":
+            cypher_types = entity["cypher_type"] if isinstance(entity["cypher_type"], list) else [entity["cypher_type"]]
+            for ct in cypher_types:
+                ct_lower = ct.lower()
+                if ct_lower in TYPE_MAP:
+                    dgraph_type = TYPE_MAP[ct_lower]
+                    break
+                elif ct_lower == "theorem":
+                    dgraph_type = "Theorem"
+                elif ct_lower == "conjecture":
+                    dgraph_type = "Conjecture"
+                elif ct_lower == "openproblem":
+                    dgraph_type = "Problem"
+                elif ct_lower == "researcher" or ct_lower == "person":
+                    dgraph_type = "Researcher"
+                elif ct_lower == "paper" or ct_lower == "corpus":
+                    dgraph_type = "Paper"
+                elif ct_lower == "approach":
+                    dgraph_type = "Approach"
+        
+        if dgraph_type == "Node":
             # Try to determine from category
             category = entity.get("category", "").lower()
             if category == "formalization":
@@ -42,8 +95,25 @@ def convert_to_dgraph_json(entities):
                 dgraph_type = "Proof"
             elif category == "documentation":
                 dgraph_type = "Documentation"
-            else:
-                dgraph_type = "Node"
+            elif category == "theorems":
+                dgraph_type = "Theorem"
+            elif category == "conjectures":
+                dgraph_type = "Conjecture"
+            elif category == "papers":
+                dgraph_type = "Paper"
+            elif category == "researchers":
+                dgraph_type = "Researcher"
+            elif category == "equivalences":
+                dgraph_type = "Equivalence"
+            elif category == "groups":
+                dgraph_type = "Group"
+            elif category == "graphs":
+                dgraph_type = "Graph"
+            elif category == "functions":
+                dgraph_type = "Function"
+            elif category == "operators":
+                dgraph_type = "Operator"
+        
         mut["dgraph.type"] = dgraph_type
         
         # Add UID

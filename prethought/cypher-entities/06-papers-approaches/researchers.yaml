@@ -1,0 +1,56 @@
+- affiliation: UCLA
+  category: researchers
+  cypher_type:
+  - tao
+  - Researcher
+  id: CE-Terence-Tao
+  name: Terence Tao
+  type: tao
+- affiliation: IAS Princeton
+  category: researchers
+  cypher_type:
+  - sarnak
+  - Researcher
+  id: CE-Peter-Sarnak
+  name: Peter Sarnak
+  type: sarnak
+- affiliation: Hebrew University
+  category: researchers
+  cypher_type:
+  - lubotzky
+  - Researcher
+  id: CE-Alexander-Lubotzky
+  name: Alexander Lubotzky
+  type: lubotzky
+- affiliation: University of Sydney / IAS
+  category: researchers
+  cypher_type:
+  - williamson
+  - Researcher
+  id: CE-Geordie-Williamson
+  name: Geordie Williamson
+  type: williamson
+- affiliation: University of Oxford
+  category: researchers
+  cypher_type:
+  - keating
+  - Researcher
+  id: CE-Jon-Keating
+  name: Jon Keating
+  type: keating
+- affiliation: University of Bristol
+  category: researchers
+  cypher_type:
+  - platt
+  - Researcher
+  id: CE-Dave-Platt
+  name: Dave Platt
+  type: platt
+- affiliation: University of Warwick
+  category: researchers
+  cypher_type:
+  - loeffler
+  - Researcher
+  id: CE-David-Loeffler
+  name: David Loeffler
+  type: loeffler

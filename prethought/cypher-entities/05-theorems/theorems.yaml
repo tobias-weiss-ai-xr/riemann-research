@@ -1,0 +1,213 @@
+- category: theorems
+  cypher_type:
+  - rh
+  - Theorem
+  - Conjecture
+  - OpenProblem
+  description: One of the Clay Millennium Problems. Equivalent to >100 known formulations.
+  id: CE-Riemann-Hypothesis
+  lean_status: partial
+  name: Riemann Hypothesis
+  proof_status: conjectured
+  significance: foundational
+  statement: All non-trivial zeros of ζ(s) have real part 1/2
+  type: rh
+  year_stated: '1859'
+- category: theorems
+  cypher_type:
+  - grh
+  - Theorem
+  - Conjecture
+  - OpenProblem
+  description: Extends RH to all Dirichlet L-functions
+  id: CE-Generalized-Riemann-Hypothesis
+  name: Generalized Riemann Hypothesis
+  proof_status: conjectured
+  significance: foundational
+  type: grh
+  year_stated: '1884'
+- category: theorems
+  cypher_type:
+  - liouville
+  - Theorem
+  - Conjecture
+  description: Weaker than RH but still unproven. Equivalent to bounds on moments
+    of ζ(s).
+  id: CE-Lindelöf-Hypothesis
+  name: Lindelöf Hypothesis
+  proof_status: conjectured
+  statement: ζ(1/2 + it) = O(t^ε) for all ε > 0
+  type: liouville
+  year_stated: '1908'
+- category: theorems
+  cypher_type:
+  - robin
+  - Theorem
+  - Conjecture
+  description: RH equivalent to Robin's inequality holding for all n ≥ 5041
+  id: CE-Robin's-Inequality
+  name: Robin's Inequality
+  proof_status: conjectured
+  statement: σ(n) < e^γ n log log n for all n ≥ 5041 iff RH holds
+  type: robin
+  year_stated: '1984'
+- category: theorems
+  cypher_type:
+  - lagarias
+  - Theorem
+  - Conjecture
+  description: An equivalent formulation of RH using harmonic numbers
+  id: CE-Lagarias-Inequality
+  name: Lagarias Inequality
+  proof_status: conjectured
+  type: lagarias
+  year_stated: '2002'
+- category: theorems
+  cypher_type:
+  - ramanujan_conj
+  - Theorem
+  - Conjecture
+  id: CE-Ramanujan-Conjecture-(original)
+  name: Ramanujan Conjecture (original)
+  proof_status: proven
+  significance: major
+  statement: '|τ(p)| ≤ 2p^{11/2} for all primes p'
+  type: ramanujan_conj
+  year_established: '1974'
+  year_stated: '1916'
+- category: theorems
+  cypher_type:
+  - ramanujan_petersson
+  - Theorem
+  description: Generalization to all cusp forms. Proven by Deligne for holomorphic
+    forms via étale cohomology.
+  id: CE-Ramanujan-Petersson-Conjecture
+  name: Ramanujan-Petersson Conjecture
+  proof_status: proven
+  significance: major
+  statement: 'For normalized Hecke eigenform f of weight k: |a_p(f)| ≤ 2p^{(k-1)/2}'
+  type: ramanujan_petersson
+  year_established: '1974'
+  year_stated: '1930'
+- category: theorems
+  cypher_type:
+  - deligne_bound
+  - Theorem
+  description: 'THE fundamental bound connecting modular forms and graph spectral
+    theory. For k=2: |a_p| ≤ 2√p = Ramanujan bound |λ| ≤ 2√(d-1)'
+  id: CE-Deligne-Bound
+  name: Deligne Bound
+  proof_status: proven
+  significance: foundational
+  statement: Hecke eigenvalues of cusp forms satisfy |a_p| ≤ 2p^{(k-1)/2}
+  type: deligne_bound
+  year_established: '1974'
+- category: theorems
+  cypher_type:
+  - ihrh
+  - Theorem
+  - Conjecture
+  description: Proven independently by Alon-Boppana (lower bound) and Lubotzky-Phillips-Sarnak
+    (achievable). NOT an analogue in the sense of being unproven — it's a theorem
+    about graphs.
+  id: CE-IH-RH-(Ihara-Riemann-Hypothesis)
+  name: IH-RH (Ihara Riemann Hypothesis)
+  note: 'The RH-analogue status comes from the STRUCTURAL parallel: eigenvalue bound
+    ↔ zero location bound'
+  proof_status: proven
+  significance: major
+  statement: A d-regular graph is Ramanujan iff all non-trivial eigenvalues λ satisfy
+    |λ| ≤ 2√(d-1)
+  type: ihrh
+  year_established: '1985'
+- category: theorems
+  cypher_type:
+  - alon_boppana
+  - Theorem
+  description: Ramanujan graphs ACHIEVE the Alon-Boppana bound — they are optimal
+    expanders
+  id: CE-Alon-Boppana-Bound
+  name: Alon-Boppana Bound
+  proof_status: proven
+  statement: 'For any infinite family of d-regular graphs: lim inf |λ₂(G_n)| ≥ 2√(d-1)'
+  type: alon_boppana
+  year_established: '1986'
+- category: theorems
+  cypher_type:
+  - lps_construction
+  - Theorem
+  id: CE-LPS-Ramanujan-Graph-Construction
+  key_paper: LPS 1988 Combinatorica
+  name: LPS Ramanujan Graph Construction
+  proof_status: proven
+  significance: foundational
+  type: lps_construction
+  year_established: '1988'
+- category: theorems
+  cypher_type:
+  - sato_tate
+  - Theorem
+  id: CE-Sato-Tate-Conjecture
+  name: Sato-Tate Conjecture
+  proof_status: proven
+  proof_technique: Potential automorphy
+  significance: major
+  type: sato_tate
+  year_established: '2011'
+  year_stated: '1960'
+- category: theorems
+  cypher_type:
+  - lps_bridge
+  - Theorem
+  id: CE-LPS-Spectral-Bridge
+  name: LPS Spectral Bridge
+  proof_status: proven
+  significance: foundational
+  type: lps_bridge
+  year_established: '1988'
+- category: theorems
+  cypher_type:
+  - pollicott
+  - Theorem
+  id: CE-Pollicott-Farey-Graph-Theorem
+  name: Pollicott Farey Graph Theorem
+  statement: '"RH is equivalent to the spectral gap of the transfer operator on the
+    Farey graph: Z_{Γ₁}(s) = det(1 - L_{2s'
+  type: pollicott
+- category: theorems
+  cypher_type:
+  - sunada
+  - Theorem
+  description: 'Extended to graphs: Sunada isospectrality. Used to construct isospectral
+    non-isomorphic graphs.'
+  id: CE-Sunada's-Theorem
+  name: Sunada's Theorem
+  proof_status: proven
+  statement: Two Riemannian manifolds are isospectral if their fundamental groups
+    have nearly conjugate representations
+  type: sunada
+  year_established: '1985'
+- category: theorems
+  cypher_type:
+  - rankin_selberg
+  - Theorem
+  description: Method for studying L-functions via integration against Eisenstein
+    series. Used to relate Eisenstein L-functions to ζ(s).
+  id: CE-Rankin-Selberg-Method
+  name: Rankin-Selberg Method
+  proof_status: proven
+  type: rankin_selberg
+  year_established: '1939'
+- category: theorems
+  cypher_type:
+  - pnt
+  - Theorem
+  description: Formalized in Mathlib via Wiener-Ikehara theorem. PNT+ project by Kontorovich
+    and Tao.
+  id: CE-Prime-Number-Theorem
+  lean_status: formalized
+  name: Prime Number Theorem
+  proof_status: proven
+  statement: π(x) ~ x/log(x)
+  type: pnt
+  year_established: '1896'

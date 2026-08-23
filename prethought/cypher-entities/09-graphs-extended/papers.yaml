@@ -1,0 +1,28 @@
+- authors_str: LMFDB Collaboration
+  bibtex_key: lmfdb
+  category: papers
+  cypher_type:
+  - lmfdb
+  - Paper
+  id: CE-lmfdb
+  publication_type: database
+  relevance_to_rh: computational
+  title: The L-Functions and Modular Forms Database (LMFDB)
+  type: lmfdb
+  url: https://www.lmfdb.org
+  year: '2024'
+- authors_str: D.J. Platt
+  bibtex_key: platt2017
+  category: papers
+  cypher_type:
+  - platt_database
+  - Paper
+  description: Database of first 10¹³ zeta zeros with rigorous error bounds. Used
+    for zero-spacing statistics and ML training data.
+  id: CE-platt_database
+  journal: Mathematics of Computation
+  publication_type: journal
+  relevance_to_rh: computational
+  title: Computing the Riemann zeta zeros to 10¹³
+  type: platt_database
+  year: '2017'

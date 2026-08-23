@@ -1,0 +1,75 @@
+- authors_str: Keith A. Broughan
+  bibtex_key: broughan2017
+  category: papers
+  cypher_type:
+  - broughan_survey
+  - Paper
+  description: THE definitive catalog of RH equivalences. 100+ formulations across
+    2 volumes. Arithmetic + analytic equivalents with full proofs.
+  doi: 10.1017/9781108178228
+  id: CE-broughan_survey
+  publication_type: book
+  publisher: Cambridge University Press
+  relevance_to_rh: foundational
+  type: broughan_survey
+  year: '2017'
+- bibtex_key: borwein2008
+  category: papers
+  cypher_type:
+  - borwein_survey
+  - Paper
+  description: Comprehensive survey with Chapter 5 covering ~30 major equivalent formulations.
+  doi: 10.1007/978-0-387-72126-2
+  id: CE-borwein_survey
+  publication_type: book
+  publisher: Springer
+  relevance_to_rh: foundational
+  title: 'The Riemann Hypothesis: A Resource for the Afficionado and Virtuoso Alike'
+  type: borwein_survey
+  year: '2008'
+- authors_str: J. Brian Conrey
+  bibtex_key: conrey2003
+  category: papers
+  cypher_type:
+  - conrey2003
+  - Paper
+  id: CE-conrey2003
+  journal: Notices of the American Mathematical Society
+  pages: 341-353
+  publication_type: journal
+  relevance_to_rh: foundational
+  title: The Riemann Hypothesis
+  type: conrey2003
+  volume: '50'
+  year: '2003'
+- arxiv_id: '2602.04022'
+  authors_str: Alain Connes
+  bibtex_key: connes2026
+  category: papers
+  cypher_type:
+  - connes2026
+  - Paper
+  description: Connes' modern survey. Notes 'over 100 equivalent formulations'. Noncommutative
+    geometry approach.
+  id: CE-connes2026
+  publication_type: preprint
+  relevance_to_rh: foundational
+  type: connes2026
+  year: '2026'
+- bibtex_key: griffin2019
+  category: papers
+  cypher_type:
+  - griffin2019
+  - Paper
+  description: Proved hyperbolicity of Jensen polynomials for n ≥ N(d). Computational
+    evidence supporting RH via polynomial theory.
+  doi: 10.1073/pnas.1902572116
+  id: CE-griffin2019
+  journal: PNAS
+  pages: 11103-11110
+  publication_type: journal
+  relevance_to_rh: direct
+  title: Jensen polynomials for the Riemann zeta function and other sequences
+  type: griffin2019
+  volume: '116'
+  year: '2019'

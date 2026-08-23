@@ -1,0 +1,211 @@
+- category: theorems
+  cypher_type:
+  - von_koch
+  - Theorem
+  description: RH equivalent to the classical prime counting error bound. The tightest
+    possible bound from RH.
+  domain: analytic number theory
+  id: CE-von-Koch-Error-Term
+  name: von Koch Error Term
+  proof_status: proven
+  significance: major
+  statement: π(x) = Li(x) + O(x^{1/2} log x)
+  type: von_koch
+  year_established: '1901'
+- category: theorems
+  cypher_type:
+  - chebyshev_err
+  - Theorem
+  description: Equivalent to RH via explicit formula. Stronger than PNT (ψ(x) ~ x).
+  domain: analytic number theory
+  id: CE-Chebyshev-ψ-Error-Term
+  name: Chebyshev ψ Error Term
+  proof_status: proven
+  type: chebyshev_err
+  year_established: '1901'
+- category: theorems
+  cypher_type:
+  - volchkov
+  - Theorem
+  description: V.V. Volchkov. A single integral equation equivalent to RH. Elegant
+    but computationally hard.
+  domain: complex analysis
+  id: CE-Volchkov-Integral
+  key_paper: Volchkov (1995); Balazard-Saias-Yor (1999) Adv. Math. 143
+  name: Volchkov Integral
+  proof_status: proven
+  statement: ∫₀^∞ (1-12t²)/(1+4t²)³ ∫_{1/2}^∞ log|ζ(σ+it)| dσ dt = π(3-γ)/32
+  type: volchkov
+  year_established: '1995'
+- category: theorems
+  cypher_type:
+  - bsy
+  - Theorem
+  domain: complex analysis
+  id: CE-Balazard-Saias-Yor-Integral
+  name: Balazard-Saias-Yor Integral
+  proof_status: proven
+  statement: (1/π)∫₀^∞ log|ζ(1/2+it)|/(1/4+t²) dt = 0
+  type: bsy
+  year_established: '1999'
+- category: theorems
+  cypher_type:
+  - franel_landau
+  - Theorem
+  id: CE-Franel-Landau-Criterion
+  name: Franel-Landau Criterion
+  statement: '"D(N) = O(N^{1/2+ε'
+  type: franel_landau
+- category: theorems
+  cypher_type:
+  - liouville_lim
+  - Theorem
+  id: CE-Liouville-λ-Limit-Criterion
+  name: Liouville λ Limit Criterion
+  statement: '"Σ_{k=1}^n λ(k) = O(n^{1/2+ε'
+  type: liouville_lim
+- category: theorems
+  cypher_type:
+  - hardy_littlewood_series
+  - Theorem
+  id: CE-Hardy-Littlewood-Series
+  name: Hardy-Littlewood Series
+  statement: '"Σ_{k=1}^∞ (-x)^k/k! · ζ(2k+1) = O(x^{-1/4'
+  type: hardy_littlewood_series
+- category: theorems
+  cypher_type:
+  - jensen_poly
+  - Theorem
+  description: Pólya (1927) established equivalence. Griffin-Ono-Rolen-Zagier (2019)
+    proved hyperbolicity for n ≥ N(d) — computational evidence supporting RH.
+  domain: real analysis / polynomial theory
+  id: CE-Jensen-Polynomial-Hyperbolicity-(Pólya-Jensen)
+  name: Jensen Polynomial Hyperbolicity (Pólya-Jensen)
+  proof_status: proven
+  type: jensen_poly
+  year_established: '1927'
+  year_stated: '1927'
+- category: theorems
+  cypher_type:
+  - dbn_equiv
+  - Theorem
+  domain: complex analysis / entire functions
+  id: CE-De-Bruijn-Newman-Constant-Λ-=-0
+  name: De Bruijn-Newman Constant Λ = 0
+  proof_status: proven
+  type: dbn_equiv
+  year_established: '2020'
+- category: theorems
+  cypher_type:
+  - bombieri_var
+  - Theorem
+  domain: calculus of variations
+  id: CE-Bombieri-Variational-Approach
+  name: Bombieri Variational Approach
+  proof_status: proven
+  statement: RH equivalent to existence of minimizing function for Bombieri's variational
+    functional on the explicit formula
+  type: bombieri_var
+  year_established: '2000'
+- category: theorems
+  cypher_type:
+  - laguerre_polya
+  - Theorem
+  domain: complex analysis
+  id: CE-Laguerre-Pólya-Class
+  key_paper: Pólya (1927) Jber. Deutsch. Math.-Verein.
+  name: Laguerre-Pólya Class
+  proof_status: proven
+  statement: The Riemann Ξ-function belongs to the Laguerre-Pólya class — the uniform
+    limit on compacts of polynomials with only real zeros
+  type: laguerre_polya
+  year_established: '1927'
+- arXiv: 1107.1295"
+  category: theorems
+  cypher_type:
+  - ga_cns
+  - Theorem
+  description: Refinement of Robin's inequality. Connected to colossally abundant
+    numbers.
+  domain: arithmetic functions
+  id: CE-Caveney-Nicolas-Sondow-GA1-GA2-Criterion
+  name: Caveney-Nicolas-Sondow GA1/GA2 Criterion
+  proof_status: proven
+  type: ga_cns
+  year_established: '2011'
+- category: theorems
+  cypher_type:
+  - redheffer
+  - Theorem
+  id: CE-Redheffer-Matrix-Criterion
+  name: Redheffer Matrix Criterion
+  statement: '"|det(A_n)| = O(n^{1/2+ε'
+  type: redheffer
+- arXiv: 1907.02580"
+  category: theorems
+  cypher_type:
+  - landau_fn
+  - Theorem
+  domain: combinatorics / group theory
+  id: CE-Landau-Function-Criterion
+  name: Landau Function Criterion
+  proof_status: proven
+  type: landau_fn
+  year_established: '2019'
+- category: theorems
+  cypher_type:
+  - lcm_form
+  - Theorem
+  description: Follows from explicit formula. Elementary formulation in terms of least
+    common multiple.
+  domain: elementary number theory
+  id: CE-lcm-Formulation
+  name: lcm Formulation
+  proof_status: proven
+  type: lcm_form
+- category: theorems
+  cypher_type:
+  - speiser
+  - Theorem
+  description: Andreas Speiser (1934). The derivative ζ'(s) has no zeros with Re(s)
+    < 1/2 iff RH holds. Quantified by Levinson-Montgomery (1974).
+  domain: complex analysis
+  id: CE-Speiser's-Criterion
+  name: Speiser's Criterion
+  proof_status: proven
+  statement: RH equivalent to absence of non-trivial zeros of ζ'(s) to the left of
+    the critical line Re(s) = 1/2
+  type: speiser
+  year_established: '1934'
+- category: theorems
+  cypher_type:
+  - brownian_excursion
+  - Theorem
+  domain: probability theory
+  id: CE-Brownian-Excursion-(Biane-Pitman-Yor)
+  name: Brownian Excursion (Biane-Pitman-Yor)
+  proof_status: proven
+  statement: E[Z_s] = Ξ(s) where Z_s = ∫₀^∞ cos(st)|B_u|du for Brownian excursion
+    B_u. RH connects to moment conditions.
+  type: brownian_excursion
+  year_established: '2001'
+- category: theorems
+  cypher_type:
+  - horocycle
+  - Theorem
+  id: CE-Horocycle-Flow-Ergodicity-Rate
+  name: Horocycle Flow Ergodicity Rate
+  statement: '"∫₀^T f(h_t z)dt = T∫f + O(T^{1/2+ε'
+  type: horocycle
+- category: theorems
+  cypher_type:
+  - divisibility_graph
+  - Theorem
+  description: K.A. Broughan. The divisibility graph's spectral radius behavior encodes
+    RH.
+  domain: graph theory
+  id: CE-Divisibility-Graph-Criterion
+  name: Divisibility Graph Criterion
+  proof_status: proven
+  type: divisibility_graph
+  year_established: '2017'

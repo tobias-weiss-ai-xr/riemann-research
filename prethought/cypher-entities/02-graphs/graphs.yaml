@@ -1,0 +1,70 @@
+- cypher_type:
+  - cayley_sl2fp
+  - Graph
+  degree: '4'
+  id: CE-cayley_sl2fp
+  is_expander: yes (spectral gap exists)
+  is_ramanujan: NOT guaranteed (CayleyPy generators ≠ LPS generators)
+  order: p(p²-1)
+  type: cayley_graph
+- cypher_type:
+  - cayley_lps
+  - Graph
+  degree: p+1
+  description: LPS Ramanujan Cayley graphs. Guaranteed Ramanujan by construction.
+  generators: p+1 generators from LPS construction
+  id: CE-cayley_lps
+  is_expander: yes (optimal spectral gap)
+  is_ramanujan: YES (proven by Lubotzky-Phillips-Sarnak 1988)
+  key_paper: LPS 1988
+  order: p(p²-1)
+  type: cayley_graph
+- cypher_type:
+  - cayley_sl2z
+  - Graph
+  degree: '2'
+  id: CE-cayley_sl2z
+  is_ramanujan: N/A (infinite)
+  order: infinite
+  type: cayley_graph
+- cypher_type:
+  - farey
+  - Graph
+  degree: infinite
+  edges: a/b connected to c/d if |ad-bc| = 1
+  id: CE-Farey-Graph
+  is_ramanujan: N/A
+  name: Farey Graph
+  order: infinite
+  type: geometric_graph
+  vertices: Rational numbers (including ∞) as vertices of the tessellation
+- cypher_type:
+  - isogeny
+  - Graph
+  description: 'Graph of supersingular isogenies. Exact correspondence: eigenvalues
+    = Frobenius eigenvalues.'
+  edges: l-isogenies between curves
+  id: CE-Isogeny-Graph
+  is_ramanujan: YES (proven — consequence of Eichler trace formula)
+  name: Isogeny Graph
+  properties: Ramanujan graphs connected to modular forms via Eichler/Deuring
+  type: isogeny_graph
+  vertices: Supersingular elliptic curves over F_{p²}
+- cypher_type:
+  - expander_general
+  - Graph
+  description: Family of graphs where second eigenvalue λ₂ bounded away from d. Key
+    for LPS construction.
+  id: CE-Expander-Graph-(general)
+  name: Expander Graph (general)
+  properties: Sequence of finite d-regular graphs with spectral gap bounded below
+  type: expander_graph
+- cypher_type:
+  - ihara
+  - Graph
+  description: Regular graph whose Ihara zeta function encodes closed backtracking-free
+    walks. Hashimoto edge matrix H gives ζ_G(u)^{-1} = det(I - Hu).
+  formula: 1/ζ_G(u) = (1-u²)^{(r-1)/2} det(I - Au + (d-1)u²I)"
+  id: CE-Ihara-Graph
+  name: Ihara Graph
+  type: regular_graph

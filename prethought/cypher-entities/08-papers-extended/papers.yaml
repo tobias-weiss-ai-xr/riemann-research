@@ -1,0 +1,181 @@
+- bibtex_key: odlyzko_rielle1985
+  category: papers
+  cypher_type:
+  - odlyzko_rielle1985
+  - Paper
+  description: Disproved Mertens hypothesis using Odlyzko's zeta zero computations.
+    Showed M(x) = Ω±(√x).
+  id: CE-odlyzko_rielle1985
+  journal: Journal für die reine und angewandte Mathematik
+  msclass: '["11M26"]'
+  pages: 138-160
+  publication_type: journal
+  relevance_to_rh: foundational
+  title: Disproof of the Mertens Conjecture
+  type: odlyzko_rielle1985
+  volume: '357'
+  year: '1985'
+- arxiv_id: '2404.05646'
+  authors_str: S. Shanker
+  bibtex_key: shanker2024
+  category: papers
+  cypher_type:
+  - shanker2024
+  - Paper
+  description: Transformer model predicts zero distribution with 0.998 accuracy. Time-series
+    approach to zeta zeros. No graph structure used.
+  id: CE-shanker2024
+  publication_type: preprint
+  relevance_to_rh: computational
+  title: Predicting Riemann zeta zeros using Transformer models
+  type: shanker2024
+  year: '2024'
+- authors_str: Wu et al.
+  bibtex_key: wu2025
+  category: papers
+  cypher_type:
+  - wu2025
+  - Paper
+  id: CE-wu2025
+  publication_type: preprint
+  relevance_to_rh: computational
+  title: 'Machine Learning Approaches to the Riemann Hypothesis: Falsification Study'
+  type: wu2025
+  year: '2025'
+- arxiv_id: '1910.09657'
+  bibtex_key: rivin_sardari2019
+  category: papers
+  cypher_type:
+  - rivin_sardari2019
+  - Paper
+  id: CE-rivin_sardari2019
+  publication_type: preprint
+  relevance_to_rh: analogous
+  type: rivin_sardari2019
+  year: '2019'
+- bibtex_key: breen2018
+  category: papers
+  cypher_type:
+  - breen2018
+  - Paper
+  description: Fourier analysis on SL₂(Z/pⁿZ). Provides computational tools for character
+    sums on Cayley graphs.
+  id: CE-breen2018
+  journal: International Mathematics Research Notices
+  publication_type: journal
+  relevance_to_rh: methodological
+  title: A Fourier-analytic approach to counting SL₂(Z/pⁿZ)
+  type: breen2018
+  year: '2018'
+- authors_str: H.A. Helfgott
+  bibtex_key: helfgott2015
+  category: papers
+  cypher_type:
+  - helfgott2015
+  - Paper
+  id: CE-helfgott2015
+  journal: Bulletin of the American Mathematical Society
+  publication_type: journal
+  relevance_to_rh: methodological
+  title: Growth in group theory and SL₂(Z/pZ)
+  type: helfgott2015
+  year: '2015'
+- bibtex_key: barnet_lamb2011
+  category: papers
+  cypher_type:
+  - barnet_lamb2011
+  - Paper
+  description: Proof of Sato-Tate conjecture via potential automorphy. Uses deep results
+    from the Langlands program.
+  id: CE-barnet_lamb2011
+  journal: Annals of Mathematics
+  publication_type: journal
+  relevance_to_rh: foundational
+  title: The Sato-Tate conjecture and automorphy for GL(2)
+  type: barnet_lamb2011
+  year: '2011'
+- bibtex_key: kontorovich_tao_pntplus
+  category: papers
+  cypher_type:
+  - kontorovich_tao_pntplus
+  - Paper
+  description: PNT formalized in Mathlib via Wiener-Ikehara theorem. Part of the broader
+    effort to formalize analytic number theory in Lean 4.
+  github_url: https://github.com/leanprover-community/mathlib4
+  id: CE-kontorovich_tao_pntplus
+  publication_type: preprint
+  relevance_to_rh: computational
+  title: 'PNT+ project: Formalization of the Prime Number Theorem in Lean 4 via Wiener-Ikehara'
+  type: kontorovich_tao_pntplus
+  year: '2025'
+- bibtex_key: murmurations2023
+  category: papers
+  cypher_type:
+  - murmurations2023
+  - Paper
+  description: Discovered unexpected periodic patterns in the coefficients of elliptic
+    curve L-functions. Statistical phenomenon visible in LMFDB data. NOT applied to
+    ζ(s) itself.
+  id: CE-murmurations2023
+  journal: Research in Number Theory
+  publication_type: journal
+  relevance_to_rh: methodological
+  title: Murmurations of elliptic curves
+  type: murmurations2023
+  year: '2023'
+- bibtex_key: matrix_mfo2026
+  category: papers
+  cypher_type:
+  - matrix_mfo2026
+  - Paper
+  id: CE-matrix_mfo2026
+  publication_type: conference
+  relevance_to_rh: methodological
+  title: MATRIX-MFO Workshop on Machine Learning and Number Theory
+  type: matrix_mfo2026
+  year: '2026'
+- authors_str: T. Brown et al. (Google DeepMind)
+  bibtex_key: alphaproof2024
+  category: papers
+  cypher_type:
+  - alphaproof2024
+  - Paper
+  description: AlphaProof achieved IMO 28/42 (silver medal level) using Lean 4 + TTRL
+    (Tree of Thoughts with Reinforcement Learning). First AI to solve olympiad problems
+    at this level.
+  id: CE-alphaproof2024
+  journal: Nature
+  publication_type: journal
+  relevance_to_rh: methodological
+  title: Solving olympiad problems without human demonstrations
+  type: alphaproof2024
+  year: '2024'
+- authors_str: Google DeepMind
+  bibtex_key: gemini_deepthink2025
+  category: papers
+  cypher_type:
+  - gemini_deepthink2025
+  - Paper
+  description: IMO Gold medal level (July 2025). Improved over AlphaProof's silver.
+    Demonstrates rapid progress in AI mathematical reasoning.
+  id: CE-gemini_deepthink2025
+  publication_type: preprint
+  relevance_to_rh: methodological
+  title: Achieving Silver Medal on IMO with Gemini Deep Think
+  type: gemini_deepthink2025
+  year: '2025'
+- arxiv_id: 2602.XXXXX
+  authors_str: Google DeepMind
+  bibtex_key: aletheia2026
+  category: papers
+  cypher_type:
+  - aletheia2026
+  - Paper
+  description: Solved 4 open Erdős problems. Level 2 taxonomy of theorem proving.
+    Latest advancement in AI formal mathematics.
+  id: CE-aletheia2026
+  publication_type: preprint
+  relevance_to_rh: methodological
+  title: 'Aletheia: An AI theorem prover with formal-level capabilities'
+  type: aletheia2026
+  year: '2026'

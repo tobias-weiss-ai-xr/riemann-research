@@ -1,0 +1,62 @@
+- cypher_type:
+  - padic_cayley
+  - Graph
+  degree: variable
+  id: CE-padic_cayley
+  order: infinite
+  type: cayley_graph
+- cypher_type:
+  - dedekind_graph
+  - Graph
+  description: Graph construction where vertices correspond to ideals in O_K and edges
+    connect prime ideal factors. The Ihara zeta of such graphs relates to the Dedekind
+    zeta ζ_K(s).
+  id: CE-Dedekind-Zeta-Graph
+  name: Dedekind Zeta Graph
+  research_gap: No GNN work on ideal-theoretic graph constructions
+  type: arithmetic_graph
+- cypher_type:
+  - prime_mult_graph
+  - Graph
+  degree: variable (depends on N and vertex)
+  description: Vertices are positive integers ≤ N. Edge between n and m if n·m ≤ N.
+    Encodes multiplicative structure of integers.
+  id: CE-Prime-Multiplication-Graph
+  name: Prime Multiplication Graph
+  order: N (for bound N)
+  research_gap: Artificial edges (product graph). No natural number-theoretic interpretation
+    of spectral properties.
+  type: arithmetic_graph
+- cypher_type:
+  - zero_spacing_graph
+  - Graph
+  description: Vertices represent zeta zeros γ_n. Edges connect consecutive zeros.
+    Spacing distribution encodes GUE statistics from RMT.
+  feasibility: ★★ — technically possible but wrong tool
+  id: CE-Zeta-Zero-Spacing-Graph
+  name: Zeta Zero Spacing Graph
+  properties: Spacing ~ Tracy-Widom / GUE. Not really a 'graph problem' — more of
+    a time-series / point process question.
+  research_gap: GNN adds no value over classical time-series methods here
+  type: time_series_graph
+- cypher_type:
+  - cayleypy_graphs
+  - Graph
+  degree: '4'
+  id: CE-cayleypy_graphs
+  is_ramanujan: 'false'
+  order: p(p²-1)
+  properties: NOT guaranteed Ramanujan (4 generators ≠ p+1 LPS generators). CayleyPy
+    generates these for p=2..101+. No published GNN experiments on these graphs.
+  research_gap: Zero published work of GNN trained on these Cayley graphs. Completely
+    novel.
+  type: cayley_graph
+- cypher_type:
+  - graphon_limit
+  - Graph
+  id: CE-Cayley-Graphon-Limit
+  name: Cayley Graphon Limit
+  properties: Benjamini-Schramm limit exists for bounded-degree Cayley graphs. Spectral
+    measure converges.
+  research_gap: No GNN work on graphon approximations for number theory
+  type: graphon

@@ -1,0 +1,129 @@
+- category: theorems
+  cypher_type:
+  - hilbert_polya
+  - Theorem
+  - Conjecture
+  - OpenProblem
+  id: CE-Hilbert-Pólya-Conjecture
+  name: Hilbert-Pólya Conjecture
+  proof_status: open
+  significance: foundational
+  statement: The imaginary parts of the non-trivial zeros of ζ(s) are the eigenvalues
+    of a self-adjoint operator (Hermitian matrix) on a Hilbert space
+  type: hilbert_polya
+  year_stated: '1914'
+- category: theorems
+  cypher_type:
+  - weil_criterion
+  - Theorem
+  description: André Weil showed that RH for curves over finite fields follows from
+    a positivity condition on associated zeta functions. This inspired the entire
+    Langlands program.
+  difficulty: algebraic
+  id: CE-Weil-Positivity-Criterion
+  key_paper: Weil 1952
+  name: Weil Positivity Criterion
+  proof_status: proven
+  significance: major
+  statement: RH holds iff the function F(z) = Σ_ρ x^ρ + (analytic terms) is positive-definite
+    on the multiplicative group
+  type: weil_criterion
+  year_established: '1952'
+- category: theorems
+  cypher_type:
+  - li_criterion
+  - Theorem
+  description: Xian-Jin Li (1998). Gives an infinite sequence of non-negativity conditions
+    equivalent to RH. Related to the explicit formula.
+  id: CE-Li's-Criterion
+  name: Li's Criterion
+  proof_status: proven
+  significance: major
+  type: li_criterion
+  year_established: '1998'
+- category: theorems
+  cypher_type:
+  - mertens
+  - Theorem
+  - Conjecture
+  id: CE-Mertens-Hypothesis
+  name: Mertens Hypothesis
+  proof_status: disproven
+  significance: major
+  statement: '|M(x)| = |Σ_{n≤x} μ(n)| < √x for all x > 1'
+  type: mertens
+  year_established: '1985'
+  year_stated: '1897'
+- category: theorems
+  cypher_type:
+  - nicolas
+  - Theorem
+  - Conjecture
+  description: Jean-Louis Nicolas. Related to Robin's inequality but using the harmonic
+    numbers. Equivalent to RH.
+  id: CE-Nicolas-Criterion
+  name: Nicolas Criterion
+  proof_status: conjectured
+  type: nicolas
+  year_stated: '1983'
+- category: theorems
+  cypher_type:
+  - explicit_formula
+  - Theorem
+  description: '"THE central formula connecting prime distribution to zeta zeros.
+    Von Mangoldt. RH equivalent to ψ(x) = x + O(x^{1/2+ε'
+  id: CE-Explicit-Formula
+  name: Explicit Formula
+  proof_status: proven
+  significance: foundational
+  type: explicit_formula
+  year_established: '1896'
+- category: theorems
+  cypher_type:
+  - bagchi
+  - Theorem
+  description: Bhaskar Bagchi (1982). Reformulates Nyman-Beurling in terms of dynamical
+    systems on L². Connects RH to ergodic theory.
+  id: CE-Bagchi's-Theorem
+  name: Bagchi's Theorem
+  proof_status: proven
+  type: bagchi
+  year_established: '1982'
+- category: theorems
+  cypher_type:
+  - voronin
+  - Theorem
+  id: CE-Voronin-Universality-Theorem
+  key_paper: Voronin 1975
+  name: Voronin Universality Theorem
+  proof_status: proven
+  significance: major
+  type: voronin
+  year_established: '1975'
+- category: theorems
+  cypher_type:
+  - yakaboylu
+  - Theorem
+  description: Yakaboylu (2023) partially realized Hilbert-Pólya. Shows real eigenvalues
+    under certain conditions. No ML work on operator search exists — open gap.
+  id: CE-Yakaboylu-Hamiltonian-Construction
+  name: Yakaboylu Hamiltonian Construction
+  proof_status: partial
+  statement: Constructs a quantum Hamiltonian H with real eigenvalues (under conditions)
+    whose spectrum encodes zeta zeros
+  type: yakaboylu
+  year_established: '2023'
+- category: theorems
+  cypher_type:
+  - mobius_randomness
+  - Theorem
+  - Conjecture
+  description: Sarvadaman Chowla. Möbius function is random (uncorrelated at shifts).
+    Stronger than PNT. Connected to Sarnak's conjecture on deterministic sequences.
+  id: CE-Möbius-Randomness-(Chowla-Conjecture)
+  name: Möbius Randomness (Chowla Conjecture)
+  proof_status: open
+  significance: major
+  statement: Σ_{n≤x} μ(n) μ(n+h) = o(x) for all fixed h ≠ 0
+  type: mobius_randomness
+  year_stated: '1965'

@@ -1,0 +1,8 @@
+- category: theorems
+  cypher_type:
+  - cayleypy_api
+  - Theorem
+  id: CE-cayleypy_api
+  key_paper: CayleyPy GitHub repository
+  type: cayleypy_api
+  year_established: '2025'

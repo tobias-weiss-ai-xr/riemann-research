@@ -1,0 +1,72 @@
+- cypher_type:
+  - sl2z
+  - Group
+  description: Special linear group of 2×2 integer matrices with determinant 1
+  id: CE-sl2z
+  is_discrete: 'true'
+  is_finite: 'false'
+  order: infinite
+  presentation: S² = (ST)³ = -I
+  type: algebraic_group
+- cypher_type:
+  - psl2z
+  - Group
+  id: CE-psl2z
+  is_discrete: 'true'
+  is_finite: 'false'
+  order: infinite
+  presentation: s² = (st)³ = I
+  properties: Free product of cyclic groups C₂ and C₃
+  type: algebraic_group
+- cypher_type:
+  - sl2fp
+  - Group
+  id: CE-sl2fp
+  is_discrete: 'true'
+  is_finite: 'true'
+  order: p(p²-1)
+  type: finite_group
+- cypher_type:
+  - psl2fp
+  - Group
+  description: Projective special linear group over F_p
+  id: CE-psl2fp
+  is_discrete: 'true'
+  is_finite: 'true'
+  order: p(p²-1)/2 for odd p
+  properties: Simple non-abelian group for p ≥ 5
+  type: finite_group
+- cypher_type:
+  - gamma0n
+  - Group
+  id: CE-Γ₀(N)
+  index_in_sl2z: N ∏(1 + 1/p) for p|N
+  is_discrete: 'true'
+  is_finite: 'false'
+  name: Γ₀(N)
+  order: infinite
+  properties: Key subgroup for modular forms of level N
+  type: congruence_subgroup
+- cypher_type:
+  - gamma1n
+  - Group
+  description: Congruence subgroup with lower-left entry ≡ 0 mod N and diagonal entries
+    ≡ 1 mod N
+  id: CE-Γ₁(N)
+  is_discrete: 'true'
+  is_finite: 'false'
+  name: Γ₁(N)
+  order: infinite
+  properties: Used in Dirichlet characters and newforms
+  type: congruence_subgroup
+- cypher_type:
+  - gl2
+  - Group
+  description: General linear group of 2×2 invertible matrices
+  id: CE-GL(2)
+  is_discrete: 'false'
+  is_finite: 'false'
+  name: GL(2)
+  order: infinite
+  properties: Central object in Langlands program for GL(2)
+  type: algebraic_group

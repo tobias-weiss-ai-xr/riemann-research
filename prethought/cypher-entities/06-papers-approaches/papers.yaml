@@ -1,0 +1,254 @@
+- authors_str: Bernhard Riemann
+  bibtex_key: riemann1859
+  category: papers
+  cypher_type:
+  - riemann1859
+  - Paper
+  description: The original RH paper. 8 pages that changed mathematics.
+  id: CE-riemann1859
+  journal: Monatsberichte der Berliner Akademie
+  publication_type: journal
+  relevance_to_rh: direct
+  title: Über die Anzahl der Primzahlen unter einer gegebenen Grösse
+  type: riemann1859
+  year: '1859'
+- bibtex_key: lps1988
+  category: papers
+  cypher_type:
+  - lps1988
+  - Paper
+  doi: 10.1007/BF02126799
+  id: CE-lps1988
+  journal: Combinatorica
+  pages: 261-277
+  publication_type: journal
+  relevance_to_rh: analogous
+  title: Ramanujan graphs
+  type: lps1988
+  volume: '8'
+  year: '1988'
+- authors_str: G.A. Margulis
+  bibtex_key: margulis1988
+  category: papers
+  cypher_type:
+  - margulis1988
+  - Paper
+  id: CE-margulis1988
+  journal: Problems of Information Transmission
+  pages: 39-46
+  publication_type: journal
+  relevance_to_rh: analogous
+  title: Explicit group-theoretic constructions of combinatorial schemes and their
+    applications in the construction of expanders and concentrators
+  type: margulis1988
+  volume: '24'
+  year: '1988'
+- authors_str: Pierre Deligne
+  bibtex_key: deligne1974
+  category: papers
+  cypher_type:
+  - deligne1974
+  - Paper
+  description: Proof of Weil conjectures → Ramanujan-Petersson conjecture. Foundation
+    for spectral bound.
+  doi: 10.1007/BF02687474
+  id: CE-deligne1974
+  journal: Publications Mathématiques de l'IHÉS
+  pages: 137-252
+  publication_type: journal
+  relevance_to_rh: foundational
+  title: 'La conjecture de Weil: II'
+  type: deligne1974
+  volume: '52'
+  year: '1974'
+- arxiv_id: '2209.03897'
+  authors_str: Mark Pollicott
+  bibtex_key: pollicott2022
+  category: papers
+  cypher_type:
+  - pollicott2022
+  - Paper
+  description: RH as spectral gap of transfer operator on Farey graph. Second bridge
+    graphs→ζ(s).
+  id: CE-pollicott2022
+  publication_type: preprint
+  relevance_to_rh: direct
+  title: A note on the Riemann hypothesis and the Farey sequence
+  type: pollicott2022
+  year: '2022'
+- bibtex_key: williamson2021
+  category: papers
+  cypher_type:
+  - williamson2021
+  - Paper
+  description: First GNN (MPNN) on Bruhat intervals to solve a 40-year-old combinatorial
+    conjecture. Proof of concept for GNN × representation theory.
+  doi: 10.1038/s41586-022-05415-0
+  id: CE-williamson2021
+  journal: Nature
+  pages: 56-60
+  publication_type: journal
+  relevance_to_rh: methodological
+  title: Deep learning for the combinatorial invariance conjecture
+  type: williamson2021
+  volume: '612'
+  year: '2021'
+- bibtex_key: barlag2024
+  category: papers
+  cypher_type:
+  - barlag2024
+  - Paper
+  description: 'Exact correspondence: constant-depth GNNs ↔ constant-depth arithmetic
+    circuits. Extended to recurrent GNNs in 2026.'
+  id: CE-barlag2024
+  journal: NeurIPS 2024
+  publication_type: conference
+  relevance_to_rh: methodological
+  title: Graph Neural Networks and Arithmetic Circuits
+  type: barlag2024
+  year: '2024'
+- arxiv_id: '2309.09171'
+  authors_str: S. Hayou
+  bibtex_key: hayou2023
+  category: papers
+  cypher_type:
+  - hayou2023
+  - Paper
+  id: CE-hayou2023
+  publication_type: preprint
+  relevance_to_rh: direct
+  title: A Neural Network Proof of the Riemann Hypothesis
+  type: hayou2023
+  year: '2023'
+- bibtex_key: bieri2025
+  category: papers
+  cypher_type:
+  - bieri2025
+  - Paper
+  id: CE-bieri2025
+  publication_type: preprint
+  relevance_to_rh: computational
+  title: Machine learning the Riemann zeta function
+  type: bieri2025
+  year: '2025'
+- bibtex_key: loeffler2025
+  category: papers
+  cypher_type:
+  - loeffler2025
+  - Paper
+  id: CE-loeffler2025
+  publication_type: preprint
+  relevance_to_rh: computational
+  title: Formalization of the Riemann zeta function in Lean 4
+  type: loeffler2025
+  year: '2025'
+- arxiv_id: '1901.03052'
+  bibtex_key: rogers_tao2019
+  category: papers
+  cypher_type:
+  - rogers_tao2019
+  - Paper
+  description: 'Λ ≥ 0. Newman''s conjecture: Λ = 0 iff RH. So RH ≤ Λ = 0. Gap closed
+    to Λ = 0.'
+  id: CE-rogers_tao2019
+  publication_type: preprint
+  relevance_to_rh: direct
+  title: The de Bruijn-Newman constant is non-negative
+  type: rogers_tao2019
+  year: '2019'
+- bibtex_key: platt_trudgian2021
+  category: papers
+  cypher_type:
+  - platt_trudgian2021
+  - Paper
+  description: Verified RH up to height 3×10¹². Uses rigorous interval arithmetic.
+  id: CE-platt_trudgian2021
+  journal: Mathematics of Computation
+  publication_type: journal
+  relevance_to_rh: computational
+  title: The Riemann hypothesis is true up to 3·10¹²
+  type: platt_trudgian2021
+  year: '2021'
+- bibtex_key: codogni_lido
+  category: papers
+  cypher_type:
+  - codogni_lido
+  - Paper
+  id: CE-codogni_lido
+  publication_type: preprint
+  relevance_to_rh: analogous
+  title: Spectral theory of isogeny graphs
+  type: codogni_lido
+  year: '2025'
+- authors_str: CayleyPy contributors
+  bibtex_key: cayleypy
+  category: papers
+  cypher_type:
+  - cayleypy
+  - Paper
+  github_url: https://github.com/alejandrox1/CayleyPy
+  id: CE-cayleypy
+  publication_type: software
+  relevance_to_rh: methodological
+  title: 'CayleyPy: A Python Library for Cayley Graph Generation'
+  type: cayleypy
+  year: '2025'
+- approach_type: gnn
+  confidence: '0.4'
+  cypher_type:
+  - gnn_spectral
+  - AIApproach
+  description: Train GNN on Cayley graphs → predict spectral properties → compare
+    with Ramanujan bound. First GNN on group Cayley graphs.
+  framework: PyTorch Geometric + CayleyPy
+  id: CE-GNN-Spectral-Prediction
+  name: GNN Spectral Prediction
+  status: planned
+  target: Predict Hecke eigenvalue distribution from graph structure alone
+  type: gnn_spectral
+- approach_type: formal_verification
+  confidence: '0.6'
+  cypher_type:
+  - formal_lean
+  - AIApproach
+  description: 'Loeffler & Stoll (2025): ~60-70% of needed machinery in Mathlib. Tao
+    demonstrated Claude Code + Lean. Long-term path: AI as proof assistant.'
+  framework: Lean 4 + Mathlib + AlphaProof/TTRL
+  id: CE-Lean-4-Formal-Verification
+  method: Formalize RH proof machinery in Mathlib (Lean 4) with AI-assisted proof
+    search
+  name: Lean 4 Formal Verification
+  status: in_progress
+  target: Complete formalization of sufficient machinery to state and potentially
+    prove RH
+  type: formal_lean
+- approach_type: funsearch
+  confidence: '0.2'
+  cypher_type:
+  - funsearch_rh
+  - AIApproach
+  description: FunSearch (2023) solved Cap Set problem (496→512). FunSearch paper
+    explicitly states 'zero reason' it would help with P-vs-NP. Similarly limited
+    for RH.
+  framework: FunSearch (DeepMind)
+  id: CE-FunSearch-for-Number-Theory
+  method: LLM-driven evolutionary search for new number-theoretic conjectures/algorithms
+  name: FunSearch for Number Theory
+  status: inconclusive
+  target: Discover new patterns in zero distributions or prime-related functions
+  type: funsearch_rh
+- approach_type: numerical
+  confidence: '0.25'
+  cypher_type:
+  - rmt_deep
+  - AIApproach
+  description: Keating works on both RMT for zeta moments AND RMT for deep learning
+    loss landscapes. Potential cross-pollination.
+  framework: PyTorch + mpmath
+  id: CE-RMT-+-Deep-Learning
+  method: Use deep learning to discover patterns in random matrix statistics of zeta
+    zeros
+  name: RMT + Deep Learning
+  status: exploratory
+  target: Accelerate zero verification or find statistical anomalies
+  type: rmt_deep

@@ -1,0 +1,78 @@
+- acts_on: Space of modular forms M_k(Γ₀(N))
+  commuting: 'true'
+  cypher_type:
+  - hecke_tp
+  - Operator
+  eigenvalue_name: Hecke eigenvalue λ_f(p)
+  hermitian: 'true'
+  id: CE-Hecke-T_p
+  importance: Hecke eigenvalues a_p are the central bridge between modular forms and
+    L-functions
+  key_paper: Hecke 1937
+  multiplicative: 'true'
+  name: Hecke T_p
+  operator_type: hecke
+  symbol: T_p
+  type: hecke_tp
+- acts_on: L²(V) for vertex set V of graph G
+  cypher_type:
+  - adjacency
+  - Operator
+  definition: (Af)(v) = Σ_{u~v} f(u)
+  hermitian: 'true'
+  id: CE-Adjacency-Matrix-A
+  importance: THE operator for graph spectral theory. Connected to Hecke via LPS construction.
+  name: Adjacency Matrix A
+  operator_type: adjacency
+  properties: Eigenvalues λ₁ ≥ λ₂ ≥ ... ≥ λ_n. Spectral gap = λ₁ - |λ₂|. Ramanujan
+    iff |λ| ≤ 2√(d-1).
+  symbol: A
+  type: adjacency
+- acts_on: Space of directed edges
+  cypher_type:
+  - hashimoto
+  - Operator
+  id: CE-Hashimoto-Edge-Matrix-H
+  importance: Encodes the Ihara zeta function. Used in Sunada's theorem.
+  name: Hashimoto Edge Matrix H
+  operator_type: adjacency
+  properties: ζ_G(u)^{-1} = det(I - Hu). Related to adjacency by Bass's formula.
+  symbol: H
+  type: hashimoto
+- acts_on: C(Γ₁) — functions on the Farey graph boundary
+  cypher_type:
+  - transfer_farey
+  - Operator
+  definition: Perron-Frobenius operator for the Gauss map / Farey flow
+  id: CE-Farey-Transfer-Operator-L_s
+  name: Farey Transfer Operator L_s
+  operator_type: transfer
+  properties: '"Pollicott 2022: Z_{Γ₁}(s) = det(1 - L_{2s'
+  symbol: L_s
+  type: transfer_farey
+- acts_on: ℓ-adic cohomology of elliptic curves / varieties
+  cypher_type:
+  - frobenius
+  - Operator
+  id: CE-Frobenius-Endomorphism
+  importance: Connects arithmetic of elliptic curves to spectral properties of isogeny
+    graphs.
+  name: Frobenius Endomorphism
+  operator_type: frobenius
+  properties: 'Trace of Frobenius a_p = p+1 - #E(F_p). Eigenvalues of Frobenius on
+    H¹ are the key to Sato-Tate.'
+  symbol: Frob_p
+  type: frobenius
+- acts_on: L²(V)
+  cypher_type:
+  - laplacian
+  - Operator
+  id: CE-Graph-Laplacian-Δ
+  importance: Alternative spectral characterization. Connected to random walks and
+    expansion.
+  name: Graph Laplacian Δ
+  operator_type: laplacian
+  properties: Δ = dI - A for d-regular graph. Eigenvalues 0 = μ₁ ≤ μ₂ ≤ ... ≤ μ_n
+    ≤ 2d. Spectral gap = μ₂.
+  symbol: Δ = dI - A
+  type: laplacian

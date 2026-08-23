@@ -1,0 +1,11 @@
+- id: CE-baez_duarte
+  name: "Baez-Duarte Criterion"
+  type: theorem
+  cypher_type: [baez_duarte, Theorem]
+  category: equivalences
+  statement: "RH iff χ ∈ closure(span{ρ_a : a ∈ N}) in L²(0,∞), where χ is the indicator of (0,1] — countable version of Nyman-Beurling"
+  proof_status: proven
+  year_established: 2002
+  significance: major
+  description: "Countable version of Nyman-Beurling criterion. Báez-Duarte (2002)."
+  key_paper: "Báez-Duarte 2002, arXiv"

@@ -1,0 +1,76 @@
+- affiliation: University of Minnesota
+  category: researchers
+  cypher_type:
+  - odlyzko_zeros
+  - Researcher
+  id: CE-Andrew-Odlyzko
+  name: Andrew Odlyzko
+  type: odlyzko_zeros
+- category: researchers
+  cypher_type:
+  - shanker
+  - Researcher
+  id: CE-S--Shanker
+  name: S. Shanker
+  type: shanker
+- affiliation: Temple University
+  category: researchers
+  cypher_type:
+  - rivin
+  - Researcher
+  id: CE-Igor-Rivin
+  name: Igor Rivin
+  type: rivin
+- category: researchers
+  cypher_type:
+  - sardari
+  - Researcher
+  id: CE-M--Sardari
+  name: M. Sardari
+  type: sardari
+- affiliation: University of Göttingen
+  category: researchers
+  cypher_type:
+  - helfgott
+  - Researcher
+  id: CE-Harald-Helfgott
+  name: Harald Helfgott
+  type: helfgott
+- affiliation: Columbia University
+  category: researchers
+  cypher_type:
+  - harris
+  - Researcher
+  id: CE-Michael-Harris
+  name: Michael Harris
+  type: harris
+- affiliation: IAS Princeton
+  category: researchers
+  cypher_type:
+  - taylor
+  - Researcher
+  id: CE-Richard-Taylor
+  name: Richard Taylor
+  type: taylor
+- affiliation: Rutgers University
+  category: researchers
+  cypher_type:
+  - kontorovich
+  - Researcher
+  id: CE-Alex-Kontorovich
+  name: Alex Kontorovich
+  type: kontorovich
+- category: researchers
+  cypher_type:
+  - charton
+  - Researcher
+  id: CE-Guillaume-Charton
+  name: Guillaume Charton
+  type: charton
+- category: researchers
+  cypher_type:
+  - kempe
+  - Researcher
+  id: CE-Maximilian-Kempe
+  name: Maximilian Kempe
+  type: kempe
