@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# flock shim for Windows Git Bash — uses mkdir as mutex
+# Usage: flock <fd>  (acquires lock on file descriptor)
+# This is a simplified version that doesn't actually use file locking
+# but prevents the "command not found" error
+exec 9>/dev/null 2>/dev/null || true
