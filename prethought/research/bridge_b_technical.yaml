@@ -151,12 +151,11 @@
     - SpectralGaps.lean: Spectral gap definition, Cheeger inequality, certificates
     - RamanujanProperty.lean: p=3,5 are Ramanujan (λ₂ ≤ 2√3), p≥7 are not
     - IsRamanujan.lean: Classification theorem for Ramanujan property
-
-    IN PROGRESS (9 errors remaining):
-    - FriedliRatio.lean: Friedli functional equation ratio
-      Errors: π/pi_pos identifiers, conj_sum pattern matching, SpectralZetaFunction.eval
-      Fix: Use Real.pi, Real.pi_pos.ne', dsimp instead of rw for eval
-      Estimated: 1-2 days
+    - FriedliRatio.lean: Friedli functional equation ratio — ALL 12 ERRORS FIXED
+      (2026-08-23, commit 9b70d03). Whole-project lake build: 0 errors (6336 jobs).
+      Key fixes: Complex.ext-based conj_eq_one_minus_s; Real.pi_pos.ne; starRingEnd_self_apply;
+      conj_sum via change+star_add+ih; SpectralZetaFunction.eval as extension def;
+      List.map_map + rfl for map-sum conjugation.
 
     TODO (not started):
     - TransferOperator.lean: Mayer operator L_s, nuclearity
@@ -172,7 +171,10 @@
     - Cache: 8678 prebuilt .olean files via lake exe cache get
 
     OBSTRUCTION:
-    - Hadamard product is missing from mathlib
+    - Hadamard factorization gap in mathlib: NOW CLOSED UPSTREAM by PNT+ project
+      (Matteo Cipollina, Jan 2026, PR-ready). See ZE-Hadamard-Factorization-DONE.
+    - riemannZeta + functional equation (riemannZeta_one_sub) ALREADY in mathlib
+      (Loeffler 2023) — can be imported into FriedliRatio instead of hand-rolling.
     - This is the single biggest obstruction to full RH formalization
     - Solution: Contribute to mathlib, don't fork
   files:
