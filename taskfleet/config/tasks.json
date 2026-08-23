@@ -1,0 +1,197 @@
+{
+  "_meta": {
+    "project": "riemann-research",
+    "description": "Parallel task fleet for Riemann Hypothesis research corpus: paper discovery, concept extraction, knowledge graph building, report generation.",
+    "plan": "docs/PROJECT_PLAN.md",
+    "priority_levels": {
+      "FOUNDATION": "1",
+      "CORE": "2",
+      "EXTENSION": "3",
+      "NICE_TO_HAVE": "4"
+    },
+    "recommended_workers": 4,
+    "notes": "Tasks are grouped by type. All discovery tasks can run in parallel. Concept extraction depends on corpus being non-empty. KG tasks depend on concepts/findings."
+  },
+  "tasks": [
+    {
+      "id": "FC-001",
+      "title": "Seed RH Corpus with 20+ Key Papers",
+      "engine": "corpus",
+      "priority": "FOUNDATION",
+      "deps": [],
+      "scope": ["papers.yaml", "config/taxonomy.yaml"],
+      "accept": "python scripts/validate_papers.py && test $(grep -c '^  - id:' papers.yaml) -ge 20",
+      "acceptance_prose": "papers.yaml contains at least 20 RH/spectral theory papers with proper metadata",
+      "manual": false,
+      "tiers": ["discovery", "corpus"]
+    },
+    {
+      "id": "FC-002",
+      "title": "Add arXiv RH Papers from Last 24 Months",
+      "engine": "discovery",
+      "priority": "FOUNDATION",
+      "deps": ["FC-001"],
+      "scope": ["scripts/fetch/fetch_new_papers.py", "papers.yaml"],
+      "accept": "python scripts/fetch/fetch_new_papers.py --local --months 24 && python scripts/validate_papers.py",
+      "acceptance_prose": "Fetched arXiv papers matching taxonomy queries from last 24 months",
+      "manual": false,
+      "tiers": ["discovery", "corpus"]
+    },
+    {
+      "id": "FC-004",
+      "title": "Validate Entire Corpus",
+      "engine": "validation",
+      "priority": "FOUNDATION",
+      "deps": ["FC-002"],
+      "scope": ["scripts/validate_papers.py"],
+      "accept": "python scripts/validate_papers.py",
+      "acceptance_prose": "Corpus passes all validation checks",
+      "manual": false,
+      "tiers": ["discovery", "corpus"]
+    },
+    {
+      "id": "FR-001",
+      "title": "Generate Literature Review Report",
+      "engine": "reports",
+      "priority": "FOUNDATION",
+      "deps": ["FC-004"],
+      "scope": ["scripts/analysis/generate_reports.py", "docs/research/"],
+      "accept": "python scripts/analysis/generate_reports.py && test -f docs/research/literature_review.md",
+      "acceptance_prose": "Literature review and trends reports generated",
+      "manual": false,
+      "tiers": ["reports", "docs"]
+    },
+    {
+      "id": "CP-001",
+      "title": "Extract All Concepts from Riemann KG Cypher",
+      "engine": "concepts",
+      "priority": "CORE",
+      "deps": [],
+      "scope": ["../riemann/knowledge-graph/cypher/", "prethought/concepts/"],
+      "accept": "test -f prethought/concepts/cayley-graphs.yaml && test $(find prethought/concepts/ -name '*.yaml' | wc -l) -ge 4",
+      "acceptance_prose": "All major concept classes from KG cypher files represented",
+      "manual": false,
+      "tiers": ["concepts", "knowledge"]
+    },
+    {
+      "id": "CP-002",
+      "title": "Extract All Findings from Experiments Log",
+      "engine": "findings",
+      "priority": "CORE",
+      "deps": [],
+      "scope": ["../riemann/experiments/EXPERIMENT_LOG.md", "prethought/findings/"],
+      "accept": "test -f prethought/findings/gnn-failures.yaml && test -f prethought/findings/ml-successes.yaml",
+      "acceptance_prose": "All major experimental findings from Exp 1-18 documented",
+      "manual": false,
+      "tiers": ["findings", "knowledge"]
+    },
+    {
+      "id": "CP-003",
+      "title": "Document RH Equivalences from KG Cypher",
+      "engine": "related-work",
+      "priority": "CORE",
+      "deps": [],
+      "scope": ["../riemann/knowledge-graph/cypher/07-rh-equivalences.cypher", "../riemann/knowledge-graph/cypher/10-rh-equivalences-extended.cypher"],
+      "accept": "test -f prethought/related-work/RH-Equivalences.yaml && grep -c 'id:' prethought/related-work/RH-Equivalences.yaml",
+      "acceptance_prose": "All RH equivalences from KG cypher documented",
+      "manual": false,
+      "tiers": ["knowledge", "related-work"]
+    },
+    {
+      "id": "CP-004",
+      "title": "Document Open Problems from Research Notes",
+      "engine": "open-problems",
+      "priority": "CORE",
+      "deps": [],
+      "scope": ["../riemann/research/GAP_ANALYSIS.md", "../riemann/research/SOLUTION_TO_GAPS.md", "../riemann/HONEST_FINAL_STATUS.md"],
+      "accept": "test -f prethought/open-problems/bridges.yaml && grep -q 'OP-Bridge' prethought/open-problems/bridges.yaml",
+      "acceptance_prose": "All major gaps (Bridge A, Bridge B, data quantity, Hadamard) documented",
+      "manual": false,
+      "tiers": ["knowledge", "open-problems"]
+    },
+    {
+      "id": "KG-001",
+      "title": "Create Dgraph Schema",
+      "engine": "kg",
+      "priority": "CORE",
+      "deps": ["CP-001", "CP-002", "CP-003"],
+      "scope": ["kg/dgraph/schema.graphql"],
+      "accept": "test -f kg/dgraph/schema.graphql && grep -q 'type Concept' kg/dgraph/schema.graphql && grep -q 'type Finding' kg/dgraph/schema.graphql",
+      "acceptance_prose": "Dgraph GraphQL schema created with all node types",
+      "manual": false,
+      "tiers": ["kg", "dgraph"]
+    },
+    {
+      "id": "KG-002",
+      "title": "Export Prethought Space to Dgraph RDF",
+      "engine": "knowledge",
+      "priority": "CORE",
+      "deps": ["KG-001"],
+      "scope": ["kg/scripts/export_to_dgraph.py", "prethought/", "kg/dgraph/"],
+      "accept": "test -f kg/scripts/export_to_dgraph.py && python kg/scripts/export_to_dgraph.py --dry-run",
+      "acceptance_prose": "Script exports prethought to Dgraph RDF, dry-run succeeds",
+      "manual": false,
+      "tiers": ["dgraph", "knowledge"]
+    },
+    {
+      "id": "KG-003",
+      "title": "Sync Neo4j KG from Riemann Repo",
+      "engine": "neo4j",
+      "priority": "CORE",
+      "deps": [],
+      "scope": ["../riemann/knowledge-graph/cypher/", "kg/cypher/"],
+      "accept": "test $(ls kg/cypher/*.cypher 2>/dev/null | wc -l) -ge 10",
+      "acceptance_prose": "Neo4j Cypher scripts mirrored",
+      "manual": false,
+      "tiers": ["neo4j", "kg"]
+    },
+    {
+      "id": "EC-001",
+      "title": "Run Exp 16: Spectral Gap Hecke Correlation",
+      "engine": "correlation",
+      "priority": "EXTENSION",
+      "deps": [],
+      "scope": ["../riemann/scripts/spectral_gap_hecke_correlation.py", "../riemann/data/"],
+      "accept": "cd .. && python scripts/spectral_gap_hecke_correlation.py --test-only 2>&1 | grep -q 'success\\|correlation\\|complete'",
+      "acceptance_prose": "Exp 16 script runs and produces correlation results",
+      "manual": true,
+      "tiers": ["discovery", "correlation"]
+    },
+    {
+      "id": "EC-002",
+      "title": "Populate Friedli Constant in Prethought",
+      "engine": "findings",
+      "priority": "EXTENSION",
+      "deps": ["CP-002"],
+      "scope": ["prethought/findings/spectral-constants.yaml"],
+      "accept": "grep -q 'Friedli.*1.1367' prethought/findings/spectral-constants.yaml",
+      "acceptance_prose": "Friedli constant, theoretical context, and Granville connection documented",
+      "manual": false,
+      "tiers": ["findings", "knowledge"]
+    },
+    {
+      "id": "EF-001",
+      "title": "Link Lean Formalization to Prethought",
+      "engine": "formalization",
+      "priority": "EXTENSION",
+      "deps": ["CP-001"],
+      "scope": ["../riemann/lean/Riemann/", "prethought/concepts/"],
+      "accept": "grep -r 'lean_status' prethought/concepts/*.yaml | wc -l | grep -q '[0-9]'",
+      "acceptance_prose": "Lean files referenced from prethought concepts",
+      "manual": false,
+      "tiers": ["lean", "knowledge"]
+    },
+    {
+      "id": "NH-001",
+      "title": "Add All References from Riemann Research Notes",
+      "engine": "corpus",
+      "priority": "NICE_TO_HAVE",
+      "deps": ["FC-004"],
+      "scope": ["../riemann/research/", "papers.yaml"],
+      "accept": "test $(grep -c '^  - id:' papers.yaml) -ge 30",
+      "acceptance_prose": "References from research notes added to corpus",
+      "manual": false,
+      "tiers": ["discovery", "corpus"]
+    }
+  ]
+}
