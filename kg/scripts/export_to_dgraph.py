@@ -125,6 +125,19 @@ TYPE_MAP = {
     "documentation": "Documentation",
     "assessment": "Assessment",
     "proof": "Proof",
+    # Methodology and philosophy types
+    "philosophy": "Philosophy",
+    "strategy": "Strategy",
+    "audit": "Audit",
+    "roadmap": "Roadmap",
+    "warning": "Warning",
+    "assignment": "Research",
+    "solution": "Research",
+    "cayley_graph": "Graph",
+    "isogeny_graph": "Graph",
+    "expander_graph": "Graph",
+    "geometric_graph": "Graph",
+    "regular_graph": "Graph",
 }
 
 # =============================================================================

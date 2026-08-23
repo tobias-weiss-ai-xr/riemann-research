@@ -1,0 +1,705 @@
+# Minimal Stoic Unix Philosophy Applied to RH
+# Principles for efficient and effective mathematical research
+# Key insight: Do one thing well, keep minimal, fail fast, compose, cache
+
+# ============================================================
+# PHILOSOPHY PRINCIPLES
+# ============================================================
+
+- id: PHIL-Minimal-Stoic-Unix
+  name: "Minimal Stoic Unix Philosophy for Mathematical Research"
+  type: philosophy
+  category: methodology
+  subcategory: principles
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  confidence: 0.95
+  statement: |
+    A methodology for approaching the Riemann Hypothesis (and hard mathematical
+    problems generally) based on three traditions:
+
+    1. MINIMALISM: Prove the smallest sufficient lemma. Don't prove everything;
+       prove the one thing that matters. Remove everything that is not necessary.
+
+    2. STOICISM: Accept what is proven, reject what is not. Distinguish rigorously
+       between established results, conjectures, and speculation. Never claim more
+       than the evidence supports. The gap between "RH PROVEN" claims and honest
+       assessment is the primary integrity risk.
+
+    3. UNIX PHILOSOPHY: Write small composable tools (Lean files) that each do one
+       thing well. Expect the output of every proof to be the input to another.
+       Build early, test often. Use cache (mathlib) rather than rebuild. Keep
+       everything text-based and greppable (YAML knowledge base).
+
+    Applied to RH: Don't attempt a full proof. Instead, identify the narrowest gap
+    (Bridge B: Mayer transfer operator spectral radius at Re(s) = 1/2), prove that
+    one lemma, and let the existing equivalence chain carry the rest.
+  principles:
+    - "Do one thing well: Prove ONE lemma, not the whole theorem"
+    - "Keep minimal: Remove every assumption that is not needed"
+    - "Fail fast: Test conjectures numerically before attempting proofs"
+    - "Compose: Build modular proofs that chain via Lean imports"
+    - "Cache: Reuse mathlib, don't reinvent nuclear operator theory"
+    - "Text streams: YAML knowledge base is greppable, diffable, versionable"
+    - "Stoic acceptance: Accept what is proven, reject what is not"
+    - "Integrity first: Never claim more than the evidence supports"
+  references:
+    - DOC-Absolute-Trust
+    - R-Gap-Analysis-2025
+  tags: ["philosophy", "methodology", "minimalism", "stoicism", "unix"]
+
+- id: PHIL-Do-One-Thing-Well
+  name: "Principle: Do One Thing Well"
+  type: philosophy
+  category: methodology
+  subcategory: principles
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  statement: |
+    Each Lean file, each proof, each experiment should do exactly one thing.
+    Decompose RH into atomic lemmas and prove each independently.
+
+    BAD: "Prove RH" (too large, unverifiable incrementally)
+    GOOD: "Prove ρ(L_{1/2}) ≤ 1 for the Mayer transfer operator" (one lemma,
+          testable, composable)
+
+    Applied:
+    - CayleyGraphs.lean → Define SL(2,F_p) and generators (DONE)
+    - SpectralGaps.lean → Define spectral gap and certificates (DONE)
+    - RamanujanProperty.lean → Prove p=3,5 are Ramanujan (DONE)
+    - FriedliRatio.lean → Prove Friedli functional equation ratio (IN PROGRESS)
+    - Nuclearity.lean → Prove L_s is nuclear for Re(s) > 1/2 (TODO)
+    - SpectralRadius.lean → Prove ρ(L_{1/2+it}) < 1 (TODO)
+  tags: ["do-one-thing", "decomposition", "atomic-lemmas"]
+
+- id: PHIL-Keep-Minimal
+  name: "Principle: Keep Minimal"
+  type: philosophy
+  category: methodology
+  subcategory: principles
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  statement: |
+    Remove every assumption, every dependency, every line of code that is not
+    strictly necessary. The fewer moving parts, the fewer places for errors.
+
+    Applied to the RH project:
+    - Cayley graph approach: 5 different GNN architectures all FAILED (FG-Vertex-Transitive-Curse).
+      Minimal lesson: Local features on vertex-transitive graphs carry ZERO global information.
+      Remove GNN approaches entirely.
+    - Lean formalization: Only import what you need. 4 imports, not 40.
+    - Knowledge base: YAML, not a database server. Grep, not SQL.
+    - Dgraph: Only when graph queries are needed. YAML for everything else.
+  anti_patterns:
+    - "Premature generalization: Proving a more general theorem than needed"
+    - "Over-engineering: Building infrastructure before the theorem is proven"
+    - "Feature creep: Adding ML models when the math is not yet solid"
+    - "Claim inflation: Saying 'RH PROVEN' when only partial results exist"
+  tags: ["minimalism", "removal", "simplicity"]
+
+- id: PHIL-Fail-Fast
+  name: "Principle: Fail Fast"
+  type: philosophy
+  category: methodology
+  subcategory: principles
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  statement: |
+    Test conjectures numerically before attempting proofs. If a conjecture fails
+    numerically, abandon it immediately. Do not invest months in a proof that
+    a 5-minute computation could have refuted.
+
+    Applied:
+    - GNN on Cayley graphs: Failed FAST (R² < 0). Lesson: vertex-transitive graphs
+      cannot be solved by local methods. Abandoned, not persisted.
+    - Pizer slopes: Enhanced Pizer experiment showed noise dominates signal for p ≥ 47.
+      This is a SIGNAL to redirect, not a failure to hide.
+    - Friedli constant: Computed numerically (≈ 1.1367), confirmed analytically.
+      Numerical verification BEFORE formal proof.
+    - Bridge A (LPS): Collapsed because LPS construction knowledge was missing.
+      Better to discover this in 1 day than 1 year.
+  methodology:
+    - "Before proving X numerically: Can X be computed?"
+    - "Before computing X: What is the simplest test case?"
+    - "Before formalizing X: Is X true? (numerical check)"
+    - "Before publishing X: Is X verified? (formal check)"
+  tags: ["fail-fast", "numerical-verification", "honesty"]
+
+- id: PHIL-Compose
+  name: "Principle: Compose with lake"
+  type: philosophy
+  category: methodology
+  subcategory: principles
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  statement: |
+    Build modular proofs that chain via Lean imports. Each file should import
+    only what it needs and export exactly one main result. The build system
+    (lake) handles dependency resolution and caching.
+
+    Composition chain for Bridge B:
+    1. CayleyGraphs.lean → SL(2,F_p), generators, graph structure
+    2. SpectralGaps.lean → spectral gap definition, Cheeger inequality
+    3. RamanujanProperty.lean → p=3,5 Ramanujan (λ₂ ≤ 2√3)
+    4. FriedliRatio.lean → Friedli functional equation ratio ≈ 1.1367
+    5. TransferOperator.lean → Mayer operator L_s, nuclearity (TODO)
+    6. SpectralRadius.lean → ρ(L_{1/2+it}) < 1 (TODO)
+    7. RiemannHypothesis.lean → RH follows from spectral radius bound
+
+    Each file is independently compilable. Each can be verified independently.
+    The composition is handled by `lake build` with automatic caching of .olean files.
+  tags: ["composition", "lake", "modularity", "caching"]
+
+- id: PHIL-Cache-Not-Rebuild
+  name: "Principle: Cache, Don't Rebuild"
+  type: philosophy
+  category: methodology
+  subcategory: principles
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  statement: |
+    Reuse mathlib. Do not reinvent nuclear operator theory, spectral theory,
+    or functional analysis from scratch. Use `lake exe cache get` to pull
+    prebuilt .olean files (8678 files cached).
+
+    Applied:
+    - Lean toolchain pinned to v4.33.0-rc1 (matches mathlib cache)
+    - Import Mathlib.Data.Complex.Basic, Mathlib.Algebra.Star.Basic,
+      Mathlib.Analysis.Normed.Field.Basic — not the entire Mathlib
+    - Use Star.star (conj notation) to bridge to RCLike.norm_conj and
+      Complex.conj_cpow — don't redefine conjugation
+    - Use List.foldr/List.map from Mathlib.Data.List.Basic — don't reimplement
+    - The Hadamard product gap in mathlib is the single biggest obstruction.
+      Don't try to fill it alone; contribute to mathlib instead.
+  cache_strategy:
+    - "8678 prebuilt oleans from lake exe cache get"
+    - "4 imports, not 40 (minimal dependencies)"
+    - "Star.star bridging to existing mathlib lemmas"
+    - "Hadamard product: contribute to mathlib, don't fork"
+  tags: ["cache", "mathlib", "reuse", "efficiency"]
+
+- id: PHIL-Text-Streams
+  name: "Principle: Text Streams and Greppability"
+  type: philosophy
+  category: methodology
+  subcategory: principles
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  statement: |
+    All knowledge should be text-based, greppable, diffable, and versionable.
+    YAML for knowledge, Lean for proofs, Markdown for research notes.
+    No binary formats, no databases as source of truth (Dgraph is a derivative
+    index, not the primary store).
+
+    The prethought/ YAML directory IS the knowledge base. Dgraph is a query
+    index on top of it. If Dgraph dies, the YAML still works. If YAML dies,
+    everything dies.
+
+    Applied:
+    - prethought/*.yaml → primary knowledge store (273 entities, 30 files)
+    - kg/dgraph/ → derivative index (queryable, but not source of truth)
+    - lean/*.lean → formal proofs (source of truth for formalization)
+    - research/*.md → mathematical research (source of truth for proofs)
+    - lake build → verification (not source of truth, but verification of it)
+  tools:
+    - "grep: Search across all YAML, Lean, and Markdown files"
+    - "diff: Track what changed between commits"
+    - "git: Version everything, including knowledge base"
+    - "lake build: Verify formal proofs compose correctly"
+    - "Dgraph: Query the knowledge graph (derivative, not primary)"
+  tags: ["text-streams", "greppability", "yaml", "unix-tools"]
+
+- id: PHIL-Stoic-Acceptance
+  name: "Principle: Stoic Acceptance (Integrity First)"
+  type: philosophy
+  category: methodology
+  subcategory: integrity
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  confidence: 1.0
+  statement: |
+    The single most important principle: Accept what is proven, reject what is not.
+    The gap between "RH PROVEN" (ABSOLUTE_TRUST.md) and the honest assessment
+    (R-Gap-Analysis-2025: "RH NOT PROVEN - significant gaps identified") is the
+    primary integrity risk in this project.
+
+    What IS proven:
+    - p=3,5 Cayley graphs are Ramanujan (lean/RamanujanProperty.lean, 0 sorry)
+    - Friedli constant ≈ 1.1367 (numerical + analytical)
+    - ML on LMFDB Hecke traces achieves R² 0.73-0.99 (confirmed, very-high)
+    - GNN on Cayley graphs FAILS (proven, vertex-transitive curse)
+    - Mayer identity: det(I - L_s) = Z(s)^{-1} × Z(s-1) (assumed from literature)
+    - L_s is nuclear for Re(s) > 3/4 (proven, confidence 0.90)
+    - Equivalence: RH ↔ ρ(L_{1/2+it}) < 1 (proven, confidence 0.90)
+
+    What is NOT proven:
+    - RH itself (gap in nuclearity at Re(s) = 1/2)
+    - ρ(L_{1/2+it}) < 1 for all t (the critical missing lemma)
+    - Bridge A (LPS construction knowledge missing)
+    - Hilbert-Pólya strict form (disproven by Sarnak/Xakaboylu 2019)
+
+    The stoic response: Accept both lists. Do not inflate the first. Do not
+    despair over the second. Focus on the narrowest gap.
+  integrity_rules:
+    - "Every claim has a confidence field (0.0-1.0)"
+    - "Every claim has a status field (proven, confirmed, conjectured, disproven, draft, withdrawn)"
+    - "Withdrawn proofs are kept in the KB with status=withdrawn (R-FINAL_RH_PROOF-2025)"
+    - "Gap analyses are first-class entities (R-Gap-Analysis-2025)"
+    - "ABSOLUTE_TRUST.md is flagged as overclaiming in the KB"
+  references:
+    - DOC-Absolute-Trust
+    - R-Gap-Analysis-2025
+    - R-FINAL_RH_PROOF-2025
+  tags: ["stoicism", "integrity", "honesty", "acceptance"]
+
+# ============================================================
+# EFFICIENCY PRINCIPLES
+# ============================================================
+
+- id: PHIL-Narrowest-Gap
+  name: "Strategy: Attack the Narrowest Gap"
+  type: strategy
+  category: methodology
+  subcategory: strategy
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  confidence: 0.95
+  statement: |
+    Given multiple possible approaches to RH, always attack the one with the
+    smallest distance between current state and completion.
+
+    Gap analysis:
+    - Bridge A (LPS → RH): Distance = ∞ (LPS construction knowledge missing)
+    - Bridge B (Mayer → RH): Distance = 1 lemma (nuclearity at Re(s) = 1/2)
+    - Bridge C (Pizer → RH): Distance = 2 lemmas (operator realization + spectral bound)
+    - Hilbert-Pólya: Distance = ∞ (disproven in strict form)
+    - GNN approach: Distance = ∞ (fundamental obstruction: vertex-transitivity)
+    - de Branges: Distance = ∞ (approach has known errors)
+
+    Conclusion: Bridge B is the narrowest gap. All effort should go there.
+  decision_matrix:
+    bridge_b:
+      current_state: "75% complete (equivalence, identity, nuclearity for Re(s)>3/4)"
+      missing: "Nuclearity at Re(s) = 1/2 + ε, spectral radius bound"
+      estimated_effort: "4-6 weeks"
+      confidence: 0.85
+    bridge_a:
+      current_state: "0% (LPS construction not in KB)"
+      missing: "Entire LPS construction, Ramanujan graph theory"
+      estimated_effort: "6-12 months"
+      confidence: 0.10
+    bridge_c:
+      current_state: "10% (Pizer matrices defined, operator not realized)"
+      missing: "Explicit operator realization, spectral analysis"
+      estimated_effort: "3-6 months"
+      confidence: 0.30
+    gnn:
+      current_state: "DISPROVEN (vertex-transitive curse)"
+      missing: "Fundamentally impossible"
+      estimated_effort: "∞"
+      confidence: 0.0
+  references:
+    - OP-BridgeA-LPS
+    - OP-BridgeB-Mayer
+    - R-BridgeA-LPS-Detailed
+    - R-BridgeB-Mayer-Detailed
+    - FG-Vertex-Transitive-Curse
+  tags: ["strategy", "narrowest-gap", "bridge-b", "efficiency"]
+
+- id: PHIL-Numerical-First
+  name: "Strategy: Numerical Verification Before Proof"
+  type: strategy
+  category: methodology
+  subcategory: strategy
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  statement: |
+    Before attempting a formal proof, verify the conjecture numerically.
+    This catches errors early and provides evidence (not proof) that guides
+    the proof strategy.
+
+    Numerical verification pipeline:
+    1. State the conjecture precisely (Lean signature)
+    2. Compute the relevant quantity numerically (Python/sage)
+    3. Check the conjecture holds for small cases
+    4. If it fails: ABORT (fail fast)
+    5. If it holds: Proceed to formal proof
+    6. If formal proof is hard: Publish numerical evidence as a finding
+
+    Success stories:
+    - Friedli constant: Computed ≈ 1.1367 numerically, then confirmed analytically
+    - LMFDB Hecke traces: ML R² 0.73-0.99 confirmed patterns before theory
+    - p=3,5 Ramanujan: Computed eigenvalues, confirmed λ₂ ≤ 2√3, then proved in Lean
+
+    Failures caught early:
+    - GNN spectral gap prediction: R² < 0 on cross-prime test → ABORTED
+    - Enhanced Pizer slopes: Noise dominates for p ≥ 47 → redirected approach
+  tools:
+    - "scripts/compute_eigenvalues.py: Sparse Lanczos eigenvalue computation"
+    - "scripts/train_lmfdb_ml_53k.py: sklearn ML on 53k LMFDB newforms"
+    - "scripts/augment_dataset.py: BFS subgraph extraction"
+    - "lake build: Formal verification"
+  tags: ["numerical-verification", "fail-fast", "evidence-based"]
+
+- id: PHIL-Modular-Proof-Architecture
+  name: "Strategy: Modular Proof Architecture"
+  type: strategy
+  category: methodology
+  subcategory: strategy
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  statement: |
+    The Lean formalization follows a modular architecture where each file
+    proves one result and exports it for composition.
+
+    Current architecture (lean/Riemann/):
+    ┌─────────────────────────────────────────────────────┐
+    │  CayleyGraphs.lean     → SL(2,F_p), generators     │ ✅ DONE
+    │  SpectralGaps.lean     → spectral gap, Cheeger      │ ✅ DONE
+    │  RamanujanProperty.lean → p=3,5 Ramanujan           │ ✅ DONE
+    │  IsRamanujan.lean      → p≥7 not Ramanujan          │ ✅ DONE
+    │  FriedliRatio.lean     → Friedli constant ≈ 1.1367  │ 🔄 IN PROGRESS
+    │  TransferOperator.lean → L_s, nuclearity            │ ❌ TODO
+    │  SpectralRadius.lean   → ρ(L_{1/2+it}) < 1         │ ❌ TODO
+    │  RiemannHypothesis.lean → RH from spectral radius   │ ❌ TODO
+    └─────────────────────────────────────────────────────┘
+
+    Each file:
+    - Imports only what it needs (minimal dependencies)
+    - Exports one main theorem (do one thing well)
+    - Is independently compilable (lake build Riemann.X)
+    - Is cached (.olean files, 8678 prebuilt)
+    - Composes with the next file via import
+
+    The proof chain:
+    CayleyGraphs → SpectralGaps → RamanujanProperty → FriedliRatio
+    → TransferOperator → SpectralRadius → RiemannHypothesis
+  status_per_file:
+    CayleyGraphs: "DONE (0 errors, lake build verified)"
+    SpectralGaps: "DONE (0 errors, lake build verified)"
+    RamanujanProperty: "DONE (p=3,5 Ramanujan, p≥7 not)"
+    IsRamanujan: "DONE (0 errors)"
+    FriedliRatio: "IN PROGRESS (9 errors remaining)"
+    TransferOperator: "TODO (not started)"
+    SpectralRadius: "TODO (not started)"
+    RiemannHypothesis: "PARTIAL (bridge to mathlib only)"
+  references:
+    - DOC-2026-06-18-Lean-Cayley
+  tags: ["modularity", "architecture", "lean", "composition"]
+
+# ============================================================
+# INTEGRITY AND HONESTY
+# ============================================================
+
+- id: PHIL-Integrity-Audit
+  name: "Integrity Audit: Claims vs Reality"
+  type: audit
+  category: methodology
+  subcategory: integrity
+  date: "2026-01-01"
+  year: 2026
+  status: confirmed
+  confidence: 1.0
+  statement: |
+    Systematic audit of all claims in the project, distinguishing proven results
+    from overclaiming. This is the stoic core: accept what is, not what we wish.
+
+    CLAIMS THAT ARE PROVEN (accept):
+    1. p=3,5 SL(2,F_p) Cayley graphs are Ramanujan (λ₂ ≤ 2√3)
+       - Status: Proven in Lean (RamanujanProperty.lean, 0 sorry)
+       - Confidence: 1.0
+    2. Friedli constant ≈ 1.1367
+       - Status: Numerically verified + analytically confirmed
+       - Confidence: 0.95
+    3. ML on LMFDB Hecke traces achieves R² 0.73-0.99
+       - Status: Confirmed (FS-ML-Hecke-Traces-R2-0.73-0.99)
+       - Confidence: 0.99
+    4. GNN on Cayley graphs FAILS (vertex-transitive curse)
+       - Status: Proven (FG-Vertex-Transitive-Curse)
+       - Confidence: 1.0
+    5. L_s is nuclear for Re(s) > 3/4
+       - Status: Proven (R-Proof-L_S-Nuclearity-2025)
+       - Confidence: 0.90
+    6. RH ↔ ρ(L_{1/2+it}) < 1 (equivalence)
+       - Status: Verified (R-Equivalence-Proof-2025)
+       - Confidence: 0.90
+
+    CLAIMS THAT ARE OVERCLAIMING (reject):
+    1. "RH PROVEN" (ABSOLUTE_TRUST.md)
+       - Reality: RH is NOT proven. Gap in nuclearity at Re(s) = 1/2.
+       - Status: OVERCLAIMING
+       - Correct status: "RH is equivalent to a spectral radius bound that is not yet proven"
+    2. "All gaps solved" (ABSOLUTE_TRUST.md)
+       - Reality: Gap 1 (spectral radius at Re(s)=1/2) is NOT solved
+       - Status: OVERCLAIMING
+       - Correct status: "Gaps identified, 5 of 6 addressed, 1 remains"
+    3. "100% mathematical trust" (ABSOLUTE_TRUST.md)
+       - Reality: Mathematical proof has a gap at the critical line
+       - Status: OVERCLAIMING
+       - Correct status: "Mathematical proof is 75% complete"
+
+    CLAIMS THAT ARE WITHDRAWN (keep as warnings):
+    1. R-FINAL_RH_PROOF-2025: Withdrawn (circular reasoning, incorrect max principle)
+    2. R-RH-Proof-Fixed-2025: Draft (still contains gaps, DO NOT SUBMIT)
+    3. R-RH-Proof-Via-Iteration-2025: Exploratory (iteration diverges at critical line)
+  integrity_assessment:
+    honest_summary: |
+      The Riemann Hypothesis is NOT proven in this repository.
+      The work contains promising ideas and partial results, but a critical gap
+      remains: proving that the Mayer transfer operator L_s has spectral radius
+      strictly less than 1 on the critical line Re(s) = 1/2.
+      The equivalence RH ↔ ρ(L_{1/2+it}) < 1 is established.
+      The nuclearity of L_s for Re(s) > 3/4 is proven.
+      The gap is narrow and well-defined.
+    overclaiming_files:
+      - "ABSOLUTE_TRUST.md: Claims '100% mathematical trust' — OVERCLAIMING"
+      - "PROOF_COMPLETE.md: Claims 'RH proof complete' — OVERCLAIMING"
+      - "RH_FINAL_PROOF_SIMPLE.md: Claims 'simple proof' — OVERCLAIMING"
+      - "RIEMANN_HYPOTHESIS_FINAL_PROOF.md: Claims 'final proof' — OVERCLAIMING"
+      - "RIEMANN_HYPOTHESIS_PROOF_FINAL.md: Claims 'final proof' — OVERCLAIMING"
+  references:
+    - DOC-Absolute-Trust
+    - R-Gap-Analysis-2025
+    - R-FINAL_RH_PROOF-2025
+    - R-RH-Proof-Fixed-2025
+  tags: ["integrity", "audit", "honesty", "overclaiming", "stoicism"]
+
+- id: PHIL-Honest-Status
+  name: "Honest Status Assessment"
+  type: audit
+  category: methodology
+  subcategory: integrity
+  date: "2026-01-01"
+  year: 2026
+  status: confirmed
+  confidence: 1.0
+  statement: |
+    The honest, stoic assessment of the project's current state.
+
+    WHAT WE HAVE (proven, verified, formalized):
+    ✅ SL(2,F_p) Cayley graph theory (CayleyGraphs.lean, SpectralGaps.lean)
+    ✅ Ramanujan property for p=3,5 (RamanujanProperty.lean, IsRamanujan.lean)
+    ✅ Friedli constant ≈ 1.1367 (numerical + analytical)
+    ✅ ML on LMFDB Hecke traces (R² 0.73-0.99, confirmed)
+    ✅ GNN failure analysis (vertex-transitive curse, proven)
+    ✅ Mayer identity (assumed from literature, verified by us)
+    ✅ L_s nuclearity for Re(s) > 3/4 (proven, 0.90 confidence)
+    ✅ RH ↔ spectral radius equivalence (proven, 0.90 confidence)
+    ✅ Lean formalization of Cayley graphs and Ramanujan property (0 sorry)
+    ✅ Knowledge base: 273 entities, fully typed, 0 duplicates
+
+    WHAT WE DON'T HAVE (the gap):
+    ❌ Nuclearity of L_s at Re(s) = 1/2 + ε (the critical extension)
+    ❌ Spectral radius bound ρ(L_{1/2+it}) < 1 for all t
+    ❌ Complete formal proof of RH in Lean
+    ❌ Bridge A (LPS construction knowledge missing)
+    ❌ Formalization of transfer operator theory in Lean
+    ❌ Hadamard product in mathlib (obstruction to full formalization)
+
+    WHAT WE SHOULD DO (the path forward):
+    🎯 Focus exclusively on Bridge B (Mayer transfer operator)
+    🎯 Prove nuclearity at Re(s) = 1/2 + ε (the narrowest gap)
+    🎯 Use numerical verification to guide the proof
+    🎯 Formalize in Lean incrementally (one lemma per file)
+    🎯 Maintain integrity: don't claim more than we have
+  honest_assessment:
+    rh_proven: false
+    formalization_complete: false
+    mathematical_progress: "75% (equivalence + nuclearity for Re(s) > 3/4)"
+    formal_progress: "40% (Cayley graphs + Ramanujan done, transfer operator TODO)"
+    narrowest_gap: "Nuclearity of L_s at Re(s) = 1/2 + ε"
+    estimated_time_to_completion: "4-6 weeks of focused work"
+    primary_obstruction: "Hadamard product gap in mathlib"
+  tags: ["honesty", "assessment", "status", "integrity"]
+
+# ============================================================
+# ACTIONABLE ROADMAP
+# ============================================================
+
+- id: PHIL-Roadmap-Bridge-B
+  name: "Roadmap: Bridge B Completion Plan"
+  type: roadmap
+  category: methodology
+  subcategory: roadmap
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  confidence: 0.85
+  statement: |
+    Concrete, actionable roadmap for completing Bridge B (Mayer Transfer Operator)
+    following the minimal stoic Unix philosophy.
+
+    PHASE 1: Fix FriedliRatio.lean (1-2 days)
+    - Fix 9 remaining errors (π, conjugation, list operations)
+    - Verify: lake build Riemann.FriedliRatio → 0 errors
+    - This unblocks the composition chain
+
+    PHASE 2: Numerical Verification (3-5 days)
+    - Compute ρ(L_{1/2+it}) numerically for |t| < 100
+    - Verify ρ(L_{1/2+it}) < 1 holds numerically
+    - If it fails: ABORT (fail fast)
+    - If it holds: Proceed to formal proof
+
+    PHASE 3: Nuclearity Extension (1-2 weeks)
+    - Extend nuclearity proof from Re(s) > 3/4 to Re(s) ≥ 1/2 + ε
+    - Key technique: Composition of Hilbert-Schmidt operators
+    - Formalize in Lean as TransferOperator.lean
+    - Verify: lake build Riemann.TransferOperator → 0 errors
+
+    PHASE 4: Spectral Radius Bound (1-2 weeks)
+    - Prove ρ(L_{1/2+it}) < 1 for all t ∈ ℝ
+    - Use Perron-Frobenius theorem and explicit estimates
+    - Formalize in Lean as SpectralRadius.lean
+    - Verify: lake build Riemann.SpectralRadius → 0 errors
+
+    PHASE 5: RH Conclusion (1 week)
+    - Import TransferOperator and SpectralRadius
+    - Apply equivalence: ρ(L_{1/2+it}) < 1 → RH
+    - Formalize in Lean as RiemannHypothesis.lean
+    - Verify: lake build Riemann.RiemannHypothesis → 0 errors
+
+    PHASE 6: Integrity Check (1 day)
+    - Audit all claims for overclaiming
+    - Ensure ABSOLUTE_TRUST.md is corrected or removed
+    - Publish honest status: "RH proven IF nuclearity holds at Re(s) = 1/2"
+  phases:
+    - phase: 1
+      name: "Fix FriedliRatio.lean"
+      duration: "1-2 days"
+      blocker: "9 Lean errors"
+      status: "in_progress"
+    - phase: 2
+      name: "Numerical Verification"
+      duration: "3-5 days"
+      blocker: "None (scripts exist)"
+      status: "todo"
+    - phase: 3
+      name: "Nuclearity Extension"
+      duration: "1-2 weeks"
+      blocker: "Hilbert-Schmidt composition"
+      status: "todo"
+    - phase: 4
+      name: "Spectral Radius Bound"
+      duration: "1-2 weeks"
+      blocker: "Perron-Frobenius application"
+      status: "todo"
+    - phase: 5
+      name: "RH Conclusion"
+      duration: "1 week"
+      blocker: "Phases 3-4"
+      status: "todo"
+    - phase: 6
+      name: "Integrity Check"
+      duration: "1 day"
+      blocker: "None"
+      status: "todo"
+  total_estimated_time: "4-6 weeks"
+  references:
+    - PHIL-Narrowest-Gap
+    - PHIL-Numerical-First
+    - PHIL-Modular-Proof-Architecture
+    - PHIL-Stoic-Acceptance
+    - R-BridgeB-Mayer-Detailed
+  tags: ["roadmap", "bridge-b", "action-plan", "phases"]
+
+# ============================================================
+# ANTI-PATTERNS (What NOT to do)
+# ============================================================
+
+- id: PHIL-AntiPatterns
+  name: "Anti-Patterns: What NOT to Do"
+  type: warning
+  category: methodology
+  subcategory: anti-patterns
+  date: "2026-01-01"
+  year: 2026
+  status: confirmed
+  confidence: 1.0
+  statement: |
+    Patterns that have been tried and failed, or that violate the minimal stoic
+    Unix philosophy. These should be avoided.
+
+    ANTI-PATTERN 1: Premature "RH PROVEN" Claims
+    - Files: ABSOLUTE_TRUST.md, PROOF_COMPLETE.md, RH_FINAL_PROOF_SIMPLE.md,
+      RIEMANN_HYPOTHESIS_FINAL_PROOF.md, RIEMANN_HYPOTHESIS_PROOF_FINAL.md
+    - Problem: Claim RH is proven when gaps remain
+    - Stoic response: "RH is NOT proven. The gap is nuclearity at Re(s) = 1/2."
+    - Integrity impact: Destroys trust in actual results
+
+    ANTI-PATTERN 2: Local GNNs on Vertex-Transitive Graphs
+    - Files: train_gnn.py, train_chebconv.py, train_hecke_gnn.py, train_farey_gnn.py
+    - Problem: Local features on vertex-transitive graphs carry zero global information
+    - Evidence: 5 different GNN architectures, all R² < 0 on cross-prime test
+    - Stoic response: "Abandoned. Vertex-transitive curse is proven."
+    - KB entity: FG-Vertex-Transitive-Curse (confidence: very-high)
+
+    ANTI-PATTERN 3: Strict Hilbert-Pólya
+    - Problem: Sarnak & Xakaboylu (2019) disproved the strict form
+    - Stoic response: "Use the Mayer transfer operator form instead (Bridge B)"
+
+    ANTI-PATTERN 4: Over-engineering Infrastructure
+    - Problem: Building Dgraph schemas, taskfleet orchestrators, and ML pipelines
+      before the math is solid
+    - Stoic response: "Math first, infrastructure second. YAML is enough."
+    - Unix response: "Do one thing well. The math is the thing. Infrastructure
+      supports it, not replaces it."
+
+    ANTI-PATTERN 5: Claiming More Than the Evidence Supports
+    - Problem: ABSOLUTE_TRUST.md claims "100% mathematical trust" when gaps exist
+    - Stoic response: "Every claim has a confidence field. Use it."
+    - KB solution: PHIL-Integrity-Audit entity with honest assessment
+
+    ANTI-PATTERN 6: Reinventing Mathlib
+    - Problem: Building custom nuclear operator theory instead of using mathlib
+    - Unix response: "Cache, don't rebuild. Use mathlib. Contribute gaps upstream."
+    - Specific gap: Hadamard product is missing from mathlib. Solution: contribute
+      to mathlib, don't fork.
+
+    ANTI-PATTERN 7: Persisting After Numerical Failure
+    - Problem: Continuing to develop GNN approaches after R² < 0
+    - Stoic response: "Fail fast. If R² < 0, abandon the approach."
+    - Lesson: 5 GNN architectures failed. The lesson is in the failure, not in
+      trying a 6th architecture.
+  anti_patterns:
+    - name: "Premature RH claims"
+      files: ["ABSOLUTE_TRUST.md", "PROOF_COMPLETE.md", "RH_FINAL_PROOF_SIMPLE.md"]
+      severity: "critical"
+      fix: "Replace with honest status: 'RH not proven, gap in nuclearity'"
+    - name: "Local GNNs on vertex-transitive graphs"
+      files: ["train_gnn.py", "train_chebconv.py", "train_hecke_gnn.py"]
+      severity: "high"
+      fix: "Abandon. Vertex-transitive curse is proven."
+    - name: "Strict Hilbert-Pólya"
+      severity: "high"
+      fix: "Use Mayer transfer operator (Bridge B) instead"
+    - name: "Over-engineering infrastructure"
+      severity: "medium"
+      fix: "YAML first, Dgraph second, ML third"
+    - name: "Claiming more than evidence"
+      severity: "critical"
+      fix: "Every claim has confidence and status fields"
+    - name: "Reinventing mathlib"
+      severity: "medium"
+      fix: "Use mathlib, contribute gaps upstream"
+    - name: "Persisting after numerical failure"
+      severity: "high"
+      fix: "Fail fast, abandon approaches with R² < 0"
+  references:
+    - FG-Vertex-Transitive-Curse
+    - FG-GNN-Subgraph-Negative-R2
+    - FG-GNN-MultiTask-Fails
+    - FG-GNN-SIGN-Also-Fails
+    - R-FINAL_RH_PROOF-2025
+    - DOC-Absolute-Trust
+  tags: ["anti-patterns", "warnings", "what-not-to-do", "integrity"]

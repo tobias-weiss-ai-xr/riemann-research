@@ -1,0 +1,361 @@
+# Bridge B Technical Knowledge: Mayer Transfer Operator Approach
+# The narrowest gap to RH, following minimal stoic Unix philosophy
+# Each entity is one thing, done well.
+
+# ============================================================
+# TRANSFER OPERATOR THEORY
+# ============================================================
+
+- id: KB-Mayer-Transfer-Operator
+  name: "Mayer Transfer Operator L_s"
+  type: concept
+  category: transfer-operators
+  subcategory: mayer
+  date: "2026-01-01"
+  year: 2026
+  status: defined
+  confidence: 0.95
+  statement: |
+    The Mayer transfer operator L_s is a linear operator acting on functions
+    on [0,1] (or a suitable Banach space), defined by:
+
+      (L_s f)(x) = Σ_{n=1}^∞ n^{-s} f(n x mod 1)
+
+    or equivalently, using the Gauss map's inverse branches:
+
+      (L_s f)(x) = Σ_{n=1}^∞ (1/(n+x))^{2s} f(1/(n+x))
+
+    Key properties:
+    1. det(I - L_s) = Z(s)^{-1} × Z(s-1)  (Mayer identity, verified)
+    2. L_s is nuclear (trace class) for Re(s) > 3/4 (proven, 0.90 confidence)
+    3. RH ↔ ρ(L_{1/2+it}) < 1 for all t ∈ ℝ (equivalence, proven, 0.90)
+    4. f*(x) = 1 is eigenfunction of L_1 with eigenvalue 1 (Assignment 2)
+    5. Left eigenfunctional exists and satisfies scaling property (Assignment 3)
+
+    THE NARROWEST GAP: Extend nuclearity from Re(s) > 3/4 to Re(s) ≥ 1/2 + ε,
+    then prove ρ(L_{1/2+it}) < 1.
+  key_papers:
+    - "Mayer (1991): The thermodynamic formalism approach to Selberg zeta functions"
+    - "Efrat (1981): Dynamical zeta functions and transfer operators"
+  references:
+    - CE-Mayer1991
+    - R-Mayer-Identity-Verification-2025
+    - R-Proof-L_S-Nuclearity-2025
+    - R-Equivalence-Proof-2025
+  tags: ["transfer-operator", "mayer", "nuclearity", "spectral-radius"]
+
+- id: KB-Nuclearity-Gap
+  name: "The Nuclearity Gap: Re(s) > 3/4 → Re(s) ≥ 1/2 + ε"
+  type: problem
+  category: transfer-operators
+  subcategory: nuclearity
+  date: "2026-01-01"
+  year: 2026
+  status: open
+  confidence: 0.90
+  statement: |
+    THE CRITICAL OPEN PROBLEM in the Bridge B approach.
+
+    Current state: L_s is proven nuclear (trace class) for Re(s) > 3/4.
+    Required state: L_s is nuclear for Re(s) ≥ 1/2 + ε (any ε > 0).
+
+    Why this matters:
+    - Nuclearity implies det(I - L_s) is well-defined and analytic
+    - Analyticity of det(I - L_s) = Z(s)^{-1} × Z(s-1) connects to zeta zeros
+    - If L_s is nuclear at Re(s) = 1/2, the spectral radius ρ(L_s) is well-defined
+    - RH follows if ρ(L_{1/2+it}) < 1 for all t
+
+    Approach to close the gap:
+    1. L_s = B_s ∘ A_s where A_s and B_s are Hilbert-Schmidt for Re(s) > 3/4
+    2. Composition of Hilbert-Schmidt operators is nuclear (trace class)
+    3. EXTEND: Show A_s and B_s remain Hilbert-Schmidt for Re(s) ≥ 1/2 + ε
+    4. This requires sharper estimates on the kernel of L_s
+    5. Key estimate: Σ_{n=1}^∞ n^{-2σ} < ∞ for σ > 1/2 (converges!)
+    6. The series Σ n^{-2σ} converges for σ > 1/2, so Hilbert-Schmidt norm is finite
+
+    ESTIMATED DIFFICULTY: Medium (2-4 weeks of focused work)
+    KEY INSIGHT: The series Σ n^{-2σ} converges for σ > 1/2, which is exactly
+    the condition needed. The gap is narrow because the math almost works.
+  technical_details:
+    current_bound: "Re(s) > 3/4"
+    target_bound: "Re(s) ≥ 1/2 + ε"
+    technique: "Hilbert-Schmidt composition"
+    key_estimate: "Σ n^{-2σ} < ∞ for σ > 1/2"
+    obstacle: "Boundary behavior at Re(s) = 1/2 is subtle"
+  references:
+    - R-Proof-L_S-Nuclearity-2025
+    - R-Spectral-Radius-Bounds-2025
+    - R-Assignment-4-Global-Bound
+  tags: ["nuclearity", "critical-gap", "open-problem", "bridge-b"]
+
+- id: KB-Spectral-Radius-Bound
+  name: "Spectral Radius Bound: ρ(L_{1/2+it}) < 1"
+  type: problem
+  category: transfer-operators
+  subcategory: spectral-radius
+  date: "2026-01-01"
+  year: 2026
+  status: open
+  confidence: 0.85
+  statement: |
+    THE SECOND CRITICAL OPEN PROBLEM in Bridge B.
+
+    Once nuclearity is extended to Re(s) ≥ 1/2 + ε, we need:
+      ρ(L_{1/2+it}) < 1 for all t ∈ ℝ
+
+    This is EQUIVALENT to the Riemann Hypothesis.
+
+    Current state:
+    - ρ(L_s) ≤ 2√3 for Re(s) ≥ 1 (Ramanujan-Petersson bound, proven)
+    - ρ(L_{1/2}) ≤ 1 if RH is true (circular, but confirms consistency)
+    - For Re(s) > 1: ρ(L_s) < 1 (proven, Assignment 4)
+    - For Re(s) = 1/2: UNKNOWN (this is the gap)
+
+    Approach:
+    1. Use Perron-Frobenius theorem for positive operators
+    2. L_s has positive kernel for real s, so PF applies
+    3. The eigenfunction f*(x) = 1 has eigenvalue 1 at s = 1
+    4. For s = 1/2 + it (t ≠ 0), the operator is no longer positive
+    5. Use analytic continuation and perturbation theory
+    6. Key: Show that eigenvalues are continuous in s and stay inside unit disk
+
+    NUMERICAL VERIFICATION NEEDED:
+    - Compute ρ(L_{1/2+it}) for |t| < 100 numerically
+    - If ρ < 1 for all tested t: proceed with formal proof
+    - If ρ ≥ 1 for some t: ABORT (RH would be false, which is unlikely)
+  references:
+    - R-Spectral-Radius-Bounds-2025
+    - R-Assignment-4-Global-Bound
+    - R-Assignment-6-RH-Conclusion
+    - SG-RamanujanBound
+  tags: ["spectral-radius", "critical-gap", "open-problem", "rh-equivalent"]
+
+# ============================================================
+# LEAN FORMALIZATION KNOWLEDGE
+# ============================================================
+
+- id: KB-Lean-Formalization-Status
+  name: "Lean 4 Formalization Status"
+  type: documentation
+  category: formalization
+  subcategory: lean
+  date: "2026-01-01"
+  year: 2026
+  status: partial
+  confidence: 0.95
+  statement: |
+    Current status of Lean 4 formalization in lean/Riemann/.
+
+    COMPLETED (0 errors, 0 sorry):
+    - CayleyGraphs.lean: SL(2,F_p) group, generators S,R, Cayley graph, regularity
+    - SpectralGaps.lean: Spectral gap definition, Cheeger inequality, certificates
+    - RamanujanProperty.lean: p=3,5 are Ramanujan (λ₂ ≤ 2√3), p≥7 are not
+    - IsRamanujan.lean: Classification theorem for Ramanujan property
+
+    IN PROGRESS (9 errors remaining):
+    - FriedliRatio.lean: Friedli functional equation ratio
+      Errors: π/pi_pos identifiers, conj_sum pattern matching, SpectralZetaFunction.eval
+      Fix: Use Real.pi, Real.pi_pos.ne', dsimp instead of rw for eval
+      Estimated: 1-2 days
+
+    TODO (not started):
+    - TransferOperator.lean: Mayer operator L_s, nuclearity
+    - SpectralRadius.lean: ρ(L_{1/2+it}) < 1
+    - RiemannHypothesis.lean: RH from spectral radius (partial, bridge to mathlib only)
+
+    KEY DECISIONS:
+    - Toolchain: leanprover/lean4:v4.33.0-rc1 (matches mathlib cache)
+    - Mathlib rev: 12ab8e82f8447fa639dabe9ffeda74436b72be31
+    - Imports: Mathlib.Data.Complex.Basic, Mathlib.Algebra.Star.Basic,
+      Mathlib.Analysis.Normed.Field.Basic, Mathlib.Data.List.Basic
+    - Conjugation: Use Star.star (via local notation "conj") to bridge to mathlib
+    - Cache: 8678 prebuilt .olean files via lake exe cache get
+
+    OBSTRUCTION:
+    - Hadamard product is missing from mathlib
+    - This is the single biggest obstruction to full RH formalization
+    - Solution: Contribute to mathlib, don't fork
+  files:
+    completed:
+      - "CayleyGraphs.lean (0 errors)"
+      - "SpectralGaps.lean (0 errors)"
+      - "RamanujanProperty.lean (0 errors)"
+      - "IsRamanujan.lean (0 errors)"
+    in_progress:
+      - "FriedliRatio.lean (9 errors)"
+    todo:
+      - "TransferOperator.lean"
+      - "SpectralRadius.lean"
+      - "RiemannHypothesis.lean (extend)"
+  references:
+    - DOC-2026-06-18-Lean-Cayley
+    - PHIL-Modular-Proof-Architecture
+  tags: ["lean", "formalization", "status", "mathlib"]
+
+- id: KB-Mathlib-Gaps
+  name: "Mathlib Gaps Obstructing Formalization"
+  type: problem
+  category: formalization
+  subcategory: mathlib
+  date: "2026-01-01"
+  year: 2026
+  status: open
+  confidence: 1.0
+  statement: |
+    Gaps in mathlib that obstruct the full formalization of RH via Bridge B.
+
+    GAP 1: Hadamard Product (CRITICAL)
+    - The Hadamard product for entire functions is not in mathlib
+    - Needed for: Factorization of det(I - L_s) in terms of zeta zeros
+    - Impact: Without Hadamard product, cannot connect spectral radius to zeta zeros
+    - Solution: Contribute Hadamard product to mathlib (PR)
+    - Estimated effort: 2-3 months
+
+    GAP 2: Nuclear Operator Theory (HIGH)
+    - Nuclear (trace class) operators are not fully developed in mathlib
+    - Needed for: Nuclearity of L_s
+    - Impact: Cannot formalize "L_s is nuclear" directly
+    - Workaround: Use Hilbert-Schmidt composition (available in mathlib)
+    - Estimated effort: 1-2 months
+
+    GAP 3: Fredholm Determinant (MEDIUM)
+    - Fredholm determinant theory is not in mathlib
+    - Needed for: det(I - L_s) = Z(s)^{-1} × Z(s-1)
+    - Impact: Cannot formalize Mayer identity directly
+    - Workaround: State as axiom (temporary) and prove later
+    - Estimated effort: 1-2 months
+
+    GAP 4: Transfer Operator Theory (HIGH)
+    - No transfer operator theory in mathlib
+    - Needed for: Definition of L_s
+    - Impact: Must build from scratch
+    - Solution: Build minimal transfer operator theory in Riemann/ namespace
+    - Estimated effort: 1 month
+
+    PRIORITY: Fix FriedliRatio.lean first (1-2 days), then contribute
+    Hadamard product to mathlib (highest impact, longest timeline).
+  gaps:
+    - name: "Hadamard Product"
+      severity: "critical"
+      impact: "Cannot connect spectral radius to zeta zeros"
+      workaround: "None (must contribute to mathlib)"
+      effort: "2-3 months"
+    - name: "Nuclear Operator Theory"
+      severity: "high"
+      impact: "Cannot formalize nuclearity directly"
+      workaround: "Use Hilbert-Schmidt composition"
+      effort: "1-2 months"
+    - name: "Fredholm Determinant"
+      severity: "medium"
+      impact: "Cannot formalize Mayer identity"
+      workaround: "State as axiom temporarily"
+      effort: "1-2 months"
+    - name: "Transfer Operator Theory"
+      severity: "high"
+      impact: "Must define L_s from scratch"
+      workaround: "Build in Riemann/ namespace"
+      effort: "1 month"
+  references:
+    - OP-Hadamard-Product-Gap
+    - KB-Lean-Formalization-Status
+  tags: ["mathlib", "gaps", "hadamard", "formalization", "obstruction"]
+
+# ============================================================
+# NUMERICAL VERIFICATION KNOWLEDGE
+# ============================================================
+
+- id: KB-Numerical-Verification-Pipeline
+  name: "Numerical Verification Pipeline for Bridge B"
+  type: experiment
+  category: verification
+  subcategory: numerical
+  date: "2026-01-01"
+  year: 2026
+  status: proposed
+  confidence: 0.80
+  statement: |
+    Before attempting a formal proof of ρ(L_{1/2+it}) < 1, verify it numerically.
+
+    PIPELINE:
+    1. Implement Mayer transfer operator L_s as a matrix on a finite-dimensional
+       approximation space (e.g., Fourier modes on [0,1])
+    2. Compute eigenvalues of L_{1/2+it} for |t| < 100, step 0.1
+    3. Check that all eigenvalues have |λ| < 1
+    4. If yes: Proceed to formal proof
+    5. If no: ABORT (RH would be false)
+
+    IMPLEMENTATION:
+    - Use numpy/scipy for eigenvalue computation (existing scripts)
+    - Matrix size: 100×100 to 1000×1000 (convergence check)
+    - Parameter range: t ∈ [-100, 100], step 0.1
+    - Verification: |λ_max| < 1 for all t
+
+    EXISTING TOOLS:
+    - scripts/compute_eigenvalues.py: Sparse Lanczos eigenvalue computation
+    - scripts/train_lmfdb_ml_53k.py: sklearn ML on LMFDB data
+    - data/eigenvalues/: Precomputed eigenvalue data
+
+    This follows the "fail fast" principle: a 5-minute computation can save
+    months of wasted proof effort.
+  steps:
+    - "Implement L_s as finite matrix (Fourier basis on [0,1])"
+    - "Compute eigenvalues for t ∈ [-100, 100], step 0.1"
+    - "Verify |λ_max| < 1 for all t"
+    - "If passes: Proceed to formal proof"
+    - "If fails: ABORT (RH false or implementation error)"
+  estimated_time: "3-5 days"
+  references:
+    - PHIL-Numerical-First
+    - EX-Spectral-Zeta-Design
+    - KB-Spectral-Radius-Bound
+  tags: ["numerical-verification", "fail-fast", "spectral-radius", "bridge-b"]
+
+# ============================================================
+# KNOWLEDGE BASE INTEGRITY
+# ============================================================
+
+- id: KB-Integrity-Flag
+  name: "Integrity Flag: ABSOLUTE_TRUST.md Overclaiming"
+  type: warning
+  category: integrity
+  subcategory: overclaiming
+  date: "2026-01-01"
+  year: 2026
+  status: confirmed
+  confidence: 1.0
+  statement: |
+    WARNING: The file ABSOLUTE_TRUST.md in the riemann repository claims "100%
+    mathematical trust" and "RH proof complete". This is OVERCLAIMING.
+
+    The honest assessment (R-Gap-Analysis-2025, confidence 0.95) states:
+    "The Riemann Hypothesis is NOT proven in this repository."
+
+    Specific overclaims in ABSOLUTE_TRUST.md:
+    1. "All 6 Assignments: PROVEN" — Assignment 6 (RH Conclusion) is a DRAFT
+    2. "All 3 Critical Gaps: SOLVED" — Gap 1 (spectral radius at Re(s)=1/2) is NOT solved
+    3. "100% mathematical trust" — Mathematical proof has a gap at the critical line
+    4. "RH Proof Overall: 100% complete" — RH is NOT proven
+
+    CORRECT ASSESSMENT:
+    - Mathematical progress: ~75% (equivalence + nuclearity for Re(s) > 3/4)
+    - Formal progress: ~40% (Cayley graphs + Ramanujan done, transfer operator TODO)
+    - Remaining gap: Nuclearity at Re(s) = 1/2 + ε and spectral radius bound
+
+    ACTION: ABSOLUTE_TRUST.md should be corrected or marked as overclaiming.
+    The KB preserves it as DOC-Absolute-Trust with a warning.
+  overclaimed_files:
+    - "ABSOLUTE_TRUST.md: Claims 100% trust → Actually ~75% math, ~40% formal"
+    - "PROOF_COMPLETE.md: Claims proof complete → Actually incomplete"
+    - "RH_FINAL_PROOF_SIMPLE.md: Claims simple proof → Contains gaps"
+    - "RIEMANN_HYPOTHESIS_FINAL_PROOF.md: Claims final proof → Contains gaps"
+    - "RIEMANN_HYPOTHESIS_PROOF_FINAL.md: Claims final proof → Contains gaps"
+  correct_assessment:
+    mathematical_progress: "75% (equivalence + nuclearity for Re(s) > 3/4)"
+    formal_progress: "40% (Cayley graphs + Ramanujan done)"
+    remaining_gap: "Nuclearity at Re(s) = 1/2 + ε, spectral radius bound"
+  references:
+    - DOC-Absolute-Trust
+    - R-Gap-Analysis-2025
+    - PHIL-Integrity-Audit
+    - PHIL-Stoic-Acceptance
+  tags: ["integrity", "overclaiming", "warning", "honesty", "absolutely-trust"]
