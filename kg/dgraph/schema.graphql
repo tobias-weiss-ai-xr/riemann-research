@@ -1,0 +1,177 @@
+# Dgraph GraphQL Schema for Riemann Hypothesis Knowledge Graph
+#
+# Node types are the main entities in the graph.
+# Each type is prefixed with a namespace and uses @index annotations for querying.
+#
+# Query patterns:
+#   - Find all Finding nodes with status=confirmed:
+#     { q(func: has(status)) { uid, name @filter(eq(status, "confirmed")) } }
+#   - Find all Concept nodes related to "spectral":
+#     { q(func: anyoftext(name, "spectral")) { uid, name } }
+#   - Find all papers in category "spectral-theory":
+#     { q(func: eq(category, "spectral-theory")) { uid, title } }
+
+type Concept {
+  id: String @index(exact) .
+  name: String @index(term) .
+  type: String @index(exact) .
+  category: String @index(exact) .
+  subcategory: String @index(exact) .
+  definition: String .
+  abstract: String .
+  properties: [String] .
+  related_concepts: [Concept] .
+  references: [Reference] .
+  tags: [String] @index(term) .
+  lean_status: String @index(exact) .
+  lean_file: String .
+  cypher_file: String .
+}
+
+type Finding {
+  id: String @index(exact) .
+  name: String @index(term) .
+  type: String @index(exact) .
+  category: String @index(exact) .
+  subcategory: String @index(exact) .
+  statement: String .
+  experiment: [String] .
+  date: String .
+  configuration: String .
+  results: String .
+  analysis: String .
+  conclusion: String .
+  status: String @index(exact) .
+  confidence: String @index(exact) .
+  references: [Reference] .
+  depends_on: [Finding] .
+  supports: [Concept] .
+  contradicts: [Finding] .
+  tags: [String] @index(term) .
+}
+
+type Paper {
+  id: String @index(exact) .
+  title: String @index(term) .
+  authors: [Researcher] .
+  date: String .
+  year: Int @index(int) .
+  url: String .
+  venue: String @index(term) .
+  abstract: String .
+  doi: String .
+  category: String @index(exact) .
+  subcategory: String @index(exact) .
+  status: String @index(exact) .
+  open_access: Boolean .
+  notes: String .
+  tags: [String] @index(term) .
+}
+
+type Researcher {
+  id: String @index(exact) .
+  name: String @index(term) .
+  orcid: String .
+  affiliation: String .
+  website: String .
+  papers: [Paper] .
+}
+
+type Approach {
+  id: String @index(exact) .
+  name: String @index(term) .
+  description: String .
+  strategy: String .
+  confidence: Float .
+  status: String @index(exact) .
+  category: String @index(exact) .
+  targets: [Problem] .
+  uses_concepts: [Concept] .
+  uses_findings: [Finding] .
+  referenced_by: [Paper] .
+  tags: [String] @index(term) .
+}
+
+type Problem {
+  id: String @index(exact) .
+  name: String @index(term) .
+  statement: String .
+  priority: String @index(exact) .
+  status: String @index(exact) .
+  difficulty: String @index(exact) .
+  blocking: [Problem] .
+  blocked_by: [Problem] .
+  relates_to: [Concept] .
+  tags: [String] @index(term) .
+}
+
+type Reference {
+  id: String @index(exact) .
+  type: String @index(exact) .  # corpus | concept | finding | paper | theorem | lean | cypher | experiment-log | script
+  paper_id: String .
+  file: String .
+  section: String .
+  url: String .
+}
+
+type Dataset {
+  id: String @index(exact) .
+  name: String @index(term) .
+  description: String .
+  source: String .
+  path: String .
+  size: String .
+  format: String .
+  used_by: [Finding] .
+  tags: [String] @index(term) .
+}
+
+type Theorem {
+  id: String @index(exact) .
+  name: String @index(term) .
+  statement: String .
+  proof: String .
+  proof_status: String @index(exact) .  # proven | partial | conjecture | disproven
+  author: [Researcher] .
+  year: Int @index(int) .
+  references: [Reference] .
+  relates_to: [Concept] .
+  implies: [Theorem] .
+  implied_by: [Theorem] .
+  tags: [String] @index(term) .
+}
+
+type Experiment {
+  id: String @index(exact) .
+  name: String @index(term) .
+  date: String .
+  configuration: String .
+  results: String .
+  findings: [Finding] .
+  scripts: [Script] .
+  papers: [Paper] .
+  tags: [String] @index(term) .
+}
+
+type Script {
+  id: String @index(exact) .
+  name: String @index(term) .
+  path: String .
+  description: String .
+  language: String @index(exact) .
+  dependencies: [String] .
+  used_in: [Experiment] .
+}
+
+# =============================================================================
+# INTERFACE TYPES FOR UNION QUERIES
+# =============================================================================
+
+interface KnowledgeEntity {
+  id: String!
+  name: String!
+  type: String!
+  category: String
+  subcategory: String
+  tags: [String!]
+}
