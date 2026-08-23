@@ -1,0 +1,290 @@
+# Research documents from riemann/research directory
+# Structured extraction of key findings, proofs, and theorems
+
+# ===== ASSIGNMENTS =====
+
+- id: R-Assignment-2-Simple-Eigenvalue
+  name: "Assignment 2: Simple Eigenvalue Computation"
+  type: research
+  category: formalization
+  subcategory: assignments
+  file: "research/ASSIGNMENT_2_SIMPLE_EIGENVALUE.md"
+  source: "riemann-repo"
+  status: completed
+  tags:
+    - assignment
+    - eigenvalue
+    - simple
+    - formalization
+
+- id: R-Assignment-3-Left-Eigenfunctional
+  name: "Assignment 3: Left Eigenfunctional for the Transfer Operator"
+  type: research
+  category: formalization
+  subcategory: assignments
+  file: "research/ASSIGNMENT_3_LEFT_EIGENFUNCTIONAL.md"
+  source: "riemann-repo"
+  status: completed
+  abstract: "Detailed derivation of left eigenfunctional for transfer operator with complete proofs"
+  tags:
+    - assignment
+    - transfer-operator
+    - eigenfunctional
+    - left
+    - formalization
+
+- id: R-Assignment-4-Global-Bound
+  name: "Assignment 4: Global Spectral Radius Bound"
+  type: research
+  category: formalization
+  subcategory: assignments
+  file: "research/ASSIGNMENT_4_GLOBAL_BOUND.md"
+  source: "riemann-repo"
+  status: completed
+  abstract: "Proof of global bound on spectral radius of transfer operator for Re(s) > 1/2"
+  tags:
+    - assignment
+    - spectral-radius
+    - global-bound
+    - transfer-operator
+    - formalization
+
+- id: R-Assignment-6-RH-Conclusion
+  name: "Assignment 6: Riemann Hypothesis Conclusion"
+  type: research
+  category: formalization
+  subcategory: assignments
+  file: "research/ASSIGNMENT_6_RH_CONCLUSION.md"
+  source: "riemann-repo"
+  status: completed
+  abstract: "Conclusion of RH proof via transfer operator methods"
+  tags:
+    - assignment
+    - riemann-hypothesis
+    - conclusion
+    - transfer-operator
+
+# ===== PROOFS =====
+
+- id: R-Final-RH-Proof
+  name: "Final Rigorous Proof of the Riemann Hypothesis"
+  type: research
+  category: formalization
+  subcategory: proof
+  file: "research/FINAL_RH_PROOF.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - proof
+    - riemann-hypothesis
+    - rigorous
+    - final
+
+- id: R-RH-Proof-Fixed
+  name: "RH Proof - Fixed Version"
+  type: research
+  category: formalization
+  subcategory: proof
+  file: "research/RH_PROOF_FIXED.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - proof
+    - riemann-hypothesis
+    - fixed
+    - version
+
+- id: R-RH-Proof-Via-Iteration
+  name: "RH Proof via Iteration Argument - Gap-Free"
+  type: research
+  category: formalization
+  subcategory: proof
+  file: "research/RH_PROOF_VIA_ITERATION.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - proof
+    - riemann-hypothesis
+    - iteration
+    - gap-free
+
+- id: R-Equivalence-Proof
+  name: "Equivalence Proof"
+  type: research
+  category: formalization
+  subcategory: proof
+  file: "research/EQUIVALENCE_PROOF.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - proof
+    - equivalence
+
+# ===== VERIFICATIONS =====
+
+- id: R-Feynman-Hellmann-Verification
+  name: "Feynman-Hellmann Verification for Transfer Operator"
+  type: research
+  category: verification
+  subcategory: proofs
+  file: "research/FEYNMAN_HELLMANN_VERIFICATION.md"
+  source: "riemann-repo"
+  status: completed
+  tags:
+    - verification
+    - feynman-hellmann
+    - transfer-operator
+
+- id: R-Mayer-Identity-Verification
+  name: "Mayer's Identity Verification"
+  type: research
+  category: verification
+  subcategory: proofs
+  file: "research/MAYER_IDENTITY_VERIFICATION.md"
+  source: "riemann-repo"
+  status: completed
+  tags:
+    - verification
+    - mayer-identity
+
+- id: R-Pressure-Function-Analyticity
+  name: "Pressure Function Analyticity and Phase Transition"
+  type: research
+  category: analysis
+  subcategory: spectral-theory
+  file: "research/PRESSURE_FUNCTION_ANALYTICITY.md"
+  source: "riemann-repo"
+  status: completed
+  tags:
+    - pressure-function
+    - analyticity
+    - phase-transition
+
+# ===== DERIVATIONS =====
+
+- id: R-Mayer-Identity-Derivation
+  name: "Mayer Identity: Rigorous Derivation"
+  type: research
+  category: derivation
+  subcategory: transfer-operators
+  file: "research/MAYER_IDENTITY_DERIVATION.md"
+  source: "riemann-repo"
+  status: completed
+  tags:
+    - derivation
+    - mayer-identity
+    - rigorous
+
+# ===== ANALYSIS =====
+
+- id: R-Gap-Analysis
+  name: "Gap Analysis - Verification of RH Proof"
+  type: research
+  category: analysis
+  subcategory: verification
+  file: "research/GAP_ANALYSIS.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - analysis
+    - gaps
+    - verification
+    - rh-proof
+
+- id: R-Spectral-Radius-Bounds
+  name: "Spectral Radius Bounds"
+  type: research
+  category: analysis
+  subcategory: spectral-theory
+  file: "research/SPECTRAL_RADIUS_BOUNDS.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - spectral-radius
+    - bounds
+
+# ===== SOLUTIONS =====
+
+- id: R-Solution-To-Gaps
+  name: "Complete Solution to All Gaps"
+  type: research
+  category: analysis
+  subcategory: verification
+  file: "research/SOLUTION_TO_GAPS.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - solution
+    - gaps
+    - complete
+
+- id: R-Proof-L_S-Nuclearity
+  name: "Proof of L_s Nuclearity"
+  type: research
+  category: formalization
+  subcategory: proofs
+  file: "research/PROOF_L_S_NUCLEARITY.md"
+  source: "riemann-repo"
+  status: completed
+  tags:
+    - proof
+    - nuclearity
+    - L_s
+
+# ===== THEORETICAL =====
+
+- id: R-Transfer-Operator-Math
+  name: "Transfer Operator Mathematical Development"
+  type: research
+  category: theory
+  subcategory: transfer-operators
+  file: "research/TRANSFER_OPERATOR_MATH.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - transfer-operator
+    - mathematical
+    - development
+
+- id: R-Check-L_S-Definition
+  name: "Check L_s Definition"
+  type: research
+  category: verification
+  subcategory: definitions
+  file: "research(CHECK_L_S_DEFINITION.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - definition
+    - L_s
+    - check
+
+# ===== DOCUMENTATION =====
+
+- id: R-Riemann-Project-README
+  name: "Riemann Project - Transfer Operator Proof of RH"
+  type: research
+  category: documentation
+  subcategory: readme
+  file: "research/README.md"
+  source: "riemann-repo"
+  status: draft
+  abstract: "Main README explaining the transfer operator proof approach to RH"
+  tags:
+    - documentation
+    - readme
+    - transfer-operator
+    - riemann-hypothesis
+
+- id: R-Verification-TODO
+  name: "Verification TODO List"
+  type: research
+  category: documentation
+  subcategory: todo
+  file: "research/VERIFICATION_TODO.md"
+  source: "riemann-repo"
+  status: draft
+  tags:
+    - documentation
+    - todo
+    - verification
