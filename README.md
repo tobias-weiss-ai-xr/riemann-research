@@ -1,204 +1,264 @@
-<h1 align="center">
-  <strong>Research Corpus Skeleton</strong>
-</h1>
-<h3 align="center">Agentic literature review, jump-started — fork me for your own topic</h3>
+# Riemann Hypothesis Research Corpus
 
-### 🔗 Links
+> **Agentic literature and knowledge management for RH and spectral number theory**
 
-- **License**: https://github.com/tobias-weiss-ai-xr/skeleton-research/blob/main/LICENSE
-- **CI**: https://github.com/<YOUR_ORG>/<YOUR_REPO>/actions/workflows/validate.yml
-- **GitHub Pages**: https://<YOUR_ORG>.github.io/<YOUR_REPO>/
+**Status**: 🚀 **ACTIVE** — Corpus repo created from skeleton-research template, taxonomy specialized, prethought space seeded.
 
+**Parent Project**: [riemann](https://github.com/tobias-weiss-ai-xr/riemann) (code, Lean formalization, experiments, knowledge graph)
 
-> 🎓 **Workshop-ready:** This repository is the *skeleton* for a data-driven,
-> auto-validated, agentic literature review — the same architecture used by the
-> `*-research` corpus repos (agent-memory, agent-skill, agent-learning, …).
+**Forked from**: [skeleton-research](https://github.com/tobias-weiss-ai-xr/skeleton-research) (generic research corpus template by Tobias Weiss)
 
-## What you get
+---
 
-| Capability | How |
-|------------|-----|
-| 📄 **Curated corpus** | `papers.yaml` is the source of truth — one structured entry per paper |
-| ✅ **Auto-validation** | `scripts/validate_papers.py` checks schema, duplicates, URL normalization, LaTeX artifacts |
-| 🧾 **Auto-generated README** | `scripts/generate_readme.py` renders the paper list grouped by your taxonomy |
-| 📊 **Statistics & trends** | `scripts/standard_stats.py` → `statistics.json` (momentum, gaps, bursts, venues, authors) |
-| 🔍 **Literature review report** | `scripts/analysis/generate_reports.py` → `docs/research/literature_review.md` + `trends.md` |
-| 🧭 **Topic planning** | `tools/topic_planner.py`, `tools/trend_scanner.py`, `tools/landscape_analyzer.py`, `tools/brief_generator.py` |
-| 🔎 **New paper discovery** | `scripts/fetch/fetch_new_papers.py` (arXiv), `fetch_other_sources.py` (dblp/crossref/europepmc), `fetch_openalex_bulk.py` |
-| 🐙 **GitHub repos discovery** | `scripts/fetch/fetch_github_repos.py` (optional, config-driven via `github_queries` in taxonomy.yaml) |
-| 🦊 **GitLab projects discovery** | `scripts/fetch/fetch_gitlab_repos.py` (optional, config-driven via `gitlab_queries` in taxonomy.yaml) |
-| 🏠 **Codeberg repos discovery** | `scripts/fetch/fetch_codeberg_repos.py` (optional, config-driven via `codeberg_queries` in taxonomy.yaml) |
-| 🖥️ **GitHub Pages site** | `docs/index.html` — searchable, filterable paper browser |
-| 🤖 **Agentic workflow** | `AGENTS.md` + `config/taxonomy.yaml` make this repo agent-friendly by design |
+## 🎯 Purpose
 
-## 🚀 Jump-start (5 steps)
+This repository structures the **research corpus** (papers, concepts, findings) for the Riemann Hypothesis project. It is separate from the code/repo ([riemann](https://github.com/tobias-weiss-ai-xr/riemann)) which contains:
+
+- `lean/` — Lean 4 formalization of RH and related results
+- `knowledge-graph/` — Neo4j Cypher seed scripts for the SL(2,Z) → ζ(s) theory chain
+- `scripts/` — Python experiments (GNN, eigenvalues, LMFDB, Hecke, etc.)
+- `experiments/` — 18+ experiment logs (some completed, some planned)
+- `research/` — Proof writeups (RH proofs, Mayer identity, pressure function, etc.)
+
+This corpus repo (**riemann-research**) manages:
+- `papers.yaml` — Structured bibliography of RH/spectral/number theory literature
+- `config/taxonomy.yaml` — Discovery queries, categories, subcategories
+- `prethought/` — **Prethought space**: concepts, findings, related work, open problems
+- `kg/` — Knowledge graph extensions (Dgraph and Neo4j)
+- `docs/` — Auto-generated reports (literature review, trends)
+
+---
+
+## 🏗️ Structure
+
+```
+riemann-research/
+├── papers.yaml                    # Curated corpus (source of truth)
+├── config/
+│   ├── taxonomy.yaml               # Categories, subcategories, discovery queries
+│   └── other_sources_queries.yaml # dblp, crossref, europepmc queries
+├── prethought/                     # 🧠 Prethought Space
+│   ├── README.md                   # How to use the prethought space
+│   ├── concepts/                   # Core mathematical entities
+│   │   ├── cayley-graphs.yaml
+│   │   ├── spectral-gaps.yaml
+│   │   ├── ramanujan.yaml
+│   │   └── transfer-operators.yaml
+│   ├── findings/                   # Empirical discoveries
+│   │   ├── gnn-failures.yaml       # Vertex-transitive curse, R² < 0
+│   │   ├── ml-successes.yaml       # Hecke traces R² 0.73-0.99, ChebConv +4.2%
+│   │   └── spectral-constants.yaml # Friedli constant ≈ 1.1367
+│   ├── related-work/               # External literature
+│   │   └── RH-Equivalences.yaml    # Nyman-Beurling, Weil, Granville, etc.
+│   └── open-problems/              # Known gaps, TODOs
+│       ├── bridges.yaml            # Bridge A (LPS), Bridge B (Mayer), etc.
+│       └── formalization-gaps.yaml # Hadamard product gap in mathlib
+├── kg/                              # Knowledge Graph
+│   ├── cypher/                      # Neo4j Cypher scripts (mirror/sync)
+│   └── dgraph/                      # Dgraph GraphQL schemas + data
+├── docs/                            # Auto-generated
+│   └── research/
+│       ├── literature_review.md   # Grouped by taxonomy
+│       └── trends.md               # Statistics, momentum, gaps
+├── scripts/                         # Corpus pipeline
+│   ├── fetch/                       # Paper discovery
+│   ├── analysis/                    # Reports, statistics
+│   └── validate_papers.py           # Schema validation
+├── tests/                           # Pipeline tests
+└── Makefile                         # Pipeline commands
+```
+
+---
+
+## 🚀 Quick Start
+
+### 1. Preview the current corpus
 
 ```bash
-# 1. Clone and rename
-git clone https://github.com/tobias-weiss-ai-xr/skeleton-research.git my-topic-research
-cd my-topic-research
-git remote set-url origin https://github.com/<YOUR_ORG>/my-topic-research.git  # repoint to your fork
-cd my-topic-research
-
-# 2. Define your topic & taxonomy
-#    Edit config/taxonomy.yaml: topic name, categories, subcategories, queries
-vim config/taxonomy.yaml
-
-# 3. Seed your corpus (start small — 5-10 papers is fine)
-#    Either hand-curate papers.yaml, or auto-discover:
-python3 scripts/fetch/fetch_new_papers.py --months 12 --dry-run   # preview arXiv hits
-python3 scripts/fetch/fetch_new_papers.py --local                 # append to papers.yaml
-
-# 4. Validate + generate
-python3 scripts/validate_papers.py
-python3 scripts/generate_readme.py
-python3 scripts/standard_stats.py
-python3 scripts/analysis/generate_reports.py
-
-# 5. Commit & let CI keep it healthy
-git add -A && git commit -m "bootstrap corpus for <YOUR TOPIC>"
-git push
+python scripts/generate_readme.py        # Generate README with paper list
+python scripts/standard_stats.py        # Compute statistics → statistics.json
+python scripts/analysis/generate_reports.py  # Literature review + trends
 ```
 
-## 📖 How it works
-
-```
-config/taxonomy.yaml ──► papers.yaml ──► validate_papers.py
-                          │   ▲              │
-                          ▼   └── fetch_* ───┘
-                   generate_readme.py ──► README.md (auto)
-                          │
-                          ▼
-                  standard_stats.py ──► statistics.json, docs/papers.json
-                          │
-                          ▼
-              analysis/generate_reports.py ──► docs/research/*.md
-```
-
-- **Never edit README.md directly** — it is generated from `papers.yaml`.
-- The **taxonomy lives in one place** (`config/taxonomy.yaml`); every script reads it via `scripts/research_config.py`, which now validates the config up front so mistakes fail loudly.
-- **CI (validate.yml)** runs on every push/PR and weekly to discover new papers. The `validate` job re-checks that all generated outputs are fresh (README, statistics, reports), and a `test` job runs the pytest suite.
-
-## 🧪 Local pipeline (all in one)
+### 2. Discover new papers
 
 ```bash
-make all          # validate → check freshness → generate → test
-# …or run the raw steps:
-python3 scripts/validate_papers.py && \
-python3 scripts/generate_readme.py && \
-python3 scripts/standard_stats.py && \
-python3 scripts/analysis/generate_reports.py
+# arXiv
+python scripts/fetch/fetch_new_papers.py --months 12 --dry-run
 
-# Freshness checks (non-destructive; exit 1 if stale) — used by CI
-python3 scripts/generate_readme.py --check
-python3 scripts/standard_stats.py --check
-python3 scripts/analysis/generate_reports.py --check
+# dblp / crossref / europepmc
+python scripts/fetch/fetch_other_sources.py --dry-run
 
-# Unit tests
-python3 -m pytest
+# GitHub repos
+python scripts/fetch/fetch_github_repos.py --dry-run
 ```
 
-## 🔎 Discovery & utility scripts
+### 3. Validate the corpus
 
-Beyond the core pipeline, several scripts remain available for manual / scheduled use:
-
-| Script | What it does |
-|---|---|
-| `scripts/fetch/fetch_new_papers.py` | arXiv discovery; `--create-pr` opens a weekly PR (used by CI) |
-| `scripts/fetch/fetch_openalex_bulk.py` | OpenAlex bulk discovery per category (`--months`, `--local`) |
-| `scripts/fetch/fetch_other_sources.py` | dblp / crossref / Europe PMC / Semantic Scholar discovery |
-| `scripts/fetch/fetch_metadata.py` | backfill authors/abstracts/venues for existing arXiv papers |
-| `scripts/fetch/saturate_papers.py` | expand queries & loop arXiv until corpus saturates |
-| `scripts/fetch/fetch_github_repos.py` / `fetch_gitlab_repos.py` / `fetch_codeberg_repos.py` | discover topic-relevant code repos → `repos.yaml` |
-| `scripts/fetch/search_arxiv_html.py` / `search_arxiv_offline.py` | alternate/ad-hoc arXiv search helpers |
-| `scripts/export_bibtex.py` | write `paper/references.bib` from `papers.yaml` |
-| `scripts/visualize_statistics.py` | visualise `statistics.json` |
-
-The repo-discovery fetchers share rate-limit/backoff + relevance logic in `scripts/fetch/repos_common.py`.
-
-## 🤖 Agentic workflow (AGENTS.md)
-
-This repo is designed to be driven by coding agents (OpenCode, Claude Code, …):
-
-- **Spec-style guardrails** in `AGENTS.md` — agents know the pipeline, never edit README, always re-validate.
-- **One config file** to change → one re-run to verify (low context cost for agents).
-- **Auto-validation** gives agents an objective pass/fail signal.
-- **Weekly discovery** keeps the corpus fresh without human babysitting.
-
-## 📚 Paper list
-
-- [📚 Methods & Architectures](#methods-&-architectures)
-  - [Agentic](#agentic)
-- [📚 Applications](#applications)
-  - [Non-Agentic](#non-agentic)
-- [📚 Evaluation & Benchmarks](#evaluation-&-benchmarks)
-  - [Hybrid](#hybrid)
-- [📚 Surveys & Taxonomies](#surveys-&-taxonomies)
-  - [Non-Agentic](#non-agentic)
-  - [Hybrid](#hybrid)
-
-### Methods & Architectures
-
-#### Agentic
-
-##### 2026
-
-- [2026] **Example Paper 2: An Agentic Method for Your Topic** [[paper](https://arxiv.org/abs/2603.00002)]
-
-[⬆ Back to top](#paper-list)
-
-### Applications
-
-#### Non-Agentic
-
-##### 2025
-
-- [2025] **Example Paper 3: Application Study in Your Domain** [[paper](https://arxiv.org/abs/2511.00003)]
-
-[⬆ Back to top](#paper-list)
-
-### Evaluation & Benchmarks
-
-#### Hybrid
-
-##### 2025
-
-- [2025] **Example Paper 4: An Evaluation Benchmark for Your Topic** [[paper](https://arxiv.org/abs/2508.00004)]
-
-[⬆ Back to top](#paper-list)
-
-### Surveys & Taxonomies
-
-#### Non-Agentic
-
-##### 2025
-
-- [2025] **Example Paper 5: A Survey of Your Topic Across Domains** [[paper](https://arxiv.org/abs/2505.00005)]
-
-[⬆ Back to top](#paper-list)
-
-#### Hybrid
-
-##### 2026
-
-- [2026] **Example Paper 1: A Foundational Survey of Your Topic** [[paper](https://arxiv.org/abs/2601.00001)]
-
-[⬆ Back to top](#paper-list)
-
-## 📖 Citation
-
-If you use this skeleton for a project, please cite:
-
-```bibtex
-@misc{skeleton-research,
-  author = {Weiß, Tobias},
-  title = {Research Corpus Skeleton: Data-Driven Agentic Literature Review},
-  year = {2026},
-  publisher = {GitHub},
-  url = {https://github.com/tobias-weiss-ai-xr/skeleton-research}
-}
+```bash
+python scripts/validate_papers.py   # Check schema, duplicates, LaTeX, URLs
 ```
 
-## 📄 License
+---
 
-MIT — see [LICENSE](LICENSE).
+## 📊 Current Corpus Statistics
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| **Papers** | See `papers.yaml` | Curated |
+| **Categories** | 7 | `config/taxonomy.yaml` |
+| **Subcategories** | 18 | `config/taxonomy.yaml` |
+| **Discovery Queries** | 35+ | `config/taxonomy.yaml` |
+| **Prethought Concepts** | ~40 | `prethought/concepts/` |
+| **Prethought Findings** | ~20 | `prethought/findings/` |
+| **Open Problems** | ~10 | `prethought/open-problems/` |
+
+---
+
+## 📚 Key Findings (Honest Assessment)
+
+| ID | Finding | Status | Impact |
+|----|---------|--------|--------|
+| FG-Vertex-Transitive-Curse | Local GNN features cannot predict global spectral properties for vertex-transitive graphs | **CONFIRMED** | ⭐⭐⭐⭐⭐ Blocks all local GNN approaches on Cayley graphs |
+| FS-Hecke-Traces-R2 | sklearn on LMFDB Hecke traces achieves R² 0.73-0.99 | **CONFIRMED** | ⭐⭐⭐⭐⭐ Data quantity (53k) wins over architecture |
+| FS-ChebConv-Beats-Baseline | Full-graph ChebConv beats linear baseline by +4.2% R² | **CONFIRMED** | ⭐⭐⭐ Use spectral methods for spectral targets |
+| SC-Friedli-Constant | Friedli constant ≈ 1.1367 (spectral zeta derivative at σ=0.5) | **VERIFIED** | ⭐⭐⭐ New empirical constant, confirms theoretical prediction |
+| CM-Enrichment | CM forms 3.6× enriched in GUE outliers but only 1.1% of total | **CONFIRMED** | ⭐⭐⭐ Minor contributor, dimension is primary driver |
+| OP-BridgeA-Collapsed | Bridge A (LPS/Ramanujan) collapse: p=3,5 Ramanujan; p≥7 are NOT | **DISPROVEN** | ⭐⭐⭐⭐⭐ This approach is HOPELESS |
+| OP-BridgeB-Partial | Bridge B (Mayer transfer operator) proven equivalence but gaps remain | **PARTIAL** | ⭐⭐⭐⭐ Needs spectral radius bound ρ(L_s) < 1 for Re(s) > 1/2 |
+
+---
+
+## 🔬 Research Paths (Pfad A, Pfad B)
+
+### Pfad A: LPS Bridge (Cayley → Ramanujan → RH) ❌ **DEAD END**
+```
+SL(2,F_p) Cayley graph
+  ↓
+Spectral gap λ₂
+  ↓ [Pizer 1981]
+Brandt matrix eigenvalues
+  ↓
+Hecke eigenvalues on S₂(Γ₀(p))
+  ↓
+L-function zeros
+  ↓ [de Branges?]
+RH
+```
+**Status: COLLAPSED** — Only p=3,5 Cayley graphs are Ramanujan; p≥7 are not (λ₂ > 2√3).
+**Verdict: DO NOT pursue Pfad A.**
+
+### Pfad B: Hecke GNN → L-Function Zeros → RH ✅ **ACTIVE**
+```
+LMFDB Hecke traces (53k newforms)
+  ↦ [GNN / sklearn] → Predict L-function zeros
+  ↦ [Granville 2007] → Averaged Goldbach bound
+  ↦ [Granville equivalence] → RH
+```
+**Status: VIABLE** — sklearn already achieves R² 0.73-0.99 on Hecke traces.
+**Next Steps:**
+- Exp 16: `scripts/spectral_gap_hecke_correlation.py` (blocked on Docker)
+- Formalize Granville's theorem in Lean
+- Connect Hecke → L-function zeros → Granville → RH
+
+### Pfad C: Transfer Operator (Mayer) → RH ✅ **PRIMARY**
+```
+Mayer's transfer operator L_s
+  ↓
+Spectral radius ρ(L_s) < 1 for Re(s) > 1/2
+  ↓ [Mayer+Efrat]
+Zeros of ζ(s) all on Re(s) = 1/2
+  ↓
+RH
+```
+**Status: PARTIALLY PROVEN** — Equivalence holds, but ρ(L_s) < 1 not proven for Re(s) ∈ (1/2, 1).
+**Verdict: This is the MOST PROMISING path.**
+
+---
+
+## 🏆 Integrity Notice
+
+There is a **ثر split between optimistic claims and honest assessments** in the parent riemann repo:
+
+| Document | Claim | Honest Assessment |
+|----------|-------|-------------------|
+| `riemann/research/README.md` | "RH PROVEN" | ❌ **NOT CREDIBLE** |
+| `riemann/FINAL_PROOF_STATUS.md` | "100% confidence, SOLVED" | ❌ **NOT CREDIBLE** |
+| `riemann/HONEST_FINAL_STATUS.md` | "Theorem 3.3: Partially Verified, Critical Gaps Remain" | ✅ **HONEST** |
+| `riemann/AGENTS.md` | "GNNs consistently fail (R² < 0). sklearn on LMFDB Hecke traces succeeds (R² 0.73–0.99)." | ✅ **HONEST** |
+
+**This corpus repo suppresses the optimistic claims and operates from the honest baseline.**
+
+---
+
+## 🛠️ Workflow
+
+### Add a new paper
+1. Append to `papers.yaml`
+2. Add discovery query to `config/taxonomy.yaml` (optional, for auto-fetch)
+3. Run `python scripts/validate_papers.py`
+4. Run `python scripts/generate_readme.py` → updates README
+5. Commit with message "Add [Paper Title]"
+
+### Add related work
+1. Add to `prethought/related-work/*.yaml`
+2. Reference from findings/concepts as needed
+3. Add cross-links in `prethought/**/*.yaml` files
+
+### Add a finding
+1. Create/edit `prethought/findings/*.yaml`
+2. Add `experiment` reference, `results`, `analysis`, `tags`
+3. Commit
+
+### Regenerate reports
+```bash
+python scripts/generate_readme.py
+python scripts/standard_stats.py
+python scripts/analysis/generate_reports.py
+```
+
+---
+
+## 💡 Prethought Space Philosophy
+
+> **"Think meta first"**
+
+Before starting any new experiment, proof, or formalization:
+
+1. **Search prethought/** for the concept or finding
+2. **Check prethought/open-problems/** for known gaps
+3. **Consult prethought/related-work/** for prior art
+4. **Look in kg/** for theory connections
+
+If it's already there, use it. If not, add it.
+
+---
+
+## 📦 Dependencies
+
+```bash
+# Core
+pip install -r requirements.txt
+
+# Optional (for Dgraph)
+pip install dgraph-io
+# Add Dgraph server (port 9080 default)
+```
+
+---
+
+## 🔗 Links
+
+- **Parent Repo**: https://github.com/tobias-weiss-ai-xr/riemann
+- **Docker Setup**: See riemann/Makefile and docker-compose.yml
+- **Neo4j KG**: riemann/knowledge-graph/cypher/
+- **Lean Project**: riemann/lean/
+- **Taskfleet**: https://github.com/tobias-weiss-ai-xr/taskfleet (parallel LLM task dispatch)
+
+---
+
+## 🎓 License & Contribution
+
+- **License**: MIT (same as skeleton-research)
+- **Contributing**: See CONTRIBUTING.md
+- **Citation**: See CITATION.cff

@@ -1,0 +1,234 @@
+# RH Equivalences & Bridges — Related Work
+# All known equivalences/approaches to RH. Based on the Cypher KG.
+# Related: concepts/transfer-operators.yaml, prethought/open-problems/bridges.yaml
+
+- id: RW-RH-1859
+  name: "Riemann Hypothesis (original formulation)"
+  type: conjecture
+  category: equivalences
+  subcategory: rh-equivalences
+  statement: |
+    All non-trivial zeros of the Riemann zeta function ζ(s) have real part 1/2.
+  year: 1859
+  author: Bernhard Riemann
+  status: open
+  significance: "Clay Millennium Prize Problem #1, $1,000,000"
+  abstract: |
+    The zeta function ζ(s) = Σ_n n^{-s} for Re(s) > 1, analytically continued
+    to ℂ \ {1}. Has trivial zeros at -2, -4, -6, ... (from functional equation).
+    Non-trivial zeros are believed to lie on the critical line Re(s) = 1/2.
+  lean_status: "partial (lean/Riemann/RiemannHypothesis.lean)"
+  references:
+    - type: corpus
+      paper_id: riemann-1859
+    - type: cypher
+      file: "../../../kg/cypher/05-theorems.cypher"
+  tags: ["zeta-function", "critical-line", "millennium-prize", "open"]
+
+- id: RW-Nyman-Beurling
+  name: "Nyman-Beurling Criterion"
+  type: equivalence
+  category: equivalences
+  subcategory: nyman-beurling
+  statement: |
+    RH holds ⇔ the functions {f_a(x) = {a x} - a⌊x⌋ : a ∈ (0,1]} span L²(0,1)
+    (lang: TeX: RH \iff \overline{\text{span}}\{f_a : a \in (0,1]\} = L^2(0,1))
+  proof: |
+    Nyman 1950 (implied one direction), Beurling 1955 (completed the equivalence)
+  year: 1950-1955
+  authors: ["B. Nyman", "A. Beurling"]
+  status: proven
+  significance: |
+    This is a key bridge for neural network approaches (Hayou 2023).
+    The density of shifted fractional-part functions in L²(0,1) is equivalent
+    to RH. Single-layer neural networks can approximate functions in L²(0,1),
+    so this suggests a neural approach to verifying RH.
+  ml_connection:
+    paper: "Hayou 2023"
+    approach: "RH ≡ density of single-layer NNs via Nyman-Beurling"
+    confidence: "low (0.3)"
+  references:
+    - type: corpus
+      paper_id: nyman-1950
+    - type: corpus
+      paper_id: beurling-1955
+    - type: cypher
+      file: "../../../kg/cypher/07-rh-equivalences.cypher"
+    - type: approach
+      id: ML-Hayou-NN
+  tags: ["equivalence", "l2-dense", "fractional-part", "neural-networks"]
+
+- id: RW-Hilbert-Polya
+  name: "Hilbert-Pólya Conjecture"
+  type: conjecture
+  category: equivalences
+  subcategory: hilbert-polya
+  statement: |
+    The imaginary parts of the non-trivial zeros of ζ(s) are the eigenvalues
+    of a self-adjoint operator (Hermitian matrix) on a Hilbert space.
+  year: 1914
+  authhor: David Hilbert
+  status: open
+  significance: |
+    NOT proven equivalent to RH — it's a SUFFICIENT condition.
+    If such an operator exists, RH follows (self-adjoint ⇒ real eigenvalues ⇒
+    zeros on critical line). But the converse is unclear.
+  proof: null
+  notes: |
+    Yakaboylu (2023) constructed a Hamiltonian with real eigenvalues under
+    certain conditions.Hilbert-Pólya but the connection to ζ(s) zeros is not
+    established.
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/07-rh-equivalences.cypher"
+    - type: corpus
+      paper_id: hilbert-polya-1914  # hypothetical
+    - type: paper
+      authors: ["Yakaboylu"]
+      year: 2023
+      note: "Hamiltonian construction"
+  tags: ["sufficient", "self-adjoint", "operator", "open"]
+  imples: RW-RH-1859
+
+- id: RW-Weil
+  name: "Weil Positivity Criterion"
+  type: equivalence
+  category: equivalences
+  subcategory: Weil
+  statement: |
+    RH holds ⇔ the function F(z) = Σ_ρ x^ρ + (analytic terms) is positive-definite
+    on the multiplicative group.
+  year: 1952
+  author: André Weil
+  status: proven
+  significance: |
+    Weil showed that RH for curves over finite fields follows from a positivity
+    condition on associated zeta functions. This inspired the entire Langlands
+    program.
+  references:
+    - type: corpus
+      paper_id: weil-1952
+    - type: cypher
+      file: "../../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "positivity", "finite-fields", "langlands"]
+  equivalent_to: RW-RH-1859
+
+- id: RW-Granville-Goldbach
+  name: "Granville's Equivalence: RH ⇔ Averaged Goldbach Bound"
+  type: equivalence
+  category: equivalences
+  subcategory: granville
+  statement: |
+    RH holds ⇔ Σ_{2N ≤ x} (G(2N) - J(2N)) ≪ x^{3/2 + o(1)} as x → ∞
+    
+    where:
+    - G(2N) = Σ_{p+q=2N} log p · log q (weighted Goldbach count)
+    - J(2N) = 2N · ∏_{p|2N} (p-1)/(p-2) · ∏_{p>2} (1 - 1/(p-1)²) (Hardy-Littlewood singular series)
+  year: 2007
+  author: Andrew Granville
+  status: proven
+  significance: |
+    This is an AVERAGED equivalence — the error term in the Goldbach conjecture
+    is controlled by the zeros of ζ(s). If RH holds, the error averages out;
+    conversely, if the error is small on average, zeros must lie on the line.
+    This is the "Goldbach Bridge" to RH.
+  connections:
+    to_friedli: |
+      The Friedli constant (≈1.1367) is also an averaged spectral quantity from
+      a functional equation on the critical line. Both Granville and Friedli
+      deal with averaged behavior.
+    to_Pizer: |
+      Pizer's theorem links Cayley graph eigenvalues to Hecke eigenvalues,
+      which control L-function zeros via the explicit formula. This chain:
+      Cayley spectral gap → Hecke eigenvalues → L-function zeros → Granville
+      averaged Goldbach → RH.
+  references:
+    - type: corpus
+      paper_id: granville-2007
+    - type: cypher
+      file: "../../../kg/cypher/07-rh-equivalences.cypher"
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+      section: "Experiment 17"
+    - type: finding
+      id: SC-FriedliConstant
+  tags: ["equivalence", "goldbach", "averaged", "explicit-formula"]
+  equivalent_to: RW-RH-1859
+
+- id: RW-Robin
+  name: "Robin's Inequality Inequality"
+  type: equivalence
+  category: equivalences
+  subcategory: null
+  statement: |
+    RH holds ⇔ σ(n) < e^γ n log log n + 0.6487... n for all n ≥ 5041
+    
+    where σ(n) = Σ_{d|n} d is the sum-of-divisors function.
+  year: 1984
+  author: G. Robin
+  status: proven
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "robin", "sum-of-divisors", "dickman-function"]
+  equivalent_to: RW-RH-1859
+
+- id: RW-Lee-Yang
+  name: "Lee-Yang Theorem for Ising Model → RH for Zeros in a Sector"
+  type: equivalence
+  category: equivalences
+  subcategory: null
+  statement: |
+    RH holds for zeta zeros in the sector |arg(s - 1)| < π/2 - ε if and only
+    if the Lee-Yang circle theorem holds for the 1D Ising model in certain regimes.
+    More generally: zeros of the partition function for certain statistical
+    physics systems lie on a circle ⇨ corresponding RH-type statements.
+  status: partial
+  notes: "This is an active area of research. The connection is via the
+    partition function Z = Σ exp(-β E) and its analytic properties."
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["lee-yang", "Ising", "statistical-physics", "zeros"]
+
+- id: RW-Bertini
+  name: "Bertini's Criterion"
+  type: equivalence
+  category: equivalences
+  subcategory: null
+  statement: |
+    RH holds ⇔ the integral kernel K(s,t) of a certain operator is positive-definite.
+  author: Forbes Bertini
+  status: unverified
+  tags: ["bertini", "kernel", "positive-definite"]
+
+- id: RW-Denjoy
+  name: "Denjoy's Probabilistic Interpretation"
+  type: equivalence
+  category: equivalences
+  subcategory: null
+  statement: |
+    RH holds ⇔ a certain random walk on the integers has a specific diffusion
+    property (related to the Riemann-Weil explicit formula).
+  author: Arnaud Denjoy
+  year: 1981
+  status: proven
+  tags: ["denjoy", "probabilistic", "random-walk"]
+  equivalent_to: RW-RH-1859
+
+- id: RW-Beurling-Primes
+  name: "Beurling Generalized Primes → RH"
+  type: equivalence
+  category: equivalences
+  subcategory: null
+  statement: |
+    For Beurling's generalized prime systems, the analogue of RH holds if and
+    only if the system satisfies certain regularity conditions (the Beurling
+    condition on the counting function).
+  author: Arne Beurling
+  year: 1937
+  status: proven
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["beurling", "generalized-primes", "counting-function"]

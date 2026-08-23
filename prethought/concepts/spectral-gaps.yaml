@@ -1,0 +1,147 @@
+# Spectral Gaps — Core Concept
+# Related: cayley-graphs.yaml, ramanujan.yaml
+
+- id: SG-Definition
+  name: "Spectral Gap"
+  type: concept
+  category: spectral-theory
+  subcategory: spectral-gaps
+  definition: |
+    For a connected k-regular graph G with adjacency matrix A, the spectral gap
+    is λ₂ = the second-largest eigenvalue of A (or equivalently: λ₂ = k - λ_{|V|-1}
+    of the Laplacian L = kI - A).
+    Spectral gap measures how quickly random walks mix on G.
+  properties:
+    - range: "0 ≤ λ₂ ≤ k (for k-regular graphs)"
+    - small_spectral_gap: "Slow mixing, poor connectivity"
+    - large_spectral_gap: "Fast mixing, well-connected, expander"
+  relationship: |
+    λ₂ ≥ k - 2√(k-1) for all k-regular graphs (Alon-Boppana bound).
+    λ₂ = k - 2√(k-1) exactly for Ramanujan graphs (optimal).
+  references:
+    - type: theorem
+      id: ramanujan-bound-1988
+    - type: cypher
+      file: "../../../kg/cypher/01-groups.cypher"
+  tags: ["expander", "mixing-time", "alon-boppana", "laplacian"]
+
+- id: SG-Cheeger
+  name: "Cheeger Constant"
+  type: concept
+  category: spectral-theory
+  subcategory: spectral-gaps
+  definition: |
+    h(G) = min_{S⊂V, |S|≤|V|/2} (e(S,V\S) / |S|) where e(S,T) is the number of edges
+    between S and T.
+    The Cheeger inequality: (λ₂/2) ≤ h(G) ≤ √(2λ₂) for k=4-regular graphs.
+  relationship: |
+    For 4-regular graphs: λ₂/2 ≤ h(G) ≤ √(2λ₂)
+    This means λ₂ and h(G) are within a constant factor of each other.
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/02-graphs.cypher"
+  tags: ["cheeger", "isoperimetric", "inequality"]
+
+- id: SG-Alon-Boppana
+  name: "Alon-Boppana Bound"
+  type: concept
+  category: spectral-theory
+  subcategory: spectral-gaps
+  definition: |
+    For any infinite family of k-regular graphs, the spectral gap satisfies
+    lim sup λ₂ ≥ 2√(k-1).
+    For k=4: λ₂ ≥ 2√3 ≈ 3.464 for infinitely many graphs in any infinite family.
+  implications:
+    - "For SL(2,F_p) Cayley graphs (k=4), the spectral gap satisfies λ₂ ≥ 2√3
+      for infinitely many p, OR there is a lower bound for all p."
+    - "p=3,5 Cayley graphs ARE Ramanujan (λ₂ = 2√3 exactly)"
+    - "p≥7 Cayley graphs ARE NOT Ramanujan (λ₂ > 2√3)"
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/02-graphs.cypher"
+    - type: paper
+      authors: ["Noga Alon", "Arvind Boppana"]
+      year: 1986
+      venue: "Combinatorica"
+  tags: ["lower-bound", "infinite-family", "ramanujan"]
+
+- id: SG-RamanujanBound
+  name: "Ramanujan Bound"
+  type: concept
+  category: spectral-theory
+  subcategory: spectral-gaps
+  definition: |
+    A k-regular graph is Ramanujan if its spectral gap satisfies λ₂ ≤ 2√(k-1).
+    For k=4: λ₂ ≤ 2√3 ≈ 3.464.
+    Ramanujan graphs achieve the Alon-Boppana bound for all eigenvalues.
+  properties:
+    - optimal: true
+    - expander: true
+    - explicit_construction: "LPS construction (Lubotzky-Phillips-Sarnak 1988)"
+  known_values:
+    - p=2: 6 nodes, λ₂ ≈ 2.449, ratio = λ₂ / (2√3) ≈ 0.707
+    - p=3: 24 nodes, λ₂ = 2√3 ≈ 3.464, ratio = 1.000 (Ramanujan)
+    - p=5: 120 nodes, λ₂ = 2√3 ≈ 3.464, ratio = 1.000 (Ramanujan)
+    - p=7: 336 nodes, λ₂ ≈ 3.5858, ratio ≈ 1.028 (NOT Ramanujan)
+    - p=11: 1320 nodes, λ₂ ≈ 3.84, ratio ≈ 1.108 (NOT Ramanujan)
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/02-graphs.cypher"
+    - type: paper
+      authors: ["Alex Lubotzky", "R. Phillips", "P. Sarnak"]
+      year: 1988
+      venue: "Inventiones Mathematicae"
+  tags: ["ramanujan", "optimal", "lps"]
+
+- id: SG-EigenvalueList
+  name: "SL(2,F_p) Cayley Graph Spectral Gaps"
+  type: data
+  category: spectral-theory
+  subcategory: spectral-gaps
+  description: |
+    Measured spectral gaps λ₂ for SL(2,F_p) Cayley graphs with generators S,R.
+    All graphs are 4-regular. Ramanujan bound = 2√3 ≈ 3.46410161514.
+  data:
+    - p: 2
+      nodes: 6
+      spectral_gap: 2.449489743
+      ratio_to_ramanujan: 0.70710678
+      source: "computed from adjacency matrix"
+    - p: 3
+      nodes: 24
+      spectral_gap: 3.46410161514
+      ratio_to_ramanujan: 1.00000000
+      source: "computed from adjacency matrix"
+      note: "Ramanujan"
+    - p: 5
+      nodes: 120
+      spectral_gap: 3.46410161514
+      ratio_to_ramanujan: 1.00000000
+      source: "computed from adjacency matrix"
+      note: "Ramanujan"
+    - p: 7
+      nodes: 336
+      spectral_gap: 3.58578643763
+      ratio_to_ramanujan: 1.028023962
+      source: "computed from adjacency matrix"
+      note: "NOT Ramanujan"
+    - p: 11
+      nodes: 1320
+      spectral_gap: 3.840000
+      ratio_to_ramanujan: 1.1080
+      source: "known value"
+      note: "NOT Ramanujan"
+    - p: 13
+      nodes: 2184
+      spectral_gap: "computed"
+      ratio_to_ramanujan: null
+      status: "pending"
+  lps_theorem: |
+    LPS 1988: p=3 and p=5 SL(2,F_p) Cayley graphs ARE Ramanujan.
+    p≥7 are NOT Ramanujan (as empirically confirmed).
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/02-graphs.cypher"
+    - type: theorem
+      id: lips-1988-ramanujan
+  tags: ["empirical", "p3-ramanujan", "p5-ramanujan", "p7-not-ramanujan"]

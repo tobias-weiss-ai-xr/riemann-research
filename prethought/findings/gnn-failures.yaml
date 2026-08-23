@@ -1,0 +1,141 @@
+# GNN Failures — Honest Empirical Findings
+# Related: findings/ml-successes.yaml, concepts/cayley-graphs.yaml
+
+- id: FG-GNN-Subgraph-Negative-R2
+  name: "Subgraph GNNs achieve R² ≈ 0.69 on train, NEGATIVE on cross-prime test"
+  type: finding
+  category: machine-learning
+  subcategory: gnn-cayley
+  experiment: ["Exp 2", "Exp 3"]
+  date: "2026-04-18"
+  configuration:
+    model: GAT
+    layers: 3
+    hidden_dim: 128
+    pooling: global_mean_pool
+    features: 3-dim (normalized_degree, clustering_coefficient, triangle_count)
+    augmentation: BFS subgraphs (size 20-5000)
+    input: SL(2,F_p) Cayley graphs (p=2..101)
+    target: spectral_gap (λ₂)
+    loss: MSE
+  dataset:
+    train_samples: 599
+    train_primes: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+    test_samples: 82
+    test_primes: [53, 59]
+  results:
+    train:
+      mae: 0.116
+      r2: 0.688
+      loss: ~0.03
+    test:
+      mae: 0.086
+      r2: -121.7
+      target_range: [0.158, 0.174]
+      prediction_range: [0.204, 0.374]
+      baseline_r2: null (training mean prediction)
+  analysis:
+    root_cause: |
+      Vertex-transitivity of SL(2,F_p) Cayley graphs means ALL local
+      subgraph structures are identical across primes (all 4-regular,
+      same local statistics). Local subgraph features carry ZERO information
+      about global spectral properties. The model memorizes training primes'
+      spectral gap distribution but fails to generalize to unseen primes.
+    key_insight:
+      "For vertex-transitive graphs, local GNN features cannot predict global
+      spectral properties. Only full-graph information works."
+  references:
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+      section: "Experiment 2: Subgraph Augmentation + Rich Features"
+    - type: talking-point
+      id: CS-Vertex-Transitive-Limitation
+  tags: ["vertex-transitive", "no-generalization", "local-features", "failed", "R²-negative"]
+  status: "confirmed"
+  confidence: "high"
+
+- id: FG-GNN-SIGN-Also-Fails
+  name: "SIGN (non-message-passing) also fails on cross-prime"
+  type: finding
+  category: machine-learning
+  subcategory: gnn-cayley
+  experiment: Exp 2
+  date: "2026-04-18"
+  configuration:
+    model: SIGN (2-hop pre-aggregation)
+    input_dim: 9
+    hidden_dim: 128
+    output_dim: 1
+    features: 9-hop aggregations → 128 → 1
+    augmentation: BFS subgraphs
+    target: spectral_gap
+  results:
+    train_r2: 0.69
+    test_r2: -80
+    note: "Same failure mode — local pre-aggregated features still don't capture global structure"
+  references:
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+  tags: ["non-message-passing", "also-fails", "R²-negative"]
+  status: "confirmed"
+
+- id: FG-GNN-MultiTask-Fails
+  name: "Multi-task GNN with 5 prediction heads also fails"
+  type: finding
+  category: machine-learning
+  subcategory: gnn-cayley
+  experiment: Exp 2
+  date: "2026-04-18"
+  configuration:
+    model: GIN
+    heads: 5 (multi-task)
+    loss: sum of 5 MSEs with uncertainty weighting
+    targets: [spectral_gap, log_nodes, mean_degree, clustering_coeff, triangle_count]
+  results:
+    train_loss: -0.79 (negative due to log scaling?)
+    spectral_gap_test_r2: "negative"
+    log_nodes_test_r2: 0.24
+    toxicity: "Metalearns to predict trivial targets (log_nodes) and ignores spectral_gap"
+  references:
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+  tags: ["multi-task", "fails", "trivial-prediction"]
+  status: "confirmed"
+
+- id: FG-Vertex-Transitive-Curse
+  name: "The Vertex-Transitive Curse: Local Features Carry Zero Global Information"
+  type: finding
+  category: machine-learning
+  subcategory: gnn-cayley
+  experiment: ["Exp 2", "Exp 3"]
+  date: "2026-04-18"
+  abstract: |
+    For vertex-transitive graphs (like SL(2,F_p) Cayley graphs with fixed generators),
+    all nodes are structurally identical. Any local neighborhood of radius r looks
+    the same regardless of which node you start from, and regardless of the prime p.
+    Therefore, any GNN that uses only local message passing cannot distinguish
+    between different primes, and thus cannot predict prime-dependent global
+    properties like the spectral gap.
+  implications:
+    - "GNNs CANNOT learn global spectral properties from local subgraph sampling"
+    - "Full-graph processing is REQUIRED for vertex-transitive graph tasks"
+    - "Cross-prime generalization for Cayley graphs is HOPLESS with local features"
+  proof:
+    |-
+      (1) SL(2,F_p) Cayley graphs with generators S,R are vertex-transitive
+      (2) Vertex-transitive ⇒ all nodes have identical local neighborhoods
+      (3) Local GNN features = f(local neighborhood)
+      (4) ⇒ All nodes in all SL(2,F_p) graphs have identical GNN features
+      (5) ⇒ GNN output depends only on global pooling of identical features
+      (6) ⇒ No information about p flows through the network
+      (7) ⇒ Cannot generalize to new primes
+  references:
+    - type: concept
+      id: CG-SL2Fp
+    - type: talking-point
+      id: CS-Vertex-Transitive-Limitation
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+  tags: ["vertex-transitive", "theoretical-limit", "no-local-info", "proven-curse"]
+  status: "proven"
+  confidence: "very-high"

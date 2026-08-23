@@ -1,0 +1,96 @@
+# Cayley Graphs — Core Concept
+# Related: spectral-gaps.yaml, ramanujan.yaml, brandt-pizer.yaml
+
+- id: CG-SL2Fp
+  name: "Cayley Graph of SL(2,F_p)"
+  type: concept
+  category: spectral-theory
+  subcategory: cayley-graphs
+  definition: |
+    The Cayley graph Cay(SL(2,F_p), S) where S = {S,R} are the fundamental
+    root generators: S = [[0,-1],[1,0]], R = [[0,1],[-1,0]] in PSL(2,F_p) representation.
+  properties:
+    - vertex_count: "p(p²-1)"
+    - degree: 4
+    - vertex_transitive: true
+    - edge_transitive: false
+    - prox_regular: true
+    - girth: "6 for p > 2"
+  key_observations:
+    - "Vertex-transitivity means all nodes look identical locally — local subgraph features
+      carry ZERO information about global spectral properties. This is why local GNN
+      approaches fail."
+    - "All Cayley graphs of SL(2,F_p) with generators S,R are 4-regular."
+    - "Graph size grows cubically with p: 6 nodes (p=2) → 1,010,100 nodes (p=101)."
+  references:
+    - type: corpus
+      paper_id: lubotzky-phillips-sarnak-1988
+    - type: cypher
+      file: "../../../kg/cypher/01-groups.cypher"
+  tags: ["vertex-transitive", "4-regular", "expander", "ramanujan"]
+
+- id: CG-PSL2Fp
+  name: "Cayley Graph of PSL(2,F_p)"
+  type: concept
+  category: spectral-theory
+  subcategory: cayley-graphs
+  definition: |
+    Cayley graph of the projective special linear group PSL(2,F_p) = SL(2,F_p)/{±I}.
+    For odd characteristic (p odd), SL(2,F_p) = PSL(2,F_p).
+  properties:
+    - vertex_count: "(p(p²-1))/2 for p odd"
+    - degree: 4
+    - simple_group: true (for p ≥ 5)
+  notes: "PSL(2,F_p) is simple for p ≥ 5 (Jordan)."
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/01-groups.cypher"
+  tags: ["simple-group", "4-regular"]
+
+- id: CG-Generators
+  name: "Cayley Graph Generators for SL(2,F_p)"
+  type: concept
+  category: spectral-theory
+  subcategory: cayley-graphs
+  definition: |
+    The standard generators S and R for SL(2,F_p):
+    - S = [[0, -1], [1, 0]] (inversion + rotation)
+    - R = [[0, 1], [-1, 0]] (another rotation)
+    In matrix group JPJ form: S² = R³ = (SR)² = -I
+  properties:
+    - S_order: 4
+    - R_order: 3
+    - SR_order: 2
+    - presentation: "S⁴ = R³ = (SR)² = I in PSL(2,F_p)"
+  matrix_forms:
+    S: "[[0,-1],[1,0]]"
+    R: "[[0,1],[-1,0]]"
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/01-groups.cypher"
+  tags: ["generators", "presentation", "SL2", "PSL2"]
+
+- id: CG-SL2Z
+  name: "Cayley Graph of SL(2,Z)"
+  type: concept
+  category: spectral-theory
+  subcategory: cayley-graphs
+  definition: |
+    Infinite Cayley graph of SL(2,Z) with generators S = [[0,-1],[1,0]] and
+    T = [[1,1],[0,1]] (standard modular group generators).
+    This is the fundamental object in the SL(2,Z) → ζ(s) theory chain.
+  properties:
+    - vertex_count: infinite
+    - degree: 4
+    - vertex_transitive: true
+    - is_discrete: true
+    - fuchsian_group: true
+    - cocompact: false
+  relationship: |
+    The Cayley graph of SL(2,Z) is the universal cover of the modular curve
+    PSL(2,Z)\H, and its spectral properties connect to the Riemann zeta
+    function via the Selberg trace formula.
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/01-groups.cypher"
+  tags: ["infinite", "fuchsian", "modular-group"]

@@ -1,70 +1,51 @@
-papers:
-- title: 'Example Paper 1: A Foundational Survey of Your Topic'
-  date: 2026-01
-  url: https://arxiv.org/abs/2601.00001
-  category: survey
-  subcategory: hybrid
-  authors:
-  - Example Author A
-  - Example Author B
-  venue: ''
-  code_url: ''
-  project_url: ''
-  abstract: This is a placeholder abstract. Replace it with a real summary of the
-    paper. The corpus pipeline uses title/abstract text for trend analysis, so keep
-    abstracts accurate.
-  tags: []
-- title: 'Example Paper 2: An Agentic Method for Your Topic'
-  date: 2026-03
-  url: https://arxiv.org/abs/2603.00002
-  category: method
-  subcategory: agentic
-  authors:
-  - Example Author C
-  venue: ''
-  code_url: ''
-  project_url: ''
-  abstract: Another placeholder abstract. Papers are grouped by (category, subcategory)
-    and sorted by year in the generated README.
-  tags: []
-- title: 'Example Paper 3: Application Study in Your Domain'
-  date: 2025-11
-  url: https://arxiv.org/abs/2511.00003
-  category: application
-  subcategory: non-agentic
-  authors:
-  - Example Author D
-  - Example Author E
-  venue: ''
-  code_url: ''
-  project_url: ''
-  abstract: A third placeholder. Once you add real papers, re-run the pipeline to
-    regenerate statistics and reports.
-  tags: []
-- title: 'Example Paper 4: An Evaluation Benchmark for Your Topic'
-  date: 2025-08
-  url: https://arxiv.org/abs/2508.00004
-  category: evaluation
-  subcategory: hybrid
-  authors:
-  - Example Author F
-  venue: ''
-  code_url: ''
-  project_url: ''
-  abstract: A placeholder abstract. This example demonstrates the evaluation category
-    with a hybrid subcategory. Replace with a real summary once you add actual papers.
-  tags: []
-- title: 'Example Paper 5: A Survey of Your Topic Across Domains'
-  date: 2025-05
-  url: https://arxiv.org/abs/2505.00005
-  category: survey
-  subcategory: non-agentic
-  authors:
-  - Example Author G
-  - Example Author H
-  venue: ''
-  code_url: ''
-  project_url: ''
-  abstract: Another placeholder abstract. The corpus pipeline uses title/abstract
-    text for trend analysis, so keep abstracts accurate when you add real papers.
-  tags: []
+# Riemann Hypothesis Research Corpus
+# Source of truth: every paper is one structured entry
+# Taxonomy: category + subcategory must match config/taxonomy.yaml
+# Run: python scripts/validate_papers.py to check schema
+
+- id: riemann-1859
+  title: "Über die Anzahl der Primzahlen unter einer gegebenen Grösse"
+  authors: ["Bernhard Riemann"]
+  date: 1859-11
+  url: "https://arxiv.org/abs/0809.2087"  # modern reprint
+  venue: "Monatsberichte der Berliner Akademie"
+  category: number-theory
+  subcategory: l-functions
+  abstract: |
+    Introduces the Riemann zeta function and formulates the Riemann Hypothesis:
+    all non-trivial zeros have real part 1/2. Establishes the functional equation,
+    trivial zeros at negative even integers, and the Euler product.
+  doi: "10.1002/andp.185910305"
+  status: foundational
+  open_access: true
+  notes: "The original 8-page paper. Millennium Prize Problem #1."
+  tags: ["zeta-function", "riemann-hypothesis", "foundational"]
+
+- id: mayer-1991
+  title: "On zeta functions associated with Rashomon graphs"
+  authors: ["Dieter H. Mayer"]
+  date: 1991
+  url: "https://eudml.org/doc/138777"
+  venue: "Mathematische Annalen"
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: |
+    Studies the Selberg zeta function for PSL(2,Z) via transfer operators on
+    the Gauss map. Establishes the identity Z_S(s) = det(1-L_s) det(1+L_s) for Re(s)>1,
+    where L_s is the weighted transfer operator.
+  doi: "10.1007/BF01444974"
+  status: foundational
+  open_access: true
+  notes: "Transfer operator L_s f(x) = Σ_{n=1}^∞ (n+x)^{-2s} f(1/(n+x)), the operator we use."
+  tags: ["transfer-operator", "selberg-zeta", "gauss-map"]
+
+- id: efrat-1981
+  title: "A proof of the meromorphic continuation of the Selberg zeta-function"
+  authors: ["Adolf Efrat"]
+  date: 1981
+  url: "https://link.springer.com/article/10.1007/BF01406368"
+  venue: "Israel Journal of Mathematics"
+  category: dynam-systems
+  subcategory: selberg-zeta
+  abstract: |
+    Proves the

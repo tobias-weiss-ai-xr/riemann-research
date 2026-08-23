@@ -1,0 +1,115 @@
+# Transfer Operators — Core Concept
+# Related: dynam-systems, selberg-zeta, mayer-1991
+
+- id: TO-Mayer1991
+  name: "Mayer's Transfer Operator"
+  type: concept
+  category: dynam-systems
+  subcategory: transfer-operator
+  definition: |
+    L_s : B(V) → B(V) (bounded operators on the Banach space of bounded functions)
+    L_s f(x) = Σ_{n=1}^∞ (n+x)^{-2s} f(1/(n+x))
+    where x ∈ (0,∞), s ∈ ℂ, and V is a suitable Banach space.
+    This is a weighted Perron-Frobenius-type operator.
+  weight: "(n+x)^{-2s}"
+  base_map: "x ↦ 1/(n+x)"
+  properties:
+    - "For Re(s) > 1, L_s is nuclear (trace-class) on suitable spaces"
+    - "For Re(s) > 1/2, L_s is compact"
+    - "The negative exponent -2s is CRUCIAL — this distinguishes it from classical PF"
+  spectrum:
+    - spectral_radius: "ρ(L_s)"
+    - key_conjecture: "ρ(L_s) < 1 for all s with Re(s) > 1/2"
+    - implication: "If ρ(L_s) < 1 for Re(s) > 1/2, then ζ(s) has no zeros there → all zeros on Re(s)=1/2 → RH holds"
+  references:
+    - type: paper
+      id: mayer-1991
+      role: "defining paper"
+    - type: cypher
+      file: "../../../kg/cypher/04-operators.cypher"
+  tags: ["transfer-operator", "mayer", "negative-exponent"]
+
+- id: TO-MayerIdentity
+  name: "Mayer's Identity: Selberg Zeta = det(1-L_s)det(1+L_s)"
+  type: theorem
+  category: dynam-systems
+  subcategory: selberg-zeta
+  statement: |
+    For Re(s) > 1:
+      Z_S(s) = det(1 - L_s) · det(1 + L_s)
+    where Z_S is the Selberg zeta function for PSL(2,ℤ).
+  extension: |
+    Efrat (1981) extends this to Re(s) > 1/2 via analytic continuation.
+    Combined: ζ(2s-1)/ζ(s) = C(s) · det(1-L_s)det(1+L_s) for Re(s) > 1/2
+    where C(s) involves gamma and pi factors.
+  significance: |
+    This connects the Selberg zeta (and via Efrat, ζ(s)) directly to the
+    spectral properties of the transfer operator L_s.
+    The Riemann Hypothesis becomes a statement about the operator L_s's spectrum.
+  proof_status: "proven (Mayer 1991)"
+  year: 1991
+  references:
+    - type: paper
+      id: mayer-1991
+    - type: paper
+      authors: ["Adolf Efrat"]
+      year: 1981
+    - type: cypher
+      file: "../../../kg/cypher/05-theorems.cypher"
+  tags: ["mayer-identity", "selberg-zeta", "determinant", "proven"]
+
+- id: TO-RH-Equivalence
+  name: "RH ⇔ ρ(L_s) < 1 for all Re(s) > 1/2"
+  type: theorem
+  category: dynam-systems
+  subcategory: transfer-operator
+  statement: |
+    The following are equivalent:
+    1. RH holds (all non-trivial zeros of ζ(s) have Re(s) = 1/2)
+    2. ρ(L_s) < 1 for all s with Re(s) > 1/2
+    
+    Here ρ(L_s) = spectral radius of Mayer's transfer operator.
+  proof_sketch: |
+    Mayer identity: Z_S(s) = det(1-L_s)det(1+L_s) for Re(s) > 1
+    → poles of Z_S correspond to eigenvalues of L_s with |λ| ≥ 1
+    Efrat: Z_S relates to ζ(s) via ζ(2s-1)/ζ(s)
+    → zeros of ζ(2s-1) correspond to poles of Z_S
+    → RH is equivalent to: no zeros of ζ(2s-1) with Re(2s-1) > 0 and Re(s) > 1/2
+    → equivalent to: no eigenvalues of L_s with |λ| ≥ 1 for Re(s) > 1/2
+  verification_status: "Semi-formalized in lean/Riemann/TransferOperator.lean"
+  confidence: "high (Mayer 1991 + Efrat 1981 are solid)"
+  references:
+    - type: paper
+      id: mayer-1991
+    - type: paper
+      authors: ["Adolf Efrat"]
+      year: 1981
+    - type: lean
+      file: "../../../lean/Riemann/TransferOperator.lean"
+      status: "semi-formalized"
+  tags: ["rh-equivalence", "spectral-radius", "mayer", "efrat"]
+
+- id: TO-GaussMap
+  name: "Gauss Map"
+  type: concept
+  category: dynam-systems
+  subcategory: transfer-operator
+  definition: |
+    The Gauss map T: (0,1) → (0,1) defined by
+      T(x) = {1/x} = 1/x - ⌊1/x⌋ (fractional part)
+    This is the classical continued fraction map.
+    The transfer operator L_s is associated with the Gauss map's iterates.
+  properties:
+    - expanding_map: true
+    - ergodic: true (with respect to the Gauss measure)
+    - invariant_measure: "Gauss measure μ(x) dx = (1/ln 2) · 1/(1+x) dx"
+  connection: |
+    The doubly-stochastic operator associated with the Gauss map has
+    L₁-spectrum related to periodic orbits, and the Mayer transfer operator
+    L_s is a weighted version of this.
+  references:
+    - type: cypher
+      file: "../../../kg/cypher/04-operators.cypher"
+    - type: corpus
+      paper_id: mayer-1991
+  tags: ["gauss-map", "continued-fraction", "expanding", "ergodic"]

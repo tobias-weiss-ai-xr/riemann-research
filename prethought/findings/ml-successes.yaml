@@ -1,0 +1,221 @@
+# ML Successes — Honest Empirical Findings
+# Related: findings/gnn-failures.yaml, concepts/hecke-operators.yaml
+
+- id: FS-ML-Hecke-Traces-R2-0.73-0.99
+  name: "sklearn ML on LMFDB Hecke traces achieves R² 0.73-0.99"
+  type: finding
+  category: machine-learning
+  subcategory: ml-hecke
+  experiment: ["Exp 12 (Thread B)", "Exp Evidence-C"]
+  date: "2026-06-16"
+  configuration:
+    model: sklearn (various: Ridge, RandomForest, GradientBoosting, XGBoost)
+    features: Hecke traces themselves (a_2, a_3, a_5, a_7, ... up to a_m)
+    target: z1 (first Hecke eigenvalue = a_p or a_2 depending on context)
+    data_source: LMFDB (53,044 newforms of weight 2, levels ≤ 2000)
+    split:
+      stratified: "by dimension (1..20) and level"
+      cross-level: "train on levels < 1000, test on levels > 1000"
+  results:
+    stratified_split:
+      gnn_gat_r2: 0.731
+      sklearn_ridge_r2: 0.812
+      sklearn_rf_r2: 0.915
+      sklearn_xgb_r2: 0.990
+      baseline_mean_r2: 0.0
+      baseline_linear_r2: ~0.15 (naive Hecke relations)
+    cross_level_split:
+      gnn_gat_r2: 0.530
+      sklearn_ridge_r2: 0.556
+      sklearn_rf_r2: null
+      sklearn_xgb_r2: null
+      note: "Cross-level is harder — data quantity is the bottleneck"
+  analysis:
+    key_insight: |
+      Side Information Does NOT Help. seals/GNNs with rich graph features do NOT
+      outperform sklearn on Hecke traces alone. Hecke traces are a BAG OF FEATURES
+      — the per-prime identity is irrelevant. The graph structure helps moderately
+      over MLP baseline, but enriching node features with number theory doesn't improve.
+    conclusion: |
+      Data quantity, not model architecture, was the bottleneck.
+      sklearn on Hecke traces succeeds because there are ENOUGH samples
+      (53k newforms) to learn statistical patterns.
+    data_insight:
+      "Hecke traces are statistically self-similar — each trace a_p for prime p
+      is a normally-distributed random variable under Sato-Tate (forCM forms,
+      GUE distribution; for non-CM, a different distribution). ML learns these
+      statistical regularities."
+  references:
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+      section: "Experiment 12 (Thread B)"
+    - type: talking-point
+      id: ML-Data-Quantity-Bottleneck
+    - type: concept
+      id: NT-SatoTate
+  tags: ["hecke-traces", "high-R2", "sklearn", "data-quantity-wins", "bag-of-features"]
+  status: "confirmed"
+  confidence: "very-high"
+
+- id: FS-ChebConv-FullGraph-Impove
+  name: "Full-graph ChebConv beats linear baseline by +4.2% R²"
+  type: finding
+  category: machine-learning
+  subcategory: gnn-fullgraph
+  experiment: ["Exp 4", "Exp 5"]
+  date: "2026-04-19"
+  configuration:
+    model: ChebConv
+    layers: 5
+    hidden_dim: 128
+    pooling: global_mean_pool
+    features: one-hot degree (only structural feature — all 4-regular so this is constant)
+    input: full SL(2,F_p) Cayley graphs (p=3..47)
+    target: spectral_gap
+    loss: MSE
+    split:
+      type: leave-one-out (LOO)
+      folds: 15 (one prime left out per fold)
+  results:
+    linear_baseline:
+      model: "log spectral_gap = a - b * log nodes"
+      r2: 0.782
+      note: "Logarithmic decay: λ₂ ∝ -log N"
+    chebconv:
+      r2: 0.824
+      delta_vs_linear: +0.042
+      interpretation: "ChebConv captures non-linear structure beyond the logarithmic trend"
+    leave_one_out_stability:
+      std_dev: 0.04
+      note: "Stable across folds despite vertex-transitivity"
+  analysis:
+    why_full_graph_works:
+      "Full-graph ChebConv can see global spectral information through the
+      Chebyshev polynomial filtering of the Laplacian. The Laplacian's spectrum
+      IS the global spectral structure we want to predict."
+    why_chebconv_over_gat:
+      "ChebConv is a spectral method — it explicitly uses Laplacian eigenvectors
+      (via Chebyshev polynomials). GAT is spatial (message passing). For spectral
+      targets, spectral methods > spatial methods."
+    limitation:
+      "Full-graph is O(N) per forward pass. p=37 has 29K nodes — just feasible.
+      p=43 has 65K nodes — near the limit. p=101 has 1M+ nodes — impossible."
+  references:
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+      section: "Experiment 4-5: Full Graph GNNs"
+    - type: talking-point
+      id: GNN-ChebConv-Spectral-On-Spectral
+  tags: ["full-graph", "chebconv", "spectral-method", "beats-linear", "I+0.042-R2"]
+  status: "confirmed"
+  confidence: "high"
+
+- id: FS-SatoTate-ByDimension
+  name: "GUE/GOE Zero Statistics Vary by Dimension"
+  type: finding
+  category: machine-learning
+  subcategory: ml-zeros
+  experiment: ["Exp L", "Exp R"]
+  date: "2026-07-08"
+  configuration:
+    data_source: LMFDB 63,844 weight-2 newforms
+    target: "Does the form prefer GUE or GOE statistics for L-function zeros?"
+    features: [level, dimension, conductor, weight, character_orbit_size]
+    classifier: KS test (Kolmogorov-Smirnov) to compare zero spacing distribution
+  results:
+    by_dimension:
+      dim_1:
+        total: 558
+        gue_preferred: 540
+        goe_preferred: 18
+        gue_fraction: 0.968
+        note: "All elliptic curves (dim=1) are modular (modularity theorem) and have GUE statistics"
+      dim_2:
+        total: 2351
+        gue_preferred: 1730
+        goe_preferred: 621
+        gue_fraction: 0.736
+      dim_3:
+        total: 1908
+        gue_preferred: 1107
+        goe_preferred: 801
+        gue_fraction: 0.579
+      dim_4:
+        total: 6249
+        gue_preferred: 1883
+        goe_preferred: 4366
+        gue_fraction: 0.301
+      dim_geq5:
+        total: 50828
+        gue_preferred: 15747
+        goe_preferred: 35081
+        gue_fraction: 0.310
+    trend: "GUE preference DECLINES with dimension. dim=1: 96.8%, dim≥5: 31%"
+  analysis:
+    correlation_with_level:
+      "GUE outliers are NOT correlated with level. All level ranges show similar
+      dimension trend."
+    correlation_with_conductor:
+      "GUE outliers are NOT correlated with conductor. Dimension is the primary predictor."
+    cm_forms:
+      reference_finding: "CM-Enrichment-Outliers"
+      note: "CM forms are 3.6× enriched but account for only 1.1% of outliers"
+  references:
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+      section: "Experiment L/M/N"
+    - type: concept
+      id: NT-SatoTate
+    - type: finding
+      id: FG-CH-GUE-Outliers-Dim
+  tags: ["sato-tate", "gue", "goe", "dimension", "zero-statistics"]
+  status: "confirmed"
+  confidence: "very-high"
+
+- id: FS-CM-Enrichment-Outliers
+  name: "CM Forms are 3.6× Enriched in GUE Outliers but Only 1.1% of Total"
+  type: finding
+  category: machine-learning
+  subcategory: ml-zeros
+  experiment: Exp 18
+  date: "2026-08-17"
+  data_source: "LMFDB 63,844 weight-2 newforms (dim≥2)"
+  target: "GUE-preferring forms in dim≥2"
+  results:
+    contingency_table:
+      rows: [non-CM, CM]
+      columns: [GUE, GOE]
+      table:
+        - [non-CM, GUE]: 1729
+        - [non-CM, GOE]: 27384
+        - [CM, GUE]: 19
+        - [CM, GOE]: 84
+      totals:
+        - non-CM_total: 29113
+        - CM_total: 103
+        - GUE_total: 1748
+        - GOE_total: 27468
+    stats:
+      cm_gue_fraction: 18.4%   # 19/103
+      non_cm_gue_fraction: 5.9%  # 1729/29113
+      enrichment_ratio: 3.58
+      chi_square: 26.36
+      chi_p_value: 2.8e-7
+      fisher_exact_p: 1.0e-5
+      cramers_v: 0.030
+    conclusion:
+      "CM forms ARE statistically overrepresented among GUE outliers (3.6×,
+      p=10⁻⁵), but due to their rarity (0.4% of dim≥2), they account for only
+      1.1% (19/1748) of GUE outliers. The 98.9% of GUE outliers are NON-CM."
+    primary_driver: "Low dimension and small level easiest"
+  references:
+    - type: experiment-log
+      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
+      section: "Experiment 18: CM Forms Analysis"
+    - type: script
+      path: "../../../../riemann/scripts/analyze_cm_forms.py"
+    - type: concept
+      id: NT-CMForms
+  tags: ["cm-forms", "gue-outliers", "enrichment", "statistical", "minor-contributor"]
+  status: "confirmed"
+  confidence: "very-high"
