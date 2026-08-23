@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  zero:
+    image: dgraph/dgraph:v230.0
+    container_name: dgraph-zero
+    ports:
+      - "5080:5080"
+    volumes:
+      - dgraph_data:/dgraph
+    command: dgraph zero --my=zero:5080
+    restart: unless-stopped
+
+  alpha:
+    image: dgraph/dgraph:v230.0
+    container_name: dgraph-alpha
+    ports:
+      - "8080:8080"
+      - "9080:9080"
+    volumes:
+      - dgraph_data:/dgraph
+    command: dgraph alpha --my=alpha:7080 --zero=zero:5080
+    depends_on:
+      - zero
+    restart: unless-stopped
+
+  ratel:
+    image: dgraph/ratel:v230.0
+    container_name: dgraph-ratel
+    ports:
+      - "8000:8000"
+    command: dgraph-ratel
+    depends_on:
+      - zero
+    restart: unless-stopped
+
+volumes:
+  dgraph_data:
+    driver: local
