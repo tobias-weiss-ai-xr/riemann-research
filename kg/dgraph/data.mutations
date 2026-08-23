@@ -82,57 +82,29 @@
       "RP-Definition" <dgraph.type> "Concept" } }
 
 
-# RP-SL2Fp-Ramanujan (Concept)
-{ set { "RP-SL2Fp-Ramanujan" <id> <RP-SL2Fp-Ramanujan>
-      "SL(2,F_p) Ramanujan Status" <name> <RP-SL2Fp-Ramanujan>
-      "theorem" <entity_type> <RP-SL2Fp-Ramanujan>
-      "spectral-theory" <category> <RP-SL2Fp-Ramanujan>
-      "ramanujan" <subcategory> <RP-SL2Fp-Ramanujan>
-      "p3-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
+# RP-SL2Fp-Ramanujan (Theorem)
+{ set { "p3-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
       "p5-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
       "verified" <tags> <RP-SL2Fp-Ramanujan>
       "computed" <tags> <RP-SL2Fp-Ramanujan>
-      "p3-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
-      "p5-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
-      "verified" <tags> <RP-SL2Fp-Ramanujan>
-      "computed" <tags> <RP-SL2Fp-Ramanujan>
-      "RP-SL2Fp-Ramanujan" <dgraph.type> "Concept" } }
+      "RP-SL2Fp-Ramanujan" <dgraph.type> "Theorem" } }
 
 
-# RP-BrandtPizerHecke (Concept)
-{ set { "RP-BrandtPizerHecke" <id> <RP-BrandtPizerHecke>
-      "Brandt-Pizer = Hecke Operators via Cayley Adjacency" <name> <RP-BrandtPizerHecke>
-      "theorem" <entity_type> <RP-BrandtPizerHecke>
-      "spectral-theory" <category> <RP-BrandtPizerHecke>
-      "ramanujan" <subcategory> <RP-BrandtPizerHecke>
-      "brandt-matrix" <tags> <RP-BrandtPizerHecke>
+# RP-BrandtPizerHecke (Theorem)
+{ set { "brandt-matrix" <tags> <RP-BrandtPizerHecke>
       "hecke" <tags> <RP-BrandtPizerHecke>
       "pizer" <tags> <RP-BrandtPizerHecke>
       "cayley" <tags> <RP-BrandtPizerHecke>
       "supersingular" <tags> <RP-BrandtPizerHecke>
-      "brandt-matrix" <tags> <RP-BrandtPizerHecke>
-      "hecke" <tags> <RP-BrandtPizerHecke>
-      "pizer" <tags> <RP-BrandtPizerHecke>
-      "cayley" <tags> <RP-BrandtPizerHecke>
-      "supersingular" <tags> <RP-BrandtPizerHecke>
-      "RP-BrandtPizerHecke" <dgraph.type> "Concept" } }
+      "RP-BrandtPizerHecke" <dgraph.type> "Theorem" } }
 
 
-# RP-PizerTheorem (Concept)
-{ set { "RP-PizerTheorem" <id> <RP-PizerTheorem>
-      "Pizer's Theorem (Brandt = Hecke)" <name> <RP-PizerTheorem>
-      "theorem" <entity_type> <RP-PizerTheorem>
-      "number-theory" <category> <RP-PizerTheorem>
-      "hecke" <subcategory> <RP-PizerTheorem>
-      "brandt" <tags> <RP-PizerTheorem>
+# RP-PizerTheorem (Theorem)
+{ set { "brandt" <tags> <RP-PizerTheorem>
       "hecke" <tags> <RP-PizerTheorem>
       "isomorphism" <tags> <RP-PizerTheorem>
       "quaternion" <tags> <RP-PizerTheorem>
-      "brandt" <tags> <RP-PizerTheorem>
-      "hecke" <tags> <RP-PizerTheorem>
-      "isomorphism" <tags> <RP-PizerTheorem>
-      "quaternion" <tags> <RP-PizerTheorem>
-      "RP-PizerTheorem" <dgraph.type> "Concept" } }
+      "RP-PizerTheorem" <dgraph.type> "Theorem" } }
 
 
 # SG-Definition (Concept)
@@ -237,38 +209,20 @@
       "TO-Mayer1991" <dgraph.type> "Concept" } }
 
 
-# TO-MayerIdentity (Concept)
-{ set { "TO-MayerIdentity" <id> <TO-MayerIdentity>
-      "Mayer's Identity: Selberg Zeta = det(1-L_s)det(1+L_s)" <name> <TO-MayerIdentity>
-      "theorem" <entity_type> <TO-MayerIdentity>
-      "dynam-systems" <category> <TO-MayerIdentity>
-      "selberg-zeta" <subcategory> <TO-MayerIdentity>
-      "mayer-identity" <tags> <TO-MayerIdentity>
+# TO-MayerIdentity (Theorem)
+{ set { "mayer-identity" <tags> <TO-MayerIdentity>
       "selberg-zeta" <tags> <TO-MayerIdentity>
       "determinant" <tags> <TO-MayerIdentity>
       "proven" <tags> <TO-MayerIdentity>
-      "mayer-identity" <tags> <TO-MayerIdentity>
-      "selberg-zeta" <tags> <TO-MayerIdentity>
-      "determinant" <tags> <TO-MayerIdentity>
-      "proven" <tags> <TO-MayerIdentity>
-      "TO-MayerIdentity" <dgraph.type> "Concept" } }
+      "TO-MayerIdentity" <dgraph.type> "Theorem" } }
 
 
-# TO-RH-Equivalence (Concept)
-{ set { "TO-RH-Equivalence" <id> <TO-RH-Equivalence>
-      "RH ⇔ ρ(L_s) < 1 for all Re(s) > 1/2" <name> <TO-RH-Equivalence>
-      "theorem" <entity_type> <TO-RH-Equivalence>
-      "dynam-systems" <category> <TO-RH-Equivalence>
-      "transfer-operator" <subcategory> <TO-RH-Equivalence>
-      "rh-equivalence" <tags> <TO-RH-Equivalence>
+# TO-RH-Equivalence (Theorem)
+{ set { "rh-equivalence" <tags> <TO-RH-Equivalence>
       "spectral-radius" <tags> <TO-RH-Equivalence>
       "mayer" <tags> <TO-RH-Equivalence>
       "efrat" <tags> <TO-RH-Equivalence>
-      "rh-equivalence" <tags> <TO-RH-Equivalence>
-      "spectral-radius" <tags> <TO-RH-Equivalence>
-      "mayer" <tags> <TO-RH-Equivalence>
-      "efrat" <tags> <TO-RH-Equivalence>
-      "TO-RH-Equivalence" <dgraph.type> "Concept" } }
+      "TO-RH-Equivalence" <dgraph.type> "Theorem" } }
 
 
 # TO-GaussMap (Concept)
@@ -557,165 +511,81 @@
       "SC-PizerSlopes" <dgraph.type> "Concept" } }
 
 
-# RW-RH-1859 (Concept)
-{ set { "RW-RH-1859" <id> <RW-RH-1859>
-      "Riemann Hypothesis (original formulation)" <name> <RW-RH-1859>
-      "conjecture" <entity_type> <RW-RH-1859>
-      "equivalences" <category> <RW-RH-1859>
-      "rh-equivalences" <subcategory> <RW-RH-1859>
-      "The zeta function ζ(s) = Σ_n n^{-s} for Re(s) > 1, analytically continued\nto ℂ \\ {1}. Has trivial zeros at -2, -4, -6, ... (from functional equation).\nNon-trivial zeros are believed to lie on the critical line Re(s) = 1/2.\n" <abstract> <RW-RH-1859>
-      "zeta-function" <tags> <RW-RH-1859>
+# RW-RH-1859 (Conjecture)
+{ set { "zeta-function" <tags> <RW-RH-1859>
       "critical-line" <tags> <RW-RH-1859>
       "millennium-prize" <tags> <RW-RH-1859>
       "open" <tags> <RW-RH-1859>
-      "partial (lean/Riemann/RiemannHypothesis.lean)" <lean_status> <RW-RH-1859>
-      "zeta-function" <tags> <RW-RH-1859>
-      "critical-line" <tags> <RW-RH-1859>
-      "millennium-prize" <tags> <RW-RH-1859>
-      "open" <tags> <RW-RH-1859>
-      "RW-RH-1859" <dgraph.type> "Concept" } }
+      "RW-RH-1859" <dgraph.type> "Conjecture" } }
 
 
-# RW-Nyman-Beurling (Concept)
-{ set { "RW-Nyman-Beurling" <id> <RW-Nyman-Beurling>
-      "Nyman-Beurling Criterion" <name> <RW-Nyman-Beurling>
-      "equivalence" <entity_type> <RW-Nyman-Beurling>
-      "equivalences" <category> <RW-Nyman-Beurling>
-      "nyman-beurling" <subcategory> <RW-Nyman-Beurling>
-      "equivalence" <tags> <RW-Nyman-Beurling>
+# RW-Nyman-Beurling (Equivalence)
+{ set { "equivalence" <tags> <RW-Nyman-Beurling>
       "l2-dense" <tags> <RW-Nyman-Beurling>
       "fractional-part" <tags> <RW-Nyman-Beurling>
       "neural-networks" <tags> <RW-Nyman-Beurling>
-      "equivalence" <tags> <RW-Nyman-Beurling>
-      "l2-dense" <tags> <RW-Nyman-Beurling>
-      "fractional-part" <tags> <RW-Nyman-Beurling>
-      "neural-networks" <tags> <RW-Nyman-Beurling>
-      "RW-Nyman-Beurling" <dgraph.type> "Concept" } }
+      "RW-Nyman-Beurling" <dgraph.type> "Equivalence" } }
 
 
-# RW-Hilbert-Polya (Concept)
-{ set { "RW-Hilbert-Polya" <id> <RW-Hilbert-Polya>
-      "Hilbert-Pólya Conjecture" <name> <RW-Hilbert-Polya>
-      "conjecture" <entity_type> <RW-Hilbert-Polya>
-      "equivalences" <category> <RW-Hilbert-Polya>
-      "hilbert-polya" <subcategory> <RW-Hilbert-Polya>
-      "sufficient" <tags> <RW-Hilbert-Polya>
+# RW-Hilbert-Polya (Conjecture)
+{ set { "sufficient" <tags> <RW-Hilbert-Polya>
       "self-adjoint" <tags> <RW-Hilbert-Polya>
       "operator" <tags> <RW-Hilbert-Polya>
       "open" <tags> <RW-Hilbert-Polya>
-      "sufficient" <tags> <RW-Hilbert-Polya>
-      "self-adjoint" <tags> <RW-Hilbert-Polya>
-      "operator" <tags> <RW-Hilbert-Polya>
-      "open" <tags> <RW-Hilbert-Polya>
-      "RW-Hilbert-Polya" <dgraph.type> "Concept" } }
+      "RW-Hilbert-Polya" <dgraph.type> "Conjecture" } }
 
 
-# RW-Weil (Concept)
-{ set { "RW-Weil" <id> <RW-Weil>
-      "Weil Positivity Criterion" <name> <RW-Weil>
-      "equivalence" <entity_type> <RW-Weil>
-      "equivalences" <category> <RW-Weil>
-      "Weil" <subcategory> <RW-Weil>
-      "equivalence" <tags> <RW-Weil>
+# RW-Weil (Equivalence)
+{ set { "equivalence" <tags> <RW-Weil>
       "positivity" <tags> <RW-Weil>
       "finite-fields" <tags> <RW-Weil>
       "langlands" <tags> <RW-Weil>
-      "equivalence" <tags> <RW-Weil>
-      "positivity" <tags> <RW-Weil>
-      "finite-fields" <tags> <RW-Weil>
-      "langlands" <tags> <RW-Weil>
-      "RW-Weil" <dgraph.type> "Concept" } }
+      "RW-Weil" <dgraph.type> "Equivalence" } }
 
 
-# RW-Granville-Goldbach (Concept)
-{ set { "RW-Granville-Goldbach" <id> <RW-Granville-Goldbach>
-      "Granville's Equivalence: RH ⇔ Averaged Goldbach Bound" <name> <RW-Granville-Goldbach>
-      "equivalence" <entity_type> <RW-Granville-Goldbach>
-      "equivalences" <category> <RW-Granville-Goldbach>
-      "granville" <subcategory> <RW-Granville-Goldbach>
-      "equivalence" <tags> <RW-Granville-Goldbach>
+# RW-Granville-Goldbach (Equivalence)
+{ set { "equivalence" <tags> <RW-Granville-Goldbach>
       "goldbach" <tags> <RW-Granville-Goldbach>
       "averaged" <tags> <RW-Granville-Goldbach>
       "explicit-formula" <tags> <RW-Granville-Goldbach>
-      "equivalence" <tags> <RW-Granville-Goldbach>
-      "goldbach" <tags> <RW-Granville-Goldbach>
-      "averaged" <tags> <RW-Granville-Goldbach>
-      "explicit-formula" <tags> <RW-Granville-Goldbach>
-      "RW-Granville-Goldbach" <dgraph.type> "Concept" } }
+      "RW-Granville-Goldbach" <dgraph.type> "Equivalence" } }
 
 
-# RW-Robin (Concept)
-{ set { "RW-Robin" <id> <RW-Robin>
-      "Robin's Inequality Inequality" <name> <RW-Robin>
-      "equivalence" <entity_type> <RW-Robin>
-      "equivalences" <category> <RW-Robin>
-      "equivalence" <tags> <RW-Robin>
+# RW-Robin (Equivalence)
+{ set { "equivalence" <tags> <RW-Robin>
       "robin" <tags> <RW-Robin>
       "sum-of-divisors" <tags> <RW-Robin>
       "dickman-function" <tags> <RW-Robin>
-      "equivalence" <tags> <RW-Robin>
-      "robin" <tags> <RW-Robin>
-      "sum-of-divisors" <tags> <RW-Robin>
-      "dickman-function" <tags> <RW-Robin>
-      "RW-Robin" <dgraph.type> "Concept" } }
+      "RW-Robin" <dgraph.type> "Equivalence" } }
 
 
-# RW-Lee-Yang (Concept)
-{ set { "RW-Lee-Yang" <id> <RW-Lee-Yang>
-      "Lee-Yang Theorem for Ising Model → RH for Zeros in a Sector" <name> <RW-Lee-Yang>
-      "equivalence" <entity_type> <RW-Lee-Yang>
-      "equivalences" <category> <RW-Lee-Yang>
-      "lee-yang" <tags> <RW-Lee-Yang>
+# RW-Lee-Yang (Equivalence)
+{ set { "lee-yang" <tags> <RW-Lee-Yang>
       "Ising" <tags> <RW-Lee-Yang>
       "statistical-physics" <tags> <RW-Lee-Yang>
       "zeros" <tags> <RW-Lee-Yang>
-      "lee-yang" <tags> <RW-Lee-Yang>
-      "Ising" <tags> <RW-Lee-Yang>
-      "statistical-physics" <tags> <RW-Lee-Yang>
-      "zeros" <tags> <RW-Lee-Yang>
-      "RW-Lee-Yang" <dgraph.type> "Concept" } }
+      "RW-Lee-Yang" <dgraph.type> "Equivalence" } }
 
 
-# RW-Bertini (Concept)
-{ set { "RW-Bertini" <id> <RW-Bertini>
-      "Bertini's Criterion" <name> <RW-Bertini>
-      "equivalence" <entity_type> <RW-Bertini>
-      "equivalences" <category> <RW-Bertini>
-      "bertini" <tags> <RW-Bertini>
+# RW-Bertini (Equivalence)
+{ set { "bertini" <tags> <RW-Bertini>
       "kernel" <tags> <RW-Bertini>
       "positive-definite" <tags> <RW-Bertini>
-      "bertini" <tags> <RW-Bertini>
-      "kernel" <tags> <RW-Bertini>
-      "positive-definite" <tags> <RW-Bertini>
-      "RW-Bertini" <dgraph.type> "Concept" } }
+      "RW-Bertini" <dgraph.type> "Equivalence" } }
 
 
-# RW-Denjoy (Concept)
-{ set { "RW-Denjoy" <id> <RW-Denjoy>
-      "Denjoy's Probabilistic Interpretation" <name> <RW-Denjoy>
-      "equivalence" <entity_type> <RW-Denjoy>
-      "equivalences" <category> <RW-Denjoy>
-      "denjoy" <tags> <RW-Denjoy>
+# RW-Denjoy (Equivalence)
+{ set { "denjoy" <tags> <RW-Denjoy>
       "probabilistic" <tags> <RW-Denjoy>
       "random-walk" <tags> <RW-Denjoy>
-      "denjoy" <tags> <RW-Denjoy>
-      "probabilistic" <tags> <RW-Denjoy>
-      "random-walk" <tags> <RW-Denjoy>
-      "RW-Denjoy" <dgraph.type> "Concept" } }
+      "RW-Denjoy" <dgraph.type> "Equivalence" } }
 
 
-# RW-Beurling-Primes (Concept)
-{ set { "RW-Beurling-Primes" <id> <RW-Beurling-Primes>
-      "Beurling Generalized Primes → RH" <name> <RW-Beurling-Primes>
-      "equivalence" <entity_type> <RW-Beurling-Primes>
-      "equivalences" <category> <RW-Beurling-Primes>
-      "beurling" <tags> <RW-Beurling-Primes>
+# RW-Beurling-Primes (Equivalence)
+{ set { "beurling" <tags> <RW-Beurling-Primes>
       "generalized-primes" <tags> <RW-Beurling-Primes>
       "counting-function" <tags> <RW-Beurling-Primes>
-      "beurling" <tags> <RW-Beurling-Primes>
-      "generalized-primes" <tags> <RW-Beurling-Primes>
-      "counting-function" <tags> <RW-Beurling-Primes>
-      "RW-Beurling-Primes" <dgraph.type> "Concept" } }
+      "RW-Beurling-Primes" <dgraph.type> "Equivalence" } }
 
 
 # OP-BridgeA-LPS (Concept)
@@ -756,78 +626,39 @@
       "OP-BridgeB-Mayer" <dgraph.type> "Concept" } }
 
 
-# OP-DataQuantity (Concept)
-{ set { "OP-DataQuantity" <id> <OP-DataQuantity>
-      "Data Quantity Gap: Cayley Graphs vs LMFDB Newforms" <name> <OP-DataQuantity>
-      "gap" <entity_type> <OP-DataQuantity>
-      "machine-learning" <category> <OP-DataQuantity>
-      "gnn-cayley" <subcategory> <OP-DataQuantity>
-      "data-gap" <tags> <OP-DataQuantity>
+# OP-DataQuantity (Problem)
+{ set { "data-gap" <tags> <OP-DataQuantity>
       "cayley" <tags> <OP-DataQuantity>
       "lmfdb" <tags> <OP-DataQuantity>
       "insufficient-samples" <tags> <OP-DataQuantity>
       "blocker-docker" <tags> <OP-DataQuantity>
-      "data-gap" <tags> <OP-DataQuantity>
-      "cayley" <tags> <OP-DataQuantity>
-      "lmfdb" <tags> <OP-DataQuantity>
-      "insufficient-samples" <tags> <OP-DataQuantity>
-      "blocker-docker" <tags> <OP-DataQuantity>
-      "OP-DataQuantity" <dgraph.type> "Concept" } }
+      "OP-DataQuantity" <dgraph.type> "Problem" } }
 
 
-# OP-GraphSize (Concept)
-{ set { "OP-GraphSize" <id> <OP-GraphSize>
-      "Graph Size: Small Primes = Trivial, Large Primes = Intractable" <name> <OP-GraphSize>
-      "gap" <entity_type> <OP-GraphSize>
-      "spectral-theory" <category> <OP-GraphSize>
-      "cayley-graphs" <subcategory> <OP-GraphSize>
-      "graph-size" <tags> <OP-GraphSize>
+# OP-GraphSize (Problem)
+{ set { "graph-size" <tags> <OP-GraphSize>
       "scaling" <tags> <OP-GraphSize>
       "technical" <tags> <OP-GraphSize>
       "boundary-conditions" <tags> <OP-GraphSize>
-      "graph-size" <tags> <OP-GraphSize>
-      "scaling" <tags> <OP-GraphSize>
-      "technical" <tags> <OP-GraphSize>
-      "boundary-conditions" <tags> <OP-GraphSize>
-      "OP-GraphSize" <dgraph.type> "Concept" } }
+      "OP-GraphSize" <dgraph.type> "Problem" } }
 
 
-# OP-Formalization-Gaps (Concept)
-{ set { "OP-Formalization-Gaps" <id> <OP-Formalization-Gaps>
-      "Formalization Gaps in lean/Riemann/" <name> <OP-Formalization-Gaps>
-      "gap" <entity_type> <OP-Formalization-Gaps>
-      "formalization" <category> <OP-Formalization-Gaps>
-      "lean-riemann" <subcategory> <OP-Formalization-Gaps>
-      "formalization" <tags> <OP-Formalization-Gaps>
+# OP-Formalization-Gaps (Problem)
+{ set { "formalization" <tags> <OP-Formalization-Gaps>
       "lean" <tags> <OP-Formalization-Gaps>
       "gaps" <tags> <OP-Formalization-Gaps>
       "partial" <tags> <OP-Formalization-Gaps>
       "WIP" <tags> <OP-Formalization-Gaps>
-      "formalization" <tags> <OP-Formalization-Gaps>
-      "lean" <tags> <OP-Formalization-Gaps>
-      "gaps" <tags> <OP-Formalization-Gaps>
-      "partial" <tags> <OP-Formalization-Gaps>
-      "WIP" <tags> <OP-Formalization-Gaps>
-      "OP-Formalization-Gaps" <dgraph.type> "Concept" } }
+      "OP-Formalization-Gaps" <dgraph.type> "Problem" } }
 
 
-# OP-Hadamard-Product-Gap (Concept)
-{ set { "OP-Hadamard-Product-Gap" <id> <OP-Hadamard-Product-Gap>
-      "Hadamard Product Gap in mathlib" <name> <OP-Hadamard-Product-Gap>
-      "gap" <entity_type> <OP-Hadamard-Product-Gap>
-      "formalization" <category> <OP-Hadamard-Product-Gap>
-      "lean-foundation" <subcategory> <OP-Hadamard-Product-Gap>
-      "hadamard" <tags> <OP-Hadamard-Product-Gap>
+# OP-Hadamard-Product-Gap (Problem)
+{ set { "hadamard" <tags> <OP-Hadamard-Product-Gap>
       "dirichlet-series" <tags> <OP-Hadamard-Product-Gap>
       "mathlib" <tags> <OP-Hadamard-Product-Gap>
       "obstruction" <tags> <OP-Hadamard-Product-Gap>
       "critical" <tags> <OP-Hadamard-Product-Gap>
-      "hadamard" <tags> <OP-Hadamard-Product-Gap>
-      "dirichlet-series" <tags> <OP-Hadamard-Product-Gap>
-      "mathlib" <tags> <OP-Hadamard-Product-Gap>
-      "obstruction" <tags> <OP-Hadamard-Product-Gap>
-      "critical" <tags> <OP-Hadamard-Product-Gap>
-      "OP-Hadamard-Product-Gap" <dgraph.type> "Concept" } }
+      "OP-Hadamard-Product-Gap" <dgraph.type> "Problem" } }
 
 
 # riemann-1859 (Paper)

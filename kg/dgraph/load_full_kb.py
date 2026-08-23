@@ -118,22 +118,26 @@ def main():
     
     repo_root = Path(__file__).parent.parent.parent
     prethought_dir = repo_root / "prethought"
-    papers_file = repo_root / "papers.yaml"
     
     print("Loading YAML entities...", file=sys.stderr)
     
-    # Load all YAML files
+    # Load all YAML files (includes prethought/**/*.yaml)
     entities = load_yaml_files(prethought_dir)
     
-    # Load papers
-    papers = load_papers(papers_file)
-    if papers:
-        for p in papers:
-            if isinstance(p, dict):
-                p['type'] = 'paper'
-                entities.append(p)
+    # Deduplicate by ID
+    seen_ids = set()
+    deduped_entities = []
+    for e in entities:
+        if isinstance(e, dict):
+            eid = e.get('id', '')
+            if eid and eid in seen_ids:
+                continue
+            seen_ids.add(eid)
+            deduped_entities.append(e)
     
-    print(f"Found {len(entities)} total entities", file=sys.stderr)
+    print(f"Found {len(deduped_entities)} unique entities", file=sys.stderr)
+    
+    entities = deduped_entities
     
     # Convert to Dgraph JSON
     mutations = convert_to_dgraph_json(entities)
