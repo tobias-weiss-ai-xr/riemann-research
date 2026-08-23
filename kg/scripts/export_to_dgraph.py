@@ -112,7 +112,7 @@ def load_yaml_files(directory: Path) -> list[dict[str, Any]]:
     """Load all YAML files from a directory tree."""
     result = []
     for yaml_file in directory.rglob("*.yaml"):
-        with open(yaml_file, "r", encoding="utf-8") as f:
+        with open(yaml_file, "r", encoding="utf-8", errors="replace") as f:
             data = yaml.safe_load(f)
             if isinstance(data, list):
                 result.extend(data)
@@ -125,7 +125,7 @@ def load_papers(papers_file: Path) -> list[dict[str, Any]]:
     """Load papers.yaml"""
     if not papers_file.exists():
         return []
-    with open(papers_file, "r", encoding="utf-8") as f:
+    with open(papers_file, "r", encoding="utf-8", errors="replace") as f:
         return yaml.safe_load(f) or []
 
 
@@ -404,7 +404,7 @@ def main():
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             f.write(output)
-        print(f"✅ Saved to {args.output}")
+        print(f"OK: Saved to {args.output}")
         return
     
     if not args.load:

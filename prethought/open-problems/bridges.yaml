@@ -218,7 +218,7 @@
       title: "Global bound ρ(L_s) < 1 for Re(s) > 1/2"
       status: semi-formalized
       missing: "Leading eigenvalue bounded strictly below 1 in critical region"
-  ̀    gap_2:
+      gap_2:
       file: "lean/Riemann/PressureFunction.lean"
       title: "Pressure Function P(-2s) is analytic for Re(s) > 1/2"
       status: partial

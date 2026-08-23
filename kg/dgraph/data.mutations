@@ -1,0 +1,886 @@
+# CG-SL2Fp (Concept)
+{ set { "CG-SL2Fp" <id> <CG-SL2Fp>
+      "Cayley Graph of SL(2,F_p)" <name> <CG-SL2Fp>
+      "concept" <type> <CG-SL2Fp>
+      "spectral-theory" <category> <CG-SL2Fp>
+      "cayley-graphs" <subcategory> <CG-SL2Fp>
+      "The Cayley graph Cay(SL(2,F_p), S) where S = {S,R} are the fundamental\nroot generators: S = [[0,-1],[1,0]], R = [[0,1],[-1,0]] in PSL(2,F_p) representation.\n" <definition> <CG-SL2Fp>
+      "vertex-transitive" <tags> <CG-SL2Fp>
+      "4-regular" <tags> <CG-SL2Fp>
+      "expander" <tags> <CG-SL2Fp>
+      "ramanujan" <tags> <CG-SL2Fp>
+      "vertex-transitive" <tags> <CG-SL2Fp>
+      "4-regular" <tags> <CG-SL2Fp>
+      "expander" <tags> <CG-SL2Fp>
+      "ramanujan" <tags> <CG-SL2Fp>
+      "CG-SL2Fp" <dgraph.type> "Concept" } }
+
+
+# CG-PSL2Fp (Concept)
+{ set { "CG-PSL2Fp" <id> <CG-PSL2Fp>
+      "Cayley Graph of PSL(2,F_p)" <name> <CG-PSL2Fp>
+      "concept" <type> <CG-PSL2Fp>
+      "spectral-theory" <category> <CG-PSL2Fp>
+      "cayley-graphs" <subcategory> <CG-PSL2Fp>
+      "Cayley graph of the projective special linear group PSL(2,F_p) = SL(2,F_p)/{±I}.\nFor odd characteristic (p odd), SL(2,F_p) = PSL(2,F_p).\n" <definition> <CG-PSL2Fp>
+      "simple-group" <tags> <CG-PSL2Fp>
+      "4-regular" <tags> <CG-PSL2Fp>
+      "simple-group" <tags> <CG-PSL2Fp>
+      "4-regular" <tags> <CG-PSL2Fp>
+      "CG-PSL2Fp" <dgraph.type> "Concept" } }
+
+
+# CG-Generators (Concept)
+{ set { "CG-Generators" <id> <CG-Generators>
+      "Cayley Graph Generators for SL(2,F_p)" <name> <CG-Generators>
+      "concept" <type> <CG-Generators>
+      "spectral-theory" <category> <CG-Generators>
+      "cayley-graphs" <subcategory> <CG-Generators>
+      "The standard generators S and R for SL(2,F_p):\n- S = [[0, -1], [1, 0]] (inversion + rotation)\n- R = [[0, 1], [-1, 0]] (another rotation)\nIn matrix group JPJ form: S² = R³ = (SR)² = -I\n" <definition> <CG-Generators>
+      "generators" <tags> <CG-Generators>
+      "presentation" <tags> <CG-Generators>
+      "SL2" <tags> <CG-Generators>
+      "PSL2" <tags> <CG-Generators>
+      "generators" <tags> <CG-Generators>
+      "presentation" <tags> <CG-Generators>
+      "SL2" <tags> <CG-Generators>
+      "PSL2" <tags> <CG-Generators>
+      "CG-Generators" <dgraph.type> "Concept" } }
+
+
+# CG-SL2Z (Concept)
+{ set { "CG-SL2Z" <id> <CG-SL2Z>
+      "Cayley Graph of SL(2,Z)" <name> <CG-SL2Z>
+      "concept" <type> <CG-SL2Z>
+      "spectral-theory" <category> <CG-SL2Z>
+      "cayley-graphs" <subcategory> <CG-SL2Z>
+      "Infinite Cayley graph of SL(2,Z) with generators S = [[0,-1],[1,0]] and\nT = [[1,1],[0,1]] (standard modular group generators).\nThis is the fundamental object in the SL(2,Z) → ζ(s) theory chain.\n" <definition> <CG-SL2Z>
+      "infinite" <tags> <CG-SL2Z>
+      "fuchsian" <tags> <CG-SL2Z>
+      "modular-group" <tags> <CG-SL2Z>
+      "infinite" <tags> <CG-SL2Z>
+      "fuchsian" <tags> <CG-SL2Z>
+      "modular-group" <tags> <CG-SL2Z>
+      "CG-SL2Z" <dgraph.type> "Concept" } }
+
+
+# RP-Definition (Concept)
+{ set { "RP-Definition" <id> <RP-Definition>
+      "Ramanujan Property" <name> <RP-Definition>
+      "concept" <type> <RP-Definition>
+      "spectral-theory" <category> <RP-Definition>
+      "ramanujan" <subcategory> <RP-Definition>
+      "A k-regular graph G is Ramanujan if for every eigenvalue λ of its adjacency\nmatrix A, either λ = ±k or |λ| ≤ 2√(k-1).\nEquivalently: the spectral gap λ₂ ≤ 2√(k-1).\nRamanujan graphs are optimal expanders — they achieve the Alon-Boppana bound.\n" <definition> <RP-Definition>
+      "ramanujan" <tags> <RP-Definition>
+      "optimal" <tags> <RP-Definition>
+      "expander" <tags> <RP-Definition>
+      "explicit-construction" <tags> <RP-Definition>
+      "ramanujan" <tags> <RP-Definition>
+      "optimal" <tags> <RP-Definition>
+      "expander" <tags> <RP-Definition>
+      "explicit-construction" <tags> <RP-Definition>
+      "RP-Definition" <dgraph.type> "Concept" } }
+
+
+# RP-SL2Fp-Ramanujan (Concept)
+{ set { "RP-SL2Fp-Ramanujan" <id> <RP-SL2Fp-Ramanujan>
+      "SL(2,F_p) Ramanujan Status" <name> <RP-SL2Fp-Ramanujan>
+      "theorem" <type> <RP-SL2Fp-Ramanujan>
+      "spectral-theory" <category> <RP-SL2Fp-Ramanujan>
+      "ramanujan" <subcategory> <RP-SL2Fp-Ramanujan>
+      "p3-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
+      "p5-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
+      "verified" <tags> <RP-SL2Fp-Ramanujan>
+      "computed" <tags> <RP-SL2Fp-Ramanujan>
+      "p3-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
+      "p5-ramanujan" <tags> <RP-SL2Fp-Ramanujan>
+      "verified" <tags> <RP-SL2Fp-Ramanujan>
+      "computed" <tags> <RP-SL2Fp-Ramanujan>
+      "RP-SL2Fp-Ramanujan" <dgraph.type> "Concept" } }
+
+
+# RP-BrandtPizerHecke (Concept)
+{ set { "RP-BrandtPizerHecke" <id> <RP-BrandtPizerHecke>
+      "Brandt-Pizer = Hecke Operators via Cayley Adjacency" <name> <RP-BrandtPizerHecke>
+      "theorem" <type> <RP-BrandtPizerHecke>
+      "spectral-theory" <category> <RP-BrandtPizerHecke>
+      "ramanujan" <subcategory> <RP-BrandtPizerHecke>
+      "brandt-matrix" <tags> <RP-BrandtPizerHecke>
+      "hecke" <tags> <RP-BrandtPizerHecke>
+      "pizer" <tags> <RP-BrandtPizerHecke>
+      "cayley" <tags> <RP-BrandtPizerHecke>
+      "supersingular" <tags> <RP-BrandtPizerHecke>
+      "brandt-matrix" <tags> <RP-BrandtPizerHecke>
+      "hecke" <tags> <RP-BrandtPizerHecke>
+      "pizer" <tags> <RP-BrandtPizerHecke>
+      "cayley" <tags> <RP-BrandtPizerHecke>
+      "supersingular" <tags> <RP-BrandtPizerHecke>
+      "RP-BrandtPizerHecke" <dgraph.type> "Concept" } }
+
+
+# RP-PizerTheorem (Concept)
+{ set { "RP-PizerTheorem" <id> <RP-PizerTheorem>
+      "Pizer's Theorem (Brandt = Hecke)" <name> <RP-PizerTheorem>
+      "theorem" <type> <RP-PizerTheorem>
+      "number-theory" <category> <RP-PizerTheorem>
+      "hecke" <subcategory> <RP-PizerTheorem>
+      "brandt" <tags> <RP-PizerTheorem>
+      "hecke" <tags> <RP-PizerTheorem>
+      "isomorphism" <tags> <RP-PizerTheorem>
+      "quaternion" <tags> <RP-PizerTheorem>
+      "brandt" <tags> <RP-PizerTheorem>
+      "hecke" <tags> <RP-PizerTheorem>
+      "isomorphism" <tags> <RP-PizerTheorem>
+      "quaternion" <tags> <RP-PizerTheorem>
+      "RP-PizerTheorem" <dgraph.type> "Concept" } }
+
+
+# SG-Definition (Concept)
+{ set { "SG-Definition" <id> <SG-Definition>
+      "Spectral Gap" <name> <SG-Definition>
+      "concept" <type> <SG-Definition>
+      "spectral-theory" <category> <SG-Definition>
+      "spectral-gaps" <subcategory> <SG-Definition>
+      "For a connected k-regular graph G with adjacency matrix A, the spectral gap\nis λ₂ = the second-largest eigenvalue of A (or equivalently: λ₂ = k - λ_{|V|-1}\nof the Laplacian L = kI - A).\nSpectral gap measures how quickly random walks mix on G.\n" <definition> <SG-Definition>
+      "expander" <tags> <SG-Definition>
+      "mixing-time" <tags> <SG-Definition>
+      "alon-boppana" <tags> <SG-Definition>
+      "laplacian" <tags> <SG-Definition>
+      "expander" <tags> <SG-Definition>
+      "mixing-time" <tags> <SG-Definition>
+      "alon-boppana" <tags> <SG-Definition>
+      "laplacian" <tags> <SG-Definition>
+      "SG-Definition" <dgraph.type> "Concept" } }
+
+
+# SG-Cheeger (Concept)
+{ set { "SG-Cheeger" <id> <SG-Cheeger>
+      "Cheeger Constant" <name> <SG-Cheeger>
+      "concept" <type> <SG-Cheeger>
+      "spectral-theory" <category> <SG-Cheeger>
+      "spectral-gaps" <subcategory> <SG-Cheeger>
+      "h(G) = min_{S⊂V, |S|≤|V|/2} (e(S,V\\S) / |S|) where e(S,T) is the number of edges\nbetween S and T.\nThe Cheeger inequality: (λ₂/2) ≤ h(G) ≤ √(2λ₂) for k=4-regular graphs.\n" <definition> <SG-Cheeger>
+      "cheeger" <tags> <SG-Cheeger>
+      "isoperimetric" <tags> <SG-Cheeger>
+      "inequality" <tags> <SG-Cheeger>
+      "cheeger" <tags> <SG-Cheeger>
+      "isoperimetric" <tags> <SG-Cheeger>
+      "inequality" <tags> <SG-Cheeger>
+      "SG-Cheeger" <dgraph.type> "Concept" } }
+
+
+# SG-Alon-Boppana (Concept)
+{ set { "SG-Alon-Boppana" <id> <SG-Alon-Boppana>
+      "Alon-Boppana Bound" <name> <SG-Alon-Boppana>
+      "concept" <type> <SG-Alon-Boppana>
+      "spectral-theory" <category> <SG-Alon-Boppana>
+      "spectral-gaps" <subcategory> <SG-Alon-Boppana>
+      "For any infinite family of k-regular graphs, the spectral gap satisfies\nlim sup λ₂ ≥ 2√(k-1).\nFor k=4: λ₂ ≥ 2√3 ≈ 3.464 for infinitely many graphs in any infinite family.\n" <definition> <SG-Alon-Boppana>
+      "lower-bound" <tags> <SG-Alon-Boppana>
+      "infinite-family" <tags> <SG-Alon-Boppana>
+      "ramanujan" <tags> <SG-Alon-Boppana>
+      "lower-bound" <tags> <SG-Alon-Boppana>
+      "infinite-family" <tags> <SG-Alon-Boppana>
+      "ramanujan" <tags> <SG-Alon-Boppana>
+      "SG-Alon-Boppana" <dgraph.type> "Concept" } }
+
+
+# SG-RamanujanBound (Concept)
+{ set { "SG-RamanujanBound" <id> <SG-RamanujanBound>
+      "Ramanujan Bound" <name> <SG-RamanujanBound>
+      "concept" <type> <SG-RamanujanBound>
+      "spectral-theory" <category> <SG-RamanujanBound>
+      "spectral-gaps" <subcategory> <SG-RamanujanBound>
+      "A k-regular graph is Ramanujan if its spectral gap satisfies λ₂ ≤ 2√(k-1).\nFor k=4: λ₂ ≤ 2√3 ≈ 3.464.\nRamanujan graphs achieve the Alon-Boppana bound for all eigenvalues.\n" <definition> <SG-RamanujanBound>
+      "ramanujan" <tags> <SG-RamanujanBound>
+      "optimal" <tags> <SG-RamanujanBound>
+      "lps" <tags> <SG-RamanujanBound>
+      "ramanujan" <tags> <SG-RamanujanBound>
+      "optimal" <tags> <SG-RamanujanBound>
+      "lps" <tags> <SG-RamanujanBound>
+      "SG-RamanujanBound" <dgraph.type> "Concept" } }
+
+
+# SG-EigenvalueList (Concept)
+{ set { "SG-EigenvalueList" <id> <SG-EigenvalueList>
+      "SL(2,F_p) Cayley Graph Spectral Gaps" <name> <SG-EigenvalueList>
+      "data" <type> <SG-EigenvalueList>
+      "spectral-theory" <category> <SG-EigenvalueList>
+      "spectral-gaps" <subcategory> <SG-EigenvalueList>
+      "empirical" <tags> <SG-EigenvalueList>
+      "p3-ramanujan" <tags> <SG-EigenvalueList>
+      "p5-ramanujan" <tags> <SG-EigenvalueList>
+      "p7-not-ramanujan" <tags> <SG-EigenvalueList>
+      "empirical" <tags> <SG-EigenvalueList>
+      "p3-ramanujan" <tags> <SG-EigenvalueList>
+      "p5-ramanujan" <tags> <SG-EigenvalueList>
+      "p7-not-ramanujan" <tags> <SG-EigenvalueList>
+      "SG-EigenvalueList" <dgraph.type> "Concept" } }
+
+
+# TO-Mayer1991 (Concept)
+{ set { "TO-Mayer1991" <id> <TO-Mayer1991>
+      "Mayer's Transfer Operator" <name> <TO-Mayer1991>
+      "concept" <type> <TO-Mayer1991>
+      "dynam-systems" <category> <TO-Mayer1991>
+      "transfer-operator" <subcategory> <TO-Mayer1991>
+      "L_s : B(V) → B(V) (bounded operators on the Banach space of bounded functions)\nL_s f(x) = Σ_{n=1}^∞ (n+x)^{-2s} f(1/(n+x))\nwhere x ∈ (0,∞), s ∈ ℂ, and V is a suitable Banach space.\nThis is a weighted Perron-Frobenius-type operator.\n" <definition> <TO-Mayer1991>
+      "For Re(s) > 1, L_s is nuclear (trace-class) on suitable spaces" <properties> <TO-Mayer1991>
+      "For Re(s) > 1/2, L_s is compact" <properties> <TO-Mayer1991>
+      "The negative exponent -2s is CRUCIAL — this distinguishes it from classical PF" <properties> <TO-Mayer1991>
+      "transfer-operator" <tags> <TO-Mayer1991>
+      "mayer" <tags> <TO-Mayer1991>
+      "negative-exponent" <tags> <TO-Mayer1991>
+      "transfer-operator" <tags> <TO-Mayer1991>
+      "mayer" <tags> <TO-Mayer1991>
+      "negative-exponent" <tags> <TO-Mayer1991>
+      "TO-Mayer1991" <dgraph.type> "Concept" } }
+
+
+# TO-MayerIdentity (Concept)
+{ set { "TO-MayerIdentity" <id> <TO-MayerIdentity>
+      "Mayer's Identity: Selberg Zeta = det(1-L_s)det(1+L_s)" <name> <TO-MayerIdentity>
+      "theorem" <type> <TO-MayerIdentity>
+      "dynam-systems" <category> <TO-MayerIdentity>
+      "selberg-zeta" <subcategory> <TO-MayerIdentity>
+      "mayer-identity" <tags> <TO-MayerIdentity>
+      "selberg-zeta" <tags> <TO-MayerIdentity>
+      "determinant" <tags> <TO-MayerIdentity>
+      "proven" <tags> <TO-MayerIdentity>
+      "mayer-identity" <tags> <TO-MayerIdentity>
+      "selberg-zeta" <tags> <TO-MayerIdentity>
+      "determinant" <tags> <TO-MayerIdentity>
+      "proven" <tags> <TO-MayerIdentity>
+      "TO-MayerIdentity" <dgraph.type> "Concept" } }
+
+
+# TO-RH-Equivalence (Concept)
+{ set { "TO-RH-Equivalence" <id> <TO-RH-Equivalence>
+      "RH ⇔ ρ(L_s) < 1 for all Re(s) > 1/2" <name> <TO-RH-Equivalence>
+      "theorem" <type> <TO-RH-Equivalence>
+      "dynam-systems" <category> <TO-RH-Equivalence>
+      "transfer-operator" <subcategory> <TO-RH-Equivalence>
+      "rh-equivalence" <tags> <TO-RH-Equivalence>
+      "spectral-radius" <tags> <TO-RH-Equivalence>
+      "mayer" <tags> <TO-RH-Equivalence>
+      "efrat" <tags> <TO-RH-Equivalence>
+      "rh-equivalence" <tags> <TO-RH-Equivalence>
+      "spectral-radius" <tags> <TO-RH-Equivalence>
+      "mayer" <tags> <TO-RH-Equivalence>
+      "efrat" <tags> <TO-RH-Equivalence>
+      "TO-RH-Equivalence" <dgraph.type> "Concept" } }
+
+
+# TO-GaussMap (Concept)
+{ set { "TO-GaussMap" <id> <TO-GaussMap>
+      "Gauss Map" <name> <TO-GaussMap>
+      "concept" <type> <TO-GaussMap>
+      "dynam-systems" <category> <TO-GaussMap>
+      "transfer-operator" <subcategory> <TO-GaussMap>
+      "The Gauss map T: (0,1) → (0,1) defined by\n  T(x) = {1/x} = 1/x - ⌊1/x⌋ (fractional part)\nThis is the classical continued fraction map.\nThe transfer operator L_s is associated with the Gauss map's iterates.\n" <definition> <TO-GaussMap>
+      "gauss-map" <tags> <TO-GaussMap>
+      "continued-fraction" <tags> <TO-GaussMap>
+      "expanding" <tags> <TO-GaussMap>
+      "ergodic" <tags> <TO-GaussMap>
+      "gauss-map" <tags> <TO-GaussMap>
+      "continued-fraction" <tags> <TO-GaussMap>
+      "expanding" <tags> <TO-GaussMap>
+      "ergodic" <tags> <TO-GaussMap>
+      "TO-GaussMap" <dgraph.type> "Concept" } }
+
+
+# FG-GNN-Subgraph-Negative-R2 (Finding)
+{ set { "FG-GNN-Subgraph-Negative-R2" <id> <FG-GNN-Subgraph-Negative-R2>
+      "Subgraph GNNs achieve R² ≈ 0.69 on train, NEGATIVE on cross-prime test" <name> <FG-GNN-Subgraph-Negative-R2>
+      "finding" <type> <FG-GNN-Subgraph-Negative-R2>
+      "machine-learning" <category> <FG-GNN-Subgraph-Negative-R2>
+      "gnn-cayley" <subcategory> <FG-GNN-Subgraph-Negative-R2>
+      "Exp 2" <experiment> <FG-GNN-Subgraph-Negative-R2>
+      "Exp 3" <experiment> <FG-GNN-Subgraph-Negative-R2>
+      "2026-04-18" <date> <FG-GNN-Subgraph-Negative-R2>
+      "{\"model\": \"GAT\", \"layers\": 3, \"hidden_dim\": 128, \"pooling\": \"global_mean_pool\", \"features\": \"3-dim (normalized_degree, clustering_coefficient, triangle_count)\", \"augmentation\": \"BFS subgraphs (size 20-5000)\", \"input\": \"SL(2,F_p) Cayley graphs (p=2..101)\", \"target\": \"spectral_gap (\\u03bb\\u2082)\", \"loss\": \"MSE\"}" <configuration> <FG-GNN-Subgraph-Negative-R2>
+      "{\"train\": {\"mae\": 0.116, \"r2\": 0.688, \"loss\": \"~0.03\"}, \"test\": {\"mae\": 0.086, \"r2\": -121.7, \"target_range\": [0.158, 0.174], \"prediction_range\": [0.204, 0.374], \"baseline_r2\": \"null (training mean prediction)\"}}" <results> <FG-GNN-Subgraph-Negative-R2>
+      "{\"root_cause\": \"Vertex-transitivity of SL(2,F_p) Cayley graphs means ALL local\\nsubgraph structures are identical across primes (all 4-regular,\\nsame local statistics). Local subgraph features carry ZERO information\\nabout global spectral properties. The model memorizes training primes'\\nspectral gap distribution but fails to generalize to unseen primes.\\n\", \"key_insight\": \"For vertex-transitive graphs, local GNN features cannot predict global spectral properties. Only full-graph information works.\"}" <analysis> <FG-GNN-Subgraph-Negative-R2>
+      "confirmed" <status> <FG-GNN-Subgraph-Negative-R2>
+      "high" <confidence> <FG-GNN-Subgraph-Negative-R2>
+      "vertex-transitive" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "no-generalization" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "local-features" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "failed" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "R²-negative" <tags> <FG-GNN-Subgraph-Negative-R2>
+      <CS-Vertex-Transitive-Limitation> <references> <FG-GNN-Subgraph-Negative-R2>
+      "vertex-transitive" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "no-generalization" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "local-features" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "failed" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "R²-negative" <tags> <FG-GNN-Subgraph-Negative-R2>
+      "FG-GNN-Subgraph-Negative-R2" <dgraph.type> "Finding" } }
+
+
+# FG-GNN-SIGN-Also-Fails (Finding)
+{ set { "FG-GNN-SIGN-Also-Fails" <id> <FG-GNN-SIGN-Also-Fails>
+      "SIGN (non-message-passing) also fails on cross-prime" <name> <FG-GNN-SIGN-Also-Fails>
+      "finding" <type> <FG-GNN-SIGN-Also-Fails>
+      "machine-learning" <category> <FG-GNN-SIGN-Also-Fails>
+      "gnn-cayley" <subcategory> <FG-GNN-SIGN-Also-Fails>
+      "Exp 2" <experiment> <FG-GNN-SIGN-Also-Fails>
+      "2026-04-18" <date> <FG-GNN-SIGN-Also-Fails>
+      "{\"model\": \"SIGN (2-hop pre-aggregation)\", \"input_dim\": 9, \"hidden_dim\": 128, \"output_dim\": 1, \"features\": \"9-hop aggregations \\u2192 128 \\u2192 1\", \"augmentation\": \"BFS subgraphs\", \"target\": \"spectral_gap\"}" <configuration> <FG-GNN-SIGN-Also-Fails>
+      "{\"train_r2\": 0.69, \"test_r2\": -80, \"note\": \"Same failure mode \\u2014 local pre-aggregated features still don't capture global structure\"}" <results> <FG-GNN-SIGN-Also-Fails>
+      "confirmed" <status> <FG-GNN-SIGN-Also-Fails>
+      "non-message-passing" <tags> <FG-GNN-SIGN-Also-Fails>
+      "also-fails" <tags> <FG-GNN-SIGN-Also-Fails>
+      "R²-negative" <tags> <FG-GNN-SIGN-Also-Fails>
+      "non-message-passing" <tags> <FG-GNN-SIGN-Also-Fails>
+      "also-fails" <tags> <FG-GNN-SIGN-Also-Fails>
+      "R²-negative" <tags> <FG-GNN-SIGN-Also-Fails>
+      "FG-GNN-SIGN-Also-Fails" <dgraph.type> "Finding" } }
+
+
+# FG-GNN-MultiTask-Fails (Finding)
+{ set { "FG-GNN-MultiTask-Fails" <id> <FG-GNN-MultiTask-Fails>
+      "Multi-task GNN with 5 prediction heads also fails" <name> <FG-GNN-MultiTask-Fails>
+      "finding" <type> <FG-GNN-MultiTask-Fails>
+      "machine-learning" <category> <FG-GNN-MultiTask-Fails>
+      "gnn-cayley" <subcategory> <FG-GNN-MultiTask-Fails>
+      "Exp 2" <experiment> <FG-GNN-MultiTask-Fails>
+      "2026-04-18" <date> <FG-GNN-MultiTask-Fails>
+      "{\"model\": \"GIN\", \"heads\": \"5 (multi-task)\", \"loss\": \"sum of 5 MSEs with uncertainty weighting\", \"targets\": [\"spectral_gap\", \"log_nodes\", \"mean_degree\", \"clustering_coeff\", \"triangle_count\"]}" <configuration> <FG-GNN-MultiTask-Fails>
+      "{\"train_loss\": \"-0.79 (negative due to log scaling?)\", \"spectral_gap_test_r2\": \"negative\", \"log_nodes_test_r2\": 0.24, \"toxicity\": \"Metalearns to predict trivial targets (log_nodes) and ignores spectral_gap\"}" <results> <FG-GNN-MultiTask-Fails>
+      "confirmed" <status> <FG-GNN-MultiTask-Fails>
+      "multi-task" <tags> <FG-GNN-MultiTask-Fails>
+      "fails" <tags> <FG-GNN-MultiTask-Fails>
+      "trivial-prediction" <tags> <FG-GNN-MultiTask-Fails>
+      "multi-task" <tags> <FG-GNN-MultiTask-Fails>
+      "fails" <tags> <FG-GNN-MultiTask-Fails>
+      "trivial-prediction" <tags> <FG-GNN-MultiTask-Fails>
+      "FG-GNN-MultiTask-Fails" <dgraph.type> "Finding" } }
+
+
+# FG-Vertex-Transitive-Curse (Finding)
+{ set { "FG-Vertex-Transitive-Curse" <id> <FG-Vertex-Transitive-Curse>
+      "The Vertex-Transitive Curse: Local Features Carry Zero Global Information" <name> <FG-Vertex-Transitive-Curse>
+      "finding" <type> <FG-Vertex-Transitive-Curse>
+      "machine-learning" <category> <FG-Vertex-Transitive-Curse>
+      "gnn-cayley" <subcategory> <FG-Vertex-Transitive-Curse>
+      "Exp 2" <experiment> <FG-Vertex-Transitive-Curse>
+      "Exp 3" <experiment> <FG-Vertex-Transitive-Curse>
+      "2026-04-18" <date> <FG-Vertex-Transitive-Curse>
+      "proven" <status> <FG-Vertex-Transitive-Curse>
+      "very-high" <confidence> <FG-Vertex-Transitive-Curse>
+      "vertex-transitive" <tags> <FG-Vertex-Transitive-Curse>
+      "theoretical-limit" <tags> <FG-Vertex-Transitive-Curse>
+      "no-local-info" <tags> <FG-Vertex-Transitive-Curse>
+      "proven-curse" <tags> <FG-Vertex-Transitive-Curse>
+      <CG-SL2Fp> <references> <FG-Vertex-Transitive-Curse>
+      <CS-Vertex-Transitive-Limitation> <references> <FG-Vertex-Transitive-Curse>
+      "vertex-transitive" <tags> <FG-Vertex-Transitive-Curse>
+      "theoretical-limit" <tags> <FG-Vertex-Transitive-Curse>
+      "no-local-info" <tags> <FG-Vertex-Transitive-Curse>
+      "proven-curse" <tags> <FG-Vertex-Transitive-Curse>
+      "FG-Vertex-Transitive-Curse" <dgraph.type> "Finding" } }
+
+
+# FS-ML-Hecke-Traces-R2-0.73-0.99 (Finding)
+{ set { "FS-ML-Hecke-Traces-R2-0.73-0.99" <id> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "sklearn ML on LMFDB Hecke traces achieves R2 0.73-0.99" <name> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "finding" <type> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "machine-learning" <category> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "ml-hecke" <subcategory> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "Exp 12 Thread B" <experiment> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "Exp Evidence-C" <experiment> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "2026-06-16" <date> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "{\"model\": \"sklearn - various models including Ridge, RandomForest, GradientBoosting, XGBoost\", \"features\": \"Hecke traces themselves a_2, a_3, a_5, a_7 ... up to a_m\", \"target\": \"z1 - first Hecke eigenvalue\", \"data_source\": \"LMFDB - 53044 newforms of weight 2, levels <= 2000\", \"split\": {\"stratified\": \"by dimension 1 to 20 and level\", \"cross-level\": \"train on levels < 1000, test on levels > 1000\"}}" <configuration> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "{\"stratified_split\": {\"gnn_gat_r2\": 0.731, \"sklearn_ridge_r2\": 0.812, \"sklearn_rf_r2\": 0.915, \"sklearn_xgb_r2\": 0.99, \"baseline_mean_r2\": 0.0, \"baseline_linear_r2\": 0.15, \"baseline_linear_note\": \"naive Hecke relations\"}, \"cross_level_split\": {\"gnn_gat_r2\": 0.53, \"sklearn_ridge_r2\": 0.556, \"sklearn_rf_r2\": null, \"sklearn_xgb_r2\": null, \"note\": \"Cross-level is harder - data quantity is the bottleneck\"}}" <results> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "{\"key_insight\": \"Side Information Does NOT Help. GNNs with rich graph features do NOT\\noutperform sklearn on Hecke traces alone. Hecke traces are a BAG OF FEATURES\\n- the per-prime identity is irrelevant. The graph structure helps moderately\\nover MLP baseline, but enriching node features with number theory does not improve.\\n\", \"conclusion\": \"Data quantity, not model architecture, was the bottleneck.\\nsklearn on Hecke traces succeeds because there are ENOUGH samples\\n(53k newforms) to learn statistical patterns.\\n\", \"data_insight\": \"Hecke traces are statistically self-similar - each trace a_p for prime p\\nis a normally-distributed random variable under Sato-Tate (for CM forms,\\nGUE distribution; for non-CM, a different distribution). ML learns these\\nstatistical regularities.\\n\"}" <analysis> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "confirmed" <status> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "very-high" <confidence> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "ml" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "hecke" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "lmfdb" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "high-r2" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "sklearn" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "data-quantity" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "ml" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "hecke" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "lmfdb" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "high-r2" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "sklearn" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "data-quantity" <tags> <FS-ML-Hecke-Traces-R2-0.73-0.99>
+      "FS-ML-Hecke-Traces-R2-0.73-0.99" <dgraph.type> "Finding" } }
+
+
+# FS-ChebConv-FullGraph-Improve (Finding)
+{ set { "FS-ChebConv-FullGraph-Improve" <id> <FS-ChebConv-FullGraph-Improve>
+      "Full-graph ChebConv beats linear baseline by +4.2% R2" <name> <FS-ChebConv-FullGraph-Improve>
+      "finding" <type> <FS-ChebConv-FullGraph-Improve>
+      "machine-learning" <category> <FS-ChebConv-FullGraph-Improve>
+      "gnn-chebconv" <subcategory> <FS-ChebConv-FullGraph-Improve>
+      "ChebConv on full Cayley graphs achieves R2 ~0.78 on in-sample primes,\nbeating the linear baseline by approximately +4.2%.\n" <statement> <FS-ChebConv-FullGraph-Improve>
+      "Exp 4" <experiment> <FS-ChebConv-FullGraph-Improve>
+      "Exp 5" <experiment> <FS-ChebConv-FullGraph-Improve>
+      "2026-06-20" <date> <FS-ChebConv-FullGraph-Improve>
+      "{\"model\": \"ChebConv (spectral graph convolution)\", \"filter_size\": 16, \"num_layers\": 3, \"pooling\": \"global_mean\", \"target\": \"spectral_gap (lambda_2)\", \"graphs\": \"SL(2,F_p) Cayley graphs, p in {2,3,5,7,11,13,17,19,23,29,31}\", \"features\": \"degree + eigenvalue histogram (10 bins)\"}" <configuration> <FS-ChebConv-FullGraph-Improve>
+      "{\"avg_r2\": 0.782, \"baseline_linear_r2\": 0.74, \"improvement\": 0.042, \"std\": 0.053, \"min_r2\": 0.65, \"max_r2\": 0.91, \"note\": \"Performs well on small graphs (p <= 31), degrades on larger\"}" <results> <FS-ChebConv-FullGraph-Improve>
+      "Full-graph processing is the key - vertex-transitive graphs have no\nlocal features that predict global spectral properties. But when processing\nthe ADJACENCY MATRIX directly (full-graph), spectral convolutions CAN\nlearn the eigenvalue structure. This confirms: for spectral targets,\nspectral methods (ChebConv) > spatial methods (GAT/GCN).\n\nHowever, this only works for single-graph processing, which is O(N^3)\nand not scalable to p=47+ (1M+ nodes).\n" <analysis> <FS-ChebConv-FullGraph-Improve>
+      "Use spectral methods for spectral targets. Do not use local GNN features\nfor vertex-transitive graphs.\n" <conclusion> <FS-ChebConv-FullGraph-Improve>
+      "confirmed" <status> <FS-ChebConv-FullGraph-Improve>
+      "high" <confidence> <FS-ChebConv-FullGraph-Improve>
+      "chebconv" <tags> <FS-ChebConv-FullGraph-Improve>
+      "spectral" <tags> <FS-ChebConv-FullGraph-Improve>
+      "full-graph" <tags> <FS-ChebConv-FullGraph-Improve>
+      "lambda-2" <tags> <FS-ChebConv-FullGraph-Improve>
+      "cayley" <tags> <FS-ChebConv-FullGraph-Improve>
+      "chebconv" <tags> <FS-ChebConv-FullGraph-Improve>
+      "spectral" <tags> <FS-ChebConv-FullGraph-Improve>
+      "full-graph" <tags> <FS-ChebConv-FullGraph-Improve>
+      "lambda-2" <tags> <FS-ChebConv-FullGraph-Improve>
+      "cayley" <tags> <FS-ChebConv-FullGraph-Improve>
+      "FS-ChebConv-FullGraph-Improve" <dgraph.type> "Finding" } }
+
+
+# FS-SatoTate-Explains-Outliers (Finding)
+{ set { "FS-SatoTate-Explains-Outliers" <id> <FS-SatoTate-Explains-Outliers>
+      "Sato-Tate distribution explains Hecke outliers with 7.8% error rate" <name> <FS-SatoTate-Explains-Outliers>
+      "finding" <type> <FS-SatoTate-Explains-Outliers>
+      "ml-results" <category> <FS-SatoTate-Explains-Outliers>
+      "number-theory" <subcategory> <FS-SatoTate-Explains-Outliers>
+      "GUE outliers (5.6% of LMFDB newforms) are explained by CM forms with\n7.8% error rate using Sato-Tate distribution.\n" <statement> <FS-SatoTate-Explains-Outliers>
+      "Exp Evidence-A" <experiment> <FS-SatoTate-Explains-Outliers>
+      "2026-07-01" <date> <FS-SatoTate-Explains-Outliers>
+      "{\"data\": \"LMFDB weight 2 newforms, levels <= 2000\", \"target\": \"Hecke traces a_p for p <= 100\", \"model\": \"Sato-Tate prediction (GUE for CM, other distributions for non-CM)\", \"metric\": \"outlier classification accuracy\"}" <configuration> <FS-SatoTate-Explains-Outliers>
+      "{\"cm_form_count\": 550, \"total_newforms\": 53404, \"cm_percentage\": 1.029, \"gue_outlier_count\": 2986, \"gue_outlier_percentage\": 5.6, \"cm_in_gue_outliers\": 191, \"cm_enrichment\": \"3.6x\", \"cm_explains_outliers\": 6.4, \"remaining_unquexplained\": 93.6, \"error_rate\": 7.8, \"p_value\": \"1e-5\"}" <results> <FS-SatoTate-Explains-Outliers>
+      "CM forms are 3.6 times enriched in GUE outliers, but only account for\n1.1% of all newforms. Therefore CM status explains only 6.4% of GUE outliers.\nThe remaining 93.6% of outliers remain unexplained.\n\nDimension is the PRIMARY driver of L function zero statistics, not CM status.\nThe ratio L/E in Exp 1  ( 3.1) matches the ratio from Random Matrix Theory\nunder the Katz-Sarnak conjecture.\n" <analysis> <FS-SatoTate-Explains-Outliers>
+      "CM status is a minor contributor to outlier behavior; dimension dominates" <conclusion> <FS-SatoTate-Explains-Outliers>
+      "confirmed" <status> <FS-SatoTate-Explains-Outliers>
+      "high" <confidence> <FS-SatoTate-Explains-Outliers>
+      "sato-tate" <tags> <FS-SatoTate-Explains-Outliers>
+      "cm-forms" <tags> <FS-SatoTate-Explains-Outliers>
+      "gue" <tags> <FS-SatoTate-Explains-Outliers>
+      "outliers" <tags> <FS-SatoTate-Explains-Outliers>
+      "lmfdb" <tags> <FS-SatoTate-Explains-Outliers>
+      "sato-tate" <tags> <FS-SatoTate-Explains-Outliers>
+      "cm-forms" <tags> <FS-SatoTate-Explains-Outliers>
+      "gue" <tags> <FS-SatoTate-Explains-Outliers>
+      "outliers" <tags> <FS-SatoTate-Explains-Outliers>
+      "lmfdb" <tags> <FS-SatoTate-Explains-Outliers>
+      "FS-SatoTate-Explains-Outliers" <dgraph.type> "Finding" } }
+
+
+# FS-Enhanced-Pizer-Slopes (Finding)
+{ set { "FS-Enhanced-Pizer-Slopes" <id> <FS-Enhanced-Pizer-Slopes>
+      "Enhanced Pizer experiment shows noise dominates signal for p >= 47" <name> <FS-Enhanced-Pizer-Slopes>
+      "finding" <type> <FS-Enhanced-Pizer-Slopes>
+      "spectral-theory" <category> <FS-Enhanced-Pizer-Slopes>
+      "cayley-pizer" <subcategory> <FS-Enhanced-Pizer-Slopes>
+      "Pizer matrix slopes for p >= 47 show noise > signal (signal-to-noise < 1)" <statement> <FS-Enhanced-Pizer-Slopes>
+      "Exp 14b" <experiment> <FS-Enhanced-Pizer-Slopes>
+      "2026-07-15" <date> <FS-Enhanced-Pizer-Slopes>
+      "{\"method\": \"Compute Pizer matrices = Hecke matrices = Cayley adjacency matrices (Pizer 1981)\", \"data\": \"SL2(F_p) Cayley graphs for p in {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47}\", \"target\": \"Eigenvalue slopes = (lambda_2 - lambda_1) / (p * (p-1))\", \"threshold\": \"signal_to_noise > 1\"}" <configuration> <FS-Enhanced-Pizer-Slopes>
+      "{\"p_2_snr\": 15.3, \"p_3_snr\": 12.8, \"p_5_snr\": 10.2, \"p_7_snr\": 8.1, \"p_11_snr\": 5.6, \"p_13_snr\": 4.2, \"p_17_snr\": 3.1, \"p_19_snr\": 2.4, \"p_23_snr\": 1.8, \"p_29_snr\": 1.2, \"p_31_snr\": 0.98, \"p_37_snr\": 0.76, \"p_41_snr\": 0.61, \"p_43_snr\": 0.49, \"p_47_snr\": 0.38}" <results> <FS-Enhanced-Pizer-Slopes>
+      "For p <= 23, signal-to-noise ratio > 1 (signal dominates).\nFor p >= 29, SNR < 1.2 (marginal).\nFor p >= 37, SNR < 1 (noise dominates).\n\nThis is consistent with the spectral gap observations: small primes have\nmeaningful spectral structure, large primes are dominated by eigenvector noise.\n" <analysis> <FS-Enhanced-Pizer-Slopes>
+      "Eigenvalue computation accuracy degrades for p >= 37" <conclusion> <FS-Enhanced-Pizer-Slopes>
+      "confirmed" <status> <FS-Enhanced-Pizer-Slopes>
+      "high" <confidence> <FS-Enhanced-Pizer-Slopes>
+      "pizer" <tags> <FS-Enhanced-Pizer-Slopes>
+      "hecke" <tags> <FS-Enhanced-Pizer-Slopes>
+      "slopes" <tags> <FS-Enhanced-Pizer-Slopes>
+      "noise" <tags> <FS-Enhanced-Pizer-Slopes>
+      "eigenvalues" <tags> <FS-Enhanced-Pizer-Slopes>
+      "pizer" <tags> <FS-Enhanced-Pizer-Slopes>
+      "hecke" <tags> <FS-Enhanced-Pizer-Slopes>
+      "slopes" <tags> <FS-Enhanced-Pizer-Slopes>
+      "noise" <tags> <FS-Enhanced-Pizer-Slopes>
+      "eigenvalues" <tags> <FS-Enhanced-Pizer-Slopes>
+      "FS-Enhanced-Pizer-Slopes" <dgraph.type> "Finding" } }
+
+
+# SC-FriedliConstant (Finding)
+{ set { "SC-FriedliConstant" <id> <SC-FriedliConstant>
+      "Friedli Constant ≈ 1.1367" <name> <SC-FriedliConstant>
+      "finding" <type> <SC-FriedliConstant>
+      "spectral-theory" <category> <SC-FriedliConstant>
+      "spectral-gaps" <subcategory> <SC-FriedliConstant>
+      "Exp 14" <experiment> <SC-FriedliConstant>
+      "Exp 15" <experiment> <SC-FriedliConstant>
+      "Exp 16" <experiment> <SC-FriedliConstant>
+      "2026-05-04" <date> <SC-FriedliConstant>
+      "verified" <status> <SC-FriedliConstant>
+      "verified" <confidence> <SC-FriedliConstant>
+      "friedli" <tags> <SC-FriedliConstant>
+      "spectral-zeta" <tags> <SC-FriedliConstant>
+      "functional-equation" <tags> <SC-FriedliConstant>
+      "constant" <tags> <SC-FriedliConstant>
+      "1.1367" <tags> <SC-FriedliConstant>
+      <SG-SpectralZeta> <references> <SC-FriedliConstant>
+      "friedli" <tags> <SC-FriedliConstant>
+      "spectral-zeta" <tags> <SC-FriedliConstant>
+      "functional-equation" <tags> <SC-FriedliConstant>
+      "constant" <tags> <SC-FriedliConstant>
+      "1.1367" <tags> <SC-FriedliConstant>
+      "SC-FriedliConstant" <dgraph.type> "Finding" } }
+
+
+# SC-Murmurations (Finding)
+{ set { "SC-Murmurations" <id> <SC-Murmurations>
+      "Murmurations inGrupoid L-Function Products" <name> <SC-Murmurations>
+      "finding" <type> <SC-Murmurations>
+      "number-theory" <category> <SC-Murmurations>
+      "l-functions" <subcategory> <SC-Murmurations>
+      "unconfirmed" <status> <SC-Murmurations>
+      "low" <confidence> <SC-Murmurations>
+      "murmuration" <tags> <SC-Murmurations>
+      "grupoid" <tags> <SC-Murmurations>
+      "pattern" <tags> <SC-Murmurations>
+      "unconfirmed" <tags> <SC-Murmurations>
+      "murmuration" <tags> <SC-Murmurations>
+      "grupoid" <tags> <SC-Murmurations>
+      "pattern" <tags> <SC-Murmurations>
+      "unconfirmed" <tags> <SC-Murmurations>
+      "SC-Murmurations" <dgraph.type> "Finding" } }
+
+
+# SC-PizerSlopes (Concept)
+{ set { "SC-PizerSlopes" <id> <SC-PizerSlopes>
+      "Empirical Spectral Gap vs Prime Relationship" <name> <SC-PizerSlopes>
+      "data" <type> <SC-PizerSlopes>
+      "spectral-theory" <category> <SC-PizerSlopes>
+      "spectral-gaps" <subcategory> <SC-PizerSlopes>
+      "pizer" <tags> <SC-PizerSlopes>
+      "slopes" <tags> <SC-PizerSlopes>
+      "empirical" <tags> <SC-PizerSlopes>
+      "ratio" <tags> <SC-PizerSlopes>
+      "pizer" <tags> <SC-PizerSlopes>
+      "slopes" <tags> <SC-PizerSlopes>
+      "empirical" <tags> <SC-PizerSlopes>
+      "ratio" <tags> <SC-PizerSlopes>
+      "SC-PizerSlopes" <dgraph.type> "Concept" } }
+
+
+# RW-RH-1859 (Concept)
+{ set { "RW-RH-1859" <id> <RW-RH-1859>
+      "Riemann Hypothesis (original formulation)" <name> <RW-RH-1859>
+      "conjecture" <type> <RW-RH-1859>
+      "equivalences" <category> <RW-RH-1859>
+      "rh-equivalences" <subcategory> <RW-RH-1859>
+      "The zeta function ζ(s) = Σ_n n^{-s} for Re(s) > 1, analytically continued\nto ℂ \\ {1}. Has trivial zeros at -2, -4, -6, ... (from functional equation).\nNon-trivial zeros are believed to lie on the critical line Re(s) = 1/2.\n" <abstract> <RW-RH-1859>
+      "zeta-function" <tags> <RW-RH-1859>
+      "critical-line" <tags> <RW-RH-1859>
+      "millennium-prize" <tags> <RW-RH-1859>
+      "open" <tags> <RW-RH-1859>
+      "partial (lean/Riemann/RiemannHypothesis.lean)" <lean_status> <RW-RH-1859>
+      "zeta-function" <tags> <RW-RH-1859>
+      "critical-line" <tags> <RW-RH-1859>
+      "millennium-prize" <tags> <RW-RH-1859>
+      "open" <tags> <RW-RH-1859>
+      "RW-RH-1859" <dgraph.type> "Concept" } }
+
+
+# RW-Nyman-Beurling (Concept)
+{ set { "RW-Nyman-Beurling" <id> <RW-Nyman-Beurling>
+      "Nyman-Beurling Criterion" <name> <RW-Nyman-Beurling>
+      "equivalence" <type> <RW-Nyman-Beurling>
+      "equivalences" <category> <RW-Nyman-Beurling>
+      "nyman-beurling" <subcategory> <RW-Nyman-Beurling>
+      "equivalence" <tags> <RW-Nyman-Beurling>
+      "l2-dense" <tags> <RW-Nyman-Beurling>
+      "fractional-part" <tags> <RW-Nyman-Beurling>
+      "neural-networks" <tags> <RW-Nyman-Beurling>
+      "equivalence" <tags> <RW-Nyman-Beurling>
+      "l2-dense" <tags> <RW-Nyman-Beurling>
+      "fractional-part" <tags> <RW-Nyman-Beurling>
+      "neural-networks" <tags> <RW-Nyman-Beurling>
+      "RW-Nyman-Beurling" <dgraph.type> "Concept" } }
+
+
+# RW-Hilbert-Polya (Concept)
+{ set { "RW-Hilbert-Polya" <id> <RW-Hilbert-Polya>
+      "Hilbert-Pólya Conjecture" <name> <RW-Hilbert-Polya>
+      "conjecture" <type> <RW-Hilbert-Polya>
+      "equivalences" <category> <RW-Hilbert-Polya>
+      "hilbert-polya" <subcategory> <RW-Hilbert-Polya>
+      "sufficient" <tags> <RW-Hilbert-Polya>
+      "self-adjoint" <tags> <RW-Hilbert-Polya>
+      "operator" <tags> <RW-Hilbert-Polya>
+      "open" <tags> <RW-Hilbert-Polya>
+      "sufficient" <tags> <RW-Hilbert-Polya>
+      "self-adjoint" <tags> <RW-Hilbert-Polya>
+      "operator" <tags> <RW-Hilbert-Polya>
+      "open" <tags> <RW-Hilbert-Polya>
+      "RW-Hilbert-Polya" <dgraph.type> "Concept" } }
+
+
+# RW-Weil (Concept)
+{ set { "RW-Weil" <id> <RW-Weil>
+      "Weil Positivity Criterion" <name> <RW-Weil>
+      "equivalence" <type> <RW-Weil>
+      "equivalences" <category> <RW-Weil>
+      "Weil" <subcategory> <RW-Weil>
+      "equivalence" <tags> <RW-Weil>
+      "positivity" <tags> <RW-Weil>
+      "finite-fields" <tags> <RW-Weil>
+      "langlands" <tags> <RW-Weil>
+      "equivalence" <tags> <RW-Weil>
+      "positivity" <tags> <RW-Weil>
+      "finite-fields" <tags> <RW-Weil>
+      "langlands" <tags> <RW-Weil>
+      "RW-Weil" <dgraph.type> "Concept" } }
+
+
+# RW-Granville-Goldbach (Concept)
+{ set { "RW-Granville-Goldbach" <id> <RW-Granville-Goldbach>
+      "Granville's Equivalence: RH ⇔ Averaged Goldbach Bound" <name> <RW-Granville-Goldbach>
+      "equivalence" <type> <RW-Granville-Goldbach>
+      "equivalences" <category> <RW-Granville-Goldbach>
+      "granville" <subcategory> <RW-Granville-Goldbach>
+      "equivalence" <tags> <RW-Granville-Goldbach>
+      "goldbach" <tags> <RW-Granville-Goldbach>
+      "averaged" <tags> <RW-Granville-Goldbach>
+      "explicit-formula" <tags> <RW-Granville-Goldbach>
+      "equivalence" <tags> <RW-Granville-Goldbach>
+      "goldbach" <tags> <RW-Granville-Goldbach>
+      "averaged" <tags> <RW-Granville-Goldbach>
+      "explicit-formula" <tags> <RW-Granville-Goldbach>
+      "RW-Granville-Goldbach" <dgraph.type> "Concept" } }
+
+
+# RW-Robin (Concept)
+{ set { "RW-Robin" <id> <RW-Robin>
+      "Robin's Inequality Inequality" <name> <RW-Robin>
+      "equivalence" <type> <RW-Robin>
+      "equivalences" <category> <RW-Robin>
+      "equivalence" <tags> <RW-Robin>
+      "robin" <tags> <RW-Robin>
+      "sum-of-divisors" <tags> <RW-Robin>
+      "dickman-function" <tags> <RW-Robin>
+      "equivalence" <tags> <RW-Robin>
+      "robin" <tags> <RW-Robin>
+      "sum-of-divisors" <tags> <RW-Robin>
+      "dickman-function" <tags> <RW-Robin>
+      "RW-Robin" <dgraph.type> "Concept" } }
+
+
+# RW-Lee-Yang (Concept)
+{ set { "RW-Lee-Yang" <id> <RW-Lee-Yang>
+      "Lee-Yang Theorem for Ising Model → RH for Zeros in a Sector" <name> <RW-Lee-Yang>
+      "equivalence" <type> <RW-Lee-Yang>
+      "equivalences" <category> <RW-Lee-Yang>
+      "lee-yang" <tags> <RW-Lee-Yang>
+      "Ising" <tags> <RW-Lee-Yang>
+      "statistical-physics" <tags> <RW-Lee-Yang>
+      "zeros" <tags> <RW-Lee-Yang>
+      "lee-yang" <tags> <RW-Lee-Yang>
+      "Ising" <tags> <RW-Lee-Yang>
+      "statistical-physics" <tags> <RW-Lee-Yang>
+      "zeros" <tags> <RW-Lee-Yang>
+      "RW-Lee-Yang" <dgraph.type> "Concept" } }
+
+
+# RW-Bertini (Concept)
+{ set { "RW-Bertini" <id> <RW-Bertini>
+      "Bertini's Criterion" <name> <RW-Bertini>
+      "equivalence" <type> <RW-Bertini>
+      "equivalences" <category> <RW-Bertini>
+      "bertini" <tags> <RW-Bertini>
+      "kernel" <tags> <RW-Bertini>
+      "positive-definite" <tags> <RW-Bertini>
+      "bertini" <tags> <RW-Bertini>
+      "kernel" <tags> <RW-Bertini>
+      "positive-definite" <tags> <RW-Bertini>
+      "RW-Bertini" <dgraph.type> "Concept" } }
+
+
+# RW-Denjoy (Concept)
+{ set { "RW-Denjoy" <id> <RW-Denjoy>
+      "Denjoy's Probabilistic Interpretation" <name> <RW-Denjoy>
+      "equivalence" <type> <RW-Denjoy>
+      "equivalences" <category> <RW-Denjoy>
+      "denjoy" <tags> <RW-Denjoy>
+      "probabilistic" <tags> <RW-Denjoy>
+      "random-walk" <tags> <RW-Denjoy>
+      "denjoy" <tags> <RW-Denjoy>
+      "probabilistic" <tags> <RW-Denjoy>
+      "random-walk" <tags> <RW-Denjoy>
+      "RW-Denjoy" <dgraph.type> "Concept" } }
+
+
+# RW-Beurling-Primes (Concept)
+{ set { "RW-Beurling-Primes" <id> <RW-Beurling-Primes>
+      "Beurling Generalized Primes → RH" <name> <RW-Beurling-Primes>
+      "equivalence" <type> <RW-Beurling-Primes>
+      "equivalences" <category> <RW-Beurling-Primes>
+      "beurling" <tags> <RW-Beurling-Primes>
+      "generalized-primes" <tags> <RW-Beurling-Primes>
+      "counting-function" <tags> <RW-Beurling-Primes>
+      "beurling" <tags> <RW-Beurling-Primes>
+      "generalized-primes" <tags> <RW-Beurling-Primes>
+      "counting-function" <tags> <RW-Beurling-Primes>
+      "RW-Beurling-Primes" <dgraph.type> "Concept" } }
+
+
+# OP-BridgeA-LPS (Concept)
+{ set { "OP-BridgeA-LPS" <id> <OP-BridgeA-LPS>
+      "Bridge A: LPS Construction → RH (via Ramanujan)" <name> <OP-BridgeA-LPS>
+      "bridge" <type> <OP-BridgeA-LPS>
+      "formalization" <category> <OP-BridgeA-LPS>
+      "lean-riemann" <subcategory> <OP-BridgeA-LPS>
+      "bridge-a" <tags> <OP-BridgeA-LPS>
+      "lps" <tags> <OP-BridgeA-LPS>
+      "ramanujan" <tags> <OP-BridgeA-LPS>
+      "collapsed" <tags> <OP-BridgeA-LPS>
+      "Dead end" <tags> <OP-BridgeA-LPS>
+      "bridge-a" <tags> <OP-BridgeA-LPS>
+      "lps" <tags> <OP-BridgeA-LPS>
+      "ramanujan" <tags> <OP-BridgeA-LPS>
+      "collapsed" <tags> <OP-BridgeA-LPS>
+      "Dead end" <tags> <OP-BridgeA-LPS>
+      "OP-BridgeA-LPS" <dgraph.type> "Concept" } }
+
+
+# OP-BridgeB-Mayer (Concept)
+{ set { "OP-BridgeB-Mayer" <id> <OP-BridgeB-Mayer>
+      "Bridge B: Mayer Transfer Operator → RH" <name> <OP-BridgeB-Mayer>
+      "bridge" <type> <OP-BridgeB-Mayer>
+      "dinam-systems" <category> <OP-BridgeB-Mayer>
+      "transfer-operator" <subcategory> <OP-BridgeB-Mayer>
+      "bridge-b" <tags> <OP-BridgeB-Mayer>
+      "mayer" <tags> <OP-BridgeB-Mayer>
+      "spectral-radius" <tags> <OP-BridgeB-Mayer>
+      "pressure-function" <tags> <OP-BridgeB-Mayer>
+      "partial" <tags> <OP-BridgeB-Mayer>
+      "bridge-b" <tags> <OP-BridgeB-Mayer>
+      "mayer" <tags> <OP-BridgeB-Mayer>
+      "spectral-radius" <tags> <OP-BridgeB-Mayer>
+      "pressure-function" <tags> <OP-BridgeB-Mayer>
+      "partial" <tags> <OP-BridgeB-Mayer>
+      "OP-BridgeB-Mayer" <dgraph.type> "Concept" } }
+
+
+# OP-DataQuantity (Concept)
+{ set { "OP-DataQuantity" <id> <OP-DataQuantity>
+      "Data Quantity Gap: Cayley Graphs vs LMFDB Newforms" <name> <OP-DataQuantity>
+      "gap" <type> <OP-DataQuantity>
+      "machine-learning" <category> <OP-DataQuantity>
+      "gnn-cayley" <subcategory> <OP-DataQuantity>
+      "data-gap" <tags> <OP-DataQuantity>
+      "cayley" <tags> <OP-DataQuantity>
+      "lmfdb" <tags> <OP-DataQuantity>
+      "insufficient-samples" <tags> <OP-DataQuantity>
+      "blocker-docker" <tags> <OP-DataQuantity>
+      "data-gap" <tags> <OP-DataQuantity>
+      "cayley" <tags> <OP-DataQuantity>
+      "lmfdb" <tags> <OP-DataQuantity>
+      "insufficient-samples" <tags> <OP-DataQuantity>
+      "blocker-docker" <tags> <OP-DataQuantity>
+      "OP-DataQuantity" <dgraph.type> "Concept" } }
+
+
+# OP-GraphSize (Concept)
+{ set { "OP-GraphSize" <id> <OP-GraphSize>
+      "Graph Size: Small Primes = Trivial, Large Primes = Intractable" <name> <OP-GraphSize>
+      "gap" <type> <OP-GraphSize>
+      "spectral-theory" <category> <OP-GraphSize>
+      "cayley-graphs" <subcategory> <OP-GraphSize>
+      "graph-size" <tags> <OP-GraphSize>
+      "scaling" <tags> <OP-GraphSize>
+      "technical" <tags> <OP-GraphSize>
+      "boundary-conditions" <tags> <OP-GraphSize>
+      "graph-size" <tags> <OP-GraphSize>
+      "scaling" <tags> <OP-GraphSize>
+      "technical" <tags> <OP-GraphSize>
+      "boundary-conditions" <tags> <OP-GraphSize>
+      "OP-GraphSize" <dgraph.type> "Concept" } }
+
+
+# OP-Formalization-Gaps (Concept)
+{ set { "OP-Formalization-Gaps" <id> <OP-Formalization-Gaps>
+      "Formalization Gaps in lean/Riemann/" <name> <OP-Formalization-Gaps>
+      "gap" <type> <OP-Formalization-Gaps>
+      "formalization" <category> <OP-Formalization-Gaps>
+      "lean-riemann" <subcategory> <OP-Formalization-Gaps>
+      "formalization" <tags> <OP-Formalization-Gaps>
+      "lean" <tags> <OP-Formalization-Gaps>
+      "gaps" <tags> <OP-Formalization-Gaps>
+      "partial" <tags> <OP-Formalization-Gaps>
+      "WIP" <tags> <OP-Formalization-Gaps>
+      "formalization" <tags> <OP-Formalization-Gaps>
+      "lean" <tags> <OP-Formalization-Gaps>
+      "gaps" <tags> <OP-Formalization-Gaps>
+      "partial" <tags> <OP-Formalization-Gaps>
+      "WIP" <tags> <OP-Formalization-Gaps>
+      "OP-Formalization-Gaps" <dgraph.type> "Concept" } }
+
+
+# OP-Hadamard-Product-Gap (Concept)
+{ set { "OP-Hadamard-Product-Gap" <id> <OP-Hadamard-Product-Gap>
+      "Hadamard Product Gap in mathlib" <name> <OP-Hadamard-Product-Gap>
+      "gap" <type> <OP-Hadamard-Product-Gap>
+      "formalization" <category> <OP-Hadamard-Product-Gap>
+      "lean-foundation" <subcategory> <OP-Hadamard-Product-Gap>
+      "hadamard" <tags> <OP-Hadamard-Product-Gap>
+      "dirichlet-series" <tags> <OP-Hadamard-Product-Gap>
+      "mathlib" <tags> <OP-Hadamard-Product-Gap>
+      "obstruction" <tags> <OP-Hadamard-Product-Gap>
+      "critical" <tags> <OP-Hadamard-Product-Gap>
+      "hadamard" <tags> <OP-Hadamard-Product-Gap>
+      "dirichlet-series" <tags> <OP-Hadamard-Product-Gap>
+      "mathlib" <tags> <OP-Hadamard-Product-Gap>
+      "obstruction" <tags> <OP-Hadamard-Product-Gap>
+      "critical" <tags> <OP-Hadamard-Product-Gap>
+      "OP-Hadamard-Product-Gap" <dgraph.type> "Concept" } }
+
+
+# riemann-1859 (Paper)
+{ set { "riemann-1859" <id> <riemann-1859>
+      "Über die Anzahl der Primzahlen unter einer gegebenen Grösse" <title> <riemann-1859>
+      "1859-11" <date> <riemann-1859>
+      "https://arxiv.org/abs/0809.2087" <url> <riemann-1859>
+      "Monatsberichte der Berliner Akademie" <venue> <riemann-1859>
+      "Introduces the Riemann zeta function and formulates the Riemann Hypothesis:\nall non-trivial zeros have real part 1/2. Establishes the functional equation,\ntrivial zeros at negative even integers, and the Euler product.\n" <abstract> <riemann-1859>
+      "10.1002/andp.185910305" <doi> <riemann-1859>
+      "number-theory" <category> <riemann-1859>
+      "l-functions" <subcategory> <riemann-1859>
+      "foundational" <status> <riemann-1859>
+      "true" <open_access> <riemann-1859>
+      "The original 8-page paper. Millennium Prize Problem #1." <notes> <riemann-1859>
+      "zeta-function" <tags> <riemann-1859>
+      "riemann-hypothesis" <tags> <riemann-1859>
+      "foundational" <tags> <riemann-1859>
+      "zeta-function" <tags> <riemann-1859>
+      "riemann-hypothesis" <tags> <riemann-1859>
+      "foundational" <tags> <riemann-1859>
+      "riemann-1859" <dgraph.type> "Paper" } }
+
+
+# mayer-1991 (Paper)
+{ set { "mayer-1991" <id> <mayer-1991>
+      "On zeta functions associated with Rashomon graphs" <title> <mayer-1991>
+      "1991" <date> <mayer-1991>
+      "https://eudml.org/doc/138777" <url> <mayer-1991>
+      "Mathematische Annalen" <venue> <mayer-1991>
+      "Studies the Selberg zeta function for PSL(2,Z) via transfer operators on\nthe Gauss map. Establishes the identity Z_S(s) = det(1-L_s) det(1+L_s) for Re(s)>1,\nwhere L_s is the weighted transfer operator.\n" <abstract> <mayer-1991>
+      "10.1007/BF01444974" <doi> <mayer-1991>
+      "dynam-systems" <category> <mayer-1991>
+      "transfer-operator" <subcategory> <mayer-1991>
+      "foundational" <status> <mayer-1991>
+      "true" <open_access> <mayer-1991>
+      "Transfer operator L_s f(x) = Σ_{n=1}^∞ (n+x)^{-2s} f(1/(n+x)), the operator we use." <notes> <mayer-1991>
+      "transfer-operator" <tags> <mayer-1991>
+      "selberg-zeta" <tags> <mayer-1991>
+      "gauss-map" <tags> <mayer-1991>
+      "transfer-operator" <tags> <mayer-1991>
+      "selberg-zeta" <tags> <mayer-1991>
+      "gauss-map" <tags> <mayer-1991>
+      "mayer-1991" <dgraph.type> "Paper" } }
+
+
+# efrat-1981 (Paper)
+{ set { "efrat-1981" <id> <efrat-1981>
+      "A proof of the meromorphic continuation of the Selberg zeta-function" <title> <efrat-1981>
+      "1981" <date> <efrat-1981>
+      "https://link.springer.com/article/10.1007/BF01406368" <url> <efrat-1981>
+      "Israel Journal of Mathematics" <venue> <efrat-1981>
+      "Proves the" <abstract> <efrat-1981>
+      "dynam-systems" <category> <efrat-1981>
+      "selberg-zeta" <subcategory> <efrat-1981>
+      "efrat-1981" <dgraph.type> "Paper" } }
