@@ -1,1 +1,0 @@
-type Concept { id: String @index(exact) . name: String }

@@ -29,7 +29,7 @@ services:
       - "8000:8000"
     volumes:
       - riemann_dgraph_data:/dgraph
-    command: dgraph-ratel -port 8000 -dgraph alpha:9080 -zero zero:5080
+    command: dgraph-ratel -addr alpha:9080 -port 8000
     depends_on:
       - zero
       - alpha
