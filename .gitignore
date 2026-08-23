@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Pipeline outputs (generated — never commit)
+papers.json
+statistics.json
+docs/topics/
+
+# Generated citation export
+paper/
