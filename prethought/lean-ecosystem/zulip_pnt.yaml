@@ -1,0 +1,275 @@
+# Zulip PrimeNumberTheorem+ stream — extracted knowledge
+# Source: https://leanprover-community.github.io/archive/stream/423402-PrimeNumberTheorem+/index.html
+# Plus CSLib stream (513188) and mathlib4 stream (287929)
+
+# ============================================================
+# PNT+ PROJECT — MAJOR UPSTREAM FORMALIZATION PROJECT
+# ============================================================
+
+- id: ZE-PNT-Project
+  name: "PNT+ Project (Prime Number Theorem formalization)"
+  type: finding
+  category: upstream
+  subcategory: pnt
+  date: "2026-01-01"
+  year: 2026
+  status: active
+  confidence: 0.9
+  description: |
+    A large collaborative project formalizing the Prime Number Theorem (and
+    its strengthenings) in Lean 4. Led by Alex Kontorovich and Terence Tao,
+    with Harald Helfgott, Pietro Monticone, Matteo Cipollina, David Loeffler,
+    Johan Commelin, Vincent Beffara. Maintained in the mathlib repo
+    (Mathlib/NumberTheory) + a blueprint.
+
+    KEY RELEVANCE to the Riemann project: PNT+ has ALREADY formalized parts of
+    analytic number theory that the Riemann project needs, notably:
+    1. Wiener-Ikehara tauberian theorem (basis of analytic PNT)
+    2. Strong PNT (PNT#865, PNT#866 by Pietro Monticone, Feb 2026)
+    3. Hadamard factorization theorem (Matteo Cipollina, Jan 2026) — PR to mathlib
+    4. Explicit estimates program with sharp constants (Helfgott)
+    5. Euler-Maclaurin, Poisson summation infrastructure
+    6. Fejér's theorem formalized
+    7. Borel-Carathéodory (so PNT+ no longer strictly needs Hadamard, but has it)
+
+    This means the Riemann project's "Hadamard product gap in mathlib" is
+    being closed upstream by a dedicated team. Strategy shift: MIRROR/UPTAKE
+    PNT+ work rather than re-implement.
+  participants:
+    - "Alex Kontorovich (lead)"
+    - "Terence Tao (blueprint author)"
+    - "Harald Helfgott (explicit estimates)"
+    - "Pietro Monticone (Strong PNT, PNT#865/#866)"
+    - "Matteo Cipollina (Hadamard factorization)"
+    - "David Loeffler (riemannZeta, L-series)"
+    - "Johan Commelin"
+    - "Vincent Beffara (Fourier part)"
+  evidence:
+    - "Hadamard factorization PR ready (Jan 2026)"
+    - "Strong PNT PRs PNT#865, PNT#866 (Feb 2026)"
+    - "Fejér's theorem formalized"
+    - "Wiener-Ikehara source discussion (Helfgott, Mar 2025)"
+  references:
+    - OP-Hadamard-Product-Gap
+    - MATHLIB-riemannZeta
+    - MATHLIB-zetaZeros
+  zulip_stream: "PrimeNumberTheorem+ (channel 423402)"
+  tags: ["pnt", "upstream", "formalization", "lean", "hadamard", "tauberian"]
+
+- id: ZE-Hadamard-Factorization-DONE
+  name: "Hadamard factorization theorem — NOW FORMALIZED (Cipollina)"
+  type: finding
+  category: upstream
+  subcategory: hadamard
+  date: "2026-01-16"
+  year: 2026
+  status: confirmed
+  confidence: 0.98
+  description: |
+    CRITICAL UPDATE for the Riemann project: the Hadamard factorization theorem
+    — previously a MAJOR GAP in mathlib (OP-Hadamard-Product-Gap) — has been
+    COMPLETELY FORMALIZED by Matteo Cipollina (Jan 16 2026) and applied to
+    riemannZeta.
+
+    What was built:
+    - Refactored Hadamard factorization theorem (removed non-mathlib-idiomatic
+      ZeroData structure; now takes intrinsic hypotheses on entire f, e.g.
+      EntireOfFiniteOrder ρ f)
+    - Applied to riemannZeta (corollaries to be upstreamed in a later PR cycle
+      due to Gamma function + Stirling prerequisites)
+    - Uses canonical product API: WeierstrassFactor, CanonicalProduct, Divisor,
+      LogSingularity, CartanBound, ExpPoly
+    - Follows Terence Tao's proof outline
+    - PR'd to PNT+ fork, ready to be upstreamed (with @Alex Kontorovich and
+      @Terence Tao support)
+    - Also uses 2 files from the Carleson project (Annuli API) planned for mathlib
+
+    STATUS: The Riemann project's "Hadamard product gap in mathlib" is being
+    closed upstream. It is NOT in mathlib main yet, but it is formalized and
+    PR-ready.
+  key_files:
+    - "Mathlib/Analysis/Complex/WeierstrassFactor"
+    - "Mathlib/Analysis/Complex/CanonicalProduct"
+    - "Mathlib/Analysis/Complex/Divisor"
+    - "Mathlib/Analysis/Complex/LogSingularity"
+    - "Mathlib/Analysis/Complex/CartanBound"
+    - "Mathlib/Analysis/Complex/ExpPoly"
+  importancy: "CRITICAL for Riemann project — closes the #1 mathlib gap"
+  references:
+    - OP-Hadamard-Product-Gap
+    - MATHLIB-riemannZeta
+    - ZE-PNT-Project
+  tags: ["hadamard", "formalized", "upstream", "mathlib", "breakthrough"]
+
+- id: ZE-Strong-PNT
+  name: "Strong PNT PRs (Monticone, PNT#865/#866)"
+  type: finding
+  category: upstream
+  subcategory: pnt
+  date: "2026-02-02"
+  year: 2026
+  status: confirmed
+  confidence: 0.9
+  description: |
+    Pietro Monticone submitted Strong PNT PRs (PNT#865, PNT#866) on Feb 2 2026.
+    Strong PNT = PNT with explicit/exponential error term (ψ(x) = x + O(x exp(-c√log x))).
+    This is a stepping stone toward PNT with good constants.
+  tags: ["strong-pnt", "explicit-constants", "upstream", "mathlib"]
+
+- id: ZE-Wiener-Ikehara
+  name: "Wiener-Ikehara tauberian theorem (PNT+)"
+  type: finding
+  category: upstream
+  subcategory: pnt
+  date: "2025-03-02"
+  year: 2025
+  status: confirmed
+  confidence: 0.95
+  description: |
+    Wiener-Ikehara tauberian theorem is at the analytic core of the PNT+
+    formalization. Discussion (Helfgott, Kontorovich, Tao, Loeffler, Commelin,
+    Beffara) on sources:
+    - The 'first_fourier' lemma (n ↦ f(n)/n^σ summable for all σ>1 + ψ continuous
+      & integrable ⇒ ...) was re-derived by Helfgott independently — elegant
+      because formalization removes superfluous assumptions (e.g. compact support)
+    - Tao wrote the blueprint from his own analytic number theory course notes
+      (Proposition 7 of his notes), plus Fourier-analytic rewriting of PNT proofs
+    - Kontorovich: complex-analytic part follows his own course notes
+    - Key insight: formalization forces minimal hypotheses into the open
+      (a "fail fast" virtue aligned with the Riemann project's stoic philosophy)
+  tags: ["wiener-ikehara", "tauberian", "fourier", "upstream", "pnT"]
+
+- id: ZE-Explicit-Estimates
+  name: "Explicit estimates program (Helfgott et al.)"
+  type: finding
+  category: upstream
+  subcategory: explicit-constants
+  date: "2026-01-09"
+  year: 2026
+  status: active
+  confidence: 0.9
+  description: |
+    The PNT+ explicit-estimates effort (Helfgott, Kontorovich, Monticone, Tao)
+    targets PNT with explicit error terms and sharp constants. Key data points:
+    - Helfgott: a target 'good constant' is |ψ(x) - x| ≤ √(log x) exp(-√(log x / C))
+      with C ≈ 17.51 (Theorem 11, Rosser-Schoenfeld 1961); Fiori-Kadiri-Swidinsky
+      hold the record (2022)
+    - Two complementary bound types: M(x)=o(x) type (Mertens) recursive process
+      starting from explicit PNT + Mertens bound (Chebyshev-Mertens steampunk method),
+      and the analytic explicit PNT route
+    - Ongoing tasks documented in big 'Explicit estimates, outstanding tasks v2'
+      topic: LCM bounds, short primes subintervals, Chebyshev bounds miniproject,
+      Erdos problem 392 (factoring n! into factors ≤ n²), Costa Pereira inequality,
+      Selberg/Rosser-Schoenfeld identities, log tables, Riemann-Stieltjes theory,
+      odd Goldbach for small n
+  subprojects:
+    - "Bounds on LCM(1..n) in Mathlib"
+    - "New miniproject: Chebyshev bounds"
+    - "New miniproject: Primes in short intervals"
+    - "New subproject: Odd Goldbach for small n"
+    - "Erdos problem 392 (factoring n!)"
+    - "Costa Pereira inequality"
+    - "Some Rosser-Schoenfeld identities"
+    - "Strong PNT"
+    - "Prime number theorem in AP"
+  references:
+    - ZE-PNT-Project
+  tags: ["explicit-estimates", "constants", "roserschoenfeld", "upstream"]
+
+- id: ZE-Explicit-PNT-relevance
+  name: "Explicit PNT relevance to Riemann project Strategy"
+  type: strategy
+  category: upstream
+  subcategory: strategy
+  date: "2026-01-01"
+  year: 2026
+  status: proposed
+  confidence: 0.8
+  description: |
+    The Riemann project has been planning to contribute Hadamard product,
+    nuclear operator theory, and Fredholm determinant to mathlib (EPIC-7).
+    The Zulip research shows:
+    1. HADAMARD PRODUCT — already being upstreamed by Cipollina/PNT+; the
+       Riemann project should TRACK the PR and re-use it, not re-implement.
+    2. RIEMANN ZETA + zeros — already in mathlib (Loeffler 2023, Huanyu Zheng 2026);
+       the Riemann project's FriedliRatio.lean should import these instead of
+       re-developing zeta.
+    3. L-SERIES / PrimesInAP — mathlib has Dirichlet L-functions; relevant for
+       any Pizer/Hecke pathway.
+    NEW STRATEGY (stoic unix): Coordinate with PNT+ instead of duplicating.
+    Next concrete step: check whether riemannZeta/functional equation
+    (riemannZeta_one_sub) can replace the hand-rolled spectral-zeta manipulations
+    in FriedliRatio.lean.
+  references:
+    - ZE-PNT-Project
+    - ZE-Hadamard-Factorization-DONE
+    - MATHLIB-riemannZeta
+    - MATHLIB-zetaZeros
+  tags: ["strategy", "coordination", "upstream", "reuse"]
+
+# ============================================================
+# CSLIB & MATHLIB4 STREAMS — ECOSYSTEM CONTEXT
+# ============================================================
+
+- id: ZE-CSLib-stream
+  name: "CSLib Zulip stream (channel 513188)"
+  type: documentation
+  category: upstream
+  subcategory: cslib
+  date: "2026-01-01"
+  year: 2026
+  status: active
+  confidence: 1.0
+  description: |
+    CSLib community stream (130+ topics, active). Key topics: Announcing CSLib,
+    Automata (Büchi, weighted DFA, FSTs), Complexity Theory, Rice-Shapiro,
+    Process calculi, Quantum algorithms, ReductionSystem unbundling,
+    'Undergraduate CS2 — Discrete Math and Theory in Lean', weekly linting,
+    bump to v4.24.0, Stony Brook Algorithm Repository, Categorical Semantics.
+    Community: technical lead nominations open; regular community calls.
+  zulip_stream: "CSLib (channel 513188)"
+  tags: ["cslib", "community", "automata", "lean"]
+
+- id: ZE-mathlib4-stream
+  name: "mathlib4 Zulip stream (channel 287929)"
+  type: documentation
+  category: upstream
+  subcategory: mathlib
+  date: "2026-01-01"
+  year: 2026
+  status: active
+  confidence: 1.0
+  description: |
+    The main mathlib4 development stream: PR reviews, triage, nightly-testing,
+    good-first-issue queue. This is where Hadamard factorization and PNT+
+    results get merged. Good source for watching for the Hadamard PR merge.
+  zulip_stream: "mathlib4 (channel 287929)"
+  tags: ["mathlib", "community", "pr-reviews", "lean"]
+
+# ============================================================
+# LEAN ECOSYSTEM GENEREAL
+# ============================================================
+
+- id: ZE-lean-ecosystem
+  name: "Lean 4 ecosystem overview"
+  type: documentation
+  category: upstream
+  subcategory: overview
+  date: "2026-01-01"
+  year: 2026
+  status: active
+  confidence: 1.0
+  description: |
+    The Lean 4 proof assistant ecosystem:
+    - mathlib4: main mathematical library (Zulip stream 287929)
+    - Std4/batteries: basic libraries
+    - CSLib: computer science library (stream 513188)
+    - PNT+: analytic number theory project inside mathlib
+    - Archive/streams on Zulip: lean4, maths, PR reviews, triage,
+      Machine Learning for Theorem Proving, condensed mathematics,
+      Program verification, graph theory, Lean for teaching
+    Zulip channels relevant to Riemann: PrimeNumberTheorem+ (423402),
+    maths (116395), mathlib4 (287929), Machine Learning for Theorem
+    Proving (219941).
+  url: "https://leanprover.zulipchat.com/"
+  tags: ["ecosystem", "lean", "zulip", "community"]

@@ -125,6 +125,7 @@ TYPE_MAP = {
     "documentation": "Documentation",
     "assessment": "Assessment",
     "proof": "Proof",
+    "resource": "Resource",
     # Methodology and philosophy types
     "philosophy": "Philosophy",
     "strategy": "Strategy",

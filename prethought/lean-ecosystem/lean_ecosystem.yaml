@@ -1,0 +1,480 @@
+# Lean Ecosystem Knowledge Base
+# Sources: leanprover-community.github.io/learn.html, mathlib4, cslib, Zulip PrimeNumberTheorem+ stream
+# Manually curated (Lean not supported by cgc)
+
+# ============================================================
+# LEARN RESOURCES (https://leanprover-community.github.io/learn.html)
+# ============================================================
+
+- id: LE-learn-hub
+  name: "Lean 4 Learning Hub (Lean Community)"
+  type: resource
+  category: lean-learning
+  subcategory: hub
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    The Lean Community's official learning resource hub (learn.html).
+    Categorized into: Hands-on approaches, Books, (Meta)-programming and tactic
+    writing, More on foundations, Meetings.
+  url: "https://leanprover-community.github.io/learn.html"
+  tags: ["lean", "learning", "community", "documentation"]
+
+- id: LE-natural-number-game
+  name: "Natural Number Game (NNG4)"
+  type: resource
+  category: lean-learning
+  subcategory: hands-on
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Interactive browser-based game to learn theorem proving in Lean 4.
+    Start here for complete beginners. Proves basic arithmetic facts inductively.
+  url: "https://adam.math.hhu.de/#/g/hhu-adam/NNG4"
+  tags: ["tutorial", "game", "beginner", "interactive"]
+
+- id: LE-mathematics-in-lean
+  name: "Mathematics in Lean (MiL)"
+  type: resource
+  category: lean-learning
+  subcategory: books
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    The standard interactive textbook by Jeremy Avigad, Patrick Massot, et al.
+    Teaches how to do mathematics in Lean 4 with mathlib. Most relevant to
+    the Riemann project. Available as HTML and PDF.
+  authors: ["Jeremy Avigad", "Patrick Massot"]
+  url: "https://leanprover-community.github.io/mathematics_in_lean/"
+  tags: ["book", "mathlib", "tutorial", "interactive"]
+
+- id: LE-theorem-proving-in-lean
+  name: "Theorem Proving in Lean 4 (TPiL)"
+  type: resource
+  category: lean-learning
+  subcategory: books
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    The foundational reference for Lean 4's type theory, written by the Lean
+    team (de Moura, Avigad, et al.). Covers dependent type theory, tactics,
+    and the Lean language itself.
+  authors: ["Leonardo de Moura", "Jeremy Avigad", "Soonho Kong", "Sebastian Ullrich"]
+  url: "https://lean-lang.org/theorem_proving_in_lean4/"
+  tags: ["book", "type-theory", "lean-language", "reference"]
+
+- id: LE-functional-programming
+  name: "Functional Programming in Lean"
+  type: resource
+  category: lean-learning
+  subcategory: books
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Book on functional programming and data structures in Lean by the Lean FRO.
+    Useful for the computational/algorithms side of Lean.
+  url: "https://lean-lang.org/functional_programming_in_lean/"
+  tags: ["book", "functional-programming", "lean-language"]
+
+- id: LE-mechanics-of-proof
+  name: "The Mechanics of Proof"
+  type: resource
+  category: lean-learning
+  subcategory: books
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Course by Heather Macbeth teaching proof writing in Lean 4, designed for
+    a third undergraduate analysis course. Emphasizes calculational proofs.
+  author: "Heather Macbeth"
+  url: "https://hrmacbeth.github.io/math2001/"
+  tags: ["book", "analysis", "proof-writing", "undergraduate"]
+
+- id: LE-reference-manual
+  name: "Lean 4 Reference Manual"
+  type: resource
+  category: lean-learning
+  subcategory: reference
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    The official reference manual for the Lean 4 language.
+  url: "https://lean-lang.org/doc/reference/latest/"
+  tags: ["reference", "lean-language", "manual"]
+
+- id: LE-tactic-cheatsheet
+  name: "Tactic Cheatsheet (PDF)"
+  type: resource
+  category: lean-learning
+  subcategory: reference
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    One-page PDF cheatsheet of common Lean 4 tactics.
+  url: "https://leanprover-community.github.io/papers/lean-tactics.pdf"
+  tags: ["reference", "tactics", "cheatsheet"]
+
+- id: LE-mathlib4-docs
+  name: "Mathlib4 API Documentation"
+  type: resource
+  category: lean-learning
+  subcategory: reference
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Auto-generated API documentation for mathlib4. The primary reference for
+    finding lemmas like riemannZeta_one_sub.
+  url: "https://leanprover-community.github.io/mathlib4_docs/"
+  tags: ["reference", "mathlib", "api"]
+
+- id: LE-loogle
+  name: "Loogle — Declaration Search"
+  type: resource
+  category: lean-learning
+  subcategory: tools
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Search engine for mathlib declarations by name/pattern.
+    Find lemmas like riemannZeta_one_sub by type signature.
+  url: "https://loogle.lean-lang.org/"
+  tags: ["search", "tool", "mathlib"]
+
+- id: LE-glimpse-of-lean
+  name: "Glimpse of Lean"
+  type: resource
+  category: lean-learning
+  subcategory: tutorials
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Tutorial by Patrick Massot on getting started with Lean 4.
+  author: "Patrick Massot"
+  url: "https://github.com/PatrickMassot/GlimpseOfLean"
+  tags: ["tutorial", "beginner", "lean4"]
+
+- id: LE-metaprogramming-lean4
+  name: "Metaprogramming in Lean 4 (book)"
+  type: resource
+  category: lean-learning
+  subcategory: metaprogramming
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Book by Arthur Paulino on writing tactics and metaprograms in Lean 4.
+  author: "Arthur Paulino"
+  url: "https://github.com/arthurpaulino/lean4-metaprogramming-book"
+  tags: ["metaprogramming", "tactics", "book"]
+
+- id: LE-tactic-programming-guide
+  name: "Tactic Programming Guide"
+  type: resource
+  category: lean-learning
+  subcategory: metaprogramming
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Guide to writing tactics in Lean 4.
+  url: "https://github.com/mirefek/lean-tactic-programming-guide"
+  tags: ["metaprogramming", "tactics"]
+
+- id: LE-mathlib-overview
+  name: "Mathlib Library Overview"
+  type: resource
+  category: lean-learning
+  subcategory: reference
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Map of mathlib: what is formalized where. Includes the key NumberTheory
+    folder and Theories pages (naturals, sets, topology, category theory).
+  url: "https://leanprover-community.github.io/mathlib-overview.html"
+  tags: ["reference", "mathlib", "overview"]
+
+- id: LE-100-theorems
+  name: "Wiedijk's 100 Theorems (formalized)"
+  type: resource
+  category: lean-learning
+  subcategory: reference
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Track which of Wiedijk's 100 classic theorems are formalized in mathlib.
+    PNT (#32? ) and related analytic number theory results live here.
+  url: "https://leanprover-community.github.io/100.html"
+  tags: ["reference", "formalization", "100-theorems"]
+
+- id: LE-did-you-prove-it
+  name: "Did You Really Prove It?"
+  type: resource
+  category: lean-learning
+  subcategory: integrity
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    Essay on what it means to prove something in Lean vs on paper. Directly
+    relevant to the integrity-first philosophy of the Riemann project.
+  url: "https://leanprover-community.github.io/did_you_prove_it.html"
+  tags: ["integrity", "formal-proof", "philosophy", "verification"]
+
+# ============================================================
+# MATHLIB4 — KEY RH-RELEVANT FILES
+# ============================================================
+
+- id: MATHLIB-riemannZeta
+  name: "riemannZeta in mathlib4 (David Loeffler)"
+  type: concept
+  category: mathlib
+  subcategory: number-theory
+  date: "2026-01-01"
+  year: 2026
+  status: formalized
+  confidence: 1.0
+  description: |
+    Mathlib/NumberTheory/LSeries/RiemannZeta.lean (David Loeffler, 2023):
+    - riemannZeta : ℂ → ℂ (the Riemann zeta function)
+    - completedRiemannZeta : Λ(s) = π^(-s/2) Γ(s/2) ζ(s) (away from poles)
+    - completedRiemannZeta₀ : entire function Λ₀(s) = Λ(s) + 1/(s-1) - 1/s
+    - differentiable_completedZeta₀ : Λ₀ is entire
+    - riemannZeta_one_sub : functional equation relating ζ(s) and ζ(1-s)
+    - zeta_eq_tsum_one_div_nat_add_one_cpow : ζ(s) = ∑' 1/(n+1)^s for Re s > 1
+    KEY for RH project: the functional equation s ↔ 1-s is FORMALIZED.
+  key_theorems:
+    - "riemannZeta_one_sub : functional equation"
+    - "differentiable_completedZeta₀ : entireness of completed zeta"
+    - "zeta_eq_tsum_one_div_nat_add_one_cpow : Dirichlet series representation"
+  file: "Mathlib/NumberTheory/LSeries/RiemannZeta.lean"
+  references:
+    - OP-Hadamard-Product-Gap
+  tags: ["riemann-zeta", "functional-equation", "mathlib", "formalized"]
+
+- id: MATHLIB-zetaZeros
+  name: "ZetaZeros — Discreteness of zeta zeros (Huanyu Zheng)"
+  type: concept
+  category: mathlib
+  subcategory: number-theory
+  date: "2026-01-01"
+  year: 2026
+  status: formalized
+  confidence: 1.0
+  description: |
+    Mathlib/NumberTheory/LSeries/ZetaZeros.lean (Huanyu Zheng, 2026):
+    - riemannZetaZeros : Set ℂ (the zeros of the Riemann zeta function)
+    - isClosed_riemannZetaZeros : the zeros are closed
+    - isDiscrete_riemannZetaZeros : the zeros are discrete
+    - any compact set intersects finitely many zeros
+    Foundation for any zero-based approach to RH.
+  file: "Mathlib/NumberTheory/LSeries/ZetaZeros.lean"
+  tags: ["zeta-zeros", "discreteness", "mathlib", "formalized"]
+
+- id: MATHLIB-chebyshev
+  name: "Chebyshev functions and estimates (mathlib)"
+  type: concept
+  category: mathlib
+  subcategory: number-theory
+  date: "2026-01-01"
+  year: 2026
+  status: formalized
+  confidence: 1.0
+  description: |
+    Mathlib/NumberTheory/Chebyshev.lean:
+    Chebyshev functions θ(x) and ψ(x), their estimates and connection to PNT.
+    Relevant to explicit constant work (Helfgott's program).
+  file: "Mathlib/NumberTheory/Chebyshev.lean"
+  tags: ["chebyshev", "prime-counting", "mathlib", "formalized"]
+
+- id: MATHLIB-primeCounting
+  name: "PrimeCounting — PNT in mathlib"
+  type: concept
+  category: mathlib
+  subcategory: number-theory
+  date: "2026-01-01"
+  year: 2026
+  status: formalized
+  confidence: 1.0
+  description: |
+    Mathlib/NumberTheory/PrimeCounting.lean:
+    Prime counting function π(x) and asymptotic. PNT contributes this.
+  file: "Mathlib/NumberTheory/PrimeCounting.lean"
+  tags: ["prime-counting", "pnt", "mathlib", "formalized"]
+
+- id: MATHLIB-bertrand
+  name: "Bertrand's postulate (mathlib)"
+  type: concept
+  category: mathlib
+  subcategory: number-theory
+  date: "2026-01-01"
+  year: 2026
+  status: formalized
+  confidence: 1.0
+  description: |
+    Mathlib/NumberTheory/Bertrand.lean:
+    Bertrand's postulate: for n > 1 there is a prime between n and 2n.
+  file: "Mathlib/NumberTheory/Bertrand.lean"
+  tags: ["bertrand", "primes", "mathlib", "formalized"]
+
+- id: MATHLIB-hurwitzZeta
+  name: "Hurwitz zeta function (mathlib)"
+  type: concept
+  category: mathlib
+  subcategory: number-theory
+  date: "2026-01-01"
+  year: 2026
+  status: formalized
+  confidence: 1.0
+  description: |
+    Mathlib/NumberTheory/LSeries/HurwitzZeta.lean and HurwitzZetaEven/Odd/Values:
+    The Hurwitz zeta function and its special values (ζ(2k) in Bernoulli numbers).
+    Base for riemannZeta.
+  file: "Mathlib/NumberTheory/LSeries/HurwitzZeta.lean"
+  tags: ["hurwitz-zeta", "special-values", "mathlib", "formalized"]
+
+- id: MATHLIB-zetaAsymp
+  name: "ZetaAsymp — asymptotics at s=1 (mathlib)"
+  type: concept
+  category: mathlib
+  subcategory: number-theory
+  date: "2026-01-01"
+  year: 2026
+  status: formalized
+  confidence: 1.0
+  description: |
+    Mathlib/NumberTheory/Harmonic/ZetaAsymp.lean:
+    Asymptotic of ζ(s) as s → 1, involving Euler-Mascheroni constant.
+  file: "Mathlib/NumberTheory/Harmonic/ZetaAsymp.lean"
+  tags: ["zeta", "asymptotics", "euler-mascheroni", "mathlib"]
+
+- id: MATHLIB-lSeries
+  name: "L-Series framework (mathlib)"
+  type: concept
+  category: mathlib
+  subcategory: number-theory
+  date: "2026-01-01"
+  year: 2026
+  status: formalized
+  confidence: 1.0
+  description: |
+    Mathlib/NumberTheory/LSeries/: A framework for Dirichlet series and L-functions
+    including PrimesInAP (Dirichlet L-functions / PNT in AP), Nonvanishing, Zeros.
+    The three-path PNT project (PNT+) builds on this.
+  file: "Mathlib/NumberTheory/LSeries/"
+  tags: ["l-series", "dirichlet", "mathlib", "framework"]
+
+- id: MATHLIB-structure
+  name: "mathlib4 overall structure"
+  type: documentation
+  category: mathlib
+  subcategory: structure
+  date: "2026-01-01"
+  year: 2026
+  status: available
+  confidence: 1.0
+  description: |
+    mathlib4 (leanprover-community/mathlib4) is the standard mathematical library
+    for Lean 4. Top-level folders: Algebra, AlgebraicGeometry, AlgebraicTopology,
+    Analysis, CategoryTheory, Combinatorics, Computability, Condensed, Control,
+    Data, Dynamics, FieldTheory, Geometry, GroupTheory, InformationTheory, Lean,
+    LinearAlgebra, Logic, MeasureTheory, ModelTheory, NumberTheory, Order,
+    Probability, RepresentationTheory, RingTheory, SetTheory, Tactic, Topology.
+    The NumberTheory folder contains the RH-relevant files.
+  url: "https://github.com/leanprover-community/mathlib4"
+  tags: ["mathlib", "structure", "overview", "lean"]
+
+# ============================================================
+# CSLIB — COMPUTER SCIENCE LIBRARY
+# ============================================================
+
+- id: CSLIB-overview
+  name: "CSLib — Computer Science library for Lean 4"
+  type: documentation
+  category: cslib
+  subcategory: overview
+  date: "2026-01-01"
+  year: 2026
+  status: active
+  confidence: 1.0
+  description: |
+    CSLib is the formalized computer science library for Lean 4, a sibling
+    project to mathlib. Folders: Algorithms (sorting, etc.), Computability
+    (52 files: Turing machines, automata, reductions), Crypto (ten files),
+    Foundations (56 files: sets, orders, relations), Languages (43 files:
+    regular languages, context-free grammars, type systems), Logics (16 files),
+    MachineLearning, Probability. Example instantiation of the "do one thing
+    well + compose" Unix-style philosophy for formal libraries.
+  url: "https://github.com/tobias-weiss-ai-xr/cslib"
+  tags: ["cslib", "computer-science", "lean", "formalization"]
+
+- id: CSLIB-computability
+  name: "CSLib/Computability"
+  type: documentation
+  category: cslib
+  subcategory: computability
+  date: "2026-01-01"
+  year: 2026
+  status: active
+  confidence: 1.0
+  description: |
+    Largest CSLib folder (52 files): Turing machines, register machines, DFA/NFA,
+    Büchi automata, Rice-Shapiro theorem, algorithmic randomness, reductions.
+    Stream topics: Automata, Undecidability, Rice-Shapiro, Buchi model checking.
+  tags: ["cslib", "computability", "automata", "turing-machines"]
+
+- id: CSLIB-foundations
+  name: "CSLib/Foundations"
+  type: documentation
+  category: cslib
+  subcategory: foundations
+  date: "2026-01-01"
+  year: 2026
+  status: active
+  confidence: 1.0
+  description: |
+    CSLib foundations (56 files): sets, orders, relations, monads, effect systems.
+    Includes 'Proposal on Time Complexity' (complexity theory in CSLib).
+  tags: ["cslib", "foundations", "orders", "complexity"]
+
+- id: CSLIB-languages
+  name: "CSLib/Languages"
+  type: documentation
+  category: cslib
+  subcategory: languages
+  date: "2026-01-01"
+  year: 2026
+  status: active
+  confidence: 1.0
+  description: |
+    CSLib formal language theory (43 files): regular languages, DFAs, weighted
+    DFAs, deterministic FSTs, context-free grammars, STLC type systems.
+  tags: ["cslib", "languages", "regular-languages", "type-systems"]

@@ -261,8 +261,17 @@
     - Explicit formulas involving L-functions
     - Many RH equivalences
     Without Hadamard product, we cannot express ζ(s) properly in Lean.
-  status: missing
+  status: upstream-in-progress
   priority: CRITICAL
+  upstream_update: |
+    UPDATE (2026-01-16, from Zulip PrimeNumberTheorem+ archive):
+    The Hadamard FACTORIZATION theorem (a closely related — and for RH
+    more important — result) has been FORMALIZED by Matteo Cipollina
+    and is PR-ready for mathlib (see ZE-Hadamard-Factorization-DONE).
+    It covers the canonical product development: WeierstrassFactor,
+    CanonicalProduct, Divisor, LogSingularity, CartanBound, ExpPoly.
+    The Dirichlet-series Hadamard product (this entry) is orthogonal but
+    the factorization closes the main obstruction to RH formalization.
   difficulty: very-hard
   workaround: null
   references:
