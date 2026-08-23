@@ -1,0 +1,20 @@
+{
+  "_comment": "Lean roster: LOCAL model only (litellm/deepseek-v4-flash/local on the on-prem gateway). No external LLM API traffic or cost. Use via TF_WORKERS_JSON for minimal-LLM agentflow runs. Tasks run sequentially on the single local worker.",
+  "workers": [
+    {
+      "name": "local-flash",
+      "provider": "litellm",
+      "model": "deepseek-v4-flash/local",
+      "endpoint": "http://127.0.0.1:4000/v1",
+      "note": "Local DeepSeek V4 Flash via LiteLLM gateway (AI cluster / legion) — on-prem, no external API",
+      "enabled": true,
+      "max_concurrent": 1
+    }
+  ],
+  "defaults": {
+    "dispatch_timeout_s": 1800,
+    "accept_timeout_s": 600,
+    "max_attempts": 3,
+    "retry_cooldown_s": 30
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "defaults": {
+    "accept_timeout_s": 900,
+    "max_attempts": 3,
+    "retry_delay_s": 30,
+    "agent_timeout_s": 3600,
+    "no_op_max_attempts": 2,
+    "timeout_retry_multiplier": 1.5
+  },
+  "workers": [
+    {
+      "name": "gpt4o",
+      "enabled": true,
+      "provider": "openai",
+      "model": "gpt-4o",
+      "endpoint": "https://api.openai.com/v1",
+      "tiers": ["booster", "fast", "standard", "deep"]
+    },
+    {
+      "name": "claude",
+      "enabled": false,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-20250514",
+      "endpoint": "https://api.anthropic.com",
+      "tiers": ["standard", "deep"]
+    },
+    {
+      "name": "local",
+      "enabled": false,
+      "provider": "litellm",
+      "model": "deepseek-v4-flash/local",
+      "endpoint": "http://127.0.0.1:4000/v1",
+      "tiers": ["booster", "fast"]
+    }
+  ]
+}

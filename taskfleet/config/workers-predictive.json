@@ -1,0 +1,32 @@
+{
+  "defaults": {
+    "accept_timeout_s": 1800,
+    "max_attempts": 3,
+    "retry_delay_s": 60,
+    "agent_timeout_s": 3600,
+    "dispatch_timeout_s": 1800,
+    "no_op_max_attempts": 2,
+    "timeout_retry_multiplier": 1.5,
+    "provider": "tud"
+  },
+  "workers": [
+    {
+      "name": "tud-md",
+      "enabled": true,
+      "provider": "tud",
+      "model": "Mistral-Medium-3.5-128B",
+      "endpoint": "https://llm-service.ai.tu-darmstadt.de",
+      "tiers": ["standard"],
+      "max_attempts": 3
+    },
+    {
+      "name": "saia-qwen",
+      "enabled": false,
+      "provider": "saia",
+      "model": "qwen3.5-122b-a10b",
+      "endpoint": "",
+      "tiers": ["standard"],
+      "max_attempts": 3
+    }
+  ]
+}

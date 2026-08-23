@@ -1,0 +1,28 @@
+{
+  "defaults": {
+    "accept_timeout_s": 600,
+    "max_attempts": 3,
+    "retry_delay_s": 30,
+    "agent_timeout_s": 1800,
+    "no_op_max_attempts": 2,
+    "timeout_retry_multiplier": 1.5
+  },
+  "workers": [
+    {
+      "name": "glm-52",
+      "enabled": true,
+      "provider": "tud",
+      "model": "GLM-5.2-AWQ-INT4",
+      "note": "GLM-5.2 on TUD cluster — working provider confirmed via pi -p test",
+      "max_concurrent": 1
+    },
+    {
+      "name": "mistral",
+      "enabled": true,
+      "provider": "saia",
+      "model": "mistral-medium-3.5-128b",
+      "note": "Mistral Medium 3.5 on SAIA cluster — default pi provider, confirmed working",
+      "max_concurrent": 1
+    }
+  ]
+}
