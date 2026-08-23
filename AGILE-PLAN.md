@@ -148,18 +148,25 @@ CayleyGraphs → SpectralGaps → RamanujanProperty → FriedliRatio
 
 ---
 
-## 🎯 EPIC-7: Mathlib-Beitrag — Cache, nicht neu bauen (parallel)
+## 🎯 EPIC-7: Mathlib-Strategie — Koordination + Wiederverwendung (parallel)
 
-**Ziel**: Fehlende Mathlib-Bausteine upstream beitragen statt forken.
+**Ziel**: Nicht neu implementieren, sondern mit PNT+/Mathlib koordinieren und vorhandenes nutzen.
 
-| Baustein | Schwere | Aufwand |
-|----------|---------|---------|
-| Hadamard-Produkt | **Kritisch** | 2–3 Monate |
-| Kernoperatoren-Theorie | Hoch | 1–2 Monate |
-| Fredholm-Determinante | Mittel | 1–2 Monate |
-| Transferoperator-Theorie | Hoch | 1 Monat |
+> **STRATEGIE-UPDATE (2026-01-16, Zulip-Archiv PNT+)**:
+> Der Hadamard-Gap (größtes Hindernis) wird bereits UPSTREAM von PNT+
+> geschlossen: **Matteo Cipollina hat die Hadamard-Faktorisierung formalisiert
+> (PR-bereit für Mathlib)**. Außerdem existiert `riemannZeta` inkl. funktionaler
+> Gleichung (`riemannZeta_one_sub`) bereits in Mathlib (Loeffler 2023).
 
-**Workaround** bei ungemergten PRs: Lemma als temporäres Axiom, später beweisen.
+| Baustein | Status upstream | Riemann-Projekt-Aktion |
+|----------|-----------------|------------------------|
+| Hadamard-Faktorisierung | ✅ Formalisert (Cipollina, PR-bereit) | PR tracken & wiederverwenden |
+| riemannZeta + funkt. Gleichung | ✅ In Mathlib (Loeffler 2023) | In FriedliRatio importieren |
+| Zeta-Zeros (Diskretion) | ✅ In Mathlib (Zheng 2026) | Für RH-Nullstellen nutzen |
+| Kernoperatoren-Theorie | ❌ Nicht in Mathlib | Workaround: Hilbert-Schmidt |
+| Fredholm-Determinante | ❌ Nicht in Mathlib | Axiom-Workaround |
+
+**Workaround** bei fehlenden Bausteinen: Lemma als temporäres Axiom, später beweisen.
 
 ---
 
