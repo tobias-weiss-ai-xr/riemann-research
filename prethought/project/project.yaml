@@ -1,0 +1,104 @@
+# Project-level documentation from riemann root
+# Plans, analyses, and high-level documents
+
+- id: DOC-Absolute-Trust
+  name: "Absolute Trust Manifesto"
+  type: documentation
+  category: philosophy
+  subcategory: trust
+  description: |
+    Manifesto on integrity-first approach to research.
+    Emphasis on honest assessment, distinguishing proven facts from speculative claims.
+  status: completed
+  tags:
+    - manifesto
+    - integrity
+    - trust
+  file: "ABSOLUTE_TRUST.md"
+
+- id: DOC-AI-Algorithms-P-vs-NP
+  name: "AI Algorithms: P vs NP"
+  type: documentation
+  category: complexity-theory
+  subcategory: ai
+  description: |
+    Analysis of P vs NP problem in the context of AI algorithm development.
+    Connection to RH and computational complexity.
+  status: documented
+  tags:
+    - p-vs-np
+    - ai
+    - complexity
+    - algorithms
+  file: "ai-algorithmen-p-vs-np.md"
+
+- id: DOC-Complete-Action-Plan
+  name: "Complete Action Plan"
+  type: documentation
+  category: planning
+  subcategory: action-plan
+  description: |
+    Complete action plan for RH proof verification and formalization.
+    Step-by-step roadmap with milestones and dependencies.
+  status: defined
+  tags:
+    - action-plan
+    - roadmap
+    - planning
+  file: "COMPLETE_ACTION_PLAN.md"
+
+- id: DOC-Complete-Gap-Analysis
+  name: "Complete Gap Analysis"
+  type: documentation
+  category: analysis
+  subcategory: gap-analysis
+  description: |
+    Comprehensive gap analysis of RH proof attempts.
+    Identification of missing pieces, incomplete arguments, and open questions.
+  status: completed
+  tags:
+    - gap-analysis
+    - proof-verification
+    - completeness
+  file: "COMPLETE_GAP_ANALYSIS.md"
+
+- id: DOC-Completed-Scale
+  name: "Completed Scale Document"
+  type: documentation
+  category: analysis
+  subcategory: scale
+  description: |
+    Analysis of scaling properties in spectral analysis.
+    Multi-scale approaches to understanding RH-related phenomena.
+  status: completed
+  tags:
+    - scale
+    - spectral-analysis
+    - multi-scale
+  file: "COMPLETED_scale.md"
+
+- id: AGENTS-MD
+  name: "Project AGENTS.md"
+  type: documentation
+  category: documentation
+  subcategory: project-management
+  description: "Agent instructions and project conventions for the Riemann research project"
+  status: defined
+  tags:
+    - agents
+    - conventions
+    - project-management
+  file: "AGENTS.md"
+
+- id: CHANGELOG-MD
+  name: "Project Changelog"
+  type: documentation
+  category: documentation
+  subcategory: changelog
+  description: "History of changes and developments in the Riemann research project"
+  status: maintained
+  tags:
+    - changelog
+    - history
+    - development
+  file: "CHANGELOG.md"

@@ -1,0 +1,83 @@
+# Documentation from riemann/docs directory
+# Research notes, analysis, and theoretical developments
+
+- id: DOC-2026-05-29-Sato-Tate
+  name: "Sato-Tate Moment Artifact Analysis"
+  type: documentation
+  category: analysis
+  subcategory: sato-tate
+  date: "2026-05-29"
+  description: |
+    Investigation of artifact in Sato-Tate moment calculations.
+    Analysis of moment convergence and statistical properties.
+  status: analysis
+  tags:
+    - sato-tate
+    - moments
+    - artifact
+    - statistical-analysis
+  file: "docs/2026-05-29-sato-tate-moment-artifact.md"
+
+- id: DOC-2026-05-30-Project-Paper
+  name: "Comprehensive Project Paper"
+  type: documentation
+  category: documentation
+  subcategory: project-overview
+  date: "2026-05-30"
+  description: |
+    Comprehensive overview of the Riemann Hypothesis research project.
+    Includes background, methodology, results, and future directions.
+  status: draft
+  tags:
+    - project
+    - comprehensive
+    - overview
+  file: "docs/2026-05-30-comprehensive-project-paper.md"
+
+- id: DOC-2026-06-18-Lean-Cayley
+  name: "Lean Formalization of Cayley Graphs"
+  type: documentation
+  category: formalization
+  subcategory: lean-proofs
+  date: "2026-06-18"
+  description: |
+    Formalization of SL(2,F_p) Cayley graphs in Lean 4.
+    Includes group definitions, generators, adjacency, and basic properties.
+  status: formalized
+  tags:
+    - lean
+    - cayley-graphs
+    - formalization
+  file: "docs/2026-06-18-lean-cayley-graphs-formalization.md"
+
+- id: DOC-Dimensional-Data
+  name: "Dimensional Data Collection Strategy"
+  type: documentation
+  category: data
+  subcategory: data-collection
+  description: |
+    Strategy for collecting multi-dimensional data from modular forms.
+    Focus on Hecke eigenvalues, Fourier coefficients, and Sato-Tate moments.
+  status: defined
+  tags:
+    - data-collection
+    - multi-dimensional
+    - modular-forms
+  file: "docs/dimensional_data_collection_strategy.md"
+
+- id: DOC-2026-06-25-Dimension-Split
+  name: "The Dimension Split in L-Function Zero Statistics"
+  type: documentation
+  category: analysis
+  subcategory: l-functions
+  date: "2026-06-25"
+  description: |
+    Analysis of dimension splitting phenomenon in L-function zero statistics.
+    Connection to spectral properties and random matrix theory.
+  status: documented
+  tags:
+    - l-functions
+    - zero-statistics
+    - dimension-split
+    - random-matrix-theory
+  file: "docs/2026-06-25-the-dimension-split-in-l-function-zero-statistics.md"

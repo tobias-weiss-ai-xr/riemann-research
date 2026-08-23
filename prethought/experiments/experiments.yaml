@@ -1,0 +1,123 @@
+# Experiments from riemann/experiments directory
+# GNN, ML, spectral analysis experiments
+
+- id: EX-CM-Forms-Analysis
+  name: "Complex Multiplication Forms Analysis"
+  type: experiment
+  category: machine-learning
+  subcategory: cm-detection
+  description: |
+    Application of ML techniques to detect CM in modular forms using LMFDB data.
+    Dataset: 53,779 weight 2 newforms. Features: Fourier coefficients for primes up to 97,
+    11 Sato-Tate moments. Model: Gradient Boosting Machines.
+  results:
+    - metric: F1-Score
+      value: 0.900
+    - metric: Precision
+      value: 0.973
+    - metric: Recall
+      value: 0.837
+    - metric: Accuracy
+      value: 0.999
+  findings:
+    - "CM forms represent only 0.40% of dataset (213/53,779) - challenging class imbalance"
+    - "M₄/M₂ ratio is most discriminative feature (importance 0.157)"
+    - "Trace coefficients at p=23, 41, 7 contribute significantly"
+    - "CM is learnable from small-dimensional feature sets without feature selection"
+  status: completed
+  date: "2026-06"
+  tags:
+    - cm-detection
+    - gbm
+    - lmfdb
+    - class-imbalance
+  references:
+    - file: "experiments/CM_FORMS_ANALYSIS.md"
+
+- id: EX-Deep-GUE-Outlier
+  name: "Deep GUE Outlier Analysis"
+  type: experiment
+  category: machine-learning
+  subcategory: outlier-detection
+  description: |
+    Deep learning-based outlier detection in Gaussian Unitary Ensemble (GUE) statistics.
+    Analysis of spectral spacing distributions and their deviations.
+  status: analysis
+  tags:
+    - deep-learning
+    - gue
+    - outlier-detection
+    - random-matrix-theory
+  references:
+    - file: "experiments/DEEP_GUE_OUTLIER_ANALYSIS.md"
+
+- id: EX-13-Ensemble
+  name: "Experiment 13: Ensemble Methods"
+  type: experiment
+  category: machine-learning
+  subcategory: ensemble
+  description: |
+    Exploration of ensemble methods for spectral gap prediction.
+    Spherical harmonics used as approximation space.
+  status: completed
+  tags:
+    - ensemble
+    - spherical-harmonics
+    - spectral-gap
+  references:
+    - file: "experiments/EXPERIMENT_13_SPRINT_3.md"
+    - file: "experiments/EXPERIMENT_13_SPRINT_4.md"
+
+- id: EX-14-Spectral-Zeta
+  name: "Experiment 14: Spectral Zeta Function"
+  type: experiment
+  category: spectral-theory
+  subcategory: zeta-functions
+  description: |
+    Design and implementation of spectral zeta function experiments.
+    Tests of Friedli constant and spectral zeta functional equation ratio.
+  design: "ChebConv GNN on full graphs targeting spectral gap of Cayley graphs"
+  capacity: "100M+ parameters on n=2500 nodes"
+  status: design-phase
+  tags:
+    - spectral-zeta
+    - friedli-constant
+    - chebconv
+    - gnn
+  references:
+    - file: "experiments/exp14_spectral_zeta_design.md"
+    - file: "experiments/exp14_spectral_zeta_REPORT.md"
+
+- id: EX-15-Brody-Fit
+  name: "Experiment 15: Brody Distribution Fit"
+  type: experiment
+  category: random-matrix-theory
+  subcategory: statistical-analysis
+  description: |
+    Fitting spectral spacing distributions to Brody distribution.
+    Testing RH-related predictions about eigenvalue spacing.
+  status: reported
+  tags:
+    - brody-distribution
+    - spacing
+    - eigenvalues
+    - rh-testing
+  references:
+    - file: "experiments/exp15_brody_fit_REPORT.md"
+
+- id: EX-Spectral-Zeta-Design
+  name: "Spectral Zeta Function Design"
+  type: experiment
+  category: spectral-theory
+  subcategory: zeta-functions
+  description: |
+    Theoretical design for spectral zeta function experiments.
+    Connection between transfer operator spectral radius and RH.
+  capacity: "GPU memory at 60% with 100M+ parameters on n=2500"
+  status: specs-defined
+  tags:
+    - design
+    - spectral-zeta
+    - transfer-operator
+  references:
+    - file: "experiments/exp14_spectral_zeta_design.md"
