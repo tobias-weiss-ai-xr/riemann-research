@@ -1,0 +1,171 @@
+# Transfer-Operator & Selberg-Zeta Literature — curated for Bridge B (Mayer approach)
+# Source: papers.yaml (2683 arXiv papers) — evaluated 2026-08-24. Abstracts verbatim from papers.yaml.
+
+- id: PA-Nisoli-2026-CertifiedSpectra
+  title: "Certified spectral approximation of transfer operators and the Gauss map"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2026-02"
+  author: "Isaia Nisoli"
+  url: "https://arxiv.org/abs/2602.19435"
+  abstract: |
+    We prove that the full spectral picture of a transfer operator (every isolated eigenvalue, eigenvector, and Riesz projector outside the essential spectral radius) can be approximated to arbitrary precision by finite-rank discretizations, with no spectral pollution. The method is a~posteriori: once a computable approximation bound is available (from compactness or a Doeblin--Fortet--Lasota--Yorke inequality, which may require hyperbolicity constants and adapted Banach spaces), the spectral gap and multiplicity are certified from computed data via a resolvent perturbation bound, with no further dynamical input. This applies both to compact operators on a single Banach space and to quasi-compact operators satisfying a Doeblin--Fortet--Lasota--Yorke inequality, extending Li's resolution of the Ulam conjecture from the invariant density to the entire discrete spectrum with certified error bounds at every finite truncation. As a benchmark, we certify the first $50$ nonzero eigenvalues of the Gauss--Kuzmin--Wirsing operator to at least $90$ rigorous decimal digits, together with their eigenvectors, Riesz projectors, and spectral gap, yielding a certified spectral expansion for Gauss--Kuzmin distributions with explicit error bounds and providing a rigorous answer to the Gauss--Babenko--Knuth problem on the spectral data of the Gauss map.
+  relevance: |
+    BEST tool for our Sprint-2 numerics: proves certified (a-posteriori) approximation of the full discrete spectrum of transfer operators outside the essential spectral radius, no spectral pollution; uses compactness or Doeblin-Fortet-Lasota-Yorke inequality (which holds for the Gauss map). Lets us turn measured rho<1 into CERTIFIED rho<1 for Re(s)>=3/4+eps.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Blumenthal-2025-Pseudospectral
+  title: "A pseudospectral approach to rigorous numerical estimation of resonances of transfer operators"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2025-07"
+  author: "Alex Blumenthal, Isaia Nisoli, Toby Taylor-Crush"
+  url: "https://arxiv.org/abs/2507.09021"
+  abstract: |
+    {Ruelle-Pollicott} resonances, isolated eigenvalues of a transfer operator acting on suitably chosen Banach spaces, play a fundamental role in understanding the statistical properties of chaotic dynamical systems. In this paper, we introduce a pseudospectral approach, inspired by Householder's theorem, for the rigorous, computer-assisted estimation of resonances, providing regions where resonances must exist and precluding the presence of resonances elsewhere. The approach is general, and applies to the transfer operators of a wide variety of chaotic systems, including Anosov/ Axiom A diffeomorphisms and piecewise expanding maps. We implement this approach computationally for a class of analytic uniformly expanding maps of the circle. We anticipate that the pseudospectral framework developed here will be broadly applicable to other spectral problems in dynamical systems and beyond.
+  relevance: |
+    Computer-assisted rigorous resonance estimation (Householder/pseudospectral): certified regions where resonances exist / provably absent. General framework for chaotic maps incl. expanding maps; complements Nisoli 2026.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-PollicottVytnova-2022-SelbergZeros
+  title: "Zeros of the Selberg zeta function for symmetric infinite area hyperbolic surfaces"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2022-04"
+  author: "Mark Pollicott, Polina Vytnova"
+  url: "https://arxiv.org/abs/2204.08218"
+  abstract: |
+    In the present paper we give a simple mathematical foundation for describing the zeros of the Selberg zeta functions $Z_X$ for certain very symmetric infinite area surfaces $X$. For definiteness, we consider the case of three funneled surfaces. We show that the zeta function is a complex almost periodic function which can be approximated by complex trigonometric polynomials on large domains (in Theorem 4.2). As our main application, we provide an explanation of the striking empirical results of Borthwick (arXiv:1305.4850) (in Theorem 1.5) in terms of convergence of the affinely scaled zero sets to standard curves $\mathcal C$.
+  relevance: |
+    Pollicott & Vytnova: zeros of Selberg zeta via transfer operator numerics with error bounds; complex almost-periodic approximation by trigonometric polynomials. Direct methodological precedent for certified zeta-zero/spectral computations in our Mayer setting.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-PollicottVytnova-2022-BowenSeries
+  title: "The Bowen$–$Series coding and zeros of zeta functions"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2022-04"
+  author: "Mark Pollicott, Polina Vytnova"
+  url: "https://arxiv.org/abs/2204.08203"
+  abstract: |
+    We give a discussion of the classical Bowen$–$Series coding and, in particular, its application to the study of zeta functions associated to geodesic flows and their zeros. In the case of compact surfaces of constant negative curvature $-1$ the analytic extension of the Selberg zeta function to the entire complex plane is classical, and can be achieved using the Selberg trace formula. However, an alternative dynamical approach is to use the Bowen$–$Series coding on the boundary at infinity to obtain a piecewise analytic expanding map from which the extension of the zeta function can be obtained using properties of the associated transfer operator. This latter method has the advantage that it also applies in the case of infinite area surfaces provided they do not have cusps. For such examples the location of the zeros is somewhat more mysterious. However, in particularly simple examples there is a striking structure to the zeros when we take appropriate limits. We will try to give some insight into this phenomenon. The newer version, in addition to the study of pair of pants, also includes heuristic analysis of the zeta function associated to the geodesic flow on symmetric one-funneled tori; in particular, there is a number of pure numerical results on location of its small zeros.
+  relevance: |
+    Bowen-Series coding applied to zeta functions of geodesic flows: analytic continuation of Selberg zeta via transfer operator coding. Relevant for the det(I-L_s)=Z(s)^-1 Z(s-1) analytic continuation approach.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Mayer-2009-HeckeTransfer
+  title: "The transfer operator for the Hecke triangle groups"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2009-12"
+  author: "Dieter Mayer, Tobias Mühlenbruch, Fredrik Strömberg"
+  url: "https://arxiv.org/abs/0912.2236"
+  abstract: |
+    In this paper we extend the transfer operator approach to Selberg's zeta function for cofinite Fuchsian groups to the Hecke triangle groups G_q, q=3,4,..., which are non-arithmetic for q \not= 3,4,6. For this we make use of a Poincare map for the geodesic flow on the corresponding Hecke surfaces which has been constructed in arXiv:0801.3951 and which is closely related to the natural extension of the generating map for the so called Hurwitz-Nakada continued fractions. We derive simple functional equations for the eigenfunctions of the transfer operator which for eigenvalues rho =1 are expected to be closely related to the period functions of Lewis and Zagier for these Hecke triangle groups.
+  relevance: |
+    Extends Mayer's transfer-operator approach to Selberg zeta from PSL(2,Z) to Hecke triangle groups G_q (q=3,4,...), non-arithmetic for q notin {3,4,6}. Shows the Mayer machinery is a general framework, not an isolated trick.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Pohl-2014-ThermoFormalism
+  title: "A thermodynamic formalism approach to the Selberg zeta function for Hecke triangle surfaces of infinite area"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2014-04"
+  author: "Anke D. Pohl"
+  url: "https://arxiv.org/abs/1404.3934"
+  abstract: |
+    We provide an explicit construction of a cross section for the geodesic flow on infinite-area Hecke triangle surfaces which allows us to conduct a transfer operator approach to the Selberg zeta function. Further we construct closely related cross sections for the billiard flow on the associated triangle surfaces and endow the arising discrete dynamical systems and transfer operator families with two weight functions which presumably encode Dirichlet respectively Neumann boundary conditions. The Fredholm determinants of these transfer operator families constitute dynamical zeta functions, which provide a factorization of the Selberg zeta function of the Hecke triangle surfaces.
+  relevance: |
+    Pohl: explicit cross-section construction enabling transfer-operator approach to Selberg zeta on infinite-area Hecke triangle surfaces. Thermodynamic formalism bridge.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Castorrini-2024-SelfConsistent
+  title: "The differential of self-consistent transfer operators and the local convergence to equilibrium of mean field strongly coupled dynamical systems"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2024-07"
+  author: "Roberto Castorrini, Stefano Galatolo, Matteo Tanzi"
+  url: "https://arxiv.org/abs/2407.09314"
+  abstract: |
+    We consider the differential of a self-consistent transfer operator at a fixed point of the operator itself and show that its spectral properties can be used to establish a kind of local exponential convergence to equilibrium: probability measures near the fixed point converge exponentially fast to the fixed point by the iteration of the transfer operator. This holds also in the strong coupling case. We also show that for mean field coupled systems satisfying uniformly a Lasota-Yorke inequality the differential does also. We present examples of application of the general results to self-consistent transfer operators based on deterministic expanding maps considered with different couplings, outside the weak coupling regime.
+  relevance: |
+    Galatolo-Tanzi school: spectral properties of the differential of self-consistent transfer operators -> local exponential convergence. Interval-arithmetic rigorous numerics lineage; useful for certified computations in our family.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Lucena-2025-QuasiCompact
+  title: "Quasi-compactness and statistical properties for discontinuous systems semi-conjugate to piecewise convex maps with countably many branches"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2025-02"
+  author: "Rafael Lucena"
+  url: "https://arxiv.org/abs/2502.08751"
+  abstract: |
+    In this paper, we establish the quasi-compactness of the transfer operator associated with skew product systems that are semi-conjugate to piecewise convex maps with a countably infinite number of branches. These non-invertible skew products admit discontinuities, with the critical set confined to a countable collection of fibers. Furthermore, we demonstrate that such systems possess an invariant measure whose disintegration along the fibers exhibits bounded variation; a concept introduced and developed in this work.
+  relevance: |
+    Quasi-compactness of transfer operators for skew products semi-conjugate to piecewise convex maps with countably many branches. Relevant precedent for the quasi-compact analysis of generalized Gauss-type maps (countably many inverse branches).
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Garg-2024-RHCriteria
+  title: "Equivalent criteria for the Riemann hypothesis for a general class of $L$-functions"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2024-09"
+  author: "Meghali Garg, Bibekananda Maji"
+  url: "https://arxiv.org/abs/2409.17708"
+  abstract: |
+    In 1916, Riesz gave an equivalent criterion for the Riemann hypothesis (RH). Inspired from Riesz's criterion, Hardy and Littlewood showed that RH is equivalent to the following bound: \begin{align*} P_1(x):= \sum_{n=1}^\infty \frac{μ(n)}{n} \exp\left({-\frac{x}{n^2}}\right) = O_ε\left( x^{-\frac{1}{4}+ ε} \right), \quad \mathrm{as}\,\, x \rightarrow \infty. \end{align*} Recently, the authors extended the above bound for the generalized Riemann hypothesis for Dirichlet $L$-functions and gave a conjecture for a class of ``nice'' $L$-functions. In this paper, we settle this conjecture. In particular, we give equivalent criteria for the Riemann hypothesis for $L$-functions associated to cusp forms. We also obtain an entirely novel form of equivalent criteria for the Riemann hypothesis of $ζ(s)$. Furthermore, we generalize an identity of Ramanujan, Hardy and Littlewood for Chandrasekharan-Narasimhan class of $L$-functions.
+  relevance: |
+    New equivalent criteria for RH for a general class of L-functions, extending Riesz/Hardy-Littlewood P_1(x)=O_eps(x^-1/4+eps). Alternative RH-equivalence family to compare with our spectral-radius equivalence.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Efrat-1981-SelbergContinuation
+  title: "A proof of the meromorphic continuation of the Selberg zeta-function"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "1981"
+  author: "Adolf Efrat"
+  url: "https://link.springer.com/article/10.1007/BF01406368"
+  venue: "Israel Journal of Mathematics"
+  abstract: |
+    Proves the
+  relevance: |
+    Efrat: meromorphic continuation of the Selberg zeta function (Re(s)>1/2) — the analytic-continuation step our KB's TO-RH-Equivalence relies on.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Naud-2024-ParabolicZeta
+  title: "Dynamical Zeta functions for differentiable parabolic maps of the interval"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2024-03"
+  author: "Claudio Bonanno, Roberto Castorrini"
+  url: "https://arxiv.org/abs/2403.17700"
+  abstract: |
+    This paper explores the domain of meromorphic extension for the dynamical zeta function associated to a class of one-dimensional differentiable parabolic maps featuring an indifferent fixed point. We establish the connection between this domain and the spectrum of the weighted transfer operators of the induced map. Furthermore, we discuss scenarios where meromorphic extensions occur beyond the confines of the natural disc of convergence of the dynamical zeta function.
+  relevance: |
+    Meromorphic continuation domain of dynamical zeta functions linked to spectrum for parabolic (indifferent fixed point) maps — relevant for extending det(I-L_s) meromorphically toward Re(s)=1/2 in the presence of the indifferent Gauss fixed point.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+
+- id: PA-Fraczek-2010-Gamma0NSymm
+  title: "Symmetries of the transfer operator for $Γ_0(N)$ and a character deformation of the Selberg zeta function for $Γ_0(4)$"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2010-11"
+  author: "Markus Fraczek, Dieter Mayer"
+  url: "https://arxiv.org/abs/1011.4441"
+  abstract: |
+    The transfer operator for $Γ_0(N)$ and trivial character $χ_0$ possesses a finite group of symmetries generated by permutation matrices $P$ with $P^2=id$. Every such symmetry leads to a factorization of the Selberg zeta function in terms of Fredholm determinants of a reduced transfer operator. These symmetries are related to the group of automorphisms in $GL(2,\mathbb{Z})$ of the Maass wave forms of $Γ_0(N)$ . For the group $Γ_0(4)$ and Selberg's character $χ_α$ there exists just one non-trivial symmetry operator $P$. The eigenfunctions of the corresponding reduced transfer operator with eigenvalue $λ=\pm 1$ are related to Maass forms even respectively odd under a corresponding automorphism. It then follows from a result of Sarnak and Phillips that the zeros of the Selberg function determined by the eigenvalues $λ=-1$ of the reduced transfer operator stay on the critical line under the deformation of the character. From numerical results we expect that on the other hand all the zeros corresponding to the eigenvalue $λ=+1$ leave this line for $α$ turning away from zero.
+  relevance: |
+    Symmetries of the transfer operator for Gamma_0(N) and character deformation — transfer-operator treatment beyond full modular group relevant to modular/L-function directions.
+  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]

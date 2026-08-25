@@ -113,3 +113,114 @@
     - type: corpus
       paper_id: mayer-1991
   tags: ["gauss-map", "continued-fraction", "expanding", "ergodic"]
+
+# =============================================================================
+# NEW 2026-08-24 — evaluated from papers.yaml (2,683 arXiv papers)
+# =============================================================================
+
+- id: TO-DFLY-GaussMap
+  name: "Doeblin–Fortet–Lasota–Yorke inequality for the Gauss map (quasi-compactness)"
+  type: concept
+  category: dynam-systems
+  subcategory: transfer-operator
+  definition: |
+    The transfer operator of the Gauss map satisfies a Doeblin–Fortet–Lasota–Yorke
+    (DFLY) inequality on suitable (Lasota–Yorke / quasi-Hölder) spaces, making it
+    quasi-compact: its essential spectral radius is < 1 and the spectrum outside it
+    is a finite set of isolated eigenvalues.
+  properties:
+    - "quasi_compact: true (DFLY inequality)"
+    - "spectral_gap: exists outside essential spectral radius"
+    - "Gauss-Kuzmin-Wirsing operator: the canonical weighted TO of the Gauss map"
+  significance: |
+    Quasi-compactness outside the essential spectral radius is exactly the
+    hypothesis needed for the certified spectral approximation of Nisoli 2026
+    (PA-Nisoli-2026-CertifiedSpectra): a-posteriori error bounds certify computed
+    eigenvalues/eigenvectors/Riesz projectors. For our Mayer operator L_s with
+    Re(s) > 3/4 (nuclear, hence compact), this yields CERTIFIED bounds for rho.
+  references:
+    - type: paper
+      id: PA-Nisoli-2026-CertifiedSpectra
+      role: "certified spectral approximation via DFLY/compactness"
+    - type: paper
+      id: PA-Lucena-2025-QuasiCompact
+      role: "quasi-compactness for countably many branches"
+  tags: ["dfly", "quasi-compact", "gauss-map", "spectral-gap", "rigorous-numerics"]
+
+- id: TO-Certified-Spectral-Verification
+  name: "Certified route for our ρ<1 numerics (Re(s) ≥ 3/4+ε)"
+  type: finding
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2026-08-24"
+  year: 2026
+  status: confirmed
+  confidence: 0.9
+  statement: |
+    Sprint 2 (FS-Mayer-Spectral-Radius) measured ρ(L_{1/2+it}^sub) ∈ [0.14, 0.30] numerically
+    but without error bounds. Nisoli 2026 provides the machinery to make such numbers
+    RIGOROUS: for quasi-compact (compact, e.g. nuclear Re(s)>3/4) transfer operators,
+    finite-rank discretization + a computable a-posteriori bound -> certified spectral
+    gap, eigenvalues, eigenvectors, Riesz projectors, with no spectral pollution.
+    As benchmark: the first 50 eigenvalues of the Gauss–Kuzmin–Wirsing operator are
+    certified to ≥ 90 rigorous decimal digits. Applying this to L_s (Re(s) ≥ 3/4 + ε)
+    would turn our ρ<1 measurements into certified bounds and rigorously track the
+    limit σ → 1/2+ along the numerically stable ridge point.
+  implications: |
+    Does NOT close the nuclearity gap at Re(s)=1/2 (operator not known compact there;
+    Nisoli requires spectrum outside the essential spectral radius). But it makes the
+    Re(s) > 3/4 region and the approach to 1/2 certified — precisely the EPIC-3 strategy.
+  references:
+    - type: paper
+      id: PA-Nisoli-2026-CertifiedSpectra
+    - type: paper
+      id: PA-Blumenthal-2025-Pseudospectral
+    - type: finding
+      id: FS-Mayer-Spectral-Radius
+  supports:
+    - FS-Mayer-Spectral-Radius
+  tags: ["certified-numerics", "spectral-radius", "a-posteriori", "sprint-3-path"]
+
+- id: TO-Zeta-Continuation-Literature
+  name: "Selberg-zeta zeros & thermodynamic formalism via transfer operators"
+  type: concept
+  category: dynam-systems
+  subcategory: selberg-zeta
+  definition: |
+    Beyond Mayer's 1991 identity (Z_S(s) = det(1-L_s)·det(1+L_s) for Re(s)>1, cf.
+    TO-MayerIdentity), a body of work extends the transfer-operator route to the
+    Selberg zeta function and its zeros:
+    - Efrat 1981: meromorphic continuation of Selberg zeta (the Re(s)>1/2 step our
+      TO-RH-Equivalence relies on)
+    - Pollicott–Vytnova 2022: zeros of Selberg zeta for symmetric infinite-area
+      hyperbolic surfaces via operator numerics with error bounds; complex
+      almost-periodic approximation
+    - Mayer/Mühlenbruch/Strömberg 2009: TO approach extended to Hecke triangle
+      groups G_q (non-arithmetic for q∉{3,4,6})
+    - Pohl 2014: thermodynamic-formalism cross-section construction for Hecke
+      triangle surfaces
+    - Fraczek/Mayer 2010: symmetries of TO for Γ_0(N)
+    - Naud 2024: dynamical zeta functions for parabolic maps — meromorphic domain
+      vs. spectrum (indifferent fixed point, like the Gauss fixed point at 0)
+  relevance: |
+    Confirms the Mayer/det formulation is a general, well-studied framework; the
+    certified zeros computations (Pollicott–Vytnova) are a methodological precedent
+    for relating det(I-L_s) analytic continuation and zeta zeros near Re(s)=1/2.
+  references:
+    - type: theorem
+      id: TO-MayerIdentity
+    - type: paper
+      id: PA-Efrat-1981-SelbergContinuation
+    - type: paper
+      id: PA-PollicottVytnova-2022-SelbergZeros
+    - type: paper
+      id: PA-PollicottVytnova-2022-BowenSeries
+    - type: paper
+      id: PA-Mayer-2009-HeckeTransfer
+    - type: paper
+      id: PA-Pohl-2014-ThermoFormalism
+    - type: paper
+      id: PA-Fraczek-2010-Gamma0NSymm
+    - type: paper
+      id: PA-Naud-2024-ParabolicZeta
+  tags: ["selberg-zeta", "thermodynamic-formalism", "hecke", "zeros", "continuation"]

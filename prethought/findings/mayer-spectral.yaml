@@ -47,6 +47,15 @@
     - "scripts/mayer_fourier_spectral.py"
   data:
     - "data/spectral-radius/*.json"
+  references:
+    - type: paper
+      id: PA-Nisoli-2026-CertifiedSpectra
+      role: "certified bounds for the measured rho (future extension)"
+    - type: paper
+      id: PA-Blumenthal-2025-Pseudospectral
+      role: "computer-assisted rigorous resonance estimation"
+    - type: concept
+      id: TO-DFLY-GaussMap
   sprint: "SPRINT-2"
   epic: "EPIC-2"
   implications: |
