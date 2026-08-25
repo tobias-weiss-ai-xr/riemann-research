@@ -137,10 +137,20 @@
   url: "https://link.springer.com/article/10.1007/BF01406368"
   venue: "Israel Journal of Mathematics"
   abstract: |
-    Proves the
+    A proof of the meromorphic continuation of the Selberg zeta function
+    (the Re(s) > 1/2 analytic-continuation step behind the Mayer identity route).
+    Source detail borrowed from the Mayer/Efrat literature; exact text unverified.
   relevance: |
     Efrat: meromorphic continuation of the Selberg zeta function (Re(s)>1/2) — the analytic-continuation step our KB's TO-RH-Equivalence relies on.
-  tags: ["transfer-operator", "selberg-zeta", "rigorous-numerics"]
+  status: "needs-verification"
+  notes: |
+    INTEGRITY: the 2026-08-25 corpus cleanup removed the corresponding seed from
+    papers.yaml because the DOI 10.1007/BF01406368 resolves to an unrelated paper.
+    The mathematical statement is quoted from the Mayer/Efrat literature, but the
+    external link is NOT verified. TO-RH-Equivalence depends on this continuation
+    step — treat as provisional until a verified source (or an alternative route
+    via Pollicott–Vytnova / Mayer) is confirmed.
+  tags: ["selberg-zeta", "meromorphic", "continuation"]
 
 - id: PA-Naud-2024-ParabolicZeta
   title: "Dynamical Zeta functions for differentiable parabolic maps of the interval"

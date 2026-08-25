@@ -77,7 +77,13 @@
     → RH is equivalent to: no zeros of ζ(2s-1) with Re(2s-1) > 0 and Re(s) > 1/2
     → equivalent to: no eigenvalues of L_s with |λ| ≥ 1 for Re(s) > 1/2
   verification_status: "Semi-formalized in lean/Riemann/TransferOperator.lean"
-  confidence: "high (Mayer 1991 + Efrat 1981 are solid)"
+  confidence: "high for Mayer 1991 identity; NOTE: Efrat 1981 source link unverified (see PA-Efrat-1981-SelbergContinuation) — the Re(s)>1/2 continuation step is provisional"
+  caveat: |
+    Integrity (2026-08-25): the Efrat 1981 reference currently carries status
+    needs-verification (DOI resolves to unrelated paper; seed removed from corpus).
+    The equivalence chain Mayer-identity → Efrat-continuation → RH-equivalence is
+    therefore NOT fully verified upstream. Independent route: Pollicott–Vytnova 2022
+    certified Selberg-zeta computations + Nisoli 2026 certified spectral approximation.
   references:
     - type: paper
       id: mayer-1991
