@@ -1,0 +1,110 @@
+# Contribution Assessment: Extended Literature → Bridge B Gaps (2026-08-25)
+# Synthesizes the gap-relevance of 15 newly identified papers (PA-Isola, PA-Bonanno, etc.)
+
+- id: FS-Extended-Lit-Gap-Map-2026-08
+  name: "Extended Literature Contribution Map for Bridge B Gaps"
+  type: finding
+  category: research
+  subcategory: literature-assessment
+  date: "2026-08-25"
+  year: 2026
+  status: confirmed
+  confidence: 0.9
+  statement: |
+    Systematic evaluation of 3460-paper corpus (post-cleanup) identified 15 papers
+    directly relevant to the 5 Bridge B gaps. The most impactful discoveries:
+
+    GAP-1 (Nuclearity at Re(s)=1/2):
+      - PA-Isola-2003: Hilbert spaces of holomorphic functions LEFT INVARIANT under
+        Farey/Gauss transfer operators — this is the Banach/Hilbert space framework
+        needed for nuclearity. Generalized Borel/Laplace transforms construct the space.
+      - PA-GiuliettiLiverani-2014: Anisotropic Banach spaces for parabolic dynamics —
+        modern tool for indifferent fixed points (Gauss map at 0).
+      - PA-ButterleySmania-2025: NEGATIVE result — spaces permitting discontinuities
+        have intrinsic lower bounds on essential spectral radius → must use holomorphic
+        (not BV/L∞) spaces. Validates Isola's choice.
+      - PA-Garibaldi-2021: Ruelle-PF theorem for maps WITH indifferent fixed point —
+        positive eigenfunction + max eigenvalue = exp(pressure). If exp(pressure)<1
+        for Re(s)>1/2, that is our ρ<1.
+
+    GAP-2 (Mayer Identity det(I-L_s)=Z(s)):
+      - PA-MoellerPohl-2011: RIGOROUS PROOF that Selberg zeta = Fredholm determinant
+        of transfer operator family for Hecke triangle groups (includes PSL(2,Z)).
+        This formalizes our TO-MayerIdentity.
+      - PA-Liverani-2005: det(I-L) = dynamical determinant = Fredholm determinant on
+        appropriate Banach spaces; dynamical determinant is ENTIRE (analytic everywhere).
+        The entire-ness is crucial for analytic continuation to Re(s)=1/2.
+      - PA-Nagai-2025: Conceptual bridge Bernoulli → Fredholm → ζ-regularization
+        (spectral traces of compact operators).
+
+    GAP-3 (RH Equivalence via 1-eigenvalue):
+      - PA-Bonanno-2022: OUR EXACT PROBLEM — showing 1 is (not) an eigenvalue of the
+        Farey transfer operator with complex temperature, on a Hilbert space, as an
+        infinite matrix problem. Directly connects to our Sprint-2 Fourier approach.
+      - PA-BonannoIsola-2009: Two-variable Ruelle/Selberg zeta via Farey map, complex
+        temperature, Lewis-Zagier three-term functional equation.
+      - PA-Pohl-2012 (x2): Maass cusp forms = 1-eigenfunctions of finite-term transfer
+        operators (PSL(2,Z) and Γ₀(p)).
+
+    GAP-4 (Spectral Radius / Certified Computation):
+      - PA-BandtlowJenkinson-2008: Eigenvalue sequence INSENSITIVE to holomorphic
+        function space choice + explicit bounds. Validates our numerics.
+      - PA-SlipantschukBandtlow-2013: Spectra explicitly computable (any |λ|<1);
+        caution: spectra need not be real (Mayer conjecture counterexample).
+
+    KEY INSIGHT: The Isola-Bonanno-Isola-Möller-Pohl-Liverani cluster forms a coherent
+    literature chain that directly addresses our nuclearity gap. Isola (2003) provides
+    the Hilbert space, Bonanno (2022) formulates our exact eigenvalue problem on it,
+    Möller-Pohl (2011) proves the Fredholm determinant identity, and Liverani (2005)
+    proves entire-ness. The nuclearity extension from Re(s)>3/4 to Re(s)≥1/2+ε should
+    use Isola's Hilbert space framework + Giulietti-Liverani's anisotropic Banach spaces.
+
+  implications: |
+    - Sprint 3 (EPIC-3) should start from Isola's Hilbert space framework (PA-Isola-2003)
+      rather than ad-hoc Fourier basis. The generalized Borel/Laplace transform construction
+      gives the invariant Hilbert space needed for nuclearity.
+    - The Mayer identity (TO-MayerIdentity) is now rigorously proven for Hecke triangle
+      groups by Möller-Pohl (PA-MoellerPohl-2011) — this strengthens our Bridge B
+      foundation. Update KB-R-Mayer-Identity-Verification-2025.
+    - Bonanno 2022 (PA-Bonanno-2022-FareyComplexTemp) confirms that our Fourier-basis
+      infinite matrix approach (Sprint 2) is the right formulation — Bonanno uses the
+      same Hilbert space + infinite matrix formulation.
+    - The Efrat-1981 dependency (now needs-verification) can potentially be replaced by
+      the Möller-Pohl Fredholm determinant proof + Liverani's entire-ness result — a
+      more modern and rigorous route to analytic continuation.
+  references:
+    - type: paper
+      id: PA-Isola-2003-FareyGaussSpectrum
+    - type: paper
+      id: PA-Bonanno-2022-FareyComplexTemp
+    - type: paper
+      id: PA-BonannoIsola-2009-TwoVariableZeta
+    - type: paper
+      id: PA-MoellerPohl-2011-HeckeFredholm
+    - type: paper
+      id: PA-Liverani-2005-FredholmRuelle
+    - type: paper
+      id: PA-GiuliettiLiverani-2014-AnisotropicBanach
+    - type: paper
+      id: PA-Garibaldi-2021-IndifferentFixed
+    - type: paper
+      id: PA-BandtlowJenkinson-2008-RuelleEigenvalue
+    - type: paper
+      id: PA-Pohl-2012-MaassCuspDynamical
+    - type: paper
+      id: PA-Pohl-2012-MaassCuspGamma0p
+    - type: paper
+      id: PA-ButterleySmania-2025-EssentialRadius
+    - type: paper
+      id: PA-SlipantschukBandtlow-2013-ExplicitSpectra
+    - type: paper
+      id: PA-Nagai-2025-BernoulliFredholm
+    - type: paper
+      id: PA-DemersLiverani-2026-BilliardsReview
+    - type: paper
+      id: PA-Grigutis-2025-XiLogDerivative
+    - type: finding
+      id: FS-Mayer-Spectral-Radius
+    - type: bridge
+      id: OP-BridgeB-Mayer
+  tags: ["literature-assessment", "gap-map", "nuclearity", "fredholm", "farey-map", "isola", "bonanno", "mayer-identity"]

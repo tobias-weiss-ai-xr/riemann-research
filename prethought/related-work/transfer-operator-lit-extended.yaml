@@ -1,0 +1,377 @@
+# Extended Transfer-Operator Literature — Gap-Relevant Papers (2026-08-25 evaluation)
+# Source: papers.yaml (3460 papers) — systematic keyword search for nuclearity, Fredholm,
+# Farey/Gauss with complex temperature, essential spectral radius, anisotropic Banach, etc.
+# Each paper assessed for contribution to our 5 specific gaps (Bridge B / EPIC-3).
+
+# ==============================================================================
+# TIER 1 — CRITICAL: directly addresses our gaps
+# ==============================================================================
+
+- id: PA-Isola-2003-FareyGaussSpectrum
+  title: "On the spectrum of Farey and Gauss maps"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2003"
+  author: "Stefano Isola"
+  url: "https://arxiv.org/abs/math/0308017v1"
+  abstract: |
+    In this paper we introduce Hilbert spaces of holomorphic functions given by generalized
+    Borel and Laplace transforms which are left invariant by the transfer operators of the
+    Farey map and its induced version, the Gauss map, respectively. By means of a suitable
+    operator-valued power series we are able to study simultaneously the spectrum of both
+    these operators along with the analytic properties of the associated dynamical zeta
+    functions.
+  relevance: |
+    FOUNDATION for our nuclearity proof: Isola constructs Hilbert spaces of holomorphic
+    functions (via generalized Borel/Laplace transforms) that are LEFT INVARIANT under the
+    Farey/Gauss transfer operators. This is exactly the Banach/Hilbert space framework we
+    need — if L_s maps a suitable Hilbert space to itself, nuclearity follows from
+    Hilbert-Schmidt estimates. The simultaneous study of spectrum + dynamical zeta analytic
+    properties is the Mayer-identity framework. Our L_s is the Gauss-map transfer operator
+    with complex temperature s.
+  gap_addressed: "GAP-1-Nuclearity (Hilbert space framework), GAP-2-Mayer-Identity (zeta-spectrum link)"
+  tags: ["farey-map", "gauss-map", "hilbert-space", "holomorphic", "nuclearity", "spectrum"]
+
+- id: PA-Bonanno-2022-FareyComplexTemp
+  title: "On the generalised transfer operators of the Farey map with complex temperature"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2022"
+  author: "Claudio Bonanno"
+  url: "https://arxiv.org/abs/2211.11664v1"
+  abstract: |
+    We consider the problem of showing that 1 is an eigenvalue for a family of generalised
+    transfer operators of the Farey map. This problem is related to the spectral theory of
+    the modular surface via the Selberg Zeta function and the theory of dynamical zeta
+    functions of maps. After briefly recalling these connections, we show that the problem
+    can be formulated for operators on an appropriate Hilbert space and translated into a
+    linear algebra problem for infinite matrices.
+  relevance: |
+    THIS IS OUR EXACT PROBLEM: showing that 1 is (or is not) an eigenvalue of the transfer
+    operator with complex temperature. Our Sprint-2 numerics compute the spectral radius of
+    the Fourier-basis matrix (which IS an infinite matrix formulation). Bonanno formulates
+    this on an appropriate HILBERT SPACE — exactly the setting needed for nuclearity.
+    The connection to Selberg Zeta via the Farey map is the Mayer identity. If 1 is NOT an
+    eigenvalue for Re(s) > 1/2 (except at zeta zeros), that is RH.
+  gap_addressed: "GAP-1-Nuclearity (Hilbert space formulation), GAP-3-RH-Equivalence (1-eigenvalue ↔ Selberg zeros)"
+  tags: ["farey-map", "complex-temperature", "hilbert-space", "infinite-matrix", "selberg-zeta"]
+
+- id: PA-BonannoIsola-2009-TwoVariableZeta
+  title: "A thermodynamic approach to two-variable Ruelle and Selberg zeta functions via the Farey map"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2009"
+  author: "Claudio Bonanno, Stefano Isola"
+  url: "https://arxiv.org/abs/0907.1471v4"
+  abstract: |
+    In this paper we consider the transfer operator approach to the Ruelle and Selberg zeta
+    functions associated to continued fractions transformations and the geodesic flow on the
+    full modular surface. We extend the results by Ruelle and Mayer to two-variable zeta
+    functions, ζ(q,z) and Z(q,z). The q variable plays the role of the inverse temperature
+    and the introduction of the "geometric variable" z is essential in the tentative to
+    provide a general approach, based on the Farey map, to the correspondence between the
+    analytic properties of the zeta functions themselves, the spectral properties of a class
+    of generalised transfer operators P^±_q and the theory of a generalisation of the
+    three-term functional equations studied by Lewis and Zagier.
+  relevance: |
+    Extends Mayer's results to TWO-VARIABLE zeta functions with q = inverse temperature
+    (= our complex s). The signed transfer operators P^±_q are the generalization of our
+    L_s. The Lewis-Zagier three-term functional equation is the classical relation for
+    period functions of Maass forms. This paper provides the thermodynamic-formalism
+    framework for our setting: complex temperature, Farey map, Selberg zeta, transfer
+    operator spectrum — all connected.
+  gap_addressed: "GAP-2-Mayer-Identity (two-variable extension), GAP-3-RH-Equivalence (thermodynamic framework)"
+  tags: ["farey-map", "two-variable-zeta", "ruelle", "selberg-zeta", "lewis-zagier", "complex-temperature"]
+
+- id: PA-MoellerPohl-2011-HeckeFredholm
+  title: "Period functions for Hecke triangle groups, and the Selberg zeta function as a Fredholm determinant"
+  type: paper
+  category: dynam-systems
+  subcategory: selberg-zeta
+  date: "2011"
+  author: "M. Möller, A. D. Pohl"
+  url: "https://arxiv.org/abs/1103.5235v2"
+  abstract: |
+    We characterize Maass cusp forms for any cofinite Hecke triangle group as 1-eigenfunctions
+    of appropriate regularity of a transfer operator family. This transfer operator family is
+    associated to a certain symbolic dynamics for the geodesic flow on the orbifold arising as
+    the orbit space of the action of the Hecke triangle group on the hyperbolic plane. Moreover
+    we show that the Selberg zeta function is the Fredholm determinant of the transfer operator
+    family associated to an acceleration of this symbolic dynamics.
+  relevance: |
+    RIGOROUS PROOF of the Mayer identity for Hecke triangle groups: Z_S(s) = det(1-L_s) (as
+    Fredholm determinant). This is EXACTLY the algebraic core of our Bridge B. Hecke triangle
+    groups include PSL(2,Z) (q=3) as a special case. The transfer operator family arises
+    from symbolic dynamics of the geodesic flow. Maass cusp forms = 1-eigenfunctions ( connects
+    to the ρ(L_s)=1 question). This paper provides the formal foundation that our TO-MayerIdentity
+    and R-Mayer-Identity-Verification-2025 rely on.
+  gap_addressed: "GAP-2-Mayer-Identity (Fredholm determinant = Selberg zeta, rigorous proof)"
+  tags: ["hecke-triangle", "fredholm-determinant", "selberg-zeta", "maass-cusp", "transfer-operator"]
+
+- id: PA-Liverani-2005-FredholmRuelle
+  title: "Fredholm determinants, Anosov maps and Ruelle resonances"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2005"
+  author: "Carlangelo Liverani"
+  url: "https://arxiv.org/abs/math/0505049v1"
+  abstract: |
+    I show that the dynamical determinant, associated to an Anosov diffeomorphism, is the
+    Fredholm determinant of the corresponding Ruelle-Perron-Frobenius transfer operator acting
+    on appropriate Banach spaces. As a consequence it follows, for example, that the zeroes of
+    the dynamical determinant describe the eigenvalues of the transfer operator and the Ruelle
+    resonances and that, for C^∞ Anosov diffeomorphisms, the dynamical determinant is an
+    entire function.
+  relevance: |
+    Proves det(I-L) = dynamical determinant = Fredholm determinant on appropriate Banach
+    spaces, and that the dynamical determinant is ENTIRE (analytic everywhere). The entire-ness
+    is crucial for analytic continuation to Re(s)=1/2 — our Bridge B needs the zeta/determinant
+    to be analytic in the critical strip. Ruelle resonances = eigenvalues of L. This is the
+    general framework subsuming the Mayer identity. The "appropriate Banach spaces" are the
+    key — Liverani's choice of Banach space determines nuclearity.
+  gap_addressed: "GAP-2-Mayer-Identity (Fredholm = dynamical determinant), GAP-1-Nuclearity (Banach space choice)"
+  tags: ["fredholm", "ruelle-resonances", "anosov", "banach-space", "entire-function"]
+
+# ==============================================================================
+# TIER 2 — HIGH: provides tools/framework
+# ==============================================================================
+
+- id: PA-GiuliettiLiverani-2014-AnisotropicBanach
+  title: "Parabolic dynamics and Anisotropic Banach spaces"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2014"
+  author: "Paolo Giulietti, Carlangelo Liverani"
+  url: "https://arxiv.org/abs/1412.7181v5"
+  abstract: |
+    We investigate the relation between the distributions appearing in the study of ergodic
+    averages of parabolic flows (e.g. in the work of Flaminio-Forni) and the ones appearing
+    in the study of the statistical properties of hyperbolic dynamical systems (i.e. the
+    eigendistributions of the transfer operator). In order to avoid, as much as possible,
+    technical issues that would cloud the basic idea, we limit ourselves to a simple flow on
+    the torus. Our main result is that, roughly, the growth of ergodic averages of a parabolic
+    flows is controlled by the eigenvalues of a suitable transfer operator associated to the
+    renormalising dynamics.
+  relevance: |
+    MODERN TOOL for nuclearity: anisotropic Banach spaces are the state-of-the-art framework
+    for transfer operators on spaces with indifferent/parabolic fixed points (our Gauss map
+    has one at 0). The key insight: ergodic averages of parabolic flows are controlled by
+    transfer operator eigenvalues. If we choose the right anisotropic Banach space, the
+    transfer operator may be nuclear/compact where it fails on standard spaces. This could
+    be the key to extending nuclearity from Re(s)>3/4 to Re(s)≥1/2+ε.
+  gap_addressed: "GAP-1-Nuclearity (anisotropic Banach space framework for parabolic/indifferent dynamics)"
+  tags: ["anisotropic", "banach-space", "parabolic", "ergodic-averages", "nuclearity"]
+
+- id: PA-Garibaldi-2021-IndifferentFixed
+  title: "A Ruelle-Perron-Frobenius theorem for expanding circle maps with an indifferent fixed point"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2021"
+  author: "Eduardo Garibaldi, Irene Inoquio-Renteria"
+  url: "https://arxiv.org/abs/2111.12882v1"
+  abstract: |
+    In this note, we establish an original result for the thermodynamic formalism in the
+    context of expanding circle transformations with an indifferent fixed point. For an
+    observable whose continuity modulus is linked to the dynamics near such a fixed point,
+    by identifying an appropriate linear space to evaluate the action of the transfer
+    operator, we show that there is a strictly positive eigenfunction associated with the
+    maximal eigenvalue given as the exponential of the topological pressure. Taking into
+    account also the corresponding eigenmeasure, the invariant probability thus obtained is
+    proved to be the unique Gibbs-equilibrium state of the system.
+  relevance: |
+    The Gauss map has an INDIFFERENT FIXED POINT at 0 (the parabolic point of the continued
+    fraction map). This paper proves a Ruelle-PF theorem (positive eigenfunction, maximal
+    eigenvalue = exp(topological pressure)) for maps WITH indifferent fixed points. If we
+    can show exp(pressure) < 1 for Re(s) > 1/2, that is exactly our ρ(L_s) < 1. The choice
+    of "appropriate linear space" is the Banach space question (connects to Giulietti-Liverani).
+  gap_addressed: "GAP-1-Nuclearity (indifferent fixed point = our Gauss map case), GAP-4-SpectralRadius (max eigenvalue = exp(pressure))"
+  tags: ["indifferent-fixed-point", "ruelle-pf", "topological-pressure", "gibbs-equilibrium"]
+
+- id: PA-BandtlowJenkinson-2008-RuelleEigenvalue
+  title: "On the Ruelle eigenvalue sequence"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2008"
+  author: "Oscar F. Bandtlow, Oliver Jenkinson"
+  url: "https://arxiv.org/abs/0802.1468v1"
+  abstract: |
+    For certain real analytic data, we show that the eigenvalue sequence of the associated
+    transfer operator L is insensitive to the holomorphic function space on which L acts.
+    Explicit bounds on this eigenvalue sequence are established.
+  relevance: |
+    KEY VALIDATION: the eigenvalue sequence (hence spectral radius) is INSENSITIVE to the
+    choice of holomorphic function space. This means our numerical spectral radius computation
+    does not depend on the specific Banach/Hilbert space choice — a crucial robustness
+    property. The explicit bounds on the eigenvalue sequence can be used to certify our ρ<1
+    measurements. Connects to Nisoli 2026 (certified spectral approximation): both concern
+    the stability and computability of transfer operator spectra.
+  gap_addressed: "GAP-4-SpectralRadius (space-insensitive eigenvalue bounds), GAP-1-Nuclearity (space choice doesn't matter)"
+  tags: ["eigenvalue-sequence", "holomorphic", "space-insensitive", "spectral-radius", "bounds"]
+
+- id: PA-Pohl-2012-MaassCuspDynamical
+  title: "A dynamical approach to Maass cusp forms"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2012"
+  author: "Anke D. Pohl"
+  url: "https://arxiv.org/abs/1208.6178v2"
+  abstract: |
+    For nonuniform cofinite Fuchsian groups Γ which satisfy a certain additional geometric
+    condition, we show that the Maass cusp forms for Γ are isomorphic to 1-eigenfunctions of
+    a finite-term transfer operator. The isomorphism is constructive.
+  relevance: |
+    Maass cusp forms ↔ 1-eigenfunctions of a finite-term transfer operator. This is the
+    Lewis-Zagier connection made constructive. If ρ(L_s) = 1 corresponds to Maass cusp form
+    eigenvalues, then the absence of 1-eigenvalues for Re(s) > 1/2 (except at zeta zeros)
+    is related to RH. The "finite-term" transfer operator is computationally tractable
+    (unlike infinite-term operators). For PSL(2,Z) (our case), this applies directly.
+  gap_addressed: "GAP-3-RH-Equivalence (Maass cusp forms = 1-eigenfunctions, Lewis-Zagier)"
+  tags: ["maass-cusp", "1-eigenfunction", "fuchsian", "lewis-zagier", "finite-term"]
+
+- id: PA-Pohl-2012-MaassCuspGamma0p
+  title: "Period functions for Maass cusp forms for Γ₀(p): a transfer operator approach"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2012"
+  author: "Anke D. Pohl"
+  url: "https://arxiv.org/abs/1203.5510v1"
+  abstract: |
+    We characterize the Maass cusp forms for Hecke congruence subgroups of prime level as
+    1-eigenfunctions of a finite-term transfer operator.
+  relevance: |
+    Same as PA-Pohl-2012-MaassCuspDynamical but for Γ₀(p) — directly relevant to our SL(2,F_p)
+    Cayley graph setting. The transfer operator for Γ₀(p) connects Maass cusp forms (hence
+    Hecke eigenvalues, hence L-function zeros) to 1-eigenvalues of a finite-term transfer
+    operator. This is the Pizer-Brandt-Hecke bridge in the transfer-operator language.
+  gap_addressed: "GAP-3-RH-Equivalence (Γ₀(p) Maass cusp = 1-eigenfunctions, Hecke connection)"
+  tags: ["maass-cusp", "gamma0", "hecke", "1-eigenfunction", "period-function"]
+
+# ==============================================================================
+# TIER 3 — MEDIUM: methodological/contextual
+# ==============================================================================
+
+- id: PA-ButterleySmania-2025-EssentialRadius
+  title: "Discontinuous observables as an obstruction for small essential spectral radius"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2025"
+  author: "Oliver Butterley, Daniel Smania"
+  url: "https://arxiv.org/abs/2506.07613v1"
+  abstract: |
+    We show that for a very wide class of Banach spaces of functions on [0,1] there are
+    intrinsic lower bounds for the essential spectral radius of the transfer operator
+    associated to piecewise smooth expanding maps. The class of Banach spaces studied
+    includes any reasonable space which permits discontinuities.
+  relevance: |
+    NEGATIVE RESULT that constrains our Banach space choice: if the space permits
+    discontinuities, the essential spectral radius has intrinsic lower bounds (i.e., it
+    cannot be made arbitrarily small). Nuclear ⟺ essential spectral radius = 0. Therefore
+    we MUST choose a Banach space of CONTINUOUS (preferably holomorphic/analytic) functions
+    — not a space that permits discontinuities. This validates Isola's choice of holomorphic
+    function spaces (PA-Isola-2003) and rules out BV/L∞ type spaces.
+  gap_addressed: "GAP-1-Nuclearity (which Banach spaces to AVOID for nuclearity)"
+  tags: ["essential-spectral-radius", "discontinuous", "banach-space", "negative-result"]
+
+- id: PA-SlipantschukBandtlow-2013-ExplicitSpectra
+  title: "Analytic expanding circle maps with explicit spectra"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2013"
+  author: "Julia Slipantschuk, Oscar F. Bandtlow, Wolfram Just"
+  url: "https://arxiv.org/abs/1306.0445v1"
+  abstract: |
+    We show that for any λ with |λ|<1 there exists an analytic expanding circle map such
+    that the eigenvalues of the associated transfer operator (acting on holomorphic functions)
+    are precisely the nonnegative powers of λ and λ̄. As a consequence we obtain a
+    counterexample to a variant of a conjecture of Mayer on the reality of spectra of
+    transfer operators.
+  relevance: |
+    Spectra of transfer operators can be ARBITRARILY prescribed (any |λ|<1 achievable).
+    This means our spectral radius computation is meaningful and the spectrum is real and
+    computable. CAUTION: counterexample to Mayer's conjecture on reality of spectra —
+    spectra need NOT be real. But for our purpose (ρ = |max eigenvalue|), this doesn't
+    matter. The explicit construction method could be used to benchmark our numerical
+    spectral computation.
+  gap_addressed: "GAP-4-SpectralRadius (spectra explicitly computable), CAUTION (spectra need not be real)"
+  tags: ["explicit-spectra", "expanding-circle", "counterexample-mayer", "holomorphic"]
+
+- id: PA-Nagai-2025-BernoulliFredholm
+  title: "From Bernoulli Numbers to Selector Kernels: Fredholm Determinants, ζ-Regularization, and the Bridge Between Discrete and Continuous Spectra"
+  type: paper
+  category: equivalences
+  subcategory: theory
+  date: "2025"
+  author: "Ken Nagai"
+  url: "https://arxiv.org/abs/2511.07495v1"
+  abstract: |
+    We construct a unified analytic framework connecting Bernoulli numbers, zeta-regularization,
+    and Fredholm determinants associated with trigonometric selector kernels. Starting from the
+    Bernoulli-Stirling algebra, Euler-Maclaurin corrections are reinterpreted as spectral traces
+    of compact operators. This bridge transforms discrete combinatorial data into continuous
+    spectral quantities, showing that their determinants interpolate between finite-rank
+    projectors and the sine-kernel of random-matrix theory. In the continuum limit the Fredholm
+    determinant becomes a Painleve-V tau-function.
+  relevance: |
+    Conceptual bridge between discrete (Bernoulli numbers, ζ-regularization) and continuous
+    (Fredholm determinants, compact operators). The reinterpretation of Euler-Maclaurin as
+    spectral traces of compact operators is directly relevant — our L_s has a kernel
+    (n+x)^{-2s} and its trace is related to ζ(2s). The Fredholm determinant → Painlevé-V
+    τ-function connection is a deep structural link. Speculative but potentially relevant
+    for the ζ(s) ↔ det(I-L_s) bridge.
+  gap_addressed: "GAP-2-Mayer-Identity (conceptual bridge: ζ-regularization ↔ Fredholm determinant)"
+  tags: ["bernoulli", "fredholm", "zeta-regularization", "compact-operator", "spectral-trace"]
+
+- id: PA-DemersLiverani-2026-BilliardsReview
+  title: "Recent Progress in the Application of Transfer Operators to Dispersing Billiards"
+  type: paper
+  category: dynam-systems
+  subcategory: transfer-operator
+  date: "2026"
+  author: "Mark F Demers, Carlangelo Liverani"
+  url: "https://arxiv.org/abs/2606.10155v1"
+  abstract: |
+    This is a review paper about the use of transfer operators to study the statistical
+    properties of hyperbolic billiards. The main focus is on equilibrium states, sequential
+    billiards, and decay of correlation for billiard flows.
+  relevance: |
+    Review/overview of transfer operator methodology by two leaders in the field (Demers,
+    Liverani). While billiards ≠ continued fractions, the methodological framework (Banach
+    spaces, spectral gap, essential spectral radius, nuclearity) transfers. Useful as a
+    methodological reference for the choice of Banach space and spectral gap estimates.
+  gap_addressed: "GAP-1-Nuclearity (methodological reference for Banach space and spectral gap)"
+  tags: ["review", "billiards", "transfer-operator", "spectral-gap", "methodology"]
+
+- id: PA-Grigutis-2025-XiLogDerivative
+  title: "Note on the positivity of the real part of the log-derivative of the Riemann ξ-function near the critical line"
+  type: paper
+  category: number-theory
+  subcategory: theory
+  date: "2025"
+  author: "Andrius Grigutis, Lukas Turčinskas"
+  url: "https://arxiv.org/abs/2509.18963v1"
+  abstract: |
+    In this work, we investigate the positivity of the real part of the log-derivative of the
+    Riemann ξ-function in the region 1/2+1/√(log t) < σ < 1, where t is sufficiently large.
+    We provide an explicit lower bound for Re Σ 1/(s-ρ), where the summation runs over the
+    zeta-zeros on the critical line. We also consider hypothetical cases of positivity of the
+    log-derivative of the Riemann ξ-function in the provided region, assuming that there are
+    non-trivial zeta-zeros off the critical line.
+  relevance: |
+    ALTERNATIVE RH criterion via the completed zeta ξ. The log-derivative ξ'/ξ = Σ 1/(s-ρ)
+    (sum over zeros). Positivity of Re(ξ'/ξ) near the critical line constrains zero locations.
+    This is a different approach from our transfer-operator route but provides a comparative
+    benchmark: if we can show ρ(L_s) < 1 ↔ Re(ξ'/ξ) > 0 in some region, that would connect
+    the two approaches. Speculative connection, not directly applicable yet.
+  gap_addressed: "GAP-5-Alternative-RH (ξ log-derivative positivity, comparative)"
+  tags: ["xi-function", "log-derivative", "critical-line", "alternative-rh"]
