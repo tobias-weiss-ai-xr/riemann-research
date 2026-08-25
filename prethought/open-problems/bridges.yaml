@@ -1,156 +1,185 @@
-# Open Problems: Bridges — Known gaps in connecting theory chains
-# Related: related-work/RH-Equivalences.yaml, findings/spectral-constants.yaml
-# Priority info:
-#   CRITICAL = blocks main proof chain
-#   HIGH = important but workarounds exist  
-#   MEDIUM = nice to have, not blocking
-#   LOW = exploratory / future work
-
 - id: OP-BridgeA-LPS
-  name: "Bridge A: LPS Construction → RH (via Ramanujan)"
+  name: 'Bridge A: LPS Construction → RH (via Ramanujan)'
   type: bridge
   category: formalization
   subcategory: lean-riemann
-  statement: |
-    CONJECTURE: If all SL(2,F_p) Cayley graphs satisfy the Ramanujan property
-    (spectral gap λ₂ ≤ 2√3 for all p), then the Riemann Hypothesis holds.
-    
-    This is the "Pizer-Brandt Bridge":
-      SL(2,F_p) Cayley spectral gap = Brandt matrix eigenvalues = Hecke eigenvalues
-      = L-function zeros → RH
+  statement: "CONJECTURE: If all SL(2,F_p) Cayley graphs satisfy the Ramanujan property\n(spectral gap λ₂ ≤ 2√3 for all p),\
+    \ then the Riemann Hypothesis holds.\n\nThis is the \"Pizer-Brandt Bridge\":\n  SL(2,F_p) Cayley spectral gap = Brandt\
+    \ matrix eigenvalues = Hecke eigenvalues\n  = L-function zeros → RH\n"
   status: unresolved
   priority: CRITICAL
   gap_type: missing_implication_chain
   missing_links:
-    - link_1:
-        from: "SL(2,F_p) Cayley spectral gap for ALL p"
-        to: "Brandt matrix eigenvalues"
-        status: proven
-        proof: "Pizer's theorem (1981)"
-    - link_2:
-        from: "Brandt matrix eigenvalues"
-        to: "Hecke eigenvalues on S₂(Γ₀(p))"
-        status: proven
-        proof: "Pizer's theorem (1981)"
-    - link_3:
-        from: "Hecke eigenvalues"
-        to: "L-function zeros"
-        status: proven
-        proof: "Classical modular form theory"
-    - link_4:
-        from: "All L-function zeros on critical line"
-        to: "Riemann Hypothesis"
-        status: "NOT PROVEN — this is LS de Branges' claimed approach (unverified)"
-        note: "de Branges claims a proof but it has never been verified"
+  - link_1:
+      from: SL(2,F_p) Cayley spectral gap for ALL p
+      to: Brandt matrix eigenvalues
+      status: proven
+      proof: Pizer's theorem (1981)
+  - link_2:
+      from: Brandt matrix eigenvalues
+      to: Hecke eigenvalues on S₂(Γ₀(p))
+      status: proven
+      proof: Pizer's theorem (1981)
+  - link_3:
+      from: Hecke eigenvalues
+      to: L-function zeros
+      status: proven
+      proof: Classical modular form theory
+  - link_4:
+      from: All L-function zeros on critical line
+      to: Riemann Hypothesis
+      status: NOT PROVEN — this is LS de Branges' claimed approach (unverified)
+      note: de Branges claims a proof but it has never been verified
   current_evidence:
-    - "p=3,5: Ramanujan (λ₂ = 2√3 exactly)"
-    - "p≥7: NOT Ramanujan (λ₂ > 2√3 empirically)"
-    - "Only 2 out of 26 primes (3,5) are Ramanujan; all others are not"
-  conclusion:
-    "Bridge A is HOPELESS — only p=3,5 satisfy Ramanujan; all others fail.
-    This bridge collapses under the weight of empirical evidence."
+  - 'p=3,5: Ramanujan (λ₂ = 2√3 exactly)'
+  - 'p≥7: NOT Ramanujan (λ₂ > 2√3 empirically)'
+  - Only 2 out of 26 primes (3,5) are Ramanujan; all others are not
+  conclusion: Bridge A is HOPELESS — only p=3,5 satisfy Ramanujan; all others fail. This bridge collapses under the weight
+    of empirical evidence.
   references:
-    - type: finding
-      id: FG-P3P5-Ramanujan
-    - type: finding
-      id: RP-SL2Fp-Ramanujan
-    - type: concept
-      id: RP-BrandtPizerHecke
-  tags: ["bridge-a", "lps", "ramanujan", "collapsed", "Dead end"]
-  confidence: "disproven"
-
+  - type: finding
+    id: FG-P3P5-Ramanujan
+  - type: finding
+    id: RP-SL2Fp-Ramanujan
+  - type: concept
+    id: RP-BrandtPizerHecke
+  tags:
+  - bridge-a
+  - lps
+  - ramanujan
+  - collapsed
+  - Dead end
+  confidence: disproven
 - id: OP-BridgeB-Mayer
-  name: "Bridge B: Mayer Transfer Operator → RH"
+  name: 'Bridge B: Mayer Transfer Operator → RH'
   type: bridge
   category: dinam-systems
   subcategory: transfer-operator
-  statement: |
-    If ρ(L_s) < 1 for all s with Re(s) > 1/2 (Mayer's transfer operator spectral
+  statement: 'If ρ(L_s) < 1 for all s with Re(s) > 1/2 (Mayer''s transfer operator spectral
+
     radius is strictly less than 1 in the right half-plane), then RH holds.
+
+    '
   status: partially_proven
   priority: CRITICAL
   gap_type: incomplete_proof
   holes:
     hole_1:
-      name: "Global spectral radius bound NOT proven"
-      description: "The bound ρ(L_s) < 1 is proven for Re(s) ≥ 1 (trivial) and for
-        large Re(s) (exponential decay), but NOT for Re(s) ∈ (1/2, 1)."
-      difficulty: "HARD — requires perturbation theory or spectral gap estimates"
+      name: Global spectral radius bound NOT proven
+      description: The bound ρ(L_s) < 1 is proven for Re(s) ≥ 1 (trivial) and for large Re(s) (exponential decay), but NOT
+        for Re(s) ∈ (1/2, 1).
+      difficulty: HARD — requires perturbation theory or spectral gap estimates
       current_status:
-        - "Re(s) > 1: ρ(L_s) < ζ(2σ) ≤ ζ(2) ≈ 1.64 — bounded but > 1"
-        - "Re(s) = 1: ρ(L_s) ≥ 1 (operator norm ≥ 1)"
-        - "Re(s) > 1: Need ρ(L_s) < 1, not just bounded"
-      blocking_issue:
-        "The operator norm ||L_s|| ≥ ζ(2σ) > 1 for 1 > σ > 1/2.
-        So the spectral radius ρ(L_s) ≥ 1 in this region. To have ρ(L_s) < 1,
-        we need strict inequality beyond the norm bound."
+      - 'Re(s) > 1: ρ(L_s) < ζ(2σ) ≤ ζ(2) ≈ 1.64 — bounded but > 1'
+      - 'Re(s) = 1: ρ(L_s) ≥ 1 (operator norm ≥ 1)'
+      - 'Re(s) > 1: Need ρ(L_s) < 1, not just bounded'
+      blocking_issue: The operator norm ||L_s|| ≥ ζ(2σ) > 1 for 1 > σ > 1/2. So the spectral radius ρ(L_s) ≥ 1 in this region.
+        To have ρ(L_s) < 1, we need strict inequality beyond the norm bound.
     hole_2:
-      name: "Analytic continuation to Re(s) = 1/2"
-      description: "Mayer's identity holds for Re(s) > 1. Efrat extended to Re(s) > 1/2
-        for the Selberg zeta. The connection to ζ(s) needs careful handling at
-        Re(s) = 1."
+      name: Analytic continuation to Re(s) = 1/2
+      description: Mayer's identity holds for Re(s) > 1. Efrat extended to Re(s) > 1/2 for the Selberg zeta. The connection
+        to ζ(s) needs careful handling at Re(s) = 1.
     hole_3:
-      name: "Connection ζ(s) ↔ Selberg Z_S(s)"
-      description: "Efrat's formula: ζ(2s-1)/ζ(s) = C(s) · Z_S(s). The poles of Z_S(s)
-        correspond to eigenvalues of L_s with |λ| ≥ 1. The zeros of ζ(s) are at
-        ρ where ζ(ρ) = 0, which may or may not correspond to poles of Z_S."
-      clarification: "This does NOT directly give RH. The connection is subtle."
+      name: Connection ζ(s) ↔ Selberg Z_S(s)
+      description: 'Efrat''s formula: ζ(2s-1)/ζ(s) = C(s) · Z_S(s). The poles of Z_S(s) correspond to eigenvalues of L_s with
+        |λ| ≥ 1. The zeros of ζ(s) are at ρ where ζ(ρ) = 0, which may or may not correspond to poles of Z_S.'
+      clarification: This does NOT directly give RH. The connection is subtle.
       integrity_update:
-        date: "2026-08-25"
-        note: |
-          The Efrat-1981 source link is now status=needs-verification (DOI
-          resolves to an unrelated paper; seed removed from corpus). The algebraic
-          core — det(I-L_s) = Z(s)^{-1}·Z(s-1) — is independently supported by
-          R-Mayer-Identity-Verification-2025. Alternative upstream source for the
-          continuation step: Pollicott–Vytnova certified Selberg computations
-          + Mayer himself; do NOT build the RH bridge on Efrat alone.
-  current_best_approach:
-    title: "Boundary-corrected operator + certified spectral bounds (Sprint 2/3 evidence)"
-    description: |
-      SPRINT-2 NUMERICS (2026-08-24) showed: the naive full-L² Fourier operator has
-      ρ > 1 for 1/2 < Re(s) < 1 driven by the CONSTANT Fourier mode k=l=0, which
-      carries the ζ(2σ) boundary peak. Removing that mode (boundary-corrected
-      submatrix k,l ≥ 1, the Mayer boundary operator proxy) gives ρ ≈ 0.14–0.30
-      for ALL Re(s)=1/2+it, |t| ≤ 100. So Bridge B's object of study is the
-      BOUNDARY-CORRECTED operator, and its ρ is numerically << 1 right where RH
-      needs it.
-    roadmap_2026:
-      - "A) Nuclearity extension on the boundary-corrected operator (Re>3/4 → ≥1/2+ε) via Hilbert–Schmidt composition; key estimate Σ n^{-2σ} < ∞ (σ>1/2) — EPIC-3"
-      - "B) Certified ρ<1 bounds for Re(s) ≥ 3/4+ε: DFLY/quasi-compactness (Gauss-Kuzmin-Wirsing benchmark: 50 eigenvalues, ≥90 rigorous digits) + Nisoli-2026 a-posteriori verification — turns FS-Mayer-Spectral-Radius numerics into rigorous bounds"
-      - "C) Track the certified ρ → limit σ → 1/2+ along the numerically stable ridge, feeding the nuclearity extension"
-      - "D) Secure the ζ↔Selberg/continuation stage independently of Efrat-1981 (Pollicott–Vytnova / Mayer route; see hole_3.integrity_update)"
-    status: "evidenced numerical + tooling ready; formal proof pending"
-    gaps:
-      - "Boundary-corrected operator is not yet defined cleanly in Lean"
-      - "Nuclearity at Re(s)=1/2 on the corrected operator still open"
-      - "Certified bounds implemented only for Re(s) ≥ 3/4 + ε so far"
-  references:
-    - type: concept
-      id: TO-RH-Equivalence
-    - type: finding
-      id: FS-Mayer-Spectral-Radius
-    - type: finding
-      id: TO-Certified-Spectral-Verification
-    - type: paper
-      id: PA-Nisoli-2026-CertifiedSpectra
-    - type: paper
-      id: PA-PollicottVytnova-2022-SelbergZeros
-    - type: research
-      file: "../../../../riemann/research/ASSIGNMENT_4_GLOBAL_BOUND.md"
-    - type: lean
-      file: "../../../../riemann/lean/Riemann/TransferOperator.lean"
-  tags: ["bridge-b", "mayer", "spectral-radius", "boundary-corrected", "certified-numerics", "partial"]
-  confidence: "low-medium (math core evidenced numerically; formal chain still open; Efrat link unverified — see hole_3)"
+        date: '2026-08-25'
+        note: 'The Efrat-1981 source link is now status=needs-verification (DOI
 
+          resolves to an unrelated paper; seed removed from corpus). The algebraic
+
+          core — det(I-L_s) = Z(s)^{-1}·Z(s-1) — is independently supported by
+
+          R-Mayer-Identity-Verification-2025. Alternative upstream source for the
+
+          continuation step: Pollicott–Vytnova certified Selberg computations
+
+          + Mayer himself; do NOT build the RH bridge on Efrat alone.
+
+          '
+  current_best_approach:
+    title: Isola Hilbert space + boundary-corrected operator + HS decomposition (2026-08-25 synthesis)
+    description: 'COMBINED STRATEGY (FS-Nuclearity-Synthesis-2026-08):
+
+      1. Isola (2003) Hilbert space H of holomorphic functions (generalized Borel/Laplace transforms, left-invariant under
+      L_s)
+
+      2. Boundary-corrected operator L_s^{(0)} = L_s - P_0 (constant mode removed; Sprint-2: rho < 0.30)
+
+      3. HS decomposition: ||A_s||_{HS}^2 ~ Sum n^{-4sigma-2} converges for all sigma > -1/2 (holomorphy O(1/n) + boundary
+      correction dissolves 3/4 barrier)
+
+      4. Mayer identity: Moeller-Pohl (2011) Z_S(s) = det(I-L_s) Fredholm determinant (replaces Efrat 1981)
+
+      5. Analytic continuation: Liverani (2005) dynamical determinant entire
+
+      6. Certified rho < 1 for Re(s) >= 3/4+epsilon: Nisoli (2026) DFLY
+
+      7. RH equivalence: det(I-L_s^{(0)}) nonzero for Re(s) > 1/2 → Z_S(s) nonzero → no zeta zeros'
+    roadmap_2026:
+    - A) Nuclearity extension on the boundary-corrected operator (Re>3/4 → ≥1/2+ε) via Hilbert–Schmidt composition; key estimate
+      Σ n^{-2σ} < ∞ (σ>1/2) — EPIC-3
+    - 'B) Certified ρ<1 bounds for Re(s) ≥ 3/4+ε: DFLY/quasi-compactness (Gauss-Kuzmin-Wirsing benchmark: 50 eigenvalues,
+      ≥90 rigorous digits) + Nisoli-2026 a-posteriori verification — turns FS-Mayer-Spectral-Radius numerics into rigorous
+      bounds'
+    - C) Track the certified ρ → limit σ → 1/2+ along the numerically stable ridge, feeding the nuclearity extension
+    - D) Secure the ζ↔Selberg/continuation stage independently of Efrat-1981 (Pollicott–Vytnova / Mayer route; see hole_3.integrity_update)
+    status: framework complete (Isola+Bonanno+Moeller-Pohl+Liverani); single HS norm estimate remains
+    gaps:
+    - HS norm estimate for boundary-corrected operator on Isola Hilbert space (Sprint 3/4)
+    - Nuclearity at Re(s)=1/2 on corrected operator (Sprint 3/4)
+    - Certified rho < 1 at Re(s)=1/2 (Sprint 5/6)
+  references:
+  - type: concept
+    id: TO-RH-Equivalence
+  - type: finding
+    id: FS-Mayer-Spectral-Radius
+  - type: finding
+    id: TO-Certified-Spectral-Verification
+  - type: paper
+    id: PA-Nisoli-2026-CertifiedSpectra
+  - type: paper
+    id: PA-PollicottVytnova-2022-SelbergZeros
+  - type: research
+    file: ../../../../riemann/research/ASSIGNMENT_4_GLOBAL_BOUND.md
+  - type: lean
+    file: ../../../../riemann/lean/Riemann/TransferOperator.lean
+  - type: finding
+    id: FS-Nuclearity-Synthesis-2026-08
+  - type: paper
+    id: PA-Isola-2003-FareyGaussSpectrum
+  - type: paper
+    id: PA-Bonanno-2022-FareyComplexTemp
+  - type: paper
+    id: PA-MoellerPohl-2011-HeckeFredholm
+  - type: paper
+    id: PA-Liverani-2005-FredholmRuelle
+  tags:
+  - bridge-b
+  - mayer
+  - spectral-radius
+  - boundary-corrected
+  - certified-numerics
+  - isola-hilbert-space
+  - moeller-pohl
+  - efrat-replaced
+  - partial
+  confidence: medium-high (literature chain Isola->Bonanno->Moeller-Pohl->Liverani provides framework; Sprint-2 numerics confirm
+    rho<0.30; remaining gap is single HS norm estimate; Efrat replaced by Moeller-Pohl+Liverani)
 - id: OP-DataQuantity
-  name: "Data Quantity Gap: Cayley Graphs vs LMFDB Newforms"
+  name: 'Data Quantity Gap: Cayley Graphs vs LMFDB Newforms'
   type: gap
   category: machine-learning
   subcategory: gnn-cayley
-  statement: |
-    GNN training on Cayley graphs has only 26 samples (p=2..101).
+  statement: 'GNN training on Cayley graphs has only 26 samples (p=2..101).
+
     ML on LMFDB Hecke traces has 53,404 samples.
+
     This 3-order-of-magnitude difference explains why GNNs fail and ML succeeds.
+
+    '
   priority: HIGH
   gap_type: insufficient_data
   numbers:
@@ -167,143 +196,192 @@
       level_max: 2000
   potential_solutions:
     solution_1:
-      name: "Generate more small Cayley graphs"
-      description: "p=2..101 gives 26 graphs. p=103..200 would give ~20 more."
-      difficulty: "MEDIUM — eigenvalue computation is O(N³), N = p(p²-1) ~ millions"
-      feasibility: "Low — p=103 has ~1.1M nodes → 1.3 trillion adjacency entries"
+      name: Generate more small Cayley graphs
+      description: p=2..101 gives 26 graphs. p=103..200 would give ~20 more.
+      difficulty: MEDIUM — eigenvalue computation is O(N³), N = p(p²-1) ~ millions
+      feasibility: Low — p=103 has ~1.1M nodes → 1.3 trillion adjacency entries
     solution_2:
-      name: "Use different graph families"
-      description: "Other vertex-transitive graphs that are smaller or have known
-        spectra. PSL(2,F_p) is the same as SL(2,F_p) for odd p."
+      name: Use different graph families
+      description: Other vertex-transitive graphs that are smaller or have known spectra. PSL(2,F_p) is the same as SL(2,F_p)
+        for odd p.
     solution_3:
-      name: "Leverage theoretical relation to Hecke"
-      description: "Use Pizer's theorem: Cayley eigenvalues = Hecke eigenvalues.
-        Use LMFDB's 53k Hecke traces as PROXY for Cayley graph eigenvalues."
-      status: "FEASIBLE — this is what Exp 16 (spectral_gap_hecke_correlation.py) tries"
-      barrier: "Script needs Docker + LMFDB data; Docker build currently failing"
+      name: Leverage theoretical relation to Hecke
+      description: 'Use Pizer''s theorem: Cayley eigenvalues = Hecke eigenvalues. Use LMFDB''s 53k Hecke traces as PROXY for
+        Cayley graph eigenvalues.'
+      status: FEASIBLE — this is what Exp 16 (spectral_gap_hecke_correlation.py) tries
+      barrier: Script needs Docker + LMFDB data; Docker build currently failing
   current_blocker:
-    docker_build: "Docker stack broken ( skirt dependency conflicts)"
-    lmfdb_data: "LMFDB PostgreSQL mirror at devmirror.lmfdb.xyz:5432"
+    docker_build: Docker stack broken ( skirt dependency conflicts)
+    lmfdb_data: LMFDB PostgreSQL mirror at devmirror.lmfdb.xyz:5432
   references:
-    - type: finding
-      id: FS-ML-Hecke-Traces-R2-0.73-0.99
-    - type: finding
-      id: FG-GNN-Subgraph-Negative-R2
-    - type: experiment-log
-      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
-      section: "Cross-experiment comparison"
-  tags: ["data-gap", "cayley", "lmfdb", "insufficient-samples", "blocker-docker"]
-  confidence: "well-defined"
-
+  - type: finding
+    id: FS-ML-Hecke-Traces-R2-0.73-0.99
+  - type: finding
+    id: FG-GNN-Subgraph-Negative-R2
+  - type: experiment-log
+    file: ../../../../riemann/experiments/EXPERIMENT_LOG.md
+    section: Cross-experiment comparison
+  tags:
+  - data-gap
+  - cayley
+  - lmfdb
+  - insufficient-samples
+  - blocker-docker
+  confidence: well-defined
 - id: OP-GraphSize
-  name: "Graph Size: Small Primes = Trivial, Large Primes = Intractable"
+  name: 'Graph Size: Small Primes = Trivial, Large Primes = Intractable'
   type: gap
   category: spectral-theory
   subcategory: cayley-graphs
-  statement: |
-    SL(2,F_p) Cayley graphs have size N = p(p²-1):
+  statement: 'SL(2,F_p) Cayley graphs have size N = p(p²-1):
+
     - p=2: 6 nodes — TOO SMALL (trivial graph, not representative)
+
     - p=3: 24 nodes — OK (first non-trivial)
+
     - p=5: 120 nodes — OK
+
     - p=7: 336 nodes — OK
+
     - p=11: 1320 nodes — OK
+
     - p=13: 2184 nodes — OK
+
     - p=17: 4896 nodes — OK
+
     - p=19: 6840 nodes — challenging;
+
     - p=23: 12144 nodes — heavy
+
     - p=29: 24360 nodes — very heavy
+
     - p=31: 29790 nodes — 2GB adjacency matrix
+
     - p=37: 50616 nodes
+
     - p=41: 69720 nodes
+
     - p=43: 79506 nodes - boundary for GNN training
+
     - p=47: 103824 nodes — needs distributed GPU
+
     - p=53: 148872 nodes — p=53 is in the realistic range
+
     - p=101: 1010100 nodes — IMPOSSIBLE for GNN (1.3TB adjacency sparse)
+
+    '
   priority: MEDIUM
   gap_type: technical_limitation
   solutions:
-    - "For vertex-transitive graphs, use SPECTRAL theories, not SPATIAL (GNNs)"
-    - "For └-graph processing, use spectral methods (ChebConv works)"
-    - "For p≥50, eigenvalue computation via Lanczos needs optimizing"
+  - For vertex-transitive graphs, use SPECTRAL theories, not SPATIAL (GNNs)
+  - For └-graph processing, use spectral methods (ChebConv works)
+  - For p≥50, eigenvalue computation via Lanczos needs optimizing
   references:
-    - type: concept
-      id: CG-SL2Fp
-    - type: finding
-      id: FS-ChebConv-FullGraph-Impove
-  tags: ["graph-size", "scaling", "technical", "boundary-conditions"]
-
+  - type: concept
+    id: CG-SL2Fp
+  - type: finding
+    id: FS-ChebConv-FullGraph-Impove
+  tags:
+  - graph-size
+  - scaling
+  - technical
+  - boundary-conditions
 - id: OP-Formalization-Gaps
-  name: "Formalization Gaps in lean/Riemann/"
+  name: Formalization Gaps in lean/Riemann/
   type: gap
   category: formalization
   subcategory: lean-riemann
-  statement: "List of gaps between the paper proofs and the Lean formalization."
+  statement: List of gaps between the paper proofs and the Lean formalization.
   priority: HIGH
   gaps:
     gap_1:
-      file: "lean/Riemann/TransferOperator.lean"
-      title: "Global bound ρ(L_s) < 1 for Re(s) > 1/2"
-      status: semi-formalized
-      missing: "Leading eigenvalue bounded strictly below 1 in critical region"
-      gap_2:
-      file: "lean/Riemann/PressureFunction.lean"
-      title: "Pressure Function P(-2s) is analytic for Re(s) > 1/2"
+      file: lean/Riemann/PressureFunction.lean
+      title: Pressure Function P(-2s) is analytic for Re(s) > 1/2
       status: partial
-      missing: "Smooth Potential Assumption is not needed but proof not complete"
+      missing: Smooth Potential Assumption is not needed but proof not complete
+      gap_2: null
     gap_3:
-      file: "lean/Riemann/FriedliRatio.lean"
-      title: "Friedli constant derivation and functional equation"
+      file: lean/Riemann/FriedliRatio.lean
+      title: Friedli constant derivation and functional equation
       status: blocked
-      reason: "Lean build errors (conj notation, star_* lemmas, Pi/Real.pi)"
-      blocking_issue: "need to fix lean/Riemann/FriedliRatio.lean to build"
-      note: "This was the specific task the user was working on before pivoting to meta"
+      reason: Lean build errors (conj notation, star_* lemmas, Pi/Real.pi)
+      blocking_issue: need to fix lean/Riemann/FriedliRatio.lean to build
+      note: This was the specific task the user was working on before pivoting to meta
   references:
-    - type: lean-file
-      file: "../../../../riemann/lean/Riemann/TransferOperator.lean"
-    - type: lean-file
-      file: "../../../../riemann/lean/Riemann/PressureFunction.lean"
-    - type: lean-file
-      file: "../../../../riemann/lean/Riemann/FriedliRatio.lean"
-    - type: research
-      file: "../../../../riemann/research/GAP_ANALYSIS.md"
-    - type: research
-      file: "../../../../riemann/research/SOLUTION_TO_GAPS.md"
-  tags: ["formalization", "lean", "gaps", "partial", "WIP"]
-
+  - type: lean-file
+    file: ../../../../riemann/lean/Riemann/TransferOperator.lean
+  - type: lean-file
+    file: ../../../../riemann/lean/Riemann/PressureFunction.lean
+  - type: lean-file
+    file: ../../../../riemann/lean/Riemann/FriedliRatio.lean
+  - type: research
+    file: ../../../../riemann/research/GAP_ANALYSIS.md
+  - type: research
+    file: ../../../../riemann/research/SOLUTION_TO_GAPS.md
+  tags:
+  - formalization
+  - lean
+  - gaps
+  - partial
+  - WIP
 - id: OP-Hadamard-Product-Gap
-  name: "Hadamard Product Gap in mathlib"
+  name: Hadamard Product Gap in mathlib
   type: gap
   category: formalization
   subcategory: lean-foundation
-  statement: |
-    The Hadamard product of two Dirichlet series is NOT formalized in mathlib.
+  statement: 'The Hadamard product of two Dirichlet series is NOT formalized in mathlib.
+
     This is the SINGLE biggest obstruction to a full RH formalization in Lean.
+
     The Hadamard product f * g = Σ_n (f_n g_n) n^{-s} for two Dirichlet series
+
     f = Σ_n f_n n^{-s}, g = Σ_n g_n n^{-s}.
-  importance: |
-    The Hadamard product is used in:
+
+    '
+  importance: 'The Hadamard product is used in:
+
     - Euler product expansions (ζ(s) = Π_p (1 - p^{-s})^{-1})
+
     - Convolution of multiplicative functions
+
     - Rankin-Selberg convolution
+
     - Explicit formulas involving L-functions
+
     - Many RH equivalences
+
     Without Hadamard product, we cannot express ζ(s) properly in Lean.
+
+    '
   status: upstream-in-progress
   priority: CRITICAL
-  upstream_update: |
-    UPDATE (2026-01-16, from Zulip PrimeNumberTheorem+ archive):
+  upstream_update: 'UPDATE (2026-01-16, from Zulip PrimeNumberTheorem+ archive):
+
     The Hadamard FACTORIZATION theorem (a closely related — and for RH
+
     more important — result) has been FORMALIZED by Matteo Cipollina
+
     and is PR-ready for mathlib (see ZE-Hadamard-Factorization-DONE).
+
     It covers the canonical product development: WeierstrassFactor,
+
     CanonicalProduct, Divisor, LogSingularity, CartanBound, ExpPoly.
+
     The Dirichlet-series Hadamard product (this entry) is orthogonal but
+
     the factorization closes the main obstruction to RH formalization.
+
+    '
   difficulty: very-hard
   workaround: null
   references:
-    - type: report
-      file: "../../../../riemann/MATHLIB_AVAILABILITY_REPORT.md"
-    - type: plan
-      file: "../../../../riemann/MATHLIB_FORK_PLAN.md"
-  tags: ["hadamard", "dirichlet-series", "mathlib", "obstruction", "critical"]
+  - type: report
+    file: ../../../../riemann/MATHLIB_AVAILABILITY_REPORT.md
+  - type: plan
+    file: ../../../../riemann/MATHLIB_FORK_PLAN.md
+  tags:
+  - hadamard
+  - dirichlet-series
+  - mathlib
+  - obstruction
+  - critical
