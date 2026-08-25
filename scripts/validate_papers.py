@@ -29,8 +29,16 @@ try:
 except (AttributeError, ValueError):  # pragma: no cover - non-TTY / older Python
     pass
 
-ARXIV_ID_PATTERN = re.compile(r"(\d{4}\.\d{4,5})(v\d+)?")
-ARXIV_URL_PATTERN = re.compile(r"^https://arxiv\.org/abs/\d{4}\.\d{4,5}$")
+ARXIV_ID_PATTERN = re.compile(r"((?:[a-z\-]+/)?\d{4}\.\d{4,5}|(?:[a-z\-]+/)?\d{7})(v\d+)?")
+ARXIV_PATH_PREFIX = re.compile(
+    r"^https?://(?:www\.)?arxiv\.org/(?:abs|pdf)/", re.IGNORECASE
+)
+ARXIV_DOI_PREFIX = re.compile(
+    r"^https?://doi\.org/10\.48550/arXiv\.", re.IGNORECASE
+)
+ARXIV_URL_PATTERN = re.compile(
+    r"^https://arxiv\.org/abs/(?:[a-z\-]+/)?(?:\d{4}\.\d{4,5}|\d{7})$"
+)
 ARXIV_DOI_PATTERN = re.compile(r"doi\.org/10\.48550/arXiv\.", re.IGNORECASE)
 DATE_PATTERN = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
 URL_PATTERN = re.compile(r"^https://")
@@ -71,9 +79,15 @@ def clean_latex_artifacts(text):
 
 
 def normalize_arxiv_url(url):
-    match = ARXIV_ID_PATTERN.search(url)
-    if match:
-        return f"https://arxiv.org/abs/{match.group(1)}"
+    # New-style: 1234.56789v2; Old-style: math/0311487v1 (category prefix).
+    # Capture the arXiv ID portion (strip /abs/|/pdf/|10.48550/arXiv. prefixes
+    # and any version suffix) so both URL styles normalize correctly.
+    core = url
+    core = ARXIV_PATH_PREFIX.sub("", core)
+    core = ARXIV_DOI_PREFIX.sub("", core)
+    m = ARXIV_ID_PATTERN.search(core)
+    if m:
+        return f"https://arxiv.org/abs/{m.group(1)}"
     return url
 
 

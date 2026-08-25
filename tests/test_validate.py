@@ -41,6 +41,22 @@ def test_normalize_arxiv_url_non_arxiv_unchanged():
     assert vp.normalize_arxiv_url(url) == url
 
 
+def test_normalize_arxiv_url_oldstyle_strips_version():
+    assert vp.normalize_arxiv_url("https://arxiv.org/abs/math/0311487v1") == \
+        "https://arxiv.org/abs/math/0311487"
+
+
+def test_normalize_arxiv_url_oldstyle_abs():
+    assert vp.normalize_arxiv_url("https://arxiv.org/abs/hep-th/9901001") == \
+        "https://arxiv.org/abs/hep-th/9901001"
+
+
+def test_arxiv_url_pattern_accepts_oldstyle():
+    assert vp.ARXIV_URL_PATTERN.match("https://arxiv.org/abs/math/0311487")
+    assert vp.ARXIV_URL_PATTERN.match("https://arxiv.org/abs/1234.56789")
+    assert not vp.ARXIV_URL_PATTERN.match("https://arxiv.org/abs/math/0311487v1")
+
+
 # ── clean_latex_artifacts ────────────────────────────────────────────────
 
 def test_clean_latex_inline_math():

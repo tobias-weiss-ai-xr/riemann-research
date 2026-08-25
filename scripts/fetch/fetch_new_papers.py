@@ -44,36 +44,40 @@ def get_queries(cfg):
     return out
 
 
-def classify_subcategory(title, abstract="", cfg=None):
+def classify_subcategory(title, abstract="", cfg=None, category=None):
     """Assign a subcategory using config keyword rules, then heuristics.
 
     Reads ``subcategory_keywords`` from taxonomy.yaml (via research_config).
-    Falls back to a generic heuristic ordering when no config rules match.
+    Falls back to a generic heuristic ordering when no config rules match,
+    then to the paper's own category default so a *valid* taxonomy value is
+    always returned (never a skeleton-template label).
+
+    When ``category`` is given, keyword rules are narrowed to subcategories
+    declared under that category so a paper in ``equivalences`` can never be
+    tagged ``l-functions``.
     """
     if cfg is None:
         cfg = research_config.load_config()
     text = f"{title} {abstract}".lower()
     title_lower = title.lower()
-    # 1. Config-driven rules (first match wins)
+    # Category-scoped defaults from the taxonomy
+    cat_defaults = {}
+    cat_subs = {}
+    for s in research_config.get_subcategories(cfg):
+        scat = s.get("category", "")
+        cat_defaults.setdefault(scat, s["id"])
+        cat_subs.setdefault(scat, []).append(s["id"])
+    allowed = set(cat_subs.get(category, [])) if category else None
+    # 1. Config-driven rules (first match wins; narrowed to the paper's category)
     for sid, keywords in research_config.get_subcategory_keywords(cfg):
+        if allowed and sid not in allowed:
+            continue
         for kw in keywords:
             if kw.lower() in text:
                 return sid
-    # 2. Generic heuristic fallback (same ordering as fetch_other_sources)
-    heuristic = [
-        ("theory", ["theory", "theoretical", "formal", "proof", "convergence", "bound"]),
-        ("mechanism", ["mechanism", "explainab", "interpretab", "attention", "saliency"]),
-        ("method", ["method", "algorithm", "approach", "technique", "framework", "novel method"]),
-        ("application", ["application", "applied", "deploy", "real-world", "case study"]),
-        ("development", ["implementation", "system", "platform", "toolkit", "library", "open-source"]),
-        ("systems", ["simulator", "simulation", "engine", "benchmark", "testbed", "environment"]),
-        ("evaluation", ["benchmark", "evaluation", "comparison", "baseline", "leaderboard"]),
-        ("review", ["survey", "review", "literature", "meta-analysis", "overview", "taxonomy"]),
-    ]
-    for sid, keywords in heuristic:
-        for kw in keywords:
-            if kw in text:
-                return sid
+    # 2. Category default (valid taxonomy subcategory, never a template label)
+    if category and category in cat_defaults:
+        return cat_defaults[category]
     # 3. First configured subcategory as last resort
     subs = research_config.get_subcategories(cfg)
     return subs[0]["id"] if subs else ""
@@ -82,7 +86,7 @@ def classify_subcategory(title, abstract="", cfg=None):
 def load_existing_papers(yaml_path):
     if not yaml_path.exists():
         return {}, []
-    with open(yaml_path, "r") as f:
+    with open(yaml_path, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
     papers = data.get("papers", [])
     by_id = {}
@@ -269,7 +273,7 @@ def main():
 
             # Auto-classify subcategory if no hint; always classify subcategory
             sub = q_hint or classify_subcategory(
-                entry.get("title", ""), entry.get("abstract", ""), cfg)
+                entry.get("title", ""), entry.get("abstract", ""), cfg, category=q_category)
             entry["category"] = q_category
             entry["subcategory"] = sub
             all_new.append(entry)
@@ -296,7 +300,7 @@ def main():
     if args.local:
         print(f"\nAppending {len(all_new)} new papers to papers.yaml locally...", flush=True)
         try:
-            with open(yaml_path, "r") as f:
+            with open(yaml_path, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f) or {}
             papers = data.get("papers", [])
             before = len(papers)
@@ -316,7 +320,7 @@ def main():
                     }
                 )
             data["papers"] = papers
-            with open(yaml_path, "w") as f:
+            with open(yaml_path, "w", encoding="utf-8") as f:
                 yaml.dump(
                     data,
                     f,
@@ -340,7 +344,7 @@ def main():
             subprocess.run(
                 ["git", "checkout", "-b", branch_name], check=True, cwd=yaml_path.parent
             )
-            with open(yaml_path, "r") as f:
+            with open(yaml_path, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f) or {}
             papers = data.get("papers", [])
             for entry in all_new:
@@ -359,7 +363,7 @@ def main():
                     }
                 )
             data["papers"] = papers
-            with open(yaml_path, "w") as f:
+            with open(yaml_path, "w", encoding="utf-8") as f:
                 yaml.dump(
                     data,
                     f,

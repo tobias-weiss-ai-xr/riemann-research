@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-08-23  
-**Corpus:** 5 papers across 4 categories
+**Generated:** 2026-08-25  
+**Corpus:** 2,638 papers across 6 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,13 +11,15 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | Surveys & Taxonomies | 2 |
-| 2 | Methods & Architectures | 1 |
-| 3 | Applications | 1 |
-| 4 | Evaluation & Benchmarks | 1 |
+| 1 | Spectral Theory & Graphs | 1036 |
+| 2 | Number Theory | 529 |
+| 3 | RH Equivalences & Bridges | 451 |
+| 4 | Machine Learning | 404 |
+| 5 | Dynamical Systems | 203 |
+| 6 | Proof & Formalization | 15 |
 
-**Time span:** 2025–2026 (median year 2026)
-**Dominant aspects:** Hybrid (2), Non-Agentic (2), Agentic (1)
+**Time span:** 1859–2026 (median year 2013)
+**Dominant aspects:** Cayley Graphs (973), GNNs on Cayley Graphs (282), Hecke Operators (230)
 
 ---
 
@@ -25,10 +27,12 @@
 
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
-| Application | 1 | 1 | 0 | — | 100% | 0.1 |
-| Evaluation | 1 | 1 | 0 | — | 100% | 0.1 |
-| Method | 1 | 1 | 0 | — | 100% | 0.1 |
-| Survey | 2 | 1 | 1 | +0% | 50% | 0.1 |
+| Machine Learning | 404 | 64 | 26 | +146% | 16% | 5.3 |
+| Formalization | 15 | 15 | 0 | — | 100% | 1.2 |
+| Equivalences | 451 | 95 | 54 | +76% | 21% | 7.9 |
+| Number Theory | 529 | 113 | 71 | +59% | 21% | 9.4 |
+| Dynam Systems | 203 | 42 | 27 | +56% | 21% | 3.5 |
+| Spectral Theory | 1036 | 161 | 123 | +31% | 16% | 13.4 |
 
 ---
 
@@ -36,55 +40,89 @@
 
 | Cell | Papers |
 |------|--------:|
-| `survey/hybrid` | 1 |
-| `method/agentic` | 1 |
-| `application/non-agentic` | 1 |
-| `evaluation/hybrid` | 1 |
-| `survey/non-agentic` | 1 |
+| `machine-learning/gnn-fullgraph` | 4 |
+| `machine-learning/ml-zeros` | 6 |
+| `dynam-systems/selberg-zeta` | 8 |
+| `formalization/lean-foundation` | 15 |
+| `equivalences/hilbert-polya` | 26 |
+| `spectral-theory/spectral-gaps` | 63 |
+| `equivalences/granville` | 109 |
+| `machine-learning/ml-hecke` | 112 |
 
 ---
 
 
 ## Category Insights
 
-### Surveys & Taxonomies (`survey`)
+### Spectral Theory & Graphs (`spectral-theory`)
 
-**Corpus size:** 2 papers
+**Corpus size:** 1036 papers
 
 **Recent papers:**
 
-- [2026-01] Example Paper 1: A Foundational Survey of Your Topic — https://arxiv.org/abs/2601.00001
-- [2025-05] Example Paper 5: A Survey of Your Topic Across Domains — https://arxiv.org/abs/2505.00005
+- [2026-08] Ramanujan Cayley Graphs with Normal Connection Sets in Ratio-One Frobenius Groups — https://arxiv.org/abs/2608.19905
+- [2026-08] On the Laplacian spectral gap of generalized pancake graphs — https://arxiv.org/abs/2608.15398
+- [2026-08] Perfect state transfer and Cayley presentations — https://arxiv.org/abs/2608.20476
 
 ---
 
-### Methods & Architectures (`method`)
+### Number Theory (`number-theory`)
 
-**Corpus size:** 1 papers
+**Corpus size:** 529 papers
 
 **Recent papers:**
 
-- [2026-03] Example Paper 2: An Agentic Method for Your Topic — https://arxiv.org/abs/2603.00002
+- [2026-08] More than two thirds of the zeta zeros are simple and on the critical line — https://arxiv.org/abs/2608.13637
+- [2026-08] Special Values of Shifted Dirichlet Series from an Adjoint Map on Almost Holomorphic Modular Fo — https://arxiv.org/abs/2608.12542
+- [2026-08] Products of point counts of higher genus curves over finite fields — https://arxiv.org/abs/2608.18014
 
 ---
 
-### Applications (`application`)
+### RH Equivalences & Bridges (`equivalences`)
 
-**Corpus size:** 1 papers
+**Corpus size:** 451 papers
 
 **Recent papers:**
 
-- [2025-11] Example Paper 3: Application Study in Your Domain — https://arxiv.org/abs/2511.00003
+- [2026-08] Algorithmic universal étale (\varphi,Γ)-modules — https://arxiv.org/abs/2608.01567
+- [2026-08] On the Emerton-Gee stack of potentially semistable representations — https://arxiv.org/abs/2608.07936
+- [2026-08] On a conjecture of Corradi and Katai — https://arxiv.org/abs/2608.13266
 
 ---
 
-### Evaluation & Benchmarks (`evaluation`)
+### Machine Learning (`machine-learning`)
 
-**Corpus size:** 1 papers
+**Corpus size:** 404 papers
 
 **Recent papers:**
 
-- [2025-08] Example Paper 4: An Evaluation Benchmark for Your Topic — https://arxiv.org/abs/2508.00004
+- [2026-08] Spectral Gaps of Hit-and-Run and Coordinate Hit-and-Run — https://arxiv.org/abs/2608.16878
+- [2026-08] QR-Erase: Efficient Subspace-Based Machine Unlearning with Layer Localization — https://arxiv.org/abs/2608.01422
+- [2026-08] Riemann GeoResolver: A Non-Euclidean Attention Framework from Euclidean Resolver to Hyperbolic- — https://arxiv.org/abs/2608.10416
+
+---
+
+### Dynamical Systems (`dynam-systems`)
+
+**Corpus size:** 203 papers
+
+**Recent papers:**
+
+- [2026-08] Equidistribution and thermodynamics at infinity — https://arxiv.org/abs/2608.19457
+- [2026-08] Analyticity of Lyapunov Exponents for Mixed Markov Quasi-Periodic Cocycles — https://arxiv.org/abs/2608.01569
+- [2026-07] Decay of Correlations for Partially Hyperbolic Skew-Products — https://arxiv.org/abs/2607.21516
+
+---
+
+### Proof & Formalization (`formalization`)
+
+**Corpus size:** 15 papers
+
+**Recent papers:**
+
+- [2026-07] Two Machine-Checked Conditional Routes to the Riemann Hypothesis: A Formalized Fekete Criterion — https://doi.org/10.5281/zenodo.21416394
+- [2026-07] SIDE-lv-conservation: the Conservation-route growth interface and the h1-complete coupling ledg — https://doi.org/10.5281/zenodo.21433178
+- [2026-07] Ars Magna: Geometrically Ordered Dynamics — Information Tension, Sovereign Cognition, and Machi — https://doi.org/10.5281/zenodo.21302151
 
 ---
 

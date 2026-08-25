@@ -129,54 +129,308 @@ taxonomy:
     category: formalization
     description: Hadamard product gap, partial results, open gaps, TODO formalization
       work
+
+# Auto-classification keyword rules: each entry maps a (valid) subcategory id to a
+# set of topic keywords.  fetch_new_papers.classify_subcategory() checks these in
+# order (first match wins) before falling back to category-aware heuristics.
+subcategory_keywords:
+- id: cayley-graphs
+  keywords:
+  - cayley graph
+  - cayley digraph
+  - cayley graphs
+  - sl(2,f
+  - psl(2,f
+  - vertex-transitive
+  - vertex transitive
+  - schreier
+  - cayley sum
+  - normal cayley
+- id: spectral-gaps
+  keywords:
+  - spectral gap
+  - spectral gaps
+  - expander
+  - expanders
+  - cheeger
+  - algebraic connectivity
+  - laplacian eigenvalue
+  - second largest eigenvalue
+  - eigenvalue gap
+  - gap of the normalized laplacian
+- id: ramanujan
+  keywords:
+  - ramanujan
+  - alon-boppana
+  - alon boppana
+  - lps graph
+  - ramanujan graph
+  - optimal spectral gap
+- id: brandt-pizer
+  keywords:
+  - brandt
+  - pizer
+  - supersingular isogeny
+  - isogeny graph
+  - brandt matrix
+  - quaternion order
+- id: hecke
+  keywords:
+  - hecke
+  - atkin-lehner
+  - hecke algebra
+  - hecke eigenvalues
+  - hecke operator
+  - sato-tate
+  - eigenform
+  - t_p
+  - u_p
+  - eigenvalue statistics
+- id: l-functions
+  keywords:
+  - l-function
+  - l functions
+  - zeta function
+  - riemann zeta
+  - dirichlet l
+  - euler product
+  - functional equation
+  - zeta zeros
+  - zeros of the
+  - critical line
+  - riemann hypothesis
+  - explicit formula
+  - mean value
+  - moments of
+  - l-series
+  - dirichlet series
+  - meromorphic continuation
+- id: modular-forms
+  keywords:
+  - modular form
+  - modular forms
+  - cusp form
+  - newform
+  - eisenstein
+  - weight k
+  - modular symbols
+  - q-expansion
+  - galois representation
+  - langlands
+  - elliptic curves
+- id: transfer-operator
+  keywords:
+  - transfer operator
+  - gauss map
+  - perron-frobenius
+  - nuclear operator
+  - spectral radius
+  - thermodynamic formalism
+  - pressure function
+  - continued fraction
+  - mayer
+  - ruelle
+  - kneading
+  - dynamical zeta
+- id: selberg-zeta
+  keywords:
+  - selberg zeta
+  - selberg's
+  - selberg trace
+  - trace formula
+  - prime geodesic
+  - gutzwiller
+  - efrat
+  - hyperbolic surfaces
+  - anosov subgroups
+  - geodesic theorem
+- id: gnn-cayley
+  keywords:
+  - graph neural
+  - gnn
+  - spectral gap prediction
+  - hecke eigenvalue
+  - chebconv
+  - gat
+  - node features
+  - message passing
+  - graph attention
+- id: gnn-fullgraph
+  keywords:
+  - graph neural
+  - gnn
+  - spectral convolution
+  - global pooling
+  - full-graph
+  - graph convolution
+  - message passing
+  - graph learning
+  - deep learning on graphs
+- id: ml-hecke
+  keywords:
+  - hecke
+  - xgboost
+  - random forest
+  - neural network
+  - machine learning
+  - lmfdb
+  - eigenvalue prediction
+  - supervised learning
+  - classifier
+  - sk-learn
+  - sklearn
+- id: ml-zeros
+  keywords:
+  - excess mass
+  - zero spacing
+  - gue
+  - goe
+  - gse
+  - random matrix
+  - montgomery
+  - rigorous statistics
+  - zero distribution
+  - eigenvalues of random
+  - odlyzko
+- id: nyman-beurling
+  keywords:
+  - nyman
+  - beurling
+  - fractional part
+  - shifted fractional
+  - density of the fractional
+  - nyman-beurling
+- id: hilbert-polya
+  keywords:
+  - hilbert
+  - polya
+  - pólya
+  - self-adjoint operator
+  - zeros as eigenvalues
+  - spectral interpretation
+  - von koch
+  - hilbert-polya
+- id: weil
+  keywords:
+  - weil
+  - positivity
+  - finite field analogue
+  - explicit formula
+  - weil conjecture
+  - weil criterion
+- id: granville
+  keywords:
+  - granville
+  - goldbach
+  - explicit formula
+  - averaged goldbach
+  - additive number theory
+  - g(2n)
+  - prime pairs
+- id: lean-foundation
+  keywords:
+  - lean 4
+  - mathlib
+  - coq
+  - isabelle
+  - proof assistant
+  - formalization
+  - formal proof
+  - theorem prover
+  - verified
+  - lean3
+  - rocq
+- id: lean-riemann
+  keywords:
+  - lean
+  - riemann hypothesis in lean
+  - formal riemann
+  - mathlib
+  - formalization of the riemann
+  - verified riemann
+  - lean theorem
+- id: verification
+  keywords:
+  - verification
+  - verified
+  - formal verification
+  - automated proof
+  - proof checking
+  - machine-checked
+  - certificate
+  - formal proof
+  - proof assistant
+
 arxiv_queries:
 - query: cat:math.CO AND (abs:"Cayley graph" OR abs:"SL(2,F_p)" OR abs:"spectral gap"
     OR abs:"Ramanujan")
   category: spectral-theory
+  subcategory_hint: cayley-graphs
 - query: cat:math.GR AND (abs:"expander" OR abs:"Cheeger" OR abs:"Laplacian")
   category: spectral-theory
+  subcategory_hint: spectral-gaps
 - query: cat:math.GT AND (abs:"vertex-transitive" OR abs:"edge-transitive")
   category: spectral-theory
+  subcategory_hint: cayley-graphs
 - query: cat:math.OC AND (abs:"Pizer" OR abs:"Brandt matrix")
   category: spectral-theory
+  subcategory_hint: brandt-pizer
 - query: cat:math.NT AND (abs:"Riemann Hypothesis" OR abs:"zeta zeros" OR abs:"L-function")
   category: number-theory
+  subcategory_hint: l-functions
 - query: cat:math.NT AND (abs:"Hecke operator" OR abs:"modular form" OR abs:"newform")
   category: number-theory
+  subcategory_hint: hecke
 - query: cat:math.NT AND (abs:"Sato-Tate" OR abs:"GUE" OR abs:"GOE" OR abs:"random
     matrix")
   category: number-theory
+  subcategory_hint: l-functions
 - query: cat:math.NT AND abs:"Langlands"
   category: number-theory
+  subcategory_hint: l-functions
 - query: cat:math.DS AND (abs:"transfer operator" OR abs:"Gauss map" OR abs:"Selberg
     zeta")
   category: dynam-systems
+  subcategory_hint: transfer-operator
 - query: cat:37-XX AND (abs:"thermodynamic formalism" OR abs:"pressure function")
   category: dynam-systems
+  subcategory_hint: transfer-operator
 - query: cat:math.DS AND (abs:"Mayer" OR abs:"Efrat")
   category: dynam-systems
+  subcategory_hint: selberg-zeta
 - query: cat:cs.LG AND (abs:"Riemann" OR abs:"zeta" OR abs:"spectral gap")
   category: machine-learning
+  subcategory_hint: gnn-cayley
 - query: cat:cs.LG OR cat:cs.AI AND (abs:"graph neural network" AND abs:"Cayley")
   category: machine-learning
+  subcategory_hint: gnn-cayley
 - query: cat:cs.LG AND (abs:"Hecke" OR abs:"modular form")
   category: machine-learning
+  subcategory_hint: ml-hecke
 - query: cat:cs.ML AND (abs:"L-function" OR abs:"zero classification")
   category: machine-learning
+  subcategory_hint: ml-zeros
 - query: cat:math.NT AND (abs:"Nyman-Beurling" OR abs:"Hilbert-Polya" OR abs:"Weil")
   category: equivalences
+  subcategory_hint: hilbert-polya
 - query: cat:math.NT AND (abs:"Granville" OR abs:"Goldbach")
   category: equivalences
+  subcategory_hint: granville
 - query: cat:math.GM AND (abs:"Riemann" OR abs:"zeta")
   category: equivalences
+  subcategory_hint: hilbert-polya
 - query: cat:math.PR AND (abs:"Bertini" OR abs:"Denjoy" OR abs:"Beurling primes")
   category: equivalences
+  subcategory_hint: nyman-beurling
 - query: cat:math.CV AND abs:"Lee-Yang"
   category: equivalences
+  subcategory_hint: weil
 - query: cat:math.PR AND abs:"Lee-Yang"
   category: equivalences
+  subcategory_hint: weil
 - query: cat:82-XX AND abs:"Lee-Yang"
   category: equivalences
+  subcategory_hint: weil
 other_sources_queries:
 - source: dblp
   query: riemann hypothesis
