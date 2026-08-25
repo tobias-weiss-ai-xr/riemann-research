@@ -1,0 +1,81 @@
+# Bridge / Route Re-Ranking — 2026-08-25
+# Triggers: Sprint 2 numerics (FS-Mayer-Spectral-Radius) + papers.yaml evaluation
+# (PA-Nisoli-2026-CertifiedSpectra, PA-PollicottVytnova, DFLY/quasi-compactness)
+# + integrity find: Efrat-1981 source link unverified (PA-Efrat-1981).
+# Method: score each route on EVIDENCE, TOOLING, GAP-SIZE, RISK.
+
+# ===== RANKING TABLE =====
+# RANK | ROUTE                          | PRIO  | EVIDENCE | TOOLING | GAP | RISK  | VERDICT
+# 1    | Bridge B: boundary-corrected   | CRIT  | strong   | strong  | 1    | med   | BEST PATH; object refined to corrected operator; certified numerics available; nuclearity at Re=1/2 is the single remaining math gap
+# 2    | Certified numerics (Nisoli/    | HIGH  | external | strong  | 2    | low   | CROSS-CUTTING tool: makes Re(s)>=3/4+eps rho<1 RIGOROUS; benchmark GKW 50 eig. >=90 digits; does NOT close nuclearity gap
+# 3    | Hadamard factorization mathlib | CRIT  | proven   | strong  | 3    | low   | UPSTREAM CLOSED (Cipollina PR-ready); orthogonal to Bridge B now; reuse, don't build
+# 4    | DFLY / quasi-compactness (Gauss map) | HIGH | proven | medium | 3 | low  | Foundation for 2); GKW spectral gap certified upstream
+# 5    | Bridge A: LPS/Ramanujan        | ---   | refuted  | n/a     | n/a  | high  | DISPROVEN (only p=3,5 Ramanujan) — dead end, do not reopen
+# 6    | ML/LMFDB Hecke traces          | MED   | strong   | strong  | 4    | low   | Empirical side-channel only (R^2 0.73-0.99); not a proof route
+# 7    | Selberg-zeta zeros numerics (Pollicott-Vytnova) | MED | external | medium | 4 | med | Precedent for certified zeta-zero work; use as methodology, not as claim
+
+- id: FS-Bridge-Rerank-2026-08
+  name: "Bridge/Route Re-Ranking After Sprint 2 + Literature Evaluation"
+  type: finding
+  category: research
+  subcategory: ranking
+  date: "2026-08-25"
+  year: 2026
+  status: confirmed
+  confidence: 0.9
+  statement: |
+    Re-ranking of all RH routes with the new knowledge (2026-08-25):
+
+    1. Bridge B (Mayer transfer operator) remains the #1 route, but its OBJECT
+       is now the BOUNDARY-CORRECTED operator (constant Fourier mode removed):
+       Sprint-2 numerics measured rho = 0.14–0.30 < 1 on Re(s)=1/2+it, |t|<=100
+       for that operator, whereas the naive full-L2 operator has rho > 1 from
+       the zeta(2 sigma) constant-mode peak. The single remaining math gap is
+       nuclearity of the corrected operator at Re(s)=1/2 (EPIC-3).
+
+    2. Certified numerical verification (Nisoli 2026 a-posteriori bounds, DFLY/
+       quasi-compactness) is a NEW cross-cutting tool: it turns our measured
+       rho<1 into RIGOROUS bounds for Re(s)>=3/4+eps and lets us certify the
+       approach sigma->1/2+. Benchmark: Gauss-Kuzmin-Wirsing, 50 eigenvalues
+       >=90 rigorous digits. Does NOT close the nuclearity gap itself.
+
+    3. Hadamard factorization in mathlib is CLOSED upstream (Cipollina,
+       PR-ready) — no longer a gap we must fill; reuse instead (strategy EPIC-7).
+
+    4. Integrity find: Efrat-1981 (analytic continuation of Selberg zeta)
+       source is UNVERIFIED (DOI resolves elsewhere). The algebra core
+       det(1-L_s)=Z(s)^{-1} Z(s-1) has independent numerical support
+       (R-Mayer-Identity-Verification-2025); secure the continuation step via
+       Pollicott-Vytnova/Mayer instead of relying on Efrat alone.
+
+    5. Bridge A (LPS/Ramanujan) stays DISPROVEN (only p=3,5 satisfy); ML/LMFDB
+       stays an empirical side-channel; Pollicott-Vytnova Selberg-zero numerics
+       is a methodology precedent, not a claim.
+
+  implications: |
+    - Allocates Sprint 3 (EPIC-3) to: boundary-corrected operator definition
+      + Hilbert-Schmidt composition (Sigma n^{-2 sigma} < infinity)
+      + certified rho bounds via DFLY/Nisoli as supporting evidence.
+    - Removes Hadamard gap from our critical path (upstream-in-progress).
+    - Adds an integrity action: replace Efrat link or flag the equivalence as
+      provisional (done: PA-Efrat-1981=needs-verification, TO-RH-Equivalence
+      downgraded with caveat).
+  inputs:
+    - FS-Mayer-Spectral-Radius
+    - PA-Nisoli-2026-CertifiedSpectra
+    - PA-PollicottVytnova-2022-SelbergZeros
+    - TO-DFLY-GaussMap
+    - TO-Certified-Spectral-Verification
+    - PA-Efrat-1981-SelbergContinuation (integrity)
+    - OP-Hadamard-Product-Gap
+  references:
+    - type: bridge
+      id: OP-BridgeB-Mayer
+      role: "re-ranked #1, object = boundary-corrected operator"
+    - type: bridge
+      id: OP-BridgeA-LPS
+      role: "remains disproven"
+    - type: concept
+      id: TO-RH-Equivalence
+      role: "caveated pending Efrat verification"
+  tags: ["ranking", "bridge-b", "certified-numerics", "rerank", "sprint-3-path", "integrity"]

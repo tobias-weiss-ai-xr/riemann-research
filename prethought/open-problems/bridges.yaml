@@ -95,25 +95,52 @@
         correspond to eigenvalues of L_s with |λ| ≥ 1. The zeros of ζ(s) are at
         ρ where ζ(ρ) = 0, which may or may not correspond to poles of Z_S."
       clarification: "This does NOT directly give RH. The connection is subtle."
+      integrity_update:
+        date: "2026-08-25"
+        note: |
+          The Efrat-1981 source link is now status=needs-verification (DOI
+          resolves to an unrelated paper; seed removed from corpus). The algebraic
+          core — det(I-L_s) = Z(s)^{-1}·Z(s-1) — is independently supported by
+          R-Mayer-Identity-Verification-2025. Alternative upstream source for the
+          continuation step: Pollicott–Vytnova certified Selberg computations
+          + Mayer himself; do NOT build the RH bridge on Efrat alone.
   current_best_approach:
-    title: "Pressure Function Analyticity"
-    description: "Show that the topological pressure P(-2s) is analytic for
-      Re(s) > 1/2. The pressure is related to the leading eigenvalue of L_s."
-    status: "partially formalized in lean/Riemann/PressureFunction.lean"
+    title: "Boundary-corrected operator + certified spectral bounds (Sprint 2/3 evidence)"
+    description: |
+      SPRINT-2 NUMERICS (2026-08-24) showed: the naive full-L² Fourier operator has
+      ρ > 1 for 1/2 < Re(s) < 1 driven by the CONSTANT Fourier mode k=l=0, which
+      carries the ζ(2σ) boundary peak. Removing that mode (boundary-corrected
+      submatrix k,l ≥ 1, the Mayer boundary operator proxy) gives ρ ≈ 0.14–0.30
+      for ALL Re(s)=1/2+it, |t| ≤ 100. So Bridge B's object of study is the
+      BOUNDARY-CORRECTED operator, and its ρ is numerically << 1 right where RH
+      needs it.
+    roadmap_2026:
+      - "A) Nuclearity extension on the boundary-corrected operator (Re>3/4 → ≥1/2+ε) via Hilbert–Schmidt composition; key estimate Σ n^{-2σ} < ∞ (σ>1/2) — EPIC-3"
+      - "B) Certified ρ<1 bounds for Re(s) ≥ 3/4+ε: DFLY/quasi-compactness (Gauss-Kuzmin-Wirsing benchmark: 50 eigenvalues, ≥90 rigorous digits) + Nisoli-2026 a-posteriori verification — turns FS-Mayer-Spectral-Radius numerics into rigorous bounds"
+      - "C) Track the certified ρ → limit σ → 1/2+ along the numerically stable ridge, feeding the nuclearity extension"
+      - "D) Secure the ζ↔Selberg/continuation stage independently of Efrat-1981 (Pollicott–Vytnova / Mayer route; see hole_3.integrity_update)"
+    status: "evidenced numerical + tooling ready; formal proof pending"
     gaps:
-      - "Smooth Potential Assumption — NOT needed if proven directly"
-      - "Global bound on eigenvalues — NOT proven"
+      - "Boundary-corrected operator is not yet defined cleanly in Lean"
+      - "Nuclearity at Re(s)=1/2 on the corrected operator still open"
+      - "Certified bounds implemented only for Re(s) ≥ 3/4 + ε so far"
   references:
     - type: concept
       id: TO-RH-Equivalence
+    - type: finding
+      id: FS-Mayer-Spectral-Radius
+    - type: finding
+      id: TO-Certified-Spectral-Verification
+    - type: paper
+      id: PA-Nisoli-2026-CertifiedSpectra
+    - type: paper
+      id: PA-PollicottVytnova-2022-SelbergZeros
     - type: research
       file: "../../../../riemann/research/ASSIGNMENT_4_GLOBAL_BOUND.md"
     - type: lean
       file: "../../../../riemann/lean/Riemann/TransferOperator.lean"
-    - type: lean
-      file: "../../../../riemann/lean/Riemann/PressureFunction.lean"
-  tags: ["bridge-b", "mayer", "spectral-radius", "pressure-function", "partial"]
-  confidence: "low"
+  tags: ["bridge-b", "mayer", "spectral-radius", "boundary-corrected", "certified-numerics", "partial"]
+  confidence: "low-medium (math core evidenced numerically; formal chain still open; Efrat link unverified — see hole_3)"
 
 - id: OP-DataQuantity
   name: "Data Quantity Gap: Cayley Graphs vs LMFDB Newforms"
