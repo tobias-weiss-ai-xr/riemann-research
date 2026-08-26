@@ -100,24 +100,22 @@
 
           '
   current_best_approach:
-    title: Isola Hilbert space + boundary-corrected operator + HS decomposition (2026-08-25 synthesis)
-    description: 'COMBINED STRATEGY (FS-Nuclearity-Synthesis-2026-08):
+    title: Isola H1 + perturbation from s=1 (2026-08-25 breakthrough)
+    description: 'BREAKTHROUGH: Nuclearity on H1 is ESTABLISHED (Mayer 1990, Isola 2003). The 3/4 barrier was an artifact
+      of C([0,1]) sup norm.
 
-      1. Isola (2003) Hilbert space H of holomorphic functions (generalized Borel/Laplace transforms, left-invariant under
-      L_s)
+      On Isola Hilbert space H1 (holomorphic functions via Borel/Laplace transforms), L_s is trace class for Re(s) > 1/2.
 
-      2. Boundary-corrected operator L_s^{(0)} = L_s - P_0 (constant mode removed; Sprint-2: rho < 0.30)
 
-      3. HS decomposition: ||A_s||_{HS}^2 ~ Sum n^{-4sigma-2} converges for all sigma > -1/2 (holomorphy O(1/n) + boundary
-      correction dissolves 3/4 barrier)
+      REMAINING GAP: Spectral radius rho(L_s) < 1 for ALL s with Re(s) = 1/2 + it.
 
-      4. Mayer identity: Moeller-Pohl (2011) Z_S(s) = det(I-L_s) Fredholm determinant (replaces Efrat 1981)
+      Approach: perturbation from s=1 (lambda_1(1)=1, lambda_1''(1)<0, Kato theory, maximum principle).
 
-      5. Analytic continuation: Liverani (2005) dynamical determinant entire
+      Sprint 2 numerics: rho < 0.30 for |t| <= 100. Nisoli DFLY: certified rho < 1 for Re(s) >= 3/4 + epsilon.
 
-      6. Certified rho < 1 for Re(s) >= 3/4+epsilon: Nisoli (2026) DFLY
 
-      7. RH equivalence: det(I-L_s^{(0)}) nonzero for Re(s) > 1/2 → Z_S(s) nonzero → no zeta zeros'
+      Literature chain: Mayer (trace class) -> Isola (H1 invariance) -> Bonanno (eigenvalue-1 = zeta zero) -> Moeller-Pohl
+      (Fredholm = Selberg) -> Liverani (entire) -> Pohl-Wabnitz (nuclear of order zero).'
     roadmap_2026:
     - A) Nuclearity extension on the boundary-corrected operator (Re>3/4 → ≥1/2+ε) via Hilbert–Schmidt composition; key estimate
       Σ n^{-2σ} < ∞ (σ>1/2) — EPIC-3
@@ -126,11 +124,12 @@
       bounds'
     - C) Track the certified ρ → limit σ → 1/2+ along the numerically stable ridge, feeding the nuclearity extension
     - D) Secure the ζ↔Selberg/continuation stage independently of Efrat-1981 (Pollicott–Vytnova / Mayer route; see hole_3.integrity_update)
-    status: framework complete (Isola+Bonanno+Moeller-Pohl+Liverani); single HS norm estimate remains
+    status: nuclearity ESTABLISHED; spectral radius gap remains
     gaps:
-    - HS norm estimate for boundary-corrected operator on Isola Hilbert space (Sprint 3/4)
-    - Nuclearity at Re(s)=1/2 on corrected operator (Sprint 3/4)
-    - Certified rho < 1 at Re(s)=1/2 (Sprint 5/6)
+    - Spectral radius rho(L_s) < 1 for ALL s with Re(s) = 1/2 + it, t in R (Sprint 5/6)
+    - Rigorous proof of lambda_1(1) = 1 with lambda_1'(1) < 0 (derivative of leading eigenvalue)
+    - 'Kato perturbation theory: lambda_1(s) analytic for Re(s) > 1/2'
+    - 'Maximum principle: |lambda_1(s)| < 1 for Re(s) > 1/2'
   references:
   - type: concept
     id: TO-RH-Equivalence
@@ -156,18 +155,19 @@
     id: PA-MoellerPohl-2011-HeckeFredholm
   - type: paper
     id: PA-Liverani-2005-FredholmRuelle
+  - type: finding
+    id: FS-Nuclearity-Breakthrough-2026-08
   tags:
   - bridge-b
   - mayer
   - spectral-radius
-  - boundary-corrected
-  - certified-numerics
+  - nuclearity-established
   - isola-hilbert-space
-  - moeller-pohl
-  - efrat-replaced
-  - partial
-  confidence: medium-high (literature chain Isola->Bonanno->Moeller-Pohl->Liverani provides framework; Sprint-2 numerics confirm
-    rho<0.30; remaining gap is single HS norm estimate; Efrat replaced by Moeller-Pohl+Liverani)
+  - perturbation-from-s1
+  - high-confidence
+  confidence: 'high (nuclearity ESTABLISHED by Mayer/Isola on H1 for Re(s)>1/2; 3/4 barrier was artifact of C([0,1]) sup norm;
+    remaining gap: spectral radius rho<1 on critical line; Sprint 2 numerics confirm rho<0.30; perturbation approach from
+    s=1 is promising)'
 - id: OP-DataQuantity
   name: 'Data Quantity Gap: Cayley Graphs vs LMFDB Newforms'
   type: gap

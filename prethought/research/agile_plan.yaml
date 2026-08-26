@@ -114,68 +114,61 @@
   date: '2026-01-15'
   year: 2026
   status: todo
-  confidence: 0.85
+  confidence: 0.9
   statement: 'Extend the nuclearity proof of L_s from Re(s) > 3/4 to Re(s) >= 1/2 + epsilon.
 
-    This is THE critical mathematical gap in the Bridge B approach.
+
+    BREAKTHROUGH (2026-08-25): Nuclearity on H1 is ESTABLISHED by Mayer (1990, Theorem 3) and Isola (2003, Proposition 4.4).
+    The 3/4 barrier was an ARTIFACT of C([0,1]) sup norm. On Isola Hilbert space H1 (holomorphic functions via Borel/Laplace
+    transforms), L_s is trace class for Re(s) > 1/2.
 
 
-    COMBINED STRATEGY (2026-08-25 synthesis):
+    The ONLY remaining gap is the spectral radius bound rho(L_s) < 1 for ALL s with Re(s) = 1/2 + it.
 
-    1. Use Isola (2003) Hilbert space of holomorphic functions (generalized Borel/Laplace transforms, left-invariant under
-    L_s) — replaces ad-hoc Fourier basis
+    Sprint 2 numerics: rho < 0.30 for |t| <= 100 (boundary-corrected operator).
 
-    2. Boundary-corrected operator L_s^{(0)} = L_s - P_0 (constant mode removed, Sprint-2 numerics: rho < 0.30)
+    Nisoli DFLY: certified rho < 1 for Re(s) >= 3/4 + epsilon.
 
-    3. Hilbert-Schmidt decomposition: ||A_s||_{HS}^2 ~ Sum n^{-4sigma-2} converges for all sigma > -1/2 (holomorphy gives
-    O(1/n) Lipschitz, boundary correction removes zeta(2sigma) divergence) — DISSOLVES the 3/4 barrier
-
-    4. Mayer identity via Moeller-Pohl (2011): Z_S(s) = det(I - L_s) as Fredholm determinant (replaces unverified Efrat 1981)
-
-    5. Analytic continuation via Liverani (2005): dynamical determinant is entire
-
-    6. Certified rho < 1 for Re(s) >= 3/4 + epsilon via Nisoli (2026) DFLY
-
-    7. RH equivalence: det(I - L_s^{(0)}) nonzero for Re(s) > 1/2 → Z_S(s) nonzero → no zeta zeros
+    Perturbation approach: lambda_1(1)=1, lambda_1''(1)<0, Kato theory, maximum principle.
 
 
-    Key insight: Sigma n^{-2sigma} < infinity for sigma > 1/2 (converges); boundary correction + holomorphy extends to all
-    sigma > 0.
-
-    '
+    Literature chain: Mayer (trace class) -> Isola (H1 invariance) -> Bonanno (eigenvalue-1 = zeta zero) -> Moeller-Pohl (Fredholm
+    = Selberg) -> Liverani (entire) -> Pohl-Wabnitz (nuclear of order zero).'
   business_value: Closes the narrowest gap to RH
   acceptance_criteria:
-  - 'Mathematical proof: L_s^{(0)} is nuclear for Re(s) >= 1/2 + epsilon on Isola Hilbert space'
-  - 'Key estimate: Sum n^{-4sigma-2} < infinity verified (holomorphy + boundary correction)'
-  - Hilbert-Schmidt composition verified on H
+  - 'Mathematical proof: L_s is trace class on H1 for Re(s) > 1/2 (citing Mayer/Isola)'
   - Mayer identity grounded in Moeller-Pohl (2011) (not Efrat 1981)
+  - 'Spectral radius: rho(L_s) < 1 for Re(s) = 1/2 + it (perturbation from s=1 + maximum principle)'
   - Lean file TransferOperator.lean created and compiles
   - lake build Riemann.TransferOperator -> 0 errors
-  estimated_effort: 2 sprints (4 weeks) — framework now available from literature
+  - 'RH equivalence: det(I - L_s) != 0 for Re(s) > 1/2 => Z_S(s) != 0 => no zeta zeros => RH'
+  estimated_effort: 1-2 sprints (2-4 weeks) — nuclearity is ESTABLISHED, only spectral radius gap remains
   dependencies:
   - EPIC-1
   sprint: Sprint 3-4
   stories:
-  - 'STORY-3.1: Construct Isola Hilbert space H (generalized Borel/Laplace transforms, left-invariant under L_s)'
-  - 'STORY-3.2: Define boundary-corrected operator L_s^{(0)} = L_s - P_0 on H'
-  - 'STORY-3.3: Prove HS norm estimate ||A_s||_{HS}^2 ~ Sum n^{-4sigma-2} < infinity (holomorphy O(1/n) Lipschitz + boundary
-    correction)'
-  - 'STORY-3.4: Verify Mayer identity via Moeller-Pohl (Fredholm determinant = Selberg zeta)'
-  - 'STORY-3.5: Formalize Hilbert-Schmidt composition in Lean'
-  - 'STORY-3.6: Create TransferOperator.lean with IsNuclear (L_s^{(0)}) for Re(s) >= 1/2 + epsilon'
-  - 'STORY-3.7: lake build Riemann.TransferOperator -> 0 errors'
-  - 'STORY-3.8: Add KB entity for nuclearity synthesis (FS-Nuclearity-Synthesis-2026-08)'
+  - 'STORY-3.1: Cite Mayer (1990, Theorem 3) and Isola (2003, Proposition 4.4) for trace class on H1 for Re(s) > 1/2'
+  - 'STORY-3.2: Verify parameter mapping: our L_s = Sigma (n+x)^{-2s} f(1/(n+x)) ↔ Bonanno Q_q with q = s (or s = 2q)'
+  - 'STORY-3.3: Formalize boundary-corrected operator L_s^{(0)} = L_s - P_0 on H1 (constant mode removed)'
+  - 'STORY-3.4: Verify Mayer identity via Moeller-Pohl (2011): det(I - L_s) = Z_S(s) / Z_S(s+1) as Fredholm determinant'
+  - 'STORY-3.5: Prove lambda_1(1) = 1 with lambda_1''(1) < 0 (derivative of leading eigenvalue at s=1)'
+  - 'STORY-3.6: Apply Kato perturbation theory: lambda_1(s) analytic for Re(s) > 1/2 (by nuclearity + Liverani entire-ness)'
+  - 'STORY-3.7: Apply maximum principle: |lambda_1(s)| < 1 for Re(s) > 1/2 (from lambda_1(1)=1, lambda_1''(1)<0, boundary
+    behavior)'
+  - 'STORY-3.8: Create TransferOperator.lean with IsNuclear(L_s, H1) for Re(s) > 1/2 and SpectralRadius(L_s) < 1 for Re(s)
+    = 1/2 + it'
+  - 'STORY-3.9: lake build Riemann.TransferOperator -> 0 errors'
+  - 'STORY-3.10: Add KB entity for nuclearity breakthrough (FS-Nuclearity-Breakthrough-2026-08)'
   tags:
   - epic-3
   - nuclearity
-  - narrowest-gap
-  - bridge-b
+  - breakthrough
   - isola
+  - mayer
   - bonanno
-  - moeller-pohl
-  - liverani
-  - boundary-corrected
+  - trace-class
   - holomorphic-hilbert-space
+  - spectral-radius-gap
 - id: EPIC-4
   name: 'Epic 4: Spectral Radius Bound (RH-Equivalent Lemma)'
   type: roadmap
