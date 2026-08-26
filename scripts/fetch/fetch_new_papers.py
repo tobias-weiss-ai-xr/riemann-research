@@ -11,7 +11,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import requests
+import hashlib
+import os
+import pickle
+
 import yaml
+try:
+    from yaml import CSafeLoader as _LOADER
+except ImportError:
+    _LOADER = yaml.SafeLoader
 
 import research_config
 
@@ -49,25 +57,28 @@ def classify_subcategory(title, abstract="", cfg=None, category=None):
 
     Reads ``subcategory_keywords`` from taxonomy.yaml (via research_config).
     Falls back to a generic heuristic ordering when no config rules match,
-    then to the paper's own category default so a *valid* taxonomy value is
-    always returned (never a skeleton-template label).
+    then to the paper's own category default.  The return value is always a
+    subcategory id declared in taxonomy.yaml — never a template-only label
+    (so downstream validation never rejects the classification).
 
-    When ``category`` is given, keyword rules are narrowed to subcategories
-    declared under that category so a paper in ``equivalences`` can never be
-    tagged ``l-functions``.
+    When ``category`` is given AND subcategories declare a ``category`` field,
+    keyword rules are narrowed to subcategories of that category (e.g. a paper
+    in "equivalences" can never be tagged "l-functions").
     """
     if cfg is None:
         cfg = research_config.load_config()
     text = f"{title} {abstract}".lower()
-    title_lower = title.lower()
-    # Category-scoped defaults from the taxonomy
+    subs = research_config.get_subcategories(cfg)
+    sub_ids = {s.get("id") for s in subs}
+    # Category-scoped defaults from the taxonomy (if subcategories carry one)
     cat_defaults = {}
     cat_subs = {}
-    for s in research_config.get_subcategories(cfg):
+    for s in subs:
         scat = s.get("category", "")
-        cat_defaults.setdefault(scat, s["id"])
-        cat_subs.setdefault(scat, []).append(s["id"])
-    allowed = set(cat_subs.get(category, [])) if category else None
+        if scat:
+            cat_defaults.setdefault(scat, s["id"])
+            cat_subs.setdefault(scat, []).append(s["id"])
+    allowed = set(cat_subs.get(category, [])) if category and cat_subs else None
     # 1. Config-driven rules (first match wins; narrowed to the paper's category)
     for sid, keywords in research_config.get_subcategory_keywords(cfg):
         if allowed and sid not in allowed:
@@ -75,19 +86,47 @@ def classify_subcategory(title, abstract="", cfg=None, category=None):
         for kw in keywords:
             if kw.lower() in text:
                 return sid
-    # 2. Category default (valid taxonomy subcategory, never a template label)
+    # 2. Generic heuristic fallback (only if the label exists in the taxonomy)
+    heuristic = [
+        ("theory", ["theory", "theoretical", "formal", "proof", "convergence", "bound"]),
+        ("mechanism", ["mechanism", "explainab", "interpretab", "attention", "saliency"]),
+        ("method", ["method", "algorithm", "approach", "technique", "framework", "novel method"]),
+        ("application", ["application", "applied", "deploy", "real-world", "case study"]),
+        ("development", ["implementation", "system", "platform", "toolkit", "library", "open-source"]),
+        ("systems", ["simulator", "simulation", "engine", "benchmark", "testbed", "environment"]),
+        ("evaluation", ["benchmark", "evaluation", "comparison", "baseline", "leaderboard"]),
+        ("review", ["survey", "review", "literature", "meta-analysis", "overview", "taxonomy"]),
+    ]
+    for sid, keywords in heuristic:
+        if sid not in sub_ids:
+            continue
+        for kw in keywords:
+            if kw in text:
+                return sid
+    # 3. Category default (valid taxonomy value, never a template label)
     if category and category in cat_defaults:
         return cat_defaults[category]
-    # 3. First configured subcategory as last resort
-    subs = research_config.get_subcategories(cfg)
+    # 4. First configured subcategory as last resort
     return subs[0]["id"] if subs else ""
 
+
+# ── Dedup cache (shared logic with fetch_openalex_bulk.py) ───────────────
+_DEDUP_DIR = Path(os.environ.get("XDG_CACHE_HOME", "~/.cache")) / "research-runner/dedup"
+
+def _cache_path(yaml_path):
+    st = yaml_path.stat()
+    h = f"{yaml_path}_{st.st_mtime:.0f}_{st.st_size}"
+    return _DEDUP_DIR / f"{hashlib.md5(h.encode()).hexdigest()}.pkl"
 
 def load_existing_papers(yaml_path):
     if not yaml_path.exists():
         return {}, []
+    cp = _cache_path(yaml_path)
+    if cp.exists():
+        with open(cp, "rb") as f:
+            return pickle.load(f)
     with open(yaml_path, "r", encoding="utf-8") as f:
-        data = yaml.safe_load(f) or {}
+        data = yaml.load(f, Loader=_LOADER) or {}
     papers = data.get("papers", [])
     by_id = {}
     titles_lower = []
@@ -97,6 +136,9 @@ def load_existing_papers(yaml_path):
         if match:
             by_id[match.group(1)] = p
         titles_lower.append(p.get("title", "").lower().strip())
+    _DEDUP_DIR.mkdir(parents=True, exist_ok=True)
+    with open(cp, "wb") as f:
+        pickle.dump((by_id, titles_lower), f, protocol=pickle.HIGHEST_PROTOCOL)
     return by_id, titles_lower
 
 
