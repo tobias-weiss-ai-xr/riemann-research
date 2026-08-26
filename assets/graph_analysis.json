@@ -3,7 +3,7 @@
   {
    "id": "application",
    "name": "application",
-   "count": 203,
+   "count": 273,
    "trajectory": {
     "2002": 3,
     "2003": 2,
@@ -29,24 +29,24 @@
     "2023": 8,
     "2024": 8,
     "2025": 11,
-    "2026": 17
+    "2026": 87
    },
    "momentum": {
     "id": "application",
     "name": "Application",
-    "total": 203,
-    "recent": 21,
+    "total": 273,
+    "recent": 91,
     "prior": 11,
-    "growth_pct": 90.9,
-    "recent_share": 0.103,
-    "papers_per_month": 1.8,
-    "score": 101.2
+    "growth_pct": 727.3,
+    "recent_share": 0.333,
+    "papers_per_month": 7.6,
+    "score": 760.6
    }
   },
   {
    "id": "dynam-systems",
    "name": "Dynamical Systems",
-   "count": 251,
+   "count": 259,
    "trajectory": {
     "1981": 1,
     "1991": 1,
@@ -72,24 +72,24 @@
     "2023": 18,
     "2024": 26,
     "2025": 29,
-    "2026": 35
+    "2026": 43
    },
    "momentum": {
     "id": "dynam-systems",
     "name": "Dynam Systems",
-    "total": 251,
-    "recent": 47,
+    "total": 259,
+    "recent": 55,
     "prior": 28,
-    "growth_pct": 67.9,
-    "recent_share": 0.187,
-    "papers_per_month": 3.9,
-    "score": 86.6
+    "growth_pct": 96.4,
+    "recent_share": 0.212,
+    "papers_per_month": 4.6,
+    "score": 117.6
    }
   },
   {
    "id": "equivalences",
    "name": "RH Equivalences & Bridges",
-   "count": 660,
+   "count": 697,
    "trajectory": {
     "2002": 6,
     "2003": 5,
@@ -115,24 +115,24 @@
     "2023": 54,
     "2024": 73,
     "2025": 86,
-    "2026": 83
+    "2026": 120
    },
    "momentum": {
     "id": "equivalences",
     "name": "Equivalences",
-    "total": 660,
-    "recent": 119,
+    "total": 697,
+    "recent": 156,
     "prior": 76,
-    "growth_pct": 56.6,
-    "recent_share": 0.18,
-    "papers_per_month": 9.9,
-    "score": 74.6
+    "growth_pct": 105.3,
+    "recent_share": 0.224,
+    "papers_per_month": 13.0,
+    "score": 127.7
    }
   },
   {
    "id": "evaluation",
    "name": "evaluation",
-   "count": 260,
+   "count": 449,
    "trajectory": {
     "1998": 1,
     "2001": 1,
@@ -160,18 +160,18 @@
     "2023": 11,
     "2024": 15,
     "2025": 20,
-    "2026": 54
+    "2026": 243
    },
    "momentum": {
     "id": "evaluation",
     "name": "Evaluation",
-    "total": 260,
-    "recent": 71,
+    "total": 449,
+    "recent": 260,
     "prior": 7,
-    "growth_pct": 914.3,
-    "recent_share": 0.273,
-    "papers_per_month": 5.9,
-    "score": 941.6
+    "growth_pct": 3614.3,
+    "recent_share": 0.579,
+    "papers_per_month": 21.7,
+    "score": 3672.2
    }
   },
   {
@@ -197,7 +197,7 @@
   {
    "id": "machine-learning",
    "name": "Machine Learning",
-   "count": 413,
+   "count": 530,
    "trajectory": {
     "2014": 1,
     "2015": 1,
@@ -211,24 +211,24 @@
     "2023": 42,
     "2024": 92,
     "2025": 35,
-    "2026": 43
+    "2026": 160
    },
    "momentum": {
     "id": "machine-learning",
     "name": "Machine Learning",
-    "total": 413,
-    "recent": 64,
+    "total": 530,
+    "recent": 181,
     "prior": 26,
-    "growth_pct": 146.2,
-    "recent_share": 0.155,
-    "papers_per_month": 5.3,
-    "score": 161.7
+    "growth_pct": 596.2,
+    "recent_share": 0.342,
+    "papers_per_month": 15.1,
+    "score": 630.4
    }
   },
   {
    "id": "method",
    "name": "method",
-   "count": 293,
+   "count": 374,
    "trajectory": {
     "2000": 1,
     "2002": 3,
@@ -255,24 +255,24 @@
     "2023": 8,
     "2024": 19,
     "2025": 18,
-    "2026": 8
+    "2026": 89
    },
    "momentum": {
     "id": "method",
     "name": "Method",
-    "total": 293,
-    "recent": 14,
+    "total": 374,
+    "recent": 95,
     "prior": 23,
-    "growth_pct": -39.1,
-    "recent_share": 0.048,
-    "papers_per_month": 1.2,
-    "score": -34.3
+    "growth_pct": 313.0,
+    "recent_share": 0.254,
+    "papers_per_month": 7.9,
+    "score": 338.4
    }
   },
   {
    "id": "number-theory",
    "name": "Number Theory",
-   "count": 861,
+   "count": 1040,
    "trajectory": {
     "1859": 1,
     "2002": 2,
@@ -299,24 +299,24 @@
     "2023": 96,
     "2024": 134,
     "2025": 124,
-    "2026": 94
+    "2026": 273
    },
    "momentum": {
     "id": "number-theory",
     "name": "Number Theory",
-    "total": 861,
-    "recent": 167,
+    "total": 1040,
+    "recent": 346,
     "prior": 116,
-    "growth_pct": 44.0,
-    "recent_share": 0.194,
-    "papers_per_month": 13.9,
-    "score": 63.4
+    "growth_pct": 198.3,
+    "recent_share": 0.333,
+    "papers_per_month": 28.8,
+    "score": 231.6
    }
   },
   {
    "id": "spectral-theory",
    "name": "Spectral Theory & Graphs",
-   "count": 440,
+   "count": 513,
    "trajectory": {
     "2002": 1,
     "2003": 2,
@@ -341,18 +341,18 @@
     "2023": 46,
     "2024": 61,
     "2025": 59,
-    "2026": 53
+    "2026": 126
    },
    "momentum": {
     "id": "spectral-theory",
     "name": "Spectral Theory",
-    "total": 440,
-    "recent": 79,
+    "total": 513,
+    "recent": 152,
     "prior": 55,
-    "growth_pct": 43.6,
-    "recent_share": 0.18,
-    "papers_per_month": 6.6,
-    "score": 61.6
+    "growth_pct": 176.4,
+    "recent_share": 0.296,
+    "papers_per_month": 12.7,
+    "score": 206.0
    }
   },
   {
@@ -413,7 +413,7 @@
   {
    "id": "cayley-graphs",
    "name": "Cayley Graphs",
-   "count": 958
+   "count": 1371
   },
   {
    "id": "development",
@@ -424,6 +424,16 @@
    "id": "evaluation",
    "name": "evaluation",
    "count": 10
+  },
+  {
+   "id": "gnn-cayley",
+   "name": "GNNs on Cayley Graphs",
+   "count": 117
+  },
+  {
+   "id": "hecke",
+   "name": "Hecke Operators",
+   "count": 179
   },
   {
    "id": "hybrid",
@@ -451,6 +461,11 @@
    "count": 10
   },
   {
+   "id": "nyman-beurling",
+   "name": "Nyman-Beurling Criterion",
+   "count": 37
+  },
+  {
    "id": "review",
    "name": "review",
    "count": 41
@@ -473,7 +488,7 @@
   {
    "id": "transfer-operator",
    "name": "Transfer Operators",
-   "count": 1
+   "count": 9
   }
  ],
  "timeline": [
@@ -16070,12 +16085,137 @@
   [
    "2026-02",
    "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-02",
+   "machine-learning",
    "theory"
   ],
   [
    "2026-02",
    "machine-learning",
    "theory"
+  ],
+  [
+   "2026-02",
+   "method",
+   "cayley-graphs"
   ],
   [
    "2026-02",
@@ -16115,6 +16255,11 @@
   [
    "2026-02",
    "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-02",
+   "number-theory",
    "theory"
   ],
   [
@@ -16155,6 +16300,11 @@
   [
    "2026-02",
    "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-02",
+   "spectral-theory",
    "development"
   ],
   [
@@ -16181,6 +16331,61 @@
    "2026-02",
    "survey",
    "theory"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "application",
+   "cayley-graphs"
   ],
   [
    "2026-03",
@@ -16219,8 +16424,8 @@
   ],
   [
    "2026-03",
-   "equivalences",
-   "method"
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2026-03",
@@ -16235,6 +16440,41 @@
   [
    "2026-03",
    "equivalences",
+   "method"
+  ],
+  [
+   "2026-03",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-03",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-03",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-03",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-03",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-03",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-03",
+   "equivalences",
    "theory"
   ],
   [
@@ -16311,6 +16551,146 @@
    "2026-03",
    "evaluation",
    ""
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "evaluation",
+   "cayley-graphs"
   ],
   [
    "2026-03",
@@ -16336,6 +16716,136 @@
    "2026-03",
    "formalization",
    ""
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-03",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2026-03",
@@ -16369,6 +16879,71 @@
   ],
   [
    "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
    "number-theory",
    "application"
   ],
@@ -16386,6 +16961,151 @@
    "2026-03",
    "number-theory",
    "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-03",
+   "number-theory",
+   "hecke"
   ],
   [
    "2026-03",
@@ -16421,6 +17141,76 @@
    "2026-03",
    "number-theory",
    "theory"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-03",
+   "spectral-theory",
+   "cayley-graphs"
   ],
   [
    "2026-03",
@@ -16460,6 +17250,116 @@
   [
    "2026-04",
    "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "application",
    "theory"
   ],
   [
@@ -16491,6 +17391,11 @@
    "2026-04",
    "dynam-systems",
    "theory"
+  ],
+  [
+   "2026-04",
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2026-04",
@@ -16510,6 +17415,36 @@
   [
    "2026-04",
    "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-04",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-04",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-04",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-04",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-04",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-04",
+   "equivalences",
    "theory"
   ],
   [
@@ -16566,6 +17501,166 @@
    "2026-04",
    "evaluation",
    ""
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "evaluation",
+   "cayley-graphs"
   ],
   [
    "2026-04",
@@ -16586,6 +17681,26 @@
    "2026-04",
    "formalization",
    ""
+  ],
+  [
+   "2026-04",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-04",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-04",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-04",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2026-04",
@@ -16619,7 +17734,47 @@
   ],
   [
    "2026-04",
-   "number-theory",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "method",
    "cayley-graphs"
   ],
   [
@@ -16631,6 +17786,156 @@
    "2026-04",
    "number-theory",
    "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-04",
+   "number-theory",
+   "hecke"
   ],
   [
    "2026-04",
@@ -16690,6 +17995,41 @@
   [
    "2026-04",
    "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
    "method"
   ],
   [
@@ -16714,6 +18054,41 @@
   ],
   [
    "2026-05",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
    "dynam-systems",
    "cayley-graphs"
   ],
@@ -16726,6 +18101,16 @@
    "2026-05",
    "dynam-systems",
    "theory"
+  ],
+  [
+   "2026-05",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-05",
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2026-05",
@@ -16750,6 +18135,21 @@
   [
    "2026-05",
    "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-05",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-05",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-05",
+   "equivalences",
    "theory"
   ],
   [
@@ -16801,6 +18201,166 @@
    "2026-05",
    "evaluation",
    ""
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "evaluation",
+   "cayley-graphs"
   ],
   [
    "2026-05",
@@ -16816,6 +18376,271 @@
    "2026-05",
    "formalization",
    ""
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2026-05",
@@ -16879,6 +18704,66 @@
   ],
   [
    "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
    "number-theory",
    "application"
   ],
@@ -16910,6 +18795,116 @@
   [
    "2026-05",
    "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
    "method"
   ],
   [
@@ -16970,6 +18965,61 @@
   [
    "2026-05",
    "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-05",
+   "spectral-theory",
    "method"
   ],
   [
@@ -16986,6 +19036,41 @@
    "2026-05",
    "spectral-theory",
    "theory"
+  ],
+  [
+   "2026-06",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "application",
+   "cayley-graphs"
   ],
   [
    "2026-06",
@@ -17029,6 +19114,16 @@
   ],
   [
    "2026-06",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-06",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-06",
    "equivalences",
    "application"
   ],
@@ -17036,6 +19131,36 @@
    "2026-06",
    "equivalences",
    "mechanism"
+  ],
+  [
+   "2026-06",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-06",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-06",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-06",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-06",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-06",
+   "equivalences",
+   "nyman-beurling"
   ],
   [
    "2026-06",
@@ -17084,8 +19209,158 @@
   ],
   [
    "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
    "machine-learning",
    "development"
+  ],
+  [
+   "2026-06",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-06",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2026-06",
@@ -17135,6 +19410,61 @@
   [
    "2026-06",
    "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "method",
    "theory"
   ],
   [
@@ -17151,6 +19481,171 @@
    "2026-06",
    "number-theory",
    "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "hecke"
   ],
   [
    "2026-06",
@@ -17201,6 +19696,96 @@
    "2026-06",
    "number-theory",
    "theory"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-06",
+   "spectral-theory",
+   "cayley-graphs"
   ],
   [
    "2026-06",
@@ -17259,6 +19844,46 @@
   ],
   [
    "2026-07",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
    "dynam-systems",
    "cayley-graphs"
   ],
@@ -17276,6 +19901,11 @@
    "2026-07",
    "dynam-systems",
    "theory"
+  ],
+  [
+   "2026-07",
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2026-07",
@@ -17315,6 +19945,31 @@
   [
    "2026-07",
    "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-07",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-07",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-07",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-07",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-07",
+   "equivalences",
    "review"
   ],
   [
@@ -17425,6 +20080,226 @@
   [
    "2026-07",
    "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "evaluation",
    "method"
   ],
   [
@@ -17450,7 +20325,32 @@
   [
    "2026-07",
    "machine-learning",
-   "theory"
+   "gnn-cayley"
+  ],
+  [
+   "2026-07",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-07",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-07",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-07",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-07",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2026-07",
@@ -17461,6 +20361,111 @@
    "2026-07",
    "machine-learning",
    "theory"
+  ],
+  [
+   "2026-07",
+   "machine-learning",
+   "theory"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "method",
+   "cayley-graphs"
   ],
   [
    "2026-07",
@@ -17495,6 +20500,181 @@
   [
    "2026-07",
    "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
    "method"
   ],
   [
@@ -17521,6 +20701,86 @@
    "2026-07",
    "spectral-theory",
    "application"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
   ],
   [
    "2026-07",
@@ -17564,6 +20824,81 @@
   ],
   [
    "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "application",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
    "dynam-systems",
    "theory"
   ],
@@ -17571,6 +20906,11 @@
    "2026-08",
    "dynam-systems",
    "theory"
+  ],
+  [
+   "2026-08",
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2026-08",
@@ -17605,6 +20945,61 @@
   [
    "2026-08",
    "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
    "theory"
   ],
   [
@@ -17650,6 +21045,131 @@
   [
    "2026-08",
    "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "evaluation",
    "method"
   ],
   [
@@ -17665,7 +21185,12 @@
   [
    "2026-08",
    "machine-learning",
-   "theory"
+   "gnn-cayley"
+  ],
+  [
+   "2026-08",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2026-08",
@@ -17676,6 +21201,86 @@
    "2026-08",
    "machine-learning",
    "theory"
+  ],
+  [
+   "2026-08",
+   "machine-learning",
+   "theory"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "method",
+   "cayley-graphs"
   ],
   [
    "2026-08",
@@ -17710,7 +21315,152 @@
   [
    "2026-08",
    "number-theory",
-   "theory"
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
   ],
   [
    "2026-08",
@@ -17731,6 +21481,41 @@
    "2026-08",
    "number-theory",
    "theory"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "theory"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
   ],
   [
    "2026-08",
@@ -17783,6 +21568,14 @@
    "papers": 10
   },
   {
+   "name": "ICLR 2026",
+   "papers": 3
+  },
+  {
+   "name": "ICML 2026",
+   "papers": 3
+  },
+  {
    "name": "NeurIPS 2024",
    "papers": 2
   },
@@ -17825,121 +21618,113 @@
   {
    "name": "NeurIPS 2023",
    "papers": 1
-  },
-  {
-   "name": "ECIR",
-   "papers": 1
-  },
-  {
-   "name": "IIR",
-   "papers": 1
   }
  ],
  "keyword_bursts": [
   {
    "keyword": "framework",
-   "recent": 141,
-   "total": 273,
-   "burst_score": 2.97,
-   "recent_share": 0.2342
-  },
-  {
-   "keyword": "analysis",
-   "recent": 81,
-   "total": 293,
-   "burst_score": 1.59,
-   "recent_share": 0.1346
-  },
-  {
-   "keyword": "human",
-   "recent": 10,
-   "total": 37,
-   "burst_score": 1.55,
-   "recent_share": 0.0166
-  },
-  {
-   "keyword": "review",
-   "recent": 16,
-   "total": 61,
-   "burst_score": 1.51,
-   "recent_share": 0.0266
-  },
-  {
-   "keyword": "system",
-   "recent": 97,
-   "total": 380,
-   "burst_score": 1.47,
-   "recent_share": 0.1611
-  },
-  {
-   "keyword": "tool",
-   "recent": 30,
-   "total": 117,
-   "burst_score": 1.47,
-   "recent_share": 0.0498
+   "recent": 278,
+   "total": 410,
+   "burst_score": 2.11,
+   "recent_share": 0.205
   },
   {
    "keyword": "benchmark",
-   "recent": 13,
-   "total": 56,
-   "burst_score": 1.33,
-   "recent_share": 0.0216
-  },
-  {
-   "keyword": "evaluation",
-   "recent": 19,
-   "total": 83,
-   "burst_score": 1.32,
-   "recent_share": 0.0316
-  },
-  {
-   "keyword": "model",
-   "recent": 101,
-   "total": 458,
-   "burst_score": 1.27,
-   "recent_share": 0.1678
-  },
-  {
-   "keyword": "novel",
-   "recent": 33,
-   "total": 167,
-   "burst_score": 1.14,
-   "recent_share": 0.0548
-  },
-  {
-   "keyword": "application",
-   "recent": 85,
-   "total": 471,
-   "burst_score": 1.04,
-   "recent_share": 0.1412
-  },
-  {
-   "keyword": "method",
-   "recent": 115,
-   "total": 646,
-   "burst_score": 1.02,
-   "recent_share": 0.191
+   "recent": 72,
+   "total": 115,
+   "burst_score": 1.95,
+   "recent_share": 0.0531
   },
   {
    "keyword": "autonomous",
-   "recent": 1,
-   "total": 6,
-   "burst_score": 0.96,
-   "recent_share": 0.0017
+   "recent": 7,
+   "total": 12,
+   "burst_score": 1.81,
+   "recent_share": 0.0052
+  },
+  {
+   "keyword": "evaluation",
+   "recent": 62,
+   "total": 126,
+   "burst_score": 1.53,
+   "recent_share": 0.0457
+  },
+  {
+   "keyword": "scalable",
+   "recent": 9,
+   "total": 19,
+   "burst_score": 1.47,
+   "recent_share": 0.0066
+  },
+  {
+   "keyword": "human",
+   "recent": 24,
+   "total": 51,
+   "burst_score": 1.46,
+   "recent_share": 0.0177
+  },
+  {
+   "keyword": "model",
+   "recent": 301,
+   "total": 658,
+   "burst_score": 1.42,
+   "recent_share": 0.222
+  },
+  {
+   "keyword": "system",
+   "recent": 217,
+   "total": 500,
+   "burst_score": 1.35,
+   "recent_share": 0.16
+  },
+  {
+   "keyword": "analysis",
+   "recent": 161,
+   "total": 373,
+   "burst_score": 1.34,
+   "recent_share": 0.1187
+  },
+  {
+   "keyword": "tool",
+   "recent": 65,
+   "total": 152,
+   "burst_score": 1.33,
+   "recent_share": 0.0479
   },
   {
    "keyword": "dataset",
-   "recent": 18,
-   "total": 112,
-   "burst_score": 0.92,
-   "recent_share": 0.0299
+   "recent": 60,
+   "total": 154,
+   "burst_score": 1.21,
+   "recent_share": 0.0442
   },
   {
-   "keyword": "survey",
-   "recent": 12,
-   "total": 75,
-   "burst_score": 0.92,
-   "recent_share": 0.0199
+   "keyword": "real-world",
+   "recent": 25,
+   "total": 65,
+   "burst_score": 1.2,
+   "recent_share": 0.0184
+  },
+  {
+   "keyword": "novel",
+   "recent": 80,
+   "total": 214,
+   "burst_score": 1.16,
+   "recent_share": 0.059
+  },
+  {
+   "keyword": "method",
+   "recent": 309,
+   "total": 840,
+   "burst_score": 1.14,
+   "recent_share": 0.2279
+  },
+  {
+   "keyword": "learning",
+   "recent": 108,
+   "total": 319,
+   "burst_score": 1.05,
+   "recent_share": 0.0796
   }
  ]
 }
