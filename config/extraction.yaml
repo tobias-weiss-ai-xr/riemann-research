@@ -9,4 +9,4 @@
 #             high-signal concept graph driven by the curated concept list.
 #             The feedback loop (tools/feedback_concepts.py) keeps growing
 #             the curated set from the graph analysis.
-mode: selective
+mode: broad

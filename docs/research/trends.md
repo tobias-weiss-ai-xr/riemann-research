@@ -1,45 +1,46 @@
 # Trends (12-Month View)
 
-**Generated:** 2026-08-25  
-**Window:** since 2025-08 — 490 of 2638 papers
+**Generated:** 2026-08-27  
+**Window:** since 2025-08 — 779 of 3649 papers
 
 ## 🔥 Keyword Bursts
 
 | Keyword | Recent | Total | Burst |
 |---------|--------|-------|-------|
-| framework | 88 | 197 | 2.4× |
-| analysis | 54 | 216 | 1.3× |
-| system | 61 | 283 | 1.2× |
-| evaluation | 12 | 55 | 1.2× |
-| model | 73 | 367 | 1.1× |
-| benchmark | 9 | 43 | 1.1× |
-| survey | 8 | 38 | 1.1× |
-| application | 68 | 375 | 1.0× |
-| tool | 16 | 86 | 1.0× |
-| human | 6 | 33 | 1.0× |
-| method | 77 | 468 | 0.9× |
-| novel | 23 | 135 | 0.9× |
-| autonomous | 1 | 6 | 0.9× |
-| review | 5 | 35 | 0.8× |
-| learning | 31 | 228 | 0.7× |
+| framework | 159 | 300 | 2.5× |
+| benchmark | 20 | 59 | 1.6× |
+| system | 124 | 412 | 1.4× |
+| analysis | 93 | 319 | 1.4× |
+| review | 18 | 59 | 1.4× |
+| tool | 32 | 117 | 1.3× |
+| evaluation | 25 | 89 | 1.3× |
+| human | 10 | 37 | 1.3× |
+| model | 127 | 497 | 1.2× |
+| novel | 44 | 184 | 1.1× |
+| method | 150 | 683 | 1.0× |
+| application | 105 | 500 | 1.0× |
+| survey | 14 | 68 | 1.0× |
+| learning | 41 | 245 | 0.8× |
+| dataset | 21 | 120 | 0.8× |
 
 ## 📈 Fastest-Growing Cells
 
 | Cell | Recent | Total | Recent Share |
 |------|--------|-------|--------------|
-| `formalization/lean-foundation` | 15 | 15 | 100% |
-| `number-theory/l-functions` | 45 | 144 | 31% |
-| `equivalences/hilbert-polya` | 6 | 26 | 23% |
-| `equivalences/weil` | 29 | 125 | 23% |
+| `spectral-theory/brandt-pizer` | 1 | 1 | 100% |
+| `formalization/lean-foundation` | 16 | 18 | 89% |
+| `formalization/verification` | 1 | 2 | 50% |
+| `equivalences/hilbert-polya` | 53 | 119 | 45% |
+| `number-theory/l-functions` | 256 | 929 | 28% |
+| `equivalences/weil` | 31 | 127 | 24% |
 | `dynam-systems/transfer-operator` | 42 | 195 | 22% |
-| `number-theory/modular-forms` | 33 | 155 | 21% |
-| `machine-learning/gnn-cayley` | 56 | 282 | 20% |
-| `equivalences/nyman-beurling` | 39 | 191 | 20% |
+| `number-theory/modular-forms` | 35 | 161 | 22% |
+| `machine-learning/ml-zeros` | 2 | 9 | 22% |
+| `machine-learning/gnn-cayley` | 57 | 290 | 20% |
+| `equivalences/nyman-beurling` | 39 | 192 | 20% |
 | `equivalences/granville` | 21 | 109 | 19% |
-| `machine-learning/ml-zeros` | 1 | 6 | 17% |
-| `spectral-theory/cayley-graphs` | 153 | 973 | 16% |
-| `number-theory/hecke` | 35 | 230 | 15% |
-| `spectral-theory/spectral-gaps` | 8 | 63 | 13% |
-| `machine-learning/ml-hecke` | 7 | 112 | 6% |
+| `spectral-theory/spectral-gaps` | 12 | 70 | 17% |
+| `number-theory/hecke` | 45 | 267 | 17% |
+| `spectral-theory/cayley-graphs` | 160 | 1023 | 16% |
 
 Regenerate with `python3 tools/trend_scanner.py --months 12`.

@@ -1,32 +1,172 @@
-# Curated concept seeds for THIS research corpus.
-# Optional: repo-specific important concepts/ideas, added on top of the
-# taxonomy categories (associated structurally) and the statistically-mined
-# emergent bigrams. Leave empty to rely on taxonomy + emergent terms only.
-# Portable across all *-research repos: copy tools/extract_concepts.py,
-# tools/relate_concepts.py and tools/analyze_concept_graph.py as-is; only
-# papers.yaml is required.
-#
-# This skeleton ships with a generic research-methods seed set so the
-# selective concept graph (config/extraction.yaml: mode=selective) has a
-# meaningful curated layer on top of the taxonomy backbone.
 concepts:
-  - literature review
-  - systematic review
-  - meta analysis
-  - case study
-  - qualitative
-  - quantitative
-  - mixed methods
-  - experiment
-  - survey
-  - interview
-  - dataset
-  - benchmark
-  - reproducibility
-  - research gap
-  - grounded theory
-  - triangulation
-  - framework
-  - taxonomy
-  - open access
-  - peer review
+- nontrivial zero
+- critical line
+- critical strip
+- trivial zero
+- dirichlet series
+- dirichlet character
+- explicit formula
+- zero-free region
+- prime number theorem
+- prime gaps
+- twin prime
+- goldbach
+- levy constant
+- khintchine
+- continued fraction
+- mobius function
+- möbius function
+- moebius function
+- euler product
+- functional equation
+- de bruijn-newman
+- rook polynomial
+- absolute value bound
+- spectral radius
+- cayley digraph
+- expander
+- cheeger
+- laplacian eigenvalue
+- algebraic connectivity
+- eigenvalue
+- vertex-transitive
+- adjacency matrix
+- sl(2,f
+- psl(2,f
+- isogeny graph
+- supersingular
+- brandt matrix
+- pizer
+- schreier
+- random regular graph
+- alon-boppana
+- selberg trace formula
+- pressure function
+- fredholm determinant
+- mayer
+- isola
+- kneading
+- topological entropy
+- ruelle
+- lasota-yorke
+- anisotropic banach
+- quasi-compact
+- nuclear
+- modular forms
+- newform
+- automorphic
+- sato-tate
+- gue
+- langlands
+- galois representation
+- trace formula
+- maass form
+- eisenstein series
+- theta function
+- elliptic curve
+- rankin-selberg
+- subconvexity
+- moments of zeta
+- mean value
+- tate conjecture
+- selberg class
+- bezout
+- beurling primes
+- lee-yang
+- bertini
+- denjoy
+- li criterion
+- robin inequality
+- lagarias
+- totient
+- inequality equivalent
+- equivalent criterion
+- redheffer
+- beurling factorization
+- graph neural network
+- gnns
+- message passing
+- weisfeiler-leman
+- spectral prediction
+- hecke eigenvalue
+- zero classification
+- learning the spectrum
+- operator learning
+- neural net
+- mathlib
+- formal proof
+- proof assistant
+- certification
+- verified
+- formalisation
+- formalization
+- automated theorem
+concepts_map:
+  riemann hypothesis:
+  - riemann hypothesis
+  - rh conjecture
+  zeta function:
+  - riemann zeta
+  - zeta function
+  - hurwitz zeta
+  - dedekind zeta
+  transfer operator:
+  - transfer operator
+  - transfer-operator
+  - frobenius-perron operator
+  selberg zeta:
+  - selberg zeta
+  - selberg zeta function
+  spectral gap:
+  - spectral gap
+  - spectral gaps
+  cayley graph:
+  - cayley graph
+  - cayley graphs
+  - cayley digraph
+  - schreier graph
+  ramanujan graph:
+  - ramanujan graph
+  - ramanujan property
+  hecke operator:
+  - hecke operator
+  - hecke operators
+  modular form:
+  - modular form
+  - modular forms
+  - newform
+  nyman-beurling:
+  - nyman-beurling
+  - nyman criterion
+  - beurling criterion
+  hilbert-polya:
+  - hilbert-polya
+  - hilbert–pólya
+  - polya-hilbert
+  weil criterion:
+  - weil criterion
+  - weil positivity
+  granville criterion:
+  - granville
+  - goldbach-bridge
+  lean formalization:
+  - lean 4
+  - mathlib
+  - formal proof
+  - proof assistant
+  gauss map:
+  - gauss map
+  - gauss-kuzmin
+  - continued fraction map
+  thermodynamic formalism:
+  - thermodynamic formalism
+  - pressure function
+  l-function:
+  - l-function
+  - l functions
+  - l-functions
+  random matrix:
+  - random matrix
+  - random matrices
+  - gue
+  - gaussian unitary ensemble

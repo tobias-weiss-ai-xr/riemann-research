@@ -134,3 +134,45 @@ def test_validate_config_ghost_subcategory_keyword():
 def test_validate_config_non_mapping():
     assert rc.validate_config("hello") != []
     assert rc.validate_config(None) != []
+
+
+def test_fetch_other_sources_classifier_is_taxonomy_aware(tmp_path, monkeypatch):
+    """fetch_other_sources.classify_subcategory must return only configured
+    taxonomy labels, respect category scoping, and never emit template labels."""
+    import sys
+    from pathlib import Path as _P
+    sys.path.insert(0, str(_P("scripts/fetch").resolve()))
+    import fetch_other_sources as fos
+    cfg = {
+        "taxonomy": {
+            "subcategories": [
+                {"id": "l-functions", "category": "number-theory"},
+                {"id": "cayley-graphs", "category": "spectral-theory"},
+                {"id": "measure", "category": "analysis"},
+                {"id": "method", "category": "methodology"},
+            ]
+        },
+        "subcategory_keywords": [
+            {"id": "l-functions", "keywords": ["zeta", "l-function"]},
+            {"id": "cayley-graphs", "keywords": ["cayley", "spectral gap"]},
+            {"id": "method", "keywords": ["novel approach", "framework"]},
+        ],
+    }
+    c = fos.classify_subcategory
+    assert c("On zeta and L-functions of elliptic curves", "", cfg=cfg) == "l-functions"
+    assert c("Spectral gap of a Cayley graph", "", cfg=cfg) == "cayley-graphs"
+    # category-scoped fallback: neutral text returns a valid category default
+    assert c("Totally neutral", "neutral abstract", cfg=cfg, category="number-theory") == "l-functions"
+    # never emits undeclared template labels: build config WITHOUT 'method'
+    cfg2 = {
+        "taxonomy": {"subcategories": [
+            {"id": "l-functions", "category": "number-theory"},
+            {"id": "cayley-graphs", "category": "spectral-theory"}]},
+        "subcategory_keywords": [
+            {"id": "l-functions", "keywords": ["zeta", "l-function"]},
+            {"id": "cayley-graphs", "keywords": ["cayley", "spectral gap"]},
+            {"id": "method", "keywords": ["novel approach", "framework"]}],
+    }
+    res = c("A novel framework for systems theory", "", cfg=cfg2)
+    assert res not in ("method", "theory", "application", "evaluation", "review")
+    assert res in ("l-functions", "cayley-graphs")

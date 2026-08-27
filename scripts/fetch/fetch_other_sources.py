@@ -74,16 +74,42 @@ SUBCATEGORY_RULES = [
 SUBCATEGORY_FALLBACK = "application"
 
 
-def classify_subcategory(title, abstract=""):
-    """Assign a subcategory using keyword rules against title + abstract."""
-    t_lower = title.lower()
-    text = f"{title} {abstract}".lower()
-    for subcat, keywords, title_only in SUBCATEGORY_RULES:
-        haystack = t_lower if title_only else text
-        for kw in keywords:
-            if kw in haystack:
-                return subcat
-    return SUBCATEGORY_FALLBACK
+def classify_subcategory(title, abstract="", category=None, cfg=None):
+    """Assign a subcategory using config keyword rules against title + abstract.
+
+    Taxonomy-aware: uses subcategory_keywords from config/taxonomy.yaml, narrowed
+    to the paper's category when given. Falls back to the category's first
+    subcategory (never a template label).
+    """
+    import research_config as _rc
+    if cfg is None:
+        try:
+            cfg = _rc.load_config()
+        except Exception:
+            cfg = None
+    if cfg is not None:
+        subs = _rc.get_subcategories(cfg) or []
+        sub_ids = [s.get("id") for s in subs]
+        cat_subs = {}
+        for s in subs:
+            sc = s.get("category", "")
+            if sc:
+                cat_subs.setdefault(sc, []).append(s["id"])
+        allowed = set(cat_subs.get(category, [])) if category and cat_subs else None
+        sub_id_set = set(sub_ids)
+        for sid, keywords in _rc.get_subcategory_keywords(cfg):
+            if sid not in sub_id_set:
+                continue  # keyword rule references an undeclared label — never emit it
+            if allowed and sid not in allowed:
+                continue
+            for kw in keywords:
+                if kw.lower() in f"{title} {abstract}".lower():
+                    return sid
+        if category and category in cat_subs and cat_subs[category]:
+            return cat_subs[category][0]
+        if sub_ids:
+            return sub_ids[0]
+    return ""
 
 
 # ── Dedup helpers ────────────────────────────────────────────────────────
@@ -522,7 +548,7 @@ def main():
                 continue
             e["category"] = category
             e["subcategory"] = (hint or classify_subcategory(
-                e["title"], e.get("abstract", "")))
+                e["title"], e.get("abstract", ""), category=category))
             all_new.append(e)
             doi = e.get("doi", "")
             if doi:
