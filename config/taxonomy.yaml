@@ -34,6 +34,15 @@ taxonomy:
   - id: survey
     display: Surveys & Exposition
     description: Overview papers, pedagogy, history, status reports
+  - id: evaluation
+    display: Evaluation
+    description: Auto-added category 'evaluation' from ingested papers
+  - id: application
+    display: Application
+    description: Auto-added category 'application' from ingested papers
+  - id: method
+    display: Method
+    description: Auto-added category 'method' from ingested papers
   subcategories:
   - id: cayley-graphs
     display: Cayley Graphs
@@ -129,6 +138,50 @@ taxonomy:
     category: formalization
     description: Hadamard product gap, partial results, open gaps, TODO formalization
       work
+  - id: non-agentic
+    display: Non Agentic
+    description: Auto-added subcategory 'non-agentic' from ingested papers
+    category: evaluation
+  - id: agentic
+    display: Agentic
+    description: Auto-added subcategory 'agentic' from ingested papers
+    category: evaluation
+  - id: theory
+    display: Theory
+    description: Auto-added subcategory 'theory' from ingested papers
+    category: evaluation
+  - id: systems
+    display: Systems
+    description: Auto-added subcategory 'systems' from ingested papers
+    category: evaluation
+  - id: evaluation
+    display: Evaluation
+    description: Auto-added subcategory 'evaluation' from ingested papers
+    category: evaluation
+  - id: review
+    display: Review
+    description: Auto-added subcategory 'review' from ingested papers
+    category: evaluation
+  - id: hybrid
+    display: Hybrid
+    description: Auto-added subcategory 'hybrid' from ingested papers
+    category: evaluation
+  - id: mechanism
+    display: Mechanism
+    description: Auto-added subcategory 'mechanism' from ingested papers
+    category: evaluation
+  - id: development
+    display: Development
+    description: Auto-added subcategory 'development' from ingested papers
+    category: evaluation
+  - id: application
+    display: Application
+    description: Auto-added subcategory 'application' from ingested papers
+    category: evaluation
+  - id: method
+    display: Method
+    description: Auto-added subcategory 'method' from ingested papers
+    category: evaluation
 arxiv_queries:
 - query: cat:math.CO AND (abs:"Cayley graph" OR abs:"SL(2,F_p)" OR abs:"spectral gap"
     OR abs:"Ramanujan")
@@ -177,14 +230,12 @@ arxiv_queries:
   category: equivalences
 - query: cat:82-XX AND abs:"Lee-Yang"
   category: equivalences
-# ── Survey / exposition ─────────────────────────────────────────────────────
 - query: cat:math.NT AND (abs:"Riemann hypothesis" AND abs:"survey" OR abs:"review"
     OR abs:"overview" OR abs:"introduction")
   category: survey
-- query: cat:math.NT AND (abs:"zeta function" AND abs:"survey" OR abs:"history"
-    OR abs:"status")
+- query: cat:math.NT AND (abs:"zeta function" AND abs:"survey" OR abs:"history" OR
+    abs:"status")
   category: survey
-# ── Applications ────────────────────────────────────────────────────────────
 - query: cat:math.NT AND (abs:"Riemann hypothesis" AND abs:"cryptography" OR abs:"prime"
     OR abs:"distribution")
   category: application
@@ -192,16 +243,14 @@ arxiv_queries:
   category: application
 - query: cat:quant-ph AND (abs:"Riemann hypothesis" OR abs:"zeta zeros" OR abs:"Berry-Keating")
   category: application
-# ── Evaluation / computation ────────────────────────────────────────────────
-- query: cat:math.NA AND (abs:"Riemann zeta" OR abs:"zeros" OR abs:"computation"
-    OR abs:"verification")
+- query: cat:math.NA AND (abs:"Riemann zeta" OR abs:"zeros" OR abs:"computation" OR
+    abs:"verification")
   category: evaluation
 - query: cat:cs.DS AND (abs:"Riemann" OR abs:"zeta" OR abs:"zero" OR abs:"algorithm")
   category: evaluation
 - query: cat:math.NT AND (abs:"explicit formula" OR abs:"approximate functional equation"
     OR abs:"zero-free region")
   category: method
-# ── Methods ─────────────────────────────────────────────────────────────────
 - query: cat:math.NT AND (abs:"moments of zeta" OR abs:"mean value" OR abs:"subconvexity")
   category: method
 - query: cat:math.CA AND (abs:"Riemann zeta" OR abs:"Dirichlet series" OR abs:"Tauberian")

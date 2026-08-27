@@ -92,7 +92,11 @@ def normalize_arxiv_url(url):
 
 
 def is_arxiv_url(url):
-    return "arxiv.org" in url or bool(ARXIV_DOI_PATTERN.search(url))
+    # Require arxiv.org as a real domain path (abs/ or pdf/), not a bare
+    # substring — otherwise edarxiv.org etc. would wrongly match.
+    return bool(re.search(r"arxiv\.org/(?:abs|pdf)/", url, re.IGNORECASE)) or bool(
+        ARXIV_DOI_PATTERN.search(url)
+    )
 
 
 def validate_papers(data, cfg, fix=False, sort=False):
