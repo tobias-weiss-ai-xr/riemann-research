@@ -1,7 +1,7 @@
 # Riemann Hypothesis Research Corpus — Review & Latest Status
 
 **Last updated:** 2026-08-27
-**Corpus:** 3,649 papers, 6 categories (riemann-research)
+**Corpus:** 4,498 papers, 6 categories (riemann-research)
 **Sister project:** [riemann](https://github.com/tobias-weiss-ai-xr/riemann) — GNN × number theory, transfer-operator programme, Lean 4 formalization
 
 ---
@@ -31,8 +31,8 @@ complete proof is claimed.
 
 | Task | Status | Highlights |
 |---|---|---|
-| 1. New ingestion round | ✅ done | +505 papers from arXiv (2024–2026); 13 off-topic NA papers dropped; corpus 3,649 papers all valid (exit 0) |
-| 2. Concept-graph enhancement | ✅ done | Replaced generic skeleton seeds with 102 RH-specific concepts + 18 alias groups; re-ran extract/relate/analyze → 126 nodes, 634 edges, 2 meaningful communities |
+| 1. New ingestion round | ✅ done | +505 papers from arXiv (2024–2026); merged 852 further valid papers from a parallel OpenAlex+arXiv round; ~100 off-topic/junk papers dropped; corpus 4,498 papers all valid (exit 0) |
+| 2. Concept-graph enhancement | ✅ done | Replaced generic skeleton seeds with 102 RH-specific concepts + 18 alias groups; re-ran extract/relate/analyze → 126 nodes, 668 edges, 2 meaningful communities |
 | 3. Review + latest status (this doc) | ✅ done | Grounded in the corpus + honest `~/git/riemann` state (EPIC-4 programme) |
 
 ---
@@ -41,13 +41,13 @@ complete proof is claimed.
 
 | Category | Papers |
 |---|---|
-| Number Theory | 1,357 |
-| Spectral Theory & Graphs | 1,103 |
-| RH Equivalences & Bridges | 547 |
-| Machine Learning | 418 |
-| Dynamical Systems | 204 |
-| Proof & Formalization | 20 |
-| **Total** | **3,649** |
+| Number Theory | 1,710 |
+| Spectral Theory & Graphs | 1,441 |
+| RH Equivalences & Bridges | 561 |
+| Machine Learning | 537 |
+| Dynamical Systems | 216 |
+| Proof & Formalization | 33 |
+| **Total** | **4,498** |
 
 Automated reports: [literature review](./research/literature_review.md),
 [trends (12-month)](./research/trends.md), [concept map](./research/concept_map.md),
@@ -162,7 +162,7 @@ itself", not as a completed proof.** See `experiments/EXPERIMENT_LOG.md` Exp 19
 
 ## 6. Concept graph insights (regenerated 2026-08-27)
 
-The enhanced concept graph (126 nodes, 634 edges) reproduces the known thematic
+The enhanced concept graph (126 nodes, 668 edges) reproduces the known thematic
 structure:
 
 - **Two communities** detected:
@@ -192,15 +192,17 @@ structure:
    than axiomatizing them.
 3. **Concept-graph maintenance:** drop 0-df curated seeds; add
    `concepts_map` aliases for the bridge seams above.
-4. **Corpus hygiene:** the ingestion round surfaced that broad arXiv queries
-   (e.g. `math.NA` "computation OR verification") reintroduce off-topic
-   numerical-analysis papers; the queries were tightened (config commit pending).
+4. **Corpus hygiene:** the ingestion rounds surfaced that broad arXiv/OpenAlex
+   queries (e.g. `math.NA` "computation OR verification", OpenAlex
+   evaluation/method cells) reintroduce off-topic numerical-analysis / RL /
+   crackpot self-published material; queries were tightened and ~100 such
+   entries dropped across two rounds (config commit pending).
 
 ---
 
 ## 8. Verification metadata
 
-- `python scripts/validate_papers.py` → exit 0 (3,649 papers, 0 errors).
+- `python scripts/validate_papers.py` → exit 0 (4,498 papers, 0 errors).
 - `python -m pytest` → 100% pass (pipeline tests).
 - `generate_readme.py`, `standard_stats.py`, `generate_reports.py`,
   `extract/relate/analyze_concept_graph` — all rerun after the above changes;

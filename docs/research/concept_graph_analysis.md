@@ -1,21 +1,21 @@
 # Concept Graph Analysis
 
-**Generated:** 126 nodes, 634 edges, 1 components, 2 communities (modularity -82.391). Edges = co-occurrence.
+**Generated:** 126 nodes, 668 edges, 1 components, 2 communities (modularity -94.132). Edges = co-occurrence.
 
 ## Top hubs (by PageRank)
 
-- **Number Theory** — PR 0.1123, degree 56, df 1357
-- **riemann hypothesis** — PR 0.0782, degree 49, df 626
-- **Spectral Theory & Graphs** — PR 0.0706, degree 56, df 1103
-- **zeta function** — PR 0.0685, degree 54, df 515
-- **RH Equivalences & Bridges** — PR 0.0320, degree 34, df 547
-- **Dynamical Systems** — PR 0.0293, degree 18, df 204
-- **critical line** — PR 0.0288, degree 36, df 145
-- **spectral gap** — PR 0.0265, degree 34, df 177
-- **transfer operator** — PR 0.0262, degree 27, df 141
-- **eigenvalue** — PR 0.0224, degree 43, df 111
-- **modular forms** — PR 0.0216, degree 26, df 210
-- **l-function** — PR 0.0201, degree 33, df 118
+- **Number Theory** — PR 0.1210, degree 57, df 1710
+- **riemann hypothesis** — PR 0.0741, degree 50, df 673
+- **Spectral Theory & Graphs** — PR 0.0725, degree 62, df 1441
+- **zeta function** — PR 0.0667, degree 56, df 577
+- **RH Equivalences & Bridges** — PR 0.0296, degree 34, df 561
+- **critical line** — PR 0.0281, degree 39, df 160
+- **Dynamical Systems** — PR 0.0280, degree 20, df 216
+- **transfer operator** — PR 0.0247, degree 27, df 144
+- **spectral gap** — PR 0.0246, degree 34, df 188
+- **eigenvalue** — PR 0.0237, degree 46, df 141
+- **modular forms** — PR 0.0234, degree 29, df 262
+- **explicit formula** — PR 0.0216, degree 40, df 163
 
 ## Bridge nodes (high betweenness — connect clusters)
 
@@ -23,8 +23,8 @@
 - Number Theory
 - zeta function
 - eigenvalue
-- spectral gap
 - riemann hypothesis
+- spectral gap
 - transfer operator
 - RH Equivalences & Bridges
 - explicit formula
@@ -32,22 +32,22 @@
 
 ## Bridge edges (high edge-betweenness)
 
-- Number Theory ↔ moebius function (weight 2, EB 90.0)
-- RH Equivalences & Bridges ↔ bertini (weight 10, EB 90.0)
-- eigenvalue ↔ laplacian eigenvalue (weight 2, EB 90.0)
-- riemann hypothesis ↔ equivalent criterion (weight 2, EB 90.0)
-- spectral gap ↔ message passing (weight 3, EB 68.9127)
-- spectral gap ↔ graph neural network (weight 3, EB 68.9127)
-- transfer operator ↔ lasota-yorke (weight 2, EB 67.7683)
-- transfer operator ↔ quasi-compact (weight 2, EB 67.7683)
-- riemann hypothesis ↔ denjoy (weight 2, EB 62.4098)
-- zeta function ↔ selberg trace formula (weight 2, EB 61.9004)
+- RH Equivalences & Bridges ↔ bertini (weight 10, EB 91.0)
+- Spectral Theory & Graphs ↔ algebraic connectivity (weight 2, EB 91.0)
+- eigenvalue ↔ laplacian eigenvalue (weight 2, EB 91.0)
+- riemann hypothesis ↔ equivalent criterion (weight 2, EB 91.0)
+- Number Theory ↔ moebius function (weight 2, EB 91.0)
+- transfer operator ↔ lasota-yorke (weight 2, EB 64.9665)
+- transfer operator ↔ quasi-compact (weight 2, EB 64.9665)
+- riemann hypothesis ↔ denjoy (weight 2, EB 63.4525)
+- spectral gap ↔ message passing (weight 3, EB 63.2122)
+- spectral gap ↔ graph neural network (weight 3, EB 63.2122)
 
 ## Communities (clusters of related concepts)
 
-### Cluster 1 (77 concepts)
+### Cluster 1 (78 concepts)
 
-Machine Learning, Number Theory, Proof & Formalization, RH Equivalences & Bridges, Spectral Theory & Graphs, adjacency matrix, alon-boppana, automorphic, bertini, cayley graph, certification, cheeger
+Machine Learning, Number Theory, Proof & Formalization, RH Equivalences & Bridges, Spectral Theory & Graphs, adjacency matrix, algebraic connectivity, alon-boppana, automorphic, bertini, cayley graph, certification
 
 ### Cluster 2 (14 concepts)
 

@@ -1,7 +1,7 @@
 # Literature Review
 
 **Generated:** 2026-08-27  
-**Corpus:** 3,649 papers across 6 categories
+**Corpus:** 4,498 papers across 6 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,15 +11,15 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | Number Theory | 1357 |
-| 2 | Spectral Theory & Graphs | 1103 |
-| 3 | RH Equivalences & Bridges | 547 |
-| 4 | Machine Learning | 418 |
-| 5 | Dynamical Systems | 204 |
-| 6 | Proof & Formalization | 20 |
+| 1 | Number Theory | 1710 |
+| 2 | Spectral Theory & Graphs | 1441 |
+| 3 | RH Equivalences & Bridges | 561 |
+| 4 | Machine Learning | 537 |
+| 5 | Dynamical Systems | 216 |
+| 6 | Proof & Formalization | 33 |
 
-**Time span:** 1859–2026 (median year 2013)
-**Dominant aspects:** Cayley Graphs (1023), L-Functions & Zeta (929), GNNs on Cayley Graphs (290)
+**Time span:** 1859–2026 (median year 2012)
+**Dominant aspects:** Cayley Graphs (1306), L-Functions & Zeta (1162), GNNs on Cayley Graphs (353)
 
 ---
 
@@ -27,12 +27,12 @@
 
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
-| Machine Learning | 418 | 67 | 28 | +139% | 16% | 5.6 |
-| Equivalences | 547 | 144 | 76 | +90% | 26% | 12.0 |
-| Formalization | 20 | 17 | 0 | — | 85% | 1.4 |
-| Number Theory | 1357 | 336 | 211 | +59% | 25% | 28.0 |
-| Dynam Systems | 204 | 42 | 27 | +56% | 21% | 3.5 |
-| Spectral Theory | 1103 | 173 | 128 | +35% | 16% | 14.4 |
+| Machine Learning | 537 | 185 | 28 | +561% | 34% | 15.4 |
+| Spectral Theory | 1441 | 431 | 129 | +234% | 30% | 35.9 |
+| Number Theory | 1710 | 572 | 211 | +171% | 34% | 47.7 |
+| Equivalences | 561 | 157 | 76 | +107% | 28% | 13.1 |
+| Dynam Systems | 216 | 54 | 27 | +100% | 25% | 4.5 |
+| Formalization | 33 | 20 | 0 | — | 61% | 1.7 |
 
 ---
 
@@ -40,14 +40,14 @@
 
 | Cell | Papers |
 |------|--------:|
-| `spectral-theory/brandt-pizer` | 1 |
-| `formalization/verification` | 2 |
-| `machine-learning/gnn-fullgraph` | 4 |
-| `dynam-systems/selberg-zeta` | 9 |
-| `machine-learning/ml-zeros` | 9 |
-| `spectral-theory/ramanujan` | 9 |
-| `formalization/lean-foundation` | 18 |
-| `spectral-theory/spectral-gaps` | 70 |
+| `formalization/lean-riemann` | 2 |
+| `machine-learning/gnn-fullgraph` | 3 |
+| `spectral-theory/brandt-pizer` | 4 |
+| `dynam-systems/selberg-zeta` | 12 |
+| `formalization/lean-foundation` | 13 |
+| `formalization/verification` | 18 |
+| `spectral-theory/ramanujan` | 41 |
+| `machine-learning/ml-zeros` | 42 |
 
 ---
 
@@ -56,7 +56,7 @@
 
 ### Number Theory (`number-theory`)
 
-**Corpus size:** 1357 papers
+**Corpus size:** 1710 papers
 
 **Recent papers:**
 
@@ -68,7 +68,7 @@
 
 ### Spectral Theory & Graphs (`spectral-theory`)
 
-**Corpus size:** 1103 papers
+**Corpus size:** 1441 papers
 
 **Recent papers:**
 
@@ -80,7 +80,7 @@
 
 ### RH Equivalences & Bridges (`equivalences`)
 
-**Corpus size:** 547 papers
+**Corpus size:** 561 papers
 
 **Recent papers:**
 
@@ -92,7 +92,7 @@
 
 ### Machine Learning (`machine-learning`)
 
-**Corpus size:** 418 papers
+**Corpus size:** 537 papers
 
 **Recent papers:**
 
@@ -104,25 +104,25 @@
 
 ### Dynamical Systems (`dynam-systems`)
 
-**Corpus size:** 204 papers
+**Corpus size:** 216 papers
 
 **Recent papers:**
 
 - [2026-08] Equidistribution and thermodynamics at infinity — https://arxiv.org/abs/2608.19457
 - [2026-08] Analyticity of Lyapunov Exponents for Mixed Markov Quasi-Periodic Cocycles — https://arxiv.org/abs/2608.01569
-- [2026-07] Decay of Correlations for Partially Hyperbolic Skew-Products — https://arxiv.org/abs/2607.21516
+- [2026-08] The determinant of the Dirichlet-to-Neumann map for a surface with boundary and periods of holo — https://arxiv.org/abs/2608.09737
 
 ---
 
 ### Proof & Formalization (`formalization`)
 
-**Corpus size:** 20 papers
+**Corpus size:** 33 papers
 
 **Recent papers:**
 
-- [2026-07] Two Machine-Checked Conditional Routes to the Riemann Hypothesis: A Formalized Fekete Criterion — https://doi.org/10.5281/zenodo.21416394
-- [2026-07] SIDE-lv-conservation: the Conservation-route growth interface and the h1-complete coupling ledg — https://doi.org/10.5281/zenodo.21433178
-- [2026-07] Ars Magna: Geometrically Ordered Dynamics — Information Tension, Sovereign Cognition, and Machi — https://doi.org/10.5281/zenodo.21302151
+- [2026-08] A Weighted Upwind Vector Kinetic Lattice Boltzmann Method For Hyperbolic Conservation Laws — https://arxiv.org/abs/2608.04283
+- [2026-08] Defensive Boosting for Online Probabilistic Forecasting — https://arxiv.org/abs/2608.13554
+- [2026-08] Graphic Matroid Secretary without the Graph — https://arxiv.org/abs/2608.11413
 
 ---
 
