@@ -1,179 +1,328 @@
 # Concept Map — Knowledge Graph of the Corpus
 
-**Generated:** 27 concepts, 47 relationships from 3460 papers. Edges = co-occurrence (shared papers).
+**Generated:** 126 concepts, 668 relationships from 4498 papers. Edges = co-occurrence (shared papers).
 
 ## Top concepts
 
 | Concept | Kind | Papers |
 |----------|------|--------|
-| Number Theory | taxonomy | 861 |
-| RH Equivalences & Bridges | taxonomy | 660 |
-| Spectral Theory & Graphs | taxonomy | 440 |
-| Machine Learning | taxonomy | 413 |
-| framework | curated | 271 |
-| Dynamical Systems | taxonomy | 251 |
-| survey | curated | 70 |
-| Surveys & Exposition | taxonomy | 64 |
-| dataset | curated | 57 |
-| quantitative | curated | 51 |
-| benchmark | curated | 36 |
-| experiment | curated | 22 |
-| Proof & Formalization | taxonomy | 15 |
-| qualitative | curated | 15 |
-| reproducibility | curated | 11 |
-| case study | curated | 5 |
-| taxonomy | curated | 4 |
-| literature review | curated | 3 |
-| research gap | curated | 2 |
-| triangulation | curated | 2 |
-| mixed methods | curated | 1 |
-| interview | curated | 1 |
-| peer review | curated | 1 |
-| systematic review | curated | 0 |
-| meta analysis | curated | 0 |
-| grounded theory | curated | 0 |
-| open access | curated | 0 |
+| Number Theory | taxonomy | 1710 |
+| Spectral Theory & Graphs | taxonomy | 1441 |
+| riemann hypothesis | curated | 673 |
+| zeta function | curated | 577 |
+| RH Equivalences & Bridges | taxonomy | 561 |
+| Machine Learning | taxonomy | 537 |
+| modular forms | curated | 262 |
+| langlands | curated | 260 |
+| Dynamical Systems | taxonomy | 216 |
+| spectral gap | curated | 188 |
+| random matrix | curated | 165 |
+| explicit formula | curated | 163 |
+| critical line | curated | 160 |
+| automorphic | curated | 160 |
+| cayley graph | curated | 158 |
+| transfer operator | curated | 144 |
+| eigenvalue | curated | 141 |
+| l-function | curated | 137 |
+| functional equation | curated | 116 |
+| sato-tate | curated | 113 |
+| goldbach | curated | 111 |
+| subconvexity | curated | 101 |
+| dirichlet series | curated | 81 |
+| elliptic curve | curated | 81 |
+| expander | curated | 80 |
+| critical strip | curated | 71 |
+| modular form | curated | 70 |
+| trace formula | curated | 69 |
+| verified | curated | 69 |
+| eisenstein series | curated | 68 |
+| mean value | curated | 65 |
+| newform | curated | 62 |
+| gauss map | curated | 54 |
+| zero-free region | curated | 47 |
+| euler product | curated | 42 |
+| gue | curated | 37 |
+| rankin-selberg | curated | 37 |
+| prime number theorem | curated | 36 |
+| cheeger | curated | 34 |
+| Proof & Formalization | taxonomy | 33 |
 
 ## Relationships (top concepts → related concepts)
 
 ### Number Theory
 
-- framework — 28 shared paper(s)
-- survey — 18 shared paper(s)
-- quantitative — 11 shared paper(s)
-- qualitative — 2 shared paper(s)
-
-### RH Equivalences & Bridges
-
-- framework — 41 shared paper(s)
-- survey — 5 shared paper(s)
-- qualitative — 4 shared paper(s)
-- quantitative — 4 shared paper(s)
+- riemann hypothesis — 426 shared paper(s)
+- zeta function — 329 shared paper(s)
+- modular forms — 186 shared paper(s)
+- langlands — 172 shared paper(s)
+- explicit formula — 138 shared paper(s)
+- automorphic — 118 shared paper(s)
+- critical line — 104 shared paper(s)
+- l-function — 95 shared paper(s)
 
 ### Spectral Theory & Graphs
 
-- framework — 11 shared paper(s)
-- quantitative — 8 shared paper(s)
-- survey — 4 shared paper(s)
-- triangulation — 2 shared paper(s)
+- cayley graph — 157 shared paper(s)
+- riemann hypothesis — 128 shared paper(s)
+- langlands — 85 shared paper(s)
+- expander — 75 shared paper(s)
+- zeta function — 73 shared paper(s)
+- modular forms — 69 shared paper(s)
+- eigenvalue — 56 shared paper(s)
+- spectral gap — 56 shared paper(s)
+
+### riemann hypothesis
+
+- Number Theory — 426 shared paper(s)
+- zeta function — 236 shared paper(s)
+- Spectral Theory & Graphs — 128 shared paper(s)
+- RH Equivalences & Bridges — 112 shared paper(s)
+- critical line — 103 shared paper(s)
+- critical strip — 44 shared paper(s)
+- explicit formula — 44 shared paper(s)
+- functional equation — 37 shared paper(s)
+
+### zeta function
+
+- Number Theory — 329 shared paper(s)
+- riemann hypothesis — 236 shared paper(s)
+- RH Equivalences & Bridges — 144 shared paper(s)
+- critical line — 102 shared paper(s)
+- Spectral Theory & Graphs — 73 shared paper(s)
+- functional equation — 46 shared paper(s)
+- critical strip — 43 shared paper(s)
+- explicit formula — 43 shared paper(s)
+
+### RH Equivalences & Bridges
+
+- zeta function — 144 shared paper(s)
+- riemann hypothesis — 112 shared paper(s)
+- goldbach — 59 shared paper(s)
+- random matrix — 41 shared paper(s)
+- critical line — 27 shared paper(s)
+- functional equation — 20 shared paper(s)
+- critical strip — 16 shared paper(s)
+- eigenvalue — 16 shared paper(s)
 
 ### Machine Learning
 
-- framework — 89 shared paper(s)
-- dataset — 51 shared paper(s)
-- benchmark — 25 shared paper(s)
-- experiment — 11 shared paper(s)
-- survey — 6 shared paper(s)
-- taxonomy — 4 shared paper(s)
-- qualitative — 4 shared paper(s)
-- quantitative — 4 shared paper(s)
+- spectral gap — 99 shared paper(s)
+- random matrix — 25 shared paper(s)
+- gnns — 19 shared paper(s)
+- eigenvalue — 13 shared paper(s)
+- graph neural network — 9 shared paper(s)
+- message passing — 7 shared paper(s)
+- verified — 6 shared paper(s)
+- zeta function — 5 shared paper(s)
 
-### framework
+### modular forms
 
-- Machine Learning — 89 shared paper(s)
-- RH Equivalences & Bridges — 41 shared paper(s)
-- Number Theory — 28 shared paper(s)
-- Dynamical Systems — 23 shared paper(s)
-- quantitative — 13 shared paper(s)
-- dataset — 13 shared paper(s)
-- Spectral Theory & Graphs — 11 shared paper(s)
-- benchmark — 8 shared paper(s)
+- Number Theory — 186 shared paper(s)
+- Spectral Theory & Graphs — 69 shared paper(s)
+- modular form — 42 shared paper(s)
+- newform — 27 shared paper(s)
+- automorphic — 19 shared paper(s)
+- riemann hypothesis — 16 shared paper(s)
+- eisenstein series — 16 shared paper(s)
+- sato-tate — 13 shared paper(s)
+
+### langlands
+
+- Number Theory — 172 shared paper(s)
+- Spectral Theory & Graphs — 85 shared paper(s)
+- automorphic — 48 shared paper(s)
+- trace formula — 18 shared paper(s)
+- eisenstein series — 12 shared paper(s)
+- l-function — 12 shared paper(s)
+- riemann hypothesis — 9 shared paper(s)
+- explicit formula — 7 shared paper(s)
 
 ### Dynamical Systems
 
-- framework — 23 shared paper(s)
-- quantitative — 6 shared paper(s)
-- benchmark — 4 shared paper(s)
-- survey — 3 shared paper(s)
+- transfer operator — 120 shared paper(s)
+- gauss map — 38 shared paper(s)
+- spectral gap — 28 shared paper(s)
+- selberg zeta — 23 shared paper(s)
+- zeta function — 22 shared paper(s)
+- thermodynamic formalism — 19 shared paper(s)
+- continued fraction — 17 shared paper(s)
+- ruelle — 13 shared paper(s)
 
-### survey
+### spectral gap
 
-- Surveys & Exposition — 31 shared paper(s)
-- Number Theory — 18 shared paper(s)
-- framework — 7 shared paper(s)
-- Machine Learning — 6 shared paper(s)
-- RH Equivalences & Bridges — 5 shared paper(s)
-- Spectral Theory & Graphs — 4 shared paper(s)
-- Dynamical Systems — 3 shared paper(s)
-- quantitative — 2 shared paper(s)
+- Machine Learning — 99 shared paper(s)
+- Spectral Theory & Graphs — 56 shared paper(s)
+- Dynamical Systems — 28 shared paper(s)
+- eigenvalue — 22 shared paper(s)
+- transfer operator — 22 shared paper(s)
+- cayley graph — 12 shared paper(s)
+- expander — 11 shared paper(s)
+- zeta function — 9 shared paper(s)
 
-### Surveys & Exposition
+### random matrix
 
-- survey — 31 shared paper(s)
-- framework — 5 shared paper(s)
-
-### dataset
-
-- Machine Learning — 51 shared paper(s)
-- framework — 13 shared paper(s)
-- benchmark — 7 shared paper(s)
-- experiment — 2 shared paper(s)
-- case study — 2 shared paper(s)
-- reproducibility — 2 shared paper(s)
-
-### quantitative
-
-- framework — 13 shared paper(s)
-- Number Theory — 11 shared paper(s)
-- Spectral Theory & Graphs — 8 shared paper(s)
-- Dynamical Systems — 6 shared paper(s)
-- RH Equivalences & Bridges — 4 shared paper(s)
-- Machine Learning — 4 shared paper(s)
-- qualitative — 3 shared paper(s)
-- Proof & Formalization — 2 shared paper(s)
-
-### benchmark
-
+- Number Theory — 80 shared paper(s)
+- RH Equivalences & Bridges — 41 shared paper(s)
+- zeta function — 37 shared paper(s)
 - Machine Learning — 25 shared paper(s)
-- framework — 8 shared paper(s)
-- dataset — 7 shared paper(s)
-- Dynamical Systems — 4 shared paper(s)
+- eigenvalue — 22 shared paper(s)
+- riemann hypothesis — 19 shared paper(s)
+- critical line — 19 shared paper(s)
+- Spectral Theory & Graphs — 17 shared paper(s)
 
-### experiment
+### explicit formula
 
-- Machine Learning — 11 shared paper(s)
-- framework — 7 shared paper(s)
-- dataset — 2 shared paper(s)
-- quantitative — 2 shared paper(s)
-- qualitative — 2 shared paper(s)
+- Number Theory — 138 shared paper(s)
+- riemann hypothesis — 44 shared paper(s)
+- zeta function — 43 shared paper(s)
+- critical line — 23 shared paper(s)
+- verified — 18 shared paper(s)
+- Spectral Theory & Graphs — 12 shared paper(s)
+- RH Equivalences & Bridges — 12 shared paper(s)
+- gue — 10 shared paper(s)
 
-### Proof & Formalization
+### critical line
 
-- framework — 5 shared paper(s)
-- quantitative — 2 shared paper(s)
+- Number Theory — 104 shared paper(s)
+- riemann hypothesis — 103 shared paper(s)
+- zeta function — 102 shared paper(s)
+- functional equation — 28 shared paper(s)
+- Spectral Theory & Graphs — 27 shared paper(s)
+- RH Equivalences & Bridges — 27 shared paper(s)
+- verified — 24 shared paper(s)
+- explicit formula — 23 shared paper(s)
 
-### qualitative
+### automorphic
 
-- RH Equivalences & Bridges — 4 shared paper(s)
-- framework — 4 shared paper(s)
-- Machine Learning — 4 shared paper(s)
-- quantitative — 3 shared paper(s)
+- Number Theory — 118 shared paper(s)
+- langlands — 48 shared paper(s)
+- Spectral Theory & Graphs — 33 shared paper(s)
+- l-function — 26 shared paper(s)
+- riemann hypothesis — 23 shared paper(s)
+- subconvexity — 20 shared paper(s)
+- modular forms — 19 shared paper(s)
+- eisenstein series — 17 shared paper(s)
+
+### cayley graph
+
+- Spectral Theory & Graphs — 157 shared paper(s)
+- eigenvalue — 19 shared paper(s)
+- expander — 13 shared paper(s)
+- spectral gap — 12 shared paper(s)
+- vertex-transitive — 12 shared paper(s)
+- adjacency matrix — 9 shared paper(s)
+- cheeger — 7 shared paper(s)
+- schreier — 4 shared paper(s)
+
+### transfer operator
+
+- Dynamical Systems — 120 shared paper(s)
+- Spectral Theory & Graphs — 22 shared paper(s)
+- spectral gap — 22 shared paper(s)
+- zeta function — 16 shared paper(s)
+- ruelle — 16 shared paper(s)
+- eigenvalue — 14 shared paper(s)
+- selberg zeta — 13 shared paper(s)
+- thermodynamic formalism — 12 shared paper(s)
+
+### eigenvalue
+
+- Spectral Theory & Graphs — 56 shared paper(s)
+- Number Theory — 39 shared paper(s)
+- zeta function — 23 shared paper(s)
+- random matrix — 22 shared paper(s)
+- spectral gap — 22 shared paper(s)
+- cayley graph — 19 shared paper(s)
+- riemann hypothesis — 17 shared paper(s)
+- RH Equivalences & Bridges — 16 shared paper(s)
+
+### l-function
+
+- Number Theory — 95 shared paper(s)
+- riemann hypothesis — 36 shared paper(s)
+- Spectral Theory & Graphs — 35 shared paper(s)
+- automorphic — 26 shared paper(s)
+- subconvexity — 24 shared paper(s)
+- zeta function — 20 shared paper(s)
+- rankin-selberg — 16 shared paper(s)
+- functional equation — 16 shared paper(s)
+
+### functional equation
+
+- Number Theory — 75 shared paper(s)
+- zeta function — 46 shared paper(s)
+- riemann hypothesis — 37 shared paper(s)
+- critical line — 28 shared paper(s)
+- Spectral Theory & Graphs — 20 shared paper(s)
+- RH Equivalences & Bridges — 20 shared paper(s)
+- l-function — 16 shared paper(s)
+- critical strip — 15 shared paper(s)
+
+### sato-tate
+
+- Number Theory — 69 shared paper(s)
+- Spectral Theory & Graphs — 44 shared paper(s)
+- elliptic curve — 16 shared paper(s)
+- automorphic — 14 shared paper(s)
+- modular forms — 13 shared paper(s)
+- random matrix — 7 shared paper(s)
+- l-function — 6 shared paper(s)
+- riemann hypothesis — 5 shared paper(s)
+
+### goldbach
+
+- RH Equivalences & Bridges — 59 shared paper(s)
+- Spectral Theory & Graphs — 37 shared paper(s)
+- riemann hypothesis — 24 shared paper(s)
+- Number Theory — 15 shared paper(s)
+- twin prime — 13 shared paper(s)
+- zeta function — 10 shared paper(s)
+- explicit formula — 6 shared paper(s)
+- prime number theorem — 6 shared paper(s)
+
+### subconvexity
+
+- Number Theory — 82 shared paper(s)
+- l-function — 24 shared paper(s)
+- automorphic — 20 shared paper(s)
+- Spectral Theory & Graphs — 16 shared paper(s)
+- rankin-selberg — 14 shared paper(s)
+- trace formula — 8 shared paper(s)
+- eisenstein series — 7 shared paper(s)
+- modular forms — 5 shared paper(s)
+
+### dirichlet series
+
+- Number Theory — 62 shared paper(s)
+- riemann hypothesis — 25 shared paper(s)
+- zeta function — 25 shared paper(s)
+- functional equation — 13 shared paper(s)
+- RH Equivalences & Bridges — 11 shared paper(s)
+- Spectral Theory & Graphs — 8 shared paper(s)
+- critical line — 7 shared paper(s)
+- l-function — 7 shared paper(s)
+
+### elliptic curve
+
+- Number Theory — 47 shared paper(s)
+- Spectral Theory & Graphs — 24 shared paper(s)
+- riemann hypothesis — 18 shared paper(s)
+- sato-tate — 16 shared paper(s)
+- supersingular — 10 shared paper(s)
+- l-function — 9 shared paper(s)
+- RH Equivalences & Bridges — 9 shared paper(s)
+- modular forms — 7 shared paper(s)
+
+### expander
+
+- Spectral Theory & Graphs — 75 shared paper(s)
+- cayley graph — 13 shared paper(s)
+- spectral gap — 11 shared paper(s)
+- cheeger — 7 shared paper(s)
+- Machine Learning — 3 shared paper(s)
 - Number Theory — 2 shared paper(s)
-- experiment — 2 shared paper(s)
-
-### reproducibility
-
-- framework — 7 shared paper(s)
-- Machine Learning — 3 shared paper(s)
-- dataset — 2 shared paper(s)
-
-### case study
-
-- Machine Learning — 3 shared paper(s)
-- framework — 2 shared paper(s)
-- dataset — 2 shared paper(s)
-
-### taxonomy
-
-- Machine Learning — 4 shared paper(s)
-
-### literature review
-
-- Machine Learning — 2 shared paper(s)
-
-### triangulation
-
-- Spectral Theory & Graphs — 2 shared paper(s)
+- eigenvalue — 2 shared paper(s)
+- schreier — 2 shared paper(s)
 
 
 Generated by `tools/relate_concepts.py` — do not edit by hand.

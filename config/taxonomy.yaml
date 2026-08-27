@@ -31,18 +31,6 @@ taxonomy:
     display: Proof & Formalization
     description: Lean 4 formalization, mathlib integration, verification, automated
       theorem proving
-  - id: survey
-    display: Surveys & Exposition
-    description: Overview papers, pedagogy, history, status reports
-  - id: evaluation
-    display: Evaluation
-    description: Auto-added category 'evaluation' from ingested papers
-  - id: application
-    display: Application
-    description: Auto-added category 'application' from ingested papers
-  - id: method
-    display: Method
-    description: Auto-added category 'method' from ingested papers
   subcategories:
   - id: cayley-graphs
     display: Cayley Graphs
@@ -138,50 +126,234 @@ taxonomy:
     category: formalization
     description: Hadamard product gap, partial results, open gaps, TODO formalization
       work
-  - id: non-agentic
-    display: Non Agentic
-    description: Auto-added subcategory 'non-agentic' from ingested papers
-    category: evaluation
-  - id: agentic
-    display: Agentic
-    description: Auto-added subcategory 'agentic' from ingested papers
-    category: evaluation
-  - id: theory
-    display: Theory
-    description: Auto-added subcategory 'theory' from ingested papers
-    category: evaluation
-  - id: systems
-    display: Systems
-    description: Auto-added subcategory 'systems' from ingested papers
-    category: evaluation
-  - id: evaluation
-    display: Evaluation
-    description: Auto-added subcategory 'evaluation' from ingested papers
-    category: evaluation
-  - id: review
-    display: Review
-    description: Auto-added subcategory 'review' from ingested papers
-    category: evaluation
-  - id: hybrid
-    display: Hybrid
-    description: Auto-added subcategory 'hybrid' from ingested papers
-    category: evaluation
-  - id: mechanism
-    display: Mechanism
-    description: Auto-added subcategory 'mechanism' from ingested papers
-    category: evaluation
-  - id: development
-    display: Development
-    description: Auto-added subcategory 'development' from ingested papers
-    category: evaluation
-  - id: application
-    display: Application
-    description: Auto-added subcategory 'application' from ingested papers
-    category: evaluation
-  - id: method
-    display: Method
-    description: Auto-added subcategory 'method' from ingested papers
-    category: evaluation
+subcategory_keywords:
+- id: cayley-graphs
+  keywords:
+  - cayley graph
+  - cayley digraph
+  - cayley graphs
+  - sl(2,f
+  - psl(2,f
+  - vertex-transitive
+  - vertex transitive
+  - schreier
+  - cayley sum
+  - normal cayley
+- id: spectral-gaps
+  keywords:
+  - spectral gap
+  - spectral gaps
+  - expander
+  - expanders
+  - cheeger
+  - algebraic connectivity
+  - laplacian eigenvalue
+  - second largest eigenvalue
+  - eigenvalue gap
+  - gap of the normalized laplacian
+- id: ramanujan
+  keywords:
+  - ramanujan
+  - alon-boppana
+  - alon boppana
+  - lps graph
+  - ramanujan graph
+  - optimal spectral gap
+- id: brandt-pizer
+  keywords:
+  - brandt
+  - pizer
+  - supersingular isogeny
+  - isogeny graph
+  - brandt matrix
+  - quaternion order
+- id: hecke
+  keywords:
+  - hecke
+  - atkin-lehner
+  - hecke algebra
+  - hecke eigenvalues
+  - hecke operator
+  - sato-tate
+  - eigenform
+  - t_p
+  - u_p
+  - eigenvalue statistics
+- id: l-functions
+  keywords:
+  - l-function
+  - l functions
+  - zeta function
+  - riemann zeta
+  - dirichlet l
+  - euler product
+  - functional equation
+  - zeta zeros
+  - zeros of the
+  - critical line
+  - riemann hypothesis
+  - explicit formula
+  - mean value
+  - moments of
+  - l-series
+  - dirichlet series
+  - meromorphic continuation
+- id: modular-forms
+  keywords:
+  - modular form
+  - modular forms
+  - cusp form
+  - newform
+  - eisenstein
+  - weight k
+  - modular symbols
+  - q-expansion
+  - galois representation
+  - langlands
+  - elliptic curves
+- id: transfer-operator
+  keywords:
+  - transfer operator
+  - gauss map
+  - perron-frobenius
+  - nuclear operator
+  - spectral radius
+  - thermodynamic formalism
+  - pressure function
+  - continued fraction
+  - mayer
+  - ruelle
+  - kneading
+  - dynamical zeta
+- id: selberg-zeta
+  keywords:
+  - selberg zeta
+  - selberg's
+  - selberg trace
+  - trace formula
+  - prime geodesic
+  - gutzwiller
+  - efrat
+  - hyperbolic surfaces
+  - anosov subgroups
+  - geodesic theorem
+- id: gnn-cayley
+  keywords:
+  - graph neural
+  - gnn
+  - spectral gap prediction
+  - hecke eigenvalue
+  - chebconv
+  - gat
+  - node features
+  - message passing
+  - graph attention
+- id: gnn-fullgraph
+  keywords:
+  - graph neural
+  - gnn
+  - spectral convolution
+  - global pooling
+  - full-graph
+  - graph convolution
+  - message passing
+  - graph learning
+  - deep learning on graphs
+- id: ml-hecke
+  keywords:
+  - hecke
+  - xgboost
+  - random forest
+  - neural network
+  - machine learning
+  - lmfdb
+  - eigenvalue prediction
+  - supervised learning
+  - classifier
+  - sk-learn
+  - sklearn
+- id: ml-zeros
+  keywords:
+  - excess mass
+  - zero spacing
+  - gue
+  - goe
+  - gse
+  - random matrix
+  - montgomery
+  - rigorous statistics
+  - zero distribution
+  - eigenvalues of random
+  - odlyzko
+- id: nyman-beurling
+  keywords:
+  - nyman
+  - beurling
+  - fractional part
+  - shifted fractional
+  - density of the fractional
+  - nyman-beurling
+- id: hilbert-polya
+  keywords:
+  - hilbert
+  - polya
+  - pólya
+  - self-adjoint operator
+  - zeros as eigenvalues
+  - spectral interpretation
+  - von koch
+  - hilbert-polya
+- id: weil
+  keywords:
+  - weil
+  - positivity
+  - finite field analogue
+  - explicit formula
+  - weil conjecture
+  - weil criterion
+- id: granville
+  keywords:
+  - granville
+  - goldbach
+  - explicit formula
+  - averaged goldbach
+  - additive number theory
+  - g(2n)
+  - prime pairs
+- id: lean-foundation
+  keywords:
+  - lean 4
+  - mathlib
+  - coq
+  - isabelle
+  - proof assistant
+  - formalization
+  - formal proof
+  - theorem prover
+  - verified
+  - lean3
+  - rocq
+- id: lean-riemann
+  keywords:
+  - lean
+  - riemann hypothesis in lean
+  - formal riemann
+  - mathlib
+  - formalization of the riemann
+  - verified riemann
+  - lean theorem
+- id: verification
+  keywords:
+  - verification
+  - verified
+  - formal verification
+  - automated proof
+  - proof checking
+  - machine-checked
+  - certificate
+  - formal proof
+  - proof assistant
+
 arxiv_queries:
 - query: cat:math.CO AND (abs:"Cayley graph" OR abs:"SL(2,F_p)" OR abs:"spectral gap"
     OR abs:"Ramanujan")
@@ -230,31 +402,45 @@ arxiv_queries:
   category: equivalences
 - query: cat:82-XX AND abs:"Lee-Yang"
   category: equivalences
+# ── Survey / exposition (surveys are bridges; map to equivalences) ──────────
 - query: cat:math.NT AND (abs:"Riemann hypothesis" AND abs:"survey" OR abs:"review"
     OR abs:"overview" OR abs:"introduction")
-  category: survey
-- query: cat:math.NT AND (abs:"zeta function" AND abs:"survey" OR abs:"history" OR
-    abs:"status")
-  category: survey
+  category: equivalences
+  subcategory_hint: hilbert-polya
+- query: cat:math.NT AND (abs:"zeta function" AND abs:"survey" OR abs:"history"
+    OR abs:"status")
+  category: equivalences
+  subcategory_hint: nyman-beurling
+# ── Applications (RH applications in prime distribution -> number-theory) ───
 - query: cat:math.NT AND (abs:"Riemann hypothesis" AND abs:"cryptography" OR abs:"prime"
     OR abs:"distribution")
-  category: application
+  category: number-theory
+  subcategory_hint: l-functions
 - query: cat:math-ph AND (abs:"Riemann hypothesis" OR abs:"zeta" OR abs:"random matrix")
-  category: application
+  category: equivalences
+  subcategory_hint: hilbert-polya
 - query: cat:quant-ph AND (abs:"Riemann hypothesis" OR abs:"zeta zeros" OR abs:"Berry-Keating")
-  category: application
-- query: cat:math.NA AND (abs:"Riemann zeta" OR abs:"zeros" OR abs:"computation" OR
-    abs:"verification")
-  category: evaluation
+  category: equivalences
+  subcategory_hint: hilbert-polya
+# ── Evaluation / computation (zeros computation -> number-theory) ───────────
+- query: cat:math.NA AND (abs:"Riemann zeta" OR abs:"zeta zeros" OR abs:"zeros of the Riemann"
+    OR abs:"Riemann Hypothesis")
+  category: number-theory
+  subcategory_hint: l-functions
 - query: cat:cs.DS AND (abs:"Riemann" OR abs:"zeta" OR abs:"zero" OR abs:"algorithm")
-  category: evaluation
+  category: number-theory
+  subcategory_hint: l-functions
+# ── Methods (explicit formula / moments -> number-theory) ───────────────────
 - query: cat:math.NT AND (abs:"explicit formula" OR abs:"approximate functional equation"
     OR abs:"zero-free region")
-  category: method
+  category: number-theory
+  subcategory_hint: l-functions
 - query: cat:math.NT AND (abs:"moments of zeta" OR abs:"mean value" OR abs:"subconvexity")
-  category: method
+  category: number-theory
+  subcategory_hint: l-functions
 - query: cat:math.CA AND (abs:"Riemann zeta" OR abs:"Dirichlet series" OR abs:"Tauberian")
-  category: method
+  category: number-theory
+  subcategory_hint: l-functions
 other_sources_queries:
 - source: dblp
   query: riemann hypothesis
@@ -286,20 +472,20 @@ other_sources_queries:
   subcategory_hint: gnn-cayley
 - source: semantic_scholar
   query: Riemann hypothesis survey review
-  category: survey
-  subcategory_hint: survey
+  category: equivalences
+  subcategory_hint: hilbert-polya
 - source: semantic_scholar
   query: Riemann hypothesis applications cryptography
-  category: application
-  subcategory_hint: application
+  category: number-theory
+  subcategory_hint: l-functions
 - source: semantic_scholar
   query: Riemann zeta zeros computation verification
-  category: evaluation
-  subcategory_hint: evaluation
+  category: number-theory
+  subcategory_hint: l-functions
 - source: crossref
   query: Riemann zeta explicit formula moments
-  category: method
-  subcategory_hint: method
+  category: number-theory
+  subcategory_hint: l-functions
 openalex_queries:
 - category: spectral-theory
   query: Cayley graph spectral gap SL(2,F_p) Ramanujan property expander expanders
@@ -313,14 +499,14 @@ openalex_queries:
   query: Nyman-Beurling Hilbert-Polya Weil Granville Goldbach equivalences rh equivalent
 - category: formalization
   query: Lean 4 Riemann Hypothesis mathlib formalization theorem prover
-- category: survey
+- category: equivalences
   query: Riemann Hypothesis survey review overview zeta function history status
-- category: application
+- category: number-theory
   query: Riemann Hypothesis cryptography prime distribution physics quantum random
     matrix
-- category: evaluation
+- category: number-theory
   query: Riemann zeta zeros computation verification numerical explicit formula
-- category: method
+- category: number-theory
   query: Riemann zeta explicit formula moments mean value subconvexity approximate
     functional equation
 github_queries:
