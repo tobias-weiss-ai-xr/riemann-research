@@ -79927,8 +79927,8 @@ papers:
     harmonic numbers) for such special values and related constants. For example,
     we conjecture that \begin{align*}\sum_{k=1}^\infty\frac1{k^4\binom{2k}k}\bigg(\frac1k+\sum_{j=k}^{2k}\frac1j\bigg)=&amp;\frac{11}9ζ(5),
     \\\sum_{k=1}^\infty\frac{(-1)^{k-1}}{k^3\binom{2k}k}\bigg(\frac1{5k^3}+\sum_{j=1}^{k}\frac1{j^3}\bigg)=&amp;\frac{2}5ζ(3)^2,
-    \end{align*} and $\sum_{k=1}^\infty\frac{48^k}{k(2k-1)\binom{4k}{2k}\binom{2k}k}=\frac{15}2\sum_{k=1}^\infty\frac{(\frac
-    k3)}{k^2}, where (\frac k3)$ denotes the Legendre symbol.
+    \end{align*} and \sum_{k=1}^\infty\frac{48^k}{k(2k-1)\binom{4k}{2k}\binom{2k}k}=\frac{15}2\sum_{k=1}^\infty\frac{(\frac
+    k3)}{k^2}, where (\frac k3) denotes the Legendre symbol.
 - title: BC-system, absolute cyclotomy and the quantized calculus
   date: 2021-12
   url: https://arxiv.org/abs/2112.08820
@@ -80728,7 +80728,7 @@ papers:
   venue: ''
   code_url: ''
   project_url: ''
-  abstract: When 0&lt;α&lt;1, the approximation for the Caputo derivative $y^{(α)}(x)
+  abstract: When 0&lt;α&lt;1, the approximation for the Caputo derivative y^{(α)}(x)
     = \frac{1}{Γ(2-α)h^α}\sum_{k=0}^n σ_k^{(α)} y(x-kh)+O\bigl(h^{2-α}\bigr), where
     σ_0^{(α)} = 1, σ_n^{(α)} = (n-1)^{1-a}-n^{1-a} and σ_k^{(α)} = (k-1)^{1-α}-2k^{1-a}+(k+1)^{1-α},\quad
     (k=1...,n-1), has accuracy O\bigl(h^{2-α}\bigr). We use the expansion of \sum_{k=0}^n
@@ -80736,7 +80736,7 @@ papers:
     the second order approximation for the Caputo derivative y^{(α)}(x) = \frac{1}{Γ(2-α)h^α}\sum_{k=0}^n
     δ_k^{(α)} y(x-kh)+O\bigl(h^{2}\bigr), where δ_k^{(α)} = σ_k^{(α)} for 2\leq k\leq
     n, δ_0^{(α)} = σ_0^{(α)}-ζ(α-1), δ_1^{(α)} = σ_1^{(α)}+2ζ(α-1),δ_2^{(α)} = σ_2^{(α)}-ζ(α-1),
-    and ζ(s)$ is the Riemann zeta function. The numerical solutions of the fractional
+    and ζ(s) is the Riemann zeta function. The numerical solutions of the fractional
     relaxation and subdiffusion equations are computed.
 - title: A unified framework for asymptotic analysis and computation of finite Hankel
     transform
@@ -82997,10 +82997,10 @@ papers:
   code_url: ''
   project_url: ''
   abstract: Let f be a newform, and let χ be a primitive character of conductor q^{\ell}.
-    Assume that q is an odd prime. In this paper we prove the subconvex bound $ L(\t1/2,\Sym
+    Assume that q is an odd prime. In this paper we prove the subconvex bound L(\t1/2,\Sym
     f\otimesχ)\ll_{f,q,\varepsilon} q^{3\ell(1/4-1/36+\varepsilon)} for any \varepsilon&gt;0.
     This can be compared with the recently established t-aspect subconvexity of the
-    symmetric square L$-functions.
+    symmetric square L-functions.
 - title: Rankin Triple Products and Quantum Chaos
   date: 2008-10
   url: https://arxiv.org/abs/0810.0425
@@ -84088,7 +84088,7 @@ papers:
     form of explicit formula; Deninger (1992) on analogies; Baez-Duarte (2005) on
     closure criterion; Suzuki (2015) on Li coefficients norms; LMFDB (data), Platt–Trudgian
     (verification), Arb (ball arithmetic), mpmath (prototype code). 1. Operator definitions
-    and conditions • Hilbert spaces . Define $ H_s = L^2\bigl(\R_+,\,x^{2\sigma-1}\rho_\eta(\log
+    and conditions • Hilbert spaces . Define H_s = L^2\bigl(\R_+,\,x^{2\sigma-1}\rho_\eta(\log
     x)\,\frac{dx}{x}\bigr), where with default . Equivalently in log-variables , (U_s
     f)(u) = e^{(\sigma-1/2)u}\rho_\eta(u)^{1/2} f(e^u) \quad:\;H_s\cong L^2(\R,du).
     Domain/range: consists of functions supported on (or all with rapid decay) with
@@ -84119,7 +84119,7 @@ papers:
     → Operator). Hypothesis: There exists a smooth cutoff and a renormalized first-prime-factor
     measure such that where . Statement: Then for any fixed finite basis , there is
     a renormalized Volterra kernel (independent of smoothing) such that where as .
-    Moreover, if the conjugated kernel is in L^2(\R^2)$, then is Hilbert–Schmidt uniformly
+    Moreover, if the conjugated kernel is in L^2(\R^2), then is Hilbert–Schmidt uniformly
     in on compact sets. Proof sketch: This follows from writing the Buchstab identity
     as a Volterra convolution in log-space, smoothing by Mellin transform with , then
     inserting a finite projection . The error comes from boundary integrals and residual
@@ -85076,7 +85076,7 @@ papers:
   abstract: 'Let G be an n-vertex graph with Laplacian eigenvalues 0=λ_1(G)\le λ_2(G)\le\cdots\le
     λ_n(G). Motivated by the Alon-Boppana bound and the Ramanujan phenomenon for regular
     graphs, Spielman conjectured that, for every graph G with fixed average degree
-    d\ge 1, its Laplacian eigenratio satisfies $ \frac{λ_2(G)}{λ_n(G)} \le \frac{d-2\sqrt{d-1}}{d+2\sqrt{d-1}}+o_n(1),
+    d\ge 1, its Laplacian eigenratio satisfies \frac{λ_2(G)}{λ_n(G)} \le \frac{d-2\sqrt{d-1}}{d+2\sqrt{d-1}}+o_n(1),
     where o_n(1)\to 0 as n\to\infty. The main purpose of this paper is to investigate
     this conjecture. We show that the situation is mixed. On the negative side, the
     conjecture fails for infinitely many average degrees d&gt;2, via constructions
@@ -85085,7 +85085,7 @@ papers:
     regular graphs. In fact, for regular graphs we obtain stronger bounds comparing
     higher Laplacian eigenvalues. As a consequence, we show that for every fixed d\ge
     3 and every \varepsilon&gt;0, every sufficiently large d-regular Ramanujan graph
-    has linearly many adjacency eigenvalues below -2\sqrt{d-1}+\varepsilon$, thereby
+    has linearly many adjacency eigenvalues below -2\sqrt{d-1}+\varepsilon, thereby
     strengthening earlier results of Li and Cioabă by giving an unconditional result
     of this form. We also settle two related conjectures: one of You and Liu concerning
     the maximum Laplacian eigenratio of trees, and one of Gu concerning the Hamiltonicity
@@ -85578,12 +85578,12 @@ papers:
     pairs of nilpotent n\times n matrices over \mathbb{F}_q with X^a=Y^b. Huang, Jiang,
     and Oblomkov assembled their orders as an Eulerian q-series Z_{a,b}(q). They conjectured
     that it is an explicit product P_{a,b}(q) involving Jacobi''s theta function and
-    Dedekind''s eta-function, implying the threefold equality $\underbrace{\prod_{n\ge1}(1-q^n)\cdot\Biggl(\sum_{n=0}^{\infty}\frac{|M_n^{a,b}(\mathbb{F}_q)|}{|GL_n(\mathbb{F}_q)|}\Biggr)\Biggr|_{q\mapsto
+    Dedekind''s eta-function, implying the threefold equality \underbrace{\prod_{n\ge1}(1-q^n)\cdot\Biggl(\sum_{n=0}^{\infty}\frac{|M_n^{a,b}(\mathbb{F}_q)|}{|GL_n(\mathbb{F}_q)|}\Biggr)\Biggr|_{q\mapsto
     q^{-1}}}_{point count}\;=\;\underbrace{Z_{a,b}(q)}_{q-series}\;=\;\underbrace{P_{a,b}(q)}_{theta
     quotient} If true, the point count on X^a=Y^b is essentially a modular function
     on Γ(a+b). The conjecture is layered in a, with an identity for each b. The a=2
     layer is classical, including identities of Rogers--Ramanujan and Andrews--Gordon.
-    For a\geq3, nothing was known. We prove the a=3$ layer in full: a new infinite
+    For a\geq3, nothing was known. We prove the a=3 layer in full: a new infinite
     family of Rogers--Ramanujan identities, and a geometric origin for Warnaar''s
     products. AxiomProver verified these new identities in Lean assuming existing
     literature.'
@@ -85652,14 +85652,14 @@ papers:
     sampler for fixed-margin null models in ecology, statistics, and network analysis.
     Kannan, Tetali, and Vempala (KTV) conjectured that it mixes rapidly for all feasible
     margins \citep{kannan1997simple}. We show that for every feasible set of margins
-    on an m\times n binary matrix, the lazy swap chain has spectral gap at least $\binom{m}{2}^{-1}\binom{n}{2}^{-1}.
+    on an m\times n binary matrix, the lazy swap chain has spectral gap at least \binom{m}{2}^{-1}\binom{n}{2}^{-1}.
     The bound is tight in the worst case. Thus, our result proves this KTV conjecture
     in a stronger quantitative form. The same spectral-gap bound also verifies the
     Mihail--Vazirani conjecture for fixed-margin 0/1-matrix polytopes. The proof gives
     a new route to fixed-margin sampling that avoids stability assumptions and canonical-path
     constructions. We compare the swap chain with a two-row heat-bath chain and use
     a local-to-global spectral reduction to reduce the analysis from arbitrary m\times
-    n$ matrices to a three-row problem. The remaining three-row inequality is then
+    n matrices to a three-row problem. The remaining three-row inequality is then
     proved by separating the scalar column-count sector from the non-scalar Johnson
     harmonic sectors. The proof itself was generated by ChatGPT 5.5 Pro. The author's
     role was to pose the problem, guide the search direction, evaluate the AI-generated
@@ -85769,8 +85769,8 @@ papers:
     integer-sided rectangular blocks, where two partitions are indistinguishable if
     they consist of the same multiset of blocks, regardless of their geometric arrangement.
     We present an elementary approach to show that, for every fixed positive integer
-    m, $ \log p(m,n)=π\sqrt{\tfrac{2mH_m}{3}}\sqrt{n}+O(\log n), \qquad as n\to\infty,
-    where H_m denotes the m$-th harmonic number. This confirms a conjecture recently
+    m, \log p(m,n)=π\sqrt{\tfrac{2mH_m}{3}}\sqrt{n}+O(\log n), \qquad as n\to\infty,
+    where H_m denotes the m-th harmonic number. This confirms a conjecture recently
     posed by the authors and generalizes the Hardy--Ramanujan formula for integer
     partitions.
 - title: On aggregation-quantization permutability problem for discrete-time Markov
@@ -85957,13 +85957,13 @@ papers:
   venue: ''
   code_url: ''
   project_url: ''
-  abstract: Assuming the Riemann Hypothesis, we show that for k&gt;0 $ \frac{1}{T}meas\Big\{t\in
+  abstract: Assuming the Riemann Hypothesis, we show that for k&gt;0 \frac{1}{T}meas\Big\{t\in
     [T,2T]:|ζ(1/2+{\rm i} t)|&gt;(\log T)^k\Big\}\leq C_k \frac{(\log T)^{-k^2}}{\sqrt{\log\log
     T}}, where C_k=\exp(e^{ck}) for some absolute constant c&gt;0. This implies that
-    the 2k-moments of |ζ| are bounded above by C_k(\log T)^{k^2}$, recovering the
-    bound of Harper. The proof relies on the recursive scheme of one of the authors
-    with Bourgade and Radziwill (2020), and combines ideas of Soundararajan (2009)
-    and Harper (2013).
+    the 2k-moments of |ζ| are bounded above by C_k(\log T)^{k^2}, recovering the bound
+    of Harper. The proof relies on the recursive scheme of one of the authors with
+    Bourgade and Radziwill (2020), and combines ideas of Soundararajan (2009) and
+    Harper (2013).
 - title: Geometry of F_1 and Cuntz-Krieger algebras
   date: 2026-06
   url: https://arxiv.org/abs/2606.22010
@@ -87530,9 +87530,9 @@ papers:
     that are modular forms on X^{D}(1) / W_{D}, where W_D is the full group of Atkin-Lehner
     involutions. This leads us to completely describe the rational exceptional sets
     of the associated Heun functions, and the algebraic values attained by the Heun
-    function on these points, for example ${\rm He}\left( 81, \frac{1}{2}; \frac{1}{3},
+    function on these points, for example {\rm He}\left( 81, \frac{1}{2}; \frac{1}{3},
     \frac{1}{6}, \frac{1}{2}, \frac{1}{2};-\frac{729}{112}\right)= \left( \frac{2^2
-    \cdot 3^3 \cdot 5^3}{7^5} \right)^{\frac{1}{6}}$.
+    \cdot 3^3 \cdot 5^3}{7^5} \right)^{\frac{1}{6}}.
 - title: Diophantine rank stability and non-vanishing of L-functions
   date: 2026-06
   url: https://arxiv.org/abs/2606.31646
@@ -88014,9 +88014,9 @@ papers:
     extension K, it has analytic rank one. Assuming the Iwasawa main conjecture, along
     with a substantial number of assumptions, we prove a variant of the p-part of
     the Birch and Swinnerton-Dyer formula over K, where p is an odd prime. More precisely,
-    up to a p-adic unit, we have $ \frac{L'(E/K,1)}{Ω^{cong}_{f} \operatorname{Reg}(E/K)}
+    up to a p-adic unit, we have \frac{L'(E/K,1)}{Ω^{cong}_{f} \operatorname{Reg}(E/K)}
     = \# Sha(E/K)[p^\infty]\prod_{u} c_u(E/K), where Ω^{cong}_{f} is the congruence
-    period of the Hilbert modular form f associated to E$ via the modularity conjecture.
+    period of the Hilbert modular form f associated to E via the modularity conjecture.
 - title: On Braverman-Kazhdan's asymptotic Hecke algebra for inner forms of GL_n
   date: 2026-06
   url: https://arxiv.org/abs/2606.21313
@@ -88204,14 +88204,14 @@ papers:
   code_url: ''
   project_url: ''
   abstract: This paper considers holomorphic modular forms for Γ_1(N) of integral
-    weight of the form $f^{(N)}_{\mathbf a}(τ) =q^{s} (q^{N};q^{N})_{\infty}^{a_0}\prod_{j=1}^{\lfloor
+    weight of the form f^{(N)}_{\mathbf a}(τ) =q^{s} (q^{N};q^{N})_{\infty}^{a_0}\prod_{j=1}^{\lfloor
     N/2 \rfloor}(q^j,q^{N-j};q^N)_\infty^{a_j}, \quad \mathbf a = (a_1, \ldots, a_{\lfloor
     N/2 \rfloor}), for fixed a_0=2k \in 2 \Bbb Z_{\ge 0}. We show that the number
     of relevant exponent vectors \mathbf a is finite and characterize them in terms
     of the \mathbb{Q}-rational cuspidal divisor class group of X_{1}(N). Effective
     procedures are given for counting the admissible exponents by enumerating the
     corresponding polytopes. This leads to formulas for the number of exponent vectors
-    in terms of quasipolynomials in k$.
+    in terms of quasipolynomials in k.
 - title: Explicit hypergeometric modularity of certain weight two and four Hecke eigenforms
   date: 2026-04
   url: https://arxiv.org/abs/2604.02723
@@ -99276,13 +99276,13 @@ papers:
   abstract: 'The function field analogue of Chebyshev''s bias was first studied by
     Cha. In this paper, we study *ties* in this race, namely collections of distinct
     congruence classes c_1, \dots, c_k \in (\mathbb{F}_q[T] / m)^\times for which
-    $π(N; m, c_1) = π(N; m, c_2) = \dots = π(N; m, c_k) holds for infinitely many
-    N. We provide infinitely many examples of (m, c_1, \dots, c_k) for which the tie
+    π(N; m, c_1) = π(N; m, c_2) = \dots = π(N; m, c_k) holds for infinitely many N.
+    We provide infinitely many examples of (m, c_1, \dots, c_k) for which the tie
     holds whenever N satisfies certain congruence conditions. We give two different
     proofs: first, via the explicit formula for prime counts in terms of L-functions
     together with a matrix analogue of Möbius inversion, where exceptional pairs of
     Galois-conjugate elements in the corresponding cyclotomic fields produce ties;
-    and second, via an explicit bijection arising from the GL_2(\mathbb{F}_q)$-action.
+    and second, via an explicit bijection arising from the GL_2(\mathbb{F}_q)-action.
     Our examples also include characteristic 2 cases.'
 - title: On the generalized inverse tangent integral and Catalan's constant
   date: 2026-05
@@ -99789,7 +99789,7 @@ papers:
     once-punctured tori X. This yields a logarithmic-square bound for the number of
     integer points on the boundary of each dilated norm ball. Consequently, the number
     of simple closed geodesics of length exactly L\geq 2 is at most C_X(\log L)^2.
-    For the modular torus, this gives $ \#λ_M^{-1}(m)\leq C(\log\log(3m))^2 for every
+    For the modular torus, this gives \#λ_M^{-1}(m)\leq C(\log\log(3m))^2 for every
     Markoff number m, improving the previous logarithmic bounds for Markoff fibers.
     Our second result shows that the boundary \partial B_X is a convex-geometric detector
     of exponential Diophantine approximation: a rational direction gives genuine corner
@@ -99797,7 +99797,7 @@ papers:
     simple closed geodesic, while at an irrational direction β the graph-flatness
     order admits an explicit formula in terms of the exponential rate at which rational
     directions approach β and the \ell^\infty-radius of B_X in the projective direction
-    β$. Thus, irrational directions are not uniformly flat to infinite order, correcting
+    β. Thus, irrational directions are not uniformly flat to infinite order, correcting
     the McShane--Rivin local picture. We also determine all possible irrational flatness
     orders and the size of the corresponding level sets; in particular, every intermediate
     finite-flatness level determines the marked torus.'
