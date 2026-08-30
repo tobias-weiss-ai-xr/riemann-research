@@ -3,7 +3,7 @@
   {
    "id": "dynam-systems",
    "name": "Dynamical Systems",
-   "count": 216,
+   "count": 218,
    "trajectory": {
     "1991": 1,
     "2003": 1,
@@ -27,18 +27,18 @@
     "2023": 13,
     "2024": 23,
     "2025": 27,
-    "2026": 44
+    "2026": 46
    },
    "momentum": {
     "id": "dynam-systems",
     "name": "Dynam Systems",
-    "total": 216,
-    "recent": 54,
+    "total": 218,
+    "recent": 56,
     "prior": 27,
-    "growth_pct": 100.0,
-    "recent_share": 0.25,
-    "papers_per_month": 4.5,
-    "score": 125.0
+    "growth_pct": 107.4,
+    "recent_share": 0.257,
+    "papers_per_month": 4.7,
+    "score": 133.1
    }
   },
   {
@@ -118,7 +118,7 @@
   {
    "id": "machine-learning",
    "name": "Machine Learning",
-   "count": 537,
+   "count": 545,
    "trajectory": {
     "2006": 1,
     "2008": 1,
@@ -135,27 +135,27 @@
     "2020": 92,
     "2021": 14,
     "2022": 11,
-    "2023": 39,
-    "2024": 87,
+    "2023": 41,
+    "2024": 92,
     "2025": 36,
-    "2026": 164
+    "2026": 165
    },
    "momentum": {
     "id": "machine-learning",
     "name": "Machine Learning",
-    "total": 537,
-    "recent": 185,
+    "total": 545,
+    "recent": 186,
     "prior": 28,
-    "growth_pct": 560.7,
-    "recent_share": 0.345,
-    "papers_per_month": 15.4,
-    "score": 595.2
+    "growth_pct": 564.3,
+    "recent_share": 0.341,
+    "papers_per_month": 15.5,
+    "score": 598.4
    }
   },
   {
    "id": "number-theory",
    "name": "Number Theory",
-   "count": 1710,
+   "count": 1714,
    "trajectory": {
     "1859": 1,
     "2002": 8,
@@ -179,27 +179,27 @@
     "2020": 45,
     "2021": 58,
     "2022": 60,
-    "2023": 109,
+    "2023": 110,
     "2024": 240,
     "2025": 234,
-    "2026": 447
+    "2026": 450
    },
    "momentum": {
     "id": "number-theory",
     "name": "Number Theory",
-    "total": 1710,
-    "recent": 572,
+    "total": 1714,
+    "recent": 575,
     "prior": 211,
-    "growth_pct": 171.1,
+    "growth_pct": 172.5,
     "recent_share": 0.335,
-    "papers_per_month": 47.7,
-    "score": 204.6
+    "papers_per_month": 47.9,
+    "score": 206.0
    }
   },
   {
    "id": "spectral-theory",
    "name": "Spectral Theory & Graphs",
-   "count": 1441,
+   "count": 1442,
    "trajectory": {
     "1998": 1,
     "2001": 1,
@@ -227,18 +227,18 @@
     "2023": 120,
     "2024": 139,
     "2025": 130,
-    "2026": 370
+    "2026": 371
    },
    "momentum": {
     "id": "spectral-theory",
     "name": "Spectral Theory",
-    "total": 1441,
-    "recent": 431,
+    "total": 1442,
+    "recent": 432,
     "prior": 129,
-    "growth_pct": 234.1,
-    "recent_share": 0.299,
-    "papers_per_month": 35.9,
-    "score": 264.0
+    "growth_pct": 234.9,
+    "recent_share": 0.3,
+    "papers_per_month": 36.0,
+    "score": 264.9
    }
   }
  ],
@@ -251,17 +251,17 @@
   {
    "id": "cayley-graphs",
    "name": "Cayley Graphs",
-   "count": 1306
+   "count": 1307
   },
   {
    "id": "gnn-cayley",
    "name": "GNNs on Cayley Graphs",
-   "count": 353
+   "count": 359
   },
   {
    "id": "gnn-fullgraph",
    "name": "Full-Graph GNNs",
-   "count": 3
+   "count": 4
   },
   {
    "id": "granville",
@@ -281,7 +281,7 @@
   {
    "id": "l-functions",
    "name": "L-Functions & Zeta",
-   "count": 1162
+   "count": 1166
   },
   {
    "id": "lean-foundation",
@@ -296,7 +296,7 @@
   {
    "id": "ml-hecke",
    "name": "ML on Hecke Traces",
-   "count": 139
+   "count": 140
   },
   {
    "id": "ml-zeros",
@@ -331,7 +331,7 @@
   {
    "id": "transfer-operator",
    "name": "Transfer Operators",
-   "count": 204
+   "count": 206
   },
   {
    "id": "verification",
@@ -11218,6 +11218,11 @@
   [
    "2023-11",
    "number-theory",
+   "l-functions"
+  ],
+  [
+   "2023-11",
+   "number-theory",
    "modular-forms"
   ],
   [
@@ -11439,6 +11444,16 @@
    "2023-12",
    "machine-learning",
    "gnn-cayley"
+  ],
+  [
+   "2023-12",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2023-12",
+   "machine-learning",
+   "gnn-fullgraph"
   ],
   [
    "2023-12",
@@ -11669,6 +11684,16 @@
    "2024-01",
    "equivalences",
    "weil"
+  ],
+  [
+   "2024-01",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2024-01",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2024-01",
@@ -12359,6 +12384,21 @@
    "2024-03",
    "machine-learning",
    "gnn-cayley"
+  ],
+  [
+   "2024-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2024-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2024-03",
+   "machine-learning",
+   "ml-hecke"
   ],
   [
    "2024-03",
@@ -17469,6 +17509,11 @@
    "2026-02",
    "number-theory",
    "hecke"
+  ],
+  [
+   "2026-02",
+   "number-theory",
+   "l-functions"
   ],
   [
    "2026-02",
@@ -19154,6 +19199,11 @@
    "2026-04",
    "number-theory",
    "modular-forms"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
+   "cayley-graphs"
   ],
   [
    "2026-04",
@@ -22094,6 +22144,16 @@
    "2026-08",
    "dynam-systems",
    "selberg-zeta"
+  ],
+  [
+   "2026-08",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-08",
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2026-08",
@@ -22243,7 +22303,7 @@
   [
    "2026-08",
    "machine-learning",
-   "ml-zeros"
+   "gnn-cayley"
   ],
   [
    "2026-08",
@@ -22257,8 +22317,8 @@
   ],
   [
    "2026-08",
-   "number-theory",
-   "hecke"
+   "machine-learning",
+   "ml-zeros"
   ],
   [
    "2026-08",
@@ -22299,6 +22359,21 @@
    "2026-08",
    "number-theory",
    "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
   ],
   [
    "2026-08",
@@ -22901,108 +22976,108 @@
  "keyword_bursts": [
   {
    "keyword": "framework",
-   "recent": 275,
-   "total": 422,
-   "burst_score": 2.07,
-   "recent_share": 0.1938
+   "recent": 276,
+   "total": 425,
+   "burst_score": 2.06,
+   "recent_share": 0.1935
   },
   {
    "keyword": "benchmark",
    "recent": 71,
    "total": 114,
    "burst_score": 1.97,
-   "recent_share": 0.05
-  },
-  {
-   "keyword": "autonomous",
-   "recent": 5,
-   "total": 10,
-   "burst_score": 1.58,
-   "recent_share": 0.0035
+   "recent_share": 0.0498
   },
   {
    "keyword": "evaluation",
    "recent": 60,
-   "total": 128,
-   "burst_score": 1.49,
-   "recent_share": 0.0423
+   "total": 129,
+   "burst_score": 1.47,
+   "recent_share": 0.0421
+  },
+  {
+   "keyword": "autonomous",
+   "recent": 5,
+   "total": 11,
+   "burst_score": 1.44,
+   "recent_share": 0.0035
   },
   {
    "keyword": "model",
    "recent": 300,
-   "total": 680,
-   "burst_score": 1.4,
-   "recent_share": 0.2114
+   "total": 686,
+   "burst_score": 1.38,
+   "recent_share": 0.2104
   },
   {
    "keyword": "human",
    "recent": 20,
    "total": 47,
    "burst_score": 1.35,
-   "recent_share": 0.0141
+   "recent_share": 0.014
   },
   {
    "keyword": "system",
-   "recent": 225,
-   "total": 536,
-   "burst_score": 1.33,
-   "recent_share": 0.1586
+   "recent": 227,
+   "total": 538,
+   "burst_score": 1.34,
+   "recent_share": 0.1592
   },
   {
    "keyword": "analysis",
    "recent": 167,
-   "total": 403,
-   "burst_score": 1.31,
-   "recent_share": 0.1177
+   "total": 405,
+   "burst_score": 1.3,
+   "recent_share": 0.1171
   },
   {
    "keyword": "tool",
    "recent": 63,
-   "total": 152,
-   "burst_score": 1.31,
-   "recent_share": 0.0444
+   "total": 153,
+   "burst_score": 1.3,
+   "recent_share": 0.0442
   },
   {
    "keyword": "scalable",
    "recent": 9,
    "total": 22,
-   "burst_score": 1.3,
+   "burst_score": 1.29,
    "recent_share": 0.0063
   },
   {
    "keyword": "dataset",
    "recent": 57,
-   "total": 150,
-   "burst_score": 1.2,
-   "recent_share": 0.0402
+   "total": 153,
+   "burst_score": 1.18,
+   "recent_share": 0.04
   },
   {
    "keyword": "real-world",
    "recent": 22,
-   "total": 59,
-   "burst_score": 1.18,
-   "recent_share": 0.0155
+   "total": 61,
+   "burst_score": 1.14,
+   "recent_share": 0.0154
   },
   {
    "keyword": "method",
-   "recent": 317,
-   "total": 891,
-   "burst_score": 1.13,
-   "recent_share": 0.2234
-  },
-  {
-   "keyword": "novel",
-   "recent": 80,
-   "total": 227,
+   "recent": 319,
+   "total": 899,
    "burst_score": 1.12,
-   "recent_share": 0.0564
+   "recent_share": 0.2237
   },
   {
    "keyword": "review",
    "recent": 24,
    "total": 68,
    "burst_score": 1.12,
-   "recent_share": 0.0169
+   "recent_share": 0.0168
+  },
+  {
+   "keyword": "novel",
+   "recent": 80,
+   "total": 229,
+   "burst_score": 1.11,
+   "recent_share": 0.0561
   }
  ]
 }
