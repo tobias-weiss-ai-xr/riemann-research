@@ -100195,3 +100195,366 @@ papers:
     extensive use of Mathematica to handle various elaborate Hecke algebra computations.
     Our mean value theorem is readily applicable to many other problems in analytic
     number theory.
+- title: Construction Methods for Space-Filling Heterogeneous Topological Interlocking
+    Assemblies
+  date: 2026-04
+  url: https://arxiv.org/abs/2604.22475v1
+  category: spectral-theory
+  subcategory: cayley-graphs
+  authors:
+  - Meike Weiß
+  - Alice C. Niemeyer
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Deforming fundamental domains of wallpaper groups provides a systematic
+    way to generate non-convex blocks which admit topological interlocking assemblies
+    (TIAs). We use this approach to construct TIAs that fully occupy the space between
+    two parallel planes and incorporate multiple block types. In addition to wallpaper
+    groups, semiregular tessellations are employed in the construction of such TIAs.
+    These construction methods open up an extensive design space for TIAs, expanding
+    the possibilities of feasible interlocking systems and creating new opportunities
+    for architectural and material design. Several resulting block families can be
+    interpreted as geometric realizations of generalized Truchet tiles or decorated
+    lozenge tilings and, with suitable colouring rules, we establish a one-to-one
+    correspondence between these tilings and specific TIAs. This framework enables
+    a systematic investigation of symmetric and asymmetric assemblies derived from
+    diverse block types.
+- title: On variants of Pólya's conjecture
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.27130v1
+  category: number-theory
+  subcategory: l-functions
+  authors:
+  - Songlin Han
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: In this paper, we study a Riesz-type weighted sum of the Liouville function,
+    $f(x):=-\sum_{n\le x}\frac{λ(n)\log n}{\sqrt n}\log\frac{x}{n}$ for sufficiently
+    large $x$. Motivated by a recent research on the sign criteria for the Riemann
+    Hypothesis arising from weighted prime-counting functions, we investigate the
+    sign behavior of $f(x)$ and its relation to the zeros of the Riemann zeta function.
+    We first prove that if $f(x)$ is non-negative for all sufficiently large $x$,
+    then the Riemann Hypothesis holds. The proof is based on the Mellin transform
+    of $f$ and the analytic properties of $\frac{ζ(2s)}{ζ(s)}$. Conversely, assuming
+    the Riemann Hypothesis, the Simple Zero Conjecture, and an absolute convergence
+    condition involving the nontrivial zeta zeros, we derive an explicit formula for
+    $f(x)$ in terms of these zeros. In particular, we show that $f(x)\sim \frac{(\log
+    x)^3}{12|ζ(\frac{1}{2})|}$ as $x\to \infty$. Consequently, we show that under
+    these hypotheses, $f(x)$ is eventually positive.
+- title: Arbitrarily Fast Quantum Dispersion in Long-Range Crystals
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.27326v1
+  category: dynam-systems
+  subcategory: transfer-operator
+  authors:
+  - Gaétan Leclerc
+  - Mostafa Sabri
+  - Tuomas Sahlsten
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: We construct the first examples of long-range crystals exhibiting arbitrarily
+    fast polynomial quantum dispersion. The Floquet functions of our Hamiltonians
+    are highly oscillatory Weierstrass functions, whose rough autosimilar structure
+    drives the fast dispersion. The proof develops a new Fourier decay theory for
+    $C^α$ images of Lebesgue measure, based on a Dolgopyat-inspired transfer operator
+    method, and yields a van der Corput lemma for Weierstrass functions. As a consequence,
+    the local time of classical Weierstrass functions of sufficiently large lacunarity
+    exists and is $C^k$, answering a question raised by Geman and Horowitz in 1980.
+- title: Linear response for random systems with a cusp
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.26969v1
+  category: dynam-systems
+  subcategory: transfer-operator
+  authors:
+  - Davrbek Oltiboev
+  - Karim Rakhimov
+  - Marks Ruziboev
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: We study i.i.d.\ random compositions of cusp tent-like interval maps having
+    a common cusp point and a common cusp value. For cusp exponents $-1&lt;β&lt;-\frac12$,
+    we prove that the associated annealed transfer operators have a spectral gap on
+    $W^{1,1}(I)$ and $W^{2,1}(I)$. For all sufficiently small perturbations of the
+    probability law, there is a stationary density $h_\varepsilon\in W^{2,1}(I)$,
+    unique among stationary densities belonging to $W^{1,1}(I)$. Moreover, the map
+    $\varepsilon\mapsto h_\varepsilon$ is differentiable at $\varepsilon=0$ in $W^{1,1}(I)$,
+    and we obtain an explicit linear response formula.
+- title: Dynamical phase selection controls compute scaling in looped transformers
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.26556v1
+  category: machine-learning
+  subcategory: gnn-cayley
+  authors:
+  - Gunn Kim
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: A looped transformer performs inference by iterating a weight-tied map,
+    making its computation a dynamical process whose cost is set by the resulting
+    inference dynamics. Here we show that networks with identical architecture and
+    objective, trained to identical accuracy, nevertheless realize distinct dynamical
+    phases depending strongly on initialization, and that the bifurcation defining
+    each phase determines how test-time compute scales. The phases are distinguished
+    by their bifurcation mechanisms, including a saddle-node fold and a Neimark-Sacker-type
+    transition to bounded nonstationary motion. In the fold phase, a one-dimensional
+    normal-form reduction predicts both the relaxation-time and spectral-gap amplitudes
+    from local derivatives of the trained map, yielding the parameter-free relation
+    $τ(\varepsilon)[1-λ_{\max}(-\varepsilon)]\toπ$. Composed with a regular distribution
+    of problem difficulty, the same critical slowing down produces the workload-level
+    tail $P(τ&gt;N)\sim N^{-2}$. In the Neimark--Sacker phase, the fold scaling law
+    disappears rather than merely changing its prefactor. Thus, test-time compute
+    is not determined by architecture alone. It is governed by the dynamical phase
+    of the solution found by training.
+- title: Autonomous vehicle decision and control through reinforcement learning with
+    traffic flow randomization
+  date: 2024-03
+  url: https://arxiv.org/abs/2403.02882v2
+  category: machine-learning
+  subcategory: gnn-cayley
+  authors:
+  - Yuan Lin
+  - Antai Xie
+  - Xiao Liu
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Most of the current studies on autonomous vehicle decision-making and
+    control tasks based on reinforcement learning are conducted in simulated environments.
+    The training and testing of these studies are carried out under rule-based microscopic
+    traffic flow, with little consideration of migrating them to real or near-real
+    environments to test their performance. It may lead to a degradation in performance
+    when the trained model is tested in more realistic traffic scenes. In this study,
+    we propose a method to randomize the driving style and behavior of surrounding
+    vehicles by randomizing certain parameters of the car-following model and the
+    lane-changing model of rule-based microscopic traffic flow in SUMO. We trained
+    policies with deep reinforcement learning algorithms under the domain randomized
+    rule-based microscopic traffic flow in freeway and merging scenes, and then tested
+    them separately in rule-based microscopic traffic flow and high-fidelity microscopic
+    traffic flow. Results indicate that the policy trained under domain randomization
+    traffic flow has significantly better success rate and calculative reward compared
+    to the models trained under other microscopic traffic flows.
+- title: Robustness and Visual Explanation for Black Box Image, Video, and ECG Signal
+    Classification with Reinforcement Learning
+  date: 2024-03
+  url: https://arxiv.org/abs/2403.18985v2
+  category: machine-learning
+  subcategory: gnn-cayley
+  authors:
+  - Soumyendu Sarkar
+  - Ashwin Ramesh Babu
+  - Sajad Mousavi
+  - Vineet Gundecha
+  - Avisek Naug
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: We present a generic Reinforcement Learning (RL) framework optimized for
+    crafting adversarial attacks on different model types spanning from ECG signal
+    analysis (1D), image classification (2D), and video classification (3D). The framework
+    focuses on identifying sensitive regions and inducing misclassifications with
+    minimal distortions and various distortion types. The novel RL method outperforms
+    state-of-the-art methods for all three applications, proving its efficiency. Our
+    RL approach produces superior localization masks, enhancing interpretability for
+    image classification and ECG analysis models. For applications such as ECG analysis,
+    our platform highlights critical ECG segments for clinicians while ensuring resilience
+    against prevalent distortions. This comprehensive tool aims to bolster both resilience
+    with adversarial training and transparency across varied applications and data
+    types.
+- title: InceptionTime vs. Wavelet -- A comparison for time series classification
+  date: 2024-03
+  url: https://arxiv.org/abs/2403.18687v1
+  category: machine-learning
+  subcategory: ml-hecke
+  authors:
+  - Daniel Klenkert
+  - Daniel Schaeffer
+  - Julian Stauch
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Neural networks were used to classify infrasound data. Two different approaches
+    were compared. One based on the direct classification of time series data, using
+    a custom implementation of the InceptionTime network. For the other approach,
+    we generated 2D images of the wavelet transformation of the signals, which were
+    subsequently classified using a ResNet implementation. Choosing appropriate hyperparameter
+    settings, both achieve a classification accuracy of above 90 %, with the direct
+    approach reaching 95.2 %.
+- title: Short-Term Multi-Horizon Line Loss Rate Forecasting of a Distribution Network
+    Using Attention-GCN-LSTM
+  date: 2023-12
+  url: https://arxiv.org/abs/2312.11898v1
+  category: machine-learning
+  subcategory: gnn-fullgraph
+  authors:
+  - Jie Liu
+  - Yijia Cao
+  - Yong Li
+  - Yixiu Guo
+  - Wei Deng
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Accurately predicting line loss rates is vital for effective line loss
+    management in distribution networks, especially over short-term multi-horizons
+    ranging from one hour to one week. In this study, we propose Attention-GCN-LSTM,
+    a novel method that combines Graph Convolutional Networks (GCN), Long Short-Term
+    Memory (LSTM), and a three-level attention mechanism to address this challenge.
+    By capturing spatial and temporal dependencies, our model enables accurate forecasting
+    of line loss rates across multiple horizons. Through comprehensive evaluation
+    using real-world data from 10KV feeders, our Attention-GCN-LSTM model consistently
+    outperforms existing algorithms, exhibiting superior performance in terms of prediction
+    accuracy and multi-horizon forecasting. This model holds significant promise for
+    enhancing line loss management in distribution networks.
+- title: 'CUDC: A Curiosity-Driven Unsupervised Data Collection Method with Adaptive
+    Temporal Distances for Offline Reinforcement Learning'
+  date: 2023-12
+  url: https://arxiv.org/abs/2312.12191v1
+  category: machine-learning
+  subcategory: gnn-cayley
+  authors:
+  - Chenyu Sun
+  - Hangwei Qian
+  - Chunyan Miao
+  venue: AAAI-24
+  code_url: ''
+  project_url: ''
+  abstract: Offline reinforcement learning (RL) aims to learn an effective policy
+    from a pre-collected dataset. Most existing works are to develop sophisticated
+    learning algorithms, with less emphasis on improving the data collection process.
+    Moreover, it is even challenging to extend the single-task setting and collect
+    a task-agnostic dataset that allows an agent to perform multiple downstream tasks.
+    In this paper, we propose a Curiosity-driven Unsupervised Data Collection (CUDC)
+    method to expand feature space using adaptive temporal distances for task-agnostic
+    data collection and ultimately improve learning efficiency and capabilities for
+    multi-task offline RL. To achieve this, CUDC estimates the probability of the
+    k-step future states being reachable from the current states, and adapts how many
+    steps into the future that the dynamics model should predict. With this adaptive
+    reachability mechanism in place, the feature representation can be diversified,
+    and the agent can navigate itself to collect higher-quality data with curiosity.
+    Empirically, CUDC surpasses existing unsupervised methods in efficiency and learning
+    performance in various downstream offline RL tasks of the DeepMind control suite.
+- title: Interpreting Time Series Transformer Models and Sensitivity Analysis of Population
+    Age Groups to COVID-19 Infections
+  date: 2024-01
+  url: https://arxiv.org/abs/2401.15119v1
+  category: machine-learning
+  subcategory: gnn-cayley
+  authors:
+  - Md Khairul Islam
+  - Tyler Valentine
+  - Timothy Joowon Sue
+  - Ayush Karmacharya
+  - Luke Neil Benham
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Interpreting deep learning time series models is crucial in understanding
+    the model's behavior and learning patterns from raw data for real-time decision-making.
+    However, the complexity inherent in transformer-based time series models poses
+    challenges in explaining the impact of individual features on predictions. In
+    this study, we leverage recent local interpretation methods to interpret state-of-the-art
+    time series models. To use real-world datasets, we collected three years of daily
+    case data for 3,142 US counties. Firstly, we compare six transformer-based models
+    and choose the best prediction model for COVID-19 infection. Using 13 input features
+    from the last two weeks, we can predict the cases for the next two weeks. Secondly,
+    we present an innovative way to evaluate the prediction sensitivity to 8 population
+    age groups over highly dynamic multivariate infection data. Thirdly, we compare
+    our proposed perturbation-based interpretation method with related work, including
+    a total of eight local interpretation methods. Finally, we apply our framework
+    to traffic and electricity datasets, demonstrating that our approach is generic
+    and can be applied to other time-series domains.
+- title: Large Language Model Guided Knowledge Distillation for Time Series Anomaly
+    Detection
+  date: 2024-01
+  url: https://arxiv.org/abs/2401.15123v1
+  category: machine-learning
+  subcategory: gnn-cayley
+  authors:
+  - Chen Liu
+  - Shibo He
+  - Qihang Zhou
+  - Shizhong Li
+  - Wenchao Meng
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Self-supervised methods have gained prominence in time series anomaly
+    detection due to the scarcity of available annotations. Nevertheless, they typically
+    demand extensive training data to acquire a generalizable representation map,
+    which conflicts with scenarios of a few available samples, thereby limiting their
+    performance. To overcome the limitation, we propose \textbf{AnomalyLLM}, a knowledge
+    distillation-based time series anomaly detection approach where the student network
+    is trained to mimic the features of the large language model (LLM)-based teacher
+    network that is pretrained on large-scale datasets. During the testing phase,
+    anomalies are detected when the discrepancy between the features of the teacher
+    and student networks is large. To circumvent the student network from learning
+    the teacher network's feature of anomalous samples, we devise two key strategies.
+    1) Prototypical signals are incorporated into the student network to consolidate
+    the normal feature extraction. 2) We use synthetic anomalies to enlarge the representation
+    gap between the two networks. AnomalyLLM demonstrates state-of-the-art performance
+    on 15 datasets, improving accuracy by at least 14.5\% in the UCR dataset.
+- title: Reflections on the Millennium Problems
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.24965v1
+  category: number-theory
+  subcategory: l-functions
+  authors:
+  - Lloyd N. Trefethen
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'In this essay I reflect on the status of three of the Millennium Prize
+    problems: the Riemann Hypothesis, P vs. NP, and the solvability of the Navier-Stokes
+    equations.'
+- title: Mean values and upper bounds for the Hurwitz and Barnes multiple zeta functions
+  date: 2026-02
+  url: https://arxiv.org/abs/2602.06304v2
+  category: number-theory
+  subcategory: l-functions
+  authors:
+  - Takashi Miyagawa
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Due to their deep connection with the Riemann zeta function, the asymptotic
+    behavior of mean values of multiple zeta functions has attracted considerable
+    attention. In this paper, we study the mean square values of Hurwitz-type and
+    Barnes-type multiple zeta functions. For the Hurwitz-type multiple zeta function,
+    we establish asymptotic formulas and upper bounds for its mean square values in
+    terms of the parameter $σ$. Our approach relies on the fact that Hurwitz-type
+    multiple zeta functions can be expressed as linear combinations of the classical
+    Hurwitz zeta function, which allows us to apply known results on the mean values
+    of the latter almost directly. For the Barnes-type multiple zeta function, we
+    show that the behavior of the mean square values depends essentially on the arithmetic
+    structure of the parameter vector. In the case where the parameters are linearly
+    dependent over $\Q$, we obtain asymptotic formulas analogous to the Hurwitz-type
+    case. In contrast, for general parameters, we derive upper bounds for the mean
+    square values from bounds for the function itself. In particular, we clarify how
+    the order of the mean square values varies in terms of the dimension of the $\Q$-vector
+    space spanned by the parameters of the Barnes zeta function.
+- title: A discrete mean value of the Riemann zeta function
+  date: 2023-11
+  url: https://arxiv.org/abs/2311.13554v1
+  category: number-theory
+  subcategory: l-functions
+  authors:
+  - Kübra Benli
+  - Ertan Elma
+  - Nathan Ng
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: In this work, we estimate the sum \begin{align*} \sum_{0 &lt; \Im(ρ) \leq
+    T} ζ(ρ+α)X(ρ) Y(1\!-\! ρ) \end{align*} over the nontirival zeros $ρ$ of the Riemann
+    zeta funtion where $α$ is a complex number with $α\ll 1/\log T$ and $X(\cdot)$
+    and $Y(\cdot)$ are some Dirichlet polynomials. Moreover, we estimate the discrete
+    mean value above for higher derivatives where $ζ(ρ+α)$ is replaced by $ζ^{(m)}(ρ)$
+    for all $m\in\mathbb{N}$. The formulae we obtain generalize a number of previous
+    results in the literature. As an application, assuming the Riemann Hypothesis
+    we obtain the lower bound \begin{align*} \sum_{0 &lt; \Im(ρ) &lt; T} | ζ^{(m)}(ρ)|^{2k}
+    \gg T(\log T)^{k^2+2km+1} \quad \quad (k,m\in\mathbb{N}) \end{align*} which was
+    previously known under the Generalized Riemann Hypothesis, in the case $m=1$.
