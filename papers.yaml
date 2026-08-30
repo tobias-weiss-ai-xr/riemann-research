@@ -79595,17 +79595,6 @@ papers:
     that aim to support the health, social participation, and wel
   doi: 10.1371/journal.pone.0332784
   venue: MED
-- title: 'RCV1: A New Benchmark Collection for Text Categorization Research'
-  date: 2004-01
-  url: https://doi.org/10.5555/1005332.1005345
-  category: spectral-theory
-  subcategory: cayley-graphs
-  authors:
-  - David Lewis
-  - Yiming Yang
-  - Tony Rose
-  doi: 10.5555/1005332.1005345
-  venue: Goldsmiths (University of London)
 - title: 'Evaluating Online Labor Markets for Experimental Research: Amazon.com''s
     Mechanical Turk'
   date: 2012-01
@@ -100198,7 +100187,7 @@ papers:
 - title: Construction Methods for Space-Filling Heterogeneous Topological Interlocking
     Assemblies
   date: 2026-04
-  url: https://arxiv.org/abs/2604.22475v1
+  url: https://arxiv.org/abs/2604.22475
   category: spectral-theory
   subcategory: cayley-graphs
   authors:
@@ -100222,7 +100211,7 @@ papers:
     diverse block types.
 - title: On variants of Pólya's conjecture
   date: 2026-08
-  url: https://arxiv.org/abs/2608.27130v1
+  url: https://arxiv.org/abs/2608.27130
   category: number-theory
   subcategory: l-functions
   authors:
@@ -100231,21 +100220,21 @@ papers:
   code_url: ''
   project_url: ''
   abstract: In this paper, we study a Riesz-type weighted sum of the Liouville function,
-    $f(x):=-\sum_{n\le x}\frac{λ(n)\log n}{\sqrt n}\log\frac{x}{n}$ for sufficiently
-    large $x$. Motivated by a recent research on the sign criteria for the Riemann
-    Hypothesis arising from weighted prime-counting functions, we investigate the
-    sign behavior of $f(x)$ and its relation to the zeros of the Riemann zeta function.
-    We first prove that if $f(x)$ is non-negative for all sufficiently large $x$,
-    then the Riemann Hypothesis holds. The proof is based on the Mellin transform
-    of $f$ and the analytic properties of $\frac{ζ(2s)}{ζ(s)}$. Conversely, assuming
-    the Riemann Hypothesis, the Simple Zero Conjecture, and an absolute convergence
-    condition involving the nontrivial zeta zeros, we derive an explicit formula for
-    $f(x)$ in terms of these zeros. In particular, we show that $f(x)\sim \frac{(\log
-    x)^3}{12|ζ(\frac{1}{2})|}$ as $x\to \infty$. Consequently, we show that under
-    these hypotheses, $f(x)$ is eventually positive.
+    f(x):=-\sum_{n\le x}\frac{λ(n)\log n}{\sqrt n}\log\frac{x}{n} for sufficiently
+    large x. Motivated by a recent research on the sign criteria for the Riemann Hypothesis
+    arising from weighted prime-counting functions, we investigate the sign behavior
+    of f(x) and its relation to the zeros of the Riemann zeta function. We first prove
+    that if f(x) is non-negative for all sufficiently large x, then the Riemann Hypothesis
+    holds. The proof is based on the Mellin transform of f and the analytic properties
+    of \frac{ζ(2s)}{ζ(s)}. Conversely, assuming the Riemann Hypothesis, the Simple
+    Zero Conjecture, and an absolute convergence condition involving the nontrivial
+    zeta zeros, we derive an explicit formula for f(x) in terms of these zeros. In
+    particular, we show that f(x)\sim \frac{(\log x)^3}{12|ζ(\frac{1}{2})|} as x\to
+    \infty. Consequently, we show that under these hypotheses, f(x) is eventually
+    positive.
 - title: Arbitrarily Fast Quantum Dispersion in Long-Range Crystals
   date: 2026-08
-  url: https://arxiv.org/abs/2608.27326v1
+  url: https://arxiv.org/abs/2608.27326
   category: dynam-systems
   subcategory: transfer-operator
   authors:
@@ -100259,13 +100248,13 @@ papers:
     fast polynomial quantum dispersion. The Floquet functions of our Hamiltonians
     are highly oscillatory Weierstrass functions, whose rough autosimilar structure
     drives the fast dispersion. The proof develops a new Fourier decay theory for
-    $C^α$ images of Lebesgue measure, based on a Dolgopyat-inspired transfer operator
+    C^α images of Lebesgue measure, based on a Dolgopyat-inspired transfer operator
     method, and yields a van der Corput lemma for Weierstrass functions. As a consequence,
     the local time of classical Weierstrass functions of sufficiently large lacunarity
-    exists and is $C^k$, answering a question raised by Geman and Horowitz in 1980.
+    exists and is C^k, answering a question raised by Geman and Horowitz in 1980.
 - title: Linear response for random systems with a cusp
   date: 2026-08
-  url: https://arxiv.org/abs/2608.26969v1
+  url: https://arxiv.org/abs/2608.26969
   category: dynam-systems
   subcategory: transfer-operator
   authors:
@@ -100276,16 +100265,16 @@ papers:
   code_url: ''
   project_url: ''
   abstract: We study i.i.d.\ random compositions of cusp tent-like interval maps having
-    a common cusp point and a common cusp value. For cusp exponents $-1&lt;β&lt;-\frac12$,
+    a common cusp point and a common cusp value. For cusp exponents -1&lt;β&lt;-\frac12,
     we prove that the associated annealed transfer operators have a spectral gap on
-    $W^{1,1}(I)$ and $W^{2,1}(I)$. For all sufficiently small perturbations of the
-    probability law, there is a stationary density $h_\varepsilon\in W^{2,1}(I)$,
-    unique among stationary densities belonging to $W^{1,1}(I)$. Moreover, the map
-    $\varepsilon\mapsto h_\varepsilon$ is differentiable at $\varepsilon=0$ in $W^{1,1}(I)$,
-    and we obtain an explicit linear response formula.
+    W^{1,1}(I) and W^{2,1}(I). For all sufficiently small perturbations of the probability
+    law, there is a stationary density h_\varepsilon\in W^{2,1}(I), unique among stationary
+    densities belonging to W^{1,1}(I). Moreover, the map \varepsilon\mapsto h_\varepsilon
+    is differentiable at \varepsilon=0 in W^{1,1}(I), and we obtain an explicit linear
+    response formula.
 - title: Dynamical phase selection controls compute scaling in looped transformers
   date: 2026-08
-  url: https://arxiv.org/abs/2608.26556v1
+  url: https://arxiv.org/abs/2608.26556
   category: machine-learning
   subcategory: gnn-cayley
   authors:
@@ -100303,16 +100292,16 @@ papers:
     transition to bounded nonstationary motion. In the fold phase, a one-dimensional
     normal-form reduction predicts both the relaxation-time and spectral-gap amplitudes
     from local derivatives of the trained map, yielding the parameter-free relation
-    $τ(\varepsilon)[1-λ_{\max}(-\varepsilon)]\toπ$. Composed with a regular distribution
+    τ(\varepsilon)[1-λ_{\max}(-\varepsilon)]\toπ. Composed with a regular distribution
     of problem difficulty, the same critical slowing down produces the workload-level
-    tail $P(τ&gt;N)\sim N^{-2}$. In the Neimark--Sacker phase, the fold scaling law
+    tail P(τ&gt;N)\sim N^{-2}. In the Neimark--Sacker phase, the fold scaling law
     disappears rather than merely changing its prefactor. Thus, test-time compute
     is not determined by architecture alone. It is governed by the dynamical phase
     of the solution found by training.
 - title: Autonomous vehicle decision and control through reinforcement learning with
     traffic flow randomization
   date: 2024-03
-  url: https://arxiv.org/abs/2403.02882v2
+  url: https://arxiv.org/abs/2403.02882
   category: machine-learning
   subcategory: gnn-cayley
   authors:
@@ -100340,7 +100329,7 @@ papers:
 - title: Robustness and Visual Explanation for Black Box Image, Video, and ECG Signal
     Classification with Reinforcement Learning
   date: 2024-03
-  url: https://arxiv.org/abs/2403.18985v2
+  url: https://arxiv.org/abs/2403.18985
   category: machine-learning
   subcategory: gnn-cayley
   authors:
@@ -100366,7 +100355,7 @@ papers:
     types.
 - title: InceptionTime vs. Wavelet -- A comparison for time series classification
   date: 2024-03
-  url: https://arxiv.org/abs/2403.18687v1
+  url: https://arxiv.org/abs/2403.18687
   category: machine-learning
   subcategory: ml-hecke
   authors:
@@ -100386,7 +100375,7 @@ papers:
 - title: Short-Term Multi-Horizon Line Loss Rate Forecasting of a Distribution Network
     Using Attention-GCN-LSTM
   date: 2023-12
-  url: https://arxiv.org/abs/2312.11898v1
+  url: https://arxiv.org/abs/2312.11898
   category: machine-learning
   subcategory: gnn-fullgraph
   authors:
@@ -100412,7 +100401,7 @@ papers:
 - title: 'CUDC: A Curiosity-Driven Unsupervised Data Collection Method with Adaptive
     Temporal Distances for Offline Reinforcement Learning'
   date: 2023-12
-  url: https://arxiv.org/abs/2312.12191v1
+  url: https://arxiv.org/abs/2312.12191
   category: machine-learning
   subcategory: gnn-cayley
   authors:
@@ -100440,7 +100429,7 @@ papers:
 - title: Interpreting Time Series Transformer Models and Sensitivity Analysis of Population
     Age Groups to COVID-19 Infections
   date: 2024-01
-  url: https://arxiv.org/abs/2401.15119v1
+  url: https://arxiv.org/abs/2401.15119
   category: machine-learning
   subcategory: gnn-cayley
   authors:
@@ -100470,7 +100459,7 @@ papers:
 - title: Large Language Model Guided Knowledge Distillation for Time Series Anomaly
     Detection
   date: 2024-01
-  url: https://arxiv.org/abs/2401.15123v1
+  url: https://arxiv.org/abs/2401.15123
   category: machine-learning
   subcategory: gnn-cayley
   authors:
@@ -100486,20 +100475,20 @@ papers:
     detection due to the scarcity of available annotations. Nevertheless, they typically
     demand extensive training data to acquire a generalizable representation map,
     which conflicts with scenarios of a few available samples, thereby limiting their
-    performance. To overcome the limitation, we propose \textbf{AnomalyLLM}, a knowledge
-    distillation-based time series anomaly detection approach where the student network
-    is trained to mimic the features of the large language model (LLM)-based teacher
-    network that is pretrained on large-scale datasets. During the testing phase,
-    anomalies are detected when the discrepancy between the features of the teacher
-    and student networks is large. To circumvent the student network from learning
-    the teacher network's feature of anomalous samples, we devise two key strategies.
-    1) Prototypical signals are incorporated into the student network to consolidate
-    the normal feature extraction. 2) We use synthetic anomalies to enlarge the representation
-    gap between the two networks. AnomalyLLM demonstrates state-of-the-art performance
-    on 15 datasets, improving accuracy by at least 14.5\% in the UCR dataset.
+    performance. To overcome the limitation, we propose AnomalyLLM, a knowledge distillation-based
+    time series anomaly detection approach where the student network is trained to
+    mimic the features of the large language model (LLM)-based teacher network that
+    is pretrained on large-scale datasets. During the testing phase, anomalies are
+    detected when the discrepancy between the features of the teacher and student
+    networks is large. To circumvent the student network from learning the teacher
+    network's feature of anomalous samples, we devise two key strategies. 1) Prototypical
+    signals are incorporated into the student network to consolidate the normal feature
+    extraction. 2) We use synthetic anomalies to enlarge the representation gap between
+    the two networks. AnomalyLLM demonstrates state-of-the-art performance on 15 datasets,
+    improving accuracy by at least 14.5\% in the UCR dataset.
 - title: Reflections on the Millennium Problems
   date: 2026-08
-  url: https://arxiv.org/abs/2608.24965v1
+  url: https://arxiv.org/abs/2608.24965
   category: number-theory
   subcategory: l-functions
   authors:
@@ -100512,7 +100501,7 @@ papers:
     equations.'
 - title: Mean values and upper bounds for the Hurwitz and Barnes multiple zeta functions
   date: 2026-02
-  url: https://arxiv.org/abs/2602.06304v2
+  url: https://arxiv.org/abs/2602.06304
   category: number-theory
   subcategory: l-functions
   authors:
@@ -100525,20 +100514,20 @@ papers:
     attention. In this paper, we study the mean square values of Hurwitz-type and
     Barnes-type multiple zeta functions. For the Hurwitz-type multiple zeta function,
     we establish asymptotic formulas and upper bounds for its mean square values in
-    terms of the parameter $σ$. Our approach relies on the fact that Hurwitz-type
-    multiple zeta functions can be expressed as linear combinations of the classical
-    Hurwitz zeta function, which allows us to apply known results on the mean values
-    of the latter almost directly. For the Barnes-type multiple zeta function, we
-    show that the behavior of the mean square values depends essentially on the arithmetic
-    structure of the parameter vector. In the case where the parameters are linearly
-    dependent over $\Q$, we obtain asymptotic formulas analogous to the Hurwitz-type
-    case. In contrast, for general parameters, we derive upper bounds for the mean
-    square values from bounds for the function itself. In particular, we clarify how
-    the order of the mean square values varies in terms of the dimension of the $\Q$-vector
-    space spanned by the parameters of the Barnes zeta function.
+    terms of the parameter σ. Our approach relies on the fact that Hurwitz-type multiple
+    zeta functions can be expressed as linear combinations of the classical Hurwitz
+    zeta function, which allows us to apply known results on the mean values of the
+    latter almost directly. For the Barnes-type multiple zeta function, we show that
+    the behavior of the mean square values depends essentially on the arithmetic structure
+    of the parameter vector. In the case where the parameters are linearly dependent
+    over \Q, we obtain asymptotic formulas analogous to the Hurwitz-type case. In
+    contrast, for general parameters, we derive upper bounds for the mean square values
+    from bounds for the function itself. In particular, we clarify how the order of
+    the mean square values varies in terms of the dimension of the \Q-vector space
+    spanned by the parameters of the Barnes zeta function.
 - title: A discrete mean value of the Riemann zeta function
   date: 2023-11
-  url: https://arxiv.org/abs/2311.13554v1
+  url: https://arxiv.org/abs/2311.13554
   category: number-theory
   subcategory: l-functions
   authors:
@@ -100549,12 +100538,12 @@ papers:
   code_url: ''
   project_url: ''
   abstract: In this work, we estimate the sum \begin{align*} \sum_{0 &lt; \Im(ρ) \leq
-    T} ζ(ρ+α)X(ρ) Y(1\!-\! ρ) \end{align*} over the nontirival zeros $ρ$ of the Riemann
-    zeta funtion where $α$ is a complex number with $α\ll 1/\log T$ and $X(\cdot)$
-    and $Y(\cdot)$ are some Dirichlet polynomials. Moreover, we estimate the discrete
-    mean value above for higher derivatives where $ζ(ρ+α)$ is replaced by $ζ^{(m)}(ρ)$
-    for all $m\in\mathbb{N}$. The formulae we obtain generalize a number of previous
-    results in the literature. As an application, assuming the Riemann Hypothesis
-    we obtain the lower bound \begin{align*} \sum_{0 &lt; \Im(ρ) &lt; T} | ζ^{(m)}(ρ)|^{2k}
-    \gg T(\log T)^{k^2+2km+1} \quad \quad (k,m\in\mathbb{N}) \end{align*} which was
-    previously known under the Generalized Riemann Hypothesis, in the case $m=1$.
+    T} ζ(ρ+α)X(ρ) Y(1\!-\! ρ) \end{align*} over the nontirival zeros ρ of the Riemann
+    zeta funtion where α is a complex number with α\ll 1/\log T and X(\cdot) and Y(\cdot)
+    are some Dirichlet polynomials. Moreover, we estimate the discrete mean value
+    above for higher derivatives where ζ(ρ+α) is replaced by ζ^{(m)}(ρ) for all m\in\mathbb{N}.
+    The formulae we obtain generalize a number of previous results in the literature.
+    As an application, assuming the Riemann Hypothesis we obtain the lower bound \begin{align*}
+    \sum_{0 &lt; \Im(ρ) &lt; T} | ζ^{(m)}(ρ)|^{2k} \gg T(\log T)^{k^2+2km+1} \quad
+    \quad (k,m\in\mathbb{N}) \end{align*} which was previously known under the Generalized
+    Riemann Hypothesis, in the case m=1.

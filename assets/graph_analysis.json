@@ -199,13 +199,13 @@
   {
    "id": "spectral-theory",
    "name": "Spectral Theory & Graphs",
-   "count": 1442,
+   "count": 1441,
    "trajectory": {
     "1998": 1,
     "2001": 1,
     "2002": 5,
     "2003": 7,
-    "2004": 7,
+    "2004": 6,
     "2005": 14,
     "2006": 5,
     "2007": 19,
@@ -232,7 +232,7 @@
    "momentum": {
     "id": "spectral-theory",
     "name": "Spectral Theory",
-    "total": 1442,
+    "total": 1441,
     "recent": 432,
     "prior": 129,
     "growth_pct": 234.9,
@@ -251,7 +251,7 @@
   {
    "id": "cayley-graphs",
    "name": "Cayley Graphs",
-   "count": 1307
+   "count": 1306
   },
   {
    "id": "gnn-cayley",
@@ -549,11 +549,6 @@
    "2004-01",
    "number-theory",
    "l-functions"
-  ],
-  [
-   "2004-01",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2004-01",
@@ -22978,14 +22973,14 @@
    "keyword": "framework",
    "recent": 276,
    "total": 425,
-   "burst_score": 2.06,
+   "burst_score": 2.05,
    "recent_share": 0.1935
   },
   {
    "keyword": "benchmark",
    "recent": 71,
-   "total": 114,
-   "burst_score": 1.97,
+   "total": 113,
+   "burst_score": 1.99,
    "recent_share": 0.0498
   },
   {
