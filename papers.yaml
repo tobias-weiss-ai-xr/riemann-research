@@ -100547,3 +100547,57 @@ papers:
     \sum_{0 &lt; \Im(ρ) &lt; T} | ζ^{(m)}(ρ)|^{2k} \gg T(\log T)^{k^2+2km+1} \quad
     \quad (k,m\in\mathbb{N}) \end{align*} which was previously known under the Generalized
     Riemann Hypothesis, in the case m=1.
+- title: Dirichlet Beta Analogues, Sign Alternation, and Lerch Unification of Hyperbolic
+    and Logarithmic Tangent Integrals
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.27717v1
+  category: equivalences
+  subcategory: nyman-beurling
+  authors:
+  - Luc Ramsès Talla Waffo
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: We develop a Dirichlet-beta counterpart and a structural extension of
+    the coefficient-extraction framework for hyperbolic and logarithmic tangent integrals.
+    For integers $m\geq n\geq1$ with $m+n$ even, the zeta-type formula \[ \int_0^\infty\frac{\tanh^{m+1}x}{x^{n+1}}\,dx
+    = (-1)^{(m-n)/2} \sum_{p=\lceil n/2\rceil}^{(m+n)/2} \binom{2p}{n}(2^{2p+1}-1)
+    \frac{ζ(2p+1)}{π^{2p}} [u^{m+n-2p}](u\cot u)^{m+1} \] admits the beta-type analogue
+    \[ \int_0^\infty \frac{\tanh^m x}{x^n\cosh x}\,dx = (-1)^{(m-n)/2} \sum_{p=\lceil
+    n/2\rceil}^{(m+n)/2} 2^{2p}\binom{2p-1}{n-1} \frac{β(2p)}{π^{2p-1}} [u^{m+n-2p}]
+    \frac{u}{\sin u}(u\cot u)^m. \] The proof uses derivative polynomials, a beta
+    kernel, and a coefficient-collapse argument. We then establish strict sign alternation
+    for several coefficient families. In the boundary shifted-hyperbolic case the
+    sign is controlled by generalized Bernoulli polynomials, while the arctanh and
+    logarithmic tangent families are identified with continuous dual Hahn and continuous
+    Hahn polynomials. Their zero distributions turn the observed alternation into
+    structural statements valid for all admissible indices. Finally, with $λ(s)=(1-2^{-s})ζ(s)$,
+    we show that the parallel zeta--lambda and beta identities are the two binary
+    specializations of a single Lerch-transcendent scheme with $\varepsilon\in\{0,1\}$.
+    The same convention $\varepsilon=0$ for the beta case and $\varepsilon=1$ for
+    the zeta--lambda case is used throughout. Besides the shifted hyperbolic, odd-$\sinh$,
+    logarithmic tangent, and $\tanh$ families, this framework yields a further unified
+    pair of reciprocal-arctanh integral formulae on $(0,1)$.
+- title: Difference equations of average entropies
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.27829v1
+  category: equivalences
+  subcategory: hilbert-polya
+  authors:
+  - Youyi Huang
+  - Linfeng Wei
+  - Lu Wei
+  - Peter J. Forrester
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Exact cumulants of entanglement entropies of random state ensembles have
+    traditionally been studied within the random matrix framework. In this work, we
+    propose an alternative approach based on the intrinsic connection to integrable
+    systems. The central idea is to embed entropic quantities into tau functions satisfying
+    Toda-type lattice equations, which in turn yield linear difference equations for
+    their averages. Directly solving the difference equations recovers exact entropy
+    formulas in the literature. The integrable systems approach bypasses the case-by-case,
+    ensemble-dependent derivations required by random matrix methods. The approach
+    also suggests a possible route towards unified and more efficient higher-order
+    cumulant calculations by exploring integrable hierarchies.
