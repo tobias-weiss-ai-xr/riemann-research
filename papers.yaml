@@ -100601,3 +100601,163 @@ papers:
     ensemble-dependent derivations required by random matrix methods. The approach
     also suggests a possible route towards unified and more efficient higher-order
     cumulant calculations by exploring integrable hierarchies.
+- title: 'Perfect state transfer on Cayley graphs over dihedral groups: A complete
+    and practical characterization'
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.30347v1
+  category: spectral-theory
+  subcategory: cayley-graphs
+  authors:
+  - Shixin Wang
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Perfect state transfer on graphs has attracted extensive attention due
+    to its application in quantum information and quantum computation. Explicit characterizations
+    of connection sets admitting perfect state transfer in Cayley graphs are rare
+    and, so far, are known only for a few abelian Cayley graphs. In this paper, we
+    characterize the conjugation-closed connection sets of connected Cayley graphs
+    over dihedral groups that admit perfect state transfer. By applying Ramanujan
+    sums, Möbius inversion, and arguments based on the $p$-adic exponential valuation
+    of rational numbers, we convert the eigenvalue constraints imposed by perfect
+    state transfer into explicit structural conditions on the connection set. This
+    yields a complete and practical characterization, which gives an effective criterion
+    for recognizing and constructing such Cayley graphs and also determines the exact
+    minimum perfect state transfer time.
+- title: Hecke Subalgebras and Local Newforms for the Metaplectic Double Cover of
+    $\SL_2(\mathbb Q_p)$
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.29922v1
+  category: number-theory
+  subcategory: hecke
+  authors:
+  - Ehud Moshe Baruch
+  - Markos Karameris
+  - Soma Purkait
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: 'We determine an explicit compact Hecke subalgebra for the metaplectic
+    double cover of $\SL_2(\mathbb Q_p)$ at the congruence subgroup $K_0(p^n)$, for
+    odd $p$, and use it to study local newforms of prescribed quadratic type. We describe
+    the supporting double cosets, generators, relations, characters, and corresponding
+    $\ov K$-types, and compute the action of the resulting Hecke operators on $(K_0(p^n),η)$-isotypic
+    vectors in principal series, Weil, Steinberg, and supercuspidal representations.
+    Thus the conductor relevant throughout is the $η$-conductor, rather than the minimum
+    over all characters. In the supercuspidal case, the metaplectic calculation is
+    reduced to the corresponding linear strongly cuspidal type, making explicit the
+    distinction between unramified and ramified $L$-packets. We also compare the operator
+    $W_{m-1}$ with Ishimoto''s local realization of Ueda''s twisting operator: after
+    fixed-level compression and a lifted $\GL_2$-conjugation, the two actions agree
+    up to an explicit scalar and a parity-dependent change of type. These results
+    provide the local odd-prime counterpart to the Hecke-algebra methods used in the
+    theory of half-integral-weight newforms and minus spaces.'
+- title: Relative Langlands duality of the Bump-Friedberg-Ginzburg $\mathrm{GSO}_6$-integral
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.30576v1
+  category: number-theory
+  subcategory: modular-forms
+  authors:
+  - Antonio Cauchi
+  - Eric Yen-Yo Chen
+  - Armando Gutierrez Terradillos
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: We provide a new instance of singular relative Langlands duality, underlying
+    a Rankin-Selberg integral on $\mathrm{GSO}_6$ due to Bump-Friedberg-Ginzburg.
+    We conclude that this integral represents an essentially self-dual object in the
+    relative Langlands program, and we demonstrate that the Langlands dual automorphic
+    integral computes a finite sum of $L$-functions, reflecting stacky structure on
+    the spectral side.
+- title: Large zeta sums and zeros of the Riemann zeta function
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.31060v1
+  category: equivalences
+  subcategory: granville
+  authors:
+  - Zikang Dong
+  - Ruihua Wang
+  - Weijia Wang
+  - Hao Zhang
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: For real $t$ and $x\ge 1$, set \[ S(x,t)=\sum_{n\le x} n^{\ii t}. \] We
+    prove an unconditional inverse theorem relating large values of $S(x,t)$, with
+    $|t|$ large, to zeros of the Riemann zeta function near height $t$. More precisely,
+    if $T\le |t|\le 2T$, $\exp(\sqrt{\log T})\le x\le \sqrt T$, and $|S(x,t)|=x/N$
+    with $N\le (\log x)^{1/100}$, then for every $cN^6\le L\le (\log x)/2$ a disk
+    centered at $1+\iiφ$, where $|φ-t|\ll N$, contains at least $L/360$ zeros of $ζ(s)$.
+    As a consequence, a quantitative restriction on zeros in a short family of arbitrarily
+    thin fixed windows to the left of the line $\Ree s=1$ yields $S(x,t)\ll x/(\log
+    x)^{1/100}$ in polynomial ranges of $x$. The proof adapts the zero-forcing mechanism
+    of Granville and Soundararajan for large character sums. In the zeta setting the
+    spectral height is shifted by $t$, and an additional residue from the pole of
+    $ζ(s)$ appears in the Gaussian transform; in the range considered here that residue
+    is exponentially small.
+- title: Limit Theorems For Non-Hermitian Ensembles
+  date: 2025-05
+  url: https://arxiv.org/abs/2505.04828v5
+  category: equivalences
+  subcategory: hilbert-polya
+  authors:
+  - Olivia V. Auster
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: The complex Ginibre ensemble and its generalisation, the complex induced
+    Ginibre ensemble, have been well-studied in the field of Random Matrix Theory.
+    In the present work, the asymptotic distribution and the independence of the extreme
+    eigenvalue moduli are studied in the limit of large dimensions of random matrices
+    for these non-Hermitian ensembles. They are derived with the use of Andreief's
+    integration formula and the known methodological approach defined for the study
+    of the limiting distribution of the scaled spectral radius at the edge of the
+    complex Ginibre ensemble. The limiting distribution of the scaled spectral radius
+    and the scaled minimum modulus for the complex induced Ginibre ensemble, with
+    a proportional rectangularity index different from zero, is the Gumbel distribution.
+    In the limit of a large size of complex Ginibre matrices, the left and right tails
+    of the distribution of the minimum modulus are the Rayleigh and Weibull distributions,
+    respectively. The limiting left tail of the distribution of the minimum modulus
+    is the same for these random matrix ensembles, with a rectangularity index of
+    the complex induced Ginibre ensemble equal to zero. This phenomenon is also verified
+    for the right tail of the distribution of this random minimum. The independence
+    of the extreme moduli is formally established, at appropriate scaling, for large
+    matrices from the complex Ginibre ensemble and the complex induced Ginibre ensemble
+    with a proportional rectangularity index. This study extends knowledge in the
+    field of Random Matrix Theory for random variables, like the minimum modulus of
+    matrices from non-Hermitian ensembles, whose limiting stochastic dynamics have
+    never been explored.
+- title: Exact quantum splitting and the structure of finite algebras
+  date: 2026-08
+  url: https://arxiv.org/abs/2608.30340v1
+  category: equivalences
+  subcategory: hilbert-polya
+  authors:
+  - Muhammad Imran
+  venue: ''
+  code_url: ''
+  project_url: ''
+  abstract: Berlekamp's algorithm factors a squarefree polynomial $f\in\mathbb{F}_q[x]$
+    by deterministic linear algebra, reducing the problem to splitting an explicit
+    commutative algebra $B\cong\mathbb{F}_q^r$ into its $r$ simple factors. For large
+    odd $q$, the standard efficient splitting step is randomized, while known derandomizations
+    are conditional on the Extended Riemann Hypothesis. We give an unconditional exact
+    quantum implementation in a circuit model permitting single-qubit rotations through
+    efficiently computable angles. The construction uses an unconditional counting
+    argument. For a block containing $s\ge2$ irreducible factors, a quadratic-character
+    test in odd characteristic and an absolute-trace test in characteristic $2$ yield
+    a nonconstant test element with probability $p_{q,s}\ge\tfrac12$, known exactly
+    in advance and depending only on $q$ and $s$, not on the unknown factorization.
+    Exact amplitude amplification therefore converts each randomized test into a procedure
+    succeeding with certainty after one amplification iteration. The resulting algorithm
+    uses exactly $r-1$ quantum splitting rounds and $O(n^3\log q)$ quantum $\mathbb{F}_q$-operations
+    and $O(n^3)$ classical operations, requiring no primitive root, quadratic non-residue,
+    or distinct-degree preprocessing. The method also splits arbitrary finite-dimensional
+    separable commutative $\\mathbb{F}_q$-algebras given by structure constants. Combined
+    with R'onyai's classical structure theory, which computes the radical deterministically
+    and reduces the remaining tasks deterministically to polynomial factorization,
+    it yields the radical and the Wedderburn decomposition of $A/\mathrm{Rad}(A)$
+    into minimal two-sided ideals, with certainty, for any $n$-dimensional associative
+    $\mathbb{F}_q$-algebra given by structure constants, using $O(n^4\log q)$ quantum
+    $\mathbb{F}_q$-operations.

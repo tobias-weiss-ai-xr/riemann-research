@@ -33,18 +33,18 @@
     "id": "dynam-systems",
     "name": "Dynam Systems",
     "total": 218,
-    "recent": 56,
+    "recent": 53,
     "prior": 27,
-    "growth_pct": 107.4,
-    "recent_share": 0.257,
-    "papers_per_month": 4.7,
-    "score": 133.1
+    "growth_pct": 96.3,
+    "recent_share": 0.243,
+    "papers_per_month": 4.4,
+    "score": 120.6
    }
   },
   {
    "id": "equivalences",
    "name": "RH Equivalences & Bridges",
-   "count": 561,
+   "count": 566,
    "trajectory": {
     "2002": 3,
     "2003": 3,
@@ -69,19 +69,19 @@
     "2022": 30,
     "2023": 43,
     "2024": 70,
-    "2025": 95,
-    "2026": 115
+    "2025": 96,
+    "2026": 119
    },
    "momentum": {
     "id": "equivalences",
     "name": "Equivalences",
-    "total": 561,
-    "recent": 157,
-    "prior": 76,
-    "growth_pct": 106.6,
-    "recent_share": 0.28,
-    "papers_per_month": 13.1,
-    "score": 134.6
+    "total": 566,
+    "recent": 153,
+    "prior": 83,
+    "growth_pct": 84.3,
+    "recent_share": 0.27,
+    "papers_per_month": 12.8,
+    "score": 111.3
    }
   },
   {
@@ -144,18 +144,18 @@
     "id": "machine-learning",
     "name": "Machine Learning",
     "total": 545,
-    "recent": 186,
-    "prior": 28,
-    "growth_pct": 564.3,
-    "recent_share": 0.341,
-    "papers_per_month": 15.5,
-    "score": 598.4
+    "recent": 181,
+    "prior": 33,
+    "growth_pct": 448.5,
+    "recent_share": 0.332,
+    "papers_per_month": 15.1,
+    "score": 481.7
    }
   },
   {
    "id": "number-theory",
    "name": "Number Theory",
-   "count": 1714,
+   "count": 1716,
    "trajectory": {
     "1859": 1,
     "2002": 8,
@@ -182,24 +182,24 @@
     "2023": 110,
     "2024": 240,
     "2025": 234,
-    "2026": 450
+    "2026": 452
    },
    "momentum": {
     "id": "number-theory",
     "name": "Number Theory",
-    "total": 1714,
-    "recent": 575,
-    "prior": 211,
-    "growth_pct": 172.5,
-    "recent_share": 0.335,
-    "papers_per_month": 47.9,
-    "score": 206.0
+    "total": 1716,
+    "recent": 554,
+    "prior": 212,
+    "growth_pct": 161.3,
+    "recent_share": 0.323,
+    "papers_per_month": 46.2,
+    "score": 193.6
    }
   },
   {
    "id": "spectral-theory",
    "name": "Spectral Theory & Graphs",
-   "count": 1441,
+   "count": 1442,
    "trajectory": {
     "1998": 1,
     "2001": 1,
@@ -227,18 +227,18 @@
     "2023": 120,
     "2024": 139,
     "2025": 130,
-    "2026": 371
+    "2026": 372
    },
    "momentum": {
     "id": "spectral-theory",
     "name": "Spectral Theory",
-    "total": 1441,
-    "recent": 432,
-    "prior": 129,
-    "growth_pct": 234.9,
-    "recent_share": 0.3,
-    "papers_per_month": 36.0,
-    "score": 264.9
+    "total": 1442,
+    "recent": 417,
+    "prior": 135,
+    "growth_pct": 208.9,
+    "recent_share": 0.289,
+    "papers_per_month": 34.8,
+    "score": 237.8
    }
   }
  ],
@@ -251,7 +251,7 @@
   {
    "id": "cayley-graphs",
    "name": "Cayley Graphs",
-   "count": 1306
+   "count": 1307
   },
   {
    "id": "gnn-cayley",
@@ -266,17 +266,17 @@
   {
    "id": "granville",
    "name": "Granville / Goldbach-Bridge",
-   "count": 109
+   "count": 110
   },
   {
    "id": "hecke",
    "name": "Hecke Operators",
-   "count": 310
+   "count": 311
   },
   {
    "id": "hilbert-polya",
    "name": "Hilbert-Pólya Conjecture",
-   "count": 122
+   "count": 125
   },
   {
    "id": "l-functions",
@@ -306,12 +306,12 @@
   {
    "id": "modular-forms",
    "name": "Modular Forms",
-   "count": 238
+   "count": 239
   },
   {
    "id": "nyman-beurling",
    "name": "Nyman-Beurling Criterion",
-   "count": 192
+   "count": 193
   },
   {
    "id": "ramanujan",
@@ -15258,6 +15258,11 @@
   [
    "2025-05",
    "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2025-05",
+   "equivalences",
    "nyman-beurling"
   ],
   [
@@ -22173,6 +22178,16 @@
   [
    "2026-08",
    "equivalences",
+   "granville"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-08",
+   "equivalences",
    "hilbert-polya"
   ],
   [
@@ -22184,6 +22199,16 @@
    "2026-08",
    "equivalences",
    "hilbert-polya"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "nyman-beurling"
   ],
   [
    "2026-08",
@@ -22363,7 +22388,7 @@
   [
    "2026-08",
    "number-theory",
-   "l-functions"
+   "hecke"
   ],
   [
    "2026-08",
@@ -22629,6 +22654,16 @@
    "2026-08",
    "number-theory",
    "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "modular-forms"
   ],
   [
    "2026-08",
@@ -22714,6 +22749,11 @@
    "2026-08",
    "spectral-theory",
    "brandt-pizer"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
   ],
   [
    "2026-08",
@@ -22971,108 +23011,108 @@
  "keyword_bursts": [
   {
    "keyword": "framework",
-   "recent": 276,
-   "total": 425,
-   "burst_score": 2.05,
-   "recent_share": 0.1935
+   "recent": 274,
+   "total": 427,
+   "burst_score": 2.1,
+   "recent_share": 0.1988
   },
   {
    "keyword": "benchmark",
-   "recent": 71,
+   "recent": 70,
    "total": 113,
-   "burst_score": 1.99,
-   "recent_share": 0.0498
+   "burst_score": 2.03,
+   "recent_share": 0.0508
   },
   {
    "keyword": "evaluation",
-   "recent": 60,
+   "recent": 59,
    "total": 129,
-   "burst_score": 1.47,
-   "recent_share": 0.0421
+   "burst_score": 1.5,
+   "recent_share": 0.0428
   },
   {
    "keyword": "autonomous",
    "recent": 5,
    "total": 11,
-   "burst_score": 1.44,
-   "recent_share": 0.0035
+   "burst_score": 1.49,
+   "recent_share": 0.0036
   },
   {
    "keyword": "model",
-   "recent": 300,
-   "total": 686,
-   "burst_score": 1.38,
-   "recent_share": 0.2104
+   "recent": 293,
+   "total": 687,
+   "burst_score": 1.4,
+   "recent_share": 0.2126
   },
   {
    "keyword": "human",
    "recent": 20,
    "total": 47,
-   "burst_score": 1.35,
-   "recent_share": 0.014
+   "burst_score": 1.4,
+   "recent_share": 0.0145
   },
   {
    "keyword": "system",
-   "recent": 227,
-   "total": 538,
-   "burst_score": 1.34,
-   "recent_share": 0.1592
-  },
-  {
-   "keyword": "analysis",
-   "recent": 167,
-   "total": 405,
-   "burst_score": 1.3,
-   "recent_share": 0.1171
+   "recent": 224,
+   "total": 539,
+   "burst_score": 1.36,
+   "recent_share": 0.1626
   },
   {
    "keyword": "tool",
    "recent": 63,
    "total": 153,
-   "burst_score": 1.3,
-   "recent_share": 0.0442
+   "burst_score": 1.35,
+   "recent_share": 0.0457
   },
   {
    "keyword": "scalable",
    "recent": 9,
    "total": 22,
-   "burst_score": 1.29,
-   "recent_share": 0.0063
+   "burst_score": 1.34,
+   "recent_share": 0.0065
+  },
+  {
+   "keyword": "analysis",
+   "recent": 160,
+   "total": 405,
+   "burst_score": 1.3,
+   "recent_share": 0.1161
   },
   {
    "keyword": "dataset",
    "recent": 57,
    "total": 153,
-   "burst_score": 1.18,
-   "recent_share": 0.04
+   "burst_score": 1.22,
+   "recent_share": 0.0414
   },
   {
    "keyword": "real-world",
    "recent": 22,
    "total": 61,
-   "burst_score": 1.14,
-   "recent_share": 0.0154
-  },
-  {
-   "keyword": "method",
-   "recent": 319,
-   "total": 899,
-   "burst_score": 1.12,
-   "recent_share": 0.2237
+   "burst_score": 1.18,
+   "recent_share": 0.016
   },
   {
    "keyword": "review",
    "recent": 24,
    "total": 68,
-   "burst_score": 1.12,
-   "recent_share": 0.0168
+   "burst_score": 1.16,
+   "recent_share": 0.0174
+  },
+  {
+   "keyword": "method",
+   "recent": 313,
+   "total": 903,
+   "burst_score": 1.14,
+   "recent_share": 0.2271
   },
   {
    "keyword": "novel",
-   "recent": 80,
+   "recent": 76,
    "total": 229,
-   "burst_score": 1.11,
-   "recent_share": 0.0561
+   "burst_score": 1.09,
+   "recent_share": 0.0552
   }
  ]
 }
