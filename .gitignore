@@ -73,3 +73,7 @@ _SCRATCH/
 # Knowledge Graph output
 kg/output/
 kg/state/
+
+# taskfleet runtime
+.tf-worktrees/
+taskfleet/state/
