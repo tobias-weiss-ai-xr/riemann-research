@@ -121,3 +121,65 @@
     - transfer-operator
   references:
     - file: "experiments/exp14_spectral_zeta_design.md"
+
+- id: EX-Spectral-Gap-Hecke-Correlation
+  name: "Spectral Gap × Hecke Trace Correlation (Exp 16, Direction B)"
+  type: experiment
+  category: spectral-theory
+  subcategory: hecke-correlation
+  description: |
+    First execution of Experiment 16 (taskfleet EC-001): empirical test of the
+    Pizer/Brandt chain — do SL(2,F_p) Cayley graph spectral gaps correlate with
+    Hecke trace statistics of weight-2 newforms at level p?
+    Chain under test: Cayley spectral gap → Brandt matrix eigenvalue (Pizer's
+    theorem) → Hecke eigenvalue T_ℓ on S₂(Γ₀(p)) → a_ℓ(f) → L(f,s) → explicit
+    formula → averaged Goldbach (Granville's RH equivalence).
+    Method: 22 hardcoded spectral gaps (p = 2..79, Exp 1-4) merged with LMFDB
+    weight-2 newform aggregates (46,347 forms, 4,320 levels) by prime level;
+    inner join yields n = 17 primes (p = 11..79, LMFDB CSV starts at level 11).
+    Run on host Python 3.12 (numpy 2.4.4 / pandas 3.0.5 / matplotlib 3.11.1),
+    no Docker required; script gained a --test-only smoke mode.
+  results:
+    - metric: pearson_r(spectral_gap, mean_a2)  # PRIMARY Pizer-chain test
+      value: -0.0735
+    - metric: pearson_r(spectral_gap, mean_trace)
+      value: -0.5336
+    - metric: pearson_r(spectral_gap, mean_analytic_rank)
+      value: -0.4195
+    - metric: pearson_r(ramanujan_ratio, mean_trace)
+      value: 0.4916
+    - metric: pearson_r(log_nodes, mean_trace)  # size confound control
+      value: 0.5880
+    - metric: max_abs_pearson_r(spectral_gap, mean_trace_k) over k=1..20
+      value: 0.276
+    - metric: n_primes_merged
+      value: 17
+  findings:
+    - "PRIMARY RESULT (null): spectral gap shows NO correlation with mean Hecke
+      trace a_2 (r = -0.07, n = 17) — the direct Pizer/Brandt bridge is not
+      visible in averaged data at prime levels 11..79"
+    - "Moderate correlations with mean trace (r = -0.53) and analytic rank
+      (r = -0.42) are confounded by level size: log_nodes vs mean_trace gives
+      r = +0.59, so these are size effects, not spectral-Hecke structure"
+    - "Trace-index series r(spectral_gap, mean_trace_k) oscillates in
+      [-0.22, +0.28] for k = 1..20 with no stable sign — no trace-index structure"
+    - "frac_cm undefined at these levels (no CM forms at prime levels <= 79 in
+      the dataset); Friedli-vs-Hecke plot skipped (LMFDB overlap only p = 11, 13)"
+    - "Consistent with corpus pattern 'pointwise GNN fails, averages sometimes
+      work': here even the AVERAGED correlation fails, weakening the naive
+      spectral-gap → Hecke → L-zero chain; a real bridge (if any) needs
+      Deligne-normalized traces (a_ℓ/2√ℓ) and/or levels beyond 79"
+  status: completed
+  date: "2026-09"
+  tags:
+    - spectral-gap
+    - hecke-traces
+    - pizer-theorem
+    - brandt-matrices
+    - lmfdb
+    - correlation-analysis
+    - negative-result
+  references:
+    - file: "../../../riemann/scripts/spectral_gap_hecke_correlation.py"
+    - file: "../../../riemann/data/experiment16/correlation_results.json"
+    - file: "../../../riemann/experiments/EXPERIMENT_LOG.md"
