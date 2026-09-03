@@ -3,11 +3,9 @@
   {
    "id": "dynam-systems",
    "name": "Dynamical Systems",
-   "count": 233,
+   "count": 218,
    "trajectory": {
     "1991": 1,
-    "1993": 1,
-    "2001": 1,
     "2003": 1,
     "2005": 1,
     "2006": 5,
@@ -27,74 +25,70 @@
     "2021": 18,
     "2022": 12,
     "2023": 13,
-    "2024": 25,
-    "2025": 35,
-    "2026": 49
+    "2024": 23,
+    "2025": 27,
+    "2026": 46
    },
    "momentum": {
     "id": "dynam-systems",
     "name": "Dynam Systems",
-    "total": 233,
-    "recent": 57,
-    "prior": 36,
-    "growth_pct": 58.3,
-    "recent_share": 0.245,
-    "papers_per_month": 4.8,
-    "score": 82.8
+    "total": 218,
+    "recent": 53,
+    "prior": 27,
+    "growth_pct": 96.3,
+    "recent_share": 0.243,
+    "papers_per_month": 4.4,
+    "score": 120.6
    }
   },
   {
    "id": "equivalences",
    "name": "RH Equivalences & Bridges",
-   "count": 618,
+   "count": 566,
    "trajectory": {
-    "1997": 1,
-    "1999": 2,
-    "2000": 1,
-    "2002": 4,
+    "2002": 3,
     "2003": 3,
     "2004": 1,
     "2005": 1,
     "2006": 5,
-    "2007": 9,
-    "2008": 9,
+    "2007": 8,
+    "2008": 8,
     "2009": 6,
     "2010": 12,
-    "2011": 10,
+    "2011": 9,
     "2012": 8,
     "2013": 8,
     "2014": 12,
     "2015": 10,
     "2016": 16,
     "2017": 16,
-    "2018": 11,
+    "2018": 10,
     "2019": 16,
     "2020": 22,
     "2021": 34,
     "2022": 30,
     "2023": 43,
-    "2024": 82,
-    "2025": 122,
-    "2026": 124
+    "2024": 70,
+    "2025": 96,
+    "2026": 119
    },
    "momentum": {
     "id": "equivalences",
     "name": "Equivalences",
-    "total": 618,
-    "recent": 165,
-    "prior": 114,
-    "growth_pct": 44.7,
-    "recent_share": 0.267,
-    "papers_per_month": 13.8,
-    "score": 71.4
+    "total": 566,
+    "recent": 153,
+    "prior": 83,
+    "growth_pct": 84.3,
+    "recent_share": 0.27,
+    "papers_per_month": 12.8,
+    "score": 111.3
    }
   },
   {
    "id": "formalization",
    "name": "Proof & Formalization",
-   "count": 35,
+   "count": 33,
    "trajectory": {
-    "2005": 1,
     "2006": 1,
     "2009": 1,
     "2012": 1,
@@ -102,7 +96,7 @@
     "2015": 1,
     "2017": 1,
     "2018": 2,
-    "2019": 2,
+    "2019": 1,
     "2021": 1,
     "2022": 1,
     "2023": 1,
@@ -112,19 +106,19 @@
    "momentum": {
     "id": "formalization",
     "name": "Formalization",
-    "total": 35,
+    "total": 33,
     "recent": 20,
     "prior": 0,
     "growth_pct": null,
-    "recent_share": 0.571,
+    "recent_share": 0.606,
     "papers_per_month": 1.7,
-    "score": 57.1
+    "score": 60.6
    }
   },
   {
    "id": "machine-learning",
    "name": "Machine Learning",
-   "count": 547,
+   "count": 545,
    "trajectory": {
     "2006": 1,
     "2008": 1,
@@ -141,123 +135,110 @@
     "2020": 92,
     "2021": 14,
     "2022": 11,
-    "2023": 39,
-    "2024": 90,
-    "2025": 37,
-    "2026": 170
+    "2023": 41,
+    "2024": 92,
+    "2025": 36,
+    "2026": 165
    },
    "momentum": {
     "id": "machine-learning",
     "name": "Machine Learning",
-    "total": 547,
-    "recent": 187,
-    "prior": 36,
-    "growth_pct": 419.4,
-    "recent_share": 0.342,
-    "papers_per_month": 15.6,
-    "score": 453.6
+    "total": 545,
+    "recent": 181,
+    "prior": 33,
+    "growth_pct": 448.5,
+    "recent_share": 0.332,
+    "papers_per_month": 15.1,
+    "score": 481.7
    }
   },
   {
    "id": "number-theory",
    "name": "Number Theory",
-   "count": 1830,
+   "count": 1716,
    "trajectory": {
     "1859": 1,
-    "1953": 1,
-    "1966": 1,
-    "1973": 1,
-    "1974": 1,
-    "1985": 1,
-    "1986": 1,
-    "1987": 1,
-    "1989": 1,
-    "1996": 1,
-    "1999": 2,
-    "2000": 2,
-    "2002": 9,
+    "2002": 8,
     "2003": 9,
     "2004": 14,
     "2005": 17,
-    "2006": 15,
+    "2006": 14,
     "2007": 18,
     "2008": 20,
     "2009": 15,
-    "2010": 27,
-    "2011": 21,
+    "2010": 26,
+    "2011": 20,
     "2012": 42,
-    "2013": 41,
-    "2014": 42,
-    "2015": 49,
-    "2016": 44,
+    "2013": 40,
+    "2014": 41,
+    "2015": 48,
+    "2016": 43,
     "2017": 46,
-    "2018": 56,
+    "2018": 55,
     "2019": 40,
-    "2020": 46,
+    "2020": 45,
     "2021": 58,
     "2022": 60,
-    "2023": 109,
-    "2024": 260,
-    "2025": 291,
-    "2026": 467
+    "2023": 110,
+    "2024": 240,
+    "2025": 234,
+    "2026": 452
    },
    "momentum": {
     "id": "number-theory",
     "name": "Number Theory",
-    "total": 1830,
-    "recent": 592,
-    "prior": 266,
-    "growth_pct": 122.6,
+    "total": 1716,
+    "recent": 554,
+    "prior": 212,
+    "growth_pct": 161.3,
     "recent_share": 0.323,
-    "papers_per_month": 49.3,
-    "score": 154.9
+    "papers_per_month": 46.2,
+    "score": 193.6
    }
   },
   {
    "id": "spectral-theory",
    "name": "Spectral Theory & Graphs",
-   "count": 1476,
+   "count": 1442,
    "trajectory": {
-    "1988": 1,
-    "1991": 1,
     "1998": 1,
     "2001": 1,
     "2002": 5,
     "2003": 7,
-    "2004": 7,
+    "2004": 6,
     "2005": 14,
     "2006": 5,
     "2007": 19,
     "2008": 15,
-    "2009": 27,
+    "2009": 26,
     "2010": 23,
     "2011": 20,
     "2012": 35,
-    "2013": 21,
+    "2013": 20,
     "2014": 27,
     "2015": 28,
     "2016": 31,
-    "2017": 58,
+    "2017": 57,
     "2018": 52,
     "2019": 59,
     "2020": 67,
-    "2021": 77,
+    "2021": 76,
     "2022": 87,
     "2023": 120,
-    "2024": 144,
-    "2025": 148,
-    "2026": 376
+    "2024": 139,
+    "2025": 130,
+    "2026": 372
    },
    "momentum": {
     "id": "spectral-theory",
     "name": "Spectral Theory",
-    "total": 1476,
-    "recent": 426,
-    "prior": 153,
-    "growth_pct": 178.4,
+    "total": 1442,
+    "recent": 417,
+    "prior": 135,
+    "growth_pct": 208.9,
     "recent_share": 0.289,
-    "papers_per_month": 35.5,
-    "score": 207.3
+    "papers_per_month": 34.8,
+    "score": 237.8
    }
   }
  ],
@@ -270,17 +251,17 @@
   {
    "id": "cayley-graphs",
    "name": "Cayley Graphs",
-   "count": 1329
+   "count": 1307
   },
   {
    "id": "gnn-cayley",
    "name": "GNNs on Cayley Graphs",
-   "count": 363
+   "count": 359
   },
   {
    "id": "gnn-fullgraph",
    "name": "Full-Graph GNNs",
-   "count": 3
+   "count": 4
   },
   {
    "id": "granville",
@@ -290,22 +271,22 @@
   {
    "id": "hecke",
    "name": "Hecke Operators",
-   "count": 327
+   "count": 311
   },
   {
    "id": "hilbert-polya",
    "name": "Hilbert-Pólya Conjecture",
-   "count": 143
+   "count": 125
   },
   {
    "id": "l-functions",
    "name": "L-Functions & Zeta",
-   "count": 1233
+   "count": 1166
   },
   {
    "id": "lean-foundation",
    "name": "Lean & Mathlib",
-   "count": 15
+   "count": 13
   },
   {
    "id": "lean-riemann",
@@ -315,7 +296,7 @@
   {
    "id": "ml-hecke",
    "name": "ML on Hecke Traces",
-   "count": 139
+   "count": 140
   },
   {
    "id": "ml-zeros",
@@ -325,32 +306,32 @@
   {
    "id": "modular-forms",
    "name": "Modular Forms",
-   "count": 270
+   "count": 239
   },
   {
    "id": "nyman-beurling",
    "name": "Nyman-Beurling Criterion",
-   "count": 196
+   "count": 193
   },
   {
    "id": "ramanujan",
    "name": "Ramanujan Property",
-   "count": 49
+   "count": 41
   },
   {
    "id": "selberg-zeta",
    "name": "Selberg Zeta & Trace Formulas",
-   "count": 13
+   "count": 12
   },
   {
    "id": "spectral-gaps",
    "name": "Spectral Gaps",
-   "count": 94
+   "count": 90
   },
   {
    "id": "transfer-operator",
    "name": "Transfer Operators",
-   "count": 220
+   "count": 206
   },
   {
    "id": "verification",
@@ -360,7 +341,7 @@
   {
    "id": "weil",
    "name": "Weil Criterion",
-   "count": 169
+   "count": 138
   }
  ],
  "timeline": [
@@ -370,119 +351,14 @@
    "l-functions"
   ],
   [
-   "1953-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1966-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1973-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1974-08",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1985-03",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1986-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1987-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1988-09",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "1989-08",
-   "number-theory",
-   "l-functions"
-  ],
-  [
    "1991-07",
    "dynam-systems",
    "transfer-operator"
   ],
   [
-   "1991-12",
-   "spectral-theory",
-   "spectral-gaps"
-  ],
-  [
-   "1993-12",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "1996-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1997-08",
-   "equivalences",
-   "weil"
-  ],
-  [
    "1998-01",
    "spectral-theory",
    "cayley-graphs"
-  ],
-  [
-   "1999-01",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "1999-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "1999-05",
-   "equivalences",
-   "nyman-beurling"
-  ],
-  [
-   "1999-12",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2000-01",
-   "equivalences",
-   "nyman-beurling"
-  ],
-  [
-   "2000-10",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2000-10",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2001-01",
-   "dynam-systems",
-   "selberg-zeta"
   ],
   [
    "2001-01",
@@ -526,11 +402,6 @@
   ],
   [
    "2002-06",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2002-06",
    "number-theory",
    "l-functions"
   ],
@@ -553,11 +424,6 @@
    "2002-08",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2002-08",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2002-10",
@@ -683,11 +549,6 @@
    "2004-01",
    "number-theory",
    "l-functions"
-  ],
-  [
-   "2004-01",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2004-01",
@@ -911,11 +772,6 @@
   ],
   [
    "2005-09",
-   "formalization",
-   "lean-foundation"
-  ],
-  [
-   "2005-09",
    "number-theory",
    "l-functions"
   ],
@@ -978,11 +834,6 @@
    "2006-01",
    "number-theory",
    "hecke"
-  ],
-  [
-   "2006-01",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2006-01",
@@ -1118,11 +969,6 @@
    "2006-12",
    "number-theory",
    "l-functions"
-  ],
-  [
-   "2007-01",
-   "equivalences",
-   "nyman-beurling"
   ],
   [
    "2007-02",
@@ -1586,11 +1432,6 @@
   ],
   [
    "2008-11",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2008-11",
    "spectral-theory",
    "cayley-graphs"
   ],
@@ -1875,11 +1716,6 @@
    "l-functions"
   ],
   [
-   "2009-12",
-   "spectral-theory",
-   "spectral-gaps"
-  ],
-  [
    "2010-01",
    "equivalences",
    "granville"
@@ -1918,11 +1754,6 @@
    "2010-01",
    "spectral-theory",
    "cayley-graphs"
-  ],
-  [
-   "2010-02",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2010-02",
@@ -2251,11 +2082,6 @@
   ],
   [
    "2011-02",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2011-02",
    "number-theory",
    "l-functions"
   ],
@@ -2348,11 +2174,6 @@
    "2011-06",
    "number-theory",
    "hecke"
-  ],
-  [
-   "2011-06",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2011-07",
@@ -3020,11 +2841,6 @@
    "cayley-graphs"
   ],
   [
-   "2013-04",
-   "spectral-theory",
-   "ramanujan"
-  ],
-  [
    "2013-05",
    "equivalences",
    "nyman-beurling"
@@ -3033,11 +2849,6 @@
    "2013-05",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2013-05",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2013-05",
@@ -3283,11 +3094,6 @@
    "2014-01",
    "dynam-systems",
    "transfer-operator"
-  ],
-  [
-   "2014-01",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2014-01",
@@ -4046,11 +3852,6 @@
   ],
   [
    "2015-08",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2015-08",
    "spectral-theory",
    "cayley-graphs"
   ],
@@ -4633,11 +4434,6 @@
    "2016-11",
    "machine-learning",
    "gnn-cayley"
-  ],
-  [
-   "2016-11",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2016-11",
@@ -5330,11 +5126,6 @@
    "cayley-graphs"
   ],
   [
-   "2017-11",
-   "spectral-theory",
-   "ramanujan"
-  ],
-  [
    "2017-12",
    "dynam-systems",
    "transfer-operator"
@@ -5406,11 +5197,6 @@
   ],
   [
    "2018-01",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2018-01",
    "formalization",
    "verification"
   ],
@@ -5453,11 +5239,6 @@
    "2018-02",
    "number-theory",
    "hecke"
-  ],
-  [
-   "2018-02",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2018-02",
@@ -6881,11 +6662,6 @@
   ],
   [
    "2019-10",
-   "formalization",
-   "lean-foundation"
-  ],
-  [
-   "2019-10",
    "number-theory",
    "hecke"
   ],
@@ -7223,11 +6999,6 @@
    "2020-04",
    "number-theory",
    "hecke"
-  ],
-  [
-   "2020-04",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2020-04",
@@ -8470,11 +8241,6 @@
    "cayley-graphs"
   ],
   [
-   "2021-03",
-   "spectral-theory",
-   "ramanujan"
-  ],
-  [
    "2021-04",
    "dynam-systems",
    "transfer-operator"
@@ -11447,6 +11213,11 @@
   [
    "2023-11",
    "number-theory",
+   "l-functions"
+  ],
+  [
+   "2023-11",
+   "number-theory",
    "modular-forms"
   ],
   [
@@ -11668,6 +11439,16 @@
    "2023-12",
    "machine-learning",
    "gnn-cayley"
+  ],
+  [
+   "2023-12",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2023-12",
+   "machine-learning",
+   "gnn-fullgraph"
   ],
   [
    "2023-12",
@@ -11898,6 +11679,16 @@
    "2024-01",
    "equivalences",
    "weil"
+  ],
+  [
+   "2024-01",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2024-01",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2024-01",
@@ -12592,6 +12383,21 @@
   [
    "2024-03",
    "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2024-03",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2024-03",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2024-03",
+   "machine-learning",
    "ml-hecke"
   ],
   [
@@ -13826,21 +13632,6 @@
   ],
   [
    "2024-09",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2024-09",
-   "machine-learning",
-   "gnn-cayley"
-  ],
-  [
-   "2024-09",
-   "machine-learning",
-   "gnn-cayley"
-  ],
-  [
-   "2024-09",
    "machine-learning",
    "ml-hecke"
   ],
@@ -13858,16 +13649,6 @@
    "2024-09",
    "number-theory",
    "hecke"
-  ],
-  [
-   "2024-09",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2024-09",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2024-09",
@@ -13991,16 +13772,6 @@
   ],
   [
    "2024-10",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "2024-10",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2024-10",
    "equivalences",
    "hilbert-polya"
   ],
@@ -14013,21 +13784,6 @@
    "2024-10",
    "equivalences",
    "weil"
-  ],
-  [
-   "2024-10",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2024-10",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2024-10",
-   "machine-learning",
-   "gnn-cayley"
   ],
   [
    "2024-10",
@@ -14093,16 +13849,6 @@
    "2024-10",
    "number-theory",
    "hecke"
-  ],
-  [
-   "2024-10",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2024-10",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2024-10",
@@ -14183,26 +13929,6 @@
    "2024-10",
    "number-theory",
    "modular-forms"
-  ],
-  [
-   "2024-10",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2024-10",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2024-10",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2024-10",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2024-10",
@@ -14246,11 +13972,6 @@
   ],
   [
    "2024-11",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "2024-11",
    "equivalences",
    "granville"
   ],
@@ -14273,21 +13994,6 @@
    "2024-11",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2024-11",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2024-11",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2024-11",
-   "equivalences",
-   "weil"
   ],
   [
    "2024-11",
@@ -14387,52 +14093,12 @@
   [
    "2024-11",
    "number-theory",
-   "l-functions"
-  ],
-  [
-   "2024-11",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2024-11",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2024-11",
-   "number-theory",
    "modular-forms"
   ],
   [
    "2024-11",
    "number-theory",
    "modular-forms"
-  ],
-  [
-   "2024-11",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2024-11",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2024-11",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2024-11",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2024-11",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2024-11",
@@ -14577,21 +14243,6 @@
   [
    "2024-12",
    "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2024-12",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2024-12",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2024-12",
-   "equivalences",
    "nyman-beurling"
   ],
   [
@@ -14601,16 +14252,6 @@
   ],
   [
    "2024-12",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2024-12",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2024-12",
    "machine-learning",
    "gnn-cayley"
   ],
@@ -14637,36 +14278,6 @@
   [
    "2024-12",
    "number-theory",
-   "hecke"
-  ],
-  [
-   "2024-12",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2024-12",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2024-12",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2024-12",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2024-12",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2024-12",
-   "number-theory",
    "l-functions"
   ],
   [
@@ -14783,21 +14394,6 @@
    "2024-12",
    "number-theory",
    "modular-forms"
-  ],
-  [
-   "2024-12",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2024-12",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2024-12",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2024-12",
@@ -14871,16 +14467,6 @@
   ],
   [
    "2025-01",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "2025-01",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2025-01",
    "equivalences",
    "hilbert-polya"
   ],
@@ -14908,11 +14494,6 @@
    "2025-01",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2025-01",
-   "equivalences",
-   "weil"
   ],
   [
    "2025-01",
@@ -15006,16 +14587,6 @@
   ],
   [
    "2025-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-01",
    "spectral-theory",
    "cayley-graphs"
   ],
@@ -15116,11 +14687,6 @@
   ],
   [
    "2025-02",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-02",
    "machine-learning",
    "gnn-cayley"
   ],
@@ -15128,26 +14694,6 @@
    "2025-02",
    "machine-learning",
    "gnn-cayley"
-  ],
-  [
-   "2025-02",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2025-02",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-02",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-02",
-   "number-theory",
-   "l-functions"
   ],
   [
    "2025-02",
@@ -15203,16 +14749,6 @@
    "2025-02",
    "number-theory",
    "modular-forms"
-  ],
-  [
-   "2025-02",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-02",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2025-02",
@@ -15302,16 +14838,6 @@
   [
    "2025-03",
    "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2025-03",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2025-03",
-   "equivalences",
    "nyman-beurling"
   ],
   [
@@ -15328,11 +14854,6 @@
    "2025-03",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2025-03",
-   "equivalences",
-   "weil"
   ],
   [
    "2025-03",
@@ -15442,11 +14963,6 @@
   [
    "2025-03",
    "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-03",
-   "number-theory",
    "modular-forms"
   ],
   [
@@ -15458,11 +14974,6 @@
    "2025-03",
    "number-theory",
    "modular-forms"
-  ],
-  [
-   "2025-03",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2025-03",
@@ -15511,11 +15022,6 @@
   ],
   [
    "2025-04",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "2025-04",
    "equivalences",
    "granville"
   ],
@@ -15548,21 +15054,6 @@
    "2025-04",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2025-04",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-04",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-04",
-   "equivalences",
-   "weil"
   ],
   [
    "2025-04",
@@ -15661,21 +15152,6 @@
   ],
   [
    "2025-04",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-04",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-04",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-04",
    "spectral-theory",
    "cayley-graphs"
   ],
@@ -15738,16 +15214,6 @@
    "2025-04",
    "spectral-theory",
    "spectral-gaps"
-  ],
-  [
-   "2025-05",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "2025-05",
-   "dynam-systems",
-   "transfer-operator"
   ],
   [
    "2025-05",
@@ -15803,16 +15269,6 @@
    "2025-05",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2025-05",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-05",
-   "equivalences",
-   "weil"
   ],
   [
    "2025-05",
@@ -15852,26 +15308,6 @@
   [
    "2025-05",
    "number-theory",
-   "hecke"
-  ],
-  [
-   "2025-05",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-05",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-05",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-05",
-   "number-theory",
    "l-functions"
   ],
   [
@@ -15941,26 +15377,6 @@
   ],
   [
    "2025-05",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-05",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-05",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-05",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-05",
    "spectral-theory",
    "cayley-graphs"
   ],
@@ -15998,21 +15414,6 @@
    "2025-05",
    "spectral-theory",
    "cayley-graphs"
-  ],
-  [
-   "2025-05",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-05",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-06",
-   "dynam-systems",
-   "transfer-operator"
   ],
   [
    "2025-06",
@@ -16042,11 +15443,6 @@
   [
    "2025-06",
    "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2025-06",
-   "equivalences",
    "nyman-beurling"
   ],
   [
@@ -16077,11 +15473,6 @@
   [
    "2025-06",
    "number-theory",
-   "hecke"
-  ],
-  [
-   "2025-06",
-   "number-theory",
    "l-functions"
   ],
   [
@@ -16123,16 +15514,6 @@
    "2025-06",
    "number-theory",
    "l-functions"
-  ],
-  [
-   "2025-06",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-06",
-   "number-theory",
-   "modular-forms"
   ],
   [
    "2025-06",
@@ -16198,21 +15579,6 @@
    "2025-06",
    "spectral-theory",
    "cayley-graphs"
-  ],
-  [
-   "2025-06",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-06",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-06",
-   "spectral-theory",
-   "ramanujan"
   ],
   [
    "2025-06",
@@ -16231,11 +15597,6 @@
   ],
   [
    "2025-07",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "2025-07",
    "equivalences",
    "granville"
   ],
@@ -16252,22 +15613,12 @@
   [
    "2025-07",
    "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2025-07",
-   "equivalences",
    "nyman-beurling"
   ],
   [
    "2025-07",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2025-07",
-   "equivalences",
-   "weil"
   ],
   [
    "2025-07",
@@ -16387,41 +15738,6 @@
   [
    "2025-07",
    "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-07",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-07",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-07",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-07",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-07",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-07",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-07",
-   "number-theory",
    "modular-forms"
   ],
   [
@@ -16463,16 +15779,6 @@
    "2025-07",
    "spectral-theory",
    "cayley-graphs"
-  ],
-  [
-   "2025-07",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-08",
-   "dynam-systems",
-   "transfer-operator"
   ],
   [
    "2025-08",
@@ -16518,31 +15824,6 @@
    "2025-08",
    "equivalences",
    "hilbert-polya"
-  ],
-  [
-   "2025-08",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2025-08",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-08",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-08",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-08",
-   "equivalences",
-   "weil"
   ],
   [
    "2025-08",
@@ -16602,31 +15883,6 @@
   [
    "2025-08",
    "number-theory",
-   "hecke"
-  ],
-  [
-   "2025-08",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2025-08",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-08",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-08",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-08",
-   "number-theory",
    "l-functions"
   ],
   [
@@ -16797,37 +16053,7 @@
   [
    "2025-08",
    "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-08",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-08",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-08",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-08",
-   "spectral-theory",
-   "ramanujan"
-  ],
-  [
-   "2025-08",
-   "spectral-theory",
    "spectral-gaps"
-  ],
-  [
-   "2025-09",
-   "dynam-systems",
-   "transfer-operator"
   ],
   [
    "2025-09",
@@ -16896,21 +16122,6 @@
   ],
   [
    "2025-09",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-09",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-09",
-   "machine-learning",
-   "gnn-cayley"
-  ],
-  [
-   "2025-09",
    "machine-learning",
    "gnn-cayley"
   ],
@@ -16932,26 +16143,6 @@
   [
    "2025-09",
    "number-theory",
-   "hecke"
-  ],
-  [
-   "2025-09",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-09",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-09",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-09",
-   "number-theory",
    "l-functions"
   ],
   [
@@ -17053,16 +16244,6 @@
    "2025-09",
    "number-theory",
    "modular-forms"
-  ],
-  [
-   "2025-09",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-09",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2025-09",
@@ -17167,11 +16348,6 @@
   [
    "2025-10",
    "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2025-10",
-   "equivalences",
    "nyman-beurling"
   ],
   [
@@ -17186,11 +16362,6 @@
   ],
   [
    "2025-10",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2025-10",
    "machine-learning",
    "gnn-cayley"
   ],
@@ -17247,16 +16418,6 @@
   [
    "2025-10",
    "number-theory",
-   "hecke"
-  ],
-  [
-   "2025-10",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2025-10",
-   "number-theory",
    "l-functions"
   ],
   [
@@ -17323,41 +16484,6 @@
    "2025-10",
    "number-theory",
    "l-functions"
-  ],
-  [
-   "2025-10",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-10",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-10",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-10",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-10",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-10",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-10",
-   "number-theory",
-   "modular-forms"
   ],
   [
    "2025-10",
@@ -17413,16 +16539,6 @@
    "2025-10",
    "spectral-theory",
    "cayley-graphs"
-  ],
-  [
-   "2025-10",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-10",
-   "spectral-theory",
-   "ramanujan"
   ],
   [
    "2025-10",
@@ -17468,11 +16584,6 @@
    "2025-11",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2025-11",
-   "equivalences",
-   "weil"
   ],
   [
    "2025-11",
@@ -17642,47 +16753,7 @@
   [
    "2025-11",
    "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-11",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-11",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-11",
-   "number-theory",
    "modular-forms"
-  ],
-  [
-   "2025-11",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-11",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-11",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-11",
-   "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2025-11",
-   "spectral-theory",
-   "cayley-graphs"
   ],
   [
    "2025-11",
@@ -17772,11 +16843,6 @@
   [
    "2025-12",
    "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2025-12",
-   "equivalences",
    "nyman-beurling"
   ],
   [
@@ -17788,11 +16854,6 @@
    "2025-12",
    "equivalences",
    "nyman-beurling"
-  ],
-  [
-   "2025-12",
-   "equivalences",
-   "weil"
   ],
   [
    "2025-12",
@@ -17967,21 +17028,6 @@
   [
    "2025-12",
    "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-12",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2025-12",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2025-12",
-   "number-theory",
    "modular-forms"
   ],
   [
@@ -18087,16 +17133,6 @@
   [
    "2026-01",
    "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2026-01",
-   "equivalences",
-   "hilbert-polya"
-  ],
-  [
-   "2026-01",
-   "equivalences",
    "nyman-beurling"
   ],
   [
@@ -18118,26 +17154,6 @@
    "2026-01",
    "equivalences",
    "weil"
-  ],
-  [
-   "2026-01",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2026-01",
-   "equivalences",
-   "weil"
-  ],
-  [
-   "2026-01",
-   "machine-learning",
-   "gnn-cayley"
-  ],
-  [
-   "2026-01",
-   "machine-learning",
-   "gnn-cayley"
   ],
   [
    "2026-01",
@@ -18192,16 +17208,6 @@
   [
    "2026-01",
    "number-theory",
-   "hecke"
-  ],
-  [
-   "2026-01",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2026-01",
-   "number-theory",
    "l-functions"
   ],
   [
@@ -18273,26 +17279,6 @@
    "2026-01",
    "number-theory",
    "l-functions"
-  ],
-  [
-   "2026-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2026-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2026-01",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2026-01",
-   "number-theory",
-   "modular-forms"
   ],
   [
    "2026-01",
@@ -18405,11 +17391,6 @@
    "cayley-graphs"
   ],
   [
-   "2026-01",
-   "spectral-theory",
-   "spectral-gaps"
-  ],
-  [
    "2026-02",
    "dynam-systems",
    "transfer-operator"
@@ -18423,16 +17404,6 @@
    "2026-02",
    "dynam-systems",
    "transfer-operator"
-  ],
-  [
-   "2026-02",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "2026-02",
-   "equivalences",
-   "hilbert-polya"
   ],
   [
    "2026-02",
@@ -18522,16 +17493,6 @@
   [
    "2026-02",
    "machine-learning",
-   "gnn-cayley"
-  ],
-  [
-   "2026-02",
-   "machine-learning",
-   "gnn-cayley"
-  ],
-  [
-   "2026-02",
-   "machine-learning",
    "ml-hecke"
   ],
   [
@@ -18648,16 +17609,6 @@
    "2026-02",
    "number-theory",
    "l-functions"
-  ],
-  [
-   "2026-02",
-   "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2026-02",
-   "number-theory",
-   "modular-forms"
   ],
   [
    "2026-02",
@@ -18802,16 +17753,6 @@
   [
    "2026-02",
    "spectral-theory",
-   "ramanujan"
-  ],
-  [
-   "2026-02",
-   "spectral-theory",
-   "ramanujan"
-  ],
-  [
-   "2026-02",
-   "spectral-theory",
    "spectral-gaps"
   ],
   [
@@ -20258,6 +19199,11 @@
    "2026-04",
    "number-theory",
    "modular-forms"
+  ],
+  [
+   "2026-04",
+   "spectral-theory",
+   "cayley-graphs"
   ],
   [
    "2026-04",
@@ -22412,16 +21358,6 @@
   [
    "2026-07",
    "machine-learning",
-   "gnn-cayley"
-  ],
-  [
-   "2026-07",
-   "machine-learning",
-   "gnn-cayley"
-  ],
-  [
-   "2026-07",
-   "machine-learning",
    "ml-hecke"
   ],
   [
@@ -23208,16 +22144,6 @@
    "2026-08",
    "dynam-systems",
    "selberg-zeta"
-  ],
-  [
-   "2026-08",
-   "dynam-systems",
-   "transfer-operator"
-  ],
-  [
-   "2026-08",
-   "dynam-systems",
-   "transfer-operator"
   ],
   [
    "2026-08",
@@ -23397,7 +22323,7 @@
   [
    "2026-08",
    "machine-learning",
-   "ml-zeros"
+   "gnn-cayley"
   ],
   [
    "2026-08",
@@ -23411,8 +22337,8 @@
   ],
   [
    "2026-08",
-   "number-theory",
-   "hecke"
+   "machine-learning",
+   "ml-zeros"
   ],
   [
    "2026-08",
@@ -23462,7 +22388,7 @@
   [
    "2026-08",
    "number-theory",
-   "l-functions"
+   "hecke"
   ],
   [
    "2026-08",
@@ -23732,12 +22658,7 @@
   [
    "2026-08",
    "number-theory",
-   "modular-forms"
-  ],
-  [
-   "2026-08",
-   "number-theory",
-   "modular-forms"
+   "l-functions"
   ],
   [
    "2026-08",
@@ -23992,11 +22913,6 @@
   [
    "2026-08",
    "spectral-theory",
-   "cayley-graphs"
-  ],
-  [
-   "2026-08",
-   "spectral-theory",
    "ramanujan"
   ],
   [
@@ -24026,36 +22942,6 @@
   ],
   [
    "2026-08",
-   "spectral-theory",
-   "spectral-gaps"
-  ],
-  [
-   "2026-09",
-   "number-theory",
-   "hecke"
-  ],
-  [
-   "2026-09",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2026-09",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2026-09",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2026-09",
-   "number-theory",
-   "l-functions"
-  ],
-  [
-   "2026-09",
    "spectral-theory",
    "spectral-gaps"
   ]
@@ -24066,24 +22952,8 @@
    "papers": 61
   },
   {
-   "name": "arXiv (Cornell University)",
-   "papers": 13
-  },
-  {
    "name": "MED",
    "papers": 9
-  },
-  {
-   "name": "Mathematics of Computation",
-   "papers": 4
-  },
-  {
-   "name": "Advances in Mathematics",
-   "papers": 3
-  },
-  {
-   "name": "Bulletin of the American Mathematical Society",
-   "papers": 2
   },
   {
    "name": "NeurIPS 2024",
@@ -24110,123 +22980,139 @@
    "papers": 2
   },
   {
-   "name": "Communications in Mathematical Physics",
-   "papers": 2
+   "name": "Monatsberichte der Berliner Akademie",
+   "papers": 1
   },
   {
-   "name": "Combinatorica",
-   "papers": 2
+   "name": "Bulletin of the American Mathematical Society",
+   "papers": 1
   },
   {
-   "name": "Journal für die reine und angewandte Mathematik",
-   "papers": 2
+   "name": "ICLR 2025",
+   "papers": 1
+  },
+  {
+   "name": "SIGIR",
+   "papers": 1
+  },
+  {
+   "name": "AAAI 2024",
+   "papers": 1
+  },
+  {
+   "name": "NeurIPS 2021",
+   "papers": 1
+  },
+  {
+   "name": "EMNLP 2020. Code is available at https",
+   "papers": 1
   }
  ],
  "keyword_bursts": [
   {
    "keyword": "framework",
-   "recent": 283,
-   "total": 437,
-   "burst_score": 2.12,
-   "recent_share": 0.1956
+   "recent": 274,
+   "total": 427,
+   "burst_score": 2.1,
+   "recent_share": 0.1988
   },
   {
    "keyword": "benchmark",
-   "recent": 72,
-   "total": 117,
-   "burst_score": 2.02,
-   "recent_share": 0.0498
+   "recent": 70,
+   "total": 113,
+   "burst_score": 2.03,
+   "recent_share": 0.0508
+  },
+  {
+   "keyword": "evaluation",
+   "recent": 59,
+   "total": 129,
+   "burst_score": 1.5,
+   "recent_share": 0.0428
   },
   {
    "keyword": "autonomous",
    "recent": 5,
-   "total": 10,
-   "burst_score": 1.64,
-   "recent_share": 0.0035
-  },
-  {
-   "keyword": "evaluation",
-   "recent": 62,
-   "total": 133,
-   "burst_score": 1.53,
-   "recent_share": 0.0428
+   "total": 11,
+   "burst_score": 1.49,
+   "recent_share": 0.0036
   },
   {
    "keyword": "model",
-   "recent": 301,
-   "total": 704,
+   "recent": 293,
+   "total": 687,
    "burst_score": 1.4,
-   "recent_share": 0.208
+   "recent_share": 0.2126
   },
   {
    "keyword": "human",
    "recent": 20,
    "total": 47,
-   "burst_score": 1.39,
-   "recent_share": 0.0138
-  },
-  {
-   "keyword": "tool",
-   "recent": 65,
-   "total": 156,
-   "burst_score": 1.36,
-   "recent_share": 0.0449
+   "burst_score": 1.4,
+   "recent_share": 0.0145
   },
   {
    "keyword": "system",
-   "recent": 229,
-   "total": 556,
+   "recent": 224,
+   "total": 539,
+   "burst_score": 1.36,
+   "recent_share": 0.1626
+  },
+  {
+   "keyword": "tool",
+   "recent": 63,
+   "total": 153,
    "burst_score": 1.35,
-   "recent_share": 0.1583
+   "recent_share": 0.0457
   },
   {
    "keyword": "scalable",
    "recent": 9,
    "total": 22,
    "burst_score": 1.34,
-   "recent_share": 0.0062
+   "recent_share": 0.0065
   },
   {
    "keyword": "analysis",
-   "recent": 164,
-   "total": 416,
-   "burst_score": 1.29,
-   "recent_share": 0.1133
+   "recent": 160,
+   "total": 405,
+   "burst_score": 1.3,
+   "recent_share": 0.1161
   },
   {
    "keyword": "dataset",
-   "recent": 59,
+   "recent": 57,
    "total": 153,
-   "burst_score": 1.26,
-   "recent_share": 0.0408
+   "burst_score": 1.22,
+   "recent_share": 0.0414
   },
   {
    "keyword": "real-world",
    "recent": 22,
-   "total": 59,
-   "burst_score": 1.22,
-   "recent_share": 0.0152
-  },
-  {
-   "keyword": "method",
-   "recent": 327,
-   "total": 936,
-   "burst_score": 1.14,
-   "recent_share": 0.226
+   "total": 61,
+   "burst_score": 1.18,
+   "recent_share": 0.016
   },
   {
    "keyword": "review",
    "recent": 24,
-   "total": 69,
+   "total": 68,
+   "burst_score": 1.16,
+   "recent_share": 0.0174
+  },
+  {
+   "keyword": "method",
+   "recent": 313,
+   "total": 903,
    "burst_score": 1.14,
-   "recent_share": 0.0166
+   "recent_share": 0.2271
   },
   {
    "keyword": "novel",
-   "recent": 82,
-   "total": 240,
-   "burst_score": 1.12,
-   "recent_share": 0.0567
+   "recent": 76,
+   "total": 229,
+   "burst_score": 1.09,
+   "recent_share": 0.0552
   }
  ]
 }

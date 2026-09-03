@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Discover new papers from arXiv API (topic configurable via config/taxonomy.yaml)."""
 import argparse
+import random
 import re
 import subprocess
 import sys
@@ -212,22 +213,43 @@ def load_existing_papers(yaml_path):
     return by_id, titles_lower
 
 
-def search_arxiv(query, months, start=0, max_results=100):
+def search_arxiv(query, months, start=0, max_results=100, max_retries=4):
     now = datetime.now(timezone.utc).replace(tzinfo=None)
     cutoff = now - timedelta(days=months * 30)
     date_start = cutoff.strftime("%Y%m%d0000")
     date_end = now.strftime("%Y%m%d") + "2359"
 
     full_query = f"({query}) AND submittedDate:[{date_start} TO {date_end}]"
+    resp = None
+    for attempt in range(max_retries):
+        try:
+            r = requests.get(
+                ARXIV_SEARCH_API.format(
+                    requests.utils.quote(full_query), start, max_results
+                ),
+                timeout=30,
+            )
+            if r.status_code == 429:
+                base = 5 * (attempt + 1)
+                wait = min(int(r.headers.get("Retry-After", base)), 30)
+                print(f"  arXiv 429, waiting {wait}s (attempt {attempt + 1}/{max_retries})", flush=True)
+                time.sleep(wait + random.uniform(0, 2))
+                continue
+            r.raise_for_status()
+            resp = r
+            break
+        except Exception as e:
+            if attempt < max_retries - 1:
+                print(f"  WARNING: arXiv request error: {e} (retry {attempt + 1}/{max_retries})", flush=True)
+                time.sleep(2 * (attempt + 1))
+            else:
+                print(f"  WARNING: arXiv search failed after {max_retries} attempts: {e}", flush=True)
+                return []
+    if resp is None:
+        return []
+
+    entries = []
     try:
-        resp = requests.get(
-            ARXIV_SEARCH_API.format(
-                requests.utils.quote(full_query), start, max_results
-            ),
-            timeout=30,
-        )
-        resp.raise_for_status()
-        entries = []
         root = resp.text
         for match in re.finditer(r"<entry>(.*?)</entry>", root, re.DOTALL):
             entry_xml = match.group(1)
@@ -285,10 +307,10 @@ def search_arxiv(query, months, start=0, max_results=100):
             entry["project_url"] = project_url
             if entry.get("title") and entry.get("url"):
                 entries.append(entry)
-        return entries
     except Exception as e:
-        print(f"  WARNING: arXiv search error: {e}", flush=True)
+        print(f"  WARNING: arXiv parse error: {e}", flush=True)
         return []
+    return entries
 
 
 def format_yaml_entry(entry, cfg):
@@ -446,14 +468,12 @@ def main():
                     }
                 )
             data["papers"] = papers
-            with open(yaml_path, "w", encoding="utf-8") as f:
-                yaml.dump(
-                    data,
-                    f,
-                    default_flow_style=False,
-                    allow_unicode=True,
-                    sort_keys=False,
+            _tmp = yaml_path.parent / f".papers.yaml.tmp.{os.getpid()}"
+            with open(_tmp, "w", encoding="utf-8") as f:
+                yaml.safe_dump(
+                    data, f, default_flow_style=False, allow_unicode=True, sort_keys=False
                 )
+            os.replace(_tmp, yaml_path)
             print(f"Saved {len(papers) - before} new papers to papers.yaml", flush=True)
         except Exception as e:
             print(f"ERROR: local write failed: {e}", flush=True)
@@ -490,14 +510,12 @@ def main():
                     }
                 )
             data["papers"] = papers
-            with open(yaml_path, "w", encoding="utf-8") as f:
-                yaml.dump(
-                    data,
-                    f,
-                    default_flow_style=False,
-                    allow_unicode=True,
-                    sort_keys=False,
+            _tmp = yaml_path.parent / f".papers.yaml.tmp.{os.getpid()}"
+            with open(_tmp, "w", encoding="utf-8") as f:
+                yaml.safe_dump(
+                    data, f, default_flow_style=False, allow_unicode=True, sort_keys=False
                 )
+            os.replace(_tmp, yaml_path)
             subprocess.run(
                 ["git", "add", "papers.yaml"], check=True, cwd=yaml_path.parent
             )

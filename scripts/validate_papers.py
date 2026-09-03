@@ -10,6 +10,7 @@ Usage:
 """
 
 import argparse
+import os
 import re
 import sys
 from datetime import datetime
@@ -85,6 +86,8 @@ def normalize_arxiv_url(url):
     core = url
     core = ARXIV_PATH_PREFIX.sub("", core)
     core = ARXIV_DOI_PREFIX.sub("", core)
+    # Strip a stray "arXiv:" prefix (e.g. arxiv.org/abs/arXiv:2412.13474)
+    core = re.sub(r"(?i)arxiv:", "", core)
     m = ARXIV_ID_PATTERN.search(core)
     if m:
         return f"https://arxiv.org/abs/{m.group(1)}"
@@ -92,7 +95,11 @@ def normalize_arxiv_url(url):
 
 
 def is_arxiv_url(url):
-    return "arxiv.org" in url or bool(ARXIV_DOI_PATTERN.search(url))
+    # Require arxiv.org as a real domain path (abs/ or pdf/), not a bare
+    # substring — otherwise edarxiv.org etc. would wrongly match.
+    return bool(re.search(r"arxiv\.org/(?:abs|pdf)/", url, re.IGNORECASE)) or bool(
+        ARXIV_DOI_PATTERN.search(url)
+    )
 
 
 def validate_papers(data, cfg, fix=False, sort=False):
@@ -104,6 +111,16 @@ def validate_papers(data, cfg, fix=False, sort=False):
 
     valid_categories = {c["id"] for c in research_config.get_categories(cfg)}
     valid_subcategories = {s["id"] for s in research_config.get_subcategories(cfg)}
+
+    # --fix: backfill any missing subcategory with a valid value so the
+    # paper remains validation-compliant (fetch may leave it empty).
+    if fix:
+        for _p in papers:
+            if not _p.get("subcategory"):
+                _sub = sorted(valid_subcategories)[0] if valid_subcategories else _p.get("category", "")
+                if _sub:
+                    _p["subcategory"] = _sub
+                    fixed += 1
 
     if not papers:
         errors.append("papers.yaml contains no papers under the 'papers' key")
@@ -241,10 +258,12 @@ def main():
             print(f"  - {w}", flush=True)
 
     if fixed > 0 or args.sort:
-        with open(yaml_path, "w", encoding="utf-8") as f:
-            yaml.dump(
+        _tmp = yaml_path.parent / f".papers.yaml.tmp.{os.getpid()}"
+        with open(_tmp, "w", encoding="utf-8") as f:
+            yaml.safe_dump(
                 data, f, default_flow_style=False, allow_unicode=True, sort_keys=False
             )
+        os.replace(_tmp, yaml_path)
         if fixed > 0:
             print(f"FIXED: {fixed} issue(s) fixed", flush=True)
         if args.sort:
