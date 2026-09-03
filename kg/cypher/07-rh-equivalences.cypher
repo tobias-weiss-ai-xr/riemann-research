@@ -16,10 +16,51 @@
 //   (RW-Robin) also live in 05-theorems.cypher — see the pointer at the
 //   bottom of this file.
 //
-// Load order: run AFTER 02-graphs.cypher (zeta), 05-theorems.cypher
-// (rh, mertens-related nodes, pnt, sato_tate) and 06-papers-approaches.cypher
-// (hayou2023) — those nodes must already exist for the MATCH-free CREATE
-// statements below to wire up correctly.
+// Load order: run AFTER 03-functions.cypher (zeta), 05-theorems.cypher
+// (rh, pnt, sato_tate) and 06-papers-approaches.cypher (hayou2023) —
+// those nodes must already exist for the MATCH-free CREATE statements
+// below to wire up correctly.
+// NOTE (verified against the cypher sources): zeta is created in
+//   03-functions.cypher (NOT 02-graphs.cypher); the mertens node is
+//   created in THIS file (05-theorems.cypher creates no mertens node).
+//
+// ── NODE INVENTORY (14 theorem nodes) ─────────────────────────────
+// Relationship legend:
+//   ⟺  proven bidirectional EQUIVALENT_TO rh
+//   ⇒  one-way IMPLIES (sufficient condition only)
+//   ~  CONNECTS_TO / ANALOGOUS_TO / partial (interpretation, not equivalence)
+//
+//   PROVEN EQUIVALENCES (⟺ — 8 nodes):
+//     nyman_beurling     1950  L²-density of fractional parts        [RW-Nyman-Beurling]
+//     weil_criterion     1952  positivity on the multiplicative group [RW-Weil]
+//     li_criterion       1998  λ_n ≥ 0 for all n ≥ 1                 [(Li 1998) — no RW id]
+//     nicolas            1983  primorial/totient inequality          [(Nicolas 1983) — no RW id]
+//     explicit_formula   1896  ψ(x) = x + O(x^{1/2+ε}) form          [no RW id]
+//     bagchi             1982  Hurwitz zeta cyclic in L²(0,1)        [(Bagchi 1982) — no RW id]
+//     granville_goldbach 2007  averaged Goldbach error ≪ x^{3/2+o(1)} [RW-Granville-Goldbach]
+//     denjoy             1934  Möbius random-walk heuristic         [RW-Denjoy]
+//
+//   SUFFICIENT / ONE-WAY (⇒ — 3 nodes):
+//     hilbert_polya      1914  self-adjoint operator ⇒ RH; converse
+//                             unknown, so NOT an equivalence         [RW-Hilbert-Polya]
+//     mertens            1897  |M(x)| < √x ⇒ RH; DISPROVEN 1985       [no RW id]
+//     mobius_randomness  1965  Chowla ⇒ PNT only, not RH-equivalent  [no RW id]
+//
+//   INTERPRETATIONS / ANALOGUES (~ — 3 nodes):
+//     voronin            1975  universality of ζ (context, no ⟺)     [no RW id]
+//     yakaboylu          2023  partial progress toward Hilbert-Pólya [no RW id]
+//     beurling_primes    1937  RH analogue for generalized primes    [RW-Beurling-Primes]
+//
+// Reverse documentation gap: mertens, explicit_formula, voronin,
+// yakaboylu and mobius_randomness have no RW-* entry in
+// prethought/related-work/RH-Equivalences.yaml yet — that register is
+// pipeline-owned and outside this file's edit scope (flagged to the
+// corpus maintainer).
+//
+// Together with 10-rh-equivalences-extended.cypher (19 further ⟺
+// nodes + 2 documented analogies) and the robin/lagarias equivalences
+// in 05-theorems.cypher, this file materialises the corpus register of
+// RH equivalences into the knowledge graph.
 
 // ── NYMAN-BEURLING CRITERION ─────────────────────────────────────
 CREATE (nyman_beurling:Theorem {
@@ -98,10 +139,13 @@ CREATE (mertens)-[:IMPLIES {description: "Mertens hypothesis implies RH, but Mer
 // ── NICOLAS CRITERION ───────────────────────────────────────────
 CREATE (nicolas:Theorem:Conjecture {
   name: "Nicolas Criterion",
-  statement: "RH holds iff Σ_{d|n} d ≥ H_n + exp(H_n) log(H_n) for all n ≥ 2, where H_n is the nth harmonic number",
-  proof_status: "conjectured",
+  statement: "RH holds iff N_k / (φ(N_k) log log N_k) > e^γ for all k ≥ 1, where N_k = ∏_{i≤k} p_i is the k-th primorial (product of the first k primes) and φ is Euler's totient",
+  proof_status: "proven",
   year_stated: 1983,
-  description: "Jean-Louis Nicolas. Related to Robin's inequality but using the harmonic numbers. Equivalent to RH."
+  year_established: 1983,
+  significance: "major",
+  description: "Jean-Louis Nicolas (1983). Primorial-based criterion in the Robin/Lagarias family: the equivalence itself is proven (RH itself remains open). CORRECTION (documented): this node previously carried the harmonic-number inequality σ(n) ≤ H_n + e^{H_n} log H_n — that is LAGARIAS' criterion (2002), which has its own node 'lagarias' in 05-theorems.cypher. This node now records the true Nicolas primorial criterion.",
+  key_paper: "Nicolas (1983) C. R. Acad. Sci. Paris 297"
 })
 
 CREATE (nicolas)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Nicolas (1983)"}]->(rh)
@@ -220,4 +264,17 @@ CREATE (beurling_primes)-[:CONNECTS_TO]->(zeta)
 // summatory-function equivalence are equivalent to RH too, but their nodes
 // are created in 05-theorems.cypher (robin, lagarias, liouville) together
 // with their EQUIVALENT_TO edges — do not duplicate them here. Nicolas'
-// harmonic-number criterion (above) refines the same family.
+// primorial criterion (above) refines the same family.
+//
+// ── POINTER: EXTENDED SET → 10-rh-equivalences-extended.cypher ──
+// 19 further proven equivalences (von Koch, Chebyshev-ψ, Volchkov,
+// Balazard-Saias-Yor, Franel-Landau, Liouville-λ limit, Hardy-Littlewood
+// series, Báez-Duarte, Jensen-polynomial hyperbolicity, de Bruijn-Newman
+// Λ = 0, Bombieri variational, Laguerre-Pólya class, Caveney-Nicolas-
+// Sondow GA1/GA2, Redheffer matrix, Landau function, lcm, Speiser,
+// horocycle-flow rate, divisibility graph) plus two documented ANALOGIES
+// (Brownian excursion, Lee-Yang) and five survey-paper nodes (Broughan,
+// Borwein et al., Conrey, Connes, Griffin-Ono-Rolen-Zagier) live in
+// 10-rh-equivalences-extended.cypher. RW-Bertini (marked status:
+// unverified in the YAML register) is deliberately absent from both
+// files — no node without a verifiable source.

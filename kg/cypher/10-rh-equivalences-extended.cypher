@@ -10,10 +10,61 @@
 //   and is deliberately NOT materialised here — no node without a
 //   verifiable source.)
 //
-// Full load order: AFTER 05-theorems.cypher (rh, robin, zeta, pnt),
-// 06-papers-approaches.cypher (riemann1859, rogers_tao2019) and
-// 07-rh-equivalences.cypher (nyman_beurling, mertens, weil_criterion)
-// — those nodes must already exist.
+// Full load order: AFTER 03-functions.cypher (zeta), 05-theorems.cypher
+// (rh, robin, pnt), 06-papers-approaches.cypher (riemann1859,
+// rogers_tao2019) and 07-rh-equivalences.cypher (nyman_beurling,
+// mertens, weil_criterion) — those nodes must already exist.
+// NOTE (verified against the cypher sources): zeta is created in
+//   03-functions.cypher (NOT 05-theorems.cypher); robin and pnt are the
+//   only 05-theorems nodes referenced here.
+//
+// ── NODE INVENTORY (21 theorem + 5 paper nodes) ───────────────────
+// Relationship legend:
+//   ⟺  proven bidirectional EQUIVALENT_TO rh — 19 of the 21 nodes below
+//   ~  CONNECTS_TO only — interpretation/analogy, deliberately NOT
+//      tagged equivalent: brownian_excursion, lee_yang
+//
+//   ANALYTIC (7, all ⟺):
+//     von_koch              1901  π(x) = Li(x) + O(x^{1/2} log x)
+//     chebyshev_err         1901  ψ(x) = x + O(x^{1/2} log²x)
+//     volchkov              1995  single log|ζ| integral = π(3-γ)/32
+//     bsy                   1999  Balazard-Saias-Yor integral = 0
+//     franel_landau         1924  Farey discrepancy balance
+//     liouville_lim         —     Σ_{k≤n} λ(k) = O(n^{1/2+ε})
+//     hardy_littlewood_series 1918 odd-zeta exp. series = O(x^{-1/4})
+//
+//   OPERATOR-THEORETIC (5, all ⟺):
+//     baez_duarte           2002  countable Nyman-Beurling (a ∈ N)
+//     jensen_poly           1927  Pólya: all Jensen polynomials hyperbolic
+//     dbn_equiv             2020  Λ = 0 (Rodgers-Tao closed Λ ≥ 0)
+//     bombieri_var          2000  variational functional minimiser
+//     laguerre_polya        1927  Ξ in the Laguerre-Pólya class
+//
+//   ARITHMETIC (5, all ⟺):
+//     ga_cns                2011  GA1/GA2 refinement of Robin
+//     redheffer             1977  |det A_n| = |M(n)| = O(n^{1/2+ε})
+//     landau_fn             2019  log g(n) < li^{-1}(n)
+//     lcm_form              —     |log lcm(1..n) − n| < √n log²n
+//     speiser               1934  ζ' has no zeros left of the line
+//
+//   PROBABILISTIC / ERGODIC (2):
+//     horocycle             1990  Mayer horocycle equidistribution rate (⟺)
+//     brownian_excursion    2001  Biane-Pitman-Yor Ξ interpretation (~)
+//
+//   GRAPH-THEORETIC (1, ⟺):
+//     divisibility_graph    2017  Broughan divisibility-graph spectra
+//
+//   STATISTICAL PHYSICS (1, ~):
+//     lee_yang              1952  zero-pinning analogy, status: partial [RW-Lee-Yang]
+//
+//   PAPER / SURVEY NODES (5): broughan_survey, borwein_survey, conrey2003,
+//   connes2026, griffin2019 — the catalog sources for this extended set.
+//
+// YAML provenance: only lee_yang mirrors a RW-* entry
+// (prethought/related-work/RH-Equivalences.yaml); the other 20 nodes are
+// sourced from the catalogs above and have no RW-* counterpart yet —
+// that register is pipeline-owned and outside this file's edit scope
+// (gap flagged to the corpus maintainer).
 
 // ── ANALYTIC ────────────────────────────────────────────────────
 
@@ -72,8 +123,9 @@ CREATE (franel_landau:Theorem {
   name: "Franel-Landau Criterion",
   statement: "D(N) = O(N^{1/2+ε}) where D(N) = |#{squarefree n≤N : ω(n) even} - #{squarefree n≤N : ω(n) odd}|",
   proof_status: "proven",
-  year_established: 1926,
+  year_established: 1924,
   description: "Balance of squarefree integers with even vs. odd number of prime factors. Elementary formulation.",
+  key_paper: "Franel (1924), Landau (1924) Göttinger Nachr.",
   domain: "elementary number theory"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(franel_landau)
