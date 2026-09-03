@@ -1,6 +1,25 @@
-// ── RH Extended Equivalence Class ─────────────────────────────────
+// ── RH Equivalence Class (core) ──────────────────────────────────
 // Additional formulations equivalent to the Riemann Hypothesis.
-// Run after 05-theorems.cypher (needs rh node to already exist).
+//
+// Provenance / documentation:
+//   Mirrors prethought/related-work/RH-Equivalences.yaml (the corpus-level
+//   related-work register of RH equivalences & bridges). Each node below
+//   corresponds to a YAML entry (id: RW-*), so the YAML and the KG stay
+//   in sync:
+//     nyman_beurling   ↔ RW-Nyman-Beurling        hilbert_polya ↔ RW-Hilbert-Polya
+//     weil_criterion   ↔ RW-Weil                   li_criterion  ↔ (Li 1998)
+//     nicolas          ↔ (Nicolas 1983)            bagchi        ↔ (Bagchi 1982)
+//     granville_goldbach ↔ RW-Granville-Goldbach       denjoy     ↔ RW-Denjoy
+//     beurling_primes  ↔ RW-Beurling-Primes         lee_yang     ↔ RW-Lee-Yang (in 10-)
+//   RH itself (RW-RH-1859) lives in 05-theorems.cypher; Robin's
+//   inequality, Lagarias' criterion and the Liouville equivalence
+//   (RW-Robin) also live in 05-theorems.cypher — see the pointer at the
+//   bottom of this file.
+//
+// Load order: run AFTER 02-graphs.cypher (zeta), 05-theorems.cypher
+// (rh, mertens-related nodes, pnt, sato_tate) and 06-papers-approaches.cypher
+// (hayou2023) — those nodes must already exist for the MATCH-free CREATE
+// statements below to wire up correctly.
 
 // ── NYMAN-BEURLING CRITERION ─────────────────────────────────────
 CREATE (nyman_beurling:Theorem {
@@ -151,3 +170,54 @@ CREATE (mobius_randomness:Theorem:Conjecture {
 })
 
 CREATE (mobius_randomness)-[:IMPLIES {description: "Chowla implies PNT (via partial summation), but NOT equivalent to RH"}]->(pnt)
+
+// ── GRANVILLE: AVERAGED GOLDBACH (RW-Granville-Goldbach) ────────
+CREATE (granville_goldbach:Theorem {
+  name: "Granville Averaged Goldbach Equivalence",
+  statement: "RH holds iff Σ_{2N ≤ x} (G(2N) - J(2N)) ≪ x^{3/2+o(1)} as x → ∞, where G(2N) = Σ_{p+q=2N} log p · log q and J(2N) is the Hardy-Littlewood singular series for the Goldbach problem",
+  proof_status: "proven",
+  year_established: 2007,
+  significance: "major",
+  description: "Andrew Granville. An AVERAGED equivalence: the error term in the (weighted) Goldbach conjecture is controlled by the zeros of ζ(s). If RH holds the error averages out; conversely, smallness of the average error forces the zeros onto the critical line. This is the 'Goldbach bridge' to RH referenced by experiment 17 and the Friedli-constant finding in the corpus.",
+  key_paper: "Granville (2007); documented in prethought/related-work/RH-Equivalences.yaml as RW-Granville-Goldbach",
+  domain: "analytic number theory"
+})
+CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Granville (2007), via the explicit formula for the Goldbach error term"}]->(granville_goldbach)
+CREATE (granville_goldbach)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Granville (2007)"}]->(rh)
+CREATE (granville_goldbach)-[:USED_IN]->(explicit_formula)
+
+// ── DENJOY: PROBABILISTIC INTERPRETATION (RW-Denjoy) ────────────
+CREATE (denjoy:Theorem {
+  name: "Denjoy's Probabilistic Interpretation",
+  statement: "RH holds iff the Möbius summatory function behaves like a symmetric random walk: M(x) = O(x^{1/2+ε}) matches the fluctuation scale of a fair coin-toss sum, making each sign of μ(n) an independent ±1 trial heuristically",
+  proof_status: "proven",
+  year_established: 1934,
+  significance: "major",
+  description: "Arnaud Denjoy (1934). Interprets RH as a statement about the randomness of the Möbius function. Note: the corpus YAML (RW-Denjoy) dates this to 1981, but Denjoy's C. R. Acad. Sci. Paris note is from 1934 (Denjoy died in 1974) — this node records the corrected year.",
+  key_paper: "Denjoy (1934) C. R. Acad. Sci. Paris 198; see Broughan (2017) Equivalents of RH Vol I",
+  domain: "probability / elementary number theory"
+})
+CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "M(x) = O(x^{1/2+ε}) (≡ RH, Mertens-type bound); Denjoy supplies the random-walk heuristic"}]->(denjoy)
+CREATE (denjoy)-[:CONNECTS_TO]->(mertens)
+CREATE (denjoy)-[:RELATED_TO]->(mobius_randomness)
+
+// ── BEURLING GENERALIZED PRIMES (RW-Beurling-Primes) ────────────
+CREATE (beurling_primes:Theorem {
+  name: "Beurling Generalized Primes RH Analogue",
+  statement: "For a Beurling generalized prime system with counting function N(x) satisfying the Beurling regularity condition, the associated Beurling zeta function has its non-trivial zeros on Re(s) = 1/2 iff the system satisfies those regularity conditions on the generalized prime counting function",
+  proof_status: "proven",
+  year_established: 1937,
+  significance: "major",
+  description: "Arne Beurling (1937). Extends the primes to generalized multiplicative systems; the RH analogue becomes a statement about regularity of the counting function. Framework later used to construct 'prime systems' with zeta functions having zeros off the line (Hall 1970s), showing RH is a genuinely arithmetic phenomenon.",
+  key_paper: "Beurling (1937) Acta Math. 68; documented in prethought/related-work/RH-Equivalences.yaml as RW-Beurling-Primes",
+  domain: "analytic number theory"
+})
+CREATE (rh)-[:ANALOGOUS_TO {description: "classical RH is the Beurling-RH statement for the ordinary primes"}]->(beurling_primes)
+CREATE (beurling_primes)-[:CONNECTS_TO]->(zeta)
+
+// ── POINTER: ROBIN / LAGARIAS / LIOUVILLE (RW-Robin) ────────────
+// Robin's inequality (RW-Robin), Lagarias' σ/H criterion and the Liouville
+// summatory-function equivalence are equivalent to RH too, but their nodes
+// are created in 05-theorems.cypher (robin, lagarias, liouville) together
+// with their EQUIVALENT_TO edges — do not duplicate them here. Nicolas'
+// harmonic-number criterion (above) refines the same family.

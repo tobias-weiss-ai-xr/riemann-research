@@ -2,6 +2,18 @@
 // Formulations identified via Broughan (2017), Borwein et al. (2008), Conrey (2003)
 // ~150-200 total known; this script adds the major ones not in 07-rh-equivalences.cypher
 // Run AFTER 07-rh-equivalences.cypher (needs rh node)
+//
+// Provenance / documentation:
+//   Extends prethought/related-work/RH-Equivalences.yaml; the Lee-Yang
+//   statistical-physics bridge below mirrors the YAML entry RW-Lee-Yang.
+//   (The YAML entry RW-Bertini is marked status: unverified in the corpus
+//   and is deliberately NOT materialised here — no node without a
+//   verifiable source.)
+//
+// Full load order: AFTER 05-theorems.cypher (rh, robin, zeta, pnt),
+// 06-papers-approaches.cypher (riemann1859, rogers_tao2019) and
+// 07-rh-equivalences.cypher (nyman_beurling, mertens, weil_criterion)
+// — those nodes must already exist.
 
 // ── ANALYTIC ────────────────────────────────────────────────────
 
@@ -257,6 +269,22 @@ CREATE (divisibility_graph:Theorem {
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(divisibility_graph)
 
+// ── STATISTICAL PHYSICS (RW-Lee-Yang) ───────────────────────────
+
+// Lee-Yang Circle Theorem bridge
+CREATE (lee_yang:Theorem {
+  name: "Lee-Yang Circle Theorem Bridge",
+  statement: "Zeros of the Ising/lattice-gas partition function lie on the unit circle (Lee-Yang); the analogous statement for ζ(s) — zeros of a statistical/generating partition function on the critical line Re(s)=1/2 — is the RH-type statement in the sector formulation documented as RW-Lee-Yang",
+  proof_status: "partial",
+  year_established: 1952,
+  significance: "major",
+  description: "T.D. Lee and C.N. Yang (1952). NOT a proven formal equivalence — documented as status: partial in prethought/related-work/RH-Equivalences.yaml (RW-Lee-Yang). Both theorems pin zeros of exponential sums/generating functions to 1D loci (unit circle vs. critical line). The connection runs through the partition function Z = Σ exp(-βE) and analytic properties of logarithmic generating functions; rigorised versions exist only for sector-restricted RH-type statements.",
+  key_paper: "Lee, Yang (1952) Phys. Rev. 87, 410; documented in prethought/related-work/RH-Equivalences.yaml as RW-Lee-Yang",
+  domain: "statistical physics / complex analysis"
+})
+CREATE (lee_yang)-[:CONNECTS_TO {description: "zero-pinning analogy: unit circle ↔ critical line; both constrain zeros of log-generating functions"}]->(zeta)
+CREATE (lee_yang)-[:RELATED_TO]->(laguerre_polya)
+
 // ── SURVEY PAPERS ────────────────────────────────────────────────
 
 CREATE (broughan_survey:Paper {
@@ -322,11 +350,11 @@ CREATE (griffin2019:Paper {
 })
 
 // ── RELATIONSHIPS ───────────────────────────────────────────────
+// NOTE: the GENERALIZES/REFINES/CONNECTS_TO edges for bombieri_var,
+// ga_cns and redheffer were already created inline above and are not
+// repeated here (the previous duplicates created redundant edges).
 CREATE (von_koch)-[:IMPLIES]->(chebyshev_err)
 CREATE (volchkov)-[:RELATED_TO]->(bsy)
-CREATE (bombieri_var)-[:GENERALIZES]->(weil_criterion)
-CREATE (ga_cns)-[:REFINES]->(robin)
-CREATE (redheffer)-[:CONNECTS_TO]->(mertens)
 CREATE (broughan_survey)-[:CITES]->(riemann1859)
 CREATE (conrey2003)-[:CITES]->(riemann1859)
 CREATE (connes2026)-[:CITES]->(riemann1859)
