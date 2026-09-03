@@ -27,6 +27,73 @@ ARXIV_ID_PATTERN = re.compile(r"(\d{4}\.\d{4,5})")
 ARXIV_SEARCH_API = (
     "https://export.arxiv.org/api/query?search_query={}&start={}&max_results={}"
 )
+# Matches a canonical arXiv abs URL (new- or old-style id), with optional
+# version suffix — used to normalize API <id> tags like
+# http://arxiv.org/abs/2609.02392v1 → https://arxiv.org/abs/2609.02392
+ARXIV_ABS_URL_PATTERN = re.compile(
+    r"arxiv\.org/(?:abs|pdf)/((?:[a-z\-]+/)?(?:\d{4}\.\d{4,5}|\d{7}))(?:v\d+)?$"
+)
+
+
+def normalize_arxiv_url(raw_url):
+    """Normalize an arXiv API <id> URL to the canonical version-free form.
+
+    scripts/validate_papers.py rejects URLs carrying a version suffix
+    (e.g. https://arxiv.org/abs/2609.02392v1), but the arXiv Atom API
+    always emits them, so strip /pdf/ prefixes and vN suffixes here.
+    """
+    raw_url = (raw_url or "").strip().replace("http://", "https://")
+    m = ARXIV_ABS_URL_PATTERN.search(raw_url)
+    if m:
+        return f"https://arxiv.org/abs/{m.group(1)}"
+    return re.sub(r"v\d+$", "", raw_url)
+
+
+def paper_id_from_url(url):
+    """Canonical corpus id for a normalized arXiv abs URL (FC-001 convention)."""
+    m = ARXIV_ABS_URL_PATTERN.search(url or "")
+    if m:
+        return "arxiv-" + m.group(1).replace("/", "-")
+    return ""
+
+
+# Query phrases that are too generic to establish topical relevance on their
+# own — they occur in abstracts across all of arXiv, so a paper matching ONLY
+# one of these is not evidence it belongs in this corpus.
+GENERIC_QUERY_PHRASES = {
+    "algorithm", "introduction", "survey", "review", "overview",
+    "history", "status", "prime", "zero", "distribution",
+    "cryptography", "mean value",
+}
+
+
+def extract_quoted_phrases(query):
+    """Quoted phrases in an arXiv query string, e.g. abs:"spectral gap"."""
+    return [m.strip().lower() for m in re.findall(r'"([^"]+)"', query) if m.strip()]
+
+
+def is_relevant(entry, phrases):
+    """Relevance gate for discovered papers (FC-002).
+
+    At least one topic-carrying phrase from the originating query must occur
+    in the title or abstract as a whole word (with an optional plural
+    suffix, so "L-function" also matches "L-functions"). Generic phrases
+    (e.g. "algorithm", "zero") never qualify on their own — they occur in
+    abstracts across all of arXiv. Word boundaries matter: substring
+    matching would let the acronym "GUE" hit "argue"/"vague" and
+    "Riemann" hit "Riemannian". This gate also guards against arXiv
+    boolean precedence surprises such as ``cat:cs.LG OR cat:cs.AI AND
+    (...)`` matching every cs.LG paper regardless of the intended terms.
+    """
+    if not phrases:
+        return True
+    text = f"{entry.get('title', '')} {entry.get('abstract', '')}".lower()
+    for p in phrases:
+        if p in GENERIC_QUERY_PHRASES:
+            continue
+        if re.search(rf"\b{re.escape(p)}(?:s|es)?\b", text):
+            return True
+    return False
 
 
 def get_queries(cfg):
@@ -111,7 +178,10 @@ def classify_subcategory(title, abstract="", cfg=None, category=None):
 
 
 # ── Dedup cache (shared logic with fetch_openalex_bulk.py) ───────────────
-_DEDUP_DIR = Path(os.environ.get("XDG_CACHE_HOME", "~/.cache")) / "research-runner/dedup"
+_DEDUP_DIR = (
+    Path(os.environ.get("XDG_CACHE_HOME", "~/.cache")).expanduser()
+    / "research-runner/dedup"
+)
 
 def _cache_path(yaml_path):
     st = yaml_path.stat()
@@ -167,7 +237,7 @@ def search_arxiv(query, months, start=0, max_results=100):
                 entry["title"] = re.sub(r"\s+", " ", title_m.group(1).strip())
             id_m = re.search(r"<id>(.*?)</id>", entry_xml)
             if id_m:
-                entry["url"] = id_m.group(1).strip().replace("http://", "https://")
+                entry["url"] = normalize_arxiv_url(id_m.group(1))
             published_m = re.search(r"<published>(.*?)</published>", entry_xml)
             if published_m:
                 entry["date"] = published_m.group(1).strip()[:7]
@@ -229,8 +299,12 @@ def format_yaml_entry(entry, cfg):
     sub = entry.get("subcategory", "")
     cat_line = f'    category: "{cat}"' if cat else f'    category: ""  # TODO: {cats}'
     sub_line = f'    subcategory: "{sub}"' if sub else f'    subcategory: ""  # TODO: {subs}'
-    lines = [
-        f'  - title: "{title}"',
+    pid = paper_id_from_url(entry.get("url", ""))
+    if pid:
+        lines = [f'  - id: "{pid}"', f'    title: "{title}"']
+    else:
+        lines = [f'  - title: "{title}"']
+    lines += [
         f'    date: "{entry.get("date", "")}"',
         f'    url: "{entry.get("url", "")}"',
         cat_line,
@@ -293,12 +367,14 @@ def main():
         return
 
     all_new = []
+    skipped_irrelevant = 0
     for qi, qinfo in enumerate(queries):
         query = qinfo["query"]
         q_category = qinfo.get("category", "")
         q_hint = qinfo.get("subcategory_hint", "")
         print(f"\nQuery {qi + 1}/{len(queries)}...", flush=True)
         entries = search_arxiv(query, args.months)
+        phrases = extract_quoted_phrases(query)
         for entry in entries:
             arxiv_id_match = ARXIV_ID_PATTERN.search(entry.get("url", ""))
             arxiv_id = arxiv_id_match.group(1) if arxiv_id_match else None
@@ -313,6 +389,12 @@ def main():
             if arxiv_id and any(e.get("url", "") == entry["url"] for e in all_new):
                 continue
 
+            # Relevance gate: paper must actually match a topic phrase of the
+            # query that discovered it (see is_relevant).
+            if not is_relevant(entry, phrases):
+                skipped_irrelevant += 1
+                continue
+
             # Auto-classify subcategory if no hint; always classify subcategory
             sub = q_hint or classify_subcategory(
                 entry.get("title", ""), entry.get("abstract", ""), cfg, category=q_category)
@@ -323,7 +405,8 @@ def main():
         time.sleep(3)
 
     print(
-        f"\nFound {len(all_new)} new papers ({len(by_id)} already in list)", flush=True
+        f"\nFound {len(all_new)} new papers ({len(by_id)} already in list, "
+        f"{skipped_irrelevant} skipped as off-topic)", flush=True
     )
 
     if not all_new:
@@ -349,6 +432,7 @@ def main():
             for entry in all_new:
                 papers.append(
                     {
+                        "id": paper_id_from_url(entry.get("url", "")),
                         "title": entry.get("title", ""),
                         "date": entry.get("date", ""),
                         "url": entry.get("url", ""),
@@ -392,6 +476,7 @@ def main():
             for entry in all_new:
                 papers.append(
                     {
+                        "id": paper_id_from_url(entry.get("url", "")),
                         "title": entry.get("title", ""),
                         "date": entry.get("date", ""),
                         "url": entry.get("url", ""),

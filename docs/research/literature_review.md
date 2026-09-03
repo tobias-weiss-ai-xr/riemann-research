@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-08-27  
-**Corpus:** 4,498 papers across 6 categories
+**Generated:** 2026-09-03  
+**Corpus:** 4,739 papers across 6 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,15 +11,15 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | Number Theory | 1710 |
-| 2 | Spectral Theory & Graphs | 1441 |
-| 3 | RH Equivalences & Bridges | 561 |
-| 4 | Machine Learning | 537 |
-| 5 | Dynamical Systems | 216 |
-| 6 | Proof & Formalization | 33 |
+| 1 | Number Theory | 1830 |
+| 2 | Spectral Theory & Graphs | 1476 |
+| 3 | RH Equivalences & Bridges | 618 |
+| 4 | Machine Learning | 547 |
+| 5 | Dynamical Systems | 233 |
+| 6 | Proof & Formalization | 35 |
 
-**Time span:** 1859–2026 (median year 2012)
-**Dominant aspects:** Cayley Graphs (1306), L-Functions & Zeta (1162), GNNs on Cayley Graphs (353)
+**Time span:** 1859–2026 (median year 2005)
+**Dominant aspects:** Cayley Graphs (1329), L-Functions & Zeta (1233), GNNs on Cayley Graphs (363)
 
 ---
 
@@ -27,12 +27,12 @@
 
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
-| Machine Learning | 537 | 185 | 28 | +561% | 34% | 15.4 |
-| Spectral Theory | 1441 | 431 | 129 | +234% | 30% | 35.9 |
-| Number Theory | 1710 | 572 | 211 | +171% | 34% | 47.7 |
-| Equivalences | 561 | 157 | 76 | +107% | 28% | 13.1 |
-| Dynam Systems | 216 | 54 | 27 | +100% | 25% | 4.5 |
-| Formalization | 33 | 20 | 0 | — | 61% | 1.7 |
+| Machine Learning | 547 | 187 | 36 | +419% | 34% | 15.6 |
+| Spectral Theory | 1476 | 426 | 153 | +178% | 29% | 35.5 |
+| Number Theory | 1830 | 592 | 266 | +123% | 32% | 49.3 |
+| Dynam Systems | 233 | 57 | 36 | +58% | 24% | 4.8 |
+| Equivalences | 618 | 165 | 114 | +45% | 27% | 13.8 |
+| Formalization | 35 | 20 | 0 | — | 57% | 1.7 |
 
 ---
 
@@ -43,11 +43,11 @@
 | `formalization/lean-riemann` | 2 |
 | `machine-learning/gnn-fullgraph` | 3 |
 | `spectral-theory/brandt-pizer` | 4 |
-| `dynam-systems/selberg-zeta` | 12 |
-| `formalization/lean-foundation` | 13 |
+| `dynam-systems/selberg-zeta` | 13 |
+| `formalization/lean-foundation` | 15 |
 | `formalization/verification` | 18 |
-| `spectral-theory/ramanujan` | 41 |
 | `machine-learning/ml-zeros` | 42 |
+| `spectral-theory/ramanujan` | 49 |
 
 ---
 
@@ -56,31 +56,31 @@
 
 ### Number Theory (`number-theory`)
 
-**Corpus size:** 1710 papers
+**Corpus size:** 1830 papers
 
 **Recent papers:**
 
-- [2026-08] More than two thirds of the zeta zeros are simple and on the critical line — https://arxiv.org/abs/2608.13637
-- [2026-08] Special Values of Shifted Dirichlet Series from an Adjoint Map on Almost Holomorphic Modular Fo — https://arxiv.org/abs/2608.12542
-- [2026-08] Products of point counts of higher genus curves over finite fields — https://arxiv.org/abs/2608.18014
+- [2026-09] Large values of cubic and quartic Dirichlet L-functions of prime moduli — https://arxiv.org/abs/2609.02392
+- [2026-09] On the counting function of square-full numbers — https://arxiv.org/abs/2609.02327
+- [2026-09] Sharp Threshold for Universality of Rational Canonical Forms over a Finite Field — https://arxiv.org/abs/2609.01413
 
 ---
 
 ### Spectral Theory & Graphs (`spectral-theory`)
 
-**Corpus size:** 1441 papers
+**Corpus size:** 1476 papers
 
 **Recent papers:**
 
+- [2026-09] Depth-1 expanders on the unitary group and applications — https://arxiv.org/abs/2609.01605
 - [2026-08] Ramanujan Cayley Graphs with Normal Connection Sets in Ratio-One Frobenius Groups — https://arxiv.org/abs/2608.19905
 - [2026-08] On the Laplacian spectral gap of generalized pancake graphs — https://arxiv.org/abs/2608.15398
-- [2026-08] Perfect state transfer and Cayley presentations — https://arxiv.org/abs/2608.20476
 
 ---
 
 ### RH Equivalences & Bridges (`equivalences`)
 
-**Corpus size:** 561 papers
+**Corpus size:** 618 papers
 
 **Recent papers:**
 
@@ -92,7 +92,7 @@
 
 ### Machine Learning (`machine-learning`)
 
-**Corpus size:** 537 papers
+**Corpus size:** 547 papers
 
 **Recent papers:**
 
@@ -104,7 +104,7 @@
 
 ### Dynamical Systems (`dynam-systems`)
 
-**Corpus size:** 216 papers
+**Corpus size:** 233 papers
 
 **Recent papers:**
 
@@ -116,7 +116,7 @@
 
 ### Proof & Formalization (`formalization`)
 
-**Corpus size:** 33 papers
+**Corpus size:** 35 papers
 
 **Recent papers:**
 
