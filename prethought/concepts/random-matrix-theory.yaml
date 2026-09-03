@@ -1,0 +1,132 @@
+# Random Matrix Theory & Zero Statistics — Core Concepts
+# Extracted from kg/cypher/09-graphs-extended.cypher (Zeta Zero Spacing
+# Graph), 06-papers-approaches.cypher (RMT + Deep Learning approach, Keating),
+# 07-rh-equivalences.cypher (Hilbert-Pólya, Yakaboylu) and
+# 08-papers-extended.cypher (Odlyzko-te Riele, Shanker 2024).
+# The graph-side entry for zero spacings lives in arithmetic-graphs.yaml
+# (AG-ZeroSpacingGraph); this file covers the statistical and spectral
+# viewpoint: GUE statistics, the RMT+DL approach, and the Hilbert-Pólya bridge.
+# Related: arithmetic-graphs.yaml (AG-ZeroSpacingGraph), ai-approaches.yaml,
+#          rh-equivalence-class.yaml, computational-resources.yaml
+
+- id: RM-GUE
+  name: "GUE Statistics of Zeta Zero Spacings"
+  type: concept
+  category: number-theory
+  subcategory: zero-statistics
+  definition: |
+    The normalized spacings between consecutive non-trivial zeros γ_n of
+    ζ(s) follow the eigenvalue spacing statistics of the Gaussian Unitary
+    Ensemble (GUE) of random matrix theory (Montgomery-Odlyzko law;
+    Tracy-Widom edge behavior in the tails). Per the KG, the Zeta Zero
+    Spacing Graph (vertices γ_n, edges between consecutive zeros) encodes
+    exactly these GUE statistics.
+  properties:
+    - spacing_law: "GUE / Tracy-Widom (KG: zero_spacing_graph properties)"
+    - data_source: "Odlyzko's zero computations; Platt's 10¹³ zeros (see computational-resources.yaml)"
+    - graph_view: "AG-ZeroSpacingGraph — time_series_graph, feasibility ★★"
+  importance: |
+    The single strongest structural hint for Hilbert-Pólya: zeros behave
+    like eigenvalues of a large random Hermitian matrix, i.e. like the
+    spectrum of a self-adjoint operator.
+  caveat: |
+    KG research-gap note: this is a time-series / point-process question,
+    NOT a graph question — GNNs add no value over classical time-series
+    methods here (wrong-tool warning recorded in the KG).
+  relationships:
+    - motivates: "RM-HilbertPolya (spectral interpretation of the statistics)"
+    - data_infrastructure: "CD-PlattZeros, CD-OdlyzkoZeros (computational-resources.yaml)"
+    - graph_encoding: "AG-ZeroSpacingGraph (arithmetic-graphs.yaml)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["gue", "tracy-widom", "zero-spacings", "rmt", "point-process", "montgomery-odlyzko"]
+
+- id: RM-RMTDL
+  name: "RMT + Deep Learning Approach"
+  type: approach
+  category: machine-learning
+  subcategory: rmt-deep-learning
+  definition: |
+    Use deep learning to discover patterns in the random matrix statistics
+    of zeta zeros, targeting accelerated zero verification or detection of
+    statistical anomalies (KG node: AIApproach "RMT + Deep Learning").
+  properties:
+    - approach_type: "numerical"
+    - framework: "PyTorch + mpmath"
+    - status: "exploratory"
+    - confidence: 0.25
+    - motivation: "Keating works on both RMT for zeta moments AND RMT for deep
+      learning loss landscapes — potential cross-pollination (KG description)"
+  importance: |
+    Bridges two RMT domains: zero statistics (zeta moments) and neural
+    loss-landscape spectra. Lowest-confidence AI approach in the KG besides
+    FunSearch, but uniquely positioned to exploit Platt's zero database.
+  relationships:
+    - uses_data: "CD-PlattZeros and CD-LMFDB (KG: platt_database and lmfdb
+      both -[:USES_METHOD]-> rmt_deep)"
+    - trained_by: "Shanker 2024 transformer zero prediction USES_METHOD → this approach"
+    - statistics_of: "RM-GUE"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["rmt", "deep-learning", "zero-verification", "keating", "exploratory"]
+
+- id: RM-ZetaMoments
+  name: "RMT Model for Zeta Moments"
+  type: concept
+  category: number-theory
+  subcategory: zero-statistics
+  definition: |
+    Random matrix theory supplies the conjectural model for moments of the
+    Riemann zeta function: the moments of |ζ(1/2 + it)| mirror moments of
+    characteristic polynomials of large random unitary matrices. In the KG
+    this is carried by the researcher node for Jon Keating (Oxford; research
+    areas: random matrix theory, number theory, quantum chaos).
+  properties:
+    - model_object: "characteristic polynomials of CUE/unitary matrices"
+    - kg_carrier: "Researcher Jon Keating — random matrix theory, number theory,
+      quantum chaos (06-papers-approaches.cypher)"
+    - dual_role: "RMT for zeta moments AND RMT for deep-learning loss
+      landscapes (cross-pollination per KG)"
+  importance: |
+    Moments are the smoothest observable of ζ on the critical line; their
+    RMT conjectures are among the most tested unproven statements in
+    analytic number theory and anchor the statistical view of RH.
+  relationships:
+    - same_researcher_as: "RM-RMTDL (Keating)"
+    - statistics_complement: "RM-GUE (spacings vs. magnitudes of ζ)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+  tags: ["zeta-moments", "rmt", "keating", "quantum-chaos", "characteristic-polynomials"]
+
+- id: RM-HilbertPolya
+  name: "Hilbert-Pólya Bridge"
+  type: conjecture
+  category: equivalences
+  subcategory: hilbert-polya
+  statement: |
+    The imaginary parts of the non-trivial zeros of ζ(s) are the eigenvalues
+    of a self-adjoint operator on a Hilbert space.
+  importance: |
+    If true, RH follows immediately: self-adjoint operators have real
+    eigenvalues → Im(ρ) real → Re(ρ) = 1/2. The GUE statistics of the
+    zeros (RM-GUE) are precisely what one expects from such an operator
+    drawn at random. Yakaboylu (2023) constructed a Hamiltonian with real
+    eigenvalues under certain conditions.
+  critical_caveat: |
+    KG note (07-rh-equivalences.cypher): NOT proven equivalent to RH — it
+    is a SUFFICIENT condition only (hilbert_polya -[:IMPLIES]-> rh);
+    the converse is unknown. Do not bookkeep it as an equivalence.
+  relationships:
+    - implies: "RH (one-way, KG relation IMPLIES)"
+    - statistical_evidence: "RM-GUE (GUE spacing law)"
+    - attempted_constructions: "Yakaboylu Hamiltonian construction (KG theorem node)"
+    - rh_equivalence_bookkeeping: "rh-equivalence-class.yaml (listed there as one-way)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["hilbert-polya", "self-adjoint", "spectral-interpretation", "yakaboylu", "one-way-implies"]

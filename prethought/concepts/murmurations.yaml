@@ -1,0 +1,117 @@
+# Murmurations — Core Concepts
+# Extracted from kg/cypher/08-papers-extended.cypher (murmurations2023 paper
+# node and its LMFDB context) plus the Sato-Tate and ML nodes it connects to
+# (barnet_lamb2011 PROVES Sato-Tate; bieri2025 248K L-functions from LMFDB;
+# matrix_mfo2026 workshop).
+# This cluster had NO prior coverage in prethought/concepts/ — the murmuration
+# phenomenon is the flagship example of data-driven discovery on L-function
+# databases.
+# Related: l-functions.yaml, ai-approaches.yaml, computational-resources.yaml,
+#          rh-theorems.yaml (RT-SatoTate)
+
+- id: MU-Phenomenon
+  name: "Murmurations of Elliptic Curves"
+  type: concept
+  category: number-theory
+  subcategory: murmurations
+  definition: |
+    Unexpected periodic patterns discovered in the coefficients of elliptic
+    curve L-functions: when Dirichlet coefficients a_p are averaged over
+    large families of curves ordered by conductor, the averages oscillate
+    around zero with a striking periodic structure instead of converging
+    monotonically. Statistical phenomenon visible in LMFDB data.
+  properties:
+    - discovered: "2023, discovered empirically in LMFDB data by the
+      Boulier-Edgar-Heinz-Lee-Marek-Mustaţă-Schefer-Sijsling collaboration"
+    - publication: "Research in Number Theory (2023), msclass 11G05 / 14G10"
+    - scope_limit: "NOT applied to ζ(s) itself (KG: relevance_to_rh = methodological)"
+    - signature: "oscillating ('murmuring') averages of a_p across conductor-ordered families"
+  importance: |
+    The first major number-theoretic structure found by systematically
+    mining a large L-function database rather than by ansatz. It validates
+    the KG's data-driven pipeline: LMFDB-scale data can surface real
+    arithmetic signal.
+  relationships:
+    - data_source: "CD-LMFDB (computational-resources.yaml) — 248K+ L-functions"
+    - averaged_against: "MU-SatoTateLink (deviation of averaged a_p from the mean)"
+    - paradigm_for: "MU-MLBridge (ML + number theory)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/08-papers-extended.cypher"
+    - type: paper
+      authors: ["J. Boulier", "M. Edgar", "B. Heinz", "C. Lee", "A. Marek",
+                "M. Mustaţă", "N. Schefer", "J. Sijsling"]
+      year: 2023
+      venue: "Research in Number Theory"
+  tags: ["murmurations", "elliptic-curves", "lmfdb", "data-driven", "dirichlet-coefficients"]
+
+- id: MU-SatoTateLink
+  name: "Murmurations and Sato-Tate"
+  type: concept
+  category: number-theory
+  subcategory: murmurations
+  definition: |
+    For a single non-CM elliptic curve, the Frobenius traces a_p are
+    equidistributed according to the Sato-Tate measure (mean 0). Murmurations
+    concern the FAMILY behavior: averaged a_p across curves ordered by
+    conductor oscillates away from the Sato-Tate mean before settling,
+    i.e. a bias in the approach to equidistribution.
+  properties:
+    - individual_equidistribution: "Sato-Tate Conjecture — proven for elliptic
+      curves by Barnet-Lamb-Geraghty-Harris-Taylor (2011, potential automorphy;
+      KG relation barnet_lamb2011 -[:PROVES]-> sato_tate)"
+    - family_deviation: "murmuration oscillation = conductor-ordered deviation
+      of the family average from the Sato-Tate mean"
+    - kg_neighbors: "Sato-Tate Conjecture theorem node; Rankin-Selberg method;
+      Frobenius eigenvalues on H¹ (graph-operators.yaml GO-Frobenius)"
+  importance: |
+    Connects a proven equidistribution theorem (Sato-Tate) with a discovered
+    unexplained pre-asymptotic pattern (murmurations): the bias encodes
+    secondary terms of the equidistribution, a natural target for ML
+    function approximation and for conjecture generation.
+  relationships:
+    - refines: "RT-SatoTate (rh-theorems.yaml) — pre-asymptotic regime of Sato-Tate"
+    - frobenius_side: "GO-Frobenius (trace a_p = p+1 - #E(F_p))"
+    - heuristic_background: "RM-GUE-type statistics is the ZETA analogue; murmurations
+      are the elliptic-curve family analogue of structured zero statistics"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/08-papers-extended.cypher"
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["sato-tate", "equidistribution", "bias", "frobenius-traces", "family-average"]
+
+- id: MU-MLBridge
+  name: "Murmurations as ML-for-Number-Theory Paradigm"
+  type: concept
+  category: machine-learning
+  subcategory: murmurations
+  definition: |
+    Murmurations demonstrate the workflow that the corpus' AI approaches
+    presuppose: aggregate over a large database (LMFDB), detect statistical
+    structure, conjecture, then prove. The KG places this in the same
+    neighborhood as ML experiments on LMFDB data (Bieri et al. 2025: 248K
+    L-functions, NNs/CNNs predicting vanishing order of rational
+    L-functions) and the MATRIX-MFO workshop on Machine Learning and Number
+    Theory (Williamson, Charton, Kempe, 2026).
+  properties:
+    - workflow: "database aggregation → anomaly detection → conjecture → proof"
+    - precedent_ml_on_lmfdb: "Bieri et al. 2025 — ML on 248K LMFDB L-functions (no GNNs)"
+    - community_signal: "MATRIX-MFO workshop 2026 on ML and number theory (KG node matrix_mfo2026)"
+    - contrast: "murmurations were found WITHOUT neural networks — plain
+      averaging sufficed; ML enters for prediction tasks, not discovery per se"
+  importance: |
+    Calibrates expectations for the corpus' own GNN program: the successful
+    data-driven result in this space came from interpretable aggregation,
+    while the ML successes (Bieri 2025) are prediction-of-observable tasks.
+    Discovery and prediction should be bookkept separately.
+  relationships:
+    - uses_data: "CD-LMFDB (computational-resources.yaml)"
+    - sibling_approach: "ai-approaches.yaml (GNN spectral prediction, FunSearch, Lean, RMT+DL)"
+    - workshop_context: "matrix_mfo2026 KG node (Williamson / Charton / Kempe)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/08-papers-extended.cypher"
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+  tags: ["machine-learning", "lmfdb", "conjecture-generation", "bieri2025", "data-driven-discovery"]

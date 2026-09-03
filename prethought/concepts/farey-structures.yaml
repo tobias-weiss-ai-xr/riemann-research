@@ -1,0 +1,144 @@
+# Farey Structures — Core Concepts
+# Extracted from kg/cypher/02-graphs.cypher (Farey Graph), 04-operators.cypher
+# (Farey Transfer Operator L_s), 07-rh-equivalences.cypher (Nyman-Beurling,
+# Bagchi) and 10-rh-equivalences-extended.cypher (Baez-Duarte).
+# The graph-construction view of the Farey graph lives in arithmetic-graphs.yaml
+# (AG-FareyGraph); this file covers the underlying combinatorial and dynamical
+# objects: the Farey sequence, the Gauss map / Farey flow, Pollicott's spectral
+# encoding of RH, and the fractional-part function basis of Nyman-Beurling.
+# Related: arithmetic-graphs.yaml (AG-FareyGraph), transfer-operators.yaml
+# (TO-GaussMap, TO-Mayer1991), rh-equivalence-class.yaml, l-functions.yaml
+
+- id: FS-Sequence
+  name: "Farey Sequence F_N"
+  type: concept
+  category: dynam-systems
+  subcategory: farey-structures
+  definition: |
+    F_N is the sequence of completely reduced fractions a/b in [0,1] with
+    0 ≤ b ≤ N, listed in increasing order. Consecutive Farey fractions
+    a/b < c/d satisfy the determinant condition |ad - bc| = 1 — exactly the
+    edge rule of the Farey graph (AG-FareyGraph).
+  properties:
+    - cardinality: "|F_N| = 1 + Σ_{d=1}^{N} φ(d) ~ 3N²/π²"
+    - adjacency: "a/b and c/d adjacent in F_N ⟺ |ad - bc| = 1 (mediant property)"
+    - denominators: "if a/b, c/d are consecutive in F_N, the next inserted
+      fraction between them is the mediant (a+c)/(b+d)"
+    - discrete_family: "F_N ⊂ F_{N+1}; the Farey graph is the union over all N"
+  importance: |
+    The Farey sequence is the discrete skeleton of the Farey tessellation:
+    its adjacency rule generates the Farey graph edges, and its ordering
+    statistics connect to the Gauss map and continued fractions, hence to
+    the transfer-operator machinery that encodes ζ(s).
+  relationships:
+    - generates_edges_of: "AG-FareyGraph (arithmetic-graphs.yaml)"
+    - digit_dynamics: "Gauss map / continued fractions — see FS-GaussMap, TO-GaussMap"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/02-graphs.cypher"
+  tags: ["farey", "farey-sequence", "mediant", "continued-fractions", "discrete-structure"]
+
+- id: FS-GaussMap
+  name: "Gauss Map and Farey Flow"
+  type: concept
+  category: dynam-systems
+  subcategory: farey-structures
+  definition: |
+    The Gauss map T: (0,1) → (0,1), T(x) = {1/x}, iterates the continued
+    fraction expansion x = [0; a₁, a₂, ...] by dropping one digit at a time.
+    Its Perron-Frobenius (transfer) operator is the dynamical core of the
+    Farey flow; on the Farey graph boundary C(Γ₁) it is the Farey transfer
+    operator L_s (see 04-operators.cypher, transfer_farey node).
+  properties:
+    - invariant_measure: "Gauss measure dx / ((1+x) ln 2) is T-invariant"
+    - expansion: "T is expanding; symbolic dynamics given by continued fraction digits"
+    - operator: "Perron-Frobenius operator of the Gauss map / Farey flow,
+      acts on C(Γ₁) — functions on the Farey graph boundary"
+  importance: |
+    The KG links this operator directly to ζ(s): it ENCODES the zeta
+    function (relation transfer_farey -[:ENCODES]-> ζ(s)), which is what
+    makes the Farey side a dynamical-systems approach to RH.
+  relationships:
+    - transfer_operator: "FS-PollicottEncoding; TO-GaussMap and TO-Mayer1991 in transfer-operators.yaml"
+    - boundary_of: "AG-FareyGraph (boundary = P¹(R))"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["gauss-map", "continued-fractions", "perron-frobenius", "farey-flow", "ergodic-theory"]
+
+- id: FS-PollicottEncoding
+  name: "Pollicott Spectral Encoding of RH"
+  type: theorem
+  category: dynam-systems
+  subcategory: farey-structures
+  statement: |
+    Z_{Γ₁}(s) = det(1 - L_{2s}), where L_s is the Farey transfer operator
+    and Z_{Γ₁}(s) the Selberg zeta function of Γ(1) = PSL(2,Z).
+    RH is equivalent to a spectral gap of L_s.
+  proof_sketch: |
+    Pollicott (2022), arXiv:2209.03897: the determinant of the transfer
+    operator on the Farey graph reproduces the Selberg zeta function, so
+    the zero-free region / critical-line statement for ζ(s) becomes a
+    statement about the spectrum of L_s.
+  importance: |
+    Per the KG (transfer_farey node): a DIRECT encoding of RH as a spectral
+    gap of an operator on a graph — the second independent bridge from
+    graphs to ζ(s), besides LPS/Hecke. It is the theoretical basis for
+    certified spectral verification experiments (TO-Certified-Spectral-Verification).
+  relationships:
+    - encodes: "ζ(s) (KG relation: transfer_farey -[:ENCODES]-> ζ(s), rh_connection property)"
+    - subject_graph: "AG-FareyGraph"
+    - certified_computation: "TO-Certified-Spectral-Verification, TO-DFLY-GaussMap (transfer-operators.yaml)"
+    - theorem_view: "RT-Pollicott (rh-theorems.yaml)"
+  references:
+    - type: paper
+      authors: ["Mark Pollicott"]
+      year: 2022
+      arxiv_id: "2209.03897"
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+    - type: cypher
+      file: "../../kg/cypher/02-graphs.cypher"
+  tags: ["pollicott", "selberg-zeta", "spectral-gap", "transfer-operator", "rh-encoding"]
+
+- id: FS-FractionalPartBasis
+  name: "Fractional-Part Function Basis (Nyman-Beurling Family)"
+  type: concept
+  category: equivalences
+  subcategory: farey-structures
+  definition: |
+    For a ∈ (0,1] let f_a(x) = {ax} - a⌊x⌋ (shifted fractional parts).
+    The Nyman-Beurling family {f_a} is a function system on L²(0,1) whose
+    span is dense in L²(0,1) if and only if RH holds. This is the
+    functional-analytic companion of the Farey/Gauss-map world: fractional
+    parts are exactly the orbits of the translation flow whose combinatorics
+    the Farey sequence discretizes.
+  properties:
+    - nyman_beurling_1950: "RH ⟺ closure(span{f_a : a ∈ (0,1]}) = L²(0,1) (uncountable
+      generating set; proven equivalence)"
+    - baez_duarte_2002: "RH ⟺ χ_{(0,1]} ∈ closure(span{ρ_a : a ∈ N}) — countable
+      strengthening of Nyman-Beurling (STRENGTHENS relation in KG);
+      numerical evidence up to a = 100"
+    - bagchi_1982: "dynamical reformulation via Hurwitz zeta cyclic in L²(0,1);
+      GENERALIZES Nyman-Beurling, connects RH to ergodic theory"
+    - hayou_2023_angle: "RH ≡ density of single-layer neural networks in L²(0,1)
+      via Nyman-Beurling (APPROACHES_VIA relation, confidence 0.3)"
+  importance: |
+    The only proven RH equivalences that live in a function space small
+    enough to attack with learning methods: density problems in L²(0,1).
+    The KG marks Hayou (2023) as approaching RH exactly through this door.
+  relationships:
+    - equivalent_to: "RH (bidirectional, per 07-rh-equivalences.cypher)"
+    - strengthened_by: "Baez-Duarte Criterion (10-rh-equivalences-extended.cypher)"
+    - dynamical_reformulation: "Bagchi's theorem (07-rh-equivalences.cypher)"
+    - ml_approach: "AI-approaches using Nyman-Beurling — see ai-approaches.yaml"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+    - type: paper
+      authors: ["S. Hayou"]
+      year: 2023
+      arxiv_id: "2309.09171"
+  tags: ["nyman-beurling", "baez-duarte", "bagchi", "fractional-parts", "l2-density", "rh-equivalence"]

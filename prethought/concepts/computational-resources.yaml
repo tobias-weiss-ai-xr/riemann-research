@@ -1,0 +1,158 @@
+# Computational Resources — Core Concepts
+# Extracted from kg/cypher/09-graphs-extended.cypher (LMFDB, Platt 10¹³ zeros,
+# CayleyPy API), 06-papers-approaches.cypher (platt_trudgian2021, cayleypy
+# paper) and 08-papers-extended.cypher (odlyzko_rielle1985).
+# The databases, verified computations and software tools that the KG marks as
+# the experimental substrate for every AI approach (GNN spectral prediction,
+# RMT + Deep Learning, ML-on-LMFDB).
+# Related: ai-approaches.yaml, random-matrix-theory.yaml (RM-GUE data sources),
+#          murmurations.yaml (MU-MLBridge), cayley-graphs.yaml, arithmetic-graphs.yaml
+
+- id: CD-LMFDB
+  name: "L-Functions and Modular Forms Database (LMFDB)"
+  type: resource
+  category: machine-learning
+  subcategory: data-infrastructure
+  definition: |
+    Collaborative database of 248K+ L-functions with computed data: zeros,
+    Dirichlet coefficients, special values, and the underlying modular
+    forms / elliptic curves / number fields.
+  properties:
+    - scale: "248K+ L-functions with computed zeros, coefficients, special values"
+    - url: "https://www.lmfdb.org"
+    - publication_type: "database (KG Paper node, 2024)"
+    - kg_role: "Primary data source for ML number theory experiments
+      (Bieri et al. 2025); relation lmfdb -[:USES_METHOD]-> rmt_deep"
+  importance: |
+    The ground-truth substrate for every learning experiment in this corpus:
+    Hecke eigenvalue statistics, zero classification, vanishing-order
+    prediction (Bieri 2025), and the discovery arena of murmurations.
+  relationships:
+    - feeds: "MU-MLBridge and MU-Phenomenon (murmurations.yaml)"
+    - feeds: "Bieri et al. 2025 ML experiments (KG node bieri2025)"
+    - used_by_approach: "RM-RMTDL (random-matrix-theory.yaml)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+    - type: url
+      url: "https://www.lmfdb.org"
+  tags: ["lmfdb", "database", "l-functions", "ml-training-data", "data-infrastructure"]
+
+- id: CD-PlattZeros
+  name: "Platt 10¹³ Zeros Database"
+  type: resource
+  category: machine-learning
+  subcategory: data-infrastructure
+  definition: |
+    Database of the first 10¹³ zeros of the Riemann zeta function computed
+    with rigorous error bounds (D.J. Platt, Mathematics of Computation 2017).
+  properties:
+    - scale: "first 10¹³ zeta zeros"
+    - rigor: "rigorous error bounds on every ordinate"
+    - kg_role: "Used for zero-spacing statistics (GUE tests) and as ML
+      training data; relation platt_database -[:USES_METHOD]-> rmt_deep"
+  importance: |
+    The reference dataset for zero-statistics claims: GUE spacing tests,
+    anomaly detection, and any transformer/RMT+DL experiment on zeros
+    (Shanker 2024 uses this lineage of data).
+  relationships:
+    - author: "Dave Platt (University of Bristol; KG Researcher node)"
+    - statistics_enable: "RM-GUE (random-matrix-theory.yaml)"
+    - used_by_approach: "RM-RMTDL"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["zeta-zeros", "platt", "rigorous-computation", "zero-statistics", "training-data"]
+
+- id: CD-VerificationHeight
+  name: "RH Verified to Height 3·10¹²"
+  type: theorem
+  category: number-theory
+  subcategory: computational-verification
+  statement: |
+    The Riemann Hypothesis is true for all non-trivial zeros with
+    0 < Im(ρ) ≤ 3·10¹² (Platt & Trudgian 2021, Mathematics of Computation).
+  properties:
+    - method: "rigorous interval arithmetic"
+    - year: 2021
+    - publication: "Mathematics of Computation"
+    - relation_to_data: "Consistency anchor for CD-PlattZeros: the low-lying
+      zeros used in statistics are on the critical line with certainty"
+  importance: |
+    Every statistical claim about low zeros (GUE spacings, Platt database)
+    rests on verified critical-line data up to this height; it bounds the
+    regime in which 'all computed zeros are on the line' is a theorem, not
+    an observation.
+  relationships:
+    - authored_by: "D. Platt, T. Trudgian (KG node platt_trudgian2021)"
+    - strengthens: "empirical basis of RM-GUE"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+  tags: ["verification", "interval-arithmetic", "critical-line", "platt-trudgian"]
+
+- id: CD-OdlyzkoZeros
+  name: "Odlyzko Zero Computations"
+  type: resource
+  category: number-theory
+  subcategory: computational-verification
+  definition: |
+    Andrew Odlyzko's high-precision computations of zeta zeros at large
+    heights, historically the data behind the Montgomery-Odlyzko GUE law
+    and, with te Riele (1985), the disproof of the Mertens conjecture.
+  properties:
+    - researcher: "Andrew Odlyzko (University of Minnesota; computational
+      number theory, cryptography, zeta zeros)"
+    - disproof_result: "M(x) = Ω±(√x) — the Mertens conjecture |M(x)| < √x
+      is FALSE (Odlyzko & te Riele 1985, J. reine angew. Math. 357)"
+    - statistical_role: "source data for GUE spacing evidence (RM-GUE)"
+  importance: |
+    Cautionary and enabling at once: zero computations can KILL a
+    conjecture (Mertens) and can seed a law (GUE statistics). Any ML
+    anomaly detector trained on zeros should be evaluated against both
+    outcomes.
+  relationships:
+    - disproved: "Mertens Hypothesis (rh-equivalence-class.yaml — recorded
+      there as DISPROVEN 1985, one-way ⟹ RH historically)"
+    - statistics_enable: "RM-GUE"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/08-papers-extended.cypher"
+  tags: ["odlyzko", "zeta-zeros", "mertens-disproof", "gue-evidence"]
+
+- id: CD-CayleyPy
+  name: "CayleyPy"
+  type: resource
+  category: machine-learning
+  subcategory: software
+  definition: |
+    Python library for generating Cayley graphs of SL(2,F_p) (and Schreier
+    graphs), with BFS edge enumeration, sparse adjacency export, and
+    networkx materialization. NeurIPS 2025 Spotlight software.
+  properties:
+    - github: "https://github.com/alejandrox1/CayleyPy"
+    - recognition: "NeurIPS 2025 Spotlight"
+    - conjectures: "~200 computer-found conjectures on Cayley/Schreier graphs"
+    - no_gnn_component: "graph generation only — no GNN layer (KG description)"
+    - verified_api: "MatrixGenerator(modulo=p).special_linear_fundamental_roots(2, p)
+      → 4 generators E₁₂, E₂₁ and inverses; BfsResult gives edges_list,
+      adjacency_matrix_sparse(), save/load; to_networkx_graph() with no
+      truncation (KG theorem node 'CayleyPy API — SL(2,F_p) Generation',
+      proof_status verified via unit tests)"
+    - precomputed: "p = 2..10 shipped in repo"
+  importance: |
+    Supplies the training data for the corpus' GNN spectral prediction
+    approach: Cayley(SL(2,F_p)) graphs for p up to ~101 (~10⁶ nodes,
+    ~1GB RAM) — see AG-CayleyPyGraphs and CG-Generators.
+  relationships:
+    - generates: "AG-CayleyPyGraphs (arithmetic-graphs.yaml), CG-SL2Fp (cayley-graphs.yaml)"
+    - used_by_approach: "GNN Spectral Prediction (ai-approaches.yaml; KG
+      approach framework 'PyTorch Geometric + CayleyPy')"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+    - type: url
+      url: "https://github.com/alejandrox1/CayleyPy"
+  tags: ["cayleypy", "software", "cayley-graphs", "graph-generation", "neurips-2025"]
