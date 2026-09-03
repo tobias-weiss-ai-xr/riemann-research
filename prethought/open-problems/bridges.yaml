@@ -315,9 +315,9 @@
   - type: lean-file
     file: ../../../../riemann/lean/Riemann/FriedliRatio.lean
   - type: research
-    file: ../../../../riemann/research/GAP_ANALYSIS.md
+    file: ../../research/GAP_ANALYSIS.md
   - type: research
-    file: ../../../../riemann/research/SOLUTION_TO_GAPS.md
+    file: ../../research/SOLUTION_TO_GAPS.md
   tags:
   - formalization
   - lean
@@ -385,3 +385,188 @@
   - mathlib
   - obstruction
   - critical
+- id: OP-BridgeC-Kato-Perturbation
+  name: 'Bridge C: Spectral Radius via Kato Perturbation from s=1'
+  type: bridge
+  category: dinam-systems
+  subcategory: transfer-operator
+  statement: 'PROBLEM: Prove rho(L_s) < 1 for ALL s with Re(s) = 1/2 + it, t in R, on the Isola
+    Hilbert space H1 (where nuclearity is already established for Re(s) > 1/2).
+
+    This is the single remaining mathematical gap of Bridge B: the zero-propagation
+    contradiction (research/SOLUTION_TO_GAPS.md, legacy Gap 3) is a valid CONDITIONAL
+    reduction — spectral radius bound implies RH — but the bound itself is unproven.
+
+    Approach (from the 2026-08-25 breakthrough notes): perturbation from s = 1, where
+    lambda_1(1) = 1 and lambda_1''(1) < 0, via Kato theory and the maximum principle.'
+  status: unresolved
+  priority: CRITICAL
+  gap_type: incomplete_proof
+  holes:
+    hole_1:
+      name: Rigorous proof that lambda_1(1) = 1 on H1
+      description: 'Legacy HONEST_FINAL_STATUS flags that the constant function is NOT an
+        eigenfunction of L_1 in the sup-norm setting; the invariant-measure argument must be
+        redone on H1. Assignments assert lambda_1(1) = 1 without proof.'
+      difficulty: MEDIUM
+    hole_2:
+      name: lambda_1'(1) < 0 rigorously (Feynman-Hellmann)
+      description: 'Plausible per R-Feynman-Hellmann-Verification-2025 but the Banach-space
+        justification (application of Feynman-Hellmann on H1) is not written down.'
+      difficulty: MEDIUM
+    hole_3:
+      name: Analyticity of lambda_1(s) for Re(s) > 1/2
+      description: 'Kato perturbation theory requires a simple, isolated leading eigenvalue
+        plus analytic family of operators; must be verified on H1 across the half-plane.'
+      difficulty: HARD
+    hole_4:
+      name: Maximum principle on the boundary strip
+      description: '|lambda_1(s)| < 1 for Re(s) > 1/2 needs boundary control at Re(s) = 1/2 + it
+        for large |t|; the boundary values are NOT analyzed in the legacy proof attempts.'
+      difficulty: HARD — this is the core open problem
+  current_evidence:
+  - 'Sprint 2 numerics: rho < 0.30 for |t| <= 100 (FS-Mayer-Spectral-Radius)'
+  - 'Certified rho < 1 for Re(s) >= 3/4 + epsilon (Nisoli 2026, DFLY a-posteriori)'
+  - 'Nuclearity on H1 established for Re(s) > 1/2 (FS-Nuclearity-Breakthrough-2026-08)'
+  derived_from:
+  - legacy research note GAP 2/6 (function space, zero propagation)
+  - legacy research note Theorem 3.3 claims
+  references:
+  - type: finding
+    id: FS-Nuclearity-Breakthrough-2026-08
+  - type: finding
+    id: FS-Mayer-Spectral-Radius
+  - type: research
+    file: ../../research/GAP_ANALYSIS.md
+  - type: research
+    file: ../../research/SOLUTION_TO_GAPS.md
+  - type: research
+    file: ../../HONEST_FINAL_STATUS.md
+  - type: paper
+    id: PA-Isola-2003-FareyGaussSpectrum
+  - type: paper
+    id: PA-Bonanno-2022-FareyComplexTemp
+  tags:
+  - bridge-c
+  - spectral-radius
+  - kato-perturbation
+  - critical-gap
+  - rh-equivalent
+  confidence: well-defined; numerics support rho < 1 but no proof
+- id: OP-BridgeD-Certified-Spectral-Bounds
+  name: 'Bridge D: Computer-Assisted Certification of rho(L_s) < 1'
+  type: bridge
+  category: dinam-systems
+  subcategory: transfer-operator
+  statement: 'PROBLEM: Turn the numerical spectral-radius computations into RIGOROUS bounds.
+
+    Route B/C of the 2026 roadmap: use DFLY (validated Fourier-Legendre/Chebyshev Galerkin)
+    quasi-compactness estimates plus Nisoli-2026 a-posteriori verification to certify
+    rho(L_s) < 1 for Re(s) >= 3/4 + epsilon, then track the certified bound along the
+    numerically stable ridge as sigma -> 1/2+.'
+  status: partially_proven
+  priority: CRITICAL
+  gap_type: incomplete_proof
+  progress:
+  - 'Benchmark exists: Gauss-Kuzmin-Wirsing operator — 50 eigenvalues with >= 90 rigorous
+    digits (corpus research notes, KB-Numerical-Verification-Pipeline)'
+  - 'Nisoli 2026 provides the a-posteriori verification framework (PA-Nisoli-2026-CertifiedSpectra)'
+  - 'Pollicott-Vytnova 2022 certify Selberg-zeta zeros computationally (PA-PollicottVytnova-2022-SelbergZeros)'
+  remaining:
+  - 'Certify rho(L_s) < 1 for the FULL strip 1/2 < Re(s) <= 3/4 (currently only >= 3/4 + epsilon)'
+  - 'Handle large |t|: numerics cover |t| <= 100; RH needs all t in R'
+  - 'Corpus-side implementation of the certified pipeline does not exist yet (proposed in
+    KB-Numerical-Verification-Pipeline, status: proposed)'
+  references:
+  - type: paper
+    id: PA-Nisoli-2026-CertifiedSpectra
+  - type: paper
+    id: PA-PollicottVytnova-2022-SelbergZeros
+  - type: finding
+    id: FS-Mayer-Spectral-Radius
+  - type: finding
+    id: TO-Certified-Spectral-Verification
+  - type: research
+    file: ../../research/GAP_ANALYSIS.md
+  tags:
+  - bridge-d
+  - computer-assisted-proof
+  - dfly
+  - certification
+  - critical-gap
+  confidence: literature-supported; corpus pipeline not yet built
+- id: OP-BridgeE-Continuation-Integrity
+  name: 'Bridge E: zeta-Selberg Continuation Independent of Efrat (1981)'
+  type: gap
+  category: dinam-systems
+  subcategory: transfer-operator
+  statement: 'PROBLEM: The identity stage connecting the Fredholm determinant of L_s to the
+    Riemann zeta function,
+
+      det(I - L_s) = Z(s)^{-1} * Z(s-1)   (algebraic core: independently supported)
+
+      zeta(2s-1)/zeta(s) = C(s) * Z_S(s)   (continuation stage: Efrat 1981)
+
+    must be re-anchored on verifiable sources. Integrity audit (2026-08-25): the Efrat-1981
+    seed DOI resolves to an UNRELATED paper; the seed was removed from the corpus. The
+    non-vanishing of the correction factor C(s) for Re(s) > 1/2 — load-bearing for the
+    zero-propagation contradiction — currently rests on an unverifiable citation.'
+  status: unresolved
+  priority: HIGH
+  gap_type: source_integrity
+  repair_plan:
+  - 'Re-derive C(s) and its non-vanishing from Pollicott-Vytnova certified Selberg computations'
+  - 'Cross-check against Mayer''s own papers (thermodynamic formalism, 1990/1991)'
+  - 'Write the continuation stage out once, self-contained, as a research note'
+  references:
+  - type: paper
+    id: PA-PollicottVytnova-2022-SelbergZeros
+  - type: research
+    id: R-Mayer-Identity-Verification-2025
+  - type: research
+    file: ../../research/GAP_ANALYSIS.md
+  - type: research
+    file: ../../research/SOLUTION_TO_GAPS.md
+  tags:
+  - bridge-e
+  - integrity
+  - continuation
+  - selberg-zeta
+  - citation-defect
+  confidence: defect confirmed; repair path identified
+- id: OP-Docs-Integrity-LegacyOverclaim
+  name: 'Documentation Integrity: Legacy Notes Overclaim RH Proof'
+  type: gap
+  category: formalization
+  subcategory: research-notes
+  statement: 'PROBLEM (process): Legacy research notes claim the Riemann Hypothesis is proven:
+
+    - legacy riemann/SOLUTION_TO_GAPS.md (2026-07-27): "The Riemann Hypothesis is now proven ...
+      The Millennium Prize Problem is solved."
+    - ABSOLUTE_TRUST.md: "100% mathematical trust", "RH Proof Overall: 100% complete"
+    - several *_FINAL_PROOF*.md / PROOF_COMPLETE.md files
+
+    The corpus integrity audit (KB-Integrity-Flag, confidence 1.0) classifies these as
+    OVERCLAIMING: the zero-propagation contradiction is conditional on the unproven
+    spectral-radius bound (see OP-BridgeC-Kato-Perturbation). Honest assessment: ~75%
+    mathematical progress, ~40% formal progress, RH not proven.
+
+    This task (CP-004) ports the three legacy documents into the corpus with corrected,
+    honest content: research/GAP_ANALYSIS.md, research/SOLUTION_TO_GAPS.md (overclaim
+    withdrawn), HONEST_FINAL_STATUS.md.'
+  status: in_progress
+  priority: MEDIUM
+  gap_type: documentation_debt
+  corrected_by:
+  - research/GAP_ANALYSIS.md (reconciled edition, 2026-09-03)
+  - research/SOLUTION_TO_GAPS.md (overclaim withdrawn)
+  - HONEST_FINAL_STATUS.md (2026-09-03 edition)
+  references:
+  - type: research
+    file: ../../HONEST_FINAL_STATUS.md
+  - type: research
+    file: ../../research/SOLUTION_TO_GAPS.md
+  tags:
+  - integrity
+  - overclaiming
+  - docu
