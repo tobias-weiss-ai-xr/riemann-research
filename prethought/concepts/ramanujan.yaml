@@ -26,6 +26,13 @@
       building of PGSp(4,F_q) or similar constructions.
     year: 1988
     authors: ["Alex Lubotzky", "R. Phillips", "P. Sarnak"]
+  lean_status: |
+    formalized (definition): lean/Riemann/RamanujanProperty.lean (../riemann)
+    defines ramanujanBound4 : ℝ = 2√3 and isRamanujan (gap : ℝ) : Prop :=
+    4 - gap ≤ ramanujanBound4 (λ₂ = 4 - gap form for 4-regular graphs);
+    lean/Riemann/IsRamanujan.lean (57 lines, no sorry) restates the p=3/p=5
+    status. Caveat: the Lean predicate is the 4-regular gap form, not the
+    general |λ| ≤ 2√(k-1) form above.
   references:
     - type: cypher
       file: "../../../kg/cypher/02-graphs.cypher"
@@ -58,13 +65,23 @@
   importance: |
     This resolves a project uncertainty: p=3 and p=5 ARE Ramanujan,
     despite earlier data table discrepancies.
+  lean_status: |
+    partially formalized: lean/Riemann/RamanujanProperty.lean (../riemann)
+    proves pThreeIsRamanujan (gap 1.267949) and pFiveIsRamanujan (gap 0.763932)
+    fully (no sorry in those proofs), and pGeSevenNotRamanujan for p ≥ 7 —
+    2 sorries remain elsewhere in the file (ramanujanRatioTable tail,
+    asymptoticRamanujanRatio). lean/Riemann/IsRamanujan.lean is sorry-free.
+    Verdicts agree with the table (p=3,5 Ramanujan; p ≥ 7 not), but the λ₂
+    values differ: Lean uses λ₂ = 4 - gap (p=3: 2.732 < 2√3, Ramanujan with
+    slack) while the table above claims λ₂ = 2√3 exactly (ratio 1.000) —
+    reconcile before citing either as tight.
   references:
     - type: finding
       id: FG-P3P5-Ramanujan
     - type: cypher
       file: "../../../kg/cypher/09-graphs-extended.cypher"
     - type: lean-proof
-      file: "../../../lean/Riemann/IsRamanujan.lean"
+      file: "../../../riemann/lean/Riemann/IsRamanujan.lean"
   tags: ["p3-ramanujan", "p5-ramanujan", "verified", "computed"]
 
 - id: RP-BrandtPizerHecke

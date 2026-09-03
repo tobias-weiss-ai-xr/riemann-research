@@ -54,6 +54,21 @@
     Hadamard factorization, zero-free region, explicit formula,
     residue theorem (general).
   targets: "RH (RT-RH)"
+  lean_status: |
+    hub — in-house formalization lives in the sibling repo
+    ../riemann/lean/Riemann/ (Lean 4 + Mathlib, ~6,000 lines, 18 root files
+    + 7 in TransferOperator/). Sorry-free: CayleyGraphs.lean (SL(2,F_p) Cayley
+    graph: card, 4-regularity, vertex-transitivity, connectivity),
+    SpectralGaps.lean + IsRamanujan.lean (gap table + certificates),
+    FriedliRatio.lean (ratio-one-on-critical-line for finite spectral zeta),
+    RiemannHypothesis.lean (RH statements, bridges, spectralGapNonMonotonic),
+    LMFDBConjectures.lean (murmuration/rank conjecture statements),
+    GoldbachBridge.lean (Granville equivalence statements). Statements with
+    sorry'd proofs: TransferOperator.lean (7), FredholmDeterminants.lean (15),
+    Theorem3_3.lean (12), ThermodynamicFormalism.lean (11), PrimeNumberTheorem.lean
+    (6), TransferOperatorCore.lean (6), CompleteProof.lean (1), GaussMap* and
+    TransferOperator/ (5-13 each). Honest bottom line: no sorry-free proof of
+    anything implying RH exists yet; graph-side combinatorics is fully verified.
   references:
     - type: cypher
       file: "../../kg/cypher/06-papers-approaches.cypher"

@@ -202,6 +202,14 @@
     An AVERAGED equivalence: the error term in the (weighted) Goldbach
     conjecture is controlled by the zeros of ζ(s). Added to the KG in f7aa6d2
     (mirrors RW-Granville-Goldbach).
+  lean_status: |
+    definitions formalized, equivalence unproven: lean/Riemann/GoldbachBridge.lean
+    (../riemann, sorry-free) defines weightedGoldbachCount G(2N) = Σ log p·log q,
+    singularSeries, the prediction J(2N), cumulativeGoldbachError E(X), and the
+    Props satisfiesGranvilleBound, GranvilleEquivalence (RH ⇔ ∀ε, E(X) = O(X^{3/2+ε})),
+    StrongGranvilleConjecture — statements only, no proof of the equivalence
+    (Experiment 16 goldbach-RH bridge). Auxiliary lemmas proven: singularSeries_pos,
+    weightedGoldbachCount_nonneg.
   references:
     - type: cypher
       file: "../../kg/cypher/07-rh-equivalences.cypher"

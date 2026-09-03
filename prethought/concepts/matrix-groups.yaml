@@ -70,6 +70,11 @@
     - has_cayley_graph: "Cayley(SL(2,F_p)) with 4 root generators — see CG-SL2Fp"
     - has_cayley_graph: "Cayley_LPS(SL(2,F_p)) with p+1 LPS generators — see AG-LPSFamily"
     - used_by: "LPS Ramanujan graph construction (RT-LPSConstruction)"
+  lean_status: |
+    formalized (group object): lean/Riemann/CayleyGraphs.lean (../riemann)
+    defines SL2Fp p [Fact (Nat.Prime p)] and proves card_sl2fp :
+    Fintype.card (SL2Fp p) = p * (p ^ 2 - 1) — machine-checked proof of the
+    order p(p²-1) above.
   references:
     - type: cypher
       file: "../../kg/cypher/01-groups.cypher"

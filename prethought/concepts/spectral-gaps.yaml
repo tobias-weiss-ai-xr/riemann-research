@@ -18,6 +18,11 @@
   relationship: |
     λ₂ ≥ k - 2√(k-1) for all k-regular graphs (Alon-Boppana bound).
     λ₂ = k - 2√(k-1) exactly for Ramanujan graphs (optimal).
+  lean_status: |
+    formalized (data-side structure, no sorry): lean/Riemann/SpectralGaps.lean
+    (../riemann) defines the SpectralGap and EigenvalueCertificate structures,
+    satisfiesRamanujanBound, knownSpectralGaps : List (ℕ × ℝ), and
+    spectralGapOf (p : ℕ) : Option ℝ for lookup by prime.
   references:
     - type: theorem
       id: ramanujan-bound-1988
@@ -37,6 +42,11 @@
   relationship: |
     For 4-regular graphs: λ₂/2 ≤ h(G) ≤ √(2λ₂)
     This means λ₂ and h(G) are within a constant factor of each other.
+  lean_status: |
+    degenerate formalization only: lean/Riemann/SpectralGaps.lean (../riemann)
+    contains cheegerInequality (gap : ℝ) (hgap : gap ≥ 0) : gap / 2 ≤ gap,
+    proved by nlinarith — a tautology in one variable, NOT the real isoperimetric
+    Cheeger inequality h(G) vs λ₂ of the graph. Treat as a placeholder.
   references:
     - type: cypher
       file: "../../../kg/cypher/02-graphs.cypher"
@@ -84,6 +94,11 @@
     - p=5: 120 nodes, λ₂ = 2√3 ≈ 3.464, ratio = 1.000 (Ramanujan)
     - p=7: 336 nodes, λ₂ ≈ 3.5858, ratio ≈ 1.028 (NOT Ramanujan)
     - p=11: 1320 nodes, λ₂ ≈ 3.84, ratio ≈ 1.108 (NOT Ramanujan)
+  lean_status: |
+    formalized (predicate, sorry-free): lean/Riemann/SpectralGaps.lean (../riemann)
+    satisfiesRamanujanBound (gap : ℝ) : Prop plus RamanujanProperty.lean's
+    isRamanujan; proven instances for p=3 and p=5 (pThreeIsRamanujan,
+    pFiveIsRamanujan) and the negative result pGeSevenNotRamanujan.
   references:
     - type: cypher
       file: "../../../kg/cypher/02-graphs.cypher"
@@ -136,6 +151,11 @@
       spectral_gap: "computed"
       ratio_to_ramanujan: null
       status: "pending"
+  lean_status: |
+    formalized (hard-coded table + certificates, sorry-free): lean/Riemann/
+    SpectralGaps.lean (../riemann) knownSpectralGaps / spectralGapOf reproduce
+    this table as Option ℝ lookups; RamanujanProperty.lean carries
+    ramanujanRatioTable : List (ℕ × ℝ) for the ratio data.
   lps_theorem: |
     LPS 1988: p=3 and p=5 SL(2,F_p) Cayley graphs ARE Ramanujan.
     p≥7 are NOT Ramanujan (as empirically confirmed).

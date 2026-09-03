@@ -26,6 +26,13 @@
     - publication: "Research in Number Theory (2023), msclass 11G05 / 14G10"
     - scope_limit: "NOT applied to ζ(s) itself (KG: relevance_to_rh = methodological)"
     - signature: "oscillating ('murmuring') averages of a_p across conductor-ordered families"
+  lean_status: |
+    statement formalized (sorry-free file): lean/Riemann/LMFDBConjectures.lean
+    (../riemann) defines MurmurationConjecture : Prop — the averaged-bias/
+    oscillation conjecture over Hecke eigenvalue data — plus
+    RankClassificationTheorem as a Prop. These are STATEMENTS (definitions of
+    the conjecture), not proofs; no murmuration averaging machinery is
+    formalized.
   importance: |
     The first major number-theoretic structure found by systematically
     mining a large L-function database rather than by ansatz. It validates

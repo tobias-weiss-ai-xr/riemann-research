@@ -76,6 +76,13 @@
   relationships:
     - l_function_coefficients: "a_n of L(s,f) (LF-Cusp)"
     - graph_spectral_counterpart: "adjacency eigenvalues of isogeny/LPS graphs (GO-Adjacency)"
+  lean_status: |
+    formalized (data structures, sorry-free): lean/Riemann/LMFDBConjectures.lean
+    (../riemann) defines the HeckeEigenvalues structure (prime-indexed traces),
+    HeckeTraceDeterminesRank : Prop, and LFunctionZeros with height/low-lying
+    zero counts. zeroStatsClassifyRank is currently a degenerate `True` stub.
+    No Hecke-operator-on-forms formalization (no T_p action on modular-form
+    spaces in the sibling repo; Mathlib has the classical theory).
   references:
     - type: cypher
       file: "../../kg/cypher/04-operators.cypher"

@@ -21,6 +21,15 @@
     - spectral_radius: "ρ(L_s)"
     - key_conjecture: "ρ(L_s) < 1 for all s with Re(s) > 1/2"
     - implication: "If ρ(L_s) < 1 for Re(s) > 1/2, then ζ(s) has no zeros there → all zeros on Re(s)=1/2 → RH holds"
+  lean_status: |
+    formalized (operator object): lean/Riemann/TransferOperator/Operator.lean
+    (../riemann) defines noncomputable transferOperator (s : ℂ) on a
+    FunctionSpace and transferOperatorBounded s (hs : s.re > 1/2) as the
+    →L[ℂ] bounded version with an IsCompactOperator proof;
+    TransferOperatorCore.lean adds potential s x = -2·s·log|x| and the
+    finite transferMatrix. Weight (n+x)^{-2s} and base map x ↦ 1/(n+x)
+    both present. Spectral-radius claims: see TO-RH-Equivalence lean_status
+    (partially sorry'd).
   references:
     - type: paper
       id: mayer-1991
@@ -48,6 +57,15 @@
     The Riemann Hypothesis becomes a statement about the operator L_s's spectrum.
   proof_status: "proven (Mayer 1991)"
   year: 1991
+  lean_status: |
+    statement only (proof by sorry): lean/Riemann/FredholmDeterminants.lean
+    (../riemann) states mayerIdentity for Re(s) > 1/2 as
+    ζ(2s) = C(s) · det(1 - L_s) on a FunctionSpace →L[ℂ] model, plus
+    IsTraceClass class, fredholmDet_one/product/ne_zero_iff lemmas,
+    transferOperator_isTraceClass, zeta_zero_implies_zeta_2rho_zero —
+    15 sorries in the file, so the identity is NOT machine-checked yet.
+    Note: Lean uses the one-determinant ζ(2s) form, not the two-determinant
+    Z_S = det(1-L_s)det(1+L_s) form above.
   references:
     - type: paper
       id: mayer-1991
@@ -76,7 +94,7 @@
     → zeros of ζ(2s-1) correspond to poles of Z_S
     → RH is equivalent to: no zeros of ζ(2s-1) with Re(2s-1) > 0 and Re(s) > 1/2
     → equivalent to: no eigenvalues of L_s with |λ| ≥ 1 for Re(s) > 1/2
-  verification_status: "Semi-formalized in lean/Riemann/TransferOperator.lean"
+  verification_status: "Semi-formalized in lean/Riemann/TransferOperator.lean (../riemann)"
   confidence: "high for Mayer 1991 identity; NOTE: Efrat 1981 source link unverified (see PA-Efrat-1981-SelbergContinuation) — the Re(s)>1/2 continuation step is provisional"
   caveat: |
     Integrity (2026-08-25): the Efrat 1981 reference currently carries status
@@ -84,6 +102,15 @@
     The equivalence chain Mayer-identity → Efrat-continuation → RH-equivalence is
     therefore NOT fully verified upstream. Independent route: Pollicott–Vytnova 2022
     certified Selberg-zeta computations + Nisoli 2026 certified spectral approximation.
+  lean_status: |
+    statements formalized, proofs sorry'd (7 sorries): lean/Riemann/
+    TransferOperator.lean (../riemann) states spectralRadiusImpliesRH and
+    rhImpliesSpectralRadius — both directions of this equivalence — with sorry;
+    the Lean comments explicitly flag the Selberg-zeta → ζ(s) connection as not
+    yet formalized in Mathlib. TransferOperatorCore.lean goes further
+    (riemann_hypothesis, rh_clean using mayer_identity_consequence, 6 sorries);
+    PrimeNumberTheorem.lean states riemannHypothesis with sorry'd lemmas;
+    CompleteProof.lean's riemannHypothesis is a single sorry stub.
   references:
     - type: paper
       id: mayer-1991
@@ -91,8 +118,8 @@
       authors: ["Adolf Efrat"]
       year: 1981
     - type: lean
-      file: "../../../lean/Riemann/TransferOperator.lean"
-      status: "semi-formalized"
+      file: "../../../riemann/lean/Riemann/TransferOperator.lean"
+      status: "semi-formalized (statements + sorry'd proofs)"
   tags: ["rh-equivalence", "spectral-radius", "mayer", "efrat"]
 
 - id: TO-GaussMap
@@ -113,6 +140,15 @@
     The doubly-stochastic operator associated with the Gauss map has
     L₁-spectrum related to periodic orbits, and the Mayer transfer operator
     L_s is a weighted version of this.
+  lean_status: |
+    formalized (basics): lean/Riemann/TransferOperator/BasicProofs.lean and
+    BasicProofs_Complete.lean (../riemann) define gaussMap /
+    inverseBranch and prove gaussMap_zero, gaussMap_apply, gaussMap_into_Ico,
+    inverseBranch_range, inverseBranch_deriv, inverseBranch_abs_deriv_lt_one,
+    sum_inverse_pow_converges / _bounded for σ > 1/2; GaussMapSimple.lean and
+    GaussMapCompilable.lean carry the compilable variants. TransferOperatorCore.lean
+    and TransferOperator/GaussMap.lean add potential s x = -2·s·log|x| and
+    transferMatrix. Some sorries remain (5-8 per file).
   references:
     - type: cypher
       file: "../../../kg/cypher/04-operators.cypher"
@@ -176,6 +212,16 @@
     Does NOT close the nuclearity gap at Re(s)=1/2 (operator not known compact there;
     Nisoli requires spectrum outside the essential spectral radius). But it makes the
     Re(s) > 3/4 region and the approach to 1/2 certified — precisely the EPIC-3 strategy.
+  lean_status: |
+    analytic bounds partially formalized: lean/Riemann/TransferOperator.lean
+    (../riemann) proves spectralRadiusBound_above_one (Re(s) > 1),
+    spectralRadiusBound_real_gt_3 (Re(s) > 3), strictDomination_off_real_axis,
+    localBoundaryBound_near_zero, leadingEigenvalue_boundaryBound (t ≠ 0),
+    localSpectralRadiusBound_above_one, envelopeObstruction, plus
+    spectralRadiusBound_numerical : ℝ := 0.30 — matching the ρ ∈ [0.14, 0.30]
+    measurement above. Several of these still contain sorry (7 file-wide).
+    Theorem3_3.lean states the Krein-Rutman / Feynman-Hellmann route with
+    12 sorries. No certified a-posteriori (Nisoli-style) bounds in Lean yet.
   references:
     - type: paper
       id: PA-Nisoli-2026-CertifiedSpectra

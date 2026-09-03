@@ -148,6 +148,12 @@
     - generates: "AG-CayleyPyGraphs (arithmetic-graphs.yaml), CG-SL2Fp (cayley-graphs.yaml)"
     - used_by_approach: "GNN Spectral Prediction (ai-approaches.yaml; KG
       approach framework 'PyTorch Geometric + CayleyPy')"
+  lean_status: |
+    cross-verification available: lean/Riemann/CayleyGraphs.lean (../riemann,
+    sorry-free) machine-checks the structural guarantees CayleyPy relies on
+    (Fintype.card (SL2Fp p) = p(p²-1), 4-regularity, vertex-transitivity,
+    connectivity). Eigenvalue/gap outputs of CayleyPy remain uncertified —
+    SpectralGaps.lean hard-codes the measured values rather than proving them.
   references:
     - type: cypher
       file: "../../kg/cypher/06-papers-approaches.cypher"

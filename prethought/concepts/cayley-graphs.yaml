@@ -22,6 +22,12 @@
       approaches fail."
     - "All Cayley graphs of SL(2,F_p) with generators S,R are 4-regular."
     - "Graph size grows cubically with p: 6 nodes (p=2) → 1,010,100 nodes (p=101)."
+  lean_status: |
+    formalized (complete, no sorry): lean/Riemann/CayleyGraphs.lean in the
+    sibling repo (../riemann). SL2Fp as subtype of Matrix (Fin 2) (Fin 2) (ZMod p)
+    with Fact (Nat.Prime p); theorems card_sl2fp (Fintype.card = p*(p^2-1),
+    matching vertex_count above), cayleyGraph via SimpleGraph, isFourRegular,
+    isVertexTransitive, isConnected — all fully proved from Mathlib.
   references:
     - type: corpus
       paper_id: lubotzky-phillips-sarnak-1988
@@ -42,6 +48,10 @@
     - degree: 4
     - simple_group: true (for p ≥ 5)
   notes: "PSL(2,F_p) is simple for p ≥ 5 (Jordan)."
+  lean_status: |
+    partial: lean/Riemann/CayleyGraphs.lean (../riemann) formalizes SL(2,F_p)
+    directly (card_sl2fp, isConnected); the PSL(2,F_p) = SL(2,F_p)/{±I} quotient
+    and the (p(p²-1))/2 vertex count for p odd are NOT yet separate Lean objects.
   references:
     - type: cypher
       file: "../../../kg/cypher/01-groups.cypher"
@@ -65,6 +75,14 @@
   matrix_forms:
     S: "[[0,-1],[1,0]]"
     R: "[[0,1],[-1,0]]"
+  lean_status: |
+    formalized with a generator discrepancy: lean/Riemann/CayleyGraphs.lean
+    (../riemann) defines generatorS = [[0,-1],[1,0]] but generatorR = [[1,1],[0,1]]
+    (unipotent, order p — the LPS-style generator), NOT the order-3 rotation
+    [[0,1],[-1,0]] above. Proven: coe_generatorS, coe_generatorR,
+    generators_symmetric, generators_not_id. TODO: reconcile the S,R convention
+    with this entry's JPJ presentation before using the Lean graph as evidence
+    for S⁴ = R³ = (SR)² claims.
   references:
     - type: cypher
       file: "../../../kg/cypher/01-groups.cypher"
@@ -90,6 +108,12 @@
     The Cayley graph of SL(2,Z) is the universal cover of the modular curve
     PSL(2,Z)\H, and its spectral properties connect to the Riemann zeta
     function via the Selberg trace formula.
+  lean_status: |
+    not formalized directly: the infinite SL(2,Z) graph has no Lean object in
+    lean/Riemann/ (../riemann). Adjacent formalized content lives in
+    TransferOperator.lean / TransferOperatorCore.lean (Gauss map and Mayer
+    operator for the SL(2,Z) geodesic flow) and PrimeNumberTheorem.lean
+    (functional-equation symmetry, sorry'd lemma).
   references:
     - type: cypher
       file: "../../../kg/cypher/01-groups.cypher"

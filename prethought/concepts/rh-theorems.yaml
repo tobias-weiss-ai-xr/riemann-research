@@ -18,6 +18,13 @@
     partial: mathlib_name riemann_hypothesis (Lean 4). Loeffler & Stoll 2025
     formalized ζ(s), functional equation, analytic continuation, trivial zeros;
     ~60-70% of the needed machinery exists in Mathlib.
+    Sibling-repo formalization (../riemann/lean/Riemann/, ~6,000 lines, Lean 4 +
+    Mathlib): RH stated as a Prop in RiemannHypothesis.lean (ZetaZerosOnCriticalLine
+    + proven rh_implies_zeros_on_line from Mathlib's RH); proof attempts with
+    remaining sorries in TransferOperatorCore.lean (riemann_hypothesis, rh_clean),
+    PrimeNumberTheorem.lean (noZerosWithRealPart_gtHalf), CompleteProof.lean
+    (riemannHypothesis — sorry stub). No sorry-free proof of RH exists anywhere;
+    the transfer-operator route is the most developed (see TO-RH-Equivalence).
   computational_status: "Verified up to height 3·10¹² (Platt & Trudgian 2021, rigorous interval arithmetic)"
   relationships:
     - equivalences: "Full roster in rh-equivalence-class.yaml (Lindelöf, Robin, Lagarias, Nyman-Beurling, Li, ...)"
@@ -197,6 +204,14 @@
     - achieved_by: "LPS construction (RT-LPSConstruction)"
     - about: "Ihara zeta ζ_G(u) (LF-IharaZeta): all poles on |u| = 1/√(d-1)"
     - target_of: "GNN spectral approach (AIApproach in 06 cypher)"
+  lean_status: |
+    prerequisites formalized, spectral content not: lean/Riemann/CayleyGraphs.lean
+    (../riemann, sorry-free) proves the graph-theoretic half — cayleyGraph,
+    isFourRegular, isVertexTransitive, isConnected for SL(2,F_p) — and
+    SpectralGaps.lean + RamanujanProperty.lean prove the p=3/p=5 Ramanujan
+    instances (pThreeIsRamanujan, pFiveIsRamanujan) and pGeSevenNotRamanujan.
+    The eigenvalue bound |λ| ≤ 2√(d-1) itself (adjacency spectra) is NOT yet
+    formalized — no SimpleGraph.adjacencyMatrix spectral theorem in the sibling repo.
   references:
     - type: cypher
       file: "../../kg/cypher/05-theorems.cypher"
@@ -327,6 +342,15 @@
     - proves: "RH-equivalence (RT-RH)"
     - uses: "Farey graph (AG-FareyGraph), transfer operator L_s (transfer-operators.yaml)"
     - related: "Mayer 1991 identity Z_S(s) = det(1-L_s)det(1+L_s) (TO-MayerIdentity)"
+  lean_status: |
+    partial (finite model fully proven): lean/Riemann/FriedliRatio.lean
+    (../riemann, sorry-free) proves ratioOneOnCriticalLine — |ζ_p(1-s)/ζ_p(s)| = 1
+    on Re(s) = 1/2 for the finite-dimensional spectral zeta ζ_p built from a
+    List ℂ of eigenvalues — and states FriedliConjecture (universal constant
+    C ≈ 1.1367); TransferOperator.lean carries the sorry'd spectralRadiusImpliesRH /
+    rhImpliesSpectralRadius equivalence; FredholmDeterminants.lean has the sorry'd
+    mayerIdentity. The infinite-dimensional Selberg-zeta encoding is NOT yet
+    machine-checked.
   references:
     - type: paper
       authors: ["Mark Pollicott"]

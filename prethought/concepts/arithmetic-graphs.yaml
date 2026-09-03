@@ -117,6 +117,12 @@
     - instance_of: "Expander graph family (AG-Expander)"
     - adjacency_corresponds_to: "Hecke T_p (HK-LPSCorrespondence)"
     - key_paper: "LPS 1988 Combinatorica"
+  lean_status: |
+    not formalized (skeleton only): the sibling repo (../riemann) has no LPS
+    X^{p,q} (p+1-regular) object. CayleyGraphs.lean formalizes the 4-regular
+    S,R-generator Cayley graph of SL(2,F_p) — a different family — with
+    generatorR = [[1,1],[0,1]] unipotent; Pizer/Brandt route and quaternion
+    algebra machinery absent. Mathlib has no Ramanujan-graph construction yet.
   references:
     - type: paper
       authors: ["A. Lubotzky", "R. Phillips", "P. Sarnak"]
@@ -252,6 +258,12 @@
     - instance_of: "Cayley graph of SL(2,F_p) (CG-SL2Fp)"
     - generated_by: "CayleyPy library (github.com/alejandrox1/CayleyPy)"
     - api: "MatrixGenerator(modulo=p).special_linear_fundamental_roots(2, p) → 4 generators; BfsResult gives edges_list, adjacency_matrix_sparse()"
+  lean_status: |
+    formal certificate available: lean/Riemann/CayleyGraphs.lean (../riemann,
+    sorry-free) machine-checks the structural invariants CayleyPy relies on for
+    these graphs — card_sl2fp (order p(p²-1)), isFourRegular, isVertexTransitive,
+    isConnected — closing the gap between numerics and proof for the graph
+    structure (eigenvalues remain computed-only; see SG-EigenvalueList).
   references:
     - type: cypher
       file: "../../kg/cypher/09-graphs-extended.cypher"

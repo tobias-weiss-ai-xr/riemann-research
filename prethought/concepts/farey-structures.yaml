@@ -61,6 +61,15 @@
   relationships:
     - transfer_operator: "FS-PollicottEncoding; TO-GaussMap and TO-Mayer1991 in transfer-operators.yaml"
     - boundary_of: "AG-FareyGraph (boundary = P¹(R))"
+  lean_status: |
+    mostly formalized: lean/Riemann/GaussMapSimple.lean and GaussMapCompilable.lean
+    (../riemann) define gaussMap x = 1/x - ⌊1/x⌋ and inverseBranch n x = 1/(n+1+x)
+    and prove gaussMap_in_range, inverseBranch_continuousAt,
+    inverseBranch_Icc_range, partitionProperty, partitionProperty_disjoint
+    (5-6 sorries remain in those two files); TransferOperator/BasicProofs.lean and
+    BasicProofs_Complete.lean carry the fuller sorry-light versions
+    (gaussMap_into_Ico, inverseBranch_deriv, inverseBranch_abs_deriv_lt_one,
+    sum_inverse_pow_converges for σ > 1/2).
   references:
     - type: cypher
       file: "../../kg/cypher/04-operators.cypher"
@@ -90,6 +99,15 @@
     - subject_graph: "AG-FareyGraph"
     - certified_computation: "TO-Certified-Spectral-Verification, TO-DFLY-GaussMap (transfer-operators.yaml)"
     - theorem_view: "RT-Pollicott (rh-theorems.yaml)"
+  lean_status: |
+    statements formalized, proofs sorry'd: lean/Riemann/TransferOperator.lean
+    (../riemann) proves-sorry spectralRadiusImpliesRH and rhImpliesSpectralRadius
+    (the ρ(L_s) < 1 ⇔ RH equivalence, both with sorry); lean/Riemann/
+    FredholmDeterminants.lean states mayerIdentity (ζ(2s) = C(s)·det(1 - L_s))
+    with sorry (15 in file); lean/Riemann/FriedliRatio.lean is fully proven but
+    only for the finite-dimensional spectral-zeta model (ratioOneOnCriticalLine).
+    The Selberg-zeta ↔ ζ(s) step is explicitly marked as not-yet-formalized in
+    the Lean comments.
   references:
     - type: paper
       authors: ["Mark Pollicott"]

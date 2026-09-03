@@ -23,6 +23,16 @@
     - factor_of_eisenstein_L: "L(s, E_k) = ζ(s) ζ(s-k+1) — DIRECT bridge from modular forms"
     - encoded_by: "Farey transfer operator: Z_{Γ₁}(s) = det(1 - L_{2s}) (Pollicott 2022)"
     - subject_of: "Riemann Hypothesis (RT-RH) and the equivalence class (rh-equivalence-class.yaml)"
+  lean_status: |
+    formalized in Mathlib + local statements: Mathlib's
+    NumberTheory.LSeries.RiemannZeta.riemannZeta (Loeffler & Stoll 2025:
+    functional equation, analytic continuation, trivial zeros — used by every
+    file in ../riemann/lean/Riemann/). Local: TransferOperatorCore.lean proves
+    trivial_zero_at_negative_ints, no_zeros_re_gt_one, and sorry-light
+    no_zeros_re_lt_zero_non_trivial; FredholmDeterminants.lean links ζ(2s) to
+    det(1 - L_s) via mayerIdentity (sorry'd). RH itself is stated as a Prop and
+    derived-with-sorry in PrimeNumberTheorem.lean / TransferOperatorCore.lean /
+    CompleteProof.lean.
   references:
     - type: paper
       authors: ["Bernhard Riemann"]
