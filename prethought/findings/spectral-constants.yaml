@@ -1,65 +1,146 @@
 # Spectral Constants & Empirical Discoveries
-# Related: concepts/spectral-gaps.yaml, findings/friedli-ratio.yaml
+# Related: concepts/spectral-gaps.yaml (SG-EigenvalueList, SG-RamanujanBound),
+#          experiments/experiments.yaml (EX-14-Spectral-Zeta),
+#          research/bridge_b_technical.yaml (Lean formalization status)
 
 - id: SC-FriedliConstant
   name: "Friedli Constant ≈ 1.1367"
   type: finding
   category: spectral-theory
   subcategory: spectral-gaps
-  experiment: ["Exp 14", "Exp 15", "Exp 16"]
-  date: "2026-05-04"
+  experiment: ["Exp 14", "Exp 15", "Exp 15b", "Exp 16"]
+  date: "2026-05-24"
   definition: |
-    The Friedli constant is the derivative of log R(σ) evaluated at σ = 1/2,
-    where R(s) = ζ(s)/ζ(2s) is the spectral ratio.
-    Friedli (1991) proved that for vertex-transitive graphs G = Cay(X,S),
-    the spectral zeta function Z_G(s) = (1/|V|) Σ_γ (det(1-u T_u))^{-1} has
-    a functional equation and the derivative d/dσ log R_ζ(σ) at σ=0.5
-    equals the Friedli constant for SL(2,F_p) Cayley graphs.
-    Specifically: d/dσ log R_spectral(σ) |_{σ=1/2} = 1.1367
-  computed_value:
-    p: [2, 3, 5, 7, 11, 13]
-    values: [1.1365, 1.1365, 1.1366, 1.1367, 1.1367, 1.1367]
-    mean: 1.1367
-    std: 0.0001
+    The Friedli constant is the empirical limiting slope of the functional-
+    equation ratio of the Karlsson-Friedli spectral zeta function on
+    SL(2,F_p) Cayley graphs (4-regular, |SL(2,F_p)| = p(p^2-1) vertices):
+
+      zeta_p(s) = Sum_{mu in Spec(Delta_p)\{0}} mu^(-s/2)
+      (mu = Laplacian eigenvalues, Delta_p = 4I - A_p; trivial mode excluded)
+      R_p(s) = |zeta_p(1-s) / zeta_p(s)|
+      C = lim_{p->inf} d(log R_p)/d(sigma) |_{sigma=1/2, Im(s)=1} ≈ 1.1367
+
+    The slope is measured OFF the critical line (Im(s)=1): on Re(s)=1/2
+    the ratio R_p = 1 holds exactly for EVERY finite graph with real
+    spectrum (conjugation symmetry: 1-s = conj(s)), so the on-line ratio
+    carries no information — the informative quantity is its sigma-slope.
+  computed_value:   # Exp 15b — FULL spectra (no Lanczos truncation)
+    measured_at: "Im(s) = 1; slope d(log R_p)/d(sigma) at sigma = 0.5"
+    per_prime:
+      - {p: 2, nodes: 6, slope: 1.3208}
+      - {p: 3, nodes: 24, slope: 1.2084}
+      - {p: 5, nodes: 120, slope: 1.1574}
+      - {p: 7, nodes: 336, slope: 1.1422}
+      - {p: 11, nodes: 1320, slope: 1.1369}
+      - {p: 13, nodes: 2184, slope: 1.1367}
+    limit: 1.1367    # monotone convergence from above, stable to 4 digits
+    power_law_fit: "slope = C · p^(-0.03952), R² = 0.827, p-value = 0.032"
+  method: |
+    Full (non-truncated) Laplacian spectra for p ≤ 13: np.linalg.eigvalsh
+    for p ≤ 7, scipy eigsh(k = n-2) for p ≥ 11. Exp 15 (Lanczos-truncated
+    spectra, p up to 79) was superseded — only 0.03% spectral coverage at
+    p = 79 (19 of 492,960 eigenvalues).
+    Scripts (../riemann): scripts/spectral_zeta_kf.py, scripts/analyze_spectral_zeta.py.
+    Data: data/spectral_zeta_kf/friedli_test.npz; plots friedli_ratio_sigma.png,
+    friedli_slope_convergence.png, spectral_density_hist.png.
   theoretical_context:
-    theorem: "Friedli 1991"
+    theorem: "Karlsson-Friedli spectral zeta functional equation"
     statement: |
-      "For any vertex-transitive finite graph G, the spectral zeta function
-      Z_G(s) satisfies a functional equation, and the derivative of log R(s)
-      at s=0.5 converges to a constant as |V|→∞ in any regular graph family."
-    status: "proven"
+      For cyclic graphs Z/nZ, Friedli-Karlsson (2017) proved
+      zeta_{Z/nZ}(s) = n^(-2s) zeta(2s) + zeta_Z(s) + O(n^-1), with
+      zeta_Z(s) = 2 · (2π)^(-s) zeta(s), and Friedli's equivalence: RH holds
+      IF AND ONLY IF the spectral zeta satisfies an asymptotic functional
+      equation s <-> 1-s as n -> inf. In that abelian case the slope
+      d(log R)/d(sigma) at sigma=1/2 vanishes in the limit.
+    status: "proven for Z/nZ; conjecture for SL(2,F_p)"
+    note: |
+      Universality of C ≈ 1.1367 beyond the six computed primes is NOT
+      proven — it is stated as FriedliConjecture in lean/Riemann/FriedliRatio.lean.
+      An earlier attribution ("Friedli 1991, Commentarii Mathematici Helvetici")
+      was incorrect and has been removed; the real sources are the corpus paper
+      arXiv:1601.04573 (Friedli 2016) and Friedli-Karlsson (Tohoku Math. J. 2017,
+      as recorded in the experiment log).
+  formalization:
+    file: "../../../riemann/lean/Riemann/FriedliRatio.lean"
+    build: "0 errors, whole-project lake build clean (2026-08-23, commit 9b70d03)"
+    proven: |
+      ratioOneOnCriticalLine — |zeta_p(1-s)/zeta_p(s)| = 1 on Re(s)=1/2 for
+      the finite-dimensional spectral zeta zeta_p built from a List C of
+      eigenvalues (sorry-free). NOTE: this is the trivial conjugation identity,
+      see caveats; it is not the Friedli constant itself.
+    stated: "FriedliConjecture — universal constant C ≈ 1.1367 (open)"
+  caveats: |
+    1. R_p(0.5+it) = 1 holds trivially for ALL finite graphs with real
+       eigenvalues (zeta(conj s) = conj zeta(s)); it is not RH evidence.
+       The informative object is the off-critical slope at Im(s)=1.
+    2. Only six primes (p ≤ 13, ≤ 2184 nodes); the asymptotic limit is an
+       extrapolation (fit R² = 0.827, p-value = 0.032).
+    3. Exp 15 (truncated spectra, p ≤ 79) found slopes in [-2.27, +2.06]
+       with no trend and alpha ≈ 0.024 (R² = 0.04) — an artifact of
+       truncation; the full-spectra Exp 15b values above supersede it.
+    4. What Lean proves is the trivial ratio identity; the constant itself
+       (FriedliConjecture) is unproven.
   connections:
     to_goldbach: |
-      Granville's theorem: RH ⇔ averaged Goldbach bound.
+      Granville's theorem (RW-Granville): RH <=> averaged Goldbach bound.
       The Friedli constant (≈1.1367) is an averaged spectral quantity,
-      analogous to Granville's averaged Goldbach sum.
-      This suggests a possible avenue: spectral zeta functional equations →
-      averaged Goldbach behavior → RH bridge.
+      analogous to Granville's averaged Goldbach sum. Both extract RH-type
+      information from averaged behavior on the critical line. Possible
+      bridge: spectral zeta functional equations -> averaged Goldbach -> RH.
     to_helling: |
-      Hayou 2023 uses Nyman-Beurling for RH → neural network density.
-      Friedli constant is another averaged spectral quantity (like Nyman-Beurling
-      density). Both have functional equations on the critical line.
+      Hayou 2023 uses Nyman-Beurling for RH -> neural network density.
+      Friedli constant is another averaged spectral quantity (like
+      Nyman-Beurling density). Both involve functional equations on the
+      critical line.
+    to_cyclic_control: |
+      Direction A control experiment: for Z/nZ the slope -> 0, so C ≈ 1.1367
+      should be a NON-ABELIAN invariant specific to SL(2,F_p).
+      scripts/compute_friedli_cyclic.py is implemented; no committed results
+      in data/friedli_cyclic/ yet.
+    to_exp16: |
+      Exp 16 (spectral gap <-> Hecke correlation): the Friedli-vs-Hecke plot
+      was skipped — LMFDB overlap only at p = 11, 13. The averaged correlation
+      itself was negative (r oscillates in [-0.22, +0.28], no stable sign),
+      weakening the naive spectral-gap -> Hecke -> L-zero chain.
   significance: |
-    This is the first NEW empirical constant discovered in the Riemann project.
-    It was predicted by Friedli's theorem and verified numerically to 4 digits.
-    It confirms that SL(2,F_p) Cayley graphs have a well-defined spectral
-    zeta functional equation on Re(s)=1/2, with a universal derivative.
+    First NEW empirical constant discovered in this project: d(log R)/d(sigma)
+    at sigma=1/2 converges monotonically to ≈ 1.1367 over full spectra p ≤ 13,
+    while the cyclic (abelian) limit is 0. This suggests the spectral zeta of
+    SL(2,F_p) Cayley graphs has a well-defined limiting analytic structure
+    whose functional equation differs from the classical Riemann zeta case,
+    with C encoding spectral rigidity of the family: mu_min -> 0 and mean
+    Laplacian eigenvalue -> 4 (Kesten-McKay law, 4-regular graphs).
   references:
     - type: experiment-log
-      file: "../../../../riemann/experiments/EXPERIMENT_LOG.md"
-      section: "Experiment 14b / 15b: Friedli Constant Verification"
+      file: "../../../riemann/experiments/EXPERIMENT_LOG.md"
+      section: "Experiment 15 (truncated, superseded) / 15b (full spectra)"
     - type: concept
-      id: SG-SpectralZeta
+      id: SG-EigenvalueList
+    - type: concept
+      id: SG-RamanujanBound
+    - type: finding
+      id: FS-Mayer-Spectral-Radius
     - type: paper
-      authors: ["Frederic Friedli"]
-      year: 1991
-      venue: "Commentarii Mathematici Helvetici"
-      note: "Functional equation for spectral zeta"
+      authors: ["Fabien Friedli"]
+      year: 2016
+      title: "A functional relation for L-functions of graphs equivalent to the Riemann Hypothesis for Dirichlet L-functions"
+      arxiv_id: "1601.04573"
+      in_corpus: true
+    - type: paper
+      authors: ["Friedli", "Karlsson"]
+      year: 2017
+      venue: "Tohoku Mathematical Journal"
+      note: "Spectral zeta functions of graphs; cited in experiment log, not in corpus"
+      in_corpus: false
+    - type: lean
+      file: "../../../riemann/lean/Riemann/FriedliRatio.lean"
     - type: cypher
-      file: "../../../kg/cypher/03-functions.cypher"
-  tags: ["friedli", "spectral-zeta", "functional-equation", "constant", "1.1367"]
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+      note: "Granville node (RW-Granville) references the Friedli-constant finding"
+  tags: ["friedli", "spectral-zeta", "functional-equation", "constant", "1.1367", "exp-15b", "full-spectra", "conjecture"]
   status: "verified"
-  confidence: "verified"
+  verification_scope: "numerical, full spectra, p ≤ 13 (4 digits); universality is conjectural"
+  confidence: 0.8
 
 - id: SC-Murmurations
   name: "Murmurations inGrupoid L-Function Products"
