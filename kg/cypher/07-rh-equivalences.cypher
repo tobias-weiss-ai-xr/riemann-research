@@ -18,8 +18,9 @@
 //
 // Load order: run AFTER 03-functions.cypher (zeta), 05-theorems.cypher
 // (rh, pnt, sato_tate) and 06-papers-approaches.cypher (hayou2023) —
-// those nodes must already exist for the MATCH-free CREATE statements
-// below to wire up correctly.
+// those nodes must already exist; cross-file endpoints are bound with
+// explicit MATCH clauses (KG-003 sync fix — see 11-sync-verification.cypher),
+// so each file loads as one self-contained statement.
 // NOTE (verified against the cypher sources): zeta is created in
 //   03-functions.cypher (NOT 02-graphs.cypher); the mertens node is
 //   created in THIS file (05-theorems.cypher creates no mertens node).
@@ -76,8 +77,10 @@ CREATE (nyman_beurling:Theorem {
   key_paper: "Nyman 1950, Beurling 1955"
 })
 
+MATCH (rh:Theorem {name: "Riemann Hypothesis"})
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Nyman (1950), Beurling (1955)"}]->(nyman_beurling)
 CREATE (nyman_beurling)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Nyman (1950), Beurling (1955)"}]->(rh)
+MATCH (hayou2023:Paper {title: "A Neural Network Proof of the Riemann Hypothesis"})
 CREATE (hayou2023)-[:APPROACHES_VIA {strategy: "RH ≡ density of single-layer NNs via Nyman-Beurling", confidence: 0.3}]->(nyman_beurling)
 
 // ── HILBERT-PÓLYA CONJECTURE ─────────────────────────────────────
@@ -106,6 +109,7 @@ CREATE (weil_criterion:Theorem {
 })
 
 CREATE (weil_criterion)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Weil (1952)"}]->(rh)
+MATCH (sato_tate:Theorem {name: "Sato-Tate Conjecture"})
 CREATE (weil_criterion)-[:MOTIVATED]->(sato_tate)
 
 // ── LI'S CRITERION ──────────────────────────────────────────────
@@ -120,6 +124,7 @@ CREATE (li_criterion:Theorem {
 })
 
 CREATE (li_criterion)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Li (1998)"}]->(rh)
+MATCH (zeta:MathFunction {name: "ζ(s)"})
 CREATE (li_criterion)-[:CONNECTS_TO]->(zeta)
 
 // ── MERTENS HYPOTHESIS (disproven!) ─────────────────────────────
@@ -213,6 +218,7 @@ CREATE (mobius_randomness:Theorem:Conjecture {
   description: "Sarvadaman Chowla. Möbius function is random (uncorrelated at shifts). Stronger than PNT. Connected to Sarnak's conjecture on deterministic sequences."
 })
 
+MATCH (pnt:Theorem {name: "Prime Number Theorem"})
 CREATE (mobius_randomness)-[:IMPLIES {description: "Chowla implies PNT (via partial summation), but NOT equivalent to RH"}]->(pnt)
 
 // ── GRANVILLE: AVERAGED GOLDBACH (RW-Granville-Goldbach) ────────

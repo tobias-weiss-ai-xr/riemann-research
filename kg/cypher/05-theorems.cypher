@@ -189,10 +189,15 @@ CREATE (rankin_selberg:Theorem {
 })
 
 // ── RELATIONSHIPS ───────────────────────────────────────────────
+MATCH (frobenius:Operator {name: "Frobenius Endomorphism"})
 CREATE (sato_tate)-[:USES]->(frobenius)
+MATCH (sl2fp:Group {name: "SL(2,F_p)"})
 CREATE (lps_construction)-[:USES]->(sl2fp)
+MATCH (farey:Graph {name: "Farey Graph"})
 CREATE (pollicott)-[:USES]->(farey)
+MATCH (lf_eisenstein:MathFunction {name: "L(s, E_k)"})
 CREATE (rankin_selberg)-[:CONNECTS]->(lf_eisenstein)
+MATCH (zeta:MathFunction {name: "ζ(s)"})
 CREATE (rankin_selberg)-[:CONNECTS]->(zeta)
 
 // ── LEAN FORMALIZATION ──────────────────────────────────────────

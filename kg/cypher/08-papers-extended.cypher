@@ -128,7 +128,9 @@ CREATE (kontorovich_tao_pntplus:Paper {
 
 CREATE (kontorovich:Researcher {name: "Alex Kontorovich", affiliation: "Rutgers University", research_areas: ["analytic number theory", "homogeneous dynamics"]})
 CREATE (kontorovich)-[:AUTHORED {role: "coauthor"}]->(kontorovich_tao_pntplus)
+MATCH (tao:Researcher {name: "Terence Tao"})
 CREATE (tao)-[:AUTHORED {role: "coauthor"}]->(kontorovich_tao_pntplus)
+MATCH (pnt:Theorem {name: "Prime Number Theorem"})
 CREATE (kontorovich_tao_pntplus)-[:PROVES {proof_technique: "formal verification in Lean 4"}]->(pnt)
 
 // ── MURMURATIONS (Boulier et al.) ──────────────────────────────
@@ -194,10 +196,16 @@ CREATE (aletheia2026:Paper {
 })
 
 // ── RELATIONSHIPS ───────────────────────────────────────────────
+MATCH (mertens:Theorem {name: "Mertens Hypothesis"})
 CREATE (odlyzko_rielle1985)-[:DISPROVES]->(mertens)
+MATCH (rmt_deep:AIApproach {name: "RMT + Deep Learning"})
 CREATE (shanker2024)-[:USES_METHOD]->(rmt_deep)
+MATCH (lps1988:Paper {title: "Ramanujan graphs"})
 CREATE (rivin_sardari2019)-[:CITES]->(lps1988)
 CREATE (breen2018)-[:USES_METHOD]->(rivin_sardari2019)
+MATCH (sato_tate:Theorem {name: "Sato-Tate Conjecture"})
 CREATE (barnet_lamb2011)-[:PROVES {proof_technique: "potential automorphy"}]->(sato_tate)
+MATCH (deligne1974:Paper {title: "La conjecture de Weil: II"})
 CREATE (barnet_lamb2011)-[:CITES]->(deligne1974)
+MATCH (sl2fp:Group {name: "SL(2,F_p)"})
 CREATE (helfgott2015)-[:CONNECTS_TO]->(sl2fp)

@@ -13,7 +13,10 @@
 // Full load order: AFTER 03-functions.cypher (zeta), 05-theorems.cypher
 // (rh, robin, pnt), 06-papers-approaches.cypher (riemann1859,
 // rogers_tao2019) and 07-rh-equivalences.cypher (nyman_beurling,
-// mertens, weil_criterion) — those nodes must already exist.
+// mertens, weil_criterion) — those nodes must already exist; cross-file
+// endpoints are bound with explicit MATCH clauses (KG-003 sync fix — see
+// 11-sync-verification.cypher), so this file loads as one self-contained
+// statement.
 // NOTE (verified against the cypher sources): zeta is created in
 //   03-functions.cypher (NOT 05-theorems.cypher); robin and pnt are the
 //   only 05-theorems nodes referenced here.
@@ -79,6 +82,7 @@ CREATE (von_koch:Theorem {
   key_paper: "von Koch (1901) Acta Math. 24, 159-182",
   domain: "analytic number theory"
 })
+MATCH (rh:Theorem {name: "Riemann Hypothesis"})
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "von Koch (1901)"}]->(von_koch)
 CREATE (von_koch)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "von Koch (1901)"}]->(rh)
 
@@ -92,6 +96,7 @@ CREATE (chebyshev_err:Theorem {
   domain: "analytic number theory"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(chebyshev_err)
+MATCH (pnt:Theorem {name: "Prime Number Theorem"})
 CREATE (chebyshev_err)-[:STRENGTHENS]->(pnt)
 
 // Volchkov Integral
@@ -165,6 +170,7 @@ CREATE (baez_duarte:Theorem {
   domain: "functional analysis"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Báez-Duarte (2002)"}]->(baez_duarte)
+MATCH (nyman_beurling:Theorem {name: "Nyman-Beurling Criterion"})
 CREATE (baez_duarte)-[:STRENGTHENS]->(nyman_beurling)
 
 // Jensen Polynomial Hyperbolicity
@@ -191,6 +197,7 @@ CREATE (dbn_equiv:Theorem {
   domain: "complex analysis / entire functions"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "de Bruijn (1950) + Rodgers-Tao (2020) Λ ≥ 0"}]->(dbn_equiv)
+MATCH (rogers_tao2019:Paper {title: "The de Bruijn-Newman constant is non-negative"})
 CREATE (rogers_tao2019)-[:PROVES {proof_technique: "real-variable methods, Pólya-Jensen"}]->(dbn_equiv)
 
 // Bombieri's Variational Approach
@@ -204,6 +211,7 @@ CREATE (bombieri_var:Theorem {
   domain: "calculus of variations"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(bombieri_var)
+MATCH (weil_criterion:Theorem {name: "Weil Positivity Criterion"})
 CREATE (bombieri_var)-[:GENERALIZES]->(weil_criterion)
 
 // Laguerre-Pólya Class
@@ -232,6 +240,7 @@ CREATE (ga_cns:Theorem {
   domain: "arithmetic functions"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(ga_cns)
+MATCH (robin:Theorem {name: "Robin's Inequality"})
 CREATE (ga_cns)-[:REFINES]->(robin)
 
 // Redheffer Matrix
@@ -245,6 +254,7 @@ CREATE (redheffer:Theorem {
   domain: "linear algebra / matrix theory"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(redheffer)
+MATCH (mertens:Theorem {name: "Mertens Hypothesis"})
 CREATE (redheffer)-[:CONNECTS_TO {description: "det(A_n) = M(n)"}]->(mertens)
 
 // Landau Function / Symmetric Group
@@ -293,6 +303,7 @@ CREATE (brownian_excursion:Theorem {
   key_paper: "Biane, Pitman, Yor (2001) Bull. AMS 38, 435-465",
   domain: "probability theory"
 })
+MATCH (zeta:MathFunction {name: "ζ(s)"})
 CREATE (brownian_excursion)-[:CONNECTS_TO {description: "probability interpretation of Ξ-function"}]->(zeta)
 
 // Horocycle Flow Ergodicity
@@ -407,6 +418,7 @@ CREATE (griffin2019:Paper {
 // repeated here (the previous duplicates created redundant edges).
 CREATE (von_koch)-[:IMPLIES]->(chebyshev_err)
 CREATE (volchkov)-[:RELATED_TO]->(bsy)
+MATCH (riemann1859:Paper {title: "Über die Anzahl der Primzahlen unter einer gegebenen Grösse"})
 CREATE (broughan_survey)-[:CITES]->(riemann1859)
 CREATE (conrey2003)-[:CITES]->(riemann1859)
 CREATE (connes2026)-[:CITES]->(riemann1859)

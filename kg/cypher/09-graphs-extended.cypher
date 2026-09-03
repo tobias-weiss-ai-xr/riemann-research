@@ -13,7 +13,9 @@ CREATE (padic_cayley:Graph {
   importance: "Deligne bound for modular forms and Ramanujan bound for expanders BOTH arise from the same GL(2, Q_p) representations"
 })
 
+MATCH (cayley_sl2z:Graph {name: "Cayley(SL(2,Z))"})
 CREATE (padic_cayley)-[:P_ADIC_ANALOGUE_OF]->(cayley_sl2z)
+MATCH (lps_bridge:Theorem {name: "LPS Spectral Bridge"})
 CREATE (padic_cayley)-[:USED_IN]->(lps_bridge)
 
 // ── DEDEKIND ZETA GRAPH ─────────────────────────────────────────
@@ -25,6 +27,7 @@ CREATE (dedekind_graph:Graph {
   research_gap: "No GNN work on ideal-theoretic graph constructions"
 })
 
+MATCH (dedekind_zeta:MathFunction {name: "ζ_K(s)"})
 CREATE (dedekind_graph)-[:HAS_SPECTRUM]->(dedekind_zeta)
 
 // ── PRIME MULTIPLICATION GRAPH ──────────────────────────────────
@@ -60,6 +63,7 @@ CREATE (expander_lps_family:Graph {
   key_paper: "LPS 1988"
 })
 
+MATCH (expander_general:Graph {name: "Expander Graph (general)"})
 CREATE (expander_lps_family)-[:IS_INSTANCE_OF]->(expander_general)
 
 // ── CAYLEPY EXPERIMENTAL RESULTS ────────────────────────────────
@@ -76,6 +80,7 @@ CREATE (cayleypy_graphs:Graph {
   scalability: "p=101 → ~10⁶ nodes, ~1GB RAM. p=503 needs Lanczos eigenvalue computation only (too large for full GNN)."
 })
 
+MATCH (cayleypy:Paper {title: "CayleyPy: A Python Library for Cayley Graph Generation"})
 CREATE (cayleypy_graphs)-[:GENERATED_BY]->(cayleypy)
 
 // ── GRAPHON LIMITS ─────────────────────────────────────────────
@@ -110,7 +115,9 @@ CREATE (platt_database:Paper {
   description: "Database of first 10¹³ zeta zeros with rigorous error bounds. Used for zero-spacing statistics and ML training data."
 })
 
+MATCH (platt:Researcher {name: "Dave Platt"})
 CREATE (platt)-[:AUTHORED {role: "author"}]->(platt_database)
+MATCH (rmt_deep:AIApproach {name: "RMT + Deep Learning"})
 CREATE (platt_database)-[:USES_METHOD]->(rmt_deep)
 CREATE (lmfdb)-[:USES_METHOD]->(rmt_deep)
 

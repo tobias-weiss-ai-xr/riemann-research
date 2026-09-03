@@ -83,8 +83,10 @@ CREATE (ihara:Graph {
 })
 
 // ── Relationships ───────────────────────────────────────────────
+MATCH (sl2fp:Group {name: "SL(2,F_p)"})
 CREATE (sl2fp)-[:HAS_CAYLEY_GRAPH]->(cayley_sl2fp)
 CREATE (sl2fp)-[:HAS_CAYLEY_GRAPH]->(cayley_lps)
+MATCH (sl2z:Group {name: "SL(2,Z)"})
 CREATE (sl2z)-[:HAS_CAYLEY_GRAPH]->(cayley_sl2z)
 
 CREATE (cayley_sl2fp)-[:NOT_GUARANTEED_RAMANUJAN {

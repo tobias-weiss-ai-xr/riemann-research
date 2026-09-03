@@ -176,11 +176,17 @@ CREATE (cayleypy:Paper {
 })
 
 // ── Relationships ───────────────────────────────────────────────
+MATCH (rh:Theorem {name: "Riemann Hypothesis"})
 CREATE (riemann1859)-[:PROPOSES]->(rh)
+MATCH (cayley_lps:Graph {name: "Cayley_LPS(SL(2,F_p))"})
 CREATE (lps1988)-[:INTRODUCES]->(cayley_lps)
+MATCH (lps_construction:Theorem {name: "LPS Ramanujan Graph Construction"})
 CREATE (lps1988)-[:PROVES]->(lps_construction)
+MATCH (deligne_bound:Theorem {name: "Deligne Bound"})
 CREATE (deligne1974)-[:PROVES]->(deligne_bound)
+MATCH (transfer_farey:Operator {name: "Farey Transfer Operator L_s"})
 CREATE (pollicott2022)-[:INTRODUCES]->(transfer_farey)
+MATCH (ramanujan_conj:Theorem {name: "Ramanujan Conjecture (original)"})
 CREATE (williamson2021)-[:APPROACHES_VIA {strategy: "MPNN on Bruhat intervals", confidence: 1.0}]->(ramanujan_conj)
 CREATE (hayou2023)-[:APPROACHES_VIA {strategy: "Neural net density via Nyman-Beurling", confidence: 0.3}]->(rh)
 CREATE (loeffler2025)-[:APPROACHES_VIA {strategy: "Formal verification in Lean 4", confidence: 0.6}]->(rh)
@@ -253,14 +259,19 @@ CREATE (rmt_deep:AIApproach {
 })
 
 // Approach relationships
+MATCH (ihrh:Theorem {name: "IH-RH (Ihara Riemann Hypothesis)"})
 CREATE (gnn_spectral)-[:TARGETS]->(ihrh)
+MATCH (cayley_sl2fp:Graph {name: "Cayley(SL(2,F_p))"})
 CREATE (gnn_spectral)-[:USES_OBJECT {role: "training_data"}]->(cayley_sl2fp)
+MATCH (adjacency:Operator {name: "Adjacency Matrix A"})
 CREATE (gnn_spectral)-[:USES_OBJECT {role: "hypothesis_space"}]->(adjacency)
+MATCH (lps_bridge:Theorem {name: "LPS Spectral Bridge"})
 CREATE (gnn_spectral)-[:BASED_ON_THEOREM]->(lps_bridge)
 CREATE (gnn_spectral)-[:BASED_ON_THEOREM]->(deligne_bound)
 
 CREATE (formal_lean)-[:TARGETS]->(rh)
 CREATE (funsearch_rh)-[:TARGETS]->(rh)
+MATCH (zeta:MathFunction {name: "ζ(s)"})
 CREATE (rmt_deep)-[:TARGETS]->(zeta)
 
 CREATE (williamson2021)-[:USES_METHOD]->(gnn_spectral)

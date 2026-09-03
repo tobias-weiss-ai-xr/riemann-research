@@ -91,8 +91,10 @@ CREATE (adjacency)-[:CORRESPONDS_TO {
   key_paper: "LPS 1988, Lubotzky-Phillips-Sarnak"
 }]->(hecke_tp)
 
+MATCH (ihara_zeta:MathFunction {name: "ζ_G(u)"})
 CREATE (hashimoto)-[:COMPUTES_VIA]->(ihara_zeta)
 
+MATCH (zeta:MathFunction {name: "ζ(s)"})
 CREATE (transfer_farey)-[:ENCODES {
   description: "Pollicott 2022: The transfer operator L_s on the Farey graph has det(1 - L_{2s}) = Z_{Γ₁}(s)",
   rh_connection: "RH is equivalent to the spectral gap of L_s"
@@ -107,6 +109,9 @@ CREATE (laplacian)-[:DERIVED_FROM]->(adjacency)
 
 CREATE (hecke_tp)-[:INSTANCE_OF]->(hecke_tn)
 
+MATCH (delta:MathFunction {name: "Δ(z)"})
 CREATE (hecke_tp)-[:ACTS_ON]->(delta)
+MATCH (eisenstein4:MathFunction {name: "E₄(z)"})
 CREATE (hecke_tp)-[:ACTS_ON]->(eisenstein4)
+MATCH (eisenstein6:MathFunction {name: "E₆(z)"})
 CREATE (hecke_tp)-[:ACTS_ON]->(eisenstein6)
