@@ -1,5 +1,14 @@
-# GNN Failures — Honest Empirical Findings
-# Related: findings/ml-successes.yaml, concepts/cayley-graphs.yaml
+# GNN & ML Failures + Corrective/Artifact Findings — Honest Empirical Negative Results
+# Extracted from ../riemann/experiments/EXPERIMENT_LOG.md (full log, CP-002).
+# Covers: Experiments 1-7 (Cayley/Hecke/Pizer GNNs), Farey (Exp E phase 1),
+# modern architectures (Exp M), multi-task (Exp N), rank unlearnability (Tasks 1B/2),
+# trace dominance (Exp Y), CvS L-function generalization (Exp C), and the
+# artifact/refutation cluster (Sato-Tate moment collapse, rho_2 unreproducible,
+# d=21 phase transition artifact, SU(2) convergence refuted).
+# Positive counterparts: findings/ml-successes.yaml
+# Transfer-operator / nuclearity findings live in findings/mayer-spectral.yaml,
+# findings/spectral-radius-analysis.yaml, findings/nuclearity-*.yaml.
+# Related: concepts/cayley-graphs.yaml
 
 - id: FG-GNN-Subgraph-Negative-R2
   name: "Subgraph GNNs achieve R² ≈ 0.69 on train, NEGATIVE on cross-prime test"
