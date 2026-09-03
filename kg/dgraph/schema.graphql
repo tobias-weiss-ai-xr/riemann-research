@@ -30,6 +30,11 @@
 #     "YYYY-MM-DD", which are not valid RFC 3339 datetimes.
 #   * List predicates ([string]) accept either one scalar value or many,
 #     which both loaders produce.
+#   * KG-002 additions: the "KG-002 additions" block below declares the
+#     extra predicates emitted by kg/scripts/export_to_dgraph.py from the
+#     prethought YAML field names (Bibliographic, Graph/Group/Operator
+#     attributes, and metadata scalars). Predicate names were chosen to
+#     match the YAML keys verbatim so the export stays lossless-by-name.
 #
 # Supported query surface (see DGRAPH-STATUS.md / FILES-GENERATED.md):
 #     eq(dgraph.type, "Concept")            type blocks
@@ -124,6 +129,70 @@ language: string @index(exact) .
 dependencies: [string] .
 
 # -----------------------------------------------------------------------------
+# KG-002 additions (predicates emitted by kg/scripts/export_to_dgraph.py
+# from prethought/**/*.yaml; names mirror the YAML field names verbatim)
+# -----------------------------------------------------------------------------
+
+importance: string @index(exact) .
+significance: string .
+domain: string @index(exact) .
+direction: string @index(exact) .
+established: string @index(exact) .
+ml_connection: string .
+implications: string @index(term) .
+full_name: string .
+functional_equation: string .
+presentation: string @index(term) .
+symbol: string .
+operator_type: string @index(exact) .
+approach_type: string @index(exact) .
+framework: string @index(exact) .
+method: string .
+target: string @index(exact) .
+proof_technique: string @index(term) .
+computational_status: string @index(exact) .
+key_paper: string @index(term) .
+keywords: [string] @index(term) .
+citation: [string] .
+order: int @index .
+degree: int .
+vertices: int .
+edges: int .
+weight: int .
+level: int .
+index_in_sl2z: int .
+birth_year: int @index .
+death_year: int .
+year_stated: int @index .
+year_established: int @index .
+nationality: string @index(exact) .
+institution: string @index(term) .
+contribution: string .
+arxiv_id: string @index(exact) .
+github_url: string @index(exact) .
+authors_str: string @index(term) .
+bibtex_key: string @index(exact) .
+journal: string @index(term) .
+volume: string .
+pages: string .
+publication_type: string @index(exact) .
+publisher: string .
+msclass: string .
+is_expander: bool .
+is_ramanujan: bool .
+is_discrete: bool .
+is_finite: bool .
+hermitian: bool .
+multiplicative: bool .
+commuting: bool .
+acts_on: [string] @index(term) .
+eigenvalue_name: string .
+formula: string .
+gap_type: string @index(exact) .
+features: [string] .
+license: string @index(exact) .
+
+# -----------------------------------------------------------------------------
 # Relationship edges  ([uid] with @reverse — the graph structure)
 #
 # Planned predicate set from kg/README.md plus the edge predicates emitted by
@@ -184,6 +253,12 @@ type Concept {
   lean_status
   lean_file
   cypher_file
+  importance
+  significance
+  domain
+  key_paper
+  ml_connection
+  keywords
   tags
   related_concepts
   references
@@ -209,6 +284,7 @@ type Finding {
   verdict
   status
   confidence
+  implications
   tags
   references
   depends_on
@@ -225,6 +301,17 @@ type Paper {
   title
   authors
   author
+  arxiv_id
+  github_url
+  authors_str
+  bibtex_key
+  journal
+  volume
+  pages
+  publication_type
+  publisher
+  msclass
+  keywords
   date
   year
   url
@@ -248,6 +335,11 @@ type Researcher {
   orcid
   affiliation
   website
+  institution
+  nationality
+  birth_year
+  death_year
+  contribution
   authored
 }
 
@@ -256,6 +348,11 @@ type Approach {
   name
   description
   strategy
+  approach_type
+  framework
+  method
+  target
+  importance
   confidence
   status
   category
@@ -271,6 +368,8 @@ type Problem {
   name
   statement
   priority
+  gap_type
+  domain
   status
   difficulty
   tags
@@ -289,6 +388,15 @@ type Theorem {
   statement
   proof
   proof_status
+  proof_technique
+  computational_status
+  key_paper
+  domain
+  significance
+  importance
+  ml_connection
+  year_stated
+  year_established
   author
   year
   tags
@@ -329,6 +437,8 @@ type Dataset {
   path
   size
   format
+  features
+  license
   tags
   used_by
 }
@@ -349,6 +459,13 @@ type Equivalence {
   name
   statement
   status
+  domain
+  direction
+  established
+  ml_connection
+  significance
+  year_stated
+  year_established
   category
   subcategory
   tags
@@ -361,6 +478,13 @@ type RHEquivalence {
   name
   statement
   status
+  domain
+  direction
+  established
+  ml_connection
+  significance
+  year_stated
+  year_established
   category
   subcategory
   tags
@@ -373,6 +497,11 @@ type Conjecture {
   name
   statement
   status
+  domain
+  significance
+  importance
+  ml_connection
+  year_stated
   category
   subcategory
   tags
@@ -386,6 +515,7 @@ type Bridge {
   statement
   status
   priority
+  gap_type
   tags
   blocks
   blocked_by
@@ -396,6 +526,15 @@ type Graph {
   id
   name
   description
+  order
+  degree
+  vertices
+  edges
+  is_expander
+  is_ramanujan
+  formula
+  importance
+  significance
   category
   subcategory
   properties
@@ -407,6 +546,13 @@ type Group {
   id
   name
   description
+  order
+  presentation
+  index_in_sl2z
+  is_discrete
+  is_finite
+  importance
+  significance
   category
   subcategory
   properties
@@ -417,6 +563,14 @@ type Group {
 type Function {
   id
   name
+  full_name
+  functional_equation
+  domain
+  weight
+  level
+  importance
+  significance
+  key_paper
   description
   category
   subcategory
@@ -427,6 +581,16 @@ type Function {
 type Operator {
   id
   name
+  symbol
+  operator_type
+  hermitian
+  acts_on
+  multiplicative
+  commuting
+  eigenvalue_name
+  importance
+  significance
+  key_paper
   description
   category
   subcategory
