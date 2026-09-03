@@ -1,0 +1,106 @@
+# AI Approaches to RH — Concept Entries
+# Extracted from kg/cypher/06-papers-approaches.cypher (AIApproach nodes).
+# These are methodological concepts in the KG (TARGETS / USES_CONCEPT edges),
+# not papers. Related: rh-theorems.yaml, cayley-graphs.yaml, graph-operators.yaml
+
+- id: AI-GNNSpectral
+  name: "GNN Spectral Prediction"
+  type: approach
+  category: machine-learning
+  subcategory: gnn
+  definition: |
+    GCN/GAT on Cayley graphs of SL(2,F_p) to predict eigenvalue distribution
+    — target: predict Hecke eigenvalue distribution from graph structure alone.
+  framework: "PyTorch Geometric + CayleyPy"
+  status: "planned"
+  confidence: 0.4
+  feasibility_notes: |
+    Novel (zero published work). CayleyPy provides the graphs; LPS theory
+    provides ground truth.
+  known_risk: |
+    Vertex-transitivity makes local features uninformative about global
+    spectra — local GNN approaches fail by construction (see
+    prethought/findings/gnn-failures.yaml).
+  targets: "IH-RH / Ramanujan bound (RT-IHRH)"
+  uses_objects:
+    - "Cayley(SL(2,F_p)) graphs as training data (CG-SL2Fp, AG-CayleyPyGraphs)"
+    - "Adjacency operator as hypothesis space (GO-Adjacency)"
+  based_on_theorems:
+    - "LPS Spectral Bridge (RT-LPSBridge)"
+    - "Deligne bound (RT-DeligneBound)"
+  methodological_precedent: "Williamson et al. 2021 (Nature): MPNN on Bruhat intervals solved a 40-year conjecture"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+  tags: ["gnn", "spectral", "cayley", "novel", "vertex-transitivity-risk"]
+
+- id: AI-FormalLean
+  name: "Lean 4 Formal Verification"
+  type: approach
+  category: machine-learning
+  subcategory: formal-verification
+  definition: |
+    Formalize RH proof machinery in Mathlib (Lean 4) with AI-assisted proof
+    search. Long-term path: AI as proof assistant.
+  framework: "Lean 4 + Mathlib + AlphaProof/TTRL"
+  status: "in_progress"
+  confidence: 0.6
+  progress: |
+    Loeffler & Stoll 2025: ζ(s), functional equation, analytic continuation,
+    trivial zeros formalized; RH statable as a Prop; ~60-70% of the needed
+    machinery exists in Mathlib. PNT+ completed via Wiener-Ikehara
+    (Kontorovich, Tao et al.).
+  missing_machinery: |
+    Hadamard factorization, zero-free region, explicit formula,
+    residue theorem (general).
+  targets: "RH (RT-RH)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+  tags: ["lean4", "mathlib", "alphaproof", "formalization", "pnt-plus"]
+
+- id: AI-FunSearch
+  name: "FunSearch for Number Theory"
+  type: approach
+  category: machine-learning
+  subcategory: program-search
+  definition: |
+    LLM-driven evolutionary search for new number-theoretic
+    conjectures/algorithms — discover patterns in zero distributions or
+    prime-related functions.
+  framework: "FunSearch (DeepMind)"
+  status: "inconclusive"
+  confidence: 0.2
+  caveat: |
+    FunSearch (2023) solved the Cap Set problem (496→512), but the paper
+    itself states there is 'zero reason' it would help with P-vs-NP;
+    similarly limited for RH.
+  targets: "RH (RT-RH)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+  tags: ["funsearch", "llm", "evolutionary", "low-confidence"]
+
+- id: AI-RMTDeepLearning
+  name: "RMT + Deep Learning"
+  type: approach
+  category: machine-learning
+  subcategory: numerical
+  definition: |
+    Deep learning to discover patterns in the random-matrix statistics of
+    zeta zeros — accelerate zero verification or find statistical anomalies.
+  framework: "PyTorch + mpmath"
+  status: "exploratory"
+  confidence: 0.25
+  data_sources:
+    - "LMFDB: 248K+ L-functions with zeros, coefficients, special values (2024)"
+    - "Platt 2017: first 10¹³ zeta zeros with rigorous error bounds"
+  cross_pollination: |
+    Keating works on both RMT for zeta moments AND RMT for deep-learning
+    loss landscapes.
+  related_work: "Shanker 2024 (transformer zero prediction, 0.998 accuracy, no graph structure); Bieri et al. 2025 (ML vanishing order of L-functions)"
+  targets: "ζ(s) (LF-Zeta)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/06-papers-approaches.cypher"
+  tags: ["rmt", "gue", "zero-statistics", "lmfdb", "exploratory"]

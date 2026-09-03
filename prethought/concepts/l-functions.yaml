@@ -1,0 +1,161 @@
+# Zeta and L-Functions — Core Concepts
+# Extracted from kg/cypher/03-functions.cypher (all zeta_function / l_function nodes).
+# Related: modular-forms.yaml (forms whose L-functions these are),
+#          transfer-operators.yaml (Selberg zeta / det(1-L_s) side),
+#          rh-theorems.yaml (RH family), rh-equivalence-class.yaml
+
+- id: LF-Zeta
+  name: "ζ(s)"
+  type: concept
+  category: number-theory
+  subcategory: zeta-functions
+  definition: |
+    Riemann zeta function: ζ(s) = Σ 1/nˢ = Π (1 - p⁻ˢ)⁻¹ (Euler product).
+    Analytic continuation to C with a simple pole at s=1 (residue 1).
+  properties:
+    - domain: "C \\ {1}"
+    - functional_equation: "Λ(s) = π^{-s/2} Γ(s/2) ζ(s) = Λ(1-s)"
+    - zeros_trivial: "s = -2, -4, -6, ... (negative even integers)"
+    - zeros_nontrivial: "0 < Re(s) < 1 (critical strip), conjectured on Re(s) = 1/2"
+    - importance: "Encodes distribution of prime numbers via explicit formula"
+  relationships:
+    - generalized_by: "ζ_K(s) Dedekind zeta (ζ_Q(s) = ζ(s))"
+    - factor_of_eisenstein_L: "L(s, E_k) = ζ(s) ζ(s-k+1) — DIRECT bridge from modular forms"
+    - encoded_by: "Farey transfer operator: Z_{Γ₁}(s) = det(1 - L_{2s}) (Pollicott 2022)"
+    - subject_of: "Riemann Hypothesis (RT-RH) and the equivalence class (rh-equivalence-class.yaml)"
+  references:
+    - type: paper
+      authors: ["Bernhard Riemann"]
+      year: 1859
+      venue: "Monatsberichte der Berliner Akademie"
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["zeta", "euler-product", "critical-line", "rh"]
+
+- id: LF-IharaZeta
+  name: "ζ_G(u)"
+  type: concept
+  category: spectral-theory
+  subcategory: graph-zeta-functions
+  definition: |
+    Ihara zeta function of a graph G:
+    ζ_G(u) = (1 - u²)^{-(r-1)/2} det(I - Au + (d-1)u²I)^{-1}
+    Analogue of Dedekind zeta for graphs; poles encode cycle structure.
+  properties:
+    - domain: "Complex u (converges for |u| < (d-1)^{-1/2})"
+    - functional_equation: "Symmetric under u ↔ 1/((d-1)u)"
+    - rh_analogue: "IH-RH: all poles lie on |u| = 1/√(d-1) iff G is Ramanujan"
+    - hashimoto_form: "ζ_G(u)^{-1} = det(I - Hu) (see GO-Hashimoto)"
+    - importance: "Bridge between graph theory and number theory via Sunada's theorem"
+  relationships:
+    - analogous_to: "ζ_K(s) Dedekind zeta — poles ↔ closed geodesics ↔ prime ideals"
+    - computed_via: "Hashimoto edge matrix H (GO-Hashimoto), Bass's formula"
+    - subject_of: "IH-RH theorem (RT-IHRH)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["ihara-zeta", "graph-zeta", "ramanujan-criterion", "hashimoto"]
+
+- id: LF-DedekindZeta
+  name: "ζ_K(s)"
+  type: concept
+  category: number-theory
+  subcategory: zeta-functions
+  definition: |
+    Dedekind zeta function of a number field K:
+    ζ_K(s) = Σ N(I)^{-s} over ideals I of O_K.
+  properties:
+    - domain: "Re(s) > 1"
+    - structure: "Euler product over prime ideals"
+    - special_case: "ζ_Q(s) = ζ(s)"
+    - importance: "For K = Q(i), relates to distribution of Gaussian primes"
+  relationships:
+    - generalizes: "ζ(s)"
+    - graph_analogue: "Ihara zeta ζ_G(u) is the graph-theoretic analogue"
+    - spectrum_of: "Dedekind zeta graph (AG-DedekindZetaGraph)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["dedekind-zeta", "number-field", "ideals", "euler-product"]
+
+- id: LF-General
+  name: "L(s, f)"
+  type: concept
+  category: number-theory
+  subcategory: l-functions
+  definition: |
+    L-function of an automorphic form f:
+    L(s, f) = Σ a_n n^{-s} = Π (1 - a_p p^{-s} + ε(p) p^{k-1-2s})^{-1}
+  properties:
+    - domain: "Re(s) > (k+1)/2 (half-plane of convergence)"
+    - functional_equation: "Λ(s, f) = (2π)^{-s} Γ(s) L(s, f) = ε(f) (-1)^{k/2} Λ(k-s, f)"
+    - coefficients: "Ramanujan-Petersson bound |a_p| ≤ 2p^{(k-1)/2}"
+    - importance: "Central objects in the Langlands program; generalize Dirichlet L-functions"
+  relationships:
+    - instances: "Eisenstein L(s,E_k), cusp-form L(s,f), Dirichlet L(s,χ)"
+    - coefficients_from: "Hecke eigenvalues (HK-Tp)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["l-function", "automorphic", "langlands", "euler-product"]
+
+- id: LF-Eisenstein
+  name: "L(s, E_k)"
+  type: concept
+  category: number-theory
+  subcategory: l-functions
+  definition: |
+    L-function of the Eisenstein series E_k. Coefficients are
+    σ_{k-1}(n) = Σ d^{k-1} over d|n (divisor-power sums).
+  properties:
+    - factorization: "L(s, E_k) = ζ(s) ζ(s-k+1) — DIRECT bridge to ζ(s)"
+    - importance: "Eisenstein series provide the explicit connection between modular forms and ζ(s)"
+  relationships:
+    - factor_of: "ζ(s)"
+    - instance_of: "L(s, f) general"
+    - connected_to: "Rankin-Selberg method (RT-RankinSelberg)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["eisenstein", "factorization", "zeta-bridge", "divisor-sum"]
+
+- id: LF-Cusp
+  name: "L(s, f) for cusp form f"
+  type: concept
+  category: number-theory
+  subcategory: l-functions
+  definition: |
+    L-function of a cuspidal Hecke eigenform of weight k, level N.
+    The non-trivial L-functions.
+  properties:
+    - coefficients: "Hecke eigenvalues a_p = λ_f(p), multiplicative"
+    - deligne_bound: "|a_p| ≤ 2p^{(k-1)/2} (see RT-DeligneBound)"
+    - importance: "Birch-Swinnerton-Dyer conjecture concerns L(1, f) for elliptic curves"
+  relationships:
+    - instance_of: "L(s, f) general"
+    - coefficients_from: "Hecke operators T_p (HK-Tp)"
+    - example: "Δ(z) → L(s, Δ) with τ(n) coefficients (MF-Delta)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["cusp-form", "hecke-eigenform", "deligne", "bsd"]
+
+- id: LF-Dirichlet
+  name: "L(s, χ)"
+  type: concept
+  category: number-theory
+  subcategory: l-functions
+  definition: |
+    Dirichlet L-function: L(s, χ) = Σ χ(n) n^{-s} for a Dirichlet
+    character χ.
+  properties:
+    - domain: "Re(s) > 1 (analytic continuation to C except possible pole at s=1)"
+    - grh: "Generalized Riemann Hypothesis: all non-trivial zeros on Re(s) = 1/2"
+    - importance: "Used in Dirichlet's theorem on primes in arithmetic progressions"
+  relationships:
+    - instance_of: "L(s, f) general"
+    - subject_of: "GRH (RT-GRH)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["dirichlet", "characters", "grh", "arithmetic-progressions"]

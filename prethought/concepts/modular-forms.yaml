@@ -1,0 +1,88 @@
+# Modular Forms — Core Concepts
+# Extracted from kg/cypher/03-functions.cypher (modular_form nodes) with level
+# structure from 01-groups.cypher and Hecke action from 04-operators.cypher.
+# Related: l-functions.yaml (L-functions of these forms), hecke-operators.yaml,
+#          matrix-groups.yaml (Γ₀(N), Γ₁(N))
+
+- id: MF-EisensteinE4
+  name: "E₄(z)"
+  type: concept
+  category: number-theory
+  subcategory: modular-forms
+  definition: |
+    Eisenstein series of weight 4, level 1:
+    E₄(z) = 1 + 240 Σ σ₃(n) q^n
+  properties:
+    - weight: 4
+    - level: 1
+    - coefficients: "σ₃(n) = Σ_{d|n} d³ (divisor-cube sums)"
+  relationships:
+    - has_l_function: "L(s, E₄) = ζ(s) ζ(s-3) (see LF-Eisenstein)"
+    - hecke_eigenform: "T_p E₄ = (1 + p³) E₄ — eigenvalue σ₃(p) = 1 + p³"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["eisenstein", "weight-4", "level-1", "divisor-sum"]
+
+- id: MF-EisensteinE6
+  name: "E₆(z)"
+  type: concept
+  category: number-theory
+  subcategory: modular-forms
+  definition: |
+    Eisenstein series of weight 6, level 1:
+    E₆(z) = 1 - 504 Σ σ₅(n) q^n
+  properties:
+    - weight: 6
+    - level: 1
+    - coefficients: "σ₅(n) = Σ_{d|n} d⁵ (divisor-fifth-power sums)"
+  relationships:
+    - has_l_function: "L(s, E₆) = ζ(s) ζ(s-5) (see LF-Eisenstein)"
+    - hecke_eigenform: "T_p E₆ = (1 + p⁵) E₆"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["eisenstein", "weight-6", "level-1", "divisor-sum"]
+
+- id: MF-Delta
+  name: "Δ(z)"
+  type: concept
+  category: number-theory
+  subcategory: modular-forms
+  definition: |
+    Ramanujan's discriminant cusp form:
+    Δ(z) = q Π (1-q^n)²⁴ = Σ τ(n) q^n
+  properties:
+    - weight: 12
+    - level: 1
+    - fourier_coefficients: "τ(n) = Ramanujan tau function"
+    - importance: "Generates the space of cusp forms S₁₂(Γ(1))"
+  relationships:
+    - has_l_function: "L(s, Δ) = Σ τ(n) n^{-s} — prototypical cusp-form L-function (LF-Cusp)"
+    - subject_of: "Ramanujan conjecture |τ(p)| ≤ 2p^{11/2} (RT-RamanujanConj)"
+    - hecke_action: "T_p Δ = τ(p) Δ — Hecke eigenform (HK-Tp)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/03-functions.cypher"
+  tags: ["cusp-form", "ramanujan-tau", "weight-12", "discriminant"]
+
+- id: MF-ModularFormSpaces
+  name: "Spaces of modular forms M_k(Γ₀(N))"
+  type: concept
+  category: number-theory
+  subcategory: modular-forms
+  definition: |
+    Vector spaces of modular forms of weight k for the congruence subgroup
+    Γ₀(N) (level N). Decompose into Eisenstein + cuspidal parts:
+    M_k(Γ₀(N)) = E_k(Γ₀(N)) ⊕ S_k(Γ₀(N)).
+  properties:
+    - finite_dimensional: true
+    - hecke_stable: "T_n acts on M_k(Γ₀(N)) as commuting Hermitian operators"
+    - newforms: "Γ₁(N)-level Hecke eigenforms with multiplicity one (see MG-Gamma1N)"
+  relationships:
+    - acted_on_by: "Hecke operators T_p, T_n (HK-Tp, HK-Tn)"
+    - basis_eigenforms: "Hecke eigenbasis diagonalizes all T_n simultaneously"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["modular-forms", "level-structure", "eigenbasis", "newforms"]

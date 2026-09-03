@@ -1,0 +1,258 @@
+# Arithmetic & Dynamical Graphs — Core Concepts
+# Extracted from kg/cypher/02-graphs.cypher + kg/cypher/09-graphs-extended.cypher
+# (every Graph node not already a Cayley-graph concept — Cayley graphs live in
+# cayley-graphs.yaml).
+# Related: cayley-graphs.yaml, ramanujan.yaml, transfer-operators.yaml (Farey),
+#          l-functions.yaml (Ihara/Dedekind zeta), graph-operators.yaml
+
+- id: AG-FareyGraph
+  name: "Farey Graph"
+  type: concept
+  category: spectral-theory
+  subcategory: geometric-graphs
+  definition: |
+    Geometric graph whose vertices are rational numbers (including ∞) as
+    vertices of the tessellation; a/b connected to c/d if |ad - bc| = 1.
+  properties:
+    - degree: "infinite"
+    - order: "infinite"
+    - structure: "Infinite tree-like graph, boundary = real projective line P¹(R)"
+    - rh_connection: "Pollicott 2022: RH ≡ spectral gap of transfer operator on Farey graph, Z_{Γ₁}(s) = det(1 - L_{2s})"
+  importance: |
+    Key graph for Pollicott's approach to RH via dynamical systems — the
+    SECOND bridge from graphs to ζ(s), independent of LPS.
+  relationships:
+    - has_subgraph: "Cayley(SL(2,Z)) (CG-SL2Z)"
+    - operator_acts_on: "Farey transfer operator L_s on C(Γ₁) — see TO-Mayer1991 in transfer-operators.yaml"
+    - subject_of: "Pollicott Farey Graph Theorem (RT-Pollicott)"
+  references:
+    - type: paper
+      authors: ["Mark Pollicott"]
+      year: 2022
+      arxiv_id: "2209.03897"
+    - type: cypher
+      file: "../../kg/cypher/02-graphs.cypher"
+  tags: ["farey", "farey-sequence", "dynamical-systems", "pollicott", "rh-bridge"]
+
+- id: AG-IsogenyGraph
+  name: "Supersingular Isogeny Graph"
+  type: concept
+  category: arithmetic-geometry
+  subcategory: isogeny-graphs
+  definition: |
+    Graph whose vertices are supersingular elliptic curves over F_{p²},
+    with edges the ℓ-isogenies between curves. Typically ~p/12 vertices.
+  properties:
+    - is_ramanujan: "YES — proven, consequence of the Eichler trace formula"
+    - exact_correspondence: "adjacency eigenvalues = Frobenius eigenvalues (see GO-Frobenius)"
+    - connection_to_modular_forms: "Ramanujan property via Eichler/Deuring"
+  importance: |
+    The EXACT (non-approximate) instance of the graph-eigenvalue ↔
+    arithmetic-eigenvalue correspondence. Brandt matrix level p = Cayley
+    adjacency here (see RP-BrandtPizerHecke in ramanujan.yaml).
+  relationships:
+    - instance_of: "Expander graph family (AG-Expander)"
+    - frobenius_correspondence: "Frob eigenvalues on H¹ = adjacency eigenvalues"
+    - key_papers: "Codogni & Lido (spectral theory of isogeny graphs); Eichler 1954"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/02-graphs.cypher"
+  tags: ["isogeny", "supersingular", "elliptic-curves", "eichler", "ramanujan", "brandt"]
+
+- id: AG-Expander
+  name: "Expander Graph (general)"
+  type: concept
+  category: spectral-theory
+  subcategory: expander-graphs
+  definition: |
+    Sequence of finite d-regular graphs with spectral gap bounded below:
+    second eigenvalue λ₂ bounded away from d uniformly across the family.
+  properties:
+    - definition_via: "λ₂ ≤ d - ε for uniform ε > 0"
+    - key_constructions: "LPS Cayley graphs, isogeny graphs, Margulis constructions"
+  relationships:
+    - optimal_instances: "Ramanujan graphs achieve the Alon-Boppana limit (SG-Alon-Boppana)"
+    - instances: "LPS family X^{p,q} (AG-LPSFamily), isogeny graphs (AG-IsogenyGraph)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/02-graphs.cypher"
+  tags: ["expander", "spectral-gap", "mixing"]
+
+- id: AG-IharaGraphTheory
+  name: "Ihara Zeta Theory of Regular Graphs"
+  type: concept
+  category: spectral-theory
+  subcategory: graph-zeta-functions
+  definition: |
+    A d-regular graph G with girth g satisfies the Ihara zeta formula:
+    1/ζ_G(u) = (1-u²)^{(r-1)/2} det(I - Au + (d-1)u²I), r = rank.
+    The zeta function encodes closed backtracking-free walks.
+  properties:
+    - hashimoto_form: "ζ_G(u)^{-1} = det(I - Hu) (GO-Hashimoto)"
+    - ih_rh: "All poles on |u| = 1/√(d-1) iff G is Ramanujan (RT-IHRH)"
+  relationships:
+    - general_theory_for: "Cayley(SL(2,F_p)) (CG-SL2Fp) and isogeny graphs (AG-IsogenyGraph)"
+    - zeta_function: "ζ_G(u) (LF-IharaZeta)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/02-graphs.cypher"
+  tags: ["ihara", "zeta", "closed-walks", "ramanujan-criterion"]
+
+- id: AG-LPSFamily
+  name: "LPS Expander Family {X^{p,q}}"
+  type: concept
+  category: spectral-theory
+  subcategory: expander-graphs
+  definition: |
+    Infinite family of (p+1)-regular Ramanujan graphs X^{p,q} parameterized
+    by primes p, q ≡ 1 (mod 4). Cayley graphs of PSL(2,F_q) (or SL(2,F_q))
+    with p+1 generators from the LPS construction.
+  properties:
+    - order: "q(q²-1)/2 (~|PSL(2,F_q)|)"
+    - degree: "p+1"
+    - is_ramanujan: true
+    - guaranteed_by: "Lubotzky-Phillips-Sarnak 1988 (RT-LPSConstruction)"
+    - p_adic_origin: "For each p, the family in q comes from the p-adic building"
+  relationships:
+    - instance_of: "Expander graph family (AG-Expander)"
+    - adjacency_corresponds_to: "Hecke T_p (HK-LPSCorrespondence)"
+    - key_paper: "LPS 1988 Combinatorica"
+  references:
+    - type: paper
+      authors: ["A. Lubotzky", "R. Phillips", "P. Sarnak"]
+      year: 1988
+      venue: "Combinatorica"
+      doi: "10.1007/BF02126799"
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["lps", "ramanujan", "expander-family", "p-adic"]
+
+- id: AG-PadicCayley
+  name: "Cayley(SL(2, Q_p))"
+  type: concept
+  category: spectral-theory
+  subcategory: cayley-graphs
+  definition: |
+    Cayley graph of SL(2) over the p-adic numbers. Infinite but locally
+    finite. Key object in the Langlands program — the LPS construction uses
+    representations of SL(2, Q_p).
+  properties:
+    - order: "infinite"
+    - degree: "variable"
+    - structure: "p-adic analogue of the real Cayley graph; spectral theory connects to representation theory of GL(2, Q_p)"
+  importance: |
+    Deligne bound for modular forms AND Ramanujan bound for expanders BOTH
+    arise from the same GL(2, Q_p) representations — this graph is where the
+    two worlds meet.
+  relationships:
+    - p_adic_analogue_of: "Cayley(SL(2,Z)) (CG-SL2Z)"
+    - used_in: "LPS Spectral Bridge (RT-LPSBridge)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["p-adic", "langlands", "bruhat-tits", "lps"]
+
+- id: AG-DedekindZetaGraph
+  name: "Dedekind Zeta Graph"
+  type: concept
+  category: arithmetic-geometry
+  subcategory: arithmetic-graphs
+  definition: |
+    Graph construction where vertices correspond to ideals in O_K and edges
+    connect prime ideal factors. The Ihara zeta of such graphs relates to the
+    Dedekind zeta ζ_K(s).
+  properties:
+    - special_case: "For K = Q recovers the prime graph"
+    - encodes: "Splitting behavior of primes for general K"
+  research_gap: "No GNN work on ideal-theoretic graph constructions."
+  relationships:
+    - has_spectrum: "ζ_K(s) Dedekind zeta (LF-DedekindZeta)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["ideals", "number-field", "dedekind", "research-gap"]
+
+- id: AG-PrimeMultiplicationGraph
+  name: "Prime Multiplication Graph"
+  type: concept
+  category: arithmetic-geometry
+  subcategory: arithmetic-graphs
+  definition: |
+    Vertices are positive integers ≤ N; edge between n and m if n·m ≤ N.
+    Encodes multiplicative structure of integers.
+  properties:
+    - order: "N (for bound N)"
+    - degree: "variable (depends on N and vertex)"
+    - feasibility: "★★★ — easy to construct, but unclear what eigenvalues mean"
+  research_gap: |
+    Artificial edges (product graph). No natural number-theoretic
+    interpretation of spectral properties.
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["multiplicative", "artificial", "low-value"]
+
+- id: AG-ZeroSpacingGraph
+  name: "Zeta Zero Spacing Graph"
+  type: concept
+  category: spectral-theory
+  subcategory: arithmetic-graphs
+  definition: |
+    Vertices represent zeta zeros γ_n (ordinates); edges connect consecutive
+    zeros. Spacing distribution encodes GUE statistics from random matrix
+    theory.
+  properties:
+    - spacing_statistics: "GUE / Tracy-Widom (Odlyzko data — Platt 10¹³ zeros)"
+    - feasibility: "★★ — technically possible but wrong tool"
+  research_gap: |
+    GNN adds no value over classical time-series / point-process methods —
+    this is a time-series question, not a graph question.
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["zero-spacings", "gue", "rmt", "time-series", "wrong-tool"]
+
+- id: AG-GraphonLimit
+  name: "Cayley Graphon Limit"
+  type: concept
+  category: spectral-theory
+  subcategory: cayley-graphs
+  definition: |
+    Graphon (graph-function) limit of Cayley(SL(2,F_p)) as p → ∞. Encodes
+    asymptotic spectral behavior of the expanding family.
+  properties:
+    - benjamini_schramm: "BS limit exists for bounded-degree Cayley graphs"
+    - spectral_measure: "Spectral measure converges along the family"
+  research_gap: "No GNN work on graphon approximations for number theory."
+  relationships:
+    - limit_of: "Cayley(SL(2,F_p)) family (CG-SL2Fp)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["graphon", "benjamini-schramm", "limit", "asymptotics"]
+
+- id: AG-CayleyPyGraphs
+  name: "CayleyPy Generated Graphs (SL(2,F_p))"
+  type: concept
+  category: spectral-theory
+  subcategory: cayley-graphs
+  definition: |
+    Cayley graphs of SL(2,F_p) generated by CayleyPy with the 4 fundamental
+    root generators E₁₂, E₂₁, E₁₂⁻¹, E₂₁⁻¹. Available for p = 2..101+.
+  properties:
+    - degree: 4
+    - order: "p(p²-1)"
+    - is_ramanujan: false
+    - not_ramanujan_because: "4 root generators ≠ p+1 LPS generators that guarantee the Ramanujan property"
+    - scalability: "p=101 → ~10⁶ nodes, ~1GB RAM; p=503 needs Lanczos eigenvalue computation only (too large for full GNN)"
+  research_gap: |
+    Zero published work of GNN trained on these Cayley graphs. Completely
+    novel territory.
+  relationships:
+    - instance_of: "Cayley graph of SL(2,F_p) (CG-SL2Fp)"
+    - generated_by: "CayleyPy library (github.com/alejandrox1/CayleyPy)"
+    - api: "MatrixGenerator(modulo=p).special_linear_fundamental_roots(2, p) → 4 generators; BfsResult gives edges_list, adjacency_matrix_sparse()"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/09-graphs-extended.cypher"
+  tags: ["cayleypy", "experimental-data", "gnn-target", "novel"]

@@ -1,0 +1,164 @@
+# Matrix Groups — Core Concepts
+# Extracted from kg/cypher/01-groups.cypher (all Group nodes + relationships).
+# Related: cayley-graphs.yaml (Cayley graphs of these groups), l-functions.yaml,
+#          modular-forms.yaml (Γ₀(N)/Γ₁(N) as level structure)
+
+- id: MG-SL2Z
+  name: "SL(2,Z)"
+  type: concept
+  category: algebra
+  subcategory: matrix-groups
+  definition: |
+    Special linear group of 2×2 integer matrices with determinant 1.
+    THE fundamental object in the SL(2,Z) → ζ(s) theory chain.
+  properties:
+    - order: "infinite"
+    - generators: "S = [[0,-1],[1,0]], T = [[1,1],[0,1]]"
+    - presentation: "S² = (ST)³ = -I"
+    - is_discrete: true
+    - is_finite: false
+    - structure: "Fuchsian group, lattice in SL(2,R)"
+  relationships:
+    - has_subgroup: "PSL(2,Z) = SL(2,Z)/{±I} (quotient by C₂)"
+    - has_subgroup: "Γ₀(N) ⊂ SL(2,Z) for any N ≥ 1"
+    - has_subgroup: "Γ₁(N) ⊂ Γ₀(N) ⊂ SL(2,Z)"
+    - has_cayley_graph: "Cayley(SL(2,Z)) — see CG-SL2Z"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/01-groups.cypher"
+  tags: ["fuchsian", "lattice", "modular-group", "generators-S-T"]
+
+- id: MG-PSL2Z
+  name: "PSL(2,Z)"
+  type: concept
+  category: algebra
+  subcategory: matrix-groups
+  definition: |
+    Projective special linear group over Z: SL(2,Z) / {±I}.
+    Isomorphic to the free product C₂ * C₃.
+  properties:
+    - order: "infinite"
+    - generators: "s = [[0,-1],[1,0]], t = [[1,1],[0,1]]"
+    - presentation: "s² = (st)³ = I"
+    - is_discrete: true
+    - is_finite: false
+    - structure: "Free product of cyclic groups C₂ and C₃"
+  relationships:
+    - quotient_of: "SL(2,Z) by {±I} ≅ C₂"
+    - finite_analogue: "PSL(2,F_p) is the finite field analogue of PSL(2,Z)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/01-groups.cypher"
+  tags: ["free-product", "C2-C3", "modular-group"]
+
+- id: MG-SL2Fp
+  name: "SL(2,F_p)"
+  type: concept
+  category: algebra
+  subcategory: matrix-groups
+  definition: |
+    Special linear group over the finite field F_p.
+    The finite field analogue of SL(2,Z) — base group for CayleyPy graphs.
+  properties:
+    - order: "p(p²-1)"
+    - generators: "4 generators from fundamental roots: E₁₂, E₂₁ and inverses"
+    - is_discrete: true
+    - is_finite: true
+    - notes: "PSL(2,F_p) simple for p ≥ 5; strong approximation theorem applies"
+  relationships:
+    - finite_analogue_of: "SL(2,Z)"
+    - has_cayley_graph: "Cayley(SL(2,F_p)) with 4 root generators — see CG-SL2Fp"
+    - has_cayley_graph: "Cayley_LPS(SL(2,F_p)) with p+1 LPS generators — see AG-LPSFamily"
+    - used_by: "LPS Ramanujan graph construction (RT-LPSConstruction)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/01-groups.cypher"
+    - type: paper
+      authors: ["H. A. Helfgott"]
+      year: 2015
+      venue: "Bulletin of the AMS"
+      note: "Growth in SL₂(Z/pZ) — every generating set expands"
+  tags: ["finite-group", "fundamental-roots", "cayleypy", "expansion"]
+
+- id: MG-PSL2Fp
+  name: "PSL(2,F_p)"
+  type: concept
+  category: algebra
+  subcategory: matrix-groups
+  definition: |
+    Projective special linear group over F_p: SL(2,F_p)/{±I}.
+  properties:
+    - order: "p(p²-1)/2 for odd p"
+    - is_discrete: true
+    - is_finite: true
+    - structure: "Simple non-abelian group for p ≥ 5 (Jordan)"
+  relationships:
+    - finite_analogue_of: "PSL(2,Z)"
+    - base_group_for: "LPS Ramanujan Cayley graphs (p+1 generators, q varies)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/01-groups.cypher"
+  tags: ["simple-group", "finite-group", "lps"]
+
+- id: MG-Gamma0N
+  name: "Γ₀(N)"
+  type: concept
+  category: algebra
+  subcategory: congruence-subgroups
+  definition: |
+    Congruence subgroup of SL(2,Z) with upper-left entry divisible by N.
+    Key subgroup for modular forms of level N.
+  properties:
+    - order: "infinite"
+    - index_in_sl2z: "N ∏(1 + 1/p) for p|N"
+    - is_discrete: true
+    - is_finite: false
+  relationships:
+    - subgroup_of: "SL(2,Z)"
+    - contains: "Γ₁(N)"
+    - level_structure_for: "M_k(Γ₀(N)) — Hecke operators T_p act here (see HK-Tp)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/01-groups.cypher"
+  tags: ["congruence-subgroup", "level-N", "modular-forms", "hecke"]
+
+- id: MG-Gamma1N
+  name: "Γ₁(N)"
+  type: concept
+  category: algebra
+  subcategory: congruence-subgroups
+  definition: |
+    Congruence subgroup with lower-left entry ≡ 0 mod N and diagonal
+    entries ≡ 1 mod N. Used in Dirichlet characters and newforms.
+  properties:
+    - order: "infinite"
+    - is_discrete: true
+    - is_finite: false
+  relationships:
+    - subgroup_of: "Γ₀(N) ⊂ SL(2,Z)"
+    - boundary_of: "Farey graph transfer operator acts on C(Γ₁) (see AG-FareyGraph)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/01-groups.cypher"
+  tags: ["congruence-subgroup", "newforms", "dirichlet-characters"]
+
+- id: MG-GL2
+  name: "GL(2)"
+  type: concept
+  category: algebra
+  subcategory: matrix-groups
+  definition: |
+    General linear group of 2×2 invertible matrices.
+    Central object in the Langlands program for GL(2).
+  properties:
+    - order: "infinite"
+    - is_discrete: false
+    - is_finite: false
+  relationships:
+    - contains: "SL(2,Z)"
+    - contains: "SL(2,F_p)"
+    - langlands_role: "Automorphic forms on GL(2) → L-functions L(s,f) (see LF-General)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/01-groups.cypher"
+  tags: ["langlands", "general-linear", "automorphic"]

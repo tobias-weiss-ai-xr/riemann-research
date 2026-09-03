@@ -1,0 +1,109 @@
+# Hecke Operators — Core Concepts
+# Extracted from kg/cypher/04-operators.cypher (hecke operator nodes +
+# CORRESPONDS_TO relationships). Related: modular-forms.yaml (what they act on),
+# graph-operators.yaml (adjacency correspondence), ramanujan.yaml (RP-BrandtPizerHecke)
+
+- id: HK-Tp
+  name: "Hecke Operator T_p"
+  type: concept
+  category: number-theory
+  subcategory: hecke-operators
+  definition: |
+    Hecke operator acting on modular forms M_k(Γ₀(N)):
+    (T_p f)(z) = p^{k/2-1} Σ_{ad=p, 0≤b<d} d^{-k} f((az+b)/d)
+  properties:
+    - operator_type: "hecke"
+    - acts_on: "M_k(Γ₀(N)) — space of modular forms"
+    - hermitian: true
+    - commuting: true
+    - multiplicative: true
+    - eigenvalue_name: "Hecke eigenvalue λ_f(p)"
+    - double_coset: "Γ₀(N) diag(1,p) Γ₀(N) = ⊔ Γ₀(N) (a b; 0 d)"
+  importance: |
+    Hecke eigenvalues a_p are THE central bridge between modular forms and
+    L-functions (L(s,f) coefficients), and via LPS/Pizer also to graph spectra.
+  relationships:
+    - instance_of: "T_n family (HK-Tn)"
+    - acts_on: "Δ(z) (T_p Δ = τ(p)Δ), E₄, E₆ — see MF-Delta, MF-EisensteinE4/E6"
+    - corresponds_to: "Adjacency matrix A of LPS Cayley graphs on L²(Γ\\G/K) — see HK-LPSCorrespondence"
+  references:
+    - type: paper
+      authors: ["Erich Hecke"]
+      year: 1937
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["hecke", "double-coset", "hermitian", "eigenvalues", "bridge"]
+
+- id: HK-Tn
+  name: "Hecke Operator T_n"
+  type: concept
+  category: number-theory
+  subcategory: hecke-operators
+  definition: |
+    Hecke operators T_n for general n, acting on M_k(Γ₀(N)).
+    Form a commuting, Hermitian, multiplicative algebra.
+  properties:
+    - operator_type: "hecke"
+    - acts_on: "M_k(Γ₀(N))"
+    - hermitian: true
+    - commuting: true
+    - multiplicative: true
+    - multiplicativity: "T_m T_n = T_{mn} for (m,n)=1"
+    - recursion: "T_p T_{p^r} = T_{p^{r+1}} + p^{k-1} T_{p^{r-1}}"
+  relationships:
+    - generalizes: "T_p (HK-Tp) is the T_n instance at prime index"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["hecke", "multiplicative", "recursion", "commuting-algebra"]
+
+- id: HK-Eigenvalues
+  name: "Hecke Eigenvalues λ_f(p)"
+  type: concept
+  category: number-theory
+  subcategory: hecke-operators
+  definition: |
+    Eigenvalues of T_p on normalized Hecke eigenforms f:
+    T_p f = λ_f(p) f. These are the Fourier/L-function coefficients a_p.
+  properties:
+    - multiplicative: "a_{mn} = a_m a_n for (m,n)=1"
+    - deligne_bound: "|a_p| ≤ 2p^{(k-1)/2} (proven — see RT-DeligneBound)"
+    - for_weight_2: "|a_p| ≤ 2√p — EXACTLY the Ramanujan graph bound |λ| ≤ 2√(d-1)"
+  importance: |
+    The k=2 coincidence is the arithmetic heart of the LPS bridge:
+    Hecke eigenvalues and Cayley adjacency eigenvalues obey the SAME bound
+    because both arise from GL(2,Q_p) representations.
+  relationships:
+    - l_function_coefficients: "a_n of L(s,f) (LF-Cusp)"
+    - graph_spectral_counterpart: "adjacency eigenvalues of isogeny/LPS graphs (GO-Adjacency)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["eigenvalues", "deligne-bound", "l-function-coefficients", "k2-coincidence"]
+
+- id: HK-LPSCorrespondence
+  name: "LPS Correspondence: Adjacency ≈ Hecke"
+  type: theorem
+  category: number-theory
+  subcategory: hecke-operators
+  statement: |
+    LPS 1988: On L²(Γ\G/K) — the space of K-invariant L² functions on Γ\G
+    where G = SL(2,R), K = SO(2) — the adjacency operator of the Cayley graph
+    approximates the Hecke operator T_p.
+  precision: |
+    Approximate for LPS expanders; EXACT for isogeny graphs
+    (eigenvalues of Frobenius on H¹ = adjacency eigenvalues, via Eichler
+    trace formula — see GO-Frobenius and RT-LPSBridge).
+  relationships:
+    - corresponds_to: "Adjacency A ↔ Hecke T_p (GO-Adjacency ↔ HK-Tp)"
+    - exact_version: "Brandt-Pizer theorem (RP-BrandtPizerHecke in ramanujan.yaml)"
+    - underlies: "GNN spectral approach: predict graph eigenvalues → Hecke eigenvalues"
+  references:
+    - type: paper
+      authors: ["A. Lubotzky", "R. Phillips", "P. Sarnak"]
+      year: 1988
+      venue: "Combinatorica"
+      doi: "10.1007/BF02126799"
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["lps", "bridge", "adjacency", "hecke", "spectral"]

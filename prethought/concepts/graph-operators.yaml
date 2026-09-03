@@ -1,0 +1,97 @@
+# Graph Operators — Core Concepts
+# Extracted from kg/cypher/04-operators.cypher (adjacency / frobenius / laplacian
+# operator nodes). The transfer operator L_s lives in transfer-operators.yaml.
+# Related: hecke-operators.yaml (LPS correspondence), l-functions.yaml (Ihara zeta),
+#          spectral-gaps.yaml (spectral gap definitions and data)
+
+- id: GO-Adjacency
+  name: "Adjacency Matrix A"
+  type: concept
+  category: spectral-theory
+  subcategory: graph-operators
+  definition: |
+    (Af)(v) = Σ_{u~v} f(u) — the adjacency operator on L²(V) for vertex
+    set V of graph G.
+  properties:
+    - hermitian: true
+    - spectrum: "λ₁ ≥ λ₂ ≥ ... ≥ λ_n"
+    - spectral_gap: "λ₁ - |λ₂|"
+    - ramanujan_criterion: "|λ| ≤ 2√(d-1) for non-trivial eigenvalues"
+  importance: |
+    THE operator for graph spectral theory. Connected to Hecke via the LPS
+    construction (HK-LPSCorrespondence) and to Frobenius via isogeny graphs.
+  relationships:
+    - corresponds_to: "Hecke T_p via L²(Γ\\G/K) (HK-LPSCorrespondence)"
+    - derived_laplacian: "Δ = dI - A (GO-Laplacian)"
+    - computed_by_gnn: "GNN spectral approach uses A as hypothesis space"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["adjacency", "hermitian", "spectrum", "gnn-hypothesis-space"]
+
+- id: GO-Hashimoto
+  name: "Hashimoto Edge Matrix H"
+  type: concept
+  category: spectral-theory
+  subcategory: graph-operators
+  definition: |
+    Edge-adjacency operator on the space of directed edges:
+    H_{e,e'} = 1 if terminal vertex of e = initial vertex of e' and e' ≠ ē
+    (backtracking-free walk operator).
+  properties:
+    - zeta_formula: "ζ_G(u)^{-1} = det(I - Hu)"
+    - bass_relation: "Related to the vertex adjacency A by Bass's formula"
+  importance: |
+    Encodes the Ihara zeta function (LF-IharaZeta). Used in Sunada's theorem
+    (isospectrality construction — RT-Sunada).
+  relationships:
+    - computes: "Ihara zeta ζ_G(u) via det(I - Hu)"
+    - general_theory_for: "Cayley(SL(2,F_p)) and isogeny graphs"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["hashimoto", "non-backtracking", "ihara-zeta", "bass"]
+
+- id: GO-Frobenius
+  name: "Frobenius Endomorphism Frob_p"
+  type: concept
+  category: arithmetic-geometry
+  subcategory: graph-operators
+  definition: |
+    Geometric Frobenius on elliptic curves over F̄_p:
+    (x,y) ↦ (x^p, y^p). Acts on ℓ-adic cohomology of elliptic curves/varieties.
+  properties:
+    - trace_formula: "Trace of Frobenius a_p = p + 1 - #E(F_p)"
+    - satotate_key: "Eigenvalues of Frob on H¹ are the key to Sato-Tate (RT-SatoTate)"
+  importance: |
+    Connects arithmetic of elliptic curves to spectral properties of isogeny
+    graphs — the EXACT eigenvalue correspondence (no approximation).
+  relationships:
+    - corresponds_to: "Adjacency A of isogeny graphs: Frob eigenvalues on H¹(E) = adjacency eigenvalues (via Eichler trace formula / Deligne)"
+    - used_by: "Sato-Tate conjecture (RT-SatoTate)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["frobenius", "elliptic-curves", "l-adic", "eichler", "sato-tate"]
+
+- id: GO-Laplacian
+  name: "Graph Laplacian Δ = dI - A"
+  type: concept
+  category: spectral-theory
+  subcategory: graph-operators
+  definition: |
+    Combinatorial Laplacian for a d-regular graph: Δ = dI - A,
+    acting on L²(V).
+  properties:
+    - spectrum: "0 = μ₁ ≤ μ₂ ≤ ... ≤ μ_n ≤ 2d"
+    - spectral_gap: "μ₂ (algebraic connectivity)"
+  importance: |
+    Alternative spectral characterization of expansion. Connected to random
+    walks and mixing time (see spectral-gaps.yaml SG-Definition).
+  relationships:
+    - derived_from: "Adjacency A (GO-Adjacency)"
+    - equivalent_gap: "μ₂ > 0 ↔ λ₂ < d: same spectral gap up to normalization"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/04-operators.cypher"
+  tags: ["laplacian", "random-walks", "mixing", "algebraic-connectivity"]

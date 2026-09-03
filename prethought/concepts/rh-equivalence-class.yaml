@@ -1,0 +1,551 @@
+# RH Equivalence Class — Concept Index
+# Extracted from kg/cypher/07-rh-equivalences.cypher +
+# kg/cypher/10-rh-equivalences-extended.cypher (every equivalence node,
+# including the Granville/Denjoy/Beurling/Lee-Yang nodes added in f7aa6d2).
+# ~150-200 total known formulations (Broughan 2017, Borwein et al. 2008,
+# Conrey 2003); this file captures the KG's roster.
+# Related: rh-theorems.yaml (RH itself + core theorems),
+#          ../related-work/RH-Equivalences.yaml (narrative versions RW-*)
+
+- id: RE-NymanBeurling
+  name: "Nyman-Beurling Criterion"
+  type: equivalence
+  domain: functional analysis
+  statement: |
+    RH holds iff the functions {f_a(x) = {ax} - a⌊x⌋ : a ∈ (0,1]} span L²(0,1).
+  established: "Nyman 1950, Beurling 1955"
+  ml_connection: |
+    Key bridge for neural-network approaches: Hayou 2023 argues RH ≡ density of
+    single-layer NNs via Nyman-Beurling (confidence 0.3 in the KG).
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "l2-span", "fractional-part", "neural-networks"]
+
+- id: RE-HilbertPolya
+  name: "Hilbert-Pólya Conjecture"
+  type: conjecture
+  domain: operator theory
+  statement: |
+    The imaginary parts of the non-trivial zeros of ζ(s) are the eigenvalues
+    of a self-adjoint operator on a Hilbert space.
+  status: "open"
+  year_stated: 1914
+  direction: |
+    NOT an equivalence — a SUFFICIENT condition. If such an operator exists,
+    RH follows (self-adjoint ⇒ real eigenvalues ⇒ Re(ρ) = 1/2); converse unclear.
+  related_work: "Yakaboylu 2023 constructed a Hamiltonian with real eigenvalues under conditions"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["hilbert-polya", "self-adjoint", "sufficient-not-equivalent", "hamiltonian"]
+
+- id: RE-WeilPositivity
+  name: "Weil Positivity Criterion"
+  type: equivalence
+  domain: algebra
+  statement: |
+    RH holds iff F(z) = Σ_ρ x^ρ + (analytic terms) is positive-definite on the
+    multiplicative group.
+  established: "Weil 1952"
+  importance: "Weil's positivity for curves over finite fields inspired the Langlands program"
+  references:
+    - type: paper
+      authors: ["André Weil"]
+      year: 1952
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "positivity", "explicit-formula", "langlands-origin"]
+
+- id: RE-LiCriterion
+  name: "Li's Criterion"
+  type: equivalence
+  domain: analytic number theory
+  statement: |
+    RH holds iff λ_n = Σ_ρ [1 - (1 - 1/ρ)^n] ≥ 0 for all n ∈ N, over
+    non-trivial zeros ρ of ζ(s).
+  established: "Li 1998"
+  notes: "Infinite sequence of non-negativity conditions equivalent to RH; related to the explicit formula."
+  references:
+    - type: paper
+      authors: ["Xian-Jin Li"]
+      year: 1998
+      venue: "Journal of Number Theory"
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "li-coefficients", "non-negativity"]
+
+- id: RE-Mertens
+  name: "Mertens Hypothesis (DISPROVEN)"
+  type: conjecture
+  domain: elementary number theory
+  statement: |
+    |M(x)| = |Σ_{n≤x} μ(n)| < √x for all x > 1.
+  status: "DISPROVEN (Odlyzko & te Riele 1985: M(x) = Ω±(√x) infinitely often)"
+  year_stated: 1897
+  direction: |
+    Was STRONGER than RH — had it been true, RH would follow. Its failure does
+    NOT disprove RH. Cautionary tale for approaching RH via Mertens-type bounds.
+  references:
+    - type: paper
+      authors: ["A. M. Odlyzko", "H. J. J. te Riele"]
+      year: 1985
+      venue: "Journal für die reine und angewandte Mathematik"
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["mertens", "disproven", "stronger-than-rh", "mu-function"]
+
+- id: RE-Nicolas
+  name: "Nicolas Criterion"
+  type: equivalence
+  domain: arithmetic functions
+  statement: |
+    RH holds iff Σ_{d|n} d ≥ H_n + exp(H_n) log(H_n) for all n ≥ 2
+    (H_n = nth harmonic number).
+  established: "Nicolas 1983"
+  notes: "Related to Robin's inequality (RT-Robin) but via harmonic numbers."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "harmonic-numbers", "primorials"]
+
+- id: RE-ExplicitFormula
+  name: "Explicit Formula"
+  type: equivalence
+  domain: analytic number theory
+  statement: |
+    ψ₀(x) = x - Σ_ρ x^ρ/ρ - log(2π) - ½log(1 - x⁻²), where ψ₀(x) = Σ_{n≤x} Λ(n)
+    and ρ runs over non-trivial zeros. RH ⇔ ψ(x) = x + O(x^{1/2+ε}).
+  established: "von Mangoldt 1896"
+  importance: "THE central formula connecting prime distribution to zeta zeros."
+  references:
+    - type: paper
+      authors: ["Hans von Mangoldt"]
+      year: 1896
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["explicit-formula", "chebyshev-function", "primes-zeros-dictionary"]
+
+- id: RE-Bagchi
+  name: "Bagchi's Theorem"
+  type: equivalence
+  domain: ergodic theory
+  statement: |
+    RH holds iff the Hurwitz zeta function ζ(s,a) is cyclic in L²(0,1) with
+    respect to the translation semigroup.
+  established: "Bagchi 1982"
+  notes: "Reformulates Nyman-Beurling dynamically; connects RH to ergodic theory."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "hurwitz-zeta", "ergodic", "generalizes-nyman-beurling"]
+
+- id: RE-Voronin
+  name: "Voronin Universality Theorem"
+  type: theorem
+  domain: complex analysis
+  statement: |
+    For any ε > 0 and any analytic f(s) non-vanishing on a compact subset of
+    {1/2 < Re(s) < 1}, there exists τ > 0 with max |ζ(s+iτ) - f(s)| < ε.
+  established: "Voronin 1975"
+  rh_relevance: |
+    Striking implication: if RH is false, the universality domain changes.
+    (Universality itself is proven; RH-relevance is structural.)
+  references:
+    - type: paper
+      authors: ["Sergei Voronin"]
+      year: 1975
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["universality", "zeta", "approximation"]
+
+- id: RE-Yakaboylu
+  name: "Yakaboylu Hamiltonian Construction"
+  type: theorem
+  domain: mathematical physics
+  statement: |
+    A quantum Hamiltonian H with real eigenvalues (under conditions) whose
+    spectrum encodes zeta zeros.
+  status: "partial (2023)"
+  notes: |
+    Partial realization of Hilbert-Pólya. No ML work on operator search exists
+    on top of it — open gap.
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["hilbert-polya", "hamiltonian", "partial", "open-gap"]
+
+- id: RE-MobiusRandomness
+  name: "Möbius Randomness (Chowla Conjecture)"
+  type: conjecture
+  domain: analytic number theory
+  statement: |
+    Σ_{n≤x} μ(n) μ(n+h) = o(x) for all fixed h ≠ 0.
+  status: "open"
+  year_stated: 1965
+  direction: "Implies PNT (via partial summation); NOT equivalent to RH. Connected to Sarnak's conjecture."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["chowla", "mobius", "correlations", "sarnak"]
+
+- id: RE-GranvilleGoldbach
+  name: "Granville Averaged Goldbach Equivalence"
+  type: equivalence
+  domain: analytic number theory
+  statement: |
+    RH holds iff Σ_{2N ≤ x} (G(2N) - J(2N)) ≪ x^{3/2+o(1)} as x → ∞, where
+    G(2N) = Σ_{p+q=2N} log p · log q and J(2N) is the Hardy-Littlewood
+    singular series for the Goldbach problem.
+  established: "Granville 2007"
+  notes: |
+    An AVERAGED equivalence: the error term in the (weighted) Goldbach
+    conjecture is controlled by the zeros of ζ(s). Added to the KG in f7aa6d2
+    (mirrors RW-Granville-Goldbach).
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "goldbach", "averaged", "granville"]
+
+- id: RE-Denjoy
+  name: "Denjoy's Probabilistic Interpretation"
+  type: equivalence
+  domain: probability / elementary number theory
+  statement: |
+    RH holds iff the Möbius summatory function behaves like a symmetric
+    random walk: M(x) = O(x^{1/2+ε}) matches the fluctuation scale of a fair
+    coin-toss sum, each sign of μ(n) an independent ±1 trial heuristically.
+  established: "Denjoy 1934"
+  notes: |
+    Interprets RH as a statement about the randomness of μ. KG records the
+    corrected year 1934 (corpus YAML RW-Denjoy dates it 1981; Denjoy died
+    1974 — C. R. Acad. Sci. Paris note is 1934).
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["equivalence", "random-walk", "probabilistic", "denjoy"]
+
+- id: RE-BeurlingPrimes
+  name: "Beurling Generalized Primes RH Analogue"
+  type: theorem
+  domain: analytic number theory
+  statement: |
+    For a Beurling generalized prime system with counting function N(x)
+    satisfying the Beurling regularity condition, the associated Beurling
+    zeta function has its non-trivial zeros on Re(s) = 1/2 iff the system
+    satisfies those regularity conditions.
+  established: "Beurling 1937"
+  notes: |
+    RH-analogue, not classical-RH equivalence: framework later used to build
+    prime systems with zeta functions having zeros OFF the line (Hall 1970s) —
+    showing RH is a genuinely arithmetic phenomenon.
+  references:
+    - type: cypher
+      file: "../../kg/cypher/07-rh-equivalences.cypher"
+  tags: ["beurling", "generalized-primes", "analogue"]
+
+# ── From 10-rh-equivalences-extended.cypher ──────────────────────
+
+- id: RE-VonKoch
+  name: "von Koch Error Term"
+  type: equivalence
+  domain: analytic number theory
+  statement: "π(x) = Li(x) + O(x^{1/2} log x)."
+  established: "von Koch 1901"
+  notes: "The tightest possible prime-counting error bound obtainable from RH."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "prime-counting", "error-term"]
+
+- id: RE-ChebyshevErr
+  name: "Chebyshev ψ Error Term"
+  type: equivalence
+  domain: analytic number theory
+  statement: "ψ(x) = x + O(x^{1/2} log²x), where ψ(x) = Σ_{n≤x} Λ(n)."
+  notes: "Equivalent to RH via the explicit formula; strengthens PNT (ψ(x) ~ x)."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "chebyshev", "error-term"]
+
+- id: RE-Volchkov
+  name: "Volchkov Integral"
+  type: equivalence
+  domain: complex analysis
+  statement: |
+    ∫₀^∞ (1-12t²)/(1+4t²)³ ∫_{1/2}^∞ log|ζ(σ+it)| dσ dt = π(3-γ)/32.
+  established: "Volchkov 1995"
+  notes: "A single integral equation equivalent to RH. Elegant but computationally hard."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "integral", "single-equation"]
+
+- id: RE-BalazardSaiasYor
+  name: "Balazard-Saias-Yor Integral"
+  type: equivalence
+  domain: complex analysis
+  statement: "(1/π) ∫₀^∞ log|ζ(1/2+it)|/(1/4+t²) dt = 0."
+  established: "Balazard-Saias-Yor 1999 (Adv. Math. 143)"
+  notes: "Cleaner integral on the critical line itself; positive iff ζ has a zero off the line."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "integral", "critical-line"]
+
+- id: RE-FranelLandau
+  name: "Franel-Landau Criterion"
+  type: equivalence
+  domain: elementary number theory
+  statement: |
+    D(N) = O(N^{1/2+ε}), where D(N) = |#{squarefree n≤N : ω(n) even} -
+    #{squarefree n≤N : ω(n) odd}|.
+  established: "1924-1926"
+  notes: "Balance of squarefree integers with even vs. odd number of prime factors."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "squarefree", "elementary"]
+
+- id: RE-LiouvilleLimit
+  name: "Liouville λ Limit Criterion"
+  type: equivalence
+  domain: elementary number theory
+  statement: "Σ_{k=1}^n λ(k) = O(n^{1/2+ε}) for all ε > 0, λ(n) = (-1)^{Ω(n)}."
+  notes: "Liouville summatory function; closely related to the Mertens function. Node lives in 05-theorems.cypher (liouville); listed here for class completeness."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "liouville-function", "summatory"]
+
+- id: RE-HardyLittlewoodSeries
+  name: "Hardy-Littlewood Series"
+  type: equivalence
+  domain: analytic number theory
+  statement: "Σ_{k=1}^∞ (-x)^k/k! · ζ(2k+1) = O(x^{-1/4}) as x → ∞."
+  established: "1918"
+  notes: "Asymptotic behavior of odd zeta values in an exponential generating function."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "odd-zeta-values", "generating-function"]
+
+- id: RE-BaezDuarte
+  name: "Baez-Duarte Criterion"
+  type: equivalence
+  domain: functional analysis
+  statement: |
+    RH iff χ ∈ closure(span{ρ_a : a ∈ N}) in L²(0,∞), χ = indicator of (0,1] —
+    countable version of Nyman-Beurling.
+  established: "Báez-Duarte 2002"
+  notes: "Strengthens Nyman-Beurling from uncountable to countable generating set. Numerical evidence up to a = 100."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "countable-nyman-beurling", "strengthening"]
+
+- id: RE-JensenPolynomials
+  name: "Jensen Polynomial Hyperbolicity (Pólya-Jensen)"
+  type: equivalence
+  domain: real analysis / polynomial theory
+  statement: |
+    All Jensen polynomials J_{d,0}(x) for the Taylor coefficients of Ξ(t)
+    are hyperbolic (all roots real) for all d ≥ 1.
+  established: "Pólya 1927 (equivalence); Griffin-Ono-Rolen-Zagier 2019: hyperbolicity for n ≥ N(d)"
+  notes: "Computational evidence supporting RH via polynomial theory."
+  references:
+    - type: paper
+      authors: ["M. J. Griffin", "K. Ono", "L. Rolen", "D. Zagier"]
+      year: 2019
+      venue: "PNAS"
+      doi: "10.1073/pnas.1902572116"
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "jensen-polynomials", "hyperbolicity", "computational-evidence"]
+
+- id: RE-DeBruijnNewman
+  name: "De Bruijn-Newman Constant Λ = 0"
+  type: equivalence
+  domain: complex analysis / entire functions
+  statement: |
+    RH iff Λ = 0, where H(λ,z) has only real zeros iff λ ≥ Λ.
+    Rodgers-Tao proved Λ ≥ 0, so RH ↔ Λ = 0.
+  established: "de Bruijn 1950 (Λ ≤ 1/2); Newman 1976 (Λ exists, conjectured ≥ 0); Rodgers-Tao 2020 (Λ ≥ 0)"
+  notes: "Gap closed to Λ = 0 — i.e., to RH itself."
+  references:
+    - type: paper
+      authors: ["B. Rodgers", "T. Tao"]
+      year: 2020
+      venue: "Forum of Mathematics Pi"
+      arxiv_id: "1901.03052"
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "de-bruijn-newman", "heat-flow", "rodgers-tao"]
+
+- id: RE-BombieriVariational
+  name: "Bombieri Variational Approach"
+  type: equivalence
+  domain: calculus of variations
+  statement: |
+    RH equivalent to the existence of a minimizing function for Bombieri's
+    variational functional on the explicit formula.
+  established: "Bombieri 2000, 2003"
+  notes: |
+    Generalizes Weil positivity via calculus of variations. Connected to
+    Connes' noncommutative-geometry trace formula.
+  references:
+    - type: paper
+      authors: ["Enrico Bombieri"]
+      year: 2003
+      venue: "Communications on Pure and Applied Mathematics"
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "variational", "generalizes-weil"]
+
+- id: RE-LaguerrePolya
+  name: "Laguerre-Pólya Class"
+  type: equivalence
+  domain: complex analysis
+  statement: |
+    The Riemann Ξ-function belongs to the Laguerre-Pólya class — the uniform
+    limit on compacts of polynomials with only real zeros.
+  established: "Pólya 1927"
+  notes: "Equivalent statement about the Hadamard product factorization of Ξ."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "laguerre-polya", "xi-function", "hadamard-product"]
+
+- id: RE-LeeYang
+  name: "Lee-Yang Circle Theorem Bridge"
+  type: theorem
+  domain: statistical physics / complex analysis
+  statement: |
+    Zeros of the Ising/lattice-gas partition function lie on the unit circle
+    (Lee-Yang); the analogous statement for ζ(s) — zeros of a
+    statistical/generating partition function on the critical line — is the
+    RH-type statement in the sector formulation (RW-Lee-Yang).
+  established: "Lee & Yang 1952 (circle theorem); RH bridge: partial"
+  notes: |
+    NOT a proven formal equivalence — status partial in the corpus YAML.
+    Both theorems pin zeros of exponential sums/generating functions to 1D
+    loci (unit circle vs. critical line). Added to the KG in f7aa6d2.
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["lee-yang", "statistical-physics", "zero-pinning", "partial"]
+
+- id: RE-CNS
+  name: "Caveney-Nicolas-Sondow GA1/GA2 Criterion"
+  type: equivalence
+  domain: arithmetic functions
+  statement: |
+    The only number that is both GA1 (composite N with G(N) ≥ G(N/p) ∀p|N)
+    and GA2 (G(N) ≥ G(aN) ∀a) is 4, where G(n) = σ(n)/(n log log n).
+  established: "2011"
+  notes: "Refinement of Robin's inequality (RT-Robin); connected to colossally abundant numbers."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "ga1-ga2", "colossally-abundant", "refines-robin"]
+
+- id: RE-Redheffer
+  name: "Redheffer Matrix Criterion"
+  type: equivalence
+  domain: linear algebra / matrix theory
+  statement: |
+    |det(A_n)| = O(n^{1/2+ε}) where A_{ij} = 1 if j = 1 or i|j, else 0.
+    det(A_n) = M(n) (Mertens function).
+  established: "Redheffer 1977"
+  notes: "All non-trivial eigenvalues in the unit disk ↔ RH. Matrix formulation of Mertens."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "redheffer", "determinant", "mertens-matrix"]
+
+- id: RE-LandauFunction
+  name: "Landau Function Criterion"
+  type: equivalence
+  domain: combinatorics / group theory
+  statement: "log g(n) < li^{-1}(n) for all n ≥ 1, where g(n) = maximal order of an element of S_n."
+  established: "Deleglise & Nicolas 2019"
+  notes: "Connects RH to the combinatorics of permutations."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "landau-function", "symmetric-group", "combinatorial"]
+
+- id: RE-LCM
+  name: "lcm Formulation"
+  type: equivalence
+  domain: elementary number theory
+  statement: "|log lcm(1,2,...,n) - n| < √n log²n for all n ≥ 3."
+  notes: "Follows from the explicit formula; elementary formulation via least common multiples."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "lcm", "elementary"]
+
+- id: RE-Speiser
+  name: "Speiser's Criterion"
+  type: equivalence
+  domain: complex analysis
+  statement: |
+    RH equivalent to the absence of non-trivial zeros of ζ'(s) to the left of
+    the critical line Re(s) = 1/2.
+  established: "Speiser 1934"
+  notes: "Quantified by Levinson-Montgomery (1974). Concerns the DERIVATIVE ζ'(s)."
+  references:
+    - type: paper
+      authors: ["Andreas Speiser"]
+      year: 1934
+      venue: "Math. Ann. 110"
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "zeta-derivative", "levinson-montgomery"]
+
+- id: RE-BrownianExcursion
+  name: "Brownian Excursion (Biane-Pitman-Yor)"
+  type: theorem
+  domain: probability theory
+  statement: |
+    E[Z_s] = Ξ(s) where Z_s = ∫₀^∞ cos(st)|B_u|du for Brownian excursion B_u.
+    RH connects to moment conditions.
+  established: "2001"
+  notes: "Probabilistic interpretation of the Riemann Ξ-function via Brownian excursion area."
+  references:
+    - type: paper
+      authors: ["P. Biane", "J. Pitman", "M. Yor"]
+      year: 2001
+      venue: "Bull. AMS 38"
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["probability", "brownian-excursion", "xi-function"]
+
+- id: RE-Horocycle
+  name: "Horocycle Flow Ergodicity Rate"
+  type: equivalence
+  domain: dynamical systems / ergodic theory
+  statement: |
+    ∫₀^T f(h_t z)dt = T∫f + O(T^{1/2+ε}) for nice f on SL(2,R)/SL(2,Z) iff RH.
+  established: "Mayer 1990 (noted by Zagier; Lagarias 2010)"
+  notes: "Rate of equidistribution of horocycle flows on the modular surface encodes RH."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "horocycle", "ergodic", "modular-surface"]
+
+- id: RE-DivisibilityGraph
+  name: "Divisibility Graph Criterion (Broughan)"
+  type: equivalence
+  domain: graph theory
+  statement: |
+    RH equivalent to spectral properties of the divisibility graph
+    (vertices 1..N, edges n → m if n|m).
+  established: "Broughan 2017 (Equivalents of RH Vol I, Ch. 10)"
+  notes: "The spectral radius behavior of the divisibility graph encodes RH."
+  references:
+    - type: cypher
+      file: "../../kg/cypher/10-rh-equivalences-extended.cypher"
+  tags: ["equivalence", "divisibility-graph", "graph-theoretic", "broughan"]

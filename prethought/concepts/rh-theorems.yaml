@@ -1,0 +1,393 @@
+# Theorems & Conjectures of the SL(2,Z) → ζ(s) Theory Chain — Core Concepts
+# Extracted from kg/cypher/05-theorems.cypher (every Theorem/Conjecture node).
+# The extended RH-equivalence roster (07 + 10 cypher files) lives in
+# rh-equivalence-class.yaml. Related: rh-equivalence-class.yaml, ramanujan.yaml,
+# spectral-gaps.yaml, transfer-operators.yaml
+
+- id: RT-RH
+  name: "Riemann Hypothesis"
+  type: conjecture
+  category: number-theory
+  subcategory: rh
+  statement: |
+    All non-trivial zeros of ζ(s) have real part 1/2.
+  status: "conjectured (open)"
+  year_stated: 1859
+  significance: "foundational — Clay Millennium Problem; >100 known equivalent formulations"
+  lean_status: |
+    partial: mathlib_name riemann_hypothesis (Lean 4). Loeffler & Stoll 2025
+    formalized ζ(s), functional equation, analytic continuation, trivial zeros;
+    ~60-70% of the needed machinery exists in Mathlib.
+  computational_status: "Verified up to height 3·10¹² (Platt & Trudgian 2021, rigorous interval arithmetic)"
+  relationships:
+    - equivalences: "Full roster in rh-equivalence-class.yaml (Lindelöf, Robin, Lagarias, Nyman-Beurling, Li, ...)"
+    - analogous_to: "IH-RH for graphs (RT-IHRH) — structural parallel, both proven-machinery adjacent"
+    - implies_weaker: "PNT-type error terms (RT-PNT, von Koch)"
+    - proposed_by: "Riemann 1859 (Monatsberichte der Berliner Akademie)"
+  references:
+    - type: paper
+      authors: ["Bernhard Riemann"]
+      year: 1859
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["rh", "millennium-prize", "critical-line", "lean-partial"]
+
+- id: RT-GRH
+  name: "Generalized Riemann Hypothesis"
+  type: conjecture
+  category: number-theory
+  subcategory: rh
+  statement: |
+    All non-trivial zeros of Dirichlet L-functions L(s,χ) have real part 1/2.
+  status: "conjectured (open)"
+  year_stated: 1884
+  relationships:
+    - implies: "RH (restrict to principal character)"
+    - about: "Dirichlet L-functions L(s,χ) (LF-Dirichlet)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["grh", "dirichlet-l", "open"]
+
+- id: RT-Lindelof
+  name: "Lindelöf Hypothesis"
+  type: conjecture
+  category: number-theory
+  subcategory: rh-equivalences
+  statement: |
+    ζ(1/2 + it) = O(t^ε) for all ε > 0.
+  status: "conjectured (open); follows from RH"
+  year_stated: 1908
+  notes: "Weaker than RH but still unproven. Equivalent to bounds on moments of ζ(s)."
+  relationships:
+    - equivalent_to: "RH — no: RH implies Lindelöf; converse open. KG lists EQUIVALENT_TO edge (standard reduction sketch); treat direction RH ⇒ Lindelöf as safe"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["lindelof", "moments", "critical-line"]
+
+- id: RT-Robin
+  name: "Robin's Inequality"
+  type: conjecture
+  category: number-theory
+  subcategory: rh-equivalences
+  statement: |
+    σ(n) < e^γ n log log n for all n ≥ 5041 iff RH holds.
+  status: "proven as equivalence to RH (Robin 1984)"
+  year_stated: 1984
+  relationships:
+    - equivalent_to: "RH (RT-RH)"
+    - refined_by: "Caveney-Nicolas-Sondow GA1/GA2 (RE-CNS)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["robin", "sigma-function", "equivalence"]
+
+- id: RT-Lagarias
+  name: "Lagarias Inequality"
+  type: conjecture
+  category: number-theory
+  subcategory: rh-equivalences
+  statement: |
+    σ(n) ≤ H_n + exp(H_n) log(H_n) for all n ≥ 1, with equality only for n=1.
+  status: "proven as equivalence to RH (Lagarias 2002)"
+  year_stated: 2002
+  notes: "Equivalent formulation of RH using harmonic numbers."
+  relationships:
+    - equivalent_to: "RH (RT-RH)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["lagarias", "harmonic-numbers", "equivalence"]
+
+- id: RT-RamanujanConj
+  name: "Ramanujan Conjecture (original)"
+  type: theorem
+  category: number-theory
+  subcategory: ramanujan
+  statement: |
+    |τ(p)| ≤ 2p^{11/2} for all primes p, where τ is the Ramanujan tau
+    function (coefficients of Δ(z)).
+  status: "proven (1974)"
+  year_stated: 1916
+  year_established: 1974
+  significance: "major"
+  relationships:
+    - about: "Δ(z) (MF-Delta)"
+    - proven_by: "Deligne, as a consequence of the Weil conjectures (RT-DeligneBound)"
+    - generalized_by: "Ramanujan-Petersson conjecture (RT-RamanujanPetersson)"
+    - approached_by: "Williamson et al. 2021 GNN on Bruhat intervals (methodological precedent)"
+  references:
+    - type: paper
+      authors: ["Pierre Deligne"]
+      year: 1974
+      venue: "Publications Mathématiques de l'IHÉS"
+      doi: "10.1007/BF02687474"
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["ramanujan", "tau-function", "deligne", "proven"]
+
+- id: RT-RamanujanPetersson
+  name: "Ramanujan-Petersson Conjecture"
+  type: theorem
+  category: number-theory
+  subcategory: ramanujan
+  statement: |
+    For a normalized Hecke eigenform f of weight k: |a_p(f)| ≤ 2p^{(k-1)/2}.
+  status: "proven for holomorphic forms (Deligne 1974, via étale cohomology)"
+  year_stated: 1930
+  year_established: 1974
+  significance: "major"
+  relationships:
+    - generalizes: "Ramanujan's original conjecture on τ (RT-RamanujanConj)"
+    - proven_by: "Deligne bound (RT-DeligneBound)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["ramanujan-petersson", "cusp-forms", "deligne"]
+
+- id: RT-DeligneBound
+  name: "Deligne Bound"
+  type: theorem
+  category: number-theory
+  subcategory: ramanujan
+  statement: |
+    Hecke eigenvalues of cusp forms satisfy |a_p| ≤ 2p^{(k-1)/2}.
+  status: "proven (1974)"
+  year_established: 1974
+  significance: "foundational"
+  proof_technique: "Étale cohomology, proof of the Weil conjectures"
+  importance: |
+    THE fundamental bound connecting modular forms and graph spectral theory.
+    For k = 2: |a_p| ≤ 2√p = Ramanujan graph bound |λ| ≤ 2√(d-1). Both bounds
+    arise from the same GL(2, Q_p) representation theory.
+  relationships:
+    - proves: "Ramanujan-Petersson conjecture (RT-RamanujanPetersson)"
+    - bridged_to: "graph spectra via LPS Spectral Bridge (RT-LPSBridge)"
+    - constrains: "Hecke eigenvalues (HK-Eigenvalues)"
+  references:
+    - type: paper
+      authors: ["Pierre Deligne"]
+      year: 1974
+      venue: "Publications Mathématiques de l'IHÉS"
+      doi: "10.1007/BF02687474"
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["deligne", "weil-conjectures", "etale-cohomology", "k2-coincidence"]
+
+- id: RT-IHRH
+  name: "IH-RH (Ihara Riemann Hypothesis)"
+  type: theorem
+  category: spectral-theory
+  subcategory: ramanujan
+  statement: |
+    A d-regular graph is Ramanujan iff all non-trivial eigenvalues λ satisfy
+    |λ| ≤ 2√(d-1).
+  status: "proven (1985)"
+  year_established: 1985
+  significance: "major"
+  notes: |
+    Proven independently by Alon-Boppana (lower bound) and
+    Lubotzky-Phillips-Sarnak (achievable). The RH-analogue status comes from
+    the STRUCTURAL parallel: eigenvalue bound ↔ zero location bound.
+  relationships:
+    - analogous_to: "RH (RT-RH) — structural parallel: |λ| ≤ 2√(d-1) ↔ Re(s) = 1/2"
+    - shared_machinery: "Both from representation theory of GL(2) over p-adic fields"
+    - lower_bound: "Alon-Boppana (RT-AlonBoppana, SG-Alon-Boppana)"
+    - achieved_by: "LPS construction (RT-LPSConstruction)"
+    - about: "Ihara zeta ζ_G(u) (LF-IharaZeta): all poles on |u| = 1/√(d-1)"
+    - target_of: "GNN spectral approach (AIApproach in 06 cypher)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["ih-rh", "ramanujan-graphs", "structural-analogue", "proven"]
+
+- id: RT-AlonBoppana
+  name: "Alon-Boppana Bound"
+  type: theorem
+  category: spectral-theory
+  subcategory: spectral-gaps
+  statement: |
+    For any infinite family of d-regular graphs: lim inf |λ₂(G_n)| ≥ 2√(d-1).
+  status: "proven (1986)"
+  year_established: 1986
+  notes: "Ramanujan graphs ACHIEVE the Alon-Boppana bound — they are optimal expanders."
+  relationships:
+    - lower_bound_for: "IH-RH (RT-IHRH)"
+    - detailed_in: "spectral-gaps.yaml (SG-Alon-Boppana)"
+  references:
+    - type: paper
+      authors: ["Noga Alon", "Arvind Boppana"]
+      year: 1986
+      venue: "Combinatorica"
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["alon-boppana", "lower-bound", "optimal"]
+
+- id: RT-LPSConstruction
+  name: "LPS Ramanujan Graph Construction"
+  type: theorem
+  category: spectral-theory
+  subcategory: ramanujan
+  statement: |
+    For every prime p ≡ 1 (mod 4), there exist (p+1)-regular Ramanujan
+    graphs on PSL(2,F_q) — the family X^{p,q}.
+  status: "proven (1988)"
+  year_established: 1988
+  significance: "foundational"
+  notes: "Uses deep results from the representation theory of SL(2)."
+  relationships:
+    - achieves: "IH-RH / Ramanujan bound (RT-IHRH)"
+    - uses: "SL(2,F_p) / PSL(2,F_q) groups (MG-SL2Fp, MG-PSL2Fp)"
+    - constructs: "LPS expander family X^{p,q} (AG-LPSFamily)"
+    - margulis_parallel: "Margulis 1988: independent contemporaneous construction"
+  references:
+    - type: paper
+      authors: ["A. Lubotzky", "R. Phillips", "P. Sarnak"]
+      year: 1988
+      venue: "Combinatorica"
+      doi: "10.1007/BF02126799"
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["lps", "construction", "ramanujan", "representation-theory"]
+
+- id: RT-SatoTate
+  name: "Sato-Tate Conjecture"
+  type: theorem
+  category: arithmetic-geometry
+  subcategory: distribution-theorems
+  statement: |
+    For a non-CM elliptic curve E/Q, the normalized Frobenius traces
+    a_p/√p are equidistributed in [-1,1] with respect to
+    (1/π)√(1-x²)dx.
+  status: "proven (2011)"
+  year_stated: 1960
+  year_established: 2011
+  significance: "major"
+  proof_technique: "Potential automorphy"
+  relationships:
+    - uses: "Frobenius endomorphism (GO-Frobenius)"
+    - motivated_by: "Weil positivity criterion (RE-WeilPositivity)"
+    - proven_by: "Barnet-Lamb, Geraghty, Harris, Taylor 2011 (Annals of Mathematics)"
+  references:
+    - type: paper
+      authors: ["T. Barnet-Lamb", "D. Geraghty", "M. Harris", "R. Taylor"]
+      year: 2011
+      venue: "Annals of Mathematics"
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["sato-tate", "equidistribution", "frobenius", "potential-automorphy"]
+
+- id: RT-LPSBridge
+  name: "LPS Spectral Bridge"
+  type: theorem
+  category: spectral-theory
+  subcategory: bridges
+  statement: |
+    The adjacency operator of the LPS Cayley graph of PSL(2,F_p) acts on
+    L²(Γ\G/K) as an approximation to the Hecke operator.
+  status: "proven (1988)"
+  year_established: 1988
+  significance: "foundational"
+  importance: |
+    THE bridge between graph spectral theory and number theory. For k=2 cusp
+    forms, Deligne bound |a_p| ≤ 2√p = Ramanujan bound |λ| ≤ 2√(d-1) because
+    both arise from the same GL(2, Q_p) representations.
+  relationships:
+    - bridges: "from_domain graph theory (spectral graph theory) → to_domain number theory (modular forms, L-functions)"
+    - lands_at: "Deligne bound (RT-DeligneBound)"
+    - exact_version: "isogeny graphs via Eichler trace formula (GO-Frobenius, AG-IsogenyGraph)"
+    - underlies: "GNN spectral approach (AIApproach in 06 cypher)"
+  references:
+    - type: paper
+      authors: ["A. Lubotzky", "R. Phillips", "P. Sarnak"]
+      year: 1988
+      venue: "Combinatorica"
+      doi: "10.1007/BF02126799"
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["lps", "bridge", "graphs-to-number-theory", "foundational"]
+
+- id: RT-Pollicott
+  name: "Pollicott Farey Graph Theorem"
+  type: theorem
+  category: dynamical-systems
+  subcategory: bridges
+  statement: |
+    RH is equivalent to the spectral gap of the transfer operator on the
+    Farey graph: Z_{Γ₁}(s) = det(1 - L_{2s}).
+  status: "proven as equivalence (2022)"
+  year_established: 2022
+  significance: "major"
+  proof_technique: "dynamical systems, transfer operators, thermodynamic formalism"
+  importance: |
+    Encodes RH as a graph spectral property. The Farey graph provides a
+    SECOND bridge from graphs to ζ(s), independent of LPS.
+  relationships:
+    - proves: "RH-equivalence (RT-RH)"
+    - uses: "Farey graph (AG-FareyGraph), transfer operator L_s (transfer-operators.yaml)"
+    - related: "Mayer 1991 identity Z_S(s) = det(1-L_s)det(1+L_s) (TO-MayerIdentity)"
+  references:
+    - type: paper
+      authors: ["Mark Pollicott"]
+      year: 2022
+      arxiv_id: "2209.03897"
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["pollicott", "farey", "second-bridge", "spectral-gap", "rh-equivalence"]
+
+- id: RT-Sunada
+  name: "Sunada's Theorem"
+  type: theorem
+  category: spectral-theory
+  subcategory: isospectrality
+  statement: |
+    Two Riemannian manifolds are isospectral if their fundamental groups
+    have nearly conjugate representations.
+  status: "proven (1985)"
+  year_established: 1985
+  notes: |
+    Extended to graphs: Sunada isospectrality. Used to construct isospectral
+    non-isomorphic graphs.
+  relationships:
+    - uses: "Hashimoto edge matrix (GO-Hashimoto) — ζ_G(u)^{-1} = det(I-Hu)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["sunada", "isospectral", "trace-formula", "graphs"]
+
+- id: RT-RankinSelberg
+  name: "Rankin-Selberg Method"
+  type: theorem
+  category: number-theory
+  subcategory: l-functions
+  statement: |
+    L(s, f × g) = ζ(2s) Σ a_n(f) a_n(g) n^{-s} — the convolution L-function
+    obtained by integrating against an Eisenstein series.
+  status: "proven (1939)"
+  year_established: 1939
+  notes: "Method for studying L-functions; relates Eisenstein L-functions to ζ(s)."
+  relationships:
+    - connects: "Eisenstein L-functions (LF-Eisenstein) ↔ ζ(s) (LF-Zeta)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["rankin-selberg", "convolution", "eisenstein", "method"]
+
+- id: RT-PNT
+  name: "Prime Number Theorem"
+  type: theorem
+  category: number-theory
+  subcategory: distribution-of-primes
+  statement: |
+    π(x) ~ x/log(x).
+  status: "proven (1896); formalized in Lean 4 (Mathlib via Wiener-Ikehara)"
+  year_established: 1896
+  lean_status: "formalized (PNT+ project by Kontorovich and Tao)"
+  relationships:
+    - implied_by_rh: "RH ⇒ sharp PNT error terms (von Koch, RT-RH); PNT itself needs only non-vanishing of ζ(s) on Re(s)=1"
+    - strengthens_toward: "Chebyshev ψ error term (RE-ChebyshevErr)"
+  references:
+    - type: cypher
+      file: "../../kg/cypher/05-theorems.cypher"
+  tags: ["pnt", "primes", "wiener-ikehara", "lean-formalized"]
