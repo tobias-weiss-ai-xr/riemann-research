@@ -1,159 +1,568 @@
+# =============================================================================
+# Riemann Research Corpus — Knowledge Graph Schema (Dgraph, DQL syntax)
+# =============================================================================
+# Task KG-001 · kg/dgraph/schema.graphql
+#
+# This is a *native DQL schema*, not a GraphQL-API schema. The .graphql
+# filename is kept for path compatibility with the existing loader scripts
+# (kg/dgraph/load_kg.sh, kg/scripts/export_to_dgraph.py).
+#
+# Grammar:
+#     <predicate>: <type> [@index(tokenizer, ...)] [@reverse] [@upsert] .
+#     type <TypeName> { <predicate> ... }        # membership list, no types
+#
+# Apply it with (Dgraph must be running — see docker-compose.yml):
+#     curl -X POST localhost:8080/alter --data-binary @schema.graphql
+#
+# Sources of truth for predicate names:
+#   * kg/scripts/export_to_dgraph.py  (PREDICATE_MAP / TYPE_MAP)
+#   * kg/dgraph/load_full_kb.py       (JSON mutation loader)
+#   * prethought/**/*.yaml            (entity field names)
+#   * kg/README.md                    (planned node + relationship model)
+#
+# Conventions:
+#   * dgraph.type is built-in and already indexed — never redefine it.
+#   * Dgraph predicates are GLOBAL; type blocks only declare membership
+#     (they drive `expand(_all_)` and `dgraph.type` filtering).
+#   * Relationship predicates are [uid] edges with @reverse so inverse
+#     traversal works (e.g. ~references from a Concept back to its Findings).
+#   * `date` is a plain string: the corpus mixes "YYYY", "YYYY-MM" and
+#     "YYYY-MM-DD", which are not valid RFC 3339 datetimes.
+#   * List predicates ([string]) accept either one scalar value or many,
+#     which both loaders produce.
+#
+# Supported query surface (see DGRAPH-STATUS.md / FILES-GENERATED.md):
+#     eq(dgraph.type, "Concept")            type blocks
+#     eq(id, ...)                           id  @index(exact) @upsert
+#     eq(status/confidence/category, ...)   ... @index(exact)
+#     anyoftext(name/tags, "...")           ... @index(fulltext)
+#     anyofterms(name/tags, "...")          ... @index(term)
+#     regex(name, "...")                    name @index(trigram)
+#     has(<predicate>)                      any declared predicate
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Identity & classification (shared by every node type)
+# -----------------------------------------------------------------------------
+
+id: string @index(exact) @upsert .
+name: string @index(exact, term, fulltext, trigram) .
+entity_type: string @index(exact) .
+category: string @index(exact) .
+subcategory: string @index(exact) .
+status: string @index(exact) .
+confidence: string @index(exact) .
+type: string @index(exact) .
+tags: [string] @index(term, fulltext) .
+date: string @index(exact) .
+description: string @index(term) .
+
+# -----------------------------------------------------------------------------
+# Concept  (prethought/concepts/*.yaml — Cayley graphs, spectral gaps, ...)
+# -----------------------------------------------------------------------------
+
+definition: string @index(term, fulltext) .
+abstract: string @index(term, fulltext) .
+properties: [string] .
+lean_status: string @index(exact) .
+lean_file: string .
+cypher_file: string .
+
+# -----------------------------------------------------------------------------
+# Finding  (prethought/findings/*.yaml — empirical results, refutations, ...)
+# -----------------------------------------------------------------------------
+
+statement: string @index(term, fulltext) .
+experiment: [string] @index(exact) .
+configuration: string .
+results: string .
+analysis: string @index(term) .
+conclusion: string @index(term) .
+verdict: string @index(exact) .
+
+# -----------------------------------------------------------------------------
+# Paper & Researcher  (papers.yaml, prethought/papers/, related-work/)
+# -----------------------------------------------------------------------------
+
+title: string @index(exact, term, fulltext, trigram) .
+authors: [string] @index(term) .
+author: [string] @index(term) .
+year: int @index .
+url: string @index(exact) .
+venue: string @index(term) .
+doi: string @index(exact) .
+relevance: string @index(exact) .
+open_access: bool .
+notes: string .
+orcid: string @index(exact) .
+affiliation: string @index(term) .
+website: string .
+
+# -----------------------------------------------------------------------------
+# Approach & Problem  (prethought/open-problems/, related-work/)
+# -----------------------------------------------------------------------------
+
+strategy: string .
+priority: string @index(exact) .
+difficulty: string @index(exact) .
+
+# -----------------------------------------------------------------------------
+# Theorem, Experiment, Script, Dataset, Reference
+# -----------------------------------------------------------------------------
+
+proof: string .
+proof_status: string @index(exact) .
+paper_id: string @index(exact) .
+file: string @index(exact) .
+section: string .
+source: string @index(exact) .
+path: string .
+size: string .
+format: string @index(exact) .
+language: string @index(exact) .
+dependencies: [string] .
+
+# -----------------------------------------------------------------------------
+# Relationship edges  ([uid] with @reverse — the graph structure)
+#
+# Planned predicate set from kg/README.md plus the edge predicates emitted by
+# kg/scripts/export_to_dgraph.py (list-of-reference YAML fields).
+#   <finding>  <proven_by>   <experiment> .
+#   <theorem>  <implies>     <theorem> .
+#   <concept>  <~references> <finding>   .   # reverse traversal
+# -----------------------------------------------------------------------------
+
+related_concepts: [uid] @reverse .
+references: [uid] @reverse .
+depends_on: [uid] @reverse .
+supports: [uid] @reverse .
+contradicts: [uid] @reverse .
+relates_to: [uid] @reverse .
+implies: [uid] @reverse .
+implied_by: [uid] @reverse .
+proven_by: [uid] @reverse .
+disproven_by: [uid] @reverse .
+referenced_by: [uid] @reverse .
+implies_open: [uid] @reverse .
+blocks: [uid] @reverse .
+blocking: [uid] @reverse .
+blocked_by: [uid] @reverse .
+equivalent_to: [uid] @reverse .
+generalizes: [uid] @reverse .
+specializes_of: [uid] @reverse .
+targets: [uid] @reverse .
+uses_concepts: [uid] @reverse .
+uses_findings: [uid] @reverse .
+findings: [uid] @reverse .
+scripts: [uid] @reverse .
+papers: [uid] @reverse .
+used_by: [uid] @reverse .
+used_in: [uid] @reverse .
+authored: [uid] @reverse .
+authored_by: [uid] @reverse .
+
+
+# =============================================================================
+# Node types
+# (Names mirror the TYPE_MAP in kg/scripts/export_to_dgraph.py and, where
+# applicable, the Neo4j labels in kg/cypher/. `dgraph.type` values emitted by
+# the loaders must have a block here for expand(_all_) to work.)
+# =============================================================================
+
+# --- Core knowledge entities ------------------------------------------------
+
 type Concept {
-  id: String @index(exact) .
-  name: String @index(term) .
-  entity_type: String @index(exact) .
-  category: String @index(exact) .
-  subcategory: String @index(exact) .
-  definition: String .
-  abstract: String .
-  properties: [String] .
-  related_concepts: [Concept] .
-  references: [Reference] .
-  tags: [String] @index(term) .
-  lean_status: String @index(exact) .
-  lean_file: String .
-  cypher_file: String .
+  id
+  name
+  entity_type
+  category
+  subcategory
+  definition
+  abstract
+  properties
+  lean_status
+  lean_file
+  cypher_file
+  tags
+  related_concepts
+  references
+  relates_to
+  equivalent_to
+  generalizes
+  specializes_of
 }
 
 type Finding {
-  id: String @index(exact) .
-  name: String @index(term) .
-  entity_type: String @index(exact) .
-  category: String @index(exact) .
-  subcategory: String @index(exact) .
-  statement: String .
-  experiment: [String] .
-  date: String .
-  configuration: String .
-  results: String .
-  analysis: String .
-  conclusion: String .
-  status: String @index(exact) .
-  confidence: String @index(exact) .
-  references: [Reference] .
-  depends_on: [Finding] .
-  supports: [Concept] .
-  contradicts: [Finding] .
-  tags: [String] @index(term) .
+  id
+  name
+  entity_type
+  category
+  subcategory
+  statement
+  experiment
+  date
+  configuration
+  results
+  analysis
+  conclusion
+  verdict
+  status
+  confidence
+  tags
+  references
+  depends_on
+  supports
+  contradicts
+  proven_by
+  disproven_by
+  implies
+  relates_to
 }
 
 type Paper {
-  id: String @index(exact) .
-  title: String @index(term) .
-  authors: [Researcher] .
-  date: String .
-  year: Int @index(int) .
-  url: String .
-  venue: String @index(term) .
-  abstract: String .
-  doi: String .
-  category: String @index(exact) .
-  subcategory: String @index(exact) .
-  status: String @index(exact) .
-  open_access: Boolean .
-  notes: String .
-  tags: [String] @index(term) .
+  id
+  title
+  authors
+  author
+  date
+  year
+  url
+  venue
+  doi
+  relevance
+  category
+  subcategory
+  status
+  open_access
+  notes
+  abstract
+  tags
+  references
+  referenced_by
 }
 
 type Researcher {
-  id: String @index(exact) .
-  name: String @index(term) .
-  orcid: String .
-  affiliation: String .
-  website: String .
-  papers: [Paper] .
+  id
+  name
+  orcid
+  affiliation
+  website
+  authored
 }
 
 type Approach {
-  id: String @index(exact) .
-  name: String @index(term) .
-  description: String .
-  strategy: String .
-  confidence: Float .
-  status: String @index(exact) .
-  category: String @index(exact) .
-  targets: [Problem] .
-  uses_concepts: [Concept] .
-  uses_findings: [Finding] .
-  referenced_by: [Paper] .
-  tags: [String] @index(term) .
+  id
+  name
+  description
+  strategy
+  confidence
+  status
+  category
+  tags
+  targets
+  uses_concepts
+  uses_findings
+  referenced_by
 }
 
 type Problem {
-  id: String @index(exact) .
-  name: String @index(term) .
-  statement: String .
-  priority: String @index(exact) .
-  status: String @index(exact) .
-  difficulty: String @index(exact) .
-  blocking: [Problem] .
-  blocked_by: [Problem] .
-  relates_to: [Concept] .
-  tags: [String] @index(term) .
+  id
+  name
+  statement
+  priority
+  status
+  difficulty
+  tags
+  blocking
+  blocked_by
+  blocks
+  relates_to
+  implies_open
 }
 
-type Reference {
-  id: String @index(exact) .
-  entity_type: String @index(exact) .  # corpus | concept | finding | paper | theorem | lean | cypher | experiment-log | script
-  paper_id: String .
-  file: String .
-  section: String .
-  url: String .
-}
-
-type Dataset {
-  id: String @index(exact) .
-  name: String @index(term) .
-  description: String .
-  source: String .
-  path: String .
-  size: String .
-  format: String .
-  used_by: [Finding] .
-  tags: [String] @index(term) .
-}
+# --- Supporting entities ------------------------------------------------------
 
 type Theorem {
-  id: String @index(exact) .
-  name: String @index(term) .
-  statement: String .
-  proof: String .
-  proof_status: String @index(exact) .  # proven | partial | conjecture | disproven
-  author: [Researcher] .
-  year: Int @index(int) .
-  references: [Reference] .
-  relates_to: [Concept] .
-  implies: [Theorem] .
-  implied_by: [Theorem] .
-  tags: [String] @index(term) .
+  id
+  name
+  statement
+  proof
+  proof_status
+  author
+  year
+  tags
+  references
+  relates_to
+  implies
+  implied_by
+  equivalent_to
 }
 
 type Experiment {
-  id: String @index(exact) .
-  name: String @index(term) .
-  date: String .
-  configuration: String .
-  results: String .
-  findings: [Finding] .
-  scripts: [Script] .
-  papers: [Paper] .
-  tags: [String] @index(term) .
+  id
+  name
+  date
+  configuration
+  results
+  tags
+  findings
+  scripts
+  papers
 }
 
 type Script {
-  id: String @index(exact) .
-  name: String @index(term) .
-  path: String .
-  description: String .
-  language: String @index(exact) .
-  dependencies: [String] .
-  used_in: [Experiment] .
+  id
+  name
+  path
+  description
+  language
+  dependencies
+  used_in
 }
-interface KnowledgeEntity {
-  id: String!
-  name: String!
-  entity_type: String!
-  category: String
-  subcategory: String
-  tags: [String!]
+
+type Dataset {
+  id
+  name
+  description
+  source
+  path
+  size
+  format
+  tags
+  used_by
+}
+
+type Reference {
+  id
+  entity_type
+  paper_id
+  file
+  section
+  url
+}
+
+# --- Corpus / methodology types emitted by TYPE_MAP --------------------------
+
+type Equivalence {
+  id
+  name
+  statement
+  status
+  category
+  subcategory
+  tags
+  equivalent_to
+  references
+}
+
+type RHEquivalence {
+  id
+  name
+  statement
+  status
+  category
+  subcategory
+  tags
+  equivalent_to
+  references
+}
+
+type Conjecture {
+  id
+  name
+  statement
+  status
+  category
+  subcategory
+  tags
+  references
+  relates_to
+}
+
+type Bridge {
+  id
+  name
+  statement
+  status
+  priority
+  tags
+  blocks
+  blocked_by
+  relates_to
+}
+
+type Graph {
+  id
+  name
+  description
+  category
+  subcategory
+  properties
+  tags
+  relates_to
+}
+
+type Group {
+  id
+  name
+  description
+  category
+  subcategory
+  properties
+  tags
+  relates_to
+}
+
+type Function {
+  id
+  name
+  description
+  category
+  subcategory
+  tags
+  relates_to
+}
+
+type Operator {
+  id
+  name
+  description
+  category
+  subcategory
+  tags
+  relates_to
+}
+
+type Research {
+  id
+  name
+  description
+  statement
+  date
+  status
+  category
+  subcategory
+  tags
+  references
+}
+
+type Philosophy {
+  id
+  name
+  description
+  category
+  subcategory
+  tags
+}
+
+type Strategy {
+  id
+  name
+  description
+  status
+  tags
+}
+
+type Audit {
+  id
+  name
+  description
+  date
+  status
+  tags
+}
+
+type Roadmap {
+  id
+  name
+  description
+  date
+  status
+  tags
+}
+
+type Warning {
+  id
+  name
+  description
+  category
+  tags
+}
+
+type Analysis {
+  id
+  name
+  description
+  date
+  status
+  tags
+}
+
+type Verification {
+  id
+  name
+  description
+  date
+  status
+  verdict
+  tags
+}
+
+type Derivation {
+  id
+  name
+  description
+  statement
+  date
+  tags
+}
+
+type Documentation {
+  id
+  name
+  description
+  date
+  file
+  tags
+}
+
+type Proof {
+  id
+  name
+  statement
+  proof
+  proof_status
+  date
+  tags
+  proven_by
+}
+
+type Assessment {
+  id
+  name
+  description
+  verdict
+  date
+  tags
+}
+
+type Refutation {
+  id
+  name
+  statement
+  date
+  status
+  tags
+  disproven_by
+  contradicts
+}
+
+type Resource {
+  id
+  name
+  description
+  url
+  source
+  tags
 }
