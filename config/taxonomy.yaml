@@ -441,6 +441,28 @@ arxiv_queries:
 - query: cat:math.CA AND (abs:"Riemann zeta" OR abs:"Dirichlet series" OR abs:"Tauberian")
   category: number-theory
   subcategory_hint: l-functions
+# ── FC-001: RH-critical discovery (zeros on the line, criteria, verification) ──
+- query: cat:math.NT AND (abs:"zeros of the zeta function" AND abs:"critical line")
+  category: number-theory
+  subcategory_hint: l-functions
+- query: cat:math.NT AND (abs:"zero-free region" OR abs:"Vinogradov-Korobov")
+  category: number-theory
+  subcategory_hint: l-functions
+- query: cat:math.NT AND (abs:"Lehmer pair" OR abs:"de Bruijn-Newman")
+  category: number-theory
+  subcategory_hint: l-functions
+- query: cat:math.NT AND (abs:"Li criterion" OR abs:"Li coefficients" OR abs:"Keiper")
+  category: equivalences
+  subcategory_hint: weil
+- query: cat:math.NT AND (abs:"Nyman-Beurling" OR abs:"Baez-Duarte")
+  category: equivalences
+  subcategory_hint: nyman-beurling
+- query: cat:math.NT AND (abs:"Mertens conjecture" OR abs:"summatory Liouville" OR abs:"Polya's conjecture")
+  category: number-theory
+  subcategory_hint: l-functions
+- query: cat:math.NT AND (abs:"Riemann-Siegel" OR abs:"Turing method" OR abs:"Gram block")
+  category: number-theory
+  subcategory_hint: l-functions
 other_sources_queries:
 - source: dblp
   query: riemann hypothesis

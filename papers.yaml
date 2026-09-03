@@ -95784,3 +95784,292 @@ papers:
       learning subgroup relations from finite groups. Experimental results demonstrate the effectiveness
       of the proposed architecture, achieving a test accuracy of 95.9% (47/49) on an independent test
       set and illustrating the potential of geometric deep learning for subgroup prediction.
+  - id: doi-10-1090-s0025-5718-1966-0203909-5
+    title: Separation of zeros of the Riemann zeta-function
+    authors:
+    - R. Sherman Lehman
+    date: 1966-01
+    url: https://doi.org/10.1090/s0025-5718-1966-0203909-5
+    venue: Mathematics of Computation
+    category: number-theory
+    subcategory: l-functions
+    doi: 10.1090/s0025-5718-1966-0203909-5
+  - id: doi-10-1112-plms-s3-3-1-99
+    title: Some Calculations of the Riemann Zeta-Function
+    authors:
+    - A. M. Turing
+    date: 1953-01
+    url: https://doi.org/10.1112/plms/s3-3.1.99
+    venue: Proceedings of the London Mathematical Society
+    category: number-theory
+    subcategory: l-functions
+    doi: 10.1112/plms/s3-3.1.99
+  - id: doi-10-1090-s0025-5718-1986-0829637-3
+    title: On the zeros of the Riemann zeta function in the critical strip. IV
+    authors:
+    - J. van de Lune
+    - H. J. J. te Riele
+    - D. T. Winter
+    date: 1986-01
+    url: https://doi.org/10.1090/s0025-5718-1986-0829637-3
+    venue: Mathematics of Computation
+    category: number-theory
+    subcategory: l-functions
+    doi: 10.1090/s0025-5718-1986-0829637-3
+  - id: doi-10-1515-crll-1985-357-138
+    title: Disproof of the Mertens conjecture
+    authors:
+    - Andrew M. Odlyzko
+    - Herman J. J. te Riele
+    date: 1985-03
+    url: https://doi.org/10.1515/crll.1985.357.138
+    venue: Journal für die reine und angewandte Mathematik
+    category: number-theory
+    subcategory: l-functions
+    doi: 10.1515/crll.1985.357.138
+  - id: doi-10-1016-0001-8708-74-90074-7
+    title: More than one third of zeros of Riemann's zeta-function are on σ = 1/2
+    authors:
+    - Norman Levinson
+    date: 1974-08
+    url: https://doi.org/10.1016/0001-8708(74)90074-7
+    venue: Advances in Mathematics
+    category: number-theory
+    subcategory: l-functions
+    doi: 10.1016/0001-8708(74)90074-7
+  - id: doi-10-1515-crll-1989-399-1
+    title: More than two fifths of the zeros of the Riemann zeta function are on the critical line
+    authors:
+    - J. Brian Conrey
+    date: 1989-08
+    url: https://doi.org/10.1515/crll.1989.399.1
+    venue: Journal für die reine und angewandte Mathematik
+    category: number-theory
+    subcategory: l-functions
+    doi: 10.1515/crll.1989.399.1
+  - id: doi-10-1006-jnth-1997-2137
+    title: The Positivity of a Sequence of Numbers and the Riemann Hypothesis
+    authors:
+    - Xian-Jin Li
+    date: 1997-08
+    url: https://doi.org/10.1006/jnth.1997.2137
+    venue: Journal of Number Theory
+    category: equivalences
+    subcategory: weil
+    doi: 10.1006/jnth.1997.2137
+  - id: doi-10-1006-aima-1998-1797
+    title: Notes sur la fonction ζ de Riemann, 2
+    authors:
+    - Michel Balazard
+    - Eric Saias
+    - Marc Yor
+    date: 1999-05
+    url: https://doi.org/10.1006/aima.1998.1797
+    venue: Advances in Mathematics
+    category: equivalences
+    subcategory: nyman-beurling
+    doi: 10.1006/aima.1998.1797
+  - id: doi-10-1006-aima-1999-1861
+    title: Notes sur la fonction ζ de Riemann, 3
+    authors:
+    - Luis Báez-Duarte
+    - Michel Balazard
+    - Bernard Landreau
+    - Eric Saias
+    date: 2000-01
+    url: https://doi.org/10.1006/aima.1999.1861
+    venue: Advances in Mathematics
+    category: equivalences
+    subcategory: nyman-beurling
+    doi: 10.1006/aima.1999.1861
+  - id: doi-10-2307-2695443
+    title: An Elementary Problem Equivalent to the Riemann Hypothesis
+    authors:
+    - Jeffrey C. Lagarias
+    date: 2002-06
+    url: https://doi.org/10.2307/2695443
+    venue: The American Mathematical Monthly
+    category: equivalences
+    subcategory: weil
+    doi: 10.2307/2695443
+  - id: doi-10-1007-11792086-12
+    title: The Mertens Conjecture Revisited
+    authors:
+    - Tadej Kotnik
+    - Herman te Riele
+    date: 2006-01
+    url: https://doi.org/10.1007/11792086_12
+    venue: Lecture Notes in Computer Science
+    category: number-theory
+    subcategory: l-functions
+    doi: 10.1007/11792086_12
+  - id: doi-10-7169-facm-1229618750
+    title: On the Nyman-Beurling criterion for the Riemann hypothesis
+    authors:
+    - Laurent Habsieger
+    date: 2007-01
+    url: https://doi.org/10.7169/facm/1229618750
+    venue: Functiones et Approximatio Commentarii Mathematici
+    category: equivalences
+    subcategory: nyman-beurling
+    doi: 10.7169/facm/1229618750
+  - id: doi-10-1090-s0025-5718-2013-02716-0
+    title: Improved results on the Mertens conjecture
+    authors:
+    - Yannick Saouter
+    - Herman te Riele
+    date: 2013-05
+    url: https://doi.org/10.1090/s0025-5718-2013-02716-0
+    venue: Mathematics of Computation
+    category: number-theory
+    subcategory: l-functions
+    doi: 10.1090/s0025-5718-2013-02716-0
+  - id: arxiv-1401.2689
+    title: Updating the error term in the prime number theorem
+    authors:
+    - Tim Trudgian
+    date: 2014-01
+    url: https://arxiv.org/abs/1401.2689
+    venue: ''
+    category: number-theory
+    subcategory: l-functions
+    abstract: 'An improved estimate is given for |θ(x) -x|, where θ(x) = \sum_{p\leq x} \log p. Three applications
+      are given: the first to arithmetic progressions that have points in common, the second to primes in
+      short intervals, and the third to a conjecture by C. Pomerance.'
+  - id: arxiv-1002.4127
+    title: More than 41% of the zeros of the zeta function are on the critical line
+    authors:
+    - Hung Bui
+    - Brian Conrey
+    - Matthew Young
+    date: 2010-02
+    url: https://arxiv.org/abs/1002.4127
+    venue: ''
+    category: number-theory
+    subcategory: l-functions
+    abstract: We prove that more than 41% of the zeros of the zeta function are on the critical line.
+  - id: arxiv-1102.5356
+    title: The H=xp model revisited and the Riemann zeros
+    authors:
+    - German Sierra
+    - Javier Rodriguez-Laguna
+    date: 2011-02
+    url: https://arxiv.org/abs/1102.5356
+    venue: ''
+    category: equivalences
+    subcategory: hilbert-polya
+    abstract: Berry and Keating conjectured that the classical Hamiltonian H = xp is related to the Riemann
+      zeros. A regularization of this model yields semiclassical energies that behave, in average, as the
+      non trivial zeros of the Riemann zeta function. However, the classical trajectories are not closed,
+      rendering the model incomplete. In this paper, we show that the Hamiltonian H = x (p + l_p^2/p) contains
+      closed periodic orbits, and that its spectrum coincides with the average Riemann zeros. This result
+      is generalized to Dirichlet L-functions using different self-adjoint extensions of H. We discuss the
+      relation of our work to Polya's fake zeta function and suggest an experimental realization in terms
+      of the Landau model.
+  - id: arxiv-1106.1868
+    title: Explicit zero-free regions for Dedekind Zeta functions
+    authors:
+    - Habiba Kadiri
+    date: 2011-06
+    url: https://arxiv.org/abs/1106.1868
+    venue: ''
+    category: number-theory
+    subcategory: l-functions
+    abstract: 'Let K be a number field, n_K its degree, and d_K the absolute value of its discriminant.
+      We prove that, if d_K is sufficiently large, then the Dedekind zeta function associated to K has no
+      zeros in the region: Re(s) > 1 - 1/(12.55 log d_K + 9.69 n_K log|Im s| + 3.03 n_K + 58.63) and |Im
+      s| > 1. Moreover, it has at most one zero in the region: Re (s) > 1- 1/(12.74 log d_K) and |Im s|
+      < 1. This zero if it exists is simple and is real. This argument also improves a result of Stark by
+      a factor of 2: there is at most one zero in the region Re (s) > 1 - 1/(2 log d_K) and |Im s| < 1/(2
+      log d_K).'
+  - id: arxiv-1612.08627
+    title: Lehmer pairs and derivatives of Hardy's Z-function
+    authors:
+    - Aleksander Simonič
+    date: 2016-11
+    url: https://arxiv.org/abs/1612.08627
+    venue: ''
+    category: number-theory
+    subcategory: l-functions
+    abstract: Occurrences of very close zeros of the Riemann zeta function are strongly connected with Lehmer
+      pairs and with the Riemann Hypothesis. The aim of the present note is to derive a condition for a
+      pair of consecutive simple zeros of the ζ-function to be a Lehmer pair in terms of derivatives of
+      Hardy's Z-function. Furthermore, we connect Newman's conjecture with stationary points of the Z-function,
+      and present some numerical results.
+  - id: arxiv-1508.05870
+    title: Lehmer pairs revisited
+    authors:
+    - Jeffrey Stopple
+    date: 2015-08
+    url: https://arxiv.org/abs/1508.05870
+    venue: ''
+    category: number-theory
+    subcategory: l-functions
+    abstract: We seek to understand how the technical definition of Lehmer pair can be related to more analytic
+      properties of the Riemann zeta function, particularly the location of the zeros of ζ^\prime(s). Because
+      we are interested in the connection between Lehmer pairs and the de Bruijn-Newman constant Λ, we assume
+      the Riemann Hypothesis throughout. We define strong Lehmer pairs via an inequality on the derivative
+      of the pre-Schwarzian of Riemann's function Ξ(t), evaluated at consecutive zeros. Theorem 1 shows
+      that strong Lehmer pairs are Lehmer pairs. Theorem 2 describes the derivative of the pre-Schwarzian
+      in terms of ζ^\prime(ρ). Theorem 3 expresses the criteria for strong Lehmer pairs in terms of nearby
+      zeros ρ^\prime of ζ^\prime(s). We examine 114661 pairs of zeros of ζ(s) around height t=10^6, finding
+      855 strong Lehmer pairs. These are compared to the corresponding zeros of ζ^\prime(s) in the same
+      range.
+  - id: arxiv-1801.05914
+    title: The De Bruijn-Newman constant is non-negative
+    authors:
+    - Brad Rodgers
+    - Terence Tao
+    date: 2018-01
+    url: https://arxiv.org/abs/1801.05914
+    venue: ''
+    category: equivalences
+    subcategory: hilbert-polya
+    abstract: For each t \in {\bf R}, define the entire function H_t(x) := \int_0^\infty e^{tu^2} Φ(u) \cos(xu)\
+      du where Φ is the super-exponentially decaying function Φ(u) := \sum_{n=1}^\infty (2π^2 n^4 e^{9u}
+      - 3πn^2 e^{5u} ) \exp(-πn^2 e^{4u} ). Newman showed that there exists a finite constant Λ (the de
+      Bruijn-Newman constant) such that the zeroes of H_t are all real precisely when t \geq Λ. The Riemann
+      hypothesis is the equivalent to the assertion Λ\leq 0, and Newman conjectured the complementary bound
+      Λ\geq 0. In this paper we establish Newman's conjecture. The argument proceeds by assuming for contradiction
+      that Λ< 0, and then analyzing the dynamics of zeroes of H_t (building on the work of Csordas, Smith,
+      and Varga) to obtain increasingly strong control on the zeroes of H_t in the range Λ< t \leq 0, until
+      one establishes that the zeroes of H_0 are in local equilibrium, in the sense that locally behave
+      (on average) as if they were equally spaced in an arithmetic progression, with gaps staying close
+      to the global average gap size. But this latter claim is inconsistent with the known results about
+      the local distribution of zeroes of the Riemann zeta function, such as the pair correlation estimates
+      of Montgomery.
+  - id: arxiv-1802.10521
+    title: More than five-twelfths of the zeros of ζ are on the critical line
+    authors:
+    - Kyle Pratt
+    - Nicolas Robles
+    - Alexandru Zaharescu
+    - Dirk Zeindler
+    date: 2018-02
+    url: https://arxiv.org/abs/1802.10521
+    venue: ''
+    category: number-theory
+    subcategory: l-functions
+    abstract: The second moment of the Riemann zeta-function twisted by a normalized Dirichlet polynomial
+      with coefficients of the form (μ* Λ_1^{* k_1} * Λ_2^{* k_2} * \cdots * Λ_d^{* k_d}) is computed unconditionally
+      by means of the autocorrelation of ratios of ζ techniques from Conrey, Farmer, Keating, Rubinstein
+      and Snaith (2005), Conrey, Farmer and Zirnbauer (2008) as well as Conrey and Snaith (2007). This in
+      turn allows us to describe the combinatorial process behind the mollification of ζ(s) + λ_1 ζ'(s)/\log
+      T + λ_2 ζ''(s)/\log^2 T + \cdots + λ_d \frac{ζ^{(d)}(s)}{\log^d T}, where ζ^{(k)} stands for the kth
+      derivative of the Riemann zeta-function and \{λ_k\}_{k=1}^d are real numbers. Improving on recent
+      results on long mollifiers and sums of Kloosterman sums due to Pratt and Robles (2017), as an application,
+      we increase the current lower bound of critical zeros of the Riemann zeta-function to slightly over
+      five-twelfths.
+  - id: arxiv-2004.09765
+    title: The Riemann hypothesis is true up to 3·10¹²
+    authors:
+    - Dave Platt
+    - Tim Trudgian
+    date: 2020-04
+    url: https://arxiv.org/abs/2004.09765
+    venue: ''
+    category: number-theory
+    subcategory: l-functions
+    abstract: We verify numerically, in a rigorous way using interval arithmetic, that the Riemann hypothesis
+      is true up to height 3\cdot10^{12}. That is, all zeroes β+ iγ of the Riemann zeta-function with 0<γ\leq
+      3\cdot 10^{12} have β= 1/2.
