@@ -1,4 +1,281 @@
 papers:
+- title: On the thermodynamic formalism for the Gauss map
+  authors:
+  - Dieter H. Mayer
+  date: 1990-06
+  url: https://doi.org/10.1007/bf02473355
+  venue: Communications in Mathematical Physics
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: 'Foundational paper for the transfer-operator approach: studies the Gauss
+    map via thermodynamic formalism and relates the spectrum of its transfer operator
+    to continued fractions and the Selberg zeta function of the modular group. Cited
+    throughout the research notes as the source of the Gauss-map transfer operator.'
+  doi: 10.1007/BF02473355
+- title: Positive Transfer Operators and Decay of Correlations
+  authors:
+  - Viviane Baladi
+  date: 2000-07
+  url: https://doi.org/10.1142/3657
+  venue: Advanced Series in Nonlinear Dynamics 16, World Scientific
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: 'Monograph on the spectral theory of positive transfer operators: Perron-Frobenius
+    theory, spectral gaps, and decay of correlations. Used in the research notes
+    as the standard reference for spectral properties of the Gauss-map transfer operator.'
+  doi: 10.1142/3657
+- title: The Selberg Trace Formula for PSL(2,R), Volume I
+  authors:
+  - Dennis A. Hejhal
+  date: 1976-01
+  url: https://doi.org/10.1007/bfb0079608
+  venue: Lecture Notes in Mathematics 548, Springer
+  category: dynam-systems
+  subcategory: selberg-zeta
+  abstract: First volume of the standard treatise on the Selberg trace formula for
+    PSL(2,R), covering automorphic forms, the trace formula, and the Selberg zeta
+    function. Primary reference in the verification notes for the zeta function of
+    the modular group.
+  doi: 10.1007/BFb0079608
+- title: The Selberg Trace Formula for PSL(2,R), Volume II
+  authors:
+  - Dennis A. Hejhal
+  date: 1983-01
+  url: https://doi.org/10.1007/bfb0061302
+  venue: Lecture Notes in Mathematics 1001, Springer
+  category: dynam-systems
+  subcategory: selberg-zeta
+  abstract: Second volume of Hejhal's treatise on the Selberg trace formula, extending
+    the theory needed in the research notes for Selberg zeta function properties
+    of the modular group.
+  doi: 10.1007/BFb0061302
+- title: Spectral Theory of Automorphic Functions and Its Applications
+  authors:
+  - Aleksei B. Venkov
+  date: 1990-01
+  url: https://doi.org/10.1007/978-94-009-1892-4
+  venue: Mathematics and Its Applications, Kluwer
+  category: dynam-systems
+  subcategory: selberg-zeta
+  abstract: Monograph on the spectral theory of automorphic functions, including
+    the Selberg trace formula and Selberg zeta function for the modular group. Primary
+    reference in the verification notes for Selberg zeta properties.
+  doi: 10.1007/978-94-009-1892-4
+- title: Thermodynamic Formalism
+  authors:
+  - David Ruelle
+  date: 2004-11
+  url: https://doi.org/10.1017/cbo9780511617546
+  venue: Cambridge Mathematical Library, Cambridge University Press
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: The founding text of thermodynamic formalism (first edition 1978), defining
+    pressure and transfer operators for dynamical systems. Cited in the research
+    notes for the pressure formula and convexity arguments.
+  doi: 10.1017/CBO9780511617546
+- title: An extension of the theory of Fredholm determinants
+  authors:
+  - David Ruelle
+  date: 1990-12
+  url: https://doi.org/10.1007/bf02699133
+  venue: Publications Mathematiques de l'IHES 72
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: Extends Fredholm determinant theory to dynamical determinants of transfer
+    operators with complex weights, controlling the spectral radius versus the real
+    part of the weight. Cited in the notes for complex potentials and spectral radius
+    estimates.
+  doi: 10.1007/BF02699133
+- title: Spectral Methods of Automorphic Forms
+  authors:
+  - Henryk Iwaniec
+  date: 2002-11
+  url: https://doi.org/10.1090/gsm/053
+  venue: Graduate Studies in Mathematics 53, AMS
+  category: number-theory
+  subcategory: modular-forms
+  abstract: 'Standard reference on the spectral theory of automorphic forms for the
+    modular group: Maass forms, the Selberg trace formula, and the Selberg zeta function.
+    Primary reference in the verification notes for the exact Selberg zeta formula.'
+  doi: 10.1090/gsm/053
+- title: More than one third of zeros of Riemann's zeta-function are on sigma = 1/2
+  authors:
+  - Norman Levinson
+  date: 1974-08
+  url: https://doi.org/10.1016/0001-8708(74)90074-7
+  venue: Advances in Mathematics 13
+  category: number-theory
+  subcategory: l-functions
+  abstract: Proves that more than one third of the non-trivial zeros of the Riemann
+    zeta function lie on the critical line, the first major improvement on Hardy's
+    result. Cited in the notes' history of zero-density results.
+  doi: 10.1016/0001-8708(74)90074-7
+- title: More than two fifths of the zeros of the Riemann zeta function are on the
+    critical line
+  authors:
+  - J. Brian Conrey
+  date: 1989-08
+  url: https://doi.org/10.1515/crll.1989.399.1
+  venue: Journal fur die reine und angewandte Mathematik 399
+  category: number-theory
+  subcategory: l-functions
+  abstract: Improves Levinson's method to show that more than two fifths of the zeros
+    of the Riemann zeta function lie on the critical line. Cited in the notes' history
+    of zero-density results.
+  doi: 10.1515/crll.1989.399.1
+- title: The Riemann Zeros and Eigenvalue Asymptotics
+  authors:
+  - Michael V. Berry
+  - Jonathan P. Keating
+  date: 1999-01
+  url: https://doi.org/10.1137/s0036144598347497
+  venue: SIAM Review 41(2)
+  category: equivalences
+  subcategory: hilbert-polya
+  abstract: Surveys the semiclassical interpretation of the Riemann zeros as eigenvalue
+    spectra, introducing the classical Hamiltonian H = xp underlying the Hilbert-Polya
+    approach. Cited in the notes as the quantum-mechanical alternative approach to
+    RH.
+  doi: 10.1137/S0036144598347497
+- title: Perturbation Theory for Linear Operators
+  authors:
+  - Tosio Kato
+  date: 1995-01
+  url: https://doi.org/10.1007/978-3-642-66282-9
+  venue: Classics in Mathematics, Springer (orig. 1966)
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: The standard treatise on perturbation theory of linear operators, including
+    analytic perturbation of isolated simple eigenvalues (Chapter VII). Used in the
+    notes for the analytic dependence of the leading transfer-operator eigenvalue.
+  doi: 10.1007/978-3-642-66282-9
+- title: Banach Lattices and Positive Operators
+  authors:
+  - Helmut H. Schaefer
+  date: 1974-01
+  url: https://doi.org/10.1007/978-3-642-65970-6
+  venue: Grundlehren der mathematischen Wissenschaften 215, Springer
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: Monograph on Banach lattices and positive operators, including the Krein-Rutman
+    theorem in its modern form. Cited in the notes for the positivity of the left
+    eigenfunctional of the transfer operator.
+  doi: 10.1007/978-3-642-65970-6
+- title: Linear operators leaving invariant a cone in a Banach space
+  authors:
+  - Mark G. Krein
+  - Mark A. Rutman
+  date: 1950-01
+  url: https://openalex.org/W210876736
+  venue: AMS Translations Series 1, Vol. 26 (orig. Uspekhi Mat. Nauk 1948)
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: Proves that a compact positive operator leaving a cone invariant has
+    its spectral radius as an eigenvalue with positive eigenvector (Krein-Rutman
+    theorem). Cited in the notes for simplicity of the leading eigenvalue of the
+    transfer operator.
+  doi: ''
+- title: Uber Integralgleichungen mit positivem Kern
+  authors:
+  - Robert Jentzsch
+  date: 1912-01
+  url: https://doi.org/10.1515/crll.1912.141.235
+  venue: Journal fur die reine und angewandte Mathematik 141
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: Classical paper on integral equations with positive kernel, proving that
+    a positive compact operator has its spectral radius as an eigenvalue with positive
+    eigenfunction (Jentzsch's theorem). Cited in the notes for peripheral spectrum
+    arguments.
+  doi: 10.1515/crll.1912.141.235
+- title: Spectral Theory and Differential Operators
+  authors:
+  - E. Brian Davies
+  date: 1995-01
+  url: https://doi.org/10.1017/cbo9780511623721
+  venue: Cambridge Studies in Advanced Mathematics 42, CUP (orig. 1980)
+  category: spectral-theory
+  subcategory: spectral-gaps
+  abstract: Monograph on the spectral theory of differential operators, covering
+    compactness and spectral estimates used in the notes for the global bound on
+    the transfer operator.
+  doi: 10.1017/CBO9780511623721
+- title: Asymptotic behaviour of eigenfunctions for multiparticle Schrodinger operators
+  authors:
+  - Jean-Michel Combes
+  - Lawrence Thomas
+  date: 1973-12
+  url: https://doi.org/10.1007/bf01646473
+  venue: Communications in Mathematical Physics 34
+  category: spectral-theory
+  subcategory: spectral-gaps
+  abstract: Introduces the Combes-Thomas estimate on the exponential localization
+    of eigenfunctions. Cited in the notes among analytic tools for spectral estimates
+    of operators.
+  doi: 10.1007/BF01646473
+- title: Elements of the Theory of Elliptic Functions
+  authors:
+  - Naum I. Akhiezer
+  date: 1990-05
+  url: https://doi.org/10.1090/mmono/079
+  venue: Translations of Mathematical Monographs 79, AMS
+  category: dynam-systems
+  subcategory: selberg-zeta
+  abstract: Standard monograph on elliptic functions, including modular functions
+    used in the notes for Selberg zeta function properties of the modular group.
+  doi: 10.1090/mmono/079
+- title: Zur analytischen Theorie hyperbolischer Raumformen und Bewegungsgruppen
+  authors:
+  - Heinz Huber
+  date: 1959-02
+  url: https://doi.org/10.1007/bf01369663
+  venue: Mathematische Annalen 138
+  category: dynam-systems
+  subcategory: selberg-zeta
+  abstract: Establishes the correspondence between the length spectrum of hyperbolic
+    surfaces and the eigenvalue spectrum (Huber's theorem), underpinning the geometric
+    side of Selberg zeta function theory. Cited in the notes' geometric background.
+  doi: 10.1007/BF01369663
+- title: On the theorem of Gauss-Kusmin-Levy and a Frobenius-type theorem for function
+    spaces
+  authors:
+  - Eduard Wirsing
+  date: 1974-01
+  url: https://doi.org/10.4064/aa-24-5-507-528
+  venue: Acta Arithmetica 24
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: Determines the rate of convergence in the Gauss-Kusmin problem and the
+    second eigenvalue (approximately 0.30366) of the Gauss-Kuzmin-Wirsing operator.
+    Cited in the notes for the spectral gap of the Gauss map.
+  doi: 10.4064/aa-24-5-507-528
+- title: Transfer Operators, the Selberg Zeta Function and the Lewis-Zagier Theory
+    of Period Functions
+  authors:
+  - Dieter H. Mayer
+  date: 2011-12
+  url: https://doi.org/10.1017/cbo9781139108782.005
+  venue: Hyperbolic Geometry and Applications in Quantum Chaos and Cosmology, LMS
+    Lecture Note Series 397, CUP
+  category: dynam-systems
+  subcategory: transfer-operator
+  abstract: Survey chapter linking transfer operators for the Gauss map, the Selberg
+    zeta function, and the Lewis-Zagier theory of period functions of the Riemann
+    zeta function. Resolves the notes' citation of Mayer's continued-fractions lecture
+    notes.
+  doi: 10.1017/CBO9781139108782.005
+- title: Mathematische Probleme
+  authors:
+  - David Hilbert
+  date: 1935-01
+  url: https://doi.org/10.1007/978-3-662-38452-7_19
+  venue: Gesammelte Abhandlungen III, Springer (orig. 1900)
+  category: equivalences
+  subcategory: hilbert-polya
+  abstract: Hilbert's 1900 Paris lecture listing 23 problems; Problem 8 states the
+    Riemann Hypothesis and its connection to the distribution of primes. Cited in
+    the notes' historical background on RH.
+  doi: 10.1007/978-3-662-38452-7_19
 - title: Über die Anzahl der Primzahlen unter einer gegebenen Grösse
   authors:
   - Bernhard Riemann
@@ -100761,3 +101038,206 @@ papers:
     into minimal two-sided ideals, with certainty, for any $n$-dimensional associative
     $\mathbb{F}_q$-algebra given by structure constants, using $O(n^4\log q)$ quantum
     $\mathbb{F}_q$-operations.
+
+# ---------------------------------------------------------------------------
+# references: bibliography of the research notes (NH-001).
+# Every verifiable reference cited in the riemann/research/ notes, resolved
+# to a real URL and registered in the corpus (the papers: list above).
+# cited_in paths are relative to the notes directory.
+# ---------------------------------------------------------------------------
+references:
+  - id: mayer-1990-gauss-cmp
+    title: 'On the thermodynamic formalism for the Gauss map'
+    authors: 'Dieter H. Mayer'
+    year: 1990
+    url: https://doi.org/10.1007/bf02473355
+    cited_in: research/SPECTRAL_RADIUS_ANALYSIS.md, research/SPRINT3_ANALYSIS.md
+  - id: mayer-1991-selberg-bams
+    title: 'The thermodynamic formalism approach to Selberg''s zeta function for PSL(2,Z)'
+    authors: 'Dieter H. Mayer'
+    year: 1991
+    url: https://doi.org/10.1090/s0273-0979-1991-16023-4
+    cited_in: research/GAP_ANALYSIS.md, research/FINAL_RH_PROOF.md
+    note: already in corpus before NH-001
+  - id: mayer-2011-transfer-operators
+    title: 'Transfer Operators, the Selberg Zeta Function and the Lewis-Zagier Theory of Period Functions'
+    authors: 'Dieter H. Mayer'
+    year: 2011
+    url: https://doi.org/10.1017/cbo9781139108782.005
+    cited_in: research/LAMBDA1_DERIVATIVE_ANALYSIS.md, research/SPECTRAL_GAP_GKW.md
+  - id: baladi-2000-positive
+    title: 'Positive Transfer Operators and Decay of Correlations'
+    authors: 'Viviane Baladi'
+    year: 2000
+    url: https://doi.org/10.1142/3657
+    cited_in: research/ASSIGNMENT_2_SIMPLE_EIGENVALUE.md, research/PRESSURE_FUNCTION_ANALYTICITY.md
+  - id: ruelle-1978-thermodynamic
+    title: 'Thermodynamic Formalism'
+    authors: 'David Ruelle'
+    year: 1978
+    url: https://doi.org/10.1017/cbo9780511617546
+    cited_in: research/FEYNMAN_HELLMANN_VERIFICATION.md, research/RUELLE_DOMINATION.md
+  - id: ruelle-1990-fredholm
+    title: 'An extension of the theory of Fredholm determinants'
+    authors: 'David Ruelle'
+    year: 1990
+    url: https://doi.org/10.1007/bf02699133
+    cited_in: research/RUELLE_DOMINATION.md, research/STRICT_DOMINATION.md
+  - id: hejhal-1976-trace-vol1
+    title: 'The Selberg Trace Formula for PSL(2,R), Volume I'
+    authors: 'Dennis A. Hejhal'
+    year: 1976
+    url: https://doi.org/10.1007/bfb0079608
+    cited_in: research/GAP_ANALYSIS.md, research/VERIFICATION_TODO.md
+  - id: hejhal-1983-trace-vol2
+    title: 'The Selberg Trace Formula for PSL(2,R), Volume II'
+    authors: 'Dennis A. Hejhal'
+    year: 1983
+    url: https://doi.org/10.1007/bfb0061302
+    cited_in: research/GAP_ANALYSIS.md
+  - id: venkov-1990-spectral
+    title: 'Spectral Theory of Automorphic Functions and Its Applications'
+    authors: 'Aleksei B. Venkov'
+    year: 1990
+    url: https://doi.org/10.1007/978-94-009-1892-4
+    cited_in: research/GAP_ANALYSIS.md, research/VERIFICATION_TODO.md
+  - id: iwaniec-2002-spectral-methods
+    title: 'Spectral Methods of Automorphic Forms'
+    authors: 'Henryk Iwaniec'
+    year: 2002
+    url: https://doi.org/10.1090/gsm/053
+    cited_in: research/GAP_ANALYSIS.md, research/VERIFICATION_TODO.md
+  - id: akhiezer-1990-elliptic
+    title: 'Elements of the Theory of Elliptic Functions'
+    authors: 'Naum I. Akhiezer'
+    year: 1990
+    url: https://doi.org/10.1090/mmono/079
+    cited_in: research/GAP_ANALYSIS.md, research/VERIFICATION_TODO.md
+  - id: huber-1959-hyperbolic
+    title: 'Zur analytischen Theorie hyperbolischer Raumformen und Bewegungsgruppen'
+    authors: 'Heinz Huber'
+    year: 1959
+    url: https://doi.org/10.1007/bf01369663
+    cited_in: research/GAP_ANALYSIS.md
+  - id: wirsing-1974-gauss-kusmin
+    title: 'On the theorem of Gauss-Kusmin-Levy and a Frobenius-type theorem for function spaces'
+    authors: 'Eduard Wirsing'
+    year: 1974
+    url: https://doi.org/10.4064/aa-24-5-507-528
+    cited_in: research/SPECTRAL_GAP_GKW.md
+  - id: isola-2003-farey-gauss
+    title: 'On the spectrum of Farey and Gauss maps'
+    authors: 'Stefano Isola'
+    year: 2003
+    url: https://arxiv.org/abs/math/0308017
+    cited_in: research/SPECTRAL_RADIUS_ANALYSIS.md, research/SPRINT3_ANALYSIS.md
+    note: already in corpus before NH-001
+  - id: bonanno-2022-farey
+    title: 'On the generalised transfer operators of the Farey map with complex temperature'
+    authors: 'Claudio Bonanno'
+    year: 2022
+    url: https://arxiv.org/abs/2211.11664
+    cited_in: research/SPECTRAL_RADIUS_ANALYSIS.md, research/SPRINT3_ANALYSIS.md
+    note: already in corpus before NH-001
+  - id: moller-pohl-2011-hecke-triangle
+    title: 'Period functions for Hecke triangle groups, and the Selberg zeta function as a Fredholm determinant'
+    authors: 'M. Möller, A. D. Pohl'
+    year: 2011
+    url: https://arxiv.org/abs/1103.5235
+    cited_in: research/SPECTRAL_RADIUS_ANALYSIS.md, research/SPRINT3_ANALYSIS.md
+    note: already in corpus before NH-001
+  - id: pohl-wabnitz-2022-cuspidal
+    title: 'Selberg zeta functions, cuspidal accelerations, and existence of strict transfer operator approaches'
+    authors: 'Anke D. Pohl, Philip Wabnitz'
+    year: 2022
+    url: https://arxiv.org/abs/2209.05927
+    cited_in: research/SPECTRAL_RADIUS_ANALYSIS.md, research/SPRINT3_ANALYSIS.md
+    note: already in corpus before NH-001
+  - id: liverani-2005-fredholm
+    title: 'Fredholm determinants, Anosov maps and Ruelle resonances'
+    authors: 'Carlangelo Liverani'
+    year: 2005
+    url: https://arxiv.org/abs/math/0505049
+    cited_in: research/SPECTRAL_RADIUS_ANALYSIS.md, research/SPRINT3_ANALYSIS.md
+    note: already in corpus before NH-001
+  - id: bandtlow-jenkinson-2008-ruelle
+    title: 'On the Ruelle eigenvalue sequence'
+    authors: 'Oscar F. Bandtlow, Oliver Jenkinson'
+    year: 2008
+    url: https://arxiv.org/abs/0802.1468
+    cited_in: research/SPRINT3_ANALYSIS.md
+    note: already in corpus before NH-001
+  - id: nisoli-2026-certified
+    title: 'Certified spectral approximation of transfer operators and the Gauss map'
+    authors: 'I. Nisoli'
+    year: 2026
+    url: https://arxiv.org/abs/2602.19435
+    cited_in: research/SPECTRAL_RADIUS_ANALYSIS.md, research/SPRINT3_ANALYSIS.md
+    note: already in corpus before NH-001
+  - id: kato-perturbation
+    title: 'Perturbation Theory for Linear Operators'
+    authors: 'Tosio Kato'
+    year: 1966
+    url: https://doi.org/10.1007/978-3-642-66282-9
+    cited_in: research/FEYNMAN_HELLMANN_VERIFICATION.md, research/TRANSFER_OPERATOR_MATH.md
+  - id: krein-rutman-1948-cone
+    title: 'Linear operators leaving invariant a cone in a Banach space'
+    authors: 'Mark G. Krein, Mark A. Rutman'
+    year: 1948
+    url: https://openalex.org/W210876736
+    cited_in: research/ASSIGNMENT_2_SIMPLE_EIGENVALUE.md, research/ASSIGNMENT_3_LEFT_EIGENFUNCTIONAL.md
+  - id: jentzsch-1912-positive-kernel
+    title: 'Uber Integralgleichungen mit positivem Kern'
+    authors: 'Robert Jentzsch'
+    year: 1912
+    url: https://doi.org/10.1515/crll.1912.141.235
+    cited_in: research/ASSIGNMENT_2_SIMPLE_EIGENVALUE.md
+  - id: schaefer-1974-banach-lattices
+    title: 'Banach Lattices and Positive Operators'
+    authors: 'Helmut H. Schaefer'
+    year: 1974
+    url: https://doi.org/10.1007/978-3-642-65970-6
+    cited_in: research/ASSIGNMENT_3_LEFT_EIGENFUNCTIONAL.md
+  - id: davies-1980-spectral
+    title: 'Spectral Theory and Differential Operators'
+    authors: 'E. Brian Davies'
+    year: 1980
+    url: https://doi.org/10.1017/cbo9780511623721
+    cited_in: research/ASSIGNMENT_4_GLOBAL_BOUND.md
+  - id: combes-thomas-1973
+    title: 'Asymptotic behaviour of eigenfunctions for multiparticle Schrodinger operators'
+    authors: 'Jean-Michel Combes, Lawrence Thomas'
+    year: 1973
+    url: https://doi.org/10.1007/bf01646473
+    cited_in: research/ASSIGNMENT_4_GLOBAL_BOUND.md
+  - id: hilbert-1900-problems
+    title: 'Mathematische Probleme'
+    authors: 'David Hilbert'
+    year: 1900
+    url: https://doi.org/10.1007/978-3-662-38452-7_19
+    cited_in: research/ASSIGNMENT_6_RH_CONCLUSION.md
+  - id: levinson-1974-one-third
+    title: 'More than one third of zeros of Riemann''s zeta-function are on sigma = 1/2'
+    authors: 'Norman Levinson'
+    year: 1974
+    url: https://doi.org/10.1016/0001-8708(74)90074-7
+    cited_in: research/ASSIGNMENT_6_RH_CONCLUSION.md
+  - id: conrey-1989-two-fifths
+    title: 'More than two fifths of the zeros of the Riemann zeta function are on the critical line'
+    authors: 'J. Brian Conrey'
+    year: 1989
+    url: https://doi.org/10.1515/crll.1989.399.1
+    cited_in: research/ASSIGNMENT_6_RH_CONCLUSION.md
+  - id: berry-keating-1999-semiclassical
+    title: 'The Riemann Zeros and Eigenvalue Asymptotics'
+    authors: 'Michael V. Berry, Jonathan P. Keating'
+    year: 1999
+    url: https://doi.org/10.1137/s0036144598347497
+    cited_in: research/GAP_ANALYSIS.md, research/VERIFICATION_TODO.md
+  - id: lagarias-2007-eulers-constant
+    title: 'Euler''s constant: Euler''s work and modern developments'
+    authors: 'Jeffrey C. Lagarias'
+    year: 2007
+    url: https://arxiv.org/abs/1303.1856
+    cited_in: research/GAP_ANALYSIS.md
+    note: resolves the notes' garbled Lagarias 2000 citation; already in corpus
