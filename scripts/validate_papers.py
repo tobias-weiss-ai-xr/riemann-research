@@ -107,6 +107,7 @@ def validate_papers(data, cfg, fix=False, sort=False):
     warnings = []
     fixed = 0
     seen = {}
+    seen_urls = {}
     papers = data.get("papers", [])
 
     valid_categories = {c["id"] for c in research_config.get_categories(cfg)}
@@ -179,6 +180,16 @@ def validate_papers(data, cfg, fix=False, sort=False):
             )
         else:
             seen[key] = i
+
+        # Whole-corpus check: one paper (one URL) should be listed exactly once,
+        # even across category cells (AGENTS.md duplicate rule: title AND arXiv id/URL).
+        if url:
+            if url in seen_urls:
+                errors.append(
+                    f"{prefix}duplicate URL — same paper already listed as #{seen_urls[url] + 1}"
+                )
+            else:
+                seen_urls[url] = i
 
         if title:
             for pattern in LATEX_PATTERNS:
@@ -276,7 +287,7 @@ def main():
         )
     elif not errors:
         print(
-            f"OK: All {len(data.get('papers', []))} papers passed validation (with warnings)",
+            f"OK: All {len(data.get('papers', []))} papers passed validation (with {len(warnings)} warnings)",
             flush=True,
         )
 
