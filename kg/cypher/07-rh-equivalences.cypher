@@ -1,67 +1,6 @@
-// ── RH Equivalence Class (core) ──────────────────────────────────
+// ── RH Extended Equivalence Class ─────────────────────────────────
 // Additional formulations equivalent to the Riemann Hypothesis.
-//
-// Provenance / documentation:
-//   Mirrors prethought/related-work/RH-Equivalences.yaml (the corpus-level
-//   related-work register of RH equivalences & bridges). Each node below
-//   corresponds to a YAML entry (id: RW-*), so the YAML and the KG stay
-//   in sync:
-//     nyman_beurling   ↔ RW-Nyman-Beurling        hilbert_polya ↔ RW-Hilbert-Polya
-//     weil_criterion   ↔ RW-Weil                   li_criterion  ↔ (Li 1998)
-//     nicolas          ↔ (Nicolas 1983)            bagchi        ↔ (Bagchi 1982)
-//     granville_goldbach ↔ RW-Granville-Goldbach       denjoy     ↔ RW-Denjoy
-//     beurling_primes  ↔ RW-Beurling-Primes         lee_yang     ↔ RW-Lee-Yang (in 10-)
-//   RH itself (RW-RH-1859) lives in 05-theorems.cypher; Robin's
-//   inequality, Lagarias' criterion and the Liouville equivalence
-//   (RW-Robin) also live in 05-theorems.cypher — see the pointer at the
-//   bottom of this file.
-//
-// Load order: run AFTER 03-functions.cypher (zeta), 05-theorems.cypher
-// (rh, pnt, sato_tate) and 06-papers-approaches.cypher (hayou2023) —
-// those nodes must already exist; cross-file endpoints are bound with
-// explicit MATCH clauses (KG-003 sync fix — see 11-sync-verification.cypher),
-// so each file loads as one self-contained statement.
-// NOTE (verified against the cypher sources): zeta is created in
-//   03-functions.cypher (NOT 02-graphs.cypher); the mertens node is
-//   created in THIS file (05-theorems.cypher creates no mertens node).
-//
-// ── NODE INVENTORY (14 theorem nodes) ─────────────────────────────
-// Relationship legend:
-//   ⟺  proven bidirectional EQUIVALENT_TO rh
-//   ⇒  one-way IMPLIES (sufficient condition only)
-//   ~  CONNECTS_TO / ANALOGOUS_TO / partial (interpretation, not equivalence)
-//
-//   PROVEN EQUIVALENCES (⟺ — 8 nodes):
-//     nyman_beurling     1950  L²-density of fractional parts        [RW-Nyman-Beurling]
-//     weil_criterion     1952  positivity on the multiplicative group [RW-Weil]
-//     li_criterion       1998  λ_n ≥ 0 for all n ≥ 1                 [(Li 1998) — no RW id]
-//     nicolas            1983  primorial/totient inequality          [(Nicolas 1983) — no RW id]
-//     explicit_formula   1896  ψ(x) = x + O(x^{1/2+ε}) form          [no RW id]
-//     bagchi             1982  Hurwitz zeta cyclic in L²(0,1)        [(Bagchi 1982) — no RW id]
-//     granville_goldbach 2007  averaged Goldbach error ≪ x^{3/2+o(1)} [RW-Granville-Goldbach]
-//     denjoy             1934  Möbius random-walk heuristic         [RW-Denjoy]
-//
-//   SUFFICIENT / ONE-WAY (⇒ — 3 nodes):
-//     hilbert_polya      1914  self-adjoint operator ⇒ RH; converse
-//                             unknown, so NOT an equivalence         [RW-Hilbert-Polya]
-//     mertens            1897  |M(x)| < √x ⇒ RH; DISPROVEN 1985       [no RW id]
-//     mobius_randomness  1965  Chowla ⇒ PNT only, not RH-equivalent  [no RW id]
-//
-//   INTERPRETATIONS / ANALOGUES (~ — 3 nodes):
-//     voronin            1975  universality of ζ (context, no ⟺)     [no RW id]
-//     yakaboylu          2023  partial progress toward Hilbert-Pólya [no RW id]
-//     beurling_primes    1937  RH analogue for generalized primes    [RW-Beurling-Primes]
-//
-// Reverse documentation gap: mertens, explicit_formula, voronin,
-// yakaboylu and mobius_randomness have no RW-* entry in
-// prethought/related-work/RH-Equivalences.yaml yet — that register is
-// pipeline-owned and outside this file's edit scope (flagged to the
-// corpus maintainer).
-//
-// Together with 10-rh-equivalences-extended.cypher (19 further ⟺
-// nodes + 2 documented analogies) and the robin/lagarias equivalences
-// in 05-theorems.cypher, this file materialises the corpus register of
-// RH equivalences into the knowledge graph.
+// Run after 05-theorems.cypher (needs rh node to already exist).
 
 // ── NYMAN-BEURLING CRITERION ─────────────────────────────────────
 CREATE (nyman_beurling:Theorem {
@@ -77,10 +16,8 @@ CREATE (nyman_beurling:Theorem {
   key_paper: "Nyman 1950, Beurling 1955"
 })
 
-MATCH (rh:Theorem {name: "Riemann Hypothesis"})
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Nyman (1950), Beurling (1955)"}]->(nyman_beurling)
 CREATE (nyman_beurling)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Nyman (1950), Beurling (1955)"}]->(rh)
-MATCH (hayou2023:Paper {title: "A Neural Network Proof of the Riemann Hypothesis"})
 CREATE (hayou2023)-[:APPROACHES_VIA {strategy: "RH ≡ density of single-layer NNs via Nyman-Beurling", confidence: 0.3}]->(nyman_beurling)
 
 // ── HILBERT-PÓLYA CONJECTURE ─────────────────────────────────────
@@ -109,7 +46,6 @@ CREATE (weil_criterion:Theorem {
 })
 
 CREATE (weil_criterion)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Weil (1952)"}]->(rh)
-MATCH (sato_tate:Theorem {name: "Sato-Tate Conjecture"})
 CREATE (weil_criterion)-[:MOTIVATED]->(sato_tate)
 
 // ── LI'S CRITERION ──────────────────────────────────────────────
@@ -124,7 +60,6 @@ CREATE (li_criterion:Theorem {
 })
 
 CREATE (li_criterion)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Li (1998)"}]->(rh)
-MATCH (zeta:MathFunction {name: "ζ(s)"})
 CREATE (li_criterion)-[:CONNECTS_TO]->(zeta)
 
 // ── MERTENS HYPOTHESIS (disproven!) ─────────────────────────────
@@ -144,13 +79,10 @@ CREATE (mertens)-[:IMPLIES {description: "Mertens hypothesis implies RH, but Mer
 // ── NICOLAS CRITERION ───────────────────────────────────────────
 CREATE (nicolas:Theorem:Conjecture {
   name: "Nicolas Criterion",
-  statement: "RH holds iff N_k / (φ(N_k) log log N_k) > e^γ for all k ≥ 1, where N_k = ∏_{i≤k} p_i is the k-th primorial (product of the first k primes) and φ is Euler's totient",
-  proof_status: "proven",
+  statement: "RH holds iff Σ_{d|n} d ≥ H_n + exp(H_n) log(H_n) for all n ≥ 2, where H_n is the nth harmonic number",
+  proof_status: "conjectured",
   year_stated: 1983,
-  year_established: 1983,
-  significance: "major",
-  description: "Jean-Louis Nicolas (1983). Primorial-based criterion in the Robin/Lagarias family: the equivalence itself is proven (RH itself remains open). CORRECTION (documented): this node previously carried the harmonic-number inequality σ(n) ≤ H_n + e^{H_n} log H_n — that is LAGARIAS' criterion (2002), which has its own node 'lagarias' in 05-theorems.cypher. This node now records the true Nicolas primorial criterion.",
-  key_paper: "Nicolas (1983) C. R. Acad. Sci. Paris 297"
+  description: "Jean-Louis Nicolas. Related to Robin's inequality but using the harmonic numbers. Equivalent to RH."
 })
 
 CREATE (nicolas)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Nicolas (1983)"}]->(rh)
@@ -218,69 +150,4 @@ CREATE (mobius_randomness:Theorem:Conjecture {
   description: "Sarvadaman Chowla. Möbius function is random (uncorrelated at shifts). Stronger than PNT. Connected to Sarnak's conjecture on deterministic sequences."
 })
 
-MATCH (pnt:Theorem {name: "Prime Number Theorem"})
 CREATE (mobius_randomness)-[:IMPLIES {description: "Chowla implies PNT (via partial summation), but NOT equivalent to RH"}]->(pnt)
-
-// ── GRANVILLE: AVERAGED GOLDBACH (RW-Granville-Goldbach) ────────
-CREATE (granville_goldbach:Theorem {
-  name: "Granville Averaged Goldbach Equivalence",
-  statement: "RH holds iff Σ_{2N ≤ x} (G(2N) - J(2N)) ≪ x^{3/2+o(1)} as x → ∞, where G(2N) = Σ_{p+q=2N} log p · log q and J(2N) is the Hardy-Littlewood singular series for the Goldbach problem",
-  proof_status: "proven",
-  year_established: 2007,
-  significance: "major",
-  description: "Andrew Granville. An AVERAGED equivalence: the error term in the (weighted) Goldbach conjecture is controlled by the zeros of ζ(s). If RH holds the error averages out; conversely, smallness of the average error forces the zeros onto the critical line. This is the 'Goldbach bridge' to RH referenced by experiment 17 and the Friedli-constant finding in the corpus.",
-  key_paper: "Granville (2007); documented in prethought/related-work/RH-Equivalences.yaml as RW-Granville-Goldbach",
-  domain: "analytic number theory"
-})
-CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Granville (2007), via the explicit formula for the Goldbach error term"}]->(granville_goldbach)
-CREATE (granville_goldbach)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Granville (2007)"}]->(rh)
-CREATE (granville_goldbach)-[:USED_IN]->(explicit_formula)
-
-// ── DENJOY: PROBABILISTIC INTERPRETATION (RW-Denjoy) ────────────
-CREATE (denjoy:Theorem {
-  name: "Denjoy's Probabilistic Interpretation",
-  statement: "RH holds iff the Möbius summatory function behaves like a symmetric random walk: M(x) = O(x^{1/2+ε}) matches the fluctuation scale of a fair coin-toss sum, making each sign of μ(n) an independent ±1 trial heuristically",
-  proof_status: "proven",
-  year_established: 1934,
-  significance: "major",
-  description: "Arnaud Denjoy (1934). Interprets RH as a statement about the randomness of the Möbius function. Note: the corpus YAML (RW-Denjoy) dates this to 1981, but Denjoy's C. R. Acad. Sci. Paris note is from 1934 (Denjoy died in 1974) — this node records the corrected year.",
-  key_paper: "Denjoy (1934) C. R. Acad. Sci. Paris 198; see Broughan (2017) Equivalents of RH Vol I",
-  domain: "probability / elementary number theory"
-})
-CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "M(x) = O(x^{1/2+ε}) (≡ RH, Mertens-type bound); Denjoy supplies the random-walk heuristic"}]->(denjoy)
-CREATE (denjoy)-[:CONNECTS_TO]->(mertens)
-CREATE (denjoy)-[:RELATED_TO]->(mobius_randomness)
-
-// ── BEURLING GENERALIZED PRIMES (RW-Beurling-Primes) ────────────
-CREATE (beurling_primes:Theorem {
-  name: "Beurling Generalized Primes RH Analogue",
-  statement: "For a Beurling generalized prime system with counting function N(x) satisfying the Beurling regularity condition, the associated Beurling zeta function has its non-trivial zeros on Re(s) = 1/2 iff the system satisfies those regularity conditions on the generalized prime counting function",
-  proof_status: "proven",
-  year_established: 1937,
-  significance: "major",
-  description: "Arne Beurling (1937). Extends the primes to generalized multiplicative systems; the RH analogue becomes a statement about regularity of the counting function. Framework later used to construct 'prime systems' with zeta functions having zeros off the line (Hall 1970s), showing RH is a genuinely arithmetic phenomenon.",
-  key_paper: "Beurling (1937) Acta Math. 68; documented in prethought/related-work/RH-Equivalences.yaml as RW-Beurling-Primes",
-  domain: "analytic number theory"
-})
-CREATE (rh)-[:ANALOGOUS_TO {description: "classical RH is the Beurling-RH statement for the ordinary primes"}]->(beurling_primes)
-CREATE (beurling_primes)-[:CONNECTS_TO]->(zeta)
-
-// ── POINTER: ROBIN / LAGARIAS / LIOUVILLE (RW-Robin) ────────────
-// Robin's inequality (RW-Robin), Lagarias' σ/H criterion and the Liouville
-// summatory-function equivalence are equivalent to RH too, but their nodes
-// are created in 05-theorems.cypher (robin, lagarias, liouville) together
-// with their EQUIVALENT_TO edges — do not duplicate them here. Nicolas'
-// primorial criterion (above) refines the same family.
-//
-// ── POINTER: EXTENDED SET → 10-rh-equivalences-extended.cypher ──
-// 19 further proven equivalences (von Koch, Chebyshev-ψ, Volchkov,
-// Balazard-Saias-Yor, Franel-Landau, Liouville-λ limit, Hardy-Littlewood
-// series, Báez-Duarte, Jensen-polynomial hyperbolicity, de Bruijn-Newman
-// Λ = 0, Bombieri variational, Laguerre-Pólya class, Caveney-Nicolas-
-// Sondow GA1/GA2, Redheffer matrix, Landau function, lcm, Speiser,
-// horocycle-flow rate, divisibility graph) plus two documented ANALOGIES
-// (Brownian excursion, Lee-Yang) and five survey-paper nodes (Broughan,
-// Borwein et al., Conrey, Connes, Griffin-Ono-Rolen-Zagier) live in
-// 10-rh-equivalences-extended.cypher. RW-Bertini (marked status:
-// unverified in the YAML register) is deliberately absent from both
-// files — no node without a verifiable source.

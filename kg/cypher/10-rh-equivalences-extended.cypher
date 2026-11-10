@@ -2,72 +2,6 @@
 // Formulations identified via Broughan (2017), Borwein et al. (2008), Conrey (2003)
 // ~150-200 total known; this script adds the major ones not in 07-rh-equivalences.cypher
 // Run AFTER 07-rh-equivalences.cypher (needs rh node)
-//
-// Provenance / documentation:
-//   Extends prethought/related-work/RH-Equivalences.yaml; the Lee-Yang
-//   statistical-physics bridge below mirrors the YAML entry RW-Lee-Yang.
-//   (The YAML entry RW-Bertini is marked status: unverified in the corpus
-//   and is deliberately NOT materialised here — no node without a
-//   verifiable source.)
-//
-// Full load order: AFTER 03-functions.cypher (zeta), 05-theorems.cypher
-// (rh, robin, pnt), 06-papers-approaches.cypher (riemann1859,
-// rogers_tao2019) and 07-rh-equivalences.cypher (nyman_beurling,
-// mertens, weil_criterion) — those nodes must already exist; cross-file
-// endpoints are bound with explicit MATCH clauses (KG-003 sync fix — see
-// 11-sync-verification.cypher), so this file loads as one self-contained
-// statement.
-// NOTE (verified against the cypher sources): zeta is created in
-//   03-functions.cypher (NOT 05-theorems.cypher); robin and pnt are the
-//   only 05-theorems nodes referenced here.
-//
-// ── NODE INVENTORY (21 theorem + 5 paper nodes) ───────────────────
-// Relationship legend:
-//   ⟺  proven bidirectional EQUIVALENT_TO rh — 19 of the 21 nodes below
-//   ~  CONNECTS_TO only — interpretation/analogy, deliberately NOT
-//      tagged equivalent: brownian_excursion, lee_yang
-//
-//   ANALYTIC (7, all ⟺):
-//     von_koch              1901  π(x) = Li(x) + O(x^{1/2} log x)
-//     chebyshev_err         1901  ψ(x) = x + O(x^{1/2} log²x)
-//     volchkov              1995  single log|ζ| integral = π(3-γ)/32
-//     bsy                   1999  Balazard-Saias-Yor integral = 0
-//     franel_landau         1924  Farey discrepancy balance
-//     liouville_lim         —     Σ_{k≤n} λ(k) = O(n^{1/2+ε})
-//     hardy_littlewood_series 1918 odd-zeta exp. series = O(x^{-1/4})
-//
-//   OPERATOR-THEORETIC (5, all ⟺):
-//     baez_duarte           2002  countable Nyman-Beurling (a ∈ N)
-//     jensen_poly           1927  Pólya: all Jensen polynomials hyperbolic
-//     dbn_equiv             2020  Λ = 0 (Rodgers-Tao closed Λ ≥ 0)
-//     bombieri_var          2000  variational functional minimiser
-//     laguerre_polya        1927  Ξ in the Laguerre-Pólya class
-//
-//   ARITHMETIC (5, all ⟺):
-//     ga_cns                2011  GA1/GA2 refinement of Robin
-//     redheffer             1977  |det A_n| = |M(n)| = O(n^{1/2+ε})
-//     landau_fn             2019  log g(n) < li^{-1}(n)
-//     lcm_form              —     |log lcm(1..n) − n| < √n log²n
-//     speiser               1934  ζ' has no zeros left of the line
-//
-//   PROBABILISTIC / ERGODIC (2):
-//     horocycle             1990  Mayer horocycle equidistribution rate (⟺)
-//     brownian_excursion    2001  Biane-Pitman-Yor Ξ interpretation (~)
-//
-//   GRAPH-THEORETIC (1, ⟺):
-//     divisibility_graph    2017  Broughan divisibility-graph spectra
-//
-//   STATISTICAL PHYSICS (1, ~):
-//     lee_yang              1952  zero-pinning analogy, status: partial [RW-Lee-Yang]
-//
-//   PAPER / SURVEY NODES (5): broughan_survey, borwein_survey, conrey2003,
-//   connes2026, griffin2019 — the catalog sources for this extended set.
-//
-// YAML provenance: only lee_yang mirrors a RW-* entry
-// (prethought/related-work/RH-Equivalences.yaml); the other 20 nodes are
-// sourced from the catalogs above and have no RW-* counterpart yet —
-// that register is pipeline-owned and outside this file's edit scope
-// (gap flagged to the corpus maintainer).
 
 // ── ANALYTIC ────────────────────────────────────────────────────
 
@@ -82,7 +16,6 @@ CREATE (von_koch:Theorem {
   key_paper: "von Koch (1901) Acta Math. 24, 159-182",
   domain: "analytic number theory"
 })
-MATCH (rh:Theorem {name: "Riemann Hypothesis"})
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "von Koch (1901)"}]->(von_koch)
 CREATE (von_koch)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "von Koch (1901)"}]->(rh)
 
@@ -96,7 +29,6 @@ CREATE (chebyshev_err:Theorem {
   domain: "analytic number theory"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(chebyshev_err)
-MATCH (pnt:Theorem {name: "Prime Number Theorem"})
 CREATE (chebyshev_err)-[:STRENGTHENS]->(pnt)
 
 // Volchkov Integral
@@ -128,9 +60,8 @@ CREATE (franel_landau:Theorem {
   name: "Franel-Landau Criterion",
   statement: "D(N) = O(N^{1/2+ε}) where D(N) = |#{squarefree n≤N : ω(n) even} - #{squarefree n≤N : ω(n) odd}|",
   proof_status: "proven",
-  year_established: 1924,
+  year_established: 1926,
   description: "Balance of squarefree integers with even vs. odd number of prime factors. Elementary formulation.",
-  key_paper: "Franel (1924), Landau (1924) Göttinger Nachr.",
   domain: "elementary number theory"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(franel_landau)
@@ -170,7 +101,6 @@ CREATE (baez_duarte:Theorem {
   domain: "functional analysis"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "Báez-Duarte (2002)"}]->(baez_duarte)
-MATCH (nyman_beurling:Theorem {name: "Nyman-Beurling Criterion"})
 CREATE (baez_duarte)-[:STRENGTHENS]->(nyman_beurling)
 
 // Jensen Polynomial Hyperbolicity
@@ -197,7 +127,6 @@ CREATE (dbn_equiv:Theorem {
   domain: "complex analysis / entire functions"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional", proof_sketch: "de Bruijn (1950) + Rodgers-Tao (2020) Λ ≥ 0"}]->(dbn_equiv)
-MATCH (rogers_tao2019:Paper {title: "The de Bruijn-Newman constant is non-negative"})
 CREATE (rogers_tao2019)-[:PROVES {proof_technique: "real-variable methods, Pólya-Jensen"}]->(dbn_equiv)
 
 // Bombieri's Variational Approach
@@ -211,7 +140,6 @@ CREATE (bombieri_var:Theorem {
   domain: "calculus of variations"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(bombieri_var)
-MATCH (weil_criterion:Theorem {name: "Weil Positivity Criterion"})
 CREATE (bombieri_var)-[:GENERALIZES]->(weil_criterion)
 
 // Laguerre-Pólya Class
@@ -240,7 +168,6 @@ CREATE (ga_cns:Theorem {
   domain: "arithmetic functions"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(ga_cns)
-MATCH (robin:Theorem {name: "Robin's Inequality"})
 CREATE (ga_cns)-[:REFINES]->(robin)
 
 // Redheffer Matrix
@@ -254,7 +181,6 @@ CREATE (redheffer:Theorem {
   domain: "linear algebra / matrix theory"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(redheffer)
-MATCH (mertens:Theorem {name: "Mertens Hypothesis"})
 CREATE (redheffer)-[:CONNECTS_TO {description: "det(A_n) = M(n)"}]->(mertens)
 
 // Landau Function / Symmetric Group
@@ -303,7 +229,6 @@ CREATE (brownian_excursion:Theorem {
   key_paper: "Biane, Pitman, Yor (2001) Bull. AMS 38, 435-465",
   domain: "probability theory"
 })
-MATCH (zeta:MathFunction {name: "ζ(s)"})
 CREATE (brownian_excursion)-[:CONNECTS_TO {description: "probability interpretation of Ξ-function"}]->(zeta)
 
 // Horocycle Flow Ergodicity
@@ -331,22 +256,6 @@ CREATE (divisibility_graph:Theorem {
   domain: "graph theory"
 })
 CREATE (rh)-[:EQUIVALENT_TO {direction: "bidirectional"}]->(divisibility_graph)
-
-// ── STATISTICAL PHYSICS (RW-Lee-Yang) ───────────────────────────
-
-// Lee-Yang Circle Theorem bridge
-CREATE (lee_yang:Theorem {
-  name: "Lee-Yang Circle Theorem Bridge",
-  statement: "Zeros of the Ising/lattice-gas partition function lie on the unit circle (Lee-Yang); the analogous statement for ζ(s) — zeros of a statistical/generating partition function on the critical line Re(s)=1/2 — is the RH-type statement in the sector formulation documented as RW-Lee-Yang",
-  proof_status: "partial",
-  year_established: 1952,
-  significance: "major",
-  description: "T.D. Lee and C.N. Yang (1952). NOT a proven formal equivalence — documented as status: partial in prethought/related-work/RH-Equivalences.yaml (RW-Lee-Yang). Both theorems pin zeros of exponential sums/generating functions to 1D loci (unit circle vs. critical line). The connection runs through the partition function Z = Σ exp(-βE) and analytic properties of logarithmic generating functions; rigorised versions exist only for sector-restricted RH-type statements.",
-  key_paper: "Lee, Yang (1952) Phys. Rev. 87, 410; documented in prethought/related-work/RH-Equivalences.yaml as RW-Lee-Yang",
-  domain: "statistical physics / complex analysis"
-})
-CREATE (lee_yang)-[:CONNECTS_TO {description: "zero-pinning analogy: unit circle ↔ critical line; both constrain zeros of log-generating functions"}]->(zeta)
-CREATE (lee_yang)-[:RELATED_TO]->(laguerre_polya)
 
 // ── SURVEY PAPERS ────────────────────────────────────────────────
 
@@ -413,12 +322,11 @@ CREATE (griffin2019:Paper {
 })
 
 // ── RELATIONSHIPS ───────────────────────────────────────────────
-// NOTE: the GENERALIZES/REFINES/CONNECTS_TO edges for bombieri_var,
-// ga_cns and redheffer were already created inline above and are not
-// repeated here (the previous duplicates created redundant edges).
 CREATE (von_koch)-[:IMPLIES]->(chebyshev_err)
 CREATE (volchkov)-[:RELATED_TO]->(bsy)
-MATCH (riemann1859:Paper {title: "Über die Anzahl der Primzahlen unter einer gegebenen Grösse"})
+CREATE (bombieri_var)-[:GENERALIZES]->(weil_criterion)
+CREATE (ga_cns)-[:REFINES]->(robin)
+CREATE (redheffer)-[:CONNECTS_TO]->(mertens)
 CREATE (broughan_survey)-[:CITES]->(riemann1859)
 CREATE (conrey2003)-[:CITES]->(riemann1859)
 CREATE (connes2026)-[:CITES]->(riemann1859)

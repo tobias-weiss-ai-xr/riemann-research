@@ -1,46 +1,46 @@
 # Trends (12-Month View)
 
-**Generated:** 2026-09-10  
-**Window:** since 2025-09 — 1378 of 4520 papers
+**Generated:** 2026-11-10  
+**Window:** since 2025-11 — 1869 of 5135 papers
 
 ## 🔥 Keyword Bursts
 
 | Keyword | Recent | Total | Burst |
 |---------|--------|-------|-------|
-| framework | 274 | 427 | 2.1× |
-| benchmark | 70 | 113 | 2.0× |
-| evaluation | 59 | 129 | 1.5× |
-| autonomous | 5 | 11 | 1.5× |
-| model | 293 | 687 | 1.4× |
-| system | 224 | 539 | 1.4× |
-| tool | 63 | 153 | 1.4× |
-| human | 20 | 47 | 1.4× |
-| analysis | 160 | 405 | 1.3× |
-| scalable | 9 | 22 | 1.3× |
-| dataset | 57 | 153 | 1.2× |
-| review | 24 | 68 | 1.2× |
-| real-world | 22 | 61 | 1.2× |
-| method | 313 | 903 | 1.1× |
-| novel | 76 | 229 | 1.1× |
+| framework | 332 | 502 | 1.8× |
+| benchmark | 90 | 134 | 1.8× |
+| autonomous | 8 | 14 | 1.6× |
+| evaluation | 88 | 162 | 1.5× |
+| model | 396 | 803 | 1.4× |
+| system | 290 | 618 | 1.3× |
+| tool | 83 | 181 | 1.3× |
+| human | 24 | 51 | 1.3× |
+| scalable | 12 | 26 | 1.3× |
+| analysis | 200 | 457 | 1.2× |
+| dataset | 78 | 177 | 1.2× |
+| method | 404 | 1013 | 1.1× |
+| learning | 141 | 352 | 1.1× |
+| application | 257 | 709 | 1.0× |
+| novel | 97 | 255 | 1.0× |
 
 ## 📈 Fastest-Growing Cells
 
 | Cell | Recent | Total | Recent Share |
 |------|--------|-------|--------------|
 | `spectral-theory/brandt-pizer` | 4 | 4 | 100% |
+| `application/non-agentic` | 13 | 14 | 93% |
 | `formalization/lean-foundation` | 11 | 13 | 85% |
-| `spectral-theory/ramanujan` | 31 | 41 | 76% |
-| `machine-learning/ml-zeros` | 28 | 42 | 67% |
+| `spectral-theory/ramanujan` | 34 | 44 | 77% |
+| `machine-learning/ml-zeros` | 30 | 44 | 68% |
+| `equivalences/hilbert-polya` | 100 | 180 | 56% |
+| `number-theory/modular-forms` | 153 | 294 | 52% |
 | `formalization/lean-riemann` | 1 | 2 | 50% |
-| `number-theory/modular-forms` | 109 | 239 | 46% |
+| `equivalences/weil` | 78 | 179 | 44% |
 | `formalization/verification` | 8 | 18 | 44% |
-| `equivalences/hilbert-polya` | 54 | 125 | 43% |
-| `machine-learning/gnn-cayley` | 125 | 359 | 35% |
-| `spectral-theory/spectral-gaps` | 31 | 90 | 34% |
-| `number-theory/l-functions` | 368 | 1166 | 32% |
-| `equivalences/weil` | 40 | 138 | 29% |
-| `spectral-theory/cayley-graphs` | 351 | 1307 | 27% |
-| `number-theory/hecke` | 77 | 311 | 25% |
-| `dynam-systems/selberg-zeta` | 3 | 12 | 25% |
+| `machine-learning/gnn-cayley` | 181 | 426 | 42% |
+| `number-theory/l-functions` | 547 | 1377 | 40% |
+| `number-theory/hecke` | 130 | 368 | 35% |
+| `spectral-theory/spectral-gaps` | 34 | 98 | 35% |
+| `dynam-systems/transfer-operator` | 71 | 239 | 30% |
 
 Regenerate with `python3 tools/trend_scanner.py --months 12`.

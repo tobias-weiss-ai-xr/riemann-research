@@ -1,18 +1,48 @@
 {
  "categories": [
   {
+   "id": "application",
+   "name": "application",
+   "count": 14,
+   "trajectory": {
+    "2026": 13
+   },
+   "momentum": {
+    "id": "application",
+    "name": "Application",
+    "total": 14,
+    "recent": 13,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 0.929,
+    "papers_per_month": 1.1,
+    "score": 92.9
+   }
+  },
+  {
    "id": "dynam-systems",
    "name": "Dynamical Systems",
-   "count": 218,
+   "count": 256,
    "trajectory": {
+    "1912": 1,
+    "1950": 1,
+    "1959": 1,
+    "1974": 2,
+    "1976": 1,
+    "1983": 1,
+    "1990": 4,
     "1991": 1,
+    "1995": 1,
+    "2000": 1,
     "2003": 1,
+    "2004": 1,
     "2005": 1,
     "2006": 5,
     "2007": 4,
     "2008": 4,
     "2009": 3,
     "2010": 2,
+    "2011": 1,
     "2012": 3,
     "2013": 3,
     "2014": 6,
@@ -27,25 +57,27 @@
     "2023": 13,
     "2024": 23,
     "2025": 27,
-    "2026": 46
+    "2026": 69
    },
    "momentum": {
     "id": "dynam-systems",
     "name": "Dynam Systems",
-    "total": 218,
-    "recent": 53,
-    "prior": 27,
-    "growth_pct": 96.3,
-    "recent_share": 0.243,
-    "papers_per_month": 4.4,
-    "score": 120.6
+    "total": 256,
+    "recent": 74,
+    "prior": 26,
+    "growth_pct": 184.6,
+    "recent_share": 0.289,
+    "papers_per_month": 6.2,
+    "score": 213.5
    }
   },
   {
    "id": "equivalences",
    "name": "RH Equivalences & Bridges",
-   "count": 566,
+   "count": 689,
    "trajectory": {
+    "1935": 1,
+    "1999": 1,
     "2002": 3,
     "2003": 3,
     "2004": 1,
@@ -70,18 +102,18 @@
     "2023": 43,
     "2024": 70,
     "2025": 96,
-    "2026": 119
+    "2026": 240
    },
    "momentum": {
     "id": "equivalences",
     "name": "Equivalences",
-    "total": 566,
-    "recent": 153,
-    "prior": 83,
-    "growth_pct": 84.3,
-    "recent_share": 0.27,
-    "papers_per_month": 12.8,
-    "score": 111.3
+    "total": 689,
+    "recent": 255,
+    "prior": 95,
+    "growth_pct": 168.4,
+    "recent_share": 0.37,
+    "papers_per_month": 21.2,
+    "score": 205.4
    }
   },
   {
@@ -118,7 +150,7 @@
   {
    "id": "machine-learning",
    "name": "Machine Learning",
-   "count": 545,
+   "count": 625,
    "trajectory": {
     "2006": 1,
     "2008": 1,
@@ -138,27 +170,29 @@
     "2023": 41,
     "2024": 92,
     "2025": 36,
-    "2026": 165
+    "2026": 245
    },
    "momentum": {
     "id": "machine-learning",
     "name": "Machine Learning",
-    "total": 545,
-    "recent": 181,
-    "prior": 33,
-    "growth_pct": 448.5,
-    "recent_share": 0.332,
-    "papers_per_month": 15.1,
-    "score": 481.7
+    "total": 625,
+    "recent": 250,
+    "prior": 34,
+    "growth_pct": 635.3,
+    "recent_share": 0.4,
+    "papers_per_month": 20.8,
+    "score": 675.3
    }
   },
   {
    "id": "number-theory",
    "name": "Number Theory",
-   "count": 1716,
+   "count": 2039,
    "trajectory": {
     "1859": 1,
-    "2002": 8,
+    "1974": 1,
+    "1989": 1,
+    "2002": 9,
     "2003": 9,
     "2004": 14,
     "2005": 17,
@@ -182,25 +216,27 @@
     "2023": 110,
     "2024": 240,
     "2025": 234,
-    "2026": 452
+    "2026": 772
    },
    "momentum": {
     "id": "number-theory",
     "name": "Number Theory",
-    "total": 1716,
-    "recent": 554,
-    "prior": 212,
-    "growth_pct": 161.3,
-    "recent_share": 0.323,
-    "papers_per_month": 46.2,
-    "score": 193.6
+    "total": 2039,
+    "recent": 830,
+    "prior": 222,
+    "growth_pct": 273.9,
+    "recent_share": 0.407,
+    "papers_per_month": 69.2,
+    "score": 314.6
    }
   },
   {
    "id": "spectral-theory",
    "name": "Spectral Theory & Graphs",
-   "count": 1442,
+   "count": 1476,
    "trajectory": {
+    "1973": 1,
+    "1995": 1,
     "1998": 1,
     "2001": 1,
     "2002": 5,
@@ -227,18 +263,38 @@
     "2023": 120,
     "2024": 139,
     "2025": 130,
-    "2026": 372
+    "2026": 404
    },
    "momentum": {
     "id": "spectral-theory",
     "name": "Spectral Theory",
-    "total": 1442,
-    "recent": 417,
-    "prior": 135,
-    "growth_pct": 208.9,
+    "total": 1476,
+    "recent": 427,
+    "prior": 139,
+    "growth_pct": 207.2,
     "recent_share": 0.289,
-    "papers_per_month": 34.8,
-    "score": 237.8
+    "papers_per_month": 35.6,
+    "score": 236.1
+   }
+  },
+  {
+   "id": "survey",
+   "name": "survey",
+   "count": 3,
+   "trajectory": {
+    "2012": 1,
+    "2018": 1
+   },
+   "momentum": {
+    "id": "survey",
+    "name": "Survey",
+    "total": 3,
+    "recent": 0,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 0.0,
+    "papers_per_month": 0.0,
+    "score": 0.0
    }
   }
  ],
@@ -251,12 +307,12 @@
   {
    "id": "cayley-graphs",
    "name": "Cayley Graphs",
-   "count": 1307
+   "count": 1330
   },
   {
    "id": "gnn-cayley",
    "name": "GNNs on Cayley Graphs",
-   "count": 359
+   "count": 426
   },
   {
    "id": "gnn-fullgraph",
@@ -266,22 +322,27 @@
   {
    "id": "granville",
    "name": "Granville / Goldbach-Bridge",
-   "count": 110
+   "count": 124
   },
   {
    "id": "hecke",
    "name": "Hecke Operators",
-   "count": 311
+   "count": 368
   },
   {
    "id": "hilbert-polya",
    "name": "Hilbert-Pólya Conjecture",
-   "count": 125
+   "count": 180
+  },
+  {
+   "id": "hybrid",
+   "name": "hybrid",
+   "count": 3
   },
   {
    "id": "l-functions",
    "name": "L-Functions & Zeta",
-   "count": 1166
+   "count": 1377
   },
   {
    "id": "lean-foundation",
@@ -296,42 +357,47 @@
   {
    "id": "ml-hecke",
    "name": "ML on Hecke Traces",
-   "count": 140
+   "count": 151
   },
   {
    "id": "ml-zeros",
    "name": "L-Function Zero Classification",
-   "count": 42
+   "count": 44
   },
   {
    "id": "modular-forms",
    "name": "Modular Forms",
-   "count": 239
+   "count": 294
+  },
+  {
+   "id": "non-agentic",
+   "name": "non-agentic",
+   "count": 14
   },
   {
    "id": "nyman-beurling",
    "name": "Nyman-Beurling Criterion",
-   "count": 193
+   "count": 206
   },
   {
    "id": "ramanujan",
    "name": "Ramanujan Property",
-   "count": 41
+   "count": 44
   },
   {
    "id": "selberg-zeta",
    "name": "Selberg Zeta & Trace Formulas",
-   "count": 12
+   "count": 17
   },
   {
    "id": "spectral-gaps",
    "name": "Spectral Gaps",
-   "count": 90
+   "count": 98
   },
   {
    "id": "transfer-operator",
    "name": "Transfer Operators",
-   "count": 206
+   "count": 239
   },
   {
    "id": "verification",
@@ -341,7 +407,7 @@
   {
    "id": "weil",
    "name": "Weil Criterion",
-   "count": 138
+   "count": 179
   }
  ],
  "timeline": [
@@ -351,14 +417,109 @@
    "l-functions"
   ],
   [
+   "1912-01",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "1935-01",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "1950-01",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "1959-02",
+   "dynam-systems",
+   "selberg-zeta"
+  ],
+  [
+   "1973-12",
+   "spectral-theory",
+   "spectral-gaps"
+  ],
+  [
+   "1974-01",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "1974-01",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "1974-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "1976-01",
+   "dynam-systems",
+   "selberg-zeta"
+  ],
+  [
+   "1983-01",
+   "dynam-systems",
+   "selberg-zeta"
+  ],
+  [
+   "1989-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "1990-01",
+   "dynam-systems",
+   "selberg-zeta"
+  ],
+  [
+   "1990-05",
+   "dynam-systems",
+   "selberg-zeta"
+  ],
+  [
+   "1990-06",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "1990-12",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
    "1991-07",
    "dynam-systems",
    "transfer-operator"
   ],
   [
+   "1995-01",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "1995-01",
+   "spectral-theory",
+   "spectral-gaps"
+  ],
+  [
    "1998-01",
    "spectral-theory",
    "cayley-graphs"
+  ],
+  [
+   "1999-01",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2000-07",
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2001-01",
@@ -434,6 +595,11 @@
    "2002-10",
    "spectral-theory",
    "cayley-graphs"
+  ],
+  [
+   "2002-11",
+   "number-theory",
+   "modular-forms"
   ],
   [
    "2002-12",
@@ -624,6 +790,11 @@
    "2004-09",
    "number-theory",
    "l-functions"
+  ],
+  [
+   "2004-11",
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2004-11",
@@ -2272,6 +2443,11 @@
   ],
   [
    "2011-12",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2011-12",
    "equivalences",
    "weil"
   ],
@@ -2321,6 +2497,11 @@
    "cayley-graphs"
   ],
   [
+   "2012-01",
+   "survey",
+   "hybrid"
+  ],
+  [
    "2012-02",
    "number-theory",
    "hecke"
@@ -5231,6 +5412,11 @@
    "cayley-graphs"
   ],
   [
+   "2018-01",
+   "survey",
+   "hybrid"
+  ],
+  [
    "2018-02",
    "dynam-systems",
    "transfer-operator"
@@ -17089,6 +17275,71 @@
    "2025-12",
    "spectral-theory",
    "cayley-graphs"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
+  ],
+  [
+   "2026-01",
+   "application",
+   "non-agentic"
   ],
   [
    "2026-01",
@@ -18873,6 +19124,11 @@
   [
    "2026-04",
    "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-04",
+   "machine-learning",
    "ml-hecke"
   ],
   [
@@ -19464,6 +19720,11 @@
    "2026-05",
    "dynam-systems",
    "transfer-operator"
+  ],
+  [
+   "2026-05",
+   "equivalences",
+   "granville"
   ],
   [
    "2026-05",
@@ -19693,6 +19954,306 @@
   [
    "2026-05",
    "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-05",
+   "machine-learning",
    "ml-hecke"
   ],
   [
@@ -19752,8 +20313,8 @@
   ],
   [
    "2026-05",
-   "number-theory",
-   "hecke"
+   "machine-learning",
+   "ml-zeros"
   ],
   [
    "2026-05",
@@ -19779,6 +20340,21 @@
    "2026-05",
    "number-theory",
    "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-05",
+   "number-theory",
+   "l-functions"
   ],
   [
    "2026-05",
@@ -20668,6 +21244,16 @@
   [
    "2026-06",
    "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-06",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-06",
+   "number-theory",
    "l-functions"
   ],
   [
@@ -21228,7 +21814,7 @@
   [
    "2026-07",
    "equivalences",
-   "nyman-beurling"
+   "hilbert-polya"
   ],
   [
    "2026-07",
@@ -21249,6 +21835,16 @@
    "2026-07",
    "equivalences",
    "nyman-beurling"
+  ],
+  [
+   "2026-07",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-07",
+   "equivalences",
+   "weil"
   ],
   [
    "2026-07",
@@ -21358,7 +21954,12 @@
   [
    "2026-07",
    "machine-learning",
-   "ml-hecke"
+   "gnn-cayley"
+  ],
+  [
+   "2026-07",
+   "machine-learning",
+   "gnn-cayley"
   ],
   [
    "2026-07",
@@ -21368,7 +21969,7 @@
   [
    "2026-07",
    "machine-learning",
-   "ml-zeros"
+   "ml-hecke"
   ],
   [
    "2026-07",
@@ -21382,8 +21983,8 @@
   ],
   [
    "2026-07",
-   "number-theory",
-   "hecke"
+   "machine-learning",
+   "ml-zeros"
   ],
   [
    "2026-07",
@@ -21438,6 +22039,16 @@
   [
    "2026-07",
    "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-07",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-07",
+   "number-theory",
    "l-functions"
   ],
   [
@@ -22089,6 +22700,16 @@
    "2026-07",
    "spectral-theory",
    "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-07",
+   "spectral-theory",
+   "ramanujan"
   ],
   [
    "2026-07",
@@ -22172,8 +22793,23 @@
   ],
   [
    "2026-08",
-   "equivalences",
-   "granville"
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-08",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-08",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-08",
+   "dynam-systems",
+   "transfer-operator"
   ],
   [
    "2026-08",
@@ -22183,6 +22819,26 @@
   [
    "2026-08",
    "equivalences",
+   "granville"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-08",
+   "equivalences",
    "hilbert-polya"
   ],
   [
@@ -22219,6 +22875,26 @@
    "2026-08",
    "equivalences",
    "nyman-beurling"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-08",
+   "equivalences",
+   "weil"
   ],
   [
    "2026-08",
@@ -22328,7 +23004,12 @@
   [
    "2026-08",
    "machine-learning",
-   "ml-zeros"
+   "gnn-cayley"
+  ],
+  [
+   "2026-08",
+   "machine-learning",
+   "ml-hecke"
   ],
   [
    "2026-08",
@@ -22342,8 +23023,8 @@
   ],
   [
    "2026-08",
-   "number-theory",
-   "hecke"
+   "machine-learning",
+   "ml-zeros"
   ],
   [
    "2026-08",
@@ -22393,7 +23074,22 @@
   [
    "2026-08",
    "number-theory",
-   "l-functions"
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "hecke"
   ],
   [
    "2026-08",
@@ -22659,6 +23355,81 @@
    "2026-08",
    "number-theory",
    "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-08",
+   "number-theory",
+   "modular-forms"
   ],
   [
    "2026-08",
@@ -22913,6 +23684,26 @@
   [
    "2026-08",
    "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-08",
+   "spectral-theory",
    "ramanujan"
   ],
   [
@@ -22944,6 +23735,2346 @@
    "2026-08",
    "spectral-theory",
    "spectral-gaps"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-09",
+   "machine-learning",
+   "ml-hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "ramanujan"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "ramanujan"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "spectral-gaps"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "spectral-gaps"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "spectral-gaps"
+  ],
+  [
+   "2026-09",
+   "spectral-theory",
+   "spectral-gaps"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-10",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-10",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-10",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-10",
+   "machine-learning",
+   "gnn-cayley"
+  ],
+  [
+   "2026-10",
+   "machine-learning",
+   "ml-zeros"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-10",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-10",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-10",
+   "spectral-theory",
+   "cayley-graphs"
+  ],
+  [
+   "2026-10",
+   "spectral-theory",
+   "spectral-gaps"
+  ],
+  [
+   "2026-10",
+   "spectral-theory",
+   "spectral-gaps"
+  ],
+  [
+   "2026-11",
+   "dynam-systems",
+   "transfer-operator"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "granville"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "hilbert-polya"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "nyman-beurling"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-11",
+   "equivalences",
+   "weil"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "hecke"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "l-functions"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "modular-forms"
+  ],
+  [
+   "2026-11",
+   "number-theory",
+   "modular-forms"
   ]
  ],
  "venues": [
@@ -22953,19 +26084,11 @@
   },
   {
    "name": "MED",
-   "papers": 9
+   "papers": 21
   },
   {
-   "name": "NeurIPS 2024",
-   "papers": 2
-  },
-  {
-   "name": "ICLR 2024",
-   "papers": 2
-  },
-  {
-   "name": "NeurIPS 2023",
-   "papers": 2
+   "name": "ICML 2026",
+   "papers": 6
   },
   {
    "name": "NeurIPS 2020",
@@ -22976,27 +26099,31 @@
    "papers": 2
   },
   {
-   "name": "ICML 2026",
+   "name": "PMC",
    "papers": 2
   },
   {
-   "name": "Monatsberichte der Berliner Akademie",
+   "name": "ICLR 2024",
+   "papers": 2
+  },
+  {
+   "name": "NeurIPS 2024",
+   "papers": 2
+  },
+  {
+   "name": "NeurIPS 2023",
+   "papers": 2
+  },
+  {
+   "name": "ArgMining@ACL",
    "papers": 1
   },
   {
-   "name": "Bulletin of the American Mathematical Society",
+   "name": "AAAI Workshop on Artificial Intelligence Safety",
    "papers": 1
   },
   {
-   "name": "ICLR 2025",
-   "papers": 1
-  },
-  {
-   "name": "SIGIR",
-   "papers": 1
-  },
-  {
-   "name": "AAAI 2024",
+   "name": "Publications Mathematiques de l'IHES 72",
    "papers": 1
   },
   {
@@ -23004,115 +26131,119 @@
    "papers": 1
   },
   {
-   "name": "EMNLP 2020. Code is available at https",
+   "name": "Communications in Mathematical Physics 34",
+   "papers": 1
+  },
+  {
+   "name": "Grundlehren der mathematischen Wissenschaften 215, Springer",
    "papers": 1
   }
  ],
  "keyword_bursts": [
   {
-   "keyword": "framework",
-   "recent": 274,
-   "total": 427,
-   "burst_score": 2.1,
-   "recent_share": 0.1988
-  },
-  {
    "keyword": "benchmark",
-   "recent": 70,
-   "total": 113,
-   "burst_score": 2.03,
-   "recent_share": 0.0508
+   "recent": 90,
+   "total": 134,
+   "burst_score": 1.85,
+   "recent_share": 0.0482
   },
   {
-   "keyword": "evaluation",
-   "recent": 59,
-   "total": 129,
-   "burst_score": 1.5,
-   "recent_share": 0.0428
+   "keyword": "framework",
+   "recent": 332,
+   "total": 502,
+   "burst_score": 1.82,
+   "recent_share": 0.1776
   },
   {
    "keyword": "autonomous",
-   "recent": 5,
-   "total": 11,
+   "recent": 8,
+   "total": 14,
+   "burst_score": 1.57,
+   "recent_share": 0.0043
+  },
+  {
+   "keyword": "evaluation",
+   "recent": 88,
+   "total": 162,
    "burst_score": 1.49,
-   "recent_share": 0.0036
+   "recent_share": 0.0471
   },
   {
    "keyword": "model",
-   "recent": 293,
-   "total": 687,
-   "burst_score": 1.4,
-   "recent_share": 0.2126
-  },
-  {
-   "keyword": "human",
-   "recent": 20,
-   "total": 47,
-   "burst_score": 1.4,
-   "recent_share": 0.0145
+   "recent": 396,
+   "total": 803,
+   "burst_score": 1.35,
+   "recent_share": 0.2119
   },
   {
    "keyword": "system",
-   "recent": 224,
-   "total": 539,
-   "burst_score": 1.36,
-   "recent_share": 0.1626
+   "recent": 290,
+   "total": 618,
+   "burst_score": 1.29,
+   "recent_share": 0.1552
   },
   {
-   "keyword": "tool",
-   "recent": 63,
-   "total": 153,
-   "burst_score": 1.35,
-   "recent_share": 0.0457
+   "keyword": "human",
+   "recent": 24,
+   "total": 51,
+   "burst_score": 1.29,
+   "recent_share": 0.0128
   },
   {
    "keyword": "scalable",
-   "recent": 9,
-   "total": 22,
-   "burst_score": 1.34,
-   "recent_share": 0.0065
+   "recent": 12,
+   "total": 26,
+   "burst_score": 1.27,
+   "recent_share": 0.0064
   },
   {
-   "keyword": "analysis",
-   "recent": 160,
-   "total": 405,
-   "burst_score": 1.3,
-   "recent_share": 0.1161
+   "keyword": "tool",
+   "recent": 83,
+   "total": 181,
+   "burst_score": 1.26,
+   "recent_share": 0.0444
   },
   {
    "keyword": "dataset",
-   "recent": 57,
-   "total": 153,
-   "burst_score": 1.22,
-   "recent_share": 0.0414
+   "recent": 78,
+   "total": 177,
+   "burst_score": 1.21,
+   "recent_share": 0.0417
   },
   {
-   "keyword": "real-world",
-   "recent": 22,
-   "total": 61,
-   "burst_score": 1.18,
-   "recent_share": 0.016
-  },
-  {
-   "keyword": "review",
-   "recent": 24,
-   "total": 68,
-   "burst_score": 1.16,
-   "recent_share": 0.0174
+   "keyword": "analysis",
+   "recent": 200,
+   "total": 457,
+   "burst_score": 1.2,
+   "recent_share": 0.107
   },
   {
    "keyword": "method",
-   "recent": 313,
-   "total": 903,
-   "burst_score": 1.14,
-   "recent_share": 0.2271
+   "recent": 404,
+   "total": 1013,
+   "burst_score": 1.1,
+   "recent_share": 0.2162
+  },
+  {
+   "keyword": "learning",
+   "recent": 141,
+   "total": 352,
+   "burst_score": 1.1,
+   "recent_share": 0.0754
   },
   {
    "keyword": "novel",
-   "recent": 76,
-   "total": 229,
-   "burst_score": 1.09,
-   "recent_share": 0.0552
+   "recent": 97,
+   "total": 255,
+   "burst_score": 1.05,
+   "recent_share": 0.0519
+  },
+  {
+   "keyword": "real-world",
+   "recent": 25,
+   "total": 66,
+   "burst_score": 1.04,
+   "recent_share": 0.0134
   }
  ]
 }

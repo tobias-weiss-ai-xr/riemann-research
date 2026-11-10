@@ -1,7 +1,7 @@
 # Literature Review
 
-**Generated:** 2026-09-10  
-**Corpus:** 4,520 papers across 6 categories
+**Generated:** 2026-11-10  
+**Corpus:** 5,135 papers across 8 categories
 
 > Synthesis of the corpus. Category insights are grounded in title/abstract analysis of the papers themselves.
 
@@ -11,15 +11,17 @@
 
 | Rank | Category | Papers |
 |------|----------|--------|
-| 1 | Number Theory | 1716 |
-| 2 | Spectral Theory & Graphs | 1442 |
-| 3 | RH Equivalences & Bridges | 566 |
-| 4 | Machine Learning | 545 |
-| 5 | Dynamical Systems | 218 |
+| 1 | Number Theory | 2039 |
+| 2 | Spectral Theory & Graphs | 1476 |
+| 3 | RH Equivalences & Bridges | 689 |
+| 4 | Machine Learning | 625 |
+| 5 | Dynamical Systems | 256 |
 | 6 | Proof & Formalization | 33 |
+| 7 | Application | 14 |
+| 8 | Survey | 3 |
 
-**Time span:** 1859–2026 (median year 2012)
-**Dominant aspects:** Cayley Graphs (1307), L-Functions & Zeta (1166), GNNs on Cayley Graphs (359)
+**Time span:** 1859–2026 (median year 2006)
+**Dominant aspects:** L-Functions & Zeta (1377), Cayley Graphs (1330), GNNs on Cayley Graphs (426)
 
 ---
 
@@ -27,12 +29,14 @@
 
 | Category | Total | Last 12m | Prior 12m | Growth | 12-m share | Papers/mo |
 |----------|------:|---------:|----------:|-------:|----------:|----------:|
-| Machine Learning | 545 | 181 | 33 | +448% | 33% | 15.1 |
-| Spectral Theory | 1442 | 417 | 135 | +209% | 29% | 34.8 |
-| Number Theory | 1716 | 554 | 212 | +161% | 32% | 46.2 |
-| Dynam Systems | 218 | 53 | 27 | +96% | 24% | 4.4 |
-| Equivalences | 566 | 153 | 83 | +84% | 27% | 12.8 |
+| Machine Learning | 625 | 250 | 34 | +635% | 40% | 20.8 |
+| Number Theory | 2039 | 830 | 222 | +274% | 41% | 69.2 |
+| Spectral Theory | 1476 | 427 | 139 | +207% | 29% | 35.6 |
+| Dynam Systems | 256 | 74 | 26 | +185% | 29% | 6.2 |
+| Equivalences | 689 | 255 | 95 | +168% | 37% | 21.2 |
+| Application | 14 | 13 | 0 | — | 93% | 1.1 |
 | Formalization | 33 | 20 | 0 | — | 61% | 1.7 |
+| Survey | 3 | 0 | 0 | — | 0% | 0.0 |
 
 ---
 
@@ -41,13 +45,13 @@
 | Cell | Papers |
 |------|--------:|
 | `formalization/lean-riemann` | 2 |
+| `survey/hybrid` | 3 |
 | `machine-learning/gnn-fullgraph` | 4 |
 | `spectral-theory/brandt-pizer` | 4 |
-| `dynam-systems/selberg-zeta` | 12 |
 | `formalization/lean-foundation` | 13 |
+| `application/non-agentic` | 14 |
+| `dynam-systems/selberg-zeta` | 17 |
 | `formalization/verification` | 18 |
-| `spectral-theory/ramanujan` | 41 |
-| `machine-learning/ml-zeros` | 42 |
 
 ---
 
@@ -56,61 +60,61 @@
 
 ### Number Theory (`number-theory`)
 
-**Corpus size:** 1716 papers
+**Corpus size:** 2039 papers
 
 **Recent papers:**
 
-- [2026-08] More than two thirds of the zeta zeros are simple and on the critical line — https://arxiv.org/abs/2608.13637
-- [2026-08] Special Values of Shifted Dirichlet Series from an Adjoint Map on Almost Holomorphic Modular Fo — https://arxiv.org/abs/2608.12542
-- [2026-08] Products of point counts of higher genus curves over finite fields — https://arxiv.org/abs/2608.18014
+- [2026-11] A Fully Polynomial Approximation Algorithm for the Sherrington-Kirkpatrick Model — https://arxiv.org/abs/2611.05446v1
+- [2026-11] A secondary term in the first moment of primitive cubic Dirichlet L-functions — https://arxiv.org/abs/2611.01451v1
+- [2026-11] Almost primes in short intervals and averages of long Dirichlet polynomial approximations to $( — https://arxiv.org/abs/2611.05000v1
 
 ---
 
 ### Spectral Theory & Graphs (`spectral-theory`)
 
-**Corpus size:** 1442 papers
+**Corpus size:** 1476 papers
 
 **Recent papers:**
 
-- [2026-08] Ramanujan Cayley Graphs with Normal Connection Sets in Ratio-One Frobenius Groups — https://arxiv.org/abs/2608.19905
-- [2026-08] On the Laplacian spectral gap of generalized pancake graphs — https://arxiv.org/abs/2608.15398
-- [2026-08] Perfect state transfer and Cayley presentations — https://arxiv.org/abs/2608.20476
+- [2026-10] A finite threshold for the double-comet conjecture — https://arxiv.org/abs/2610.02913v1
+- [2026-10] Cayley graph diameters for fixed cycle types are eventually quasipolynomial — https://arxiv.org/abs/2610.08385v1
+- [2026-10] Coloring Monomial Cayley Graphs: The One-Parameter Case — https://arxiv.org/abs/2610.09474v1
 
 ---
 
 ### RH Equivalences & Bridges (`equivalences`)
 
-**Corpus size:** 566 papers
+**Corpus size:** 689 papers
 
 **Recent papers:**
 
-- [2026-08] Algorithmic universal étale (\varphi,Γ)-modules — https://arxiv.org/abs/2608.01567
-- [2026-08] On the Emerton-Gee stack of potentially semistable representations — https://arxiv.org/abs/2608.07936
-- [2026-08] On a conjecture of Corradi and Katai — https://arxiv.org/abs/2608.13266
+- [2026-11] An Elementary Proof of the Binary Goldbach Conjecture — https://arxiv.org/abs/2611.09007v1
+- [2026-11] Anticyclotomic Iwasawa theory at potentially ordinary primes — https://arxiv.org/abs/2611.03195v1
+- [2026-11] Arithmetic theta products and doubling at arbitrary level — https://arxiv.org/abs/2611.08243v1
 
 ---
 
 ### Machine Learning (`machine-learning`)
 
-**Corpus size:** 545 papers
+**Corpus size:** 625 papers
 
 **Recent papers:**
 
-- [2026-08] Spectral Gaps of Hit-and-Run and Coordinate Hit-and-Run — https://arxiv.org/abs/2608.16878
-- [2026-08] QR-Erase: Efficient Subspace-Based Machine Unlearning with Layer Localization — https://arxiv.org/abs/2608.01422
-- [2026-08] Riemann GeoResolver: A Non-Euclidean Attention Framework from Euclidean Resolver to Hyperbolic- — https://arxiv.org/abs/2608.10416
+- [2026-10] Dimension-Free Decentralized Nonsmooth Nonconvex Stochastic Optimization — https://arxiv.org/abs/2610.05789v1
+- [2026-10] Nonlocal Hamiltonian Dynamics on Sparse Lévy Graphs: Spectral Analysis and Multimodal Sampling — https://arxiv.org/abs/2610.06904v1
+- [2026-10] Population Scaling or Data Dilution? Dynamics of Local Topology Evolution in Decentralized Lear — https://arxiv.org/abs/2610.05476v2
 
 ---
 
 ### Dynamical Systems (`dynam-systems`)
 
-**Corpus size:** 218 papers
+**Corpus size:** 256 papers
 
 **Recent papers:**
 
-- [2026-08] Equidistribution and thermodynamics at infinity — https://arxiv.org/abs/2608.19457
-- [2026-08] Analyticity of Lyapunov Exponents for Mixed Markov Quasi-Periodic Cocycles — https://arxiv.org/abs/2608.01569
-- [2026-08] The determinant of the Dirichlet-to-Neumann map for a surface with boundary and periods of holo — https://arxiv.org/abs/2608.09737
+- [2026-11] Dolgopyat estimate for partially hyperbolic systems: limit theorems and exponential mixing — https://arxiv.org/abs/2611.06314v1
+- [2026-10] A noncommutative transfer principle — https://arxiv.org/abs/2610.08032v1
+- [2026-10] Beta-expansions induced by general Parry polynomials and sharp iteration asymptotics of their t — https://arxiv.org/abs/2610.27844v1
 
 ---
 
@@ -123,6 +127,30 @@
 - [2026-08] A Weighted Upwind Vector Kinetic Lattice Boltzmann Method For Hyperbolic Conservation Laws — https://arxiv.org/abs/2608.04283
 - [2026-08] Defensive Boosting for Online Probabilistic Forecasting — https://arxiv.org/abs/2608.13554
 - [2026-08] Graphic Matroid Secretary without the Graph — https://arxiv.org/abs/2608.11413
+
+---
+
+### Application (`application`)
+
+**Corpus size:** 14 papers
+
+**Recent papers:**
+
+- [2026-01] A local sequence alignment approach to recognizing fixed poetic forms across languages. — https://doi.org/10.1371/journal.pone.0340514
+- [2026-01] Assessment of the consistency between YouTube videos and scientific evidence on paediatric myop — https://doi.org/10.1371/journal.pone.0357587
+- [2026-01] Dynamic assessment of renal resistive index using point-of-care ultrasonography for early detec — https://doi.org/10.1371/journal.pone.0359982
+
+---
+
+### Survey (`survey`)
+
+**Corpus size:** 3 papers
+
+**Recent papers:**
+
+- [2018-01] Choosing Your Topic — https://doi.org/10.4135/9781529768060
+- [2012-01] Choosing Your Topic and Designing the Research — https://doi.org/10.4135/9781446288788.n2
+- [] Hot Topic “My Fandom &gt; Your Fandom” t-shirt — https://doi.org/10.3998/mpub.12315327.cmp.7
 
 ---
 
